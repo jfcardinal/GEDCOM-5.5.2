@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -18,6 +18,31 @@
       </dl>
     </div>
 
+    <section id="general-comments">
+      <h2>General Comments</h2>
+
+      <h3>Focus</h3>
+
+      <p>The GEDCOM 5.5.2 document describes a data interchange specification for genealogy data. To define the purpose of some elements, it includes terms used in genealogy to help implementers determine how data in the sending or receiving system maps to GEDCOM 5.5.2 data elements.</p>
+
+      <p>The GEDCOM 5.5.2 document is <em>not</em> a general-purpose guide for how to process or manipulate genealogy data. The document must avoid exceeding its scope and intruding on the domain of the sending or receiving systems.</p>
+
+      <h3>Medium</h3>
+
+      <p>The specification document is a single HTML document. It uses a base CSS stylesheet and two alternative stylesheets. The document does not require, and does not use, any Javascript.</p>
+      
+      <p>Those characteristics are all deliberate.</p>
+
+      <ul>
+        <li>HTML is the most popular document format and is based on an open standard.</li>
+        <li>HTML supports in-document links that are a critical feature for a document that includes hundreds of definitions that reference other definitions.</li>
+        <li>HTML browsers allow end-users to adjust the reading environment, an important consideration for readers with vision challenges.</li>
+        <li>The base stylesheet supplies the styles used to format the content. The "Dark" and "Light" stylesheets allow the reader to choose a "light text on dark background" style ("Dark"), or the opposite ("Light").</li>
+        <li>Using a single HTML document and a few CSS stylesheets simplifies sharing the document and/or keeping a local copy.</li>
+        <li>Avoiding Javascript removes the possiblity that a scripting issue interferes with accessing the information in the document.</li>
+      </ul>
+    </section>
+
     <section id="automated-references">
       <h2>Automated References</h2>
 
@@ -30,7 +55,7 @@
         <li>Do not assign the <code>references</code> class to any manually-edited HTML.</li>
       </ul>
 
-      <p>For the manual entries</p>
+      <p>For the manual entries:</p>
       <ul>
         <li>
           <p><code>&lt;-- REFERENCE I <var>sort-key</var> <var>text</var> <var>id</var> --&gt;</code></p>
