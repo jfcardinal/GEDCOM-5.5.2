@@ -12,6 +12,8 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
   <title>GEDCOM 5.5.2</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="dark.css" title="Dark" />
+  <link rel="alternate stylesheet" href="light.css" title="Light" />
 </head>
 <body id="top">
   <article>
@@ -106,7 +108,7 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
 
         <li>
           <p>Any length constraints are given in characters, not bytes.</p>
-          <p>Unicode code points may require 1, 2, or more bytes when read from a UTF-8 document. That is a GEDCOM reader implementation detail that is not material to this specification.</p>
+          <p>Unicode code points may require 1, 2, or more bytes when read from a UTF-8 document. That is a GEDCOM reader/writer implementation detail that is not material to this specification.</p>
         </li>
 
         <li>Text formatted like <code>this</code> represents text that is used in a GEDCOM document exactly as shown. It is also used for example text that might appear in a GEDCOM document.</li>
@@ -144,7 +146,7 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
 
       <p>There are several flaws and ambiguous statements in the GEDCOM 5.5.1 specification, and the specification has been abandoned by its creators.</p>
 
-      <p>Even though the specificatipn document was labeled "DRAFT" and included an instruction that it "must not be used for programming of genealogical software while in draft", GEDCOM 5.5.1 was implemented in software programs shortly after its release. In the many years since the release of the GEDCOM 5.5.1 specification, most popular genealogy programs have implemented some or all of its features.</p>
+      <p>Even though the specification document was labeled "DRAFT" and included an instruction that it "must not be used for programming of genealogical software while in draft", GEDCOM 5.5.1 was implemented in software programs shortly after its release. In the many years since the release of the GEDCOM 5.5.1 specification, most popular genealogy programs have implemented some or all of its features.</p>
 
       <p>Due to the issues in the specification and other factors, many programs do not comply with the GEDCOM 5.5.1 specification. Some programs export GEDCOM 5.5.1 documents with minor or even major compliance issues. Others export GEDCOM 5.5 documents that include GEDCOM 5.5.1 tags or values. Non-compliance increases the difficulty of implementing software to read GEDCOM documents and introduces unnecessary challenges for users of genealogy software.</p>
 
@@ -459,7 +461,7 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
         <li>A <a href="#trlr-record">TRLR_RECORD</a></li>
       </ul>
 
-      <h3 id="gedcom_line-components">gedcom_line Components</h3>
+      <h3 id="gedcom-line-components">gedcom_line Components</h3>
 
       <p><a href="#gedcom-line-syntax">gedcom_line</a> components are defined in this section in the sequence they appear in a gedcom_line.</p>
       <dl>
@@ -704,7 +706,7 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
 
           <p>The line_value defines a value whose meaning depends on the <a href="#tag-component">tag</a> and the hierarchical context of the supporting <a href="#gedcom-line-syntax">gedcom_lines</a>. The context is defined by record and subrecord definitions in the <a href="#section-records">Records</a> and <a href="#section-subrecords">Subrecords</a> sections, respectively.</p>
 
-          <p>With the exception of the <a href="#trlr-record">TRLR_RECORD</a>, all gedcom_lines have a line_value unless the gedcom_line has subordinate gedcom_lines. The presence of a level number and a tag alone should not be used to assert data. For example, <code>1 <a href="#tag-def-deat">DEAT</a> Y</code> asserts that a person has died whereas <code>1 <a href="#tag-def-deat">DEAT</a></code> does not <em>unless</em> there are subordinate subrecords.</p>
+          <p>With the exception of the <a href="#trlr-record">TRLR_RECORD</a>, all gedcom_lines have a line_value unless the gedcom_line has subordinate gedcom_lines. The presence of a level number and a tag alone should not be used to assert data. For example, <code class="nowrap">1 <a href="#tag-def-deat">DEAT</a> Y</code> asserts that a person has died whereas <code class="nowrap">1 <a href="#tag-def-deat">DEAT</a></code> does not <em>unless</em> there are subordinate subrecords.</p>
 
           <h4>Syntax</h4>
 
@@ -722,7 +724,7 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
 
           <p>An at sign <span class="nowrap">("<code>@</code>",</span> U+0040) followed by a pound sign ("<code>#</code>", U+0023) in a line_value introduces an <a href="#escape-sequence">escape_sequence</a> value. See the description of the <a href="#escape-sequence">escape_sequence</a> value for more details.</p>
 
-          <p id="line-value-double-at">An at sign <span class="nowrap">("<code>@</code>",</span> U+0040) that appears in a line_value that is not a <a href="#pointer-component">pointer</a> and does not introduce an <a href="#escape-sequence">escape_sequence</a> must be doubled. So, for example, <code>1 EMAIL Smith<u>@@</u>example.com</code> is valid, <code class="incorrect">1 EMAIL Smith<u>@</u>example.com</code> is invalid.</p>
+          <p id="line-value-double-at">An at sign <span class="nowrap">("<code>@</code>",</span> U+0040) that appears in a line_value that is not a <a href="#pointer-component">pointer</a> and does not introduce an <a href="#escape-sequence">escape_sequence</a> must be doubled. So, for example, <code class="nowrap">1 EMAIL Smith<u>@@</u>example.com</code> is valid, <code class="incorrect nowrap">1 EMAIL Smith<u>@</u>example.com</code> is invalid.</p>
 
           <p>All controlled line_value choices are case insensitive. For example, a conforming GEDCOM reader must consider the following example records as equivalent:</p>
 
@@ -2273,7 +2275,7 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
 
       <p>The "Same as" links reduce the number of definitions in the specification and ensure that rules are defined in the specification only once.</p>
 
-      <p>Many elements include "Context" lists that describe the record and subrecord context where the element's definition applies. The lists are non-normative because they may not be complete. They are provided primarily to help navigate the document.</p>
+      <p>Many elements include a list of refernces that indicate the record and subrecord context where the element's definition applies. The lists are non-normative because they may not be complete. They are provided primarily to help navigate the document.</p>
 
       <dl class="prim-elements">
         <dt id="prim-address-city">ADDRESS_CITY <span class="size">{Size=1:60}</span></dt>
@@ -2389,7 +2391,7 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
 </div>
         </dd>
 
-        <dt id="prim-age-at-event">AGE_AT_EVENT <span class="size">{Size=1:12}</span></dt>
+        <dt id="prim-age-at-event">AGE_AT_EVENT <span class="size">{Size=1:13}</span></dt>
         <dd>
           <p>AGE_AT_EVENT is a value that indicates the age of the principal at the time of the associated event.</p>
 
@@ -2409,7 +2411,7 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
             <tbody>
               <tr><td><var>YY</var><code>y</code></td><td>Years only</td></tr>
               <tr><td><var>YY</var><code>y</code> <var>MM</var><code>m</code></td><td>Years and months</td></tr>
-              <tr><td><var>YY</var><code>y</code> <var>MM</var><code>m</code> <var>DDD</var><code>d</code></td><td>Years, months, and days</td></tr>
+              <tr><td><var>YY</var><code>y</code> <var>MM</var><code>m</code> <var>DD</var><code>d</code></td><td>Years, months, and days</td></tr>
               <tr><td><var>YY</var><code>y</code> <var>DDD</var><code>d</code></td><td>Years, and days</td></tr>
               <tr><td><var>MM</var><code>m</code></td><td>Months</td></tr>
               <tr><td><var>MM</var><code>m</code> <var>DD</var><code>d</code></td><td>Months and days</td></tr>
@@ -3280,14 +3282,14 @@ CHILD
         <dt id="prim-name-personal">NAME_PERSONAL <span class="size">{Size=1:120}</span></dt>
         <dd>
 
-          <p>NAME_PERSONAL is a person's name entered in the <a href="#line-value-component">line_value</a> of a single tag.</p>
+          <p>NAME_PERSONAL is a person's name entered in the <a href="#line-value-component">line_value</a> of a <a href="#tag-def-name">NAME</a> subrecord.</p>
 
           <ul>
-            <li>&lt;<a href="#prim-name-text">NAME_TEXT</a>&gt; </li>
-            <li>/&lt;<a href="#prim-name-text">NAME_TEXT</a>&gt;/ </li>
-            <li>&lt;<a href="#prim-name-text">NAME_TEXT</a>&gt; /&lt;<a href="#prim-name-text">NAME_TEXT</a>&gt;/ </li>
-            <li>/&lt;<a href="#prim-name-text">NAME_TEXT</a>&gt;/ &lt;<a href="#prim-name-text">NAME_TEXT</a>&gt; </li>
-            <li>&lt;<a href="#prim-name-text">NAME_TEXT</a>&gt; /&lt;<a href="#prim-name-text">NAME_TEXT</a>&gt;/ &lt;<a href="#prim-name-text">NAME_TEXT</a>&gt;</li>
+            <li>Given name only or surname not known:<br />&lt;<a href="#prim-name-text">NAME_TEXT</a>&gt;</li>
+            <li>Surname only:<br /><code>/</code>&lt;<a href="#prim-name-text">NAME_TEXT</a>&gt;<code>/</code></li>
+            <li>Given name and surname:<br />&lt;<a href="#prim-name-text">NAME_TEXT</a>&gt; <code>/</code>&lt;<a href="#prim-name-text">NAME_TEXT</a>&gt;<code>/</code></li>
+            <li>Surname and suffix:<br /><code>/</code>&lt;<a href="#prim-name-text">NAME_TEXT</a>&gt;<code>/</code> &lt;<a href="#prim-name-text">NAME_TEXT</a>&gt;</li>
+            <li>Given name, surname, and suffix:<br />&lt;<a href="#prim-name-text">NAME_TEXT</a>&gt; <code>/</code>&lt;<a href="#prim-name-text">NAME_TEXT</a>&gt;<code>/</code> &lt;<a href="#prim-name-text">NAME_TEXT</a>&gt;</li>
           </ul>
 
           <p>The name value is formed in the manner the name is normally spoken. The surname of an individual, if known, is enclosed between two slash ("<code>/</code>", U+002F) characters. The order of the name parts should be the order that the person would have used when giving it to a recorder.</p>
@@ -3296,16 +3298,13 @@ CHILD
 
           <p>Examples:</p>
 
-          <table>
-            <tbody>
-              <tr><td><code>William Lee</code></td><td>Given name only or surname not known</td></tr>
-              <tr><td><code>/Parry/</code></td><td>Surname only</td></tr>
-              <tr><td><code>William Lee /Parry/</code></td><td></td></tr>
-              <tr><td><code>William Lee /Parry/ Jr.</code></td><td>Includes suffix</td></tr>
-              <tr><td><code class="nowrap">William Lee /Mac Parry/</code></td><td>Both parts (Mac and Parry) are surname parts</td></tr>
-              <tr><td><code>William /Lee/ Parry</code></td><td>Surname imbedded in the name string</td></tr>
-            </tbody>
-          </table>
+          <ul>
+            <li>Given name only or surname not known:<br /><code>1 NAME William Lee</code></li>
+            <li>Surname only:<br /><code>1 NAME /Parry/</code></li>
+            <li>Given name and surname:<br /><code>1 NAME William Lee /Parry/</code></li>
+            <li>Surname and suffix:<br /><code>1 NAME /Parry/ Jr.</code></li>
+            <li>Given name, surname, and suffix:<br /><code>1 NAME William Lee /Parry/ Jr.</code></li>
+          </ul>
 
           <p>The PERSONAL_NAME_PIECES structure defines subrecords you may use to define a name via component parts. Even when specifying name pieces, the NAME_PERSONAL <a href="#line-value-component">line_value</a> must be included.</p>
 <div class="references">
@@ -4107,11 +4106,11 @@ CHILD
           <p>To accommodate existing values, GEDCOM 5.5.2 allows these formats:</p>
 
           <ul>
-            <li>RFC4122 Format (Preferred):<br><code>12345678-1234-1234-1234-123456789abc</code></li>
+            <li>RFC4122 format (preferred):<br><code>12345678-1234-1234-1234-123456789abc</code></li>
 
-            <li>PAF-inspired version with checksum:<br><code>12345678123412341234123456789abc1234</code></li>
+            <li>PAF-inspired format with checksum:<br><code>12345678123412341234123456789abc1234</code></li>
 
-            <li>Microsoft-inspired version with braces:<br><code>{12345678-1234-1234-1234-123456789abc}</code></li>
+            <li>Microsoft-inspired format with braces:<br><code>{12345678-1234-1234-1234-123456789abc}</code></li>
           </ul>
 
           <h4 id="paf-checksum-algorithm">PAF Checksum Calculation</h4>
@@ -5480,10 +5479,10 @@ private static string GetPafChecksum(string uuid) {
                     <p>GEDCOM writers should write HEAD.CHAR and HEAD.GEDC as the first subrecords in the HEAD_RECORD.</p>
 <pre>
 0 HEAD
-1 CHAR UTF-8
-1 GEDC
-2 VERS 5.5.2
-2 FORM LINEAGE-LINKED
+1 <a href="#tag-def-char">CHAR</a> UTF-8
+1 <a href="#tag-def-gedc">GEDC</a>
+2 <a href="#tag-def-vers">VERS</a> 5.5.2
+2 <a href="#tag-def-form">FORM</a> LINEAGE-LINKED
 </pre>
                   </li>
                 </ul>
