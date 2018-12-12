@@ -1,0 +1,42 @@
+﻿/* Colors */
+a, a:link, a:visited, a:hover, a:active {
+  color: #2455c3;
+}
+
+article {
+  background-color: #f0f0f0;
+  border-color: #ddd;
+}
+
+body {
+  background-color: #333;
+  color: #222;
+}
+
+code, .code, a.code, pre {
+  color: #10a010;
+}
+
+strong {
+  font-weight: 600;
+}
+
+table, td, th {
+  border-color: silver;
+}
+
+.control-char {
+  color: #222;
+}
+
+.fixed-menu {
+  background-color: #f0f0f0;
+}
+
+.incorrect {
+  color: #ff0000;
+}
+
+.provisional {
+  border-left-color: #ebe702;
+}

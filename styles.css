@@ -5,27 +5,24 @@
 }
 
 a, a:link, a:visited, a:hover, a:active {
-  color: #7ed5fe;
   text-decoration: none;
 }
 
 code a, code a:link, code a:visited, code a:hover, code a:active,
-pre a, pre a:link, pre a:visited, pre a:hover, pre a:active
-{
+pre a, pre a:link, pre a:visited, pre a:hover, pre a:active {
   color: unset;
 }
 
 article {
-  border: 1px solid #444;
-  margin: 1em auto;
+  border-style: solid;
+  border-width: 1px;
+  margin: 0 auto;
   max-width: 45em;
   padding: 0 1em;
   position: relative;
 }
 
 body {
-  background-color: #333;
-  color: #f0f0f0;
   font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
   font-size: 16px;
   line-height: 1.5;
@@ -37,7 +34,6 @@ cite {
 }
 
 code, .code, a.code {
-  color: #e7ba66;
   font-family: monospace,monospace;
   font-size: 115%;
 }
@@ -54,13 +50,14 @@ dd {
   }
 }
 
-dd p:first-child {
+dd p:first-child, dd h4:first-child {
   margin-top: 0;
 }
 
 dt {
-  font-weight: bold;
-  margin-top: 0.5em;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  margin-top: 3em;
 }
 
 h1 {
@@ -110,10 +107,10 @@ p, pre, table {
 }
 
 pre {
-  color: #e7ba66;
   font-family: monospace,monospace;
   font-size: small;
   line-height: 1.1;
+  overflow-x: auto;
 }
 
 @media only screen and (min-width: 30em) {
@@ -121,8 +118,6 @@ pre {
     font-size: medium;
   }
 }
-
-
 
 td.code, p.code, div.where {
   padding-left: 3em;
@@ -134,16 +129,18 @@ section {
 }
 
 table {
-  border: 1px solid silver;
   border-collapse: collapse;
+  border-style: solid;
+  border-width: 1px;
 }
 
 td, th {
-  border: 1px solid silver;
+  border-style: solid;
+  border-width: 1px;
 }
 
 td {
-  padding: 0.5em;
+  padding: 0.1em 0.5em;
   vertical-align: top;
 }
 
@@ -159,45 +156,45 @@ table.record-structure td {
   text-indent: 0;
 }
 
-td.level-0 {
+.record-structure .level-0 {
+  color: unset;
+  padding-left: 0;
+  width: calc(100% - 4em);
+}
+
+.record-structure .level-1 {
   color: unset;
   padding-left: 1em;
   width: calc(100% - 4em);
 }
 
-td.level-1 {
+.record-structure .level-2 {
   color: unset;
   padding-left: 2em;
   width: calc(100% - 4em);
 }
 
-td.level-2 {
+.record-structure .level-3 {
   color: unset;
   padding-left: 3em;
   width: calc(100% - 4em);
 }
 
-td.level-3 {
+.record-structure .level-4 {
   color: unset;
   padding-left: 4em;
   width: calc(100% - 4em);
 }
 
-td.level-4 {
+.record-structure .level-5 {
   color: unset;
   padding-left: 5em;
   width: calc(100% - 4em);
 }
 
-td.level-5 {
+.record-structure .level-6 {
   color: unset;
   padding-left: 6em;
-  width: calc(100% - 4em);
-}
-
-td.level-6 {
-  color: unset;
-  padding-left: 7em;
   width: calc(100% - 4em);
 }
 
@@ -295,7 +292,6 @@ ul li {
 
 .control-char {
   border: 1px solid currentcolor;
-  color: #fff;
   display: inline-block;
   font-size: 80%;
   font-weight: bold;
@@ -304,7 +300,6 @@ ul li {
 }
 
 .fixed-menu {
-  background-color: #333;
   font-size:16px;
   left: 0;
   height: 32px;
@@ -334,10 +329,6 @@ ul li {
   white-space: nowrap;
 }
 
-.incorrect {
-  color: #ff0000;
-}
-
 .nowrap {
   white-space: nowrap;
 }
@@ -353,10 +344,6 @@ ul li {
 
 .pending-removal {
   border-left-color: red;
-}
-
-.provisional {
-  border-left-color: yellow;
 }
 
 .references {
@@ -423,12 +410,6 @@ dt .size, dt .same-as {
 
 .toc_container li, .toc_container ul, .toc_container ul li {
   list-style: outside none none;
-}
-
-.version {
-  color: #000;
-  font-family: sans-serif;
-  font-size: smaller;
 }
 
 .weight-normal {
