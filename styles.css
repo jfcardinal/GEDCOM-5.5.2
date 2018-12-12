@@ -1,0 +1,445 @@
+﻿* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a, a:link, a:visited, a:hover, a:active {
+  color: #7ed5fe;
+  text-decoration: none;
+}
+
+code a, code a:link, code a:visited, code a:hover, code a:active,
+pre a, pre a:link, pre a:visited, pre a:hover, pre a:active
+{
+  color: unset;
+}
+
+article {
+  border: 1px solid #444;
+  margin: 1em auto;
+  max-width: 45em;
+  padding: 0 1em;
+  position: relative;
+}
+
+body {
+  background-color: #333;
+  color: #f0f0f0;
+  font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  padding: 32px 0.5em 100vh 0.5em;
+}
+
+cite {
+  font-style: italic;
+}
+
+code, .code, a.code {
+  color: #e7ba66;
+  font-family: monospace,monospace;
+  font-size: 115%;
+}
+
+dd {
+  margin-bottom: 1em;
+  margin-left: 1em;
+}
+
+@media only screen and (min-width: 30em) {
+  dd {
+    margin-left: 2.5em;
+    max-width: 37.5em;
+  }
+}
+
+dd p:first-child {
+  margin-top: 0;
+}
+
+dt {
+  font-weight: bold;
+  margin-top: 0.5em;
+}
+
+h1 {
+  font-size: 150%;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 140%;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 120%;
+  font-weight: 600;
+  margin: 1.5em 0 0.5em 0;
+}
+
+h4 {
+  font-size: 100%;
+  font-weight: 600;
+  margin: 1.5em 0 0.5em 0;
+}
+
+h5, h6 {
+  font-size: 80%;
+  font-variant: small-caps;
+  font-weight: 500;
+  margin: 0.5em 0 0 0;
+}
+
+ol {
+  margin-left: 2.5em;
+  max-width: 37.5em;
+}
+
+ol li {
+  margin: 0.5em 2.5em 0.5em 0;
+}
+
+p {
+  max-width: 40em;
+}
+
+p, pre, table {
+  margin: 1em 0;
+}
+
+pre {
+  color: #e7ba66;
+  font-family: monospace,monospace;
+  font-size: small;
+  line-height: 1.1;
+}
+
+@media only screen and (min-width: 30em) {
+  pre {
+    font-size: medium;
+  }
+}
+
+
+
+td.code, p.code, div.where {
+  padding-left: 3em;
+  text-indent: -3em;
+}
+
+section {
+  margin-top: 3em;
+}
+
+table {
+  border: 1px solid silver;
+  border-collapse: collapse;
+}
+
+td, th {
+  border: 1px solid silver;
+}
+
+td {
+  padding: 0.5em;
+  vertical-align: top;
+}
+
+table.record-structure {
+  border-width: 0;
+  width: 100%;
+}
+
+table.record-structure td {
+  border-width: 0;
+  padding-bottom: 0;
+  padding-top: 0;
+  text-indent: 0;
+}
+
+td.level-0 {
+  color: unset;
+  padding-left: 1em;
+  width: calc(100% - 4em);
+}
+
+td.level-1 {
+  color: unset;
+  padding-left: 2em;
+  width: calc(100% - 4em);
+}
+
+td.level-2 {
+  color: unset;
+  padding-left: 3em;
+  width: calc(100% - 4em);
+}
+
+td.level-3 {
+  color: unset;
+  padding-left: 4em;
+  width: calc(100% - 4em);
+}
+
+td.level-4 {
+  color: unset;
+  padding-left: 5em;
+  width: calc(100% - 4em);
+}
+
+td.level-5 {
+  color: unset;
+  padding-left: 6em;
+  width: calc(100% - 4em);
+}
+
+td.level-6 {
+  color: unset;
+  padding-left: 7em;
+  width: calc(100% - 4em);
+}
+
+th {
+  font-style: italic;
+  padding: 3px 6px;
+  vertical-align: bottom;
+}
+
+table.value-choices {
+  border-width: 0;
+}
+
+table.value-choices td, table.value-choices th {
+  border-width: 0;
+  padding-bottom: 0;
+  padding-top: 0;
+  text-align: left;
+  vertical-align: top;
+}
+
+table.date-examples {
+  border-width: 0;
+  font-size: small;
+}
+
+table.date-examples td, table.date-examples th {
+  vertical-align: top;
+}
+
+table.alternate tr:nth-child(even) {
+  background: #dddddd
+}
+
+table.alternate tr:nth-child(odd) {
+  background: #f8f8f8
+}
+
+ul {
+  margin-left: 1em;
+  max-width: 39em;
+}
+
+ul li {
+  margin: 0.5em 1em 0.5em 0;
+}
+
+.author {
+  margin: 0.5em 0 1em 0;
+}
+
+.best-practice, .provisional, .pending-removal {
+  border-left: 0.5em solid #52E052;
+  padding-left: 0.5em;
+}
+
+.columns {
+  column-count: 1;
+}
+
+.columns li {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+@media only screen and (min-width: 20em) {
+  .columns {
+    column-count: 2;
+  }
+
+  .columns-thin {
+    column-count: 2;
+  }
+
+  .columns-wide {
+    column-count: 1;
+  }
+}
+
+@media only screen and (min-width: 30em) {
+  .columns-thin {
+    column-count: 3;
+  }
+}
+
+@media only screen and (min-width: 40em) {
+  .columns {
+    column-count: 3;
+  }
+
+  .columns-wide {
+    column-count: 2;
+  }
+}
+
+.control-char {
+  border: 1px solid currentcolor;
+  color: #fff;
+  display: inline-block;
+  font-size: 80%;
+  font-weight: bold;
+  margin: 0 0.2em;
+  padding: 1px;
+}
+
+.fixed-menu {
+  background-color: #333;
+  font-size:16px;
+  left: 0;
+  height: 32px;
+  padding-top: 4px;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  width: 100%;
+}
+
+:target::before {
+  /* Adjust target to avoid being under fixed-menu */
+  content: "";
+  display: block;
+  height: 36px; /* fixed header height*/
+  margin: -36px 0 0; /* negative fixed header height */
+}
+
+.keyword-index {
+  font-size: 90%;
+  list-style-type: none;
+  margin: 0.5em 0;
+}
+
+.keyword-index li {
+  margin: 0;
+  white-space: nowrap;
+}
+
+.incorrect {
+  color: #ff0000;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.option-list {
+  list-style-type: none;
+  margin: 0;
+}
+
+.option-list li {
+  margin: 0;
+}
+
+.pending-removal {
+  border-left-color: red;
+}
+
+.provisional {
+  border-left-color: yellow;
+}
+
+.references {
+  margin: 0.5em 0;
+}
+
+.references p {
+  font-size: 80%;
+  margin: 0;
+}
+
+.references ul {
+  font-size: 80%;
+  margin-left: 1em;
+}
+
+
+.references ul li {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.required {
+  font-weight: bold;
+}
+
+.required::after {
+  content: '*';
+}
+
+.size, .same-as {
+  font-family: monospace, monospace;
+}
+
+td.size {
+  width: 4em;
+}
+
+dt .size, dt .same-as {
+  display: block;
+  font-weight: unset;
+}
+
+.primitive-elements dt {
+  margin-top: 5em;
+}
+
+.sub-title {
+  font-size: unset;
+  font-style: italic;
+  font-weight: normal;
+  margin: 0;
+}
+
+.toc_container {
+  display: table;
+  margin: 2em 0;
+  width: auto;
+}
+
+.toc_title {
+  margin-top: 0.5em;
+}
+
+.toc_container li, .toc_container ul, .toc_container ul li {
+  list-style: outside none none;
+}
+
+.version {
+  color: #000;
+  font-family: sans-serif;
+  font-size: smaller;
+}
+
+.weight-normal {
+  font-weight: normal;
+}
+
+dt .weight-normal {
+  display: block;
+}
+
+.where {
+  font-style: italic;
+  margin: 0.5em 0;
+}
