@@ -233,6 +233,11 @@ table.alternate tr:nth-child(odd) {
   background: #f8f8f8
 }
 
+td.description {
+  font-size: smaller;
+  vertical-align: middle;
+}
+
 ul {
   margin-left: 1em;
   max-width: 39em;
@@ -408,8 +413,21 @@ dt .size, dt .same-as {
   margin-top: 0.5em;
 }
 
-.toc_container li, .toc_container ul, .toc_container ul li {
+.toc_container ul {
   list-style: outside none none;
+  margin-left: 2em;
+}
+
+.toc-0 {
+  margin-left: 0;
+}
+
+.toc-1 {
+  margin-left: 2em;
+}
+
+.toc-2 {
+  margin-left: 4em;
 }
 
 .weight-normal {

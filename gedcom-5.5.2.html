@@ -12,8 +12,8 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
   <title>GEDCOM 5.5.2</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="dark.css" title="Dark" />
   <link rel="alternate stylesheet" href="light.css" title="Light" />
+  <link rel="stylesheet" href="dark.css" title="Dark" />
 </head>
 <body id="top">
   <article>
@@ -28,7 +28,7 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
       </dl>
     </div>
 
-    <div id="section-copyright-notice">
+    <div id="copyright-notice">
       <p>Copyright &copy; 2019 by John Cardinal</p>
       <p>Everyone is permitted to copy and distribute verbatim copies of this document, but changing it is not allowed.</p>
     </div>
@@ -36,49 +36,37 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
     <section class="toc_container">
       <h2 class="toc_title">Contents</h2>
       <ul class="toc_list">
-        <li><a href="#section-copyright-notice">Copyright Notice</a></li>
-        <li>
-          <a href="#section-document-information">Document Information</a>
-          <ul>
-            <li><a href="#abstract">Abstract</a></li>
-            <li><a href="#document-status">Document Status</a></li>
-          </ul>
-        </li>
-        <li><a href="#section-document-conventions">Document Conventions</a></li>
-        <li><a href="#section-introduction">Introduction</a></li>
-        <li>
-          <a href="#section-changes">Changes in GEDCOM 5.5.2</a>
-          <ul>
-            <li><a href="#change-categories">Change Categories</a></li>
-            <li><a href="#changes">Changes</a></li>
-            <li><a href="#inconsequential-changes">Inconsequential Changes</a></li>
-            <li><a href="#documentation-changes">Documentation Changes</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="#section-gedcom-syntax">GEDCOM Syntax</a>
-          <ul>
-            <li><a href="#gedcom-line-syntax">gedcom_line Syntax</a></li>
-            <li><a href="#gedcom-document-sequence">GEDCOM Document Sequence</a></li>
-            <li><a href="#gedcom-line-components">gedcom_line Components</a></li>
-            <li><a href="#continuations">Continuations (CONC and CONT)</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="#section-record-and-subrecord-grammar">Record and Subrecord Grammar</a>
-          <ul>
-            <li><a href="#section-records">Records</a></li>
-            <li><a href="#section-subrecords">Subrecords</a></li>
-            <li><a href="#section-primitive-elements">Primitive Elements</a></li>
-            <li><a href="#section-primitive-elements-for-dates">Primitive Elements for Dates</a></li>
-          </ul>
-        </li>
-        <li><a href="#section-standard-tags">Standard Tag Definitions</a></li>
-        <li><a href="#section-example-gedcom-document">Example GEDCOM Document</a></li>
-        <li><a href="#section-customizations">Customizations</a></li>
-        <li><a href="#section-common-gedcom-extensions">Common GEDCOM Extensions</a></li>
-        <li><a href="#section-keyword-index">Index</a></li>
-      </ul>
+        <!-- Table of Contents entries -->
+<li class="toc-0"><a href="#section-document-information">Document Information</a></li>
+<li class="toc-1"><a href="#abstract">Abstract</a></li>
+<li class="toc-1"><a href="#document-status">Document Status</a></li>
+<li class="toc-0"><a href="#section-document-conventions">Document Conventions</a></li>
+<li class="toc-0"><a href="#section-introduction">Introduction</a></li>
+<li class="toc-0"><a href="#section-changes">Changes in GEDCOM 5.5.2</a></li>
+<li class="toc-1"><a href="#changes">Changes</a></li>
+<li class="toc-1"><a href="#inconsequential-changes">Inconsequential Changes</a></li>
+<li class="toc-1"><a href="#documentation-changes">Documentation Changes</a></li>
+<li class="toc-0"><a href="#section-gedcom-summary">GEDCOM Summary</a></li>
+<li class="toc-0"><a href="#section-gedcom-syntax">GEDCOM Syntax</a></li>
+<li class="toc-1"><a href="#gedcom-line-syntax">gedcom_line Syntax</a></li>
+<li class="toc-1"><a href="#gedcom-line-components">gedcom_line Components</a></li>
+<li class="toc-1"><a href="#continuations">Continuations (CONT and CONC)</a></li>
+<li class="toc-0"><a href="#section-record-and-subrecord-grammar">Record and Subrecord Grammar</a></li>
+<li class="toc-1"><a href="#gedcom-document-sequence">GEDCOM Document Sequence</a></li>
+<li class="toc-1"><a href="#section-record-and-subrecord-organization">Organization</a></li>
+<li class="toc-1"><a href="#record-and-subrecord-usage-conventions">Record and Subrecord Usage Conventions</a></li>
+<li class="toc-0"><a href="#section-records">Records</a></li>
+<li class="toc-0"><a href="#section-subrecords">Subrecords</a></li>
+<li class="toc-0"><a href="#section-primitive-elements">Primitive Elements</a></li>
+<li class="toc-0"><a href="#section-primitive-elements-for-dates">Primitive Elements for Dates</a></li>
+<li class="toc-0"><a href="#section-standard-tags">Standard Tags</a></li>
+<li class="toc-0"><a href="#section-example-gedcom-document">Example GEDCOM Document</a></li>
+<li class="toc-0"><a href="#section-customizations">Customizations</a></li>
+<li class="toc-1"><a href="#sour-and-dest">HEAD.SOUR and HEAD.DEST</a></li>
+<li class="toc-0"><a href="#section-common-gedcom-extensions">Common GEDCOM Extensions</a></li>
+<li class="toc-1"><a href="#custom-tags">Custom Tags</a></li>
+<li class="toc-0"><a href="#section-keyword-index">Index</a></li>
+</ul>
     </section>
 
     <section id="section-document-information">
@@ -300,6 +288,12 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
           <p>The range in GEDCOM 5.5.2 has been increased.</p>
         </li>
 
+        <li id="phon-email-fax-www-change">
+          <p><strong>PHON, EMAIL, FAX, and WWW</strong> &ndash; The <a href="#tag-def-phon">PHON</a>, <a href="#tag-def-char">EMAIL</a>, <a href="#tag-def-fax">FAX</a>, and <a href="#tag-def-www">WWW</a> subrecords in GEDCOM 5.5.1 have been moved from the &lt;<a href="#address-structure-subr">ADDRESS_STRUCTURE</a>&gt; to the &lt;<a href="#contact-structure-subr">CONTACT_STRUCTURE</a>&gt; in GEDCOM 5.5.2.</p>
+          
+          <p>This allows those subrecords to be used independantly of the <a href="#tag-def-addr">ADDR</a> subrecord, a common capability, without invalidating the GEDCOM document.</p>
+        </li>
+
         <li id="surname-prefix-change">
           <p><strong>OBJE.FILE</strong> &ndash; The <a href="#prim-name-piece-surname-prefix">NAME_PIECE_SURNAME_PREFIX</a> definition in GEDCOM 5.5.1 includes an instruction to insert a comma between "articles" in a surname prefix, and provides an example of changing the surname prefix in "<code>de la Cruz</code>" to "<code>de, la</code>".</p>
 
@@ -390,12 +384,64 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
 
     </section>
 
-    <section id="section-gedcom-syntax">
-      <h2>GEDCOM Syntax</h2>
-
-      <h3 id="document-syntax">Document Syntax</h3>
+    <section id="section-gedcom-summary">
+      <h2>GEDCOM Summary</h2>
 
       <p>A GEDCOM 5.5.2 document is a structured text document that contains an ordered set of <a href="#gedcom-line-syntax">gedcom_lines</a>.</p>
+      
+      <p>gedcom_lines include a level number. The level numbers define a hierarchy. gedcom_lines with level set to zero are <var>records</var> and gedcom_lines with level greater than zero are <var>subrecords</var>. A subrecord with level <var>N+1</var> is a child of, and subordinate to, a record or subrecord with level <var>N</var>.</p>
+
+      <p>A record logically includes the subordinate subrecords that follow it up to the next record. In this document, the term "record" usually refers to the level 0 <a href="#gedcom-line-syntax">gedcom_line</a> only unless otherwise specified.</p>
+
+      <p>A subrecord may refer to a record using a <a href="#pointer-component">pointer</a> to the record's <a href="#id-component">ID</a>. The purpose or meaning of the relationship defined by the pointer depends on the tag name and the context.</p>
+
+      <p>Informally, records and subrecords are often identified using a <a href="#tag-component">tag_name</a>. For example, a <a href="#tag-def-name">NAME</a> subrecord is often called a "NAME tag".</p>
+
+      <h4>Example</h4>
+
+      <table>
+        <thead>
+          <tr>
+            <th>gedcom_line</th>
+            <th>Explanation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code span="nowrap">0 HEAD</code></td>
+            <td class="description">HEAD (header) record</td>
+          </tr>
+          <tr>
+            <td><code span="nowrap">1 CHAR UTF-8</code></td>
+            <td class="description">HEAD.CHAR subrecord specifies character encoding <code>UTF-8</code></td>
+          </tr>
+          <tr>
+            <td><code span="nowrap">1 GEDC</code></td>
+            <td class="description">HEAD.GEDC subrecord</td>
+          </tr>
+          <tr>
+            <td><code span="nowrap">2 VERS 5.5.2</code></td>
+            <td class="description">HEAD.GEDC.VERS subrecord specifies GEDCOM version <code>5.5.2</code></td>
+          </tr>
+          <tr>
+            <td><code span="nowrap">0 @I1@ INDI</code></td>
+            <td class="description">INDI (individual) record with ID "<code>I1</code>"</td>
+          </tr>
+          <tr>
+            <td><code span="nowrap">1 NAME John /Doe/</code></td>
+            <td class="description">INDI.NAME subrecord specifies name of individual</td>
+          </tr>
+          <tr>
+            <td><code span="nowrap">0 TRLR</code></td>
+            <td class="description">TRLR (trailer) record</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </section>
+
+    <section id="section-gedcom-syntax">
+      <h2>GEDCOM Syntax</h2>
 
       <h3 id="gedcom-line-syntax">gedcom_line Syntax</h3>
       <p>A gedcom_line is constructed from the following <a href="#gedcom-line-components">components</a> in the order shown:</p>
@@ -403,20 +449,20 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
       <ul>
         <li><a href="#level-component">level</a></li>
         <li><a href="#id-component">ID</a></li>
-        <li><a href="#tag-component">tag</a></li>
+        <li><a href="#tag-name-component">tag_name</a></li>
         <li><a href="#line-value-component">line_value</a></li>
         <li><a href="#line-terminator-component">line_terminator</a></li>
       </ul>
 
-      <p>The <a href="#level-component">level</a>, <a href="#tag-component">tag</a>, and <a href="#line-terminator-component">line_terminator</a> components are required in all gedcom_lines. The <a href="#id-component">ID</a> and <a href="#line-value-component">line_value</a> components are required for some tags in some contexts.</p>
+      <p>The <a href="#level-component">level</a>, <a href="#tag-name-component">tag_name</a>, and <a href="#line-terminator-component">line_terminator</a> components are required in all gedcom_lines. The <a href="#id-component">ID</a> and <a href="#line-value-component">line_value</a> components are required for some tags in some contexts.</p>
 
       <p>A valid gedcom_line must not begin with any characters preceding the <a href="#level-component">level</a> component, white-space or otherwise.</p>
 
       <p>Components must be separated by by a single space character ("<code> </code>", U+0020). Other space characters are <em>significant</em>: any space character that is not a delimiter between components is part of a component.</p>
 
-      <p>Multiple spaces must not appear <em>between</em> the <a href="#level-component">level</a>, <a href="#id-component">ID</a>, and <a href="#tag-component">tag</a> components. Those components must not begin or end with space characters.</p>
+      <p>Multiple spaces must not appear <em>between</em> the <a href="#level-component">level</a>, <a href="#id-component">ID</a>, and <a href="#tag-name-component">tag_name</a> components. Those components must not begin or end with space characters.</p>
 
-      <p>If there are two or more space characters after the <a href="#tag-component">tag</a> component, the second and subsequent space characters are the initial characters in the <a href="#line-value-component">line_value</a>: leading spaces in the line_value must not be trimmed.</p>
+      <p>If there are two or more space characters after the <a href="#tag-name-component">tag_name</a> component, the second and subsequent space characters are the initial characters in the <a href="#line-value-component">line_value</a>: leading spaces in the line_value must not be trimmed.</p>
 
       <p>Trailing space characters prior to the <a href="#line-terminator-component">line_terminator</a> are part of the <a href="#line-value-component">line_value</a>: trailing spaces must not be trimmed.</p>
 
@@ -440,27 +486,6 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
         </ul>
       </div>
 
-      <h3>Records</h3>
-
-      <p>A <a href="#gedcom-line-syntax">gedcom_line</a> with <a href="#level-component">level</a> set to zero is a is a <em>Record</em>. A gedcom_line with level set to one or higher is a <em>Subrecord</em>.</p>
-
-      <p>In this document, Records and Subrecords are referenced by their <a href="#tag-component">tags</a>.</p>
-
-      <p>A Record logically includes the subordinate Subrecords that follow it up to the next Record. However, in this document, the term Record refers to the level 0 <a href="#gedcom-line-syntax">gedcom_line</a> only unless otherwise specified.</p>
-
-      <p>A Subrecord may refer to a Record using a <a href="#pointer-component">pointer</a> to the Record's <a href="#id-component">ID</a>. The purpose or meaning of the relationship defined by the pointer depends on the tag and the context.</p>
-
-      <h3 id="gedcom-document-sequence">GEDCOM Document Sequence</h3>
-
-      <p>A GEDCOM document must consist of <a href="#section-records">Records</a> and <a href="#section-subrecords">Subrecords</a> in the following sequence:</p>
-
-      <ul>
-        <li>A <a href="#head-record">HEAD_RECORD</a></li>
-        <li>Several required <a href="#section-subrecords">Subrecords</a> of the <a href="#head-record">HEAD_RECORD</a></li>
-        <li>Zero or more <a href="#record-structure">RECORD_STRUCTURE</a>s</li>
-        <li>A <a href="#trlr-record">TRLR_RECORD</a></li>
-      </ul>
-
       <h3 id="gedcom-line-components">gedcom_line Components</h3>
 
       <p><a href="#gedcom-line-syntax">gedcom_line</a> components are defined in this section in the sequence they appear in a gedcom_line.</p>
@@ -471,7 +496,7 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
 
           <p>The level number indicates the depth in the subrecord hierarchy. A line at any level <em>L</em> is enclosed by and pertains directly to the nearest preceding line at level <em>L-1</em>. The level may increase by 1 at most compared to the level of the preceding <a href="#gedcom-line-syntax">gedcom_line</a>.</p>
 
-          <p>The enclosed subordinate gedcom_lines at level <em>L</em> are said to be in the context of the enclosing superior gedcom_lines at level <em>L-1</em>. The interpretation of a <a href="#tag-component">tag</a> must be in the context of the tags of the enclosing gedcom_line(s) rather than just the <a href="#tag-component">tag</a> by itself.</p>
+          <p>The enclosed subordinate gedcom_lines at level <em>L</em> are said to be in the context of the enclosing superior gedcom_lines at level <em>L-1</em>: the meaning of a subrecord is influenced by the enclosing gedcom_line(s) and not solely by the <a href="#tag-component">tag_name</a> in the subrecord.</p>
 
           <p>For example:</p>
 
@@ -485,7 +510,7 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
 
           <p>In this example, the expression <code><a href="#tag-def-date">DATE</a> 12 MAY 1920</code> is interpreted within the <a href="#tag-def-indi">INDI</a>.<a href="#tag-def-birt">BIRT</a> (individual, birth) context, representing the individual's birth date. The second <a href="#tag-def-date">DATE</a> is interpreted within the <a href="#tag-def-indi">INDI</a>.<a href="#tag-def-deat">DEAT</a> (individual, death) context. The complete meaning of <a href="#tag-def-date">DATE</a> depends on the context.</p>
 
-          <p>In this document, a subrecord's context may be described using the tag sequence separated by periods.</p>
+          <p>In this document, a subrecord's context may be described using the tag_name sequence separated by periods.</p>
 
           <h4>Syntax</h4>
 
@@ -604,32 +629,32 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
           </div>
         </dd>
 
-        <dt id="tag-component">tag</dt>
+        <dt id="tag-name-component">tag_name</dt>
         <dd>
           <h4>Definition</h4>
 
-          <p>A tag has roughly the same purpose as a field name in a database. The tag indicates the meaning of the <a href="#gedcom-line-syntax">gedcom_line</a> within the context of the enclosing tags, and contributes to the meaning of the enclosed subordinate gedcom_lines. The presence of a tag together with a value represents an assertion made by the author or editor of the content.</p>
+          <p>A tag_name has roughly the same purpose as a field name in a database. The tag_name indicates the meaning of the <a href="#gedcom-line-syntax">gedcom_line</a> within the context of the enclosing subrecords, and contributes to the meaning of the enclosed subordinate gedcom_lines. The presence of a tag_name together with a value represents an assertion made by the author or editor of the content.</p>
 
-          <p>A tag without a <a href="#line-value-component">line_value</a> does not represent an assertion. If a Record or Subrecord is absent, no assertion is made. Asserting that an event did <em>not</em> occur must be expressed using a tag that is defined for that purpose, or using a general-purpose tag, such as a <a href="#tag-def-note">NOTE</a>.</p>
+          <p>A tag_name without a <a href="#line-value-component">line_value</a> does not represent an assertion. If a Record or Subrecord is absent, no assertion is made. Asserting that an event did <em>not</em> occur must be expressed using a subrecord that is defined for that purpose, or using a general-purpose subrecord, such as a <a href="#tag-def-note">NOTE</a>.</p>
 
-          <p>Valid combinations of specific tags, <a href="#line-value-component">line_values</a>, <a href="#id-component">IDs</a>, and <a href="#pointer-component">pointers</a> are constrained by definitions provided in the <a href="#section-record-and-subrecord-grammar">Record and Subrecord Grammar</a> section and subsections.</p>
+          <p>Valid combinations of specific tag_names, <a href="#line-value-component">line_values</a>, <a href="#id-component">IDs</a>, and <a href="#pointer-component">pointers</a> are constrained by definitions provided in the <a href="#section-record-and-subrecord-grammar">Record and Subrecord Grammar</a> section and subsections.</p>
 
           <h4>Syntax</h4>
 
-          <p>A tag consists of a variable length sequence of characters. The valid characters are listed in the table below.</p>
+          <p>A tag_name consists of a variable length sequence of characters. The valid characters are listed in the table below.</p>
 
-          <p>The first character in the tag must be an uppercase alphabetic character or an underscore ("<code>_</code>", U+005F). The remaining characters must consist of characters described in the table below.</p>
+          <p>The first character in the tag_name must be an uppercase alphabetic character or an underscore ("<code>_</code>", U+005F). The remaining characters must consist of characters described in the table below.</p>
 
-          <p>The first character in a Standard Tag must be an uppercase alphabetic character. Standard tags are defined in the <a href="#section-standard-tags">Standard Tags</a> section.</p>
+          <p>The first character in a Standard Tag must be an uppercase alphabetic character. Standard Tags are defined in the <a href="#section-standard-tags">Standard Tags</a> section.</p>
 
           <p>The first character in a <a href="#prim-custom-tag">Custom Tags</a> must be an underscore ("<code>_</code>", U+005F).</p>
 
-          <p>The minimum length of a tag is three characters.</p>
+          <p>The minimum length of a tag_name is three characters.</p>
 
           <!-- TODO: Resolve 15-char limit issue -->
-          <p>The maximum length of a tag is 31 characters, but the first 15 characters of each tag must define a unique value.</p>
+          <p>The maximum length of a tag_name is 31 characters, but the first 15 characters of each tag_name must define a unique value.</p>
 
-          <h4 id="tag-character-classes">Tag Character Classes</h4>
+          <h4 id="tag-character-classes">tag_name Character Classes</h4>
 
           <table>
             <thead>
@@ -677,19 +702,19 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
             <h4>Best-Practice Recommendations</h4>
             <ul>
               <li>
-                <p>As described above, alphabetic characters in tags are restricted to uppercase characters. Prior versions of the GEDCOM specification include contradictory information where syntax entries indicate tags may include lowercase letters but prose indicates they should be all uppercase. To avoid possible issues:</p>
+                <p>As described above, alphabetic characters in tag_names are restricted to uppercase characters. Prior versions of the GEDCOM specification include contradictory information where syntax entries indicate tag_names may include lowercase letters but prose indicates they should be all uppercase. To avoid possible issues:</p>
 
                 <ul>
-                  <li>GEDCOM writers should ensure that all letters in tags are uppercase.</li>
+                  <li>GEDCOM writers should ensure that all letters in tag_names are uppercase.</li>
 
-                  <li>GEDCOM readers should use case-insensitive comparisons when processing tags.</li>
+                  <li>GEDCOM readers should use case-insensitive comparisons when processing tag_names.</li>
                 </ul>
               </li>
 
               <li>
-                <p>GEDCOM 5.5.1 tag size limits are ambiguous.</p>
+                <p>GEDCOM 5.5.1 tag_name size limits are ambiguous.</p>
 
-                <p>The GEDCOM 5.5.1 specification sets the maximum length of a tag to 31 characters, but further specifies that the first 15 characters must be unique. All Standard Tags are 3 to 5 characters, so only Custom Tags may fall in the range 6 to 31. However, the NEW_TAG definition on page 49 of the GEDCOM 5.5.1 specification set the size limits to 1:15.</p>
+                <p>The GEDCOM 5.5.1 specification sets the maximum length of a tag_name to 31 characters, but further specifies that the first 15 characters must be unique. All Standard Tags are 3 to 5 characters, so only Custom Tags may fall in the range 6 to 31. However, the NEW_TAG definition on page 49 of the GEDCOM 5.5.1 specification set the size limits to 1:15.</p>
 
                 <ul>
                   <li>GEDCOM writers should use 3 to 15 character Custom Tags, including the leading underscore ("<code>_</code>", U+005F), inclusive.</li>
@@ -704,21 +729,21 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
         <dd>
           <h4>Definition</h4>
 
-          <p>The line_value defines a value whose meaning depends on the <a href="#tag-component">tag</a> and the hierarchical context of the supporting <a href="#gedcom-line-syntax">gedcom_lines</a>. The context is defined by record and subrecord definitions in the <a href="#section-records">Records</a> and <a href="#section-subrecords">Subrecords</a> sections, respectively.</p>
+          <p>The line_value defines a value whose meaning depends on the <a href="#tag-name-component">tag_name</a> and the hierarchical context of the supporting <a href="#gedcom-line-syntax">gedcom_lines</a>. The context is defined by record and subrecord definitions in the <a href="#section-records">Records</a> and <a href="#section-subrecords">Subrecords</a> sections, respectively.</p>
 
-          <p>With the exception of the <a href="#trlr-record">TRLR_RECORD</a>, all gedcom_lines have a line_value unless the gedcom_line has subordinate gedcom_lines. The presence of a level number and a tag alone should not be used to assert data. For example, <code class="nowrap">1 <a href="#tag-def-deat">DEAT</a> Y</code> asserts that a person has died whereas <code class="nowrap">1 <a href="#tag-def-deat">DEAT</a></code> does not <em>unless</em> there are subordinate subrecords.</p>
+          <p>With the exception of the <a href="#trlr-record">TRLR_RECORD</a>, all <a href="#gedcom-line-syntax">gedcom_lines</a> have a line_value unless the gedcom_line has subordinate gedcom_lines. The presence of a level number and a tag_name alone should not be used to assert data. For example, <code class="nowrap">1 <a href="#tag-def-deat">DEAT</a> Y</code> asserts that a person has died whereas <code class="nowrap">1 <a href="#tag-def-deat">DEAT</a></code> does not <em>unless</em> there are subordinate subrecords.</p>
 
           <h4>Syntax</h4>
 
           <p>The line_value may include one or more Unicode characters except for <a href="#line-terminator-component">line_terminator</a> characters.</p>
 
-          <p>The line_value is required for some tags and optional for others.</p>
+          <p>The line_value is required for some subrecords and optional for others.</p>
 
           <p>When a line_value is provided, the minimum length is one character and the maximum length is unlimited. In practice, GEDCOM readers may not be able to read extremely long values, and the Record and Subrecord grammar defines additional limits on line_value length and content.</p>
 
-          <p>If a line_value appended after the tag component in a <a href="#gedcom-line-syntax">gedcom_line</a> will cause the total length of the gedcom_line to exceed the maximum length allowed for a gedcom_line, the GEDCOM writer must use one or more <a href="#tag-def-conc">CONC</a> tags to avoid exceeding the limit. See the <a href="#continuations">Continuations</a> section for details.</p>
+          <p>If a line_value appended after the tag_name component in a <a href="#gedcom-line-syntax">gedcom_line</a> will cause the total length of the gedcom_line to exceed the maximum length allowed for a gedcom_line, the GEDCOM writer must use one or more <a href="#tag-def-conc">CONC</a> subrecords to avoid exceeding the limit. See the <a href="#continuations">Continuations</a> section for details.</p>
 
-          <p>Values that include any of the <a href="#line-terminator-component">line_terminator</a> characters must use a subordinate <a href="#tag-def-cont">CONT</a> tag. See the <a href="#continuations">Continuations</a> section for details.</p>
+          <p>Values that include any of the <a href="#line-terminator-component">line_terminator</a> characters must use a subordinate <a href="#tag-def-cont">CONT</a> subrecord. See the <a href="#continuations">Continuations</a> section for details.</p>
 
           <p>The line_value may be set to a <a href="#pointer-component">pointer</a>, and if so, the pointer must be the only content in the line_value and the line_value must follow the syntax rules for a pointer.</p>
 
@@ -750,7 +775,7 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
 
           <p>A pointer and an ID share the same syntax rules. See the <a href="#id-component">ID</a> description for the definition of those rules.</p>
 
-          <p>A pointer occurs <em>after</em> the <a href="#tag-component">tag</a> whereas an <a href="#id-component">ID</a> occurs <em>before</em>.</p>
+          <p>A pointer occurs <em>after</em> the <a href="#tag-name-component">tag_name</a> whereas an <a href="#id-component">ID</a> occurs <em>before</em>.</p>
         </dd>
 
         <dt id="escape-sequence">escape_sequence</dt>
@@ -824,26 +849,26 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
     0 @I1234@ <a href="#tag-def-indi">INDI</a>
     </pre>
 
-          <p>The example above has a <a href="#level-component">level</a> number <code>0</code>, an <a href="#id-component">ID</a> of <code>@I1234@</code>, an <code><a href="#tag-def-indi">INDI</a></code> <a href="#tag-component">tag</a>, and no <a href="#line-value-component">value</a>.</p>
+          <p>The example above has a <a href="#level-component">level</a> number <code>0</code>, an <a href="#id-component">ID</a> of <code>@I1234@</code>, an <code><a href="#tag-def-indi">INDI</a></code> <a href="#tag-name-component">tag_name</a>, and no <a href="#line-value-component">value</a>.</p>
 
     <pre>
     1 <a href="#tag-def-age">AGE</a> 13y
     </pre>
 
-          <p>The example above has a <a href="#level-component">level</a> number <code>1</code>, no <a href="#id-component">ID</a>, an <code><a href="#tag-def-age">AGE</a></code> <a href="#tag-component">tag</a>, and a <a href="#line-value-component">value</a> of <code>13y</code>.</p>
+          <p>The example above has a <a href="#level-component">level</a> number <code>1</code>, no <a href="#id-component">ID</a>, an <code><a href="#tag-def-age">AGE</a></code> <a href="#tag-name-component">tag_name</a>, and a <a href="#line-value-component">value</a> of <code>13y</code>.</p>
 
     <pre>
     1 CHIL @I1234@
     </pre>
 
-          <p>The example above has a <a href="#level-component">level</a> number 1, no <a href="#id-component">ID</a>, a <code>CHIL</code> <a href="#tag-component">tag</a>, and a <a href="#line-value-component">value</a> that is a <a href="#pointer-component">pointer</a>, <code>@I1234@</code>.</p>
+          <p>The example above has a <a href="#level-component">level</a> number 1, no <a href="#id-component">ID</a>, a <code>CHIL</code> <a href="#tag-name-component">tag_name</a>, and a <a href="#line-value-component">value</a> that is a <a href="#pointer-component">pointer</a>, <code>@I1234@</code>.</p>
 
     <pre>
     1 <a href="#tag-def-note">NOTE</a> This is a note field that is
     2 CONT continued on the next line.
     </pre>
 
-          <p>The example above has a <a href="#level-component">level</a> number <code>1</code>, no <a href="#id-component">ID</a>, a <code><a href="#tag-def-note">NOTE</a></code> <a href="#tag-component">tag</a>, and a two-line <a href="#line-value-component">value</a> that uses the <code>CONT</code> <a href="#tag-component">tag</a>.</p>
+          <p>The example above has a <a href="#level-component">level</a> number <code>1</code>, no <a href="#id-component">ID</a>, a <code><a href="#tag-def-note">NOTE</a></code> <a href="#tag-name-component">tag_name</a>, and a two-line <a href="#line-value-component">value</a> that uses the <code>CONT</code> <a href="#tag-name-component">tag_name</a>.</p>
 
     -->
 
@@ -867,7 +892,7 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
 
       <p>The CONT subrecord(s) must be assigned <a href="#level-component">level</a> <var>N+1</var>, i.e., they are assigned a level number one greater than the parent record.</p>
 
-      <p>For example, to write the following text in a NOTE tag:</p>
+      <p>For example, to write the following text in a NOTE subrecord:</p>
 
 <pre>
 Line one<span class="control-char">CR</span><span class="control-char">LF</span>Line two<span class="control-char">CR</span><span class="control-char">LF</span>Line three
@@ -943,13 +968,22 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
     <section id="section-record-and-subrecord-grammar">
       <h2>Record and Subrecord Grammar</h2>
 
-      <h3 id="section-record-and-subrecord-introduction">Introduction</h3>
+      <p>This section describes the <a href="#tag-name-component">tag_name</a>, <a href="#line-value-component">line_value</a>, and <a href="#pointer-component">pointer</a> combinations used for exchanging genealogical information in the GEDCOM format.</p>
 
-      <p>This chapter describes the <a href="#tag-component">tag</a>, <a href="#line-value-component">line_value</a>, and <a href="#pointer-component">pointer</a> combinations used for exchanging genealogical information in the GEDCOM format.</p>
+      <h3 id="gedcom-document-sequence">GEDCOM Document Sequence</h3>
+
+      <p>A GEDCOM document must consist of <a href="#section-records">Records</a> and <a href="#section-subrecords">Subrecords</a> in the following sequence:</p>
+
+      <ul>
+        <li>A <a href="#head-record">HEAD_RECORD</a></li>
+        <li>Several required <a href="#section-subrecords">Subrecords</a> of the <a href="#head-record">HEAD_RECORD</a></li>
+        <li>Zero or more <a href="#record-structure">RECORD_STRUCTURE</a>s</li>
+        <li>A <a href="#trlr-record">TRLR_RECORD</a></li>
+      </ul>
 
       <h3 id="section-record-and-subrecord-organization">Organization</h3>
 
-      <p>A description of the Record and Subrecord Grammar is presented in the following three major sub-sections:</p>
+      <p>A description of the Record and Subrecord Grammar is presented in the following subsections:</p>
 
       <ul>
         <li><a href="#section-records">Records</a></li>
@@ -957,9 +991,7 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
         <li><a href="#section-primitive-elements">Primitive Elements</a></li>
       </ul>
 
-      <p>Tags referenced in the sections above are listed in the <a href="#section-standard-tags">Standard Tags</a> section.</p>
-
-      <p>The following symbols are used in the Record and Subrecord Grammar sub-sections listed above:</p>
+      <p>The following symbols are used in the Record and Subrecord Grammar subsections listed above:</p>
 
       <dl>
         <dt>Double Angle Brackets: <code>&lt;&lt;</code> and <code>&gt;&gt;</code></dt>
@@ -1003,29 +1035,32 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
         </dd>
       </dl>
 
-      <h3 id="record-and-subrecord-usage-conventions">Record and Subrecord Usage Conventions</h3>
+      <h3 id="record-and-subrecord-usage">Record and Subrecord Usage</h3>
 
       <ul>
         <li>
           <p>The order in which <a href="#gedcom-line-syntax">ged_lines</a> are written to a GEDCOM file is controlled by the context and level number.</p>
           
-          <p>When ged_lines are of equal level number but have different tag names then the order is not significant.</p>
+          <p>When ged_lines are of equal level number but have different tag_names then the order is <em>not</em> significant.</p>
           
-          <p>The occurrence of equal level numbers and equal tag names within the same context imply that multiple opinions or multiple values of the data exist. The significance of the order in these cases is interpreted as the submitter's preference: <i>the most preferred value being the first with the least preferred data listed in subsequent subrecords by order of decreasing preference.</i> For example, a researcher who discovers conflicting evidence about a person's birth event would list the most credible information first and the least credible or least preferred information last.</p>
+          <p>The occurrence of equal level numbers and equal tag_names within the same context imply that multiple opinions or multiple values of the data exist. The significance of the order in these cases is interpreted as the submitter's preference: <i>the most preferred value being the first with the least preferred value listed in subsequent subrecords by order of decreasing preference.</i> For example, a researcher who discovers conflicting evidence about a person's birth event would include multiple <a href="#tag-def-birt">BIRT</a> subrecords with the most credible information in the first subrecord and the least credible or least preferred information in the last subrecord.</p>
 
           <p>Systems that support multiple fields or structures should allow their users to indicate their preference opinion. Systems that only store single value structures should use the preferred information (the first occurrence listed) and store the remaining information as an exception, preferably <i>within an appropriate NOTE field</i> or in some way that the end user has ready access to the less-preferred data when viewing the record.</p>
         </li>
 
-        <li>Conflicting event dates and places should be represented by placing them in separate event structures with appropriate source citations rather than by placing them under the same enclosing event.</li>
+        <li>Conflicting event dates and places should be represented by placing them in separate event subrecords with appropriate source citations.</li>
 
         <li>
-          <p>Some GEDCOM records use the <a href="#tag-def-type">TYPE</a> tag to classify its superior tag. The value given by the <a href="#tag-def-type">TYPE</a> tag is not intended to inform a computer program how to process the data, unless there is a list of standardized or controlled <a href="#line-value-component">line_value</a> choices given by the definition of the <a href="#section-primitive-element">primitive element</a>. The difference between an uncontrolled <a href="#line-value-component">line_value</a> and a note value is that displaying systems should always display the <i>type value</i> when they display the data from the associated context. This gives the user flexibility in further defining information in a compatible GEDCOM context and the reader to understand events or attributes which have not been classified by a specific tag. For example:</p>
+          <p>Some GEDCOM subrecords may be classified by a <a href="#tag-def-type">TYPE</a> subrecord. The value given by the <a href="#tag-def-type">TYPE</a> subrecord is not intended to inform a computer program how to process the data, unless there is a list of standardized or controlled <a href="#line-value-component">line_value</a> choices given by the definition of the <a href="#section-primitive-element">primitive element</a>. An uncontrolled <a href="#line-value-component">line_value</a> specifies a label for the enclosing subrecord. This gives the sending system flexibility in classifying value(s) withotu requiring subrecords with custom tag_names.</p>
+          
+          <p>For example:</p>
 
 <pre>
 1 <a href="#tag-def-even">EVEN</a>
 2 <a href="#tag-def-type">TYPE</a> Awarded BSA Eagle Rank
 2 <a href="#tag-def-date">DATE</a> 1980
 </pre>
+
         </li>
       </ul>
 
@@ -1038,7 +1073,7 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
         <dd>
           <p>A <a href="#head-record">HEAD_RECORD</a> and a <a href="#trlr-record">TRLR_RECORD</a> are required. Any number of data records may appear between the HEAD_RECORD and the TRLR_RECORD.</p>
           
-          <p>Subrecords that are required within a structure have tags that appear like <span class="required">THIS</span>. Note that some records and subrecords are not required but if they are present one or more of their subordinate subrecords may be required.</p>
+          <p>Subrecords that are required within a structure have tag_names that appear like <span class="required">THIS</span>. Note that some records and subrecords are not required but if they are present one or more of their subordinate subrecords may be required.</p>
 
           <table class="record-structure">
             <tr><td class="code level-0">0 &lt;&lt;<a href="#head-record">HEAD_RECORD</a>&gt;&gt; </td><td class="size">1:1</td></tr>
@@ -1074,6 +1109,8 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
 
             <tr><td class="code level-3">+3 &lt;&lt;<a href="#address-structure-subr">ADDRESS_STRUCTURE</a>&gt;&gt; </td><td class="size">0:1 </td></tr>
 
+            <tr><td class="code level-3">+3 &lt;&lt;<a href="#contact-structure-subr">CONTACT_STRUCTURE</a>&gt;&gt; </td><td class="size">0:M </td></tr>
+
             <tr><td class="code level-2">+2 <a href="#tag-def-data">DATA</a> &lt;<a href="#prim-name-of-source-data">NAME_OF_SOURCE_DATA</a>&gt; </td><td class="size">0:1 </td></tr>
 
             <tr><td class="code level-3">+3 <a href="#tag-def-date">DATE</a> &lt;<a href="#prim-publication-date">PUBLICATION_DATE</a>&gt; </td><td class="size">0:1 </td></tr>
@@ -1107,7 +1144,7 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
 
           <p>A program reading a GEDCOM document must read the <a href="#tag-def-gedc">GEDC</a>.<a href="#tag-def-vers">VERS</a> value to verify it is capable of reading the GEDCOM version written by the source program.</p>
 
-          <p>The <a href="#tag-def-char">CHAR</a> tag is required.</p>
+          <p>The <a href="#tag-def-char">CHAR</a> subrecord is required.</p>
 
           <p>The <a href="#tag-def-sour">SOUR</a> subrecord's <a href="#prim-approved-system-id">APPROVED_SYSTEM_ID</a> identifies which system wrote the data. Many GEDCOM readers inspect the APPROVED_SYSTEM_ID to determine how to interpret custom records and subrecords written by the system indicated by the APPROVED_SYSTEM_ID.</p>
 
@@ -1122,37 +1159,37 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
           <table class="record-structure">
             <tr><td class="syntax-character" colspan="2">[</td></tr>
 
-            <tr><td class="code level-0"><i>n</i> &lt;&lt;<a href="#fam-record">FAM_RECORD</a>&gt;&gt; </td><td>1:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> &lt;&lt;<a href="#fam-record">FAM_RECORD</a>&gt;&gt; </td><td class="size">1:1</td></tr>
 
             <tr><td class="syntax-character" colspan="2">|</td></tr>
 
-            <tr><td class="code level-0"><i>n</i> &lt;&lt;<a href="#indi-record">INDI_RECORD</a>&gt;&gt; </td><td>1:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> &lt;&lt;<a href="#indi-record">INDI_RECORD</a>&gt;&gt; </td><td class="size">1:1</td></tr>
 
             <tr><td class="syntax-character" colspan="2">|</td></tr>
 
-            <tr><td class="code level-0"><i>n</i> &lt;&lt;<a href="#obje-record">OBJE_RECORD</a>&gt;&gt; </td><td>1:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> &lt;&lt;<a href="#obje-record">OBJE_RECORD</a>&gt;&gt; </td><td class="size">1:1</td></tr>
 
             <tr><td class="syntax-character" colspan="2">|</td></tr>
 
-            <tr><td class="code level-0"><i>n</i> &lt;&lt;<a href="#note-record">NOTE_RECORD</a>&gt;&gt; </td><td>1:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> &lt;&lt;<a href="#note-record">NOTE_RECORD</a>&gt;&gt; </td><td class="size">1:1</td></tr>
 
             <tr><td class="syntax-character" colspan="2">|</td></tr>
 
-            <tr><td class="code level-0"><i>n</i> &lt;&lt;<a href="#repo-record">REPO_RECORD</a>&gt;&gt; </td><td>1:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> &lt;&lt;<a href="#repo-record">REPO_RECORD</a>&gt;&gt; </td><td class="size">1:1</td></tr>
 
             <tr><td class="syntax-character" colspan="2">|</td></tr>
 
-            <tr><td class="code level-0"><i>n</i> &lt;&lt;<a href="#sour-record">SOUR_RECORD</a>&gt;&gt; </td><td>1:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> &lt;&lt;<a href="#sour-record">SOUR_RECORD</a>&gt;&gt; </td><td class="size">1:1</td></tr>
 
             <tr><td class="syntax-character" colspan="2">|</td></tr>
 
             <!-- TODO SUBN record is obsolete
-          <tr><td class="code level-0"><i>n</i> &lt;&lt;<a href="#subn-record">SUBN_RECORD</a>&gt;&gt; </td><td>1:1 </td></tr>
+          <tr><td class="code level-0"><i>n</i> &lt;&lt;<a href="#subn-record">SUBN_RECORD</a>&gt;&gt; </td><td class="size">1:1</td></tr>
 
           <tr><td class="syntax-character" colspan="2">|</td></tr>
           -->
 
-            <tr><td class="code level-0"><i>n</i> &lt;&lt;<a href="#subm-record">SUBM_RECORD</a>&gt;&gt; </td><td>1:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> &lt;&lt;<a href="#subm-record">SUBM_RECORD</a>&gt;&gt; </td><td class="size">1:1</td></tr>
 
             <tr><td class="syntax-character" colspan="2">]</td></tr>
           </table>
@@ -1163,37 +1200,37 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
           <p>The FAM_RECORD is used to record marriages and family unions caused by two people becoming the parents of a child.</p>
 
           <table class="record-structure">
-            <tr><td class="code level-0"><i>n</i> @&lt;<a href="#prim-id-fam">ID:FAM</a>&gt;@ <span class="required"><a href="#tag-def-fam">FAM</a></span> </td><td>1:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> @&lt;<a href="#prim-id-fam">ID:FAM</a>&gt;@ <span class="required"><a href="#tag-def-fam">FAM</a></span> </td><td class="size">1:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-resn">RESN</a> &lt;<a href="#prim-restriction-notice">RESTRICTION_NOTICE</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-resn">RESN</a> &lt;<a href="#prim-restriction-notice">RESTRICTION_NOTICE</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#family-event-structure-subr">FAMILY_EVENT_STRUCTURE</a>&gt;&gt; </td><td>0:M </td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#family-event-structure-subr">FAMILY_EVENT_STRUCTURE</a>&gt;&gt; </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-husb">HUSB</a> @&lt;<a href="#prim-id-indi">ID:INDI</a>&gt;@ </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-husb">HUSB</a> @&lt;<a href="#prim-id-indi">ID:INDI</a>&gt;@ </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-wife">WIFE</a> @&lt;<a href="#prim-id-indi">ID:INDI</a>&gt;@ </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-wife">WIFE</a> @&lt;<a href="#prim-id-indi">ID:INDI</a>&gt;@ </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-chil">CHIL</a> @&lt;<a href="#prim-id-indi">ID:INDI</a>&gt;@ </td><td>0:M </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-chil">CHIL</a> @&lt;<a href="#prim-id-indi">ID:INDI</a>&gt;@ </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-nchi">NCHI</a> &lt;<a href="#prim-count-of-children">COUNT_OF_CHILDREN</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-nchi">NCHI</a> &lt;<a href="#prim-count-of-children">COUNT_OF_CHILDREN</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-subm">SUBM</a> @&lt;<a href="#prim-id-subm">ID:SUBM</a>&gt;@ </td><td>0:M </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-subm">SUBM</a> @&lt;<a href="#prim-id-subm">ID:SUBM</a>&gt;@ </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#lds-spouse-sealing-subr">LDS_SPOUSE_SEALING</a>&gt;&gt; </td><td>0:M </td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#lds-spouse-sealing-subr">LDS_SPOUSE_SEALING</a>&gt;&gt; </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-refn">REFN</a> &lt;<a href="#prim-user-reference-number">USER_REFERENCE_NUMBER</a>&gt; </td><td>0:M </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-refn">REFN</a> &lt;<a href="#prim-user-reference-number">USER_REFERENCE_NUMBER</a>&gt; </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-2">+2 <a href="#tag-def-type">TYPE</a> &lt;<a href="#prim-user-reference-type">USER_REFERENCE_TYPE</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-2">+2 <a href="#tag-def-type">TYPE</a> &lt;<a href="#prim-user-reference-type">USER_REFERENCE_TYPE</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-rin">RIN</a> &lt;<a href="#prim-automated-record-id">AUTOMATED_RECORD_ID</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-rin">RIN</a> &lt;<a href="#prim-automated-record-id">AUTOMATED_RECORD_ID</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#change-date-subr">CHANGE_DATE</a>&gt;&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#change-date-subr">CHANGE_DATE</a>&gt;&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#note-structure-subr">NOTE_STRUCTURE</a>&gt;&gt; </td><td>0:M </td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#note-structure-subr">NOTE_STRUCTURE</a>&gt;&gt; </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#source-citation-subr">SOURCE_CITATION</a>&gt;&gt; </td><td>0:M </td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#source-citation-subr">SOURCE_CITATION</a>&gt;&gt; </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#multimedia-link-subr">MULTIMEDIA_LINK</a>&gt;&gt; </td><td>0:M </td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#multimedia-link-subr">MULTIMEDIA_LINK</a>&gt;&gt; </td><td class="size">0:M</td></tr>
           </table>
 
           <p>There can be no more than one <a href="#tag-def-husb">HUSB</a> and one <a href="#tag-def-wife">WIFE</a> listed in each FAM_RECORD. If, for example, a man participated in more than one family union, then he would appear in more than one FAM_RECORD.</p>
@@ -1208,49 +1245,49 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
           <p>The INDI_RECORD is a set of assertions about an individual.</p>
 
           <table class="record-structure">
-            <tr><td class="code level-0"><i>n</i> @<a href="#prim-id-indi">ID:INDI</a>@ <span class="required"><a href="#tag-def-indi">INDI</a></span> </td><td>1:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> @<a href="#prim-id-indi">ID:INDI</a>@ <span class="required"><a href="#tag-def-indi">INDI</a></span> </td><td class="size">1:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-resn">RESN</a> &lt;<a href="#prim-restriction-notice">RESTRICTION_NOTICE</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-resn">RESN</a> &lt;<a href="#prim-restriction-notice">RESTRICTION_NOTICE</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#personal-name-structure-subr">PERSONAL_NAME_STRUCTURE</a>&gt;&gt; </td><td>0:M </td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#personal-name-structure-subr">PERSONAL_NAME_STRUCTURE</a>&gt;&gt; </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-sex">SEX</a> &lt;<a href="#prim-sex-value">SEX_VALUE</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-sex">SEX</a> &lt;<a href="#prim-sex-value">SEX_VALUE</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#individual-event-structure-subr">INDIVIDUAL_EVENT_STRUCTURE</a>&gt;&gt; </td><td>0:M </td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#individual-event-structure-subr">INDIVIDUAL_EVENT_STRUCTURE</a>&gt;&gt; </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#individual-attribute-structure-subr">INDIVIDUAL_ATTRIBUTE_STRUCTURE</a>&gt;&gt; </td><td>0:M </td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#individual-attribute-structure-subr">INDIVIDUAL_ATTRIBUTE_STRUCTURE</a>&gt;&gt; </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#lds-individual-ordinance-subr">LDS_INDIVIDUAL_ORDINANCE</a>&gt;&gt; </td><td>0:M </td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#lds-individual-ordinance-subr">LDS_INDIVIDUAL_ORDINANCE</a>&gt;&gt; </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#child-to-family-link-subr">CHILD_TO_FAMILY_LINK</a>&gt;&gt; </td><td>0:M </td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#child-to-family-link-subr">CHILD_TO_FAMILY_LINK</a>&gt;&gt; </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#spouse-to-family-link-subr">SPOUSE_TO_FAMILY_LINK</a>&gt;&gt; </td><td>0:M </td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#spouse-to-family-link-subr">SPOUSE_TO_FAMILY_LINK</a>&gt;&gt; </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-subm">SUBM</a> @&lt;<a href="#prim-id-subm">ID:SUBM</a>&gt;@ </td><td>0:M </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-subm">SUBM</a> @&lt;<a href="#prim-id-subm">ID:SUBM</a>&gt;@ </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#association-structure-subr">ASSOCIATION_STRUCTURE</a>&gt;&gt; </td><td>0:M </td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#association-structure-subr">ASSOCIATION_STRUCTURE</a>&gt;&gt; </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-alia">ALIA</a> @&lt;<a href="#prim-id-indi">ID:INDI</a>&gt;@ </td><td>0:M </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-alia">ALIA</a> @&lt;<a href="#prim-id-indi">ID:INDI</a>&gt;@ </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-anci">ANCI</a> @&lt;<a href="#prim-id-subm">ID:SUBM</a>&gt;@ </td><td>0:M </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-anci">ANCI</a> @&lt;<a href="#prim-id-subm">ID:SUBM</a>&gt;@ </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-desi">DESI</a> @&lt;<a href="#prim-id-subm">ID:SUBM</a>&gt;@ </td><td>0:M </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-desi">DESI</a> @&lt;<a href="#prim-id-subm">ID:SUBM</a>&gt;@ </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-afn">AFN</a> &lt;<a href="#prim-ancestral-file-number">ANCESTRAL_FILE_NUMBER</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-afn">AFN</a> &lt;<a href="#prim-ancestral-file-number">ANCESTRAL_FILE_NUMBER</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-refn">REFN</a> &lt;<a href="#prim-user-reference-number">USER_REFERENCE_NUMBER</a>&gt; </td><td>0:M </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-refn">REFN</a> &lt;<a href="#prim-user-reference-number">USER_REFERENCE_NUMBER</a>&gt; </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-2">+2 <a href="#tag-def-type">TYPE</a> &lt;<a href="#prim-user-reference-type">USER_REFERENCE_TYPE</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-2">+2 <a href="#tag-def-type">TYPE</a> &lt;<a href="#prim-user-reference-type">USER_REFERENCE_TYPE</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-rin">RIN</a> &lt;<a href="#prim-automated-record-id">AUTOMATED_RECORD_ID</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-rin">RIN</a> &lt;<a href="#prim-automated-record-id">AUTOMATED_RECORD_ID</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#change-date-subr">CHANGE_DATE</a>&gt;&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#change-date-subr">CHANGE_DATE</a>&gt;&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#note-structure-subr">NOTE_STRUCTURE</a>&gt;&gt; </td><td>0:M </td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#note-structure-subr">NOTE_STRUCTURE</a>&gt;&gt; </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#source-citation-subr">SOURCE_CITATION</a>&gt;&gt; </td><td>0:M </td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#source-citation-subr">SOURCE_CITATION</a>&gt;&gt; </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#multimedia-link-subr">MULTIMEDIA_LINK</a>&gt;&gt; </td><td>0:M </td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#multimedia-link-subr">MULTIMEDIA_LINK</a>&gt;&gt; </td><td class="size">0:M</td></tr>
           </table>
         </dd>
 
@@ -1259,27 +1296,27 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
           <p>The OBJE_RECORD describes a multimedia file.</p>
 
           <table class="record-structure">
-            <tr><td class="code level-0"><i>n</i> @<a href="#prim-id-obje">ID:OBJE</a>@ <span class="required"><a href="#tag-def-obje">OBJE</a></span> </td><td>1:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> @<a href="#prim-id-obje">ID:OBJE</a>@ <span class="required"><a href="#tag-def-obje">OBJE</a></span> </td><td class="size">1:1</td></tr>
 
-            <tr><td class="code level-1">+1 <span class="required"><a href="#tag-def-file">FILE</a></span> &lt;<a href="#prim-multimedia-file-reference">MULTIMEDIA_FILE_REFERENCE</a>&gt; </td><td>1:M </td></tr>
+            <tr><td class="code level-1">+1 <span class="required"><a href="#tag-def-file">FILE</a></span> &lt;<a href="#prim-multimedia-file-reference">MULTIMEDIA_FILE_REFERENCE</a>&gt; </td><td class="size">1:M</td></tr>
 
-            <tr><td class="code level-2">+2 <span class="required"><a href="#tag-def-form">FORM</a></span> &lt;<a href="#prim-multimedia-format">MULTIMEDIA_FORMAT</a>&gt; </td><td>1:1 </td></tr>
+            <tr><td class="code level-2">+2 <span class="required"><a href="#tag-def-form">FORM</a></span> &lt;<a href="#prim-multimedia-format">MULTIMEDIA_FORMAT</a>&gt; </td><td class="size">1:1</td></tr>
 
-            <tr><td class="code level-3">+3 <a href="#tag-def-type">TYPE</a> &lt;<a href="#prim-source-media-type">SOURCE_MEDIA_TYPE</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-3">+3 <a href="#tag-def-type">TYPE</a> &lt;<a href="#prim-source-media-type">SOURCE_MEDIA_TYPE</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-2">+2 <a href="#tag-def-titl">TITL</a> &lt;<a href="#prim-descriptive-title">DESCRIPTIVE_TITLE</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-2">+2 <a href="#tag-def-titl">TITL</a> &lt;<a href="#prim-descriptive-title">DESCRIPTIVE_TITLE</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-refn">REFN</a> &lt;<a href="#prim-user-reference-number">USER_REFERENCE_NUMBER</a>&gt; </td><td>0:M </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-refn">REFN</a> &lt;<a href="#prim-user-reference-number">USER_REFERENCE_NUMBER</a>&gt; </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-2">+2 <a href="#tag-def-type">TYPE</a> &lt;<a href="#prim-user-reference-type">USER_REFERENCE_TYPE</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-2">+2 <a href="#tag-def-type">TYPE</a> &lt;<a href="#prim-user-reference-type">USER_REFERENCE_TYPE</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-rin">RIN</a> &lt;<a href="#prim-automated-record-id">AUTOMATED_RECORD_ID</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-rin">RIN</a> &lt;<a href="#prim-automated-record-id">AUTOMATED_RECORD_ID</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#note-structure-subr">NOTE_STRUCTURE</a>&gt;&gt; </td><td>0:M </td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#note-structure-subr">NOTE_STRUCTURE</a>&gt;&gt; </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#source-citation-subr">SOURCE_CITATION</a>&gt;&gt; </td><td>0:M </td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#source-citation-subr">SOURCE_CITATION</a>&gt;&gt; </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#change-date-subr">CHANGE_DATE</a>&gt;&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#change-date-subr">CHANGE_DATE</a>&gt;&gt; </td><td class="size">0:1</td></tr>
           </table>
         </dd>
 
@@ -1288,17 +1325,17 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
           <p>A NOTE_RECORD contains text that is referenced by one or more subrecords. The &lt;&lt;<a href="#note-structure-subr">NOTE_STRUCTURE</a>&gt;&gt; references the NOTE_RECORD.</p>
 
           <table class="record-structure">
-            <tr><td class="code level-0"><i>n</i> @&lt;<a href="#prim-id-note">ID:NOTE</a>&gt;@ <span class="required"><a href="#tag-def-note">NOTE</a></span> &lt;<a href="#prim-submitter-text">SUBMITTER_TEXT</a>&gt; </td><td>1:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> @&lt;<a href="#prim-id-note">ID:NOTE</a>&gt;@ <span class="required"><a href="#tag-def-note">NOTE</a></span> &lt;<a href="#prim-submitter-text">SUBMITTER_TEXT</a>&gt; </td><td class="size">1:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-refn">REFN</a> &lt;<a href="#prim-user-reference-number">USER_REFERENCE_NUMBER</a>&gt; </td><td>0:M </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-refn">REFN</a> &lt;<a href="#prim-user-reference-number">USER_REFERENCE_NUMBER</a>&gt; </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-2">+2 <a href="#tag-def-type">TYPE</a> &lt;<a href="#prim-user-reference-type">USER_REFERENCE_TYPE</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-2">+2 <a href="#tag-def-type">TYPE</a> &lt;<a href="#prim-user-reference-type">USER_REFERENCE_TYPE</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-rin">RIN</a> &lt;<a href="#prim-automated-record-id">AUTOMATED_RECORD_ID</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-rin">RIN</a> &lt;<a href="#prim-automated-record-id">AUTOMATED_RECORD_ID</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#source-citation-subr">SOURCE_CITATION</a>&gt;&gt; </td><td>0:M </td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#source-citation-subr">SOURCE_CITATION</a>&gt;&gt; </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#change-date-subr">CHANGE_DATE</a>&gt;&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#change-date-subr">CHANGE_DATE</a>&gt;&gt; </td><td class="size">0:1</td></tr>
           </table>
         </dd>
 
@@ -1307,21 +1344,23 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
           <p>A REPO_RECORD describes a repository. The &lt;&lt;<a href="#source-repository-citation-subr">SOURCE_REPOSITORY_CITATION</a>&gt;&gt; structure references the REPO_RECORD.</p>
 
           <table class="record-structure">
-            <tr><td class="code level-0"><i>n</i> @&lt;<a href="#prim-id-repo">ID:REPO</a>&gt;@ <span class="required"><a href="#tag-def-repo">REPO</a></span> </td><td>1:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> @&lt;<a href="#prim-id-repo">ID:REPO</a>&gt;@ <span class="required"><a href="#tag-def-repo">REPO</a></span> </td><td class="size">1:1</td></tr>
 
-            <tr><td class="code level-1">+1 <span class="required"><a href="#tag-def-name">NAME</a></span> &lt;<a href="#prim-name-of-repository">NAME_OF_REPOSITORY</a>&gt; </td><td>1:1 </td></tr>
+            <tr><td class="code level-1">+1 <span class="required"><a href="#tag-def-name">NAME</a></span> &lt;<a href="#prim-name-of-repository">NAME_OF_REPOSITORY</a>&gt; </td><td class="size">1:1</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#address-structure-subr">ADDRESS_STRUCTURE</a>&gt;&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#address-structure-subr">ADDRESS_STRUCTURE</a>&gt;&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#note-structure-subr">NOTE_STRUCTURE</a>&gt;&gt; </td><td>0:M </td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#contact-structure-subr">CONTACT_STRUCTURE</a>&gt;&gt; </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-refn">REFN</a> &lt;<a href="#prim-user-reference-number">USER_REFERENCE_NUMBER</a>&gt; </td><td>0:M </td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#note-structure-subr">NOTE_STRUCTURE</a>&gt;&gt; </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-2">+2 <a href="#tag-def-type">TYPE</a> &lt;<a href="#prim-user-reference-type">USER_REFERENCE_TYPE</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-refn">REFN</a> &lt;<a href="#prim-user-reference-number">USER_REFERENCE_NUMBER</a>&gt; </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-rin">RIN</a> &lt;<a href="#prim-automated-record-id">AUTOMATED_RECORD_ID</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-2">+2 <a href="#tag-def-type">TYPE</a> &lt;<a href="#prim-user-reference-type">USER_REFERENCE_TYPE</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#change-date-subr">CHANGE_DATE</a>&gt;&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-rin">RIN</a> &lt;<a href="#prim-automated-record-id">AUTOMATED_RECORD_ID</a>&gt; </td><td class="size">0:1</td></tr>
+
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#change-date-subr">CHANGE_DATE</a>&gt;&gt; </td><td class="size">0:1</td></tr>
           </table>
 
           <p>The REPO_RECORD structure describes the place where an item of source material is stored.</p>
@@ -1338,43 +1377,43 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
           <p>The SOUR_RECORD provides a bibliographic description of a cited source. The &lt;&lt;<a href="#source-citation-subr">SOURCE_CITATION</a>&gt;&gt; structure references the SOUR_RECORD.</p>
 
           <table class="record-structure">
-            <tr><td class="code level-0"><i>n</i> @&lt;<a href="#prim-id-sour">ID:SOUR</a>&gt;@ <span class="required"><a href="#tag-def-sour">SOUR</a></span> </td><td>1:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> @&lt;<a href="#prim-id-sour">ID:SOUR</a>&gt;@ <span class="required"><a href="#tag-def-sour">SOUR</a></span> </td><td class="size">1:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-data">DATA</a> </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-data">DATA</a> </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-2">+2 <a href="#tag-def-even">EVEN</a> &lt;<a href="#prim-events-recorded">EVENTS_RECORDED</a>&gt; </td><td>0:M </td></tr>
+            <tr><td class="code level-2">+2 <a href="#tag-def-even">EVEN</a> &lt;<a href="#prim-events-recorded">EVENTS_RECORDED</a>&gt; </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-3">+3 <a href="#tag-def-date">DATE</a> &lt;<a href="#prim-date-period">DATE_PERIOD</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-3">+3 <a href="#tag-def-date">DATE</a> &lt;<a href="#prim-date-period">DATE_PERIOD</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-3">+3 <a href="#tag-def-plac">PLAC</a> &lt;<a href="#prim-source-jurisdiction-place">SOURCE_JURISDICTION_PLACE</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-3">+3 <a href="#tag-def-plac">PLAC</a> &lt;<a href="#prim-source-jurisdiction-place">SOURCE_JURISDICTION_PLACE</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-2">+2 <a href="#tag-def-agnc">AGNC</a> &lt;<a href="#prim-responsible-agency">RESPONSIBLE_AGENCY</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-2">+2 <a href="#tag-def-agnc">AGNC</a> &lt;<a href="#prim-responsible-agency">RESPONSIBLE_AGENCY</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-2">+2 &lt;&lt;<a href="#note-structure-subr">NOTE_STRUCTURE</a>&gt;&gt; </td><td>0:M </td></tr>
+            <tr><td class="code level-2">+2 &lt;&lt;<a href="#note-structure-subr">NOTE_STRUCTURE</a>&gt;&gt; </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-auth">AUTH</a> &lt;<a href="#prim-source-originator">SOURCE_ORIGINATOR</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-auth">AUTH</a> &lt;<a href="#prim-source-originator">SOURCE_ORIGINATOR</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-titl">TITL</a> &lt;<a href="#prim-source-descriptive-title">SOURCE_DESCRIPTIVE_TITLE</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-titl">TITL</a> &lt;<a href="#prim-source-descriptive-title">SOURCE_DESCRIPTIVE_TITLE</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-abbr">ABBR</a> &lt;<a href="#prim-source-filed-by-entry">SOURCE_FILED_BY_ENTRY</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-abbr">ABBR</a> &lt;<a href="#prim-source-filed-by-entry">SOURCE_FILED_BY_ENTRY</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-publ">PUBL</a> &lt;<a href="#prim-source-publication-facts">SOURCE_PUBLICATION_FACTS</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-publ">PUBL</a> &lt;<a href="#prim-source-publication-facts">SOURCE_PUBLICATION_FACTS</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-text">TEXT</a> &lt;<a href="#prim-text-from-source">TEXT_FROM_SOURCE</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-text">TEXT</a> &lt;<a href="#prim-text-from-source">TEXT_FROM_SOURCE</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#source-repository-citation-subr">SOURCE_REPOSITORY_CITATION</a>&gt;&gt; </td><td>0:M </td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#source-repository-citation-subr">SOURCE_REPOSITORY_CITATION</a>&gt;&gt; </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-refn">REFN</a> &lt;<a href="#prim-user-reference-number">USER_REFERENCE_NUMBER</a>&gt; </td><td>0:M </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-refn">REFN</a> &lt;<a href="#prim-user-reference-number">USER_REFERENCE_NUMBER</a>&gt; </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-2">+2 <a href="#tag-def-type">TYPE</a> &lt;<a href="#prim-user-reference-type">USER_REFERENCE_TYPE</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-2">+2 <a href="#tag-def-type">TYPE</a> &lt;<a href="#prim-user-reference-type">USER_REFERENCE_TYPE</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-rin">RIN</a> &lt;<a href="#prim-automated-record-id">AUTOMATED_RECORD_ID</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-rin">RIN</a> &lt;<a href="#prim-automated-record-id">AUTOMATED_RECORD_ID</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#change-date-subr">CHANGE_DATE</a>&gt;&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#change-date-subr">CHANGE_DATE</a>&gt;&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#note-structure-subr">NOTE_STRUCTURE</a>&gt;&gt; </td><td>0:M </td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#note-structure-subr">NOTE_STRUCTURE</a>&gt;&gt; </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#multimedia-link-subr">MULTIMEDIA_LINK</a>&gt;&gt; </td><td>0:M </td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#multimedia-link-subr">MULTIMEDIA_LINK</a>&gt;&gt; </td><td class="size">0:M</td></tr>
           </table>
         </dd>
 
@@ -1383,25 +1422,25 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
       <dt id="subm-record">SUBN_RECORD</dt>
       <dd>
         <table class="record-structure">
-          <tr><td class="code level-0"><i>n</i> @<a href="#prim-id-subn">ID:SUBN</a>@ <span class="required"><a href="#tag-def-subn">SUBN</a></span> </td><td>1:1 </td></tr>
+          <tr><td class="code level-0"><i>n</i> @<a href="#prim-id-subn">ID:SUBN</a>@ <span class="required"><a href="#tag-def-subn">SUBN</a></span> </td><td class="size">1:1</td></tr>
 
-          <tr><td class="code level-1">+1 <a href="#tag-def-subm">SUBM</a> @<a href="#prim-id-subm">ID:SUBM</a>@ </td><td>0:1 </td></tr>
+          <tr><td class="code level-1">+1 <a href="#tag-def-subm">SUBM</a> @<a href="#prim-id-subm">ID:SUBM</a>@ </td><td class="size">0:1</td></tr>
 
-          <tr><td class="code level-1">+1 <a href="#tag-def-famf">FAMF</a> &lt;<a href="#prim-name-of-family-file">NAME_OF_FAMILY_FILE</a>&gt; </td><td>0:1 </td></tr>
+          <tr><td class="code level-1">+1 <a href="#tag-def-famf">FAMF</a> &lt;<a href="#prim-name-of-family-file">NAME_OF_FAMILY_FILE</a>&gt; </td><td class="size">0:1</td></tr>
 
-          <tr><td class="code level-1">+1 <a href="#tag-def-temp">TEMP</a> &lt;<a href="#prim-temple-code">TEMPLE_CODE</a>&gt; </td><td>0:1 </td></tr>
+          <tr><td class="code level-1">+1 <a href="#tag-def-temp">TEMP</a> &lt;<a href="#prim-temple-code">TEMPLE_CODE</a>&gt; </td><td class="size">0:1</td></tr>
 
-          <tr><td class="code level-1">+1 <a href="#tag-def-ance">ANCE</a> &lt;<a href="#prim-generations-of-ancestors">GENERATIONS_OF_ANCESTORS</a>&gt; </td><td>0:1 </td></tr>
+          <tr><td class="code level-1">+1 <a href="#tag-def-ance">ANCE</a> &lt;<a href="#prim-generations-of-ancestors">GENERATIONS_OF_ANCESTORS</a>&gt; </td><td class="size">0:1</td></tr>
 
-          <tr><td class="code level-1">+1 <a href="#tag-def-desc">DESC</a> &lt;<a href="#prim-generations-of-descendants">GENERATIONS_OF_DESCENDANTS</a>&gt; </td><td>0:1 </td></tr>
+          <tr><td class="code level-1">+1 <a href="#tag-def-desc">DESC</a> &lt;<a href="#prim-generations-of-descendants">GENERATIONS_OF_DESCENDANTS</a>&gt; </td><td class="size">0:1</td></tr>
 
-          <tr><td class="code level-1">+1 <a href="#tag-def-ordi">ORDI</a> &lt;<a href="#prim-ordinance-process-flag">ORDINANCE_PROCESS_FLAG</a>&gt; </td><td>0:1 </td></tr>
+          <tr><td class="code level-1">+1 <a href="#tag-def-ordi">ORDI</a> &lt;<a href="#prim-ordinance-process-flag">ORDINANCE_PROCESS_FLAG</a>&gt; </td><td class="size">0:1</td></tr>
 
-          <tr><td class="code level-1">+1 <a href="#tag-def-rin">RIN</a> &lt;<a href="#prim-automated-record-id">AUTOMATED_RECORD_ID</a>&gt; </td><td>0:1 </td></tr>
+          <tr><td class="code level-1">+1 <a href="#tag-def-rin">RIN</a> &lt;<a href="#prim-automated-record-id">AUTOMATED_RECORD_ID</a>&gt; </td><td class="size">0:1</td></tr>
 
-          <tr><td class="code level-1">+1 &lt;&lt;<a href="#note-structure-subr">NOTE_STRUCTURE</a>&gt;&gt; </td><td>0:M </td></tr>
+          <tr><td class="code level-1">+1 &lt;&lt;<a href="#note-structure-subr">NOTE_STRUCTURE</a>&gt;&gt; </td><td class="size">0:M</td></tr>
 
-          <tr><td class="code level-1">+1 &lt;&lt;<a href="#change-date-subr">CHANGE_DATE</a>&gt;&gt; </td><td>0:1 </td></tr>
+          <tr><td class="code level-1">+1 &lt;&lt;<a href="#change-date-subr">CHANGE_DATE</a>&gt;&gt; </td><td class="size">0:1</td></tr>
         </table>
 
         <p>The sending system uses a SUBN_RECORD to send instructions and information to the receiving system.</p>
@@ -1415,23 +1454,25 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
           <p>The SUBM_RECORD specifies the individual or organization that contributed information contained in the GEDCOM document.</p>
 
           <table class="record-structure">
-            <tr><td class="code level-0"><i>n</i> @&lt;<a href="#prim-id-subm">ID:SUBM</a>&gt;@ <span class="required"><a href="#tag-def-subm">SUBM</a></span> </td><td>1:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> @&lt;<a href="#prim-id-subm">ID:SUBM</a>&gt;@ <span class="required"><a href="#tag-def-subm">SUBM</a></span> </td><td class="size">1:1</td></tr>
 
-            <tr><td class="code level-1">+1 <span class="required"><a href="#tag-def-name">NAME</a></span> &lt;<a href="#prim-submitter-name">SUBMITTER_NAME</a>&gt; </td><td>1:1 </td></tr>
+            <tr><td class="code level-1">+1 <span class="required"><a href="#tag-def-name">NAME</a></span> &lt;<a href="#prim-submitter-name">SUBMITTER_NAME</a>&gt; </td><td class="size">1:1</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<span class="required"><a href="#address-structure-subr">ADDRESS_STRUCTURE</a></span>&gt;&gt; </td><td>0:1 *</td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<span class="required"><a href="#address-structure-subr">ADDRESS_STRUCTURE</a></span>&gt;&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#multimedia-link-subr">MULTIMEDIA_LINK</a>&gt;&gt; </td><td>0:M </td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#contact-structure-subr">CONTACT_STRUCTURE</a>&gt;&gt; </td><td class="size">0:M </td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-lang">LANG</a> &lt;<a href="#prim-language-preference">LANGUAGE_PREFERENCE</a>&gt; </td><td>0:3 </td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#multimedia-link-subr">MULTIMEDIA_LINK</a>&gt;&gt; </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-rfn">RFN</a> &lt;<a href="#prim-submitter-registered-rfn">SUBMITTER_REGISTERED_RFN</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-lang">LANG</a> &lt;<a href="#prim-language-preference">LANGUAGE_PREFERENCE</a>&gt; </td><td class="size">0:3</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-rin">RIN</a> &lt;<a href="#prim-automated-record-id">AUTOMATED_RECORD_ID</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-rfn">RFN</a> &lt;<a href="#prim-submitter-registered-rfn">SUBMITTER_REGISTERED_RFN</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#note-structure-subr">NOTE_STRUCTURE</a>&gt;&gt; </td><td>0:M </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-rin">RIN</a> &lt;<a href="#prim-automated-record-id">AUTOMATED_RECORD_ID</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#change-date-subr">CHANGE_DATE</a>&gt;&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#note-structure-subr">NOTE_STRUCTURE</a>&gt;&gt; </td><td class="size">0:M</td></tr>
+
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#change-date-subr">CHANGE_DATE</a>&gt;&gt; </td><td class="size">0:1</td></tr>
           </table>
         </dd>
 
@@ -1440,7 +1481,7 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
           <p>The TRLR_RECORD indicates the end of the GEDCOM document.</p>
 
           <table class="record-structure">
-            <tr><td class="code level-0">0 <span class="required"><a href="#tag-def-trlr">TRLR</a></span> </td><td>1:1 </td></tr>
+            <tr><td class="code level-0">0 <span class="required"><a href="#tag-def-trlr">TRLR</a></span> </td><td class="size">1:1</td></tr>
           </table>
 
           <p>The TRLR_RECORD is mandatory. It must not have a <a href="#line-value-component">line_value</a>.</p>
@@ -1459,39 +1500,34 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
           <p>The ADDRESS_STRUCTURE describes the elements of a mailing address.</p>
 
           <table class="record-structure">
-            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-addr">ADDR</a></span> &lt;<a href="#prim-address-line">ADDRESS_LINE</a>&gt; </td><td>1:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-addr">ADDR</a></span> &lt;<a href="#prim-address-line">ADDRESS_LINE</a>&gt; </td><td class="size">1:1</td></tr>
 
-            <tr><td class="code level-1">+1 <span class="required"><a href="#tag-def-cont">CONT</a></span> &lt;<a href="#prim-address-line">ADDRESS_LINE</a>&gt; </td><td>1:3 </td></tr>
+            <tr><td class="code level-1">+1 <span class="required"><a href="#tag-def-cont">CONT</a></span> &lt;<a href="#prim-address-line">ADDRESS_LINE</a>&gt; </td><td class="size">1:3</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-adr1">ADR1</a> &lt;<a href="#prim-address-line1">ADDRESS_LINE1</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-adr1">ADR1</a> &lt;<a href="#prim-address-line1">ADDRESS_LINE1</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-adr2">ADR2</a> &lt;<a href="#prim-address-line2">ADDRESS_LINE2</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-adr2">ADR2</a> &lt;<a href="#prim-address-line2">ADDRESS_LINE2</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-adr3">ADR3</a> &lt;<a href="#prim-address-line3">ADDRESS_LINE3</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-adr3">ADR3</a> &lt;<a href="#prim-address-line3">ADDRESS_LINE3</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-city">CITY</a> &lt;<a href="#prim-address-city">ADDRESS_CITY</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-city">CITY</a> &lt;<a href="#prim-address-city">ADDRESS_CITY</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-stae">STAE</a> &lt;<a href="#prim-address-state">ADDRESS_STATE</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-stae">STAE</a> &lt;<a href="#prim-address-state">ADDRESS_STATE</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-post">POST</a> &lt;<a href="#prim-address-postal-code">ADDRESS_POSTAL_CODE</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-post">POST</a> &lt;<a href="#prim-address-postal-code">ADDRESS_POSTAL_CODE</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-ctry">CTRY</a> &lt;<a href="#prim-address-country">ADDRESS_COUNTRY</a>&gt; </td><td>0:1 </td></tr>
-
-            <tr><td class="code level-0"><i>n</i> <a href="#tag-def-phon">PHON</a> &lt;<a href="#prim-phone-number">PHONE_NUMBER</a>&gt; </td><td>0:3 </td></tr>
-
-            <tr><td class="code level-0"><i>n</i> <a href="#tag-def-email">EMAIL</a> &lt;<a href="#prim-address-email">ADDRESS_EMAIL</a>&gt; </td><td>0:3 </td></tr>
-
-            <tr><td class="code level-0"><i>n</i> <a href="#tag-def-fax">FAX</a> &lt;<a href="#prim-address-fax">ADDRESS_FAX</a>&gt; </td><td>0:3 </td></tr>
-
-            <tr><td class="code level-0"><i>n</i> <a href="#tag-def-www">WWW</a> &lt;<a href="#prim-address-web-page">ADDRESS_WEB_PAGE</a>&gt; </td><td>0:3 </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-ctry">CTRY</a> &lt;<a href="#prim-address-country">ADDRESS_COUNTRY</a>&gt; </td><td class="size">0:1</td></tr>
           </table>
 
           <!-- TODO Add best practice, recommend new structures -->
-          <p>The ADDRESS_STRUCTURE contentshould be formed as it would appear on a mailing label using the <a href="#tag-def-addr">ADDR</a> and <a href="#tag-def-cont">CONT</a> subrecords to form the mailing address.</p>
+          <p>The ADDRESS_STRUCTURE contents should be formed as an address would appear on a mailing label using the <a href="#tag-def-addr">ADDR</a> and <a href="#tag-def-cont">CONT</a> subrecords to form the mailing address.</p>
 
           <p>The <a href="#tag-def-addr">ADDR</a> subrecord and at least one subordinate CONT subrecord are required.</p>
 
           <p class="provisional">The additional subordinate address subrecords such as <a href="#tag-def-stae">STAE</a> and <a href="#tag-def-ctry">CTRY</a> are intended to be used by systems that have structured their addresses for indexing and sorting. For backward compatibility these subrecords are not to be used in lieu of the required <a href="#tag-def-addr">ADDR</a> and <a href="#tag-def-cont">CONT</a> subrecords.</p>
+
+          <p>Subrecords that were included in the ADDRESS_STRUCTURE in previous versions of the GEDCOM standard are now defined in the &lt;<a href="#contact-structure-subr">CONTACT_STRUCTURE</a>&gt;.</p>
+
 <div class="references">
 <p>See:</p>
 <ul>
@@ -1508,13 +1544,13 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
           <p>The ASSOCIATION_STRUCTURE associates the current <a href="#indi-record">INDI_RECORD</a> to the INDI_RECORD with the given <a href="#prim-id-indi">ID:INDI</a>.</p>
 
           <table class="record-structure">
-            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-asso">ASSO</a></span> @&lt;<a href="#prim-id-indi">ID:INDI</a>&gt;@ </td><td>1:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-asso">ASSO</a></span> @&lt;<a href="#prim-id-indi">ID:INDI</a>&gt;@ </td><td class="size">1:1</td></tr>
 
-            <tr><td class="code level-1">+1 <span class="required"><a href="#tag-def-rela">RELA</a></span> &lt;<a href="#prim-relation-is-descriptor">RELATION_IS_DESCRIPTOR</a>&gt; </td><td>1:1 </td></tr>
+            <tr><td class="code level-1">+1 <span class="required"><a href="#tag-def-rela">RELA</a></span> &lt;<a href="#prim-relation-is-descriptor">RELATION_IS_DESCRIPTOR</a>&gt; </td><td class="size">1:1</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#source-citation-subr">SOURCE_CITATION</a>&gt;&gt; </td><td>0:M </td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#source-citation-subr">SOURCE_CITATION</a>&gt;&gt; </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#note-structure-subr">NOTE_STRUCTURE</a>&gt;&gt; </td><td>0:M </td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#note-structure-subr">NOTE_STRUCTURE</a>&gt;&gt; </td><td class="size">0:M</td></tr>
           </table>
 
           <p>The <a href="#tag-def-asso">ASSO</a> subrecord defines an association or relationship between the two individuals.</p>
@@ -1530,13 +1566,13 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
           <p>The CHANGE_DATE structure defines the last date and (optionally) time of a change to the parent record.</p>
 
           <table class="record-structure">
-            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-chan">CHAN</a></span> </td><td>1:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-chan">CHAN</a></span> </td><td class="size">1:1</td></tr>
 
-            <tr><td class="code level-1">+1 <span class="required"><a href="#tag-def-date">DATE</a></span> &lt;<a href="#prim-change-date">CHANGE_DATE</a>&gt; </td><td>1:1 </td></tr>
+            <tr><td class="code level-1">+1 <span class="required"><a href="#tag-def-date">DATE</a></span> &lt;<a href="#prim-change-date">CHANGE_DATE</a>&gt; </td><td class="size">1:1</td></tr>
 
-            <tr><td class="code level-2">+2 <a href="#tag-def-time">TIME</a> &lt;<a href="#prim-time-value">TIME_VALUE</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-2">+2 <a href="#tag-def-time">TIME</a> &lt;<a href="#prim-time-value">TIME_VALUE</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#note-structure-subr">NOTE_STRUCTURE</a>&gt;&gt; </td><td>0:M </td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#note-structure-subr">NOTE_STRUCTURE</a>&gt;&gt; </td><td class="size">0:M</td></tr>
           </table>
 <div class="references">
 <p>See:</p>
@@ -1557,17 +1593,42 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
           <p>The CHILD_TO_FAMILY_LINK structure provides a pointer to a family where this person is a child.</p>
 
           <table class="record-structure">
-            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-famc">FAMC</a></span> @&lt;<a href="#prim-id-fam">ID:FAM</a>&gt;@ </td><td>1:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-famc">FAMC</a></span> @&lt;<a href="#prim-id-fam">ID:FAM</a>&gt;@ </td><td class="size">1:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-pedi">PEDI</a> &lt;<a href="#prim-pedigree-linkage-type">PEDIGREE_LINKAGE_TYPE</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-pedi">PEDI</a> &lt;<a href="#prim-pedigree-linkage-type">PEDIGREE_LINKAGE_TYPE</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-stat">STAT</a> &lt;<a href="#prim-child-linkage-status">CHILD_LINKAGE_STATUS</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-stat">STAT</a> &lt;<a href="#prim-child-linkage-status">CHILD_LINKAGE_STATUS</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#note-structure-subr">NOTE_STRUCTURE</a>&gt;&gt; </td><td>0:M </td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#note-structure-subr">NOTE_STRUCTURE</a>&gt;&gt; </td><td class="size">0:M</td></tr>
           </table>
 <div class="references">
 <p>See: &lt;&lt;<a href="#indi-record">INDI<wbr>_RECORD</a>&gt;&gt;</p>
 </div>
+        </dd>
+
+        <dt id="contact-structure-subr">CONTACT_STRUCTURE</dt>
+        <dd>
+          <p>The CONTACT_STRUCTURE describes elements used to contact an individual or organization.</p>
+
+          <table class="record-structure">
+            <tr><td class="syntax-character" colspan="2">[</td></tr>
+
+            <tr><td class="code level-0"><i>n</i> <a href="#tag-def-phon">PHON</a> &lt;<a href="#prim-phone-number">PHONE_NUMBER</a>&gt; </td><td class="size">1:3</td></tr>
+
+            <tr><td class="syntax-character" colspan="2">|</td></tr>
+
+            <tr><td class="code level-0"><i>n</i> <a href="#tag-def-email">EMAIL</a> &lt;<a href="#prim-address-email">ADDRESS_EMAIL</a>&gt; </td><td class="size">1:3</td></tr>
+
+            <tr><td class="syntax-character" colspan="2">|</td></tr>
+
+            <tr><td class="code level-0"><i>n</i> <a href="#tag-def-fax">FAX</a> &lt;<a href="#prim-address-fax">ADDRESS_FAX</a>&gt; </td><td class="size">1:3</td></tr>
+
+            <tr><td class="syntax-character" colspan="2">|</td></tr>
+
+            <tr><td class="code level-0"><i>n</i> <a href="#tag-def-www">WWW</a> &lt;<a href="#prim-address-web-page">ADDRESS_WEB_PAGE</a>&gt; </td><td class="size">1:3</td></tr>
+
+            <tr><td class="syntax-character" colspan="2">]</td></tr>
+          </table>
         </dd>
 
         <dt id="event-or-fact-detail-subr">EVENT_OR_FACT_DETAIL</dt>
@@ -1575,27 +1636,29 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
           <p>The EVENT_OR_FACT_DETAIL structure describes common data elements used with individual events, individual attributes, and family events.</p>
 
           <table class="record-structure">
-            <tr><td class="code level-0"><i>n</i> <a href="#tag-def-type">TYPE</a> &lt;<a href="#prim-event-or-fact-classification">EVENT_OR_FACT_CLASSIFICATION</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> <a href="#tag-def-type">TYPE</a> &lt;<a href="#prim-event-or-fact-classification">EVENT_OR_FACT_CLASSIFICATION</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-0"><i>n</i> <a href="#tag-def-date">DATE</a> &lt;<a href="#prim-date-value">DATE_VALUE</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> <a href="#tag-def-date">DATE</a> &lt;<a href="#prim-date-value">DATE_VALUE</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-0"><i>n</i> &lt;&lt;<a href="#place-structure-subr">PLACE_STRUCTURE</a>&gt;&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> &lt;&lt;<a href="#place-structure-subr">PLACE_STRUCTURE</a>&gt;&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-0"><i>n</i> &lt;&lt;<a href="#address-structure-subr">ADDRESS_STRUCTURE</a>&gt;&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> &lt;&lt;<a href="#address-structure-subr">ADDRESS_STRUCTURE</a>&gt;&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-0"><i>n</i> <a href="#tag-def-agnc">AGNC</a> &lt;<a href="#prim-responsible-agency">RESPONSIBLE_AGENCY</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> &lt;&lt;<a href="#contact-structure-subr">CONTACT_STRUCTURE</a>&gt;&gt; </td><td class="size">0:M </td></tr>
 
-            <tr><td class="code level-0"><i>n</i> <a href="#tag-def-reli">RELI</a> &lt;<a href="#prim-religious-affiliation">RELIGIOUS_AFFILIATION</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> <a href="#tag-def-agnc">AGNC</a> &lt;<a href="#prim-responsible-agency">RESPONSIBLE_AGENCY</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-0"><i>n</i> <a href="#tag-def-caus">CAUS</a> &lt;<a href="#prim-cause-of-event">CAUSE_OF_EVENT</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> <a href="#tag-def-reli">RELI</a> &lt;<a href="#prim-religious-affiliation">RELIGIOUS_AFFILIATION</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-0"><i>n</i> <a href="#tag-def-resn">RESN</a> &lt;<a href="#prim-restriction-notice">RESTRICTION_NOTICE</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> <a href="#tag-def-caus">CAUS</a> &lt;<a href="#prim-cause-of-event">CAUSE_OF_EVENT</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-0"><i>n</i> &lt;&lt;<a href="#note-structure-subr">NOTE_STRUCTURE</a>&gt;&gt; </td><td>0:M </td></tr>
+            <tr><td class="code level-0"><i>n</i> <a href="#tag-def-resn">RESN</a> &lt;<a href="#prim-restriction-notice">RESTRICTION_NOTICE</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-0"><i>n</i> &lt;&lt;<a href="#source-citation-subr">SOURCE_CITATION</a>&gt;&gt; </td><td>0:M </td></tr>
+            <tr><td class="code level-0"><i>n</i> &lt;&lt;<a href="#note-structure-subr">NOTE_STRUCTURE</a>&gt;&gt; </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-0"><i>n</i> &lt;&lt;<a href="#multimedia-link-subr">MULTIMEDIA_LINK</a>&gt;&gt; </td><td>0:M </td></tr>
+            <tr><td class="code level-0"><i>n</i> &lt;&lt;<a href="#source-citation-subr">SOURCE_CITATION</a>&gt;&gt; </td><td class="size">0:M</td></tr>
+
+            <tr><td class="code level-0"><i>n</i> &lt;&lt;<a href="#multimedia-link-subr">MULTIMEDIA_LINK</a>&gt;&gt; </td><td class="size">0:M</td></tr>
           </table>
 <div class="references">
 <p>See:</p>
@@ -1611,15 +1674,15 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
         <dd>
 
           <table class="record-structure">
-            <tr><td class="code level-0"><i>n</i> <a href="#tag-def-husb">HUSB</a> </td><td>0:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> <a href="#tag-def-husb">HUSB</a> </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-age">AGE</a> &lt;<a href="#prim-age-at-event">AGE_AT_EVENT</a>&gt; </td><td>1:1 </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-age">AGE</a> &lt;<a href="#prim-age-at-event">AGE_AT_EVENT</a>&gt; </td><td class="size">1:1</td></tr>
 
-            <tr><td class="code level-0"><i>n</i> <a href="#tag-def-wife">WIFE</a> </td><td>0:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> <a href="#tag-def-wife">WIFE</a> </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-age">AGE</a> &lt;<a href="#prim-age-at-event">AGE_AT_EVENT</a>&gt; </td><td>1:1 </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-age">AGE</a> &lt;<a href="#prim-age-at-event">AGE_AT_EVENT</a>&gt; </td><td class="size">1:1</td></tr>
 
-            <tr><td class="code level-0"><i>n</i> &lt;&lt;<a href="#event-or-fact-detail-subr">EVENT_OR_FACT_DETAIL</a>&gt;&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> &lt;&lt;<a href="#event-or-fact-detail-subr">EVENT_OR_FACT_DETAIL</a>&gt;&gt; </td><td class="size">0:1</td></tr>
           </table>
 <div class="references">
 <p>See: &lt;&lt;<a href="#family-event-structure-subr">FAMILY<wbr>_EVENT<wbr>_STRUCTURE</a>&gt;&gt;</p>
@@ -1632,39 +1695,39 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
           <table class="record-structure">
             <tr><td class="syntax-character" colspan="2">[</td></tr>
 
-            <tr><td class="code level-0"><i>n</i> [ <span class="required"><a href="#tag-def-anul">ANUL</a></span> | <span class="required"><a href="#tag-def-cens">CENS</a></span> | <span class="required"><a href="#tag-def-div">DIV</a></span> | <span class="required"><a href="#tag-def-divf">DIVF</a></span> ] </td><td>1:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> [ <span class="required"><a href="#tag-def-anul">ANUL</a></span> | <span class="required"><a href="#tag-def-cens">CENS</a></span> | <span class="required"><a href="#tag-def-div">DIV</a></span> | <span class="required"><a href="#tag-def-divf">DIVF</a></span> ] </td><td class="size">1:1</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#family-event-detail-subr">FAMILY_EVENT_DETAIL</a>&gt;&gt; </td><td>0:1 </td></tr>
-
-            <tr><td class="syntax-character" colspan="2">|</td></tr>
-
-            <tr><td class="code level-0"><i>n</i> [ <span class="required"><a href="#tag-def-enga">ENGA</a></span> | <span class="required"><a href="#tag-def-marb">MARB</a></span> | <span class="required"><a href="#tag-def-marc">MARC</a></span> ] </td><td>1:1 </td></tr>
-
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#family-event-detail-subr">FAMILY_EVENT_DETAIL</a>&gt;&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#family-event-detail-subr">FAMILY_EVENT_DETAIL</a>&gt;&gt; </td><td class="size">0:1</td></tr>
 
             <tr><td class="syntax-character" colspan="2">|</td></tr>
 
-            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-marr">MARR</a></span> [ Y | &lt;<a href="#prim-null">NULL</a>&gt; ] </td><td>1:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> [ <span class="required"><a href="#tag-def-enga">ENGA</a></span> | <span class="required"><a href="#tag-def-marb">MARB</a></span> | <span class="required"><a href="#tag-def-marc">MARC</a></span> ] </td><td class="size">1:1</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#family-event-detail-subr">FAMILY_EVENT_DETAIL</a>&gt;&gt; </td><td>0:1 </td></tr>
-
-            <tr><td class="syntax-character" colspan="2">|</td></tr>
-
-            <tr><td class="code level-0"><i>n</i> [ <span class="required"><a href="#tag-def-marl">MARL</a></span> | <span class="required"><a href="#tag-def-mars">MARS</a></span> ] </td><td>1:1 </td></tr>
-
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#family-event-detail-subr">FAMILY_EVENT_DETAIL</a>&gt;&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#family-event-detail-subr">FAMILY_EVENT_DETAIL</a>&gt;&gt; </td><td class="size">0:1</td></tr>
 
             <tr><td class="syntax-character" colspan="2">|</td></tr>
 
-            <tr><td class="code level-0"><i>n</i> <a href="#tag-def-resi">RESI</a></td><td>0:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-marr">MARR</a></span> [ Y | &lt;<a href="#prim-null">NULL</a>&gt; ] </td><td class="size">1:1</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#family-event-detail-subr">FAMILY_EVENT_DETAIL</a>&gt;&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#family-event-detail-subr">FAMILY_EVENT_DETAIL</a>&gt;&gt; </td><td class="size">0:1</td></tr>
 
             <tr><td class="syntax-character" colspan="2">|</td></tr>
 
-            <tr><td class="code level-0"><i>n</i> <a href="#tag-def-even">EVEN</a> [ &lt;<a href="#prim-event-descriptor">EVENT_DESCRIPTOR</a>&gt; | &lt;<a href="#prim-null">NULL</a>&gt; ]  </td><td>1:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> [ <span class="required"><a href="#tag-def-marl">MARL</a></span> | <span class="required"><a href="#tag-def-mars">MARS</a></span> ] </td><td class="size">1:1</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#family-event-detail-subr">FAMILY_EVENT_DETAIL</a>&gt;&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#family-event-detail-subr">FAMILY_EVENT_DETAIL</a>&gt;&gt; </td><td class="size">0:1</td></tr>
+
+            <tr><td class="syntax-character" colspan="2">|</td></tr>
+
+            <tr><td class="code level-0"><i>n</i> <a href="#tag-def-resi">RESI</a></td><td class="size">0:1</td></tr>
+
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#family-event-detail-subr">FAMILY_EVENT_DETAIL</a>&gt;&gt; </td><td class="size">0:1</td></tr>
+
+            <tr><td class="syntax-character" colspan="2">|</td></tr>
+
+            <tr><td class="code level-0"><i>n</i> <a href="#tag-def-even">EVEN</a> [ &lt;<a href="#prim-event-descriptor">EVENT_DESCRIPTOR</a>&gt; | &lt;<a href="#prim-null">NULL</a>&gt; ]  </td><td class="size">1:1</td></tr>
+
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#family-event-detail-subr">FAMILY_EVENT_DETAIL</a>&gt;&gt; </td><td class="size">0:1</td></tr>
 
             <tr><td class="syntax-character" colspan="2">]</td></tr>
           </table>
@@ -1678,96 +1741,96 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
           <table class="record-structure">
             <tr><td class="syntax-character" colspan="2">[</td></tr>
 
-            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-cast">CAST</a></span> &lt;<a href="#prim-caste-name">CASTE_NAME</a>&gt;</td><td>1:1</td></tr>
+            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-cast">CAST</a></span> &lt;<a href="#prim-caste-name">CASTE_NAME</a>&gt;</td><td class="size">1:1</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#event-or-fact-detail-subr">EVENT_OR_FACT_DETAIL</a>&gt;&gt; </td><td>0:1<sup class="note"><a href="#individual-attribute-structure-note-1">1</a></sup></td></tr>
-
-            <tr><td class="syntax-character" colspan="2">|</td></tr>
-
-            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-dscr">DSCR</a></span> &lt;<a href="#prim-physical-description">PHYSICAL_DESCRIPTION</a>&gt; </td><td>1:1 </td></tr>
-
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#event-or-fact-detail-subr">EVENT_OR_FACT_DETAIL</a>&gt;&gt; </td><td>0:1<sup class="note"><a href="#individual-attribute-structure-note-1">1</a></sup></td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#event-or-fact-detail-subr">EVENT_OR_FACT_DETAIL</a>&gt;&gt; </td><td class="size">0:1<sup class="note"><a href="#individual-attribute-structure-note-1">1</a></sup></td></tr>
 
             <tr><td class="syntax-character" colspan="2">|</td></tr>
 
-            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-educ">EDUC</a></span> &lt;<a href="#prim-scholastic-achievement">SCHOLASTIC_ACHIEVEMENT</a>&gt; </td><td>1:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-dscr">DSCR</a></span> &lt;<a href="#prim-physical-description">PHYSICAL_DESCRIPTION</a>&gt; </td><td class="size">1:1</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#event-or-fact-detail-subr">EVENT_OR_FACT_DETAIL</a>&gt;&gt; </td><td>0:1<sup class="note"><a href="#individual-attribute-structure-note-1">1</a></sup></td></tr>
-
-            <tr><td class="syntax-character" colspan="2">|</td></tr>
-
-            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-idno">IDNO</a></span> &lt;<a href="#prim-national-id-number">NATIONAL_ID_NUMBER</a>&gt; </td><td>1:1 </td></tr>
-
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#event-or-fact-detail-subr">EVENT_OR_FACT_DETAIL</a>&gt;&gt; </td><td>0:1<sup class="note"><a href="#individual-attribute-structure-note-2">2</a></sup></td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#event-or-fact-detail-subr">EVENT_OR_FACT_DETAIL</a>&gt;&gt; </td><td class="size">0:1<sup class="note"><a href="#individual-attribute-structure-note-1">1</a></sup></td></tr>
 
             <tr><td class="syntax-character" colspan="2">|</td></tr>
 
-            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-nati">NATI</a></span> &lt;<a href="#prim-national-or-tribal-origin">NATIONAL_OR_TRIBAL_ORIGIN</a>&gt; </td><td>1:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-educ">EDUC</a></span> &lt;<a href="#prim-scholastic-achievement">SCHOLASTIC_ACHIEVEMENT</a>&gt; </td><td class="size">1:1</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#event-or-fact-detail-subr">EVENT_OR_FACT_DETAIL</a>&gt;&gt; </td><td>0:1<sup class="note"><a href="#individual-attribute-structure-note-1">1</a></sup></td></tr>
-
-            <tr><td class="syntax-character" colspan="2">|</td></tr>
-
-            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-nchi">NCHI</a></span> &lt;<a href="#prim-count-of-children">COUNT_OF_CHILDREN</a>&gt; </td><td>1:1 </td></tr>
-
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#event-or-fact-detail-subr">EVENT_OR_FACT_DETAIL</a>&gt;&gt; </td><td>0:1<sup class="note"><a href="#individual-attribute-structure-note-1">1</a></sup></td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#event-or-fact-detail-subr">EVENT_OR_FACT_DETAIL</a>&gt;&gt; </td><td class="size">0:1<sup class="note"><a href="#individual-attribute-structure-note-1">1</a></sup></td></tr>
 
             <tr><td class="syntax-character" colspan="2">|</td></tr>
 
-            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-nmr">NMR</a></span> &lt;<a href="#prim-count-of-marriages">COUNT_OF_MARRIAGES</a>&gt; </td><td>1:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-idno">IDNO</a></span> &lt;<a href="#prim-national-id-number">NATIONAL_ID_NUMBER</a>&gt; </td><td class="size">1:1</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#event-or-fact-detail-subr">EVENT_OR_FACT_DETAIL</a>&gt;&gt; </td><td>0:1<sup class="note"><a href="#individual-attribute-structure-note-1">1</a></sup></td></tr>
-
-            <tr><td class="syntax-character" colspan="2">|</td></tr>
-
-            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-occu">OCCU</a></span> &lt;<a href="#prim-occupation">OCCUPATION</a>&gt; </td><td>1:1 </td></tr>
-
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#event-or-fact-detail-subr">EVENT_OR_FACT_DETAIL</a>&gt;&gt; </td><td>0:1<sup class="note"><a href="#individual-attribute-structure-note-1">1</a></sup></td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#event-or-fact-detail-subr">EVENT_OR_FACT_DETAIL</a>&gt;&gt; </td><td class="size">0:1<sup class="note"><a href="#individual-attribute-structure-note-2">2</a></sup></td></tr>
 
             <tr><td class="syntax-character" colspan="2">|</td></tr>
 
-            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-prop">PROP</a></span> &lt;<a href="#prim-possessions">POSSESSIONS</a>&gt; </td><td>1:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-nati">NATI</a></span> &lt;<a href="#prim-national-or-tribal-origin">NATIONAL_OR_TRIBAL_ORIGIN</a>&gt; </td><td class="size">1:1</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#event-or-fact-detail-subr">EVENT_OR_FACT_DETAIL</a>&gt;&gt; </td><td>0:1<sup class="note"><a href="#individual-attribute-structure-note-1">1</a></sup></td></tr>
-
-            <tr><td class="syntax-character" colspan="2">|</td></tr>
-
-            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-reli">RELI</a></span> &lt;<a href="#prim-religious-affiliation">RELIGIOUS_AFFILIATION</a>&gt; </td><td>1:1 </td></tr>
-
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#event-or-fact-detail-subr">EVENT_OR_FACT_DETAIL</a>&gt;&gt; </td><td>0:1<sup class="note"><a href="#individual-attribute-structure-note-1">1</a></sup></td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#event-or-fact-detail-subr">EVENT_OR_FACT_DETAIL</a>&gt;&gt; </td><td class="size">0:1<sup class="note"><a href="#individual-attribute-structure-note-1">1</a></sup></td></tr>
 
             <tr><td class="syntax-character" colspan="2">|</td></tr>
 
-            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-resi">RESI</a></span> /<sup class="note"><a href="#individual-attribute-structure-note-1">1</a></sup> Resides at<sup class="note"><a href="#individual-attribute-structure-note-1">1</a></sup>/ </td><td>1:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-nchi">NCHI</a></span> &lt;<a href="#prim-count-of-children">COUNT_OF_CHILDREN</a>&gt; </td><td class="size">1:1</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#event-or-fact-detail-subr">EVENT_OR_FACT_DETAIL</a>&gt;&gt; </td><td>0:1<sup class="note"><a href="#individual-attribute-structure-note-1">1</a></sup></td></tr>
-
-            <tr><td class="syntax-character" colspan="2">|</td></tr>
-
-            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-ssn">SSN</a></span> &lt;<a href="#prim-social-security-number">SOCIAL_SECURITY_NUMBER</a>&gt; </td><td>1:1 </td></tr>
-
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#event-or-fact-detail-subr">EVENT_OR_FACT_DETAIL</a>&gt;&gt; </td><td>0:1<sup class="note"><a href="#individual-attribute-structure-note-1">1</a></sup></td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#event-or-fact-detail-subr">EVENT_OR_FACT_DETAIL</a>&gt;&gt; </td><td class="size">0:1<sup class="note"><a href="#individual-attribute-structure-note-1">1</a></sup></td></tr>
 
             <tr><td class="syntax-character" colspan="2">|</td></tr>
 
-            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-titl">TITL</a></span> &lt;<a href="#prim-nobility-type-title">NOBILITY_TYPE_TITLE</a>&gt; </td><td>1:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-nmr">NMR</a></span> &lt;<a href="#prim-count-of-marriages">COUNT_OF_MARRIAGES</a>&gt; </td><td class="size">1:1</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#event-or-fact-detail-subr">EVENT_OR_FACT_DETAIL</a>&gt;&gt; </td><td>0:1<sup class="note"><a href="#individual-attribute-structure-note-1">1</a></sup></td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#event-or-fact-detail-subr">EVENT_OR_FACT_DETAIL</a>&gt;&gt; </td><td class="size">0:1<sup class="note"><a href="#individual-attribute-structure-note-1">1</a></sup></td></tr>
 
             <tr><td class="syntax-character" colspan="2">|</td></tr>
 
-            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-fact">FACT</a></span> &lt;<a href="#prim-attribute-descriptor">ATTRIBUTE_DESCRIPTOR</a>&gt; </td><td>1:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-occu">OCCU</a></span> &lt;<a href="#prim-occupation">OCCUPATION</a>&gt; </td><td class="size">1:1</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#event-or-fact-detail-subr">EVENT_OR_FACT_DETAIL</a>&gt;&gt; </td><td>0:1<sup class="note"><a href="#individual-attribute-structure-note-2">2</a></sup></td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#event-or-fact-detail-subr">EVENT_OR_FACT_DETAIL</a>&gt;&gt; </td><td class="size">0:1<sup class="note"><a href="#individual-attribute-structure-note-1">1</a></sup></td></tr>
+
+            <tr><td class="syntax-character" colspan="2">|</td></tr>
+
+            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-prop">PROP</a></span> &lt;<a href="#prim-possessions">POSSESSIONS</a>&gt; </td><td class="size">1:1</td></tr>
+
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#event-or-fact-detail-subr">EVENT_OR_FACT_DETAIL</a>&gt;&gt; </td><td class="size">0:1<sup class="note"><a href="#individual-attribute-structure-note-1">1</a></sup></td></tr>
+
+            <tr><td class="syntax-character" colspan="2">|</td></tr>
+
+            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-reli">RELI</a></span> &lt;<a href="#prim-religious-affiliation">RELIGIOUS_AFFILIATION</a>&gt; </td><td class="size">1:1</td></tr>
+
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#event-or-fact-detail-subr">EVENT_OR_FACT_DETAIL</a>&gt;&gt; </td><td class="size">0:1<sup class="note"><a href="#individual-attribute-structure-note-1">1</a></sup></td></tr>
+
+            <tr><td class="syntax-character" colspan="2">|</td></tr>
+
+            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-resi">RESI</a></span> /<sup class="note"><a href="#individual-attribute-structure-note-1">1</a></sup> Resides at<sup class="note"><a href="#individual-attribute-structure-note-1">1</a></sup>/ </td><td class="size">1:1</td></tr>
+
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#event-or-fact-detail-subr">EVENT_OR_FACT_DETAIL</a>&gt;&gt; </td><td class="size">0:1<sup class="note"><a href="#individual-attribute-structure-note-1">1</a></sup></td></tr>
+
+            <tr><td class="syntax-character" colspan="2">|</td></tr>
+
+            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-ssn">SSN</a></span> &lt;<a href="#prim-social-security-number">SOCIAL_SECURITY_NUMBER</a>&gt; </td><td class="size">1:1</td></tr>
+
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#event-or-fact-detail-subr">EVENT_OR_FACT_DETAIL</a>&gt;&gt; </td><td class="size">0:1<sup class="note"><a href="#individual-attribute-structure-note-1">1</a></sup></td></tr>
+
+            <tr><td class="syntax-character" colspan="2">|</td></tr>
+
+            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-titl">TITL</a></span> &lt;<a href="#prim-nobility-type-title">NOBILITY_TYPE_TITLE</a>&gt; </td><td class="size">1:1</td></tr>
+
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#event-or-fact-detail-subr">EVENT_OR_FACT_DETAIL</a>&gt;&gt; </td><td class="size">0:1<sup class="note"><a href="#individual-attribute-structure-note-1">1</a></sup></td></tr>
+
+            <tr><td class="syntax-character" colspan="2">|</td></tr>
+
+            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-fact">FACT</a></span> &lt;<a href="#prim-attribute-descriptor">ATTRIBUTE_DESCRIPTOR</a>&gt; </td><td class="size">1:1</td></tr>
+
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#event-or-fact-detail-subr">EVENT_OR_FACT_DETAIL</a>&gt;&gt; </td><td class="size">0:1<sup class="note"><a href="#individual-attribute-structure-note-2">2</a></sup></td></tr>
 
             <tr><td class="syntax-character" colspan="2">]</td></tr>
           </table>
 
           <h4>Notes</h4>
           <ol>
-            <li id="individual-attribute-structure-note-1">The <a href="#tag-def-type">TYPE</a> tag may be used with this tag to provide an &lt;<a href="#prim-event-or-fact-classification">EVENT_OR_FACT_CLASSIFICATION</a>&gt;.</li>
+            <li id="individual-attribute-structure-note-1">The <a href="#tag-def-type">TYPE</a> subrecord may be used with this subrecord to provide an &lt;<a href="#prim-event-or-fact-classification">EVENT_OR_FACT_CLASSIFICATION</a>&gt;.</li>
 
-            <li id="individual-attribute-structure-note-2">The <a href="#tag-def-type">TYPE</a> tag must be used with this tag to provide an &lt;<a href="#prim-event-or-fact-classification">EVENT_OR_FACT_CLASSIFICATION</a>&gt;.</li>
+            <li id="individual-attribute-structure-note-2">The <a href="#tag-def-type">TYPE</a> subrecord must be used with this subrecord to provide an &lt;<a href="#prim-event-or-fact-classification">EVENT_OR_FACT_CLASSIFICATION</a>&gt;.</li>
           </ol>
 <div class="references">
 <p>See: &lt;&lt;<a href="#indi-record">INDI<wbr>_RECORD</a>&gt;&gt;</p>
@@ -1778,9 +1841,9 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
         <dd>
 
           <table class="record-structure">
-            <tr><td class="code level-0"><i>n</i> &lt;&lt;<span class="required"><a href="#event-or-fact-detail-subr">EVENT_OR_FACT_DETAIL</a></span>&gt;&gt; </td><td>1:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> &lt;&lt;<span class="required"><a href="#event-or-fact-detail-subr">EVENT_OR_FACT_DETAIL</a></span>&gt;&gt; </td><td class="size">1:1</td></tr>
 
-            <tr><td class="code level-0"><i>n</i> <a href="#tag-def-age">AGE</a> &lt;<a href="#prim-age-at-event">AGE_AT_EVENT</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> <a href="#tag-def-age">AGE</a> &lt;<a href="#prim-age-at-event">AGE_AT_EVENT</a>&gt; </td><td class="size">0:1</td></tr>
           </table>
 <div class="references">
 <p>See: &lt;&lt;<a href="#individual-event-structure-subr">INDIVIDUAL<wbr>_EVENT<wbr>_STRUCTURE</a>&gt;&gt;</p>
@@ -1793,78 +1856,78 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
           <table class="record-structure">
             <tr><td class="syntax-character" colspan="2">[</td></tr>
 
-            <tr><td class="code level-0"><i>n</i> [ <span class="required"><a href="#tag-def-birt">BIRT</a></span> | <span class="required"><a href="#tag-def-chr">CHR</a></span> ] [Y|&lt;<a href="#prim-null">NULL</a>&gt;] </td><td>1:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> [ <span class="required"><a href="#tag-def-birt">BIRT</a></span> | <span class="required"><a href="#tag-def-chr">CHR</a></span> ] [Y|&lt;<a href="#prim-null">NULL</a>&gt;] </td><td class="size">1:1</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#individual-event-detail-subr">INDIVIDUAL_EVENT_DETAIL</a>&gt;&gt; </td><td>0:1 *</td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#individual-event-detail-subr">INDIVIDUAL_EVENT_DETAIL</a>&gt;&gt; </td><td class="size">0:1*</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-famc">FAMC</a> @&lt;<a href="#prim-id-fam">ID:FAM</a>&gt;@ </td><td>0:1 </td></tr>
-
-            <tr><td class="syntax-character" colspan="2">|</td></tr>
-
-            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-deat">DEAT</a></span> [Y|&lt;<a href="#prim-null">NULL</a>&gt;] </td><td>1:1 </td></tr>
-
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#individual-event-detail-subr">INDIVIDUAL_EVENT_DETAIL</a>&gt;&gt; </td><td>0:1 *</td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-famc">FAMC</a> @&lt;<a href="#prim-id-fam">ID:FAM</a>&gt;@ </td><td class="size">0:1</td></tr>
 
             <tr><td class="syntax-character" colspan="2">|</td></tr>
 
-            <tr><td class="code level-0"><i>n</i> [ <span class="required"><a href="#tag-def-buri">BURI</a></span> | <span class="required"><a href="#tag-def-crem">CREM</a></span> ] </td><td>1:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-deat">DEAT</a></span> [Y|&lt;<a href="#prim-null">NULL</a>&gt;] </td><td class="size">1:1</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#individual-event-detail-subr">INDIVIDUAL_EVENT_DETAIL</a>&gt;&gt; </td><td>0:1 *</td></tr>
-
-            <tr><td class="syntax-character" colspan="2">|</td></tr>
-
-            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-adop">ADOP</a></span> </td><td>1:1 </td></tr>
-
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#individual-event-detail-subr">INDIVIDUAL_EVENT_DETAIL</a>&gt;&gt; </td><td>0:1 *</td></tr>
-
-            <tr><td class="code level-1">+1 <a href="#tag-def-famc">FAMC</a> @&lt;<a href="#prim-id-fam">ID:FAM</a>&gt;@ </td><td>0:1 </td></tr>
-
-            <tr><td class="code level-2">+2 <a href="#tag-def-adop">ADOP</a> &lt;<a href="#prim-adopted-by-which-parent">ADOPTED_BY_WHICH_PARENT</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#individual-event-detail-subr">INDIVIDUAL_EVENT_DETAIL</a>&gt;&gt; </td><td class="size">0:1*</td></tr>
 
             <tr><td class="syntax-character" colspan="2">|</td></tr>
 
-            <tr><td class="code level-0"><i>n</i> [ <span class="required"><a href="#tag-def-bapm">BAPM</a></span> | <span class="required"><a href="#tag-def-barm">BARM</a></span> | <span class="required"><a href="#tag-def-basm">BASM</a></span> | <span class="required"><a href="#tag-def-bles">BLES</a></span> ] </td><td>1:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> [ <span class="required"><a href="#tag-def-buri">BURI</a></span> | <span class="required"><a href="#tag-def-crem">CREM</a></span> ] </td><td class="size">1:1</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#individual-event-detail-subr">INDIVIDUAL_EVENT_DETAIL</a>&gt;&gt; </td><td>0:1 *</td></tr>
-
-            <tr><td class="syntax-character" colspan="2">|</td></tr>
-
-            <tr><td class="code level-0"><i>n</i> [ <span class="required"><a href="#tag-def-chra">CHRA</a></span> | <span class="required"><a href="#tag-def-conf">CONF</a></span> | <span class="required"><a href="#tag-def-fcom">FCOM</a></span> | <span class="required"><a href="#tag-def-ordn">ORDN</a></span> ] </td><td>1:1 </td></tr>
-
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#individual-event-detail-subr">INDIVIDUAL_EVENT_DETAIL</a>&gt;&gt; </td><td>0:1 *</td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#individual-event-detail-subr">INDIVIDUAL_EVENT_DETAIL</a>&gt;&gt; </td><td class="size">0:1*</td></tr>
 
             <tr><td class="syntax-character" colspan="2">|</td></tr>
 
-            <tr><td class="code level-0"><i>n</i> [ <span class="required"><a href="#tag-def-natu">NATU</a></span> | <span class="required"><a href="#tag-def-emig">EMIG</a></span> | <span class="required"><a href="#tag-def-immi">IMMI</a></span> ] </td><td>1:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-adop">ADOP</a></span> </td><td class="size">1:1</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#individual-event-detail-subr">INDIVIDUAL_EVENT_DETAIL</a>&gt;&gt; </td><td>0:1 *</td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#individual-event-detail-subr">INDIVIDUAL_EVENT_DETAIL</a>&gt;&gt; </td><td class="size">0:1*</td></tr>
 
-            <tr><td class="syntax-character" colspan="2">|</td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-famc">FAMC</a> @&lt;<a href="#prim-id-fam">ID:FAM</a>&gt;@ </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-0"><i>n</i> [ <span class="required"><a href="#tag-def-cens">CENS</a></span> | <span class="required"><a href="#tag-def-prob">PROB</a></span> | <span class="required"><a href="#tag-def-will">WILL</a></span>] </td><td>1:1 </td></tr>
-
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#individual-event-detail-subr">INDIVIDUAL_EVENT_DETAIL</a>&gt;&gt; </td><td>0:1 *</td></tr>
+            <tr><td class="code level-2">+2 <a href="#tag-def-adop">ADOP</a> &lt;<a href="#prim-adopted-by-which-parent">ADOPTED_BY_WHICH_PARENT</a>&gt; </td><td class="size">0:1</td></tr>
 
             <tr><td class="syntax-character" colspan="2">|</td></tr>
 
-            <tr><td class="code level-0"><i>n</i> [ <span class="required"><a href="#tag-def-grad">GRAD</a></span> | <span class="required"><a href="#tag-def-reti">RETI</a></span> ] </td><td>1:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> [ <span class="required"><a href="#tag-def-bapm">BAPM</a></span> | <span class="required"><a href="#tag-def-barm">BARM</a></span> | <span class="required"><a href="#tag-def-basm">BASM</a></span> | <span class="required"><a href="#tag-def-bles">BLES</a></span> ] </td><td class="size">1:1</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#individual-event-detail-subr">INDIVIDUAL_EVENT_DETAIL</a>&gt;&gt; </td><td>0:1 *</td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#individual-event-detail-subr">INDIVIDUAL_EVENT_DETAIL</a>&gt;&gt; </td><td class="size">0:1*</td></tr>
 
             <tr><td class="syntax-character" colspan="2">|</td></tr>
 
-            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-even">EVEN</a></span> [ &lt;<a href="#prim-event-descriptor">EVENT_DESCRIPTOR</a>&gt; | &lt;<a href="#prim-null">NULL</a>&gt; ] </td><td>1:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> [ <span class="required"><a href="#tag-def-chra">CHRA</a></span> | <span class="required"><a href="#tag-def-conf">CONF</a></span> | <span class="required"><a href="#tag-def-fcom">FCOM</a></span> | <span class="required"><a href="#tag-def-ordn">ORDN</a></span> ] </td><td class="size">1:1</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#individual-event-detail-subr">INDIVIDUAL_EVENT_DETAIL</a>&gt;&gt; </td><td>0:1 *</td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#individual-event-detail-subr">INDIVIDUAL_EVENT_DETAIL</a>&gt;&gt; </td><td class="size">0:1*</td></tr>
+
+            <tr><td class="syntax-character" colspan="2">|</td></tr>
+
+            <tr><td class="code level-0"><i>n</i> [ <span class="required"><a href="#tag-def-natu">NATU</a></span> | <span class="required"><a href="#tag-def-emig">EMIG</a></span> | <span class="required"><a href="#tag-def-immi">IMMI</a></span> ] </td><td class="size">1:1</td></tr>
+
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#individual-event-detail-subr">INDIVIDUAL_EVENT_DETAIL</a>&gt;&gt; </td><td class="size">0:1*</td></tr>
+
+            <tr><td class="syntax-character" colspan="2">|</td></tr>
+
+            <tr><td class="code level-0"><i>n</i> [ <span class="required"><a href="#tag-def-cens">CENS</a></span> | <span class="required"><a href="#tag-def-prob">PROB</a></span> | <span class="required"><a href="#tag-def-will">WILL</a></span>] </td><td class="size">1:1</td></tr>
+
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#individual-event-detail-subr">INDIVIDUAL_EVENT_DETAIL</a>&gt;&gt; </td><td class="size">0:1*</td></tr>
+
+            <tr><td class="syntax-character" colspan="2">|</td></tr>
+
+            <tr><td class="code level-0"><i>n</i> [ <span class="required"><a href="#tag-def-grad">GRAD</a></span> | <span class="required"><a href="#tag-def-reti">RETI</a></span> ] </td><td class="size">1:1</td></tr>
+
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#individual-event-detail-subr">INDIVIDUAL_EVENT_DETAIL</a>&gt;&gt; </td><td class="size">0:1*</td></tr>
+
+            <tr><td class="syntax-character" colspan="2">|</td></tr>
+
+            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-even">EVEN</a></span> [ &lt;<a href="#prim-event-descriptor">EVENT_DESCRIPTOR</a>&gt; | &lt;<a href="#prim-null">NULL</a>&gt; ] </td><td class="size">1:1</td></tr>
+
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#individual-event-detail-subr">INDIVIDUAL_EVENT_DETAIL</a>&gt;&gt; </td><td class="size">0:1*</td></tr>
 
             <tr><td class="syntax-character" colspan="2">]</td></tr>
           </table>
 
           <p>Events are things that happen on a specific date. Use the date form "BET date AND date" to indicate that an event took place at some time between two dates. Resist the temptation to use a "FROM date TO date" form in an event structure. If the subject of your recording occurred over a period of time, then it is probably not an event, but rather an attribute or fact.</p>
 
-          <p>The <a href="#tag-def-even">EVEN</a> tag in this structure is for recording general events that are not shown in the above &lt;&lt;<a href="#individual-event-structure-subr">INDIVIDUAL_EVENT_STRUCTURE</a>&gt;&gt;. See the <a href="#tag-def-even">EVEN</a> tag definition for more details.</p>
+          <p>The <a href="#tag-def-even">EVEN</a> subrecord in this structure is for recording general events that are not shown in the above &lt;&lt;<a href="#individual-event-structure-subr">INDIVIDUAL_EVENT_STRUCTURE</a>&gt;&gt;. See the <a href="#tag-def-even">EVEN</a> subrecord definition for more details.</p>
 
-          <p>The occurrence of an event is asserted by the presence of either a <a href="#tag-def-date">DATE</a> tag and value or a PLACe tag and value in the event structure. When neither the date value nor the place value are known then a <code>Y</code>(yes) value on the parent subrecord is required to assert that the event happened.</p>
+          <p>The occurrence of an event is asserted by the presence of either a <a href="#tag-def-date">DATE</a> subrecord or a <a href="#tag-def-plac">PLAC</a> subrecord in the event structure. When neither the date nor the place are known then a <code>Y</code> (yes) value on the parent subrecord is required to assert that the event happened.</p>
 
           <p>For example each of the following GEDCOM structures assert that a death happened:</p>
 
@@ -1876,7 +1939,7 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
 2 <a href="#tag-def-plac">PLAC</a> Cove, Cache, Utah
 </pre>
 
-          <p>Using this convention, as opposed to the just the presence of the tag, protects GEDCOM processors which removes (prunes) lines which have neither a value nor any subordinate line. It also allows a note or source to be attached to an event context without implying that the event occurred. It is not proper GEDCOM form to use a N(o) value with an event tag to infer that it did not happen.</p>
+          <p>It is invalid to use a <code class="incorrect">N</code> value with an event subrecord to infer that the event did not happen.</p>
 <div class="references">
 <p>See: &lt;&lt;<a href="#indi-record">INDI<wbr>_RECORD</a>&gt;&gt;</p>
 </div>
@@ -1888,59 +1951,59 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
           <table class="record-structure">
             <tr><td class="syntax-character" colspan="2">[</td></tr>
 
-            <tr><td class="code level-0"><i>n</i> [ <span class="required"><a href="#tag-def-bapl">BAPL</a></span> | <span class="required"><a href="#tag-def-conl">CONL</a></span> ] </td><td>1:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> [ <span class="required"><a href="#tag-def-bapl">BAPL</a></span> | <span class="required"><a href="#tag-def-conl">CONL</a></span> ] </td><td class="size">1:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-date">DATE</a> &lt;<a href="#prim-date-lds-ord">DATE_LDS_ORD</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-date">DATE</a> &lt;<a href="#prim-date-lds-ord">DATE_LDS_ORD</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-temp">TEMP</a> &lt;<a href="#prim-temple-code">TEMPLE_CODE</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-temp">TEMP</a> &lt;<a href="#prim-temple-code">TEMPLE_CODE</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-plac">PLAC</a> &lt;<a href="#prim-place-living-ordinance">PLACE_LIVING_ORDINANCE</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-plac">PLAC</a> &lt;<a href="#prim-place-living-ordinance">PLACE_LIVING_ORDINANCE</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-stat">STAT</a> &lt;<a href="#prim-lds-baptism-date-status">LDS_BAPTISM_DATE_STATUS</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-stat">STAT</a> &lt;<a href="#prim-lds-baptism-date-status">LDS_BAPTISM_DATE_STATUS</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-2">+2 <a href="#tag-def-date">DATE</a> &lt;<a href="#prim-change-date">CHANGE_DATE</a>&gt; </td><td>1:1 </td></tr>
+            <tr><td class="code level-2">+2 <a href="#tag-def-date">DATE</a> &lt;<a href="#prim-change-date">CHANGE_DATE</a>&gt; </td><td class="size">1:1</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#note-structure-subr">NOTE_STRUCTURE</a>&gt;&gt; </td><td>0:M </td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#note-structure-subr">NOTE_STRUCTURE</a>&gt;&gt; </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#source-citation-subr">SOURCE_CITATION</a>&gt;&gt; </td><td>0:M </td></tr>
-
-            <tr><td class="syntax-character" colspan="2">|</td></tr>
-
-            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-endl">ENDL</a></span> </td><td>1:1 </td></tr>
-
-            <tr><td class="code level-1">+1 <a href="#tag-def-date">DATE</a> &lt;<a href="#prim-date-lds-ord">DATE_LDS_ORD</a>&gt; </td><td>0:1 </td></tr>
-
-            <tr><td class="code level-1">+1 <a href="#tag-def-temp">TEMP</a> &lt;<a href="#prim-temple-code">TEMPLE_CODE</a>&gt; </td><td>0:1 </td></tr>
-
-            <tr><td class="code level-1">+1 <a href="#tag-def-plac">PLAC</a> &lt;<a href="#prim-place-living-ordinance">PLACE_LIVING_ORDINANCE</a>&gt; </td><td>0:1 </td></tr>
-
-            <tr><td class="code level-1">+1 <a href="#tag-def-stat">STAT</a> &lt;<a href="#prim-lds-endowment-date-status">LDS_ENDOWMENT_DATE_STATUS</a>&gt; </td><td>0:1 </td></tr>
-
-            <tr><td class="code level-2">+2 <a href="#tag-def-date">DATE</a> &lt;<a href="#prim-change-date">CHANGE_DATE</a>&gt; </td><td>1:1 </td></tr>
-
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#note-structure-subr">NOTE_STRUCTURE</a>&gt;&gt; </td><td>0:M </td></tr>
-
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#source-citation-subr">SOURCE_CITATION</a>&gt;&gt; </td><td>0:M </td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#source-citation-subr">SOURCE_CITATION</a>&gt;&gt; </td><td class="size">0:M</td></tr>
 
             <tr><td class="syntax-character" colspan="2">|</td></tr>
 
-            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-slgc">SLGC</a></span> </td><td>1:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-endl">ENDL</a></span> </td><td class="size">1:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-date">DATE</a> &lt;<a href="#prim-date-lds-ord">DATE_LDS_ORD</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-date">DATE</a> &lt;<a href="#prim-date-lds-ord">DATE_LDS_ORD</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-temp">TEMP</a> &lt;<a href="#prim-temple-code">TEMPLE_CODE</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-temp">TEMP</a> &lt;<a href="#prim-temple-code">TEMPLE_CODE</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-plac">PLAC</a> &lt;<a href="#prim-place-living-ordinance">PLACE_LIVING_ORDINANCE</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-plac">PLAC</a> &lt;<a href="#prim-place-living-ordinance">PLACE_LIVING_ORDINANCE</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-famc">FAMC</a> @&lt;<a href="#prim-id-fam">ID:FAM</a>&gt;@ </td><td>1:1 </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-stat">STAT</a> &lt;<a href="#prim-lds-endowment-date-status">LDS_ENDOWMENT_DATE_STATUS</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-stat">STAT</a> &lt;<a href="#prim-lds-child-sealing-date-status">LDS_CHILD_SEALING_DATE_STATUS</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-2">+2 <a href="#tag-def-date">DATE</a> &lt;<a href="#prim-change-date">CHANGE_DATE</a>&gt; </td><td class="size">1:1</td></tr>
 
-            <tr><td class="code level-2">+2 <a href="#tag-def-date">DATE</a> &lt;<a href="#prim-change-date">CHANGE_DATE</a>&gt; </td><td>1:1 </td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#note-structure-subr">NOTE_STRUCTURE</a>&gt;&gt; </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#note-structure-subr">NOTE_STRUCTURE</a>&gt;&gt; </td><td>0:M </td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#source-citation-subr">SOURCE_CITATION</a>&gt;&gt; </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#source-citation-subr">SOURCE_CITATION</a>&gt;&gt; </td><td>0:M </td></tr>
+            <tr><td class="syntax-character" colspan="2">|</td></tr>
+
+            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-slgc">SLGC</a></span> </td><td class="size">1:1</td></tr>
+
+            <tr><td class="code level-1">+1 <a href="#tag-def-date">DATE</a> &lt;<a href="#prim-date-lds-ord">DATE_LDS_ORD</a>&gt; </td><td class="size">0:1</td></tr>
+
+            <tr><td class="code level-1">+1 <a href="#tag-def-temp">TEMP</a> &lt;<a href="#prim-temple-code">TEMPLE_CODE</a>&gt; </td><td class="size">0:1</td></tr>
+
+            <tr><td class="code level-1">+1 <a href="#tag-def-plac">PLAC</a> &lt;<a href="#prim-place-living-ordinance">PLACE_LIVING_ORDINANCE</a>&gt; </td><td class="size">0:1</td></tr>
+
+            <tr><td class="code level-1">+1 <a href="#tag-def-famc">FAMC</a> @&lt;<a href="#prim-id-fam">ID:FAM</a>&gt;@ </td><td class="size">1:1</td></tr>
+
+            <tr><td class="code level-1">+1 <a href="#tag-def-stat">STAT</a> &lt;<a href="#prim-lds-child-sealing-date-status">LDS_CHILD_SEALING_DATE_STATUS</a>&gt; </td><td class="size">0:1</td></tr>
+
+            <tr><td class="code level-2">+2 <a href="#tag-def-date">DATE</a> &lt;<a href="#prim-change-date">CHANGE_DATE</a>&gt; </td><td class="size">1:1</td></tr>
+
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#note-structure-subr">NOTE_STRUCTURE</a>&gt;&gt; </td><td class="size">0:M</td></tr>
+
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#source-citation-subr">SOURCE_CITATION</a>&gt;&gt; </td><td class="size">0:M</td></tr>
 
             <tr><td class="syntax-character" colspan="2">]</td></tr>
           </table>
@@ -1953,21 +2016,21 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
         <dd>
 
           <table class="record-structure">
-            <tr><td class="code level-0"><i>n</i> <b><a href="#tag-def-slgs">SLGS</a></b> </td><td>1:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> <b><a href="#tag-def-slgs">SLGS</a></b> </td><td class="size">1:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-date">DATE</a> &lt;<a href="#prim-date-lds-ord">DATE_LDS_ORD</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-date">DATE</a> &lt;<a href="#prim-date-lds-ord">DATE_LDS_ORD</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-temp">TEMP</a> &lt;<a href="#prim-temple-code">TEMPLE_CODE</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-temp">TEMP</a> &lt;<a href="#prim-temple-code">TEMPLE_CODE</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-plac">PLAC</a> &lt;<a href="#prim-place-living-ordinance">PLACE_LIVING_ORDINANCE</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-plac">PLAC</a> &lt;<a href="#prim-place-living-ordinance">PLACE_LIVING_ORDINANCE</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-stat">STAT</a> &lt;<a href="#prim-lds-spouse-sealing-date-status">LDS_SPOUSE_SEALING_DATE_STATUS</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-stat">STAT</a> &lt;<a href="#prim-lds-spouse-sealing-date-status">LDS_SPOUSE_SEALING_DATE_STATUS</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-2">+2 <a href="#tag-def-date">DATE</a> &lt;<a href="#prim-change-date">CHANGE_DATE</a>&gt; </td><td>1:1 </td></tr>
+            <tr><td class="code level-2">+2 <a href="#tag-def-date">DATE</a> &lt;<a href="#prim-change-date">CHANGE_DATE</a>&gt; </td><td class="size">1:1</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#note-structure-subr">NOTE_STRUCTURE</a>&gt;&gt; </td><td>0:M </td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#note-structure-subr">NOTE_STRUCTURE</a>&gt;&gt; </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#source-citation-subr">SOURCE_CITATION</a>&gt;&gt; </td><td>0:M </td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#source-citation-subr">SOURCE_CITATION</a>&gt;&gt; </td><td class="size">0:M</td></tr>
           </table>
 <div class="references">
 <p>See: &lt;&lt;<a href="#fam-record">FAM<wbr>_RECORD</a>&gt;&gt;</p>
@@ -1979,19 +2042,19 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
           <table class="record-structure">
             <tr><td class="syntax-character" colspan="2">[</td></tr>
 
-            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-obje">OBJE</a></span> @&lt;<a href="#prim-id-obje">ID:OBJE</a>&gt;@ </td><td>1:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-obje">OBJE</a></span> @&lt;<a href="#prim-id-obje">ID:OBJE</a>&gt;@ </td><td class="size">1:1</td></tr>
 
             <tr><td class="syntax-character" colspan="2">|</td></tr>
 
             <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-obje">OBJE</a></span> </td><td class="size"></td></tr>
 
-            <tr><td class="code level-1">+1 <span class="required"><a href="#tag-def-file">FILE</a></span> &lt;<a href="#prim-multimedia-file-reference">MULTIMEDIA_FILE_REFERENCE</a>&gt; </td><td>1:M </td></tr>
+            <tr><td class="code level-1">+1 <span class="required"><a href="#tag-def-file">FILE</a></span> &lt;<a href="#prim-multimedia-file-reference">MULTIMEDIA_FILE_REFERENCE</a>&gt; </td><td class="size">1:M</td></tr>
 
-            <tr><td class="code level-2">+2 <span class="required"><a href="#tag-def-form">FORM</a></span> &lt;<a href="#prim-multimedia-format">MULTIMEDIA_FORMAT</a>&gt; </td><td>1:1 </td></tr>
+            <tr><td class="code level-2">+2 <span class="required"><a href="#tag-def-form">FORM</a></span> &lt;<a href="#prim-multimedia-format">MULTIMEDIA_FORMAT</a>&gt; </td><td class="size">1:1</td></tr>
 
-            <tr><td class="code level-3">+3 <a href="#tag-def-medi">MEDI</a> &lt;<a href="#prim-source-media-type">SOURCE_MEDIA_TYPE</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-3">+3 <a href="#tag-def-medi">MEDI</a> &lt;<a href="#prim-source-media-type">SOURCE_MEDIA_TYPE</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-titl">TITL</a> &lt;<a href="#prim-descriptive-title">DESCRIPTIVE_TITLE</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-titl">TITL</a> &lt;<a href="#prim-descriptive-title">DESCRIPTIVE_TITLE</a>&gt; </td><td class="size">0:1</td></tr>
 
             <tr><td class="syntax-character" colspan="2">]</td></tr>
           </table>
@@ -2032,11 +2095,11 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
           <table class="record-structure">
             <tr><td class="syntax-character" colspan="2">[</td></tr>
 
-            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-note">NOTE</a></span> @&lt;<a href="#prim-id-note">ID:NOTE</a>&gt;@ </td><td>1:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-note">NOTE</a></span> @&lt;<a href="#prim-id-note">ID:NOTE</a>&gt;@ </td><td class="size">1:1</td></tr>
 
             <tr><td class="syntax-character" colspan="2">|</td></tr>
 
-            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-note">NOTE</a></span> [&lt;<a href="#prim-submitter-text">SUBMITTER_TEXT</a>&gt; | &lt;<a href="#prim-null">NULL</a>&gt;] </td><td>1:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-note">NOTE</a></span> [&lt;<a href="#prim-submitter-text">SUBMITTER_TEXT</a>&gt; | &lt;<a href="#prim-null">NULL</a>&gt;] </td><td class="size">1:1</td></tr>
 
             <tr><td class="syntax-character" colspan="2">]</td></tr>
           </table>
@@ -2068,21 +2131,21 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
         <dd>
 
           <table class="record-structure">
-            <tr><td class="code level-0"><i>n</i> <a href="#tag-def-npfx">NPFX</a> &lt;<a href="#prim-name-piece-prefix">NAME_PIECE_PREFIX</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> <a href="#tag-def-npfx">NPFX</a> &lt;<a href="#prim-name-piece-prefix">NAME_PIECE_PREFIX</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-0"><i>n</i> <a href="#tag-def-givn">GIVN</a> &lt;<a href="#prim-name-piece-given">NAME_PIECE_GIVEN</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> <a href="#tag-def-givn">GIVN</a> &lt;<a href="#prim-name-piece-given">NAME_PIECE_GIVEN</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-0"><i>n</i> <a href="#tag-def-nick">NICK</a> &lt;<a href="#prim-name-piece-nickname">NAME_PIECE_NICKNAME</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> <a href="#tag-def-nick">NICK</a> &lt;<a href="#prim-name-piece-nickname">NAME_PIECE_NICKNAME</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-0"><i>n</i> <a href="#tag-def-spfx">SPFX</a> &lt;<a href="#prim-name-piece-surname-prefix">NAME_PIECE_SURNAME_PREFIX</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> <a href="#tag-def-spfx">SPFX</a> &lt;<a href="#prim-name-piece-surname-prefix">NAME_PIECE_SURNAME_PREFIX</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-0"><i>n</i> <a href="#tag-def-surn">SURN</a> &lt;<a href="#prim-name-piece-surname">NAME_PIECE_SURNAME</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> <a href="#tag-def-surn">SURN</a> &lt;<a href="#prim-name-piece-surname">NAME_PIECE_SURNAME</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-0"><i>n</i> <a href="#tag-def-nsfx">NSFX</a> &lt;<a href="#prim-name-piece-suffix">NAME_PIECE_SUFFIX</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> <a href="#tag-def-nsfx">NSFX</a> &lt;<a href="#prim-name-piece-suffix">NAME_PIECE_SUFFIX</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-0"><i>n</i> &lt;&lt;<a href="#note-structure-subr">NOTE_STRUCTURE</a>&gt;&gt; </td><td>0:M </td></tr>
+            <tr><td class="code level-0"><i>n</i> &lt;&lt;<a href="#note-structure-subr">NOTE_STRUCTURE</a>&gt;&gt; </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-0"><i>n</i> &lt;&lt;<a href="#source-citation-subr">SOURCE_CITATION</a>&gt;&gt; </td><td>0:M </td></tr>
+            <tr><td class="code level-0"><i>n</i> &lt;&lt;<a href="#source-citation-subr">SOURCE_CITATION</a>&gt;&gt; </td><td class="size">0:M</td></tr>
           </table>
 <div class="references">
 <p>See: &lt;&lt;<a href="#personal-name-structure-subr">PERSONAL<wbr>_NAME<wbr>_STRUCTURE</a>&gt;&gt;</p>
@@ -2093,23 +2156,23 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
         <dd>
 
           <table class="record-structure">
-            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-name">NAME</a></span> &lt;<a href="#prim-name-personal">NAME_PERSONAL</a>&gt; </td><td>1:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-name">NAME</a></span> &lt;<a href="#prim-name-personal">NAME_PERSONAL</a>&gt; </td><td class="size">1:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-type">TYPE</a> &lt;<a href="#prim-name-type">NAME_TYPE</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-type">TYPE</a> &lt;<a href="#prim-name-type">NAME_TYPE</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#personal-name-pieces-subr">PERSONAL_NAME_PIECES</a>&gt;&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#personal-name-pieces-subr">PERSONAL_NAME_PIECES</a>&gt;&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-fone">FONE</a> &lt;<a href="#prim-name-phonetic-variation">NAME_PHONETIC_VARIATION</a>&gt; </td><td>0:M </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-fone">FONE</a> &lt;<a href="#prim-name-phonetic-variation">NAME_PHONETIC_VARIATION</a>&gt; </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-2">+2 <a href="#tag-def-type">TYPE</a> &lt;<a href="#prim-phonetic-type">PHONETIC_TYPE</a>&gt; </td><td>1:1 </td></tr>
+            <tr><td class="code level-2">+2 <a href="#tag-def-type">TYPE</a> &lt;<a href="#prim-phonetic-type">PHONETIC_TYPE</a>&gt; </td><td class="size">1:1</td></tr>
 
-            <tr><td class="code level-2">+2 &lt;&lt;<a href="#personal-name-pieces-subr">PERSONAL_NAME_PIECES</a>&gt;&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-2">+2 &lt;&lt;<a href="#personal-name-pieces-subr">PERSONAL_NAME_PIECES</a>&gt;&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-romn">ROMN</a> &lt;<a href="#prim-name-romanized-variation">NAME_ROMANIZED_VARIATION</a>&gt; </td><td>0:M </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-romn">ROMN</a> &lt;<a href="#prim-name-romanized-variation">NAME_ROMANIZED_VARIATION</a>&gt; </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-2">+2 <a href="#tag-def-type">TYPE</a> &lt;<a href="#prim-romanized-type">ROMANIZED_TYPE</a>&gt; </td><td>1:1 </td></tr>
+            <tr><td class="code level-2">+2 <a href="#tag-def-type">TYPE</a> &lt;<a href="#prim-romanized-type">ROMANIZED_TYPE</a>&gt; </td><td class="size">1:1</td></tr>
 
-            <tr><td class="code level-2">+2 &lt;&lt;<a href="#personal-name-pieces-subr">PERSONAL_NAME_PIECES</a>&gt;&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-2">+2 &lt;&lt;<a href="#personal-name-pieces-subr">PERSONAL_NAME_PIECES</a>&gt;&gt; </td><td class="size">0:1</td></tr>
           </table>
 
           <p>The <a href="#tag-def-type">TYPE</a> &lt;<a href="#prim-name-type">NAME_TYPE</a>&gt; subrecord is used to indicate the the type of the PERSONAL_NAME_STRUCTURE, for example, a married name, or some particular type of alternate name.</p>
@@ -2123,25 +2186,25 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
         <dd>
 
           <table class="record-structure">
-            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-plac">PLAC</a></span> &lt;<a href="#prim-place-name">PLACE_NAME</a>&gt; </td><td>1:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-plac">PLAC</a></span> &lt;<a href="#prim-place-name">PLACE_NAME</a>&gt; </td><td class="size">1:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-form">FORM</a> &lt;<a href="#prim-place-hierarchy">PLACE_HIERARCHY</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-form">FORM</a> &lt;<a href="#prim-place-hierarchy">PLACE_HIERARCHY</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-fone">FONE</a> &lt;<a href="#prim-place-phonetic-variation">PLACE_PHONETIC_VARIATION</a>&gt; </td><td>0:M </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-fone">FONE</a> &lt;<a href="#prim-place-phonetic-variation">PLACE_PHONETIC_VARIATION</a>&gt; </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-2">+2 <a href="#tag-def-type">TYPE</a> &lt;<a href="#prim-phonetic-type">PHONETIC_TYPE</a>&gt; </td><td>1:1 </td></tr>
+            <tr><td class="code level-2">+2 <a href="#tag-def-type">TYPE</a> &lt;<a href="#prim-phonetic-type">PHONETIC_TYPE</a>&gt; </td><td class="size">1:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-romn">ROMN</a> &lt;<a href="#prim-place-romanized-variation">PLACE_ROMANIZED_VARIATION</a>&gt; </td><td>0:M </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-romn">ROMN</a> &lt;<a href="#prim-place-romanized-variation">PLACE_ROMANIZED_VARIATION</a>&gt; </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-2">+2 <a href="#tag-def-type">TYPE</a> &lt;<a href="#prim-romanized-type">ROMANIZED_TYPE</a>&gt; </td><td>1:1 </td></tr>
+            <tr><td class="code level-2">+2 <a href="#tag-def-type">TYPE</a> &lt;<a href="#prim-romanized-type">ROMANIZED_TYPE</a>&gt; </td><td class="size">1:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-map">MAP</a> </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-map">MAP</a> </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-2">+2 <a href="#tag-def-lati">LATI</a> &lt;<a href="#prim-place-latitude">PLACE_LATITUDE</a>&gt; </td><td>1:1 </td></tr>
+            <tr><td class="code level-2">+2 <a href="#tag-def-lati">LATI</a> &lt;<a href="#prim-place-latitude">PLACE_LATITUDE</a>&gt; </td><td class="size">1:1</td></tr>
 
-            <tr><td class="code level-2">+2 <a href="#tag-def-long">LONG</a> &lt;<a href="#prim-place-longitude">PLACE_LONGITUDE</a>&gt; </td><td>1:1 </td></tr>
+            <tr><td class="code level-2">+2 <a href="#tag-def-long">LONG</a> &lt;<a href="#prim-place-longitude">PLACE_LONGITUDE</a>&gt; </td><td class="size">1:1</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#note-structure-subr">NOTE_STRUCTURE</a>&gt;&gt; </td><td>0:M </td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#note-structure-subr">NOTE_STRUCTURE</a>&gt;&gt; </td><td class="size">0:M</td></tr>
           </table>
 <div class="references">
 <p>See: &lt;&lt;<a href="#event-or-fact-detail-subr">EVENT<wbr>_OR<wbr>_FACT<wbr>_DETAIL</a>&gt;&gt;</p>
@@ -2152,39 +2215,39 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
         <dd>
           <p>Structure when using a <a href="#pointer-component">pointer</a> to a <a href="#sour-record">SOUR_RECORD</a>:</p>
           <table class="record-structure">
-            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-sour">SOUR</a></span> @&lt;<a href="#prim-id-sour">ID:SOUR</a>&gt;@ </td><td>1:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-sour">SOUR</a></span> @&lt;<a href="#prim-id-sour">ID:SOUR</a>&gt;@ </td><td class="size">1:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-page">PAGE</a> &lt;<a href="#prim-where-within-source">WHERE_WITHIN_SOURCE</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-page">PAGE</a> &lt;<a href="#prim-where-within-source">WHERE_WITHIN_SOURCE</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-even">EVEN</a> &lt;<a href="#prim-event-type-cited-from">EVENT_TYPE_CITED_FROM</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-even">EVEN</a> &lt;<a href="#prim-event-type-cited-from">EVENT_TYPE_CITED_FROM</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-2">+2 <a href="#tag-def-role">ROLE</a> &lt;<a href="#prim-role-in-event">ROLE_IN_EVENT</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-2">+2 <a href="#tag-def-role">ROLE</a> &lt;<a href="#prim-role-in-event">ROLE_IN_EVENT</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-data">DATA</a> </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-data">DATA</a> </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-2">+2 <a href="#tag-def-date">DATE</a> &lt;<a href="#prim-entry-recording-date">ENTRY_RECORDING_DATE</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-2">+2 <a href="#tag-def-date">DATE</a> &lt;<a href="#prim-entry-recording-date">ENTRY_RECORDING_DATE</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-2">+2 <a href="#tag-def-text">TEXT</a> &lt;<a href="#prim-text-from-source">TEXT_FROM_SOURCE</a>&gt; </td><td>0:M </td></tr>
+            <tr><td class="code level-2">+2 <a href="#tag-def-text">TEXT</a> &lt;<a href="#prim-text-from-source">TEXT_FROM_SOURCE</a>&gt; </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#multimedia-link-subr">MULTIMEDIA_LINK</a>&gt;&gt; </td><td>0:M </td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#multimedia-link-subr">MULTIMEDIA_LINK</a>&gt;&gt; </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#note-structure-subr">NOTE_STRUCTURE</a>&gt;&gt; </td><td>0:M </td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#note-structure-subr">NOTE_STRUCTURE</a>&gt;&gt; </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-1">+1 QUAY &lt;<a href="#prim-certainty-assessment">CERTAINTY_ASSESSMENT</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 QUAY &lt;<a href="#prim-certainty-assessment">CERTAINTY_ASSESSMENT</a>&gt; </td><td class="size">0:1</td></tr>
           </table>
 
           <p>Structure when <em>not</em> using a <a href="#pointer-component">pointer</a> to a <a href="#sour-record">SOUR_RECORD</a>:</p>
 
           <table class="record-structure">
-            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-sour">SOUR</a></span> &lt;<a href="#prim-source-description">SOURCE_DESCRIPTION</a>&gt; </td><td>1:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-sour">SOUR</a></span> &lt;<a href="#prim-source-description">SOURCE_DESCRIPTION</a>&gt; </td><td class="size">1:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-text">TEXT</a> &lt;<a href="#prim-text-from-source">TEXT_FROM_SOURCE</a>&gt; </td><td>0:M </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-text">TEXT</a> &lt;<a href="#prim-text-from-source">TEXT_FROM_SOURCE</a>&gt; </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#multimedia-link-subr">MULTIMEDIA_LINK</a>&gt;&gt; </td><td>0:M </td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#multimedia-link-subr">MULTIMEDIA_LINK</a>&gt;&gt; </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#note-structure-subr">NOTE_STRUCTURE</a>&gt;&gt; </td><td>0:M </td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#note-structure-subr">NOTE_STRUCTURE</a>&gt;&gt; </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-1">+1 QUAY &lt;<a href="#prim-certainty-assessment">CERTAINTY_ASSESSMENT</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-1">+1 QUAY &lt;<a href="#prim-certainty-assessment">CERTAINTY_ASSESSMENT</a>&gt; </td><td class="size">0:1</td></tr>
           </table>
 
           <p>The data provided in the &lt;&lt;<a href="#source-citation-subr">SOURCE_CITATION</a>&gt;&gt; structure is source-related information specific to the data being cited. Systems that do not use a <a href="#sour-record">SOUR_RECORD</a> must use the non-preferred second SOURCE_CITATION structure option.</p>
@@ -2194,17 +2257,17 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
           <ul>
             <li>The pointer to the SOUR_RECORD, which contains a more general description of the source used for the data being cited.</li>
 
-            <li>Information, such as a page number, to help the user find the cited data within the referenced source. This is stored in the ".<a href="#tag-def-sour">SOUR</a>.<a href="#tag-def-page">PAGE</a>" tag context.</li>
+            <li>Information, such as a page number, to help the user find the cited data within the referenced source. This is stored in the ".<a href="#tag-def-sour">SOUR</a>.<a href="#tag-def-page">PAGE</a>" subrecord.</li>
 
-            <li>Actual text from the source that was used in making assertions, for example a date phrase as actually recorded in the source, or significant notes written by the recorder, or an applicable sentence from a letter. This is stored in the ".<a href="#tag-def-sour">SOUR</a>.<a href="#tag-def-data">DATA</a>.<a href="#tag-def-text">TEXT</a>" tag context.</li>
+            <li>Actual text from the source that was used in making assertions, for example a date phrase as actually recorded in the source, or significant notes written by the recorder, or an applicable sentence from a letter. This is stored in the ".<a href="#tag-def-sour">SOUR</a>.<a href="#tag-def-data">DATA</a>.<a href="#tag-def-text">TEXT</a>" subrecord.</li>
 
             <li>
               <p>Data that allows an assessment of the relative value of one source over another for making the recorded assertions (primary or secondary source, etc.). Data needed for this assessment is data that would help determine how much time from the date of the asserted fact and when the source was actually recorded, what type of event was cited, and what type of role did this person have in the cited source.</p>
 
               <ul>
-                <li>Date when the entry was recorded in source document is stored in the ".<a href="#tag-def-sour">SOUR</a>.<a href="#tag-def-data">DATA</a>.<a href="#tag-def-date">DATE</a>" tag context.</li>
+                <li>Date when the entry was recorded in source document is stored in the ".<a href="#tag-def-sour">SOUR</a>.<a href="#tag-def-data">DATA</a>.<a href="#tag-def-date">DATE</a>" subrecord.</li>
 
-                <li>The type of event that initiated the recording is stored in the "<a href="#tag-def-sour">SOUR</a>.<a href="#tag-def-even">EVEN</a>" tag context. The value used is the event code taken from the table of choices shown in the EVENT_TYPE_CITED_FROM primitive.</li>
+                <li>The type of event that initiated the recording is stored in the "<a href="#tag-def-sour">SOUR</a>.<a href="#tag-def-even">EVEN</a>" subrecord. The value used is the event code taken from the table of choices shown in the EVENT_TYPE_CITED_FROM primitive.</li>
 
                 <li>The role of this person in the event is stored in the ".<a href="#tag-def-sour">SOUR</a>.<a href="#tag-def-even">EVEN</a>.<a href="#tag-def-role">ROLE</a>" context.</li>
               </ul>
@@ -2231,13 +2294,13 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
           <p>A SOURCE_REPOSITORY_CITATION links a <a href="#sour-record">SOUR_RECORD</a> to a <a href="#repo-record">REPO_RECORD</a>.</p>
 
           <table class="record-structure">
-            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-repo">REPO</a></span> [ @<a href="#prim-id-repo">ID:REPO</a>@ | &lt;<a href="#prim-null">NULL</a>&gt;] </td><td>1:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-repo">REPO</a></span> [ @<a href="#prim-id-repo">ID:REPO</a>@ | &lt;<a href="#prim-null">NULL</a>&gt;] </td><td class="size">1:1</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#note-structure-subr">NOTE_STRUCTURE</a>&gt;&gt; </td><td>0:M </td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#note-structure-subr">NOTE_STRUCTURE</a>&gt;&gt; </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-caln">CALN</a> &lt;<a href="#prim-source-call-number">SOURCE_CALL_NUMBER</a>&gt; </td><td>0:M </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-caln">CALN</a> &lt;<a href="#prim-source-call-number">SOURCE_CALL_NUMBER</a>&gt; </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-2">+2 <a href="#tag-def-medi">MEDI</a> &lt;<a href="#prim-source-media-type">SOURCE_MEDIA_TYPE</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-2">+2 <a href="#tag-def-medi">MEDI</a> &lt;<a href="#prim-source-media-type">SOURCE_MEDIA_TYPE</a>&gt; </td><td class="size">0:1</td></tr>
           </table>
 
           <p>For repositories that use call numbers, that value should be recorded using a subordinate <a href="#tag-def-caln">CALN</a> subrecord.</p>
@@ -2251,9 +2314,9 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
           <p>The SPOUSE_TO_FAMILY_LINK subrecord provides a <a href="pointer-component">pointer</a> to a <a href="#fam-record">FAM_RECORD</a> where this person is a spouse and/or parent.</p>
 
           <table class="record-structure">
-            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-fams">FAMS</a></span> @&lt;<a href="#prim-id-fam">ID:FAM</a>&gt;@ </td><td>1:1 </td></tr>
+            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-fams">FAMS</a></span> @&lt;<a href="#prim-id-fam">ID:FAM</a>&gt;@ </td><td class="size">1:1</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#note-structure-subr">NOTE_STRUCTURE</a>&gt;&gt; </td><td>0:M </td></tr>
+            <tr><td class="code level-1">+1 &lt;&lt;<a href="#note-structure-subr">NOTE_STRUCTURE</a>&gt;&gt; </td><td class="size">0:M</td></tr>
           </table>
 <div class="references">
 <p>See: &lt;&lt;<a href="#indi-record">INDI<wbr>_RECORD</a>&gt;&gt;</p>
@@ -2281,12 +2344,6 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
         <dt id="prim-address-city">ADDRESS_CITY <span class="size">{Size=1:60}</span></dt>
         <dd>
           <p>The name of the city used in the address. Isolated for sorting or indexing.</p>
-
-
-
-
-
-
 <div class="references">
 <p>See: &lt;&lt;<a href="#address-structure-subr">ADDRESS<wbr>_STRUCTURE</a>&gt;&gt;.<a href="#tag-def-addr">ADDR</a>.<a href="#tag-def-city">CITY</a></p>
 </div>
@@ -2318,7 +2375,7 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
 
         <dt id="prim-address-line">ADDRESS_LINE <span class="size">{Size=1:60}</span></dt>
         <dd>
-          <p>Typically used to define a mailing address of an individual when used subordinate to a <a href="#tag-def-resi">RESI</a> (resident) tag. When it is used subordinate to an event tag it is the address of the place where the event took place. The address lines usually contain the addressee's name and other street and city information so that it forms an address that meets mailing requirements.</p>
+          <p>Typically used to define a mailing address of an individual when used subordinate to a <a href="#tag-def-resi">RESI</a> (resident) subrecord. When it is used subordinate to an event subrecord it is the address of the place where the event took place. The address lines usually contain the addressee's name and other street and city information so that it forms an address that meets mailing requirements.</p>
 <div class="references">
 <p>See:</p>
 <ul>
@@ -2476,7 +2533,9 @@ CHILD
 
         <dt id="prim-attribute-descriptor">ATTRIBUTE_DESCRIPTOR <span class="size">{Size=1:90}</span></dt>
         <dd>
-          <p>Text describing a particular characteristic or attribute assigned to an individual. This attribute value is assigned to the <a href="#tag-def-fact">FACT</a> tag. The classification of this specific attribute or fact is specified by the value of the subordinate <a href="#tag-def-type">TYPE</a> tag selected from the EVENT_OR_FACT_DETAIL structure. For example if you were classifying the skills a person had obtained:</p>
+          <p>Text describing a particular characteristic or attribute assigned to an individual. This attribute value is assigned to the <a href="#tag-def-fact">FACT</a> subrecord. The classification of this specific attribute or fact is specified by the value of the subordinate <a href="#tag-def-type">TYPE</a> subrecord.</p>
+          
+          <p>For example, if you were classifying the skills a person had obtained:</p>
 
 <pre>
 1 <a href="#tag-def-fact">FACT</a> Woodworking
@@ -2489,7 +2548,7 @@ CHILD
 
         <dt id="prim-attribute-type">ATTRIBUTE_TYPE <span class="size">{Size=1:4}</span></dt>
         <dd>
-          <p>A code used to indicate the type of attribute. The definition is the same as the corresponding attribute tag defined in the Standard Tag Definitions section. The choices are:</p>
+          <p>A code used to indicate the type of attribute. The definition is the same as the corresponding attribute tag_name defined in the Standard Tag Definitions section. The choices are:</p>
 
           <ul class="option-list">
             <li><code>CAST</code></li>
@@ -2647,11 +2706,11 @@ CHILD
 
         <dt id="prim-custom-tag">CUSTOM_TAG <span class="size">{Size=1:15}</span></dt>
         <dd>
-          <p>A CUSTOM_TAG is a tag that is <em>not</em> defined in the <a href="#section-standard-tags">Standard Tag Definitions</a> section of this document. GEDCOM writers should include CUSTOM_TAGs to include data that cannot be represented with standard tags and would be lost otherwise.</p>
+          <p>A CUSTOM_TAG is a <a href="#tag-name-component">tag_name</a> that is <em>not</em> defined in the <a href="#section-standard-tags">Standard Tag Definitions</a> section of this document. GEDCOM writers should include CUSTOM_TAGs to include data that cannot be represented with standard subrecords and would be lost otherwise.</p>
 
           <p>The CUSTOM_TAG value must begin with an underscore (<code>_</code>).</p>
 
-          <p>The remaining two to fourteen characters must follow the rules for the <a href="#tag-component">tag</a> component.</p>
+          <p>The remaining two to fourteen characters must follow the rules for the <a href="#tag-name-component">tag_name</a> component.</p>
 
           <p>Example:</p>
 
@@ -2696,7 +2755,7 @@ CHILD
 
         <dt id="prim-event-attribute-type">EVENT_ATTRIBUTE_TYPE <span class="size">{Size=1:15}</span></dt>
         <dd>
-          <p>EVENT_ATTRIBUTE_TYPE is a code that classifies the principal event or happening that caused the source record entry to be created. If the event or attribute doesn't translate to one of these tag codes, then a user supplied value is expected and will be generally classified in the category of "other".</p>
+          <p>EVENT_ATTRIBUTE_TYPE is a code that classifies the principal event or happening that caused the source record entry to be created. If the event or attribute is not represented by one of the available codes, the sending system may specify a custom value specified by the user.</p>
 
           <p>The available codes are the union of the codes described in these entries:</p>
 
@@ -2735,22 +2794,24 @@ CHILD
 
         <dt id="prim-event-or-fact-classification">EVENT_OR_FACT_CLASSIFICATION <span class="size">{Size=1:90}</span></dt>
         <dd>
-          <p>A descriptive word or phrase used to further classify the parent event or attribute tag. This should be used whenever either of the generic <a href="#tag-def-even">EVEN</a> or <a href="#tag-def-fact">FACT</a> tags are used. The value of this primative is responsible for classifying the generic event or fact being cited.</p>
+          <p>A descriptive word or phrase that classifies the parent event or attribute subrecord. This must be present with either of the generic <a href="#tag-def-even">EVEN</a> or <a href="#tag-def-fact">FACT</a> subrecords.</p>
 
-          <p>For example, if the attribute being defined was one of the persons skills, such as woodworking, the <a href="#tag-def-fact">FACT</a> tag would have the value of "Woodworking", followed by a subordinate <a href="#tag-def-type">TYPE</a> tag with the value "Skills".</p>
+          <p>For example, if the attribute being defined was one of the person's skills, such as woodworking, the <a href="#tag-def-fact">FACT</a> subrecord would have a line_value of "Woodworking", followed by a subordinate <a href="#tag-def-type">TYPE</a> subrecord with the value "Skills".</p>
 
 <pre>
 1 <a href="#tag-def-fact">FACT</a> Woodworking
 2 <a href="#tag-def-type">TYPE</a> Skills
 </pre>
 
-          <p>This groups the fact into a generic skills attribute, and in particular this entry records the fact that this individual possessed the skill of woodworking. Using the subordinate <a href="#tag-def-type">TYPE</a> tag classification method with any of the other defined event tags provides a further classification of the parent tag but does not change the basic meaning of the parent tag. For example, a <a href="#tag-def-marr">MARR</a> tag could be subordinated with a <a href="#tag-def-type">TYPE</a> tag with an EVENT_OR_FACT_CLASSIFICATION value of "Common Law."</p>
+          <p>This groups the fact into a generic skills attribute, and in particular this entry records the fact that this individual possessed the skill of woodworking.</p>
+          
+          <p>Using a <a href="#tag-def-type">TYPE</a> subrecord with any non-generic event structure clarifies the meaning of the parent subrecord but does not change the basic meaning. For example, a <a href="#tag-def-marr">MARR</a> subrecord could be described with a <a href="#tag-def-type">TYPE</a> subrecord to spefict a "Common Law" marriage:</p>
 
 <pre>
 1 <a href="#tag-def-marr">MARR</a>
 2 <a href="#tag-def-type">TYPE</a> Common Law
 </pre>
-          <p>This classifies the entry as a common law marriage. Other descriptor values might include, for example, "stillborn" as a qualifier to <a href="#tag-def-birt">BIRT</a> or "Tribal Custom" as a qualifier to <a href="#tag-def-marr">MARR</a>.</p>
+          <p>Other examples are "stillborn" as a qualifier to <a href="#tag-def-birt">BIRT</a> or "Tribal Custom" as a qualifier to <a href="#tag-def-marr">MARR</a>.</p>
 <div class="references">
 <p>See: &lt;&lt;<a href="#event-or-fact-detail-subr">EVENT<wbr>_OR<wbr>_FACT<wbr>_DETAIL</a>&gt;&gt;.<a href="#tag-def-type">TYPE</a></p>
 </div>
@@ -2768,7 +2829,7 @@ CHILD
 
         <dt id="prim-event-type-family">EVENT_TYPE_FAMILY <span class="size">{Size=3:4}</span></dt>
         <dd>
-          <p>A code used to indicate a type of family event. The definition is the same as the corresponding event tag defined in the <a href="#section-standard-tags">Standard Tag Definitions</a> section. The choices are:</p>
+          <p>A code used to indicate a type of family event. The definition is the same as the corresponding event tag_name defined in the <a href="#section-standard-tags">Standard Tag Definitions</a> section. The choices are:</p>
 
           <ul class="columns columns-thin">
             <li><code>ANUL</code></li>
@@ -2787,7 +2848,7 @@ CHILD
 
         <dt id="prim-event-type-individual">EVENT_TYPE_INDIVIDUAL <span class="size">{Size=3:4}</span></dt>
         <dd>
-          <p>A code used to indicate a type of family event. The definition is the same as the corresponding event tag defined in the <a href="#section-standard-tags">Standard Tag Definitions</a> section. The choices are:</p>
+          <p>A code used to indicate a type of family event. The definition is the same as the corresponding event tag_name defined in the <a href="#section-standard-tags">Standard Tag Definitions</a> section. The choices are:</p>
 
           <ul class="columns columns-thin">
             <li><code>ADOP</code></li>
@@ -2848,7 +2909,7 @@ CHILD
         <dd>
           <p>The GEDCOM form used to construct the document. GEDCOM 5.5.2 supports the "<code>LINEAGE-LINKED</code>" form only. The <a href="#tag-def-gedc">GEDC</a>.<a href="#tag-def-form">FORM</a> subrecord is not required in GEDCOM 5.5.2 and is allowed for backwards-compatibility only.</p>
 
-          <p>See the example in the Best Practice section under the <a href="#tag-def-head">HEAD</a> tag.</p>
+          <p>See the example in the Best Practice section under the <a href="#tag-def-head">HEAD</a> record.</p>
 
           <div class="gedcom-form-best-practice">
             <h4 id="gedcom-form-best-practice">Best Practice Recommendations</h4>
@@ -3314,7 +3375,7 @@ CHILD
 
         <dt id="prim-name-phonetic-variation">NAME_PHONETIC_VARIATION <span class="size">{Size=1:120}</span></dt>
         <dd>
-          <p>The phonetic variation of the name is written in the same form as the name used in the superior &lt;<a href="#prim-name-personal">NAME_PERSONAL</a>&gt; primitive, but phonetically written using the method indicated by the subordinate &lt;<a href="#prim-phonetic-type">PHONETIC_TYPE</a>&gt; value, for example if hiragana was used to provide a reading of a name written in kanji, then the &lt;<a href="#prim-phonetic-type">PHONETIC_TYPE</a>&gt; value would indicate "kana".</p>
+          <p>NAME_PHONETIC_VARIATION indicates a phonetically-written name value. The phonetically-written variatnon should be written in the same form as the name used in the superior &lt;<a href="#prim-name-personal">NAME_PERSONAL</a>&gt; primitive, but transformed using the method indicated by a subordinate <a href="#tag-def-type">TYPE</a> subrecord.</p>
 <div class="references">
 <p>See: &lt;&lt;<a href="#personal-name-structure-subr">PERSONAL<wbr>_NAME<wbr>_STRUCTURE</a>&gt;&gt;.<a href="#tag-def-name">NAME</a>.<a href="#tag-def-fone">FONE</a></p>
 </div>
@@ -3324,7 +3385,7 @@ CHILD
         <dd>
           <p>NAME_PIECE_GIVEN is the given name.</p>
 
-          <p>The <a href="#tag-def-givn">GIVN</a> tag subrecord shown below indicates that the NAME_PIECE_GIVEN for "Lt. Cmndr. Joseph Allen, Jr." is "Joseph":</p>
+          <p>The <a href="#tag-def-givn">GIVN</a> subrecord shown below indicates that the NAME_PIECE_GIVEN for "Lt. Cmndr. Joseph Allen, Jr." is "Joseph":</p>
 
 <pre>
 1 NAME Lt. Cmndr. Joseph /Allen/ Jr.
@@ -3342,7 +3403,7 @@ CHILD
         <dd>
           <p>NAME_PIECE_NICKNAME is a descriptive or familiar name used in connection with the proper name.</p>
 
-          <p>The <a href="#tag-def-nick">NICK</a> tag subrecord shown below indicates that the NAME_PIECE_NICKNAME for "John 'Jack' Smith" is "Jack":</p>
+          <p>The <a href="#tag-def-nick">NICK</a> subrecord shown below indicates that the NAME_PIECE_NICKNAME for "John 'Jack' Smith" is "Jack":</p>
 
 <pre>
 1 NAME John "Jack" /Smith/
@@ -3359,7 +3420,7 @@ CHILD
         <dd>
           <p>NAME_PIECE_PREFIX is a non-indexing name piece that appears preceding the given name and surname parts.</p>
 
-          <p>The <a href="#tag-def-npfx">NPFX</a> tag subrecord shown below indicates that the NAME_PIECE_PREFIX for "Lt. Cmndr. Joseph Allen, Jr." is "Lt. Cmdr.":</p>
+          <p>The <a href="#tag-def-npfx">NPFX</a> subrecord shown below indicates that the NAME_PIECE_PREFIX for "Lt. Cmndr. Joseph Allen, Jr." is "Lt. Cmdr.":</p>
 
 <pre>
 1 NAME Lt. Cmndr. Joseph /Allen/ Jr.
@@ -3379,7 +3440,7 @@ CHILD
         <dd>
           <p>NAME_PIECE_SUFFIX is a non-indexing name piece that appears preceding the given name and surname parts.</p>
 
-          <p>The <a href="#tag-def-nsfx">NSFX</a> tag subrecord shown below indicates that the NAME_PIECE_SUFFIX for "Lt. Cmndr. Joseph Allen, Jr." is "Jr.":</p>
+          <p>The <a href="#tag-def-nsfx">NSFX</a> subrecord shown below indicates that the NAME_PIECE_SUFFIX for "Lt. Cmndr. Joseph Allen, Jr." is "Jr.":</p>
 
 <pre>
 1 NAME Lt. Cmndr. Joseph /Allen/ Jr.
@@ -3399,7 +3460,7 @@ CHILD
         <dd>
           <p>NAME_PIECE_SURNAME is the surname or family name.</p>
 
-          <p>The <a href="#tag-def-surn">SURN</a> tag subrecord shown below indicates that the NAME_PIECE_SURNAME for "Lt. Cmndr. Joseph Allen, Jr." is "Allen":</p>
+          <p>The <a href="#tag-def-surn">SURN</a> subrecord shown below indicates that the NAME_PIECE_SURNAME for "Lt. Cmndr. Joseph Allen, Jr." is "Allen":</p>
 
 <pre>
 1 NAME Lt. Cmndr. Joseph /Allen/ Jr.
@@ -3420,7 +3481,7 @@ CHILD
 
           <p>NAME_PIECE_SURNAME_PREFIX is a surname prefix or article used in a family name.</p>
 
-          <p>The <a href="#tag-def-spfx">SPFX</a> tag subrecord shown below indicates that the NAME_PIECE_SURNAME_PREFIX for "Paul van Heusen" is "van":</p>
+          <p>The <a href="#tag-def-spfx">SPFX</a> subrecord shown below indicates that the NAME_PIECE_SURNAME_PREFIX for "Paul van Heusen" is "van":</p>
 
 <pre>
 1 NAME Paul van Heusen
@@ -3435,7 +3496,7 @@ CHILD
 
         <dt id="prim-name-romanized-variation">NAME_ROMANIZED_VARIATION <span class="size">{Size=1:120}</span></dt>
         <dd>
-          <p>The romanized variation of the name is written in the same form prescribed for the name used in the superior &lt;<a href="#prim-name-personal">NAME_PERSONAL</a>&gt; context. The method used to romanize the name is indicated by the <a href="#line-value-component">line_value</a> of the subordinate &lt;<a href="#prim-romanized-type">ROMANIZED_TYPE</a>&gt;, for example if romaji was used to provide a phonetic transcription of a name written in kanji, then the ROMANIZED_TYPE subordinate to the <a href="#tag-def-romn">ROMN</a> tag would indicate romaji. See page 61.</p>
+          <p>The romanized variation of the name is written in the same form prescribed for the name used in the superior &lt;<a href="#prim-name-personal">NAME_PERSONAL</a>&gt; context. The method used to romanize the name is indicated by the <a href="#line-value-component">line_value</a> of the <a href="#tag-def-type">TYPE</a>&lt; <a href="#prim-romanized-type">ROMANIZED_TYPE</a>&gt; subrecord.</p>
 <div class="references">
 <p>See: &lt;&lt;<a href="#personal-name-structure-subr">PERSONAL<wbr>_NAME<wbr>_STRUCTURE</a>&gt;&gt;.<a href="#tag-def-name">NAME</a>.<a href="#tag-def-romn">ROMN</a></p>
 </div>
@@ -3562,9 +3623,9 @@ CHILD
 </div>
         </dd>
 
-        <dt id="prim-phonetic-type">PHONETIC_TYPE <span class="size">{Size=5:30}</span></dt>
+        <dt id="prim-phonetic-type">PHONETIC_TYPE <span class="size">{Size=4:30}</span></dt>
         <dd>
-          <p>A code or text value that indicates the method used in transforming the text to the phonetic variation The choices are:</p>
+          <p>A code or text value that indicates the method used in transforming text to a phonetic variation. The choices are:</p>
 
           <table class="value-choices">
             <thead>
@@ -3573,9 +3634,11 @@ CHILD
             <tbody>
               <tr><td><code>hangul</code></td><td>Phonetic method for sounding Korean glifs.</td></tr>
               <tr><td><code>kana</code></td><td>Hiragana and/or Katakana characters were used in sounding the Kanji character used by japanese</td></tr>
-              <tr><td><var>user-defined</var></td><td>Name or description of method used to arrive at the phonetic variation of the name.</td></tr>
+              <tr><td><var class="nowrap">user-defined</var></td><td>Name or description of method used to arrive at the phonetic variation of the name.</td></tr>
             </tbody>
           </table>
+
+          <p>For example, if hiragana was used to provide a phonetic variation of a name originally written in kanji, then the PHONETIC_TYPE value would be <code>kana</code>.</p>
 <div class="references">
 <p>See:</p>
 <ul>
@@ -3832,13 +3895,13 @@ CHILD
 
         <dt id="prim-romanized-type">ROMANIZED_TYPE <span class="size">{Size=5:30}</span></dt>
         <dd>
-          <p>A keyword or text value that describes the method used in transforming the text to a romanized variation. The choices are:</p>
+          <p>A keyword or text value that describes the method used in transforming text to a romanized variation. The choices are:</p>
 
           <ul>
-            <li><var>user-defined</var></li>
             <li><code>pinyin</code></li>
             <li><code>romaji</code></li>
             <li><code>wadegiles</code></li>
+            <li><var>user-defined</var></li>
           </ul>
 <div class="references">
 <p>See:</p>
@@ -6399,7 +6462,7 @@ private static string GetPafChecksum(string uuid) {
           <p>_SHAR is used to add an individual to an event.</p>
 
           <table class="record-structure">
-            <tr><td class="code level-1">n _SHAR @&lt;<a href="#prim-id-indi">ID:INDI</a>&gt;@ </td><td>0:M </td></tr>
+            <tr><td class="code level-1">n _SHAR @&lt;<a href="#prim-id-indi">ID:INDI</a>&gt;@ </td><td class="size">0:M</td></tr>
           </table>
 
           <p>_SHAR is used under the context of an event such as FAM.MARR or INDI.BIRT, etc.</p>
@@ -6448,7 +6511,7 @@ private static string GetPafChecksum(string uuid) {
           <p>_ROLE is used to specify the role played by an individual in connection with an event.</p>
 
           <table class="record-structure">
-            <tr><td class="code level-0">n _ROLE &lt;<a href="#prim-text">TEXT</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-0">n _ROLE &lt;<a href="#prim-text">TEXT</a>&gt; </td><td class="size">0:1</td></tr>
           </table>
 
           <p>_ROLE is used under the context of a <a href="#tag-def--shar">_SHAR</a> custom tag or equivalent. See the _SHAR description for further details.</p>
@@ -6473,7 +6536,7 @@ private static string GetPafChecksum(string uuid) {
           <p>_PRIM is used to indicate that its parent record is the primary or preferred instance.</p>
 
           <table class="record-structure">
-            <tr><td class="code level-0">n _PRIM &lt;<a href="#prim-y-or-n">Y_OR_N</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-0">n _PRIM &lt;<a href="#prim-y-or-n">Y_OR_N</a>&gt; </td><td class="size">0:1</td></tr>
           </table>
 
           <p>For example, to indicate that an <a href="#tag-def-indi">INDI</a>.<a href="#tag-def-obje">OBJE</a> subrecord should be treated as the preferred multimedia item:</p>
@@ -6506,7 +6569,7 @@ private static string GetPafChecksum(string uuid) {
           <p>_UID is used to specify a Universally Unique Identifier (UUID) in string format.</p>
 
           <table class="record-structure">
-            <tr><td class="code level-0">n _UID &lt;<a href="#prim-uuid">UUID</a>&gt; </td><td>0:1 </td></tr>
+            <tr><td class="code level-0">n _UID &lt;<a href="#prim-uuid">UUID</a>&gt; </td><td class="size">0:1</td></tr>
           </table>
 
           <p>For example, to indicate that an <a href="#tag-def-indi">INDI</a> has been assigned a UUID:</p>
