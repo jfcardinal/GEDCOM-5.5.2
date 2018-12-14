@@ -54,7 +54,7 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
 <li class="toc-0"><a href="#section-record-and-subrecord-grammar">Record and Subrecord Grammar</a></li>
 <li class="toc-1"><a href="#gedcom-document-sequence">GEDCOM Document Sequence</a></li>
 <li class="toc-1"><a href="#section-record-and-subrecord-organization">Organization</a></li>
-<li class="toc-1"><a href="#record-and-subrecord-usage-conventions">Record and Subrecord Usage Conventions</a></li>
+<li class="toc-1"><a href="#record-and-subrecord-usage">Record and Subrecord Usage</a></li>
 <li class="toc-0"><a href="#section-records">Records</a></li>
 <li class="toc-0"><a href="#section-subrecords">Subrecords</a></li>
 <li class="toc-0"><a href="#section-primitive-elements">Primitive Elements</a></li>
@@ -1629,6 +1629,15 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
 
             <tr><td class="syntax-character" colspan="2">]</td></tr>
           </table>
+<div class="references">
+<p>See:</p>
+<ul>
+<li>&lt;&lt;<a href="#event-or-fact-detail-subr">EVENT<wbr>_OR<wbr>_FACT<wbr>_DETAIL</a>&gt;&gt;</li>
+<li>&lt;&lt;<a href="#head-record">HEAD<wbr>_RECORD</a>&gt;&gt;</li>
+<li>&lt;&lt;<a href="#repo-record">REPO<wbr>_RECORD</a>&gt;&gt;</li>
+<li>&lt;&lt;<a href="#subm-record">SUBM<wbr>_RECORD</a>&gt;&gt;</li>
+</ul>
+</div>
         </dd>
 
         <dt id="event-or-fact-detail-subr">EVENT_OR_FACT_DETAIL</dt>
@@ -2361,7 +2370,7 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
         <dd>
           <p>An email address. See the Syntax section of the <a href="#line-value-double-at">line_value</a> component for considerations related to using the at sign ("<code>@</code>", U+0040) character in values.</p>
 <div class="references">
-<p>See: &lt;&lt;<a href="#address-structure-subr">ADDRESS<wbr>_STRUCTURE</a>&gt;&gt;.<a href="#tag-def-email">EMAIL</a></p>
+<p>See: &lt;&lt;<a href="#contact-structure-subr">CONTACT<wbr>_STRUCTURE</a>&gt;&gt;.<a href="#tag-def-email">EMAIL</a></p>
 </div>
         </dd>
 
@@ -2369,7 +2378,7 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
         <dd>
           <p>A FAX telephone number appropriate for sending data facsimiles.</p>
 <div class="references">
-<p>See: &lt;&lt;<a href="#address-structure-subr">ADDRESS<wbr>_STRUCTURE</a>&gt;&gt;.<a href="#tag-def-fax">FAX</a></p>
+<p>See: &lt;&lt;<a href="#contact-structure-subr">CONTACT<wbr>_STRUCTURE</a>&gt;&gt;.<a href="#tag-def-fax">FAX</a></p>
 </div>
         </dd>
 
@@ -2429,7 +2438,7 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
         <dd>
           <p>The world wide web page address.</p>
 <div class="references">
-<p>See: &lt;&lt;<a href="#address-structure-subr">ADDRESS<wbr>_STRUCTURE</a>&gt;&gt;.<a href="#tag-def-www">WWW</a></p>
+<p>See: &lt;&lt;<a href="#contact-structure-subr">CONTACT<wbr>_STRUCTURE</a>&gt;&gt;.<a href="#tag-def-www">WWW</a></p>
 </div>
         </dd>
 
@@ -3619,7 +3628,7 @@ CHILD
         <dd>
           <p>A telephone number.</p>
 <div class="references">
-<p>See: &lt;&lt;<a href="#address-structure-subr">ADDRESS<wbr>_STRUCTURE</a>&gt;&gt;.<a href="#tag-def-phon">PHON</a></p>
+<p>See: &lt;&lt;<a href="#contact-structure-subr">CONTACT<wbr>_STRUCTURE</a>&gt;&gt;.<a href="#tag-def-phon">PHON</a></p>
 </div>
         </dd>
 
@@ -5342,7 +5351,7 @@ private static string GetPafChecksum(string uuid) {
         <dd>
           <p>An electronic mail address.</p>
 <div class="references">
-<p>See: &lt;&lt;<a href="#address-structure-subr">ADDRESS<wbr>_STRUCTURE</a>&gt;&gt;.EMAIL &lt;<a href="#prim-address-email">ADDRESS<wbr>_EMAIL</a>&gt;</p>
+<p>See: &lt;&lt;<a href="#contact-structure-subr">CONTACT<wbr>_STRUCTURE</a>&gt;&gt;.EMAIL &lt;<a href="#prim-address-email">ADDRESS<wbr>_EMAIL</a>&gt;</p>
 </div>
         </dd>
 
@@ -5452,7 +5461,7 @@ private static string GetPafChecksum(string uuid) {
         <dd>
           <p>Electronic facimilie transmission.</p>
 <div class="references">
-<p>See: &lt;&lt;<a href="#address-structure-subr">ADDRESS<wbr>_STRUCTURE</a>&gt;&gt;.FAX &lt;<a href="#prim-address-fax">ADDRESS<wbr>_FAX</a>&gt;</p>
+<p>See: &lt;&lt;<a href="#contact-structure-subr">CONTACT<wbr>_STRUCTURE</a>&gt;&gt;.FAX &lt;<a href="#prim-address-fax">ADDRESS<wbr>_FAX</a>&gt;</p>
 </div>
         </dd>
 
@@ -5859,7 +5868,7 @@ private static string GetPafChecksum(string uuid) {
         <dd>
           <p>A unique number assigned to access a specific telephone.</p>
 <div class="references">
-<p>See: &lt;&lt;<a href="#address-structure-subr">ADDRESS<wbr>_STRUCTURE</a>&gt;&gt;.PHON &lt;<a href="#prim-phone-number">PHONE<wbr>_NUMBER</a>&gt;</p>
+<p>See: &lt;&lt;<a href="#contact-structure-subr">CONTACT<wbr>_STRUCTURE</a>&gt;&gt;.PHON &lt;<a href="#prim-phone-number">PHONE<wbr>_NUMBER</a>&gt;</p>
 </div>
         </dd>
 
@@ -6288,7 +6297,7 @@ private static string GetPafChecksum(string uuid) {
         <dd>
           <p>World Wide Web home page.</p>
 <div class="references">
-<p>See: &lt;&lt;<a href="#address-structure-subr">ADDRESS<wbr>_STRUCTURE</a>&gt;&gt;.WWW &lt;<a href="#prim-address-web-page">ADDRESS<wbr>_WEB<wbr>_PAGE</a>&gt;</p>
+<p>See: &lt;&lt;<a href="#contact-structure-subr">CONTACT<wbr>_STRUCTURE</a>&gt;&gt;.WWW &lt;<a href="#prim-address-web-page">ADDRESS<wbr>_WEB<wbr>_PAGE</a>&gt;</p>
 </div>
         </dd>
 
@@ -6656,6 +6665,7 @@ private static string GetPafChecksum(string uuid) {
 <li><a href="#tag-def-conf">CONF</a></li>
 <li><a href="#tag-def-conl">CONL</a></li>
 <li><a href="#tag-def-cont">CONT</a></li>
+<li><a href="#contact-structure-subr">CONTACT<wbr>_STRUCTURE</a></li>
 <li><a href="#tag-def-copr">COPR</a></li>
 <li><a href="#prim-copyright-gedcom-file">COPYRIGHT<wbr>_GEDCOM<wbr>_FILE</a></li>
 <li><a href="#prim-copyright-source-data">COPYRIGHT<wbr>_SOURCE<wbr>_DATA</a></li>
