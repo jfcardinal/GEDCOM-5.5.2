@@ -276,6 +276,10 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
           <p><strong>INDI.RFN</strong> &ndash; The <a href="#tag-def-indi">INDI</a>.RFN subrecord in GEDCOM 5.5.1 and previous has been removed in GEDCOM 5.5.2. The INDI.RFN subrecord was intended to hold a PERMANENT_RECORD_FILE_NUMBER, a record number using a "registered network resource". The registration system was never implemented.</p>
         </li>
 
+        <li>
+          <p><strong>The Church of Jesus Christ of Latter-day Saints</strong> &ndash; GEDCOM 5.5.1 requirements that were specific to The Church of Jesus Christ of Latter-day Saints have been removed from GEDCOM 5.5.2. It is not appropriate for a genealody data transfer specification to include requirements that are specific to an organization.</p>
+        </li>
+
         <li id="location-coordinate-change">
           <p><strong>MAP.LATI</strong> and <strong>MAP.LONG</strong> &ndash; The <a href="#tag-def-lati">LATI</a> and <a href="#tag-def-long">LONG</a> value length in GEDCOM 5.5.1 is restricted to the range of 5 to 8 characters. That does not allow sufficient precision to match coordinates available in <abbr title="Global Positioning System">GPS</abbr> devices, and several programs exceed the limit. The example on page 51 of the GEDCOM 5.5.1 specification in the PLACE_LATITUDE entry that includes the "{Size=5:8}" range definition also exceeds the limit: "<code>N18.150944</code>" is ten characters.</p>
 
@@ -310,6 +314,10 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
           <p><strong>SUBN</strong> &ndash; The SUBN record in GEDCOM 5.5.1 is obsolete and has been removed from GEDCOM 5.5.2. Subrecords that were only used with SUBN have also been removed, including SUBN.FAMF, SUBN.ANCE, SUBN.DESC, and SUBN.ORDI.</p>
 
           <p>GEDCOM readers can ignore the SUBN record and its subrecords.</p>
+        </li>
+
+        <li id="system-id-change">
+          <p><strong>APPROVED_SYSTEM_ID</strong> and <strong>RECEIVING_SYSTEM_NAME</strong> &ndash; APPROVED_SYSTEM_ID and RECEIVING_SYSTEM_NAME in GEDCOM 5.5.1 were two Primitive Elements used to identify external systems. Those elements have been merged as <a href="#prim-approved-system-name">SYSTEM_ID</a> in GEDCOM 5.5.2, and its length has been expanded.</p>
         </li>
       </ul>
 
@@ -359,12 +367,6 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
           <p>The <strong>Compatibility with Other GEDCOM Versions</strong> section in GEDCOM 5.5.1 has been removed.</p>
 
           <p>Most of the content referred to long-abandoned versions of GEDCOM that are no longer is use. This document describes changes between GEDCOM 5.5.1 and GEDCOM 5.5.2. Readers may refer to the specification documents for prior versions if necessary.</p>
-        </li>
-
-        <li>
-          <strong>Appendix B: LDS Temple Codes</strong> in GEDCOM 5.5.1 has been removed from GEDCOM 5.5.2.
-
-          <p>Appendix B contained a link to an FTP site that (formerly) provided LDS Temple Codes. The site is no longer available.</p>
         </li>
 
         <li>
@@ -1099,7 +1101,7 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
 
             <tr><td class="code level-2">+2 <span class="required"><a href="#tag-def-form">FORM</a></span> &lt;<a href="#prim-gedcom-form">GEDCOM_FORM</a>&gt; </td><td class="size">0:1 </td></tr>
 
-            <tr><td class="code level-1">+1 <span class="required"><a href="#tag-def-sour">SOUR</a></span> &lt;<a href="#prim-approved-system-id">APPROVED_SYSTEM_ID</a>&gt; </td><td class="size">1:1 </td></tr>
+            <tr><td class="code level-1">+1 <span class="required"><a href="#tag-def-sour">SOUR</a></span> &lt;<a href="#prim-system-id">SYSTEM_ID</a>&gt; </td><td class="size">1:1 </td></tr>
 
             <tr><td class="code level-2">+2 <a href="#tag-def-vers">VERS</a> &lt;<a href="#prim-version-number">VERSION_NUMBER</a>&gt; </td><td class="size">0:1 </td></tr>
 
@@ -1117,7 +1119,7 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
 
             <tr><td class="code level-3">+3 <a href="#tag-def-copr">COPR</a> &lt;<a href="#prim-copyright-source-data">COPYRIGHT_SOURCE_DATA</a>&gt; </td><td class="size">0:1 </td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-dest">DEST</a> &lt;<a href="#prim-receiving-system-name">RECEIVING_SYSTEM_NAME</a>&gt; </td><td class="size">0:1 </td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-dest">DEST</a> &lt;<a href="#prim-system-id">SYSTEM_ID</a>&gt; </td><td class="size">0:1 </td></tr>
 
             <tr><td class="code level-1">+1 <a href="#tag-def-date">DATE</a> &lt;<a href="#prim-document-date">DOCUMENT_DATE</a>&gt; </td><td class="size">0:1 </td></tr>
 
@@ -1146,7 +1148,7 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
 
           <p>The <a href="#tag-def-char">CHAR</a> subrecord is required.</p>
 
-          <p>The <a href="#tag-def-sour">SOUR</a> subrecord's <a href="#prim-approved-system-id">APPROVED_SYSTEM_ID</a> identifies which system wrote the data. Many GEDCOM readers inspect the APPROVED_SYSTEM_ID to determine how to interpret custom records and subrecords written by the system indicated by the APPROVED_SYSTEM_ID.</p>
+          <p>The <a href="#tag-def-sour">SOUR</a> subrecord's <a href="#prim-system-id">SYSTEM_ID</a> identifies which system wrote the data. Many GEDCOM readers inspect the SYSTEM_ID to determine how to interpret custom records and subrecords written by the system indicated by the SYSTEM_ID.</p>
 
           <h4>Notes</h4>
           <ol>
@@ -1216,8 +1218,6 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
 
             <tr><td class="code level-1">+1 <a href="#tag-def-subm">SUBM</a> @&lt;<a href="#prim-id-subm">ID:SUBM</a>&gt;@ </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#lds-spouse-sealing-subr">LDS_SPOUSE_SEALING</a>&gt;&gt; </td><td class="size">0:M</td></tr>
-
             <tr><td class="code level-1">+1 <a href="#tag-def-refn">REFN</a> &lt;<a href="#prim-user-reference-number">USER_REFERENCE_NUMBER</a>&gt; </td><td class="size">0:M</td></tr>
 
             <tr><td class="code level-2">+2 <a href="#tag-def-type">TYPE</a> &lt;<a href="#prim-user-reference-type">USER_REFERENCE_TYPE</a>&gt; </td><td class="size">0:1</td></tr>
@@ -1257,8 +1257,6 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
 
             <tr><td class="code level-1">+1 &lt;&lt;<a href="#individual-attribute-structure-subr">INDIVIDUAL_ATTRIBUTE_STRUCTURE</a>&gt;&gt; </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#lds-individual-ordinance-subr">LDS_INDIVIDUAL_ORDINANCE</a>&gt;&gt; </td><td class="size">0:M</td></tr>
-
             <tr><td class="code level-1">+1 &lt;&lt;<a href="#child-to-family-link-subr">CHILD_TO_FAMILY_LINK</a>&gt;&gt; </td><td class="size">0:M</td></tr>
 
             <tr><td class="code level-1">+1 &lt;&lt;<a href="#spouse-to-family-link-subr">SPOUSE_TO_FAMILY_LINK</a>&gt;&gt; </td><td class="size">0:M</td></tr>
@@ -1272,8 +1270,6 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
             <tr><td class="code level-1">+1 <a href="#tag-def-anci">ANCI</a> @&lt;<a href="#prim-id-subm">ID:SUBM</a>&gt;@ </td><td class="size">0:M</td></tr>
 
             <tr><td class="code level-1">+1 <a href="#tag-def-desi">DESI</a> @&lt;<a href="#prim-id-subm">ID:SUBM</a>&gt;@ </td><td class="size">0:M</td></tr>
-
-            <tr><td class="code level-1">+1 <a href="#tag-def-afn">AFN</a> &lt;<a href="#prim-ancestral-file-number">ANCESTRAL_FILE_NUMBER</a>&gt; </td><td class="size">0:1</td></tr>
 
             <tr><td class="code level-1">+1 <a href="#tag-def-refn">REFN</a> &lt;<a href="#prim-user-reference-number">USER_REFERENCE_NUMBER</a>&gt; </td><td class="size">0:M</td></tr>
 
@@ -1416,38 +1412,6 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
             <tr><td class="code level-1">+1 &lt;&lt;<a href="#multimedia-link-subr">MULTIMEDIA_LINK</a>&gt;&gt; </td><td class="size">0:M</td></tr>
           </table>
         </dd>
-
-        <!-- SUBN records are obsolete
-
-      <dt id="subm-record">SUBN_RECORD</dt>
-      <dd>
-        <table class="record-structure">
-          <tr><td class="code level-0"><i>n</i> @<a href="#prim-id-subn">ID:SUBN</a>@ <span class="required"><a href="#tag-def-subn">SUBN</a></span> </td><td class="size">1:1</td></tr>
-
-          <tr><td class="code level-1">+1 <a href="#tag-def-subm">SUBM</a> @<a href="#prim-id-subm">ID:SUBM</a>@ </td><td class="size">0:1</td></tr>
-
-          <tr><td class="code level-1">+1 <a href="#tag-def-famf">FAMF</a> &lt;<a href="#prim-name-of-family-file">NAME_OF_FAMILY_FILE</a>&gt; </td><td class="size">0:1</td></tr>
-
-          <tr><td class="code level-1">+1 <a href="#tag-def-temp">TEMP</a> &lt;<a href="#prim-temple-code">TEMPLE_CODE</a>&gt; </td><td class="size">0:1</td></tr>
-
-          <tr><td class="code level-1">+1 <a href="#tag-def-ance">ANCE</a> &lt;<a href="#prim-generations-of-ancestors">GENERATIONS_OF_ANCESTORS</a>&gt; </td><td class="size">0:1</td></tr>
-
-          <tr><td class="code level-1">+1 <a href="#tag-def-desc">DESC</a> &lt;<a href="#prim-generations-of-descendants">GENERATIONS_OF_DESCENDANTS</a>&gt; </td><td class="size">0:1</td></tr>
-
-          <tr><td class="code level-1">+1 <a href="#tag-def-ordi">ORDI</a> &lt;<a href="#prim-ordinance-process-flag">ORDINANCE_PROCESS_FLAG</a>&gt; </td><td class="size">0:1</td></tr>
-
-          <tr><td class="code level-1">+1 <a href="#tag-def-rin">RIN</a> &lt;<a href="#prim-automated-record-id">AUTOMATED_RECORD_ID</a>&gt; </td><td class="size">0:1</td></tr>
-
-          <tr><td class="code level-1">+1 &lt;&lt;<a href="#note-structure-subr">NOTE_STRUCTURE</a>&gt;&gt; </td><td class="size">0:M</td></tr>
-
-          <tr><td class="code level-1">+1 &lt;&lt;<a href="#change-date-subr">CHANGE_DATE</a>&gt;&gt; </td><td class="size">0:1</td></tr>
-        </table>
-
-        <p>The sending system uses a SUBN_RECORD to send instructions and information to the receiving system.</p>
-
-        <p>TempleReady processes submission records to determine which temple the cleared records should be directed to. The submission record is also used for communication between Ancestral File download requests and TempleReady. <b>Each GEDCOM transmission file should have only one</b> <br><b>submission record.</b> Multiple submissions are handled by creating separate GEDCOM transmission files.</p>
-      </dd>
-      -->
 
         <dt id="subm-record">SUBM_RECORD</dt>
         <dd>
@@ -1954,98 +1918,6 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
 </div>
         </dd>
 
-        <dt id="lds-individual-ordinance-subr">LDS_INDIVIDUAL_ORDINANCE</dt>
-        <dd>
-
-          <table class="record-structure">
-            <tr><td class="syntax-character" colspan="2">[</td></tr>
-
-            <tr><td class="code level-0"><i>n</i> [ <span class="required"><a href="#tag-def-bapl">BAPL</a></span> | <span class="required"><a href="#tag-def-conl">CONL</a></span> ] </td><td class="size">1:1</td></tr>
-
-            <tr><td class="code level-1">+1 <a href="#tag-def-date">DATE</a> &lt;<a href="#prim-date-lds-ord">DATE_LDS_ORD</a>&gt; </td><td class="size">0:1</td></tr>
-
-            <tr><td class="code level-1">+1 <a href="#tag-def-temp">TEMP</a> &lt;<a href="#prim-temple-code">TEMPLE_CODE</a>&gt; </td><td class="size">0:1</td></tr>
-
-            <tr><td class="code level-1">+1 <a href="#tag-def-plac">PLAC</a> &lt;<a href="#prim-place-living-ordinance">PLACE_LIVING_ORDINANCE</a>&gt; </td><td class="size">0:1</td></tr>
-
-            <tr><td class="code level-1">+1 <a href="#tag-def-stat">STAT</a> &lt;<a href="#prim-lds-baptism-date-status">LDS_BAPTISM_DATE_STATUS</a>&gt; </td><td class="size">0:1</td></tr>
-
-            <tr><td class="code level-2">+2 <a href="#tag-def-date">DATE</a> &lt;<a href="#prim-change-date">CHANGE_DATE</a>&gt; </td><td class="size">1:1</td></tr>
-
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#note-structure-subr">NOTE_STRUCTURE</a>&gt;&gt; </td><td class="size">0:M</td></tr>
-
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#source-citation-subr">SOURCE_CITATION</a>&gt;&gt; </td><td class="size">0:M</td></tr>
-
-            <tr><td class="syntax-character" colspan="2">|</td></tr>
-
-            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-endl">ENDL</a></span> </td><td class="size">1:1</td></tr>
-
-            <tr><td class="code level-1">+1 <a href="#tag-def-date">DATE</a> &lt;<a href="#prim-date-lds-ord">DATE_LDS_ORD</a>&gt; </td><td class="size">0:1</td></tr>
-
-            <tr><td class="code level-1">+1 <a href="#tag-def-temp">TEMP</a> &lt;<a href="#prim-temple-code">TEMPLE_CODE</a>&gt; </td><td class="size">0:1</td></tr>
-
-            <tr><td class="code level-1">+1 <a href="#tag-def-plac">PLAC</a> &lt;<a href="#prim-place-living-ordinance">PLACE_LIVING_ORDINANCE</a>&gt; </td><td class="size">0:1</td></tr>
-
-            <tr><td class="code level-1">+1 <a href="#tag-def-stat">STAT</a> &lt;<a href="#prim-lds-endowment-date-status">LDS_ENDOWMENT_DATE_STATUS</a>&gt; </td><td class="size">0:1</td></tr>
-
-            <tr><td class="code level-2">+2 <a href="#tag-def-date">DATE</a> &lt;<a href="#prim-change-date">CHANGE_DATE</a>&gt; </td><td class="size">1:1</td></tr>
-
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#note-structure-subr">NOTE_STRUCTURE</a>&gt;&gt; </td><td class="size">0:M</td></tr>
-
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#source-citation-subr">SOURCE_CITATION</a>&gt;&gt; </td><td class="size">0:M</td></tr>
-
-            <tr><td class="syntax-character" colspan="2">|</td></tr>
-
-            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-slgc">SLGC</a></span> </td><td class="size">1:1</td></tr>
-
-            <tr><td class="code level-1">+1 <a href="#tag-def-date">DATE</a> &lt;<a href="#prim-date-lds-ord">DATE_LDS_ORD</a>&gt; </td><td class="size">0:1</td></tr>
-
-            <tr><td class="code level-1">+1 <a href="#tag-def-temp">TEMP</a> &lt;<a href="#prim-temple-code">TEMPLE_CODE</a>&gt; </td><td class="size">0:1</td></tr>
-
-            <tr><td class="code level-1">+1 <a href="#tag-def-plac">PLAC</a> &lt;<a href="#prim-place-living-ordinance">PLACE_LIVING_ORDINANCE</a>&gt; </td><td class="size">0:1</td></tr>
-
-            <tr><td class="code level-1">+1 <a href="#tag-def-famc">FAMC</a> @&lt;<a href="#prim-id-fam">ID:FAM</a>&gt;@ </td><td class="size">1:1</td></tr>
-
-            <tr><td class="code level-1">+1 <a href="#tag-def-stat">STAT</a> &lt;<a href="#prim-lds-child-sealing-date-status">LDS_CHILD_SEALING_DATE_STATUS</a>&gt; </td><td class="size">0:1</td></tr>
-
-            <tr><td class="code level-2">+2 <a href="#tag-def-date">DATE</a> &lt;<a href="#prim-change-date">CHANGE_DATE</a>&gt; </td><td class="size">1:1</td></tr>
-
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#note-structure-subr">NOTE_STRUCTURE</a>&gt;&gt; </td><td class="size">0:M</td></tr>
-
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#source-citation-subr">SOURCE_CITATION</a>&gt;&gt; </td><td class="size">0:M</td></tr>
-
-            <tr><td class="syntax-character" colspan="2">]</td></tr>
-          </table>
-<div class="references">
-<p>See: &lt;&lt;<a href="#indi-record">INDI<wbr>_RECORD</a>&gt;&gt;</p>
-</div>
-        </dd>
-
-        <dt id="lds-spouse-sealing-subr">LDS_SPOUSE_SEALING</dt>
-        <dd>
-
-          <table class="record-structure">
-            <tr><td class="code level-0"><i>n</i> <b><a href="#tag-def-slgs">SLGS</a></b> </td><td class="size">1:1</td></tr>
-
-            <tr><td class="code level-1">+1 <a href="#tag-def-date">DATE</a> &lt;<a href="#prim-date-lds-ord">DATE_LDS_ORD</a>&gt; </td><td class="size">0:1</td></tr>
-
-            <tr><td class="code level-1">+1 <a href="#tag-def-temp">TEMP</a> &lt;<a href="#prim-temple-code">TEMPLE_CODE</a>&gt; </td><td class="size">0:1</td></tr>
-
-            <tr><td class="code level-1">+1 <a href="#tag-def-plac">PLAC</a> &lt;<a href="#prim-place-living-ordinance">PLACE_LIVING_ORDINANCE</a>&gt; </td><td class="size">0:1</td></tr>
-
-            <tr><td class="code level-1">+1 <a href="#tag-def-stat">STAT</a> &lt;<a href="#prim-lds-spouse-sealing-date-status">LDS_SPOUSE_SEALING_DATE_STATUS</a>&gt; </td><td class="size">0:1</td></tr>
-
-            <tr><td class="code level-2">+2 <a href="#tag-def-date">DATE</a> &lt;<a href="#prim-change-date">CHANGE_DATE</a>&gt; </td><td class="size">1:1</td></tr>
-
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#note-structure-subr">NOTE_STRUCTURE</a>&gt;&gt; </td><td class="size">0:M</td></tr>
-
-            <tr><td class="code level-1">+1 &lt;&lt;<a href="#source-citation-subr">SOURCE_CITATION</a>&gt;&gt; </td><td class="size">0:M</td></tr>
-          </table>
-<div class="references">
-<p>See: &lt;&lt;<a href="#fam-record">FAM<wbr>_RECORD</a>&gt;&gt;</p>
-</div>
-        </dd>
-
         <dt id="multimedia-link-subr">MULTIMEDIA_LINK</dt>
         <dd>
           <table class="record-structure">
@@ -2121,8 +1993,6 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
 <li>&lt;&lt;<a href="#event-or-fact-detail-subr">EVENT<wbr>_OR<wbr>_FACT<wbr>_DETAIL</a>&gt;&gt;</li>
 <li>&lt;&lt;<a href="#fam-record">FAM<wbr>_RECORD</a>&gt;&gt;</li>
 <li>&lt;&lt;<a href="#indi-record">INDI<wbr>_RECORD</a>&gt;&gt;</li>
-<li>&lt;&lt;<a href="#lds-individual-ordinance-subr">LDS<wbr>_INDIVIDUAL<wbr>_ORDINANCE</a>&gt;&gt;</li>
-<li>&lt;&lt;<a href="#lds-spouse-sealing-subr">LDS<wbr>_SPOUSE<wbr>_SEALING</a>&gt;&gt;</li>
 <li>&lt;&lt;<a href="#obje-record">OBJE<wbr>_RECORD</a>&gt;&gt;</li>
 <li>&lt;&lt;<a href="#personal-name-pieces-subr">PERSONAL<wbr>_NAME<wbr>_PIECES</a>&gt;&gt;</li>
 <li>&lt;&lt;<a href="#place-structure-subr">PLACE<wbr>_STRUCTURE</a>&gt;&gt;</li>
@@ -2289,8 +2159,6 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
 <li>&lt;&lt;<a href="#event-or-fact-detail-subr">EVENT<wbr>_OR<wbr>_FACT<wbr>_DETAIL</a>&gt;&gt;</li>
 <li>&lt;&lt;<a href="#fam-record">FAM<wbr>_RECORD</a>&gt;&gt;</li>
 <li>&lt;&lt;<a href="#indi-record">INDI<wbr>_RECORD</a>&gt;&gt;</li>
-<li>&lt;&lt;<a href="#lds-individual-ordinance-subr">LDS<wbr>_INDIVIDUAL<wbr>_ORDINANCE</a>&gt;&gt;</li>
-<li>&lt;&lt;<a href="#lds-spouse-sealing-subr">LDS<wbr>_SPOUSE<wbr>_SEALING</a>&gt;&gt;</li>
 <li>&lt;&lt;<a href="#note-record">NOTE<wbr>_RECORD</a>&gt;&gt;</li>
 <li>&lt;&lt;<a href="#obje-record">OBJE<wbr>_RECORD</a>&gt;&gt;</li>
 <li>&lt;&lt;<a href="#personal-name-pieces-subr">PERSONAL<wbr>_NAME<wbr>_PIECES</a>&gt;&gt;</li>
@@ -2522,24 +2390,6 @@ CHILD
 </div>
         </dd>
 
-        <dt id="prim-ancestral-file-number">ANCESTRAL_FILE_NUMBER <span class="size">{Size=1:12}</span></dt>
-        <dd>
-          <p>A unique permanent record number of an individual record contained in the Family History Department's Ancestral File.</p>
-<div class="references">
-<p>See: <a href="#tag-def-indi">INDI</a>.<a href="#tag-def-afn">AFN</a></p>
-</div>
-        </dd>
-
-        <dt id="prim-approved-system-id">APPROVED_SYSTEM_ID <span class="size">{Size=1:20}</span></dt>
-        <dd>
-          <p>A system identification name which was obtained through the GEDCOM registration process. This name must be unique from any other product.</p>
-
-          <p>Spaces ("<code> </code>", U+0020) within the name must be substituted with an underscore ("<code>_</code>", U+005F) to create a value with no spaces.</p>
-<div class="references">
-<p>See: <a href="#tag-def-head">HEAD</a>.<a href="#tag-def-sour">SOUR</a></p>
-</div>
-        </dd>
-
         <dt id="prim-attribute-descriptor">ATTRIBUTE_DESCRIPTOR <span class="size">{Size=1:90}</span></dt>
         <dd>
           <p>Text describing a particular characteristic or attribute assigned to an individual. This attribute value is assigned to the <a href="#tag-def-fact">FACT</a> subrecord. The classification of this specific attribute or fact is specified by the value of the subordinate <a href="#tag-def-type">TYPE</a> subrecord.</p>
@@ -2628,14 +2478,7 @@ CHILD
         <dd>
           <p>The date that this data was changed.</p>
 <div class="references">
-<p>See:</p>
-<ul>
-<li>&lt;&lt;<a href="#change-date-subr">CHANGE<wbr>_DATE</a>&gt;&gt;.<a href="#tag-def-chan">CHAN</a>.<a href="#tag-def-date">DATE</a></li>
-<li>&lt;&lt;<a href="#lds-individual-ordinance-subr">LDS<wbr>_INDIVIDUAL<wbr>_ORDINANCE</a>&gt;&gt;.<a href="#tag-def-conl">CONL</a>.<a href="#tag-def-stat">STAT</a>.<a href="#tag-def-date">DATE</a></li>
-<li>&lt;&lt;<a href="#lds-individual-ordinance-subr">LDS<wbr>_INDIVIDUAL<wbr>_ORDINANCE</a>&gt;&gt;.<a href="#tag-def-endl">ENDL</a>.<a href="#tag-def-stat">STAT</a>.<a href="#tag-def-date">DATE</a></li>
-<li>&lt;&lt;<a href="#lds-individual-ordinance-subr">LDS<wbr>_INDIVIDUAL<wbr>_ORDINANCE</a>&gt;&gt;.<a href="#tag-def-slgc">SLGC</a>.<a href="#tag-def-stat">STAT</a>.<a href="#tag-def-date">DATE</a></li>
-<li>&lt;&lt;<a href="#lds-spouse-sealing-subr">LDS<wbr>_SPOUSE<wbr>_SEALING</a>&gt;&gt;.<a href="#tag-def-slgs">SLGS</a>.<a href="#tag-def-stat">STAT</a>.<a href="#tag-def-date">DATE</a></li>
-</ul>
+<p>See: &lt;&lt;<a href="#change-date-subr">CHANGE<wbr>_DATE</a>&gt;&gt;.<a href="#tag-def-chan">CHAN</a>.<a href="#tag-def-date">DATE</a></p>
 </div>
         </dd>
 
@@ -2683,7 +2526,7 @@ CHILD
 
         <dt id="prim-copyright-source-data">COPYRIGHT_SOURCE_DATA <span class="size">{Size=1:90}</span></dt>
         <dd>
-          <p>COPYRIGHT_SOURCE_DATA is a copyright statement required by the owner of data from which this information was downloaded. For example, when a GEDCOM download is requested from the Ancestral File, this would be the copyright statement to indicate that the data came from a copyrighted source.</p>
+          <p>COPYRIGHT_SOURCE_DATA is a copyright statement required by the owner of data from which this information was downloaded.</p>
 <div class="references">
 <p>See: <a href="#tag-def-head">HEAD</a>.<a href="#tag-def-sour">SOUR</a>.<a href="#tag-def-data">DATA</a>.<a href="#tag-def-copr">COPR</a></p>
 </div>
@@ -2965,7 +2808,6 @@ CHILD
 <li><a href="#tag-def-fam">FAM</a></li>
 <li>&lt;&lt;<a href="#individual-event-structure-subr">INDIVIDUAL<wbr>_EVENT<wbr>_STRUCTURE</a>&gt;&gt;.<a href="#tag-def-adop">ADOP</a>.<a href="#tag-def-famc">FAMC</a></li>
 <li>&lt;&lt;<a href="#individual-event-structure-subr">INDIVIDUAL<wbr>_EVENT<wbr>_STRUCTURE</a>&gt;&gt;.<a href="#tag-def-chr">CHR</a>.<a href="#tag-def-famc">FAMC</a></li>
-<li>&lt;&lt;<a href="#lds-individual-ordinance-subr">LDS<wbr>_INDIVIDUAL<wbr>_ORDINANCE</a>&gt;&gt;.<a href="#tag-def-slgc">SLGC</a>.<a href="#tag-def-famc">FAMC</a></li>
 <li>&lt;&lt;<a href="#spouse-to-family-link-subr">SPOUSE<wbr>_TO<wbr>_FAMILY<wbr>_LINK</a>&gt;&gt;.<a href="#tag-def-fams">FAMS</a></li>
 </ul>
 </div>
@@ -3179,101 +3021,6 @@ CHILD
 </div>
         </dd>
 
-        <dt id="prim-lds-baptism-date-status">LDS_BAPTISM_DATE_STATUS <span class="size">{Size=5:10}</span></dt>
-        <dd>
-          <p>A code indicating the status of an LDS baptism and confirmation date where the choices are:</p>
-
-          <table class="value-choices">
-            <thead>
-              <tr><th>Choice</th><th>Description</th></tr>
-            </thead>
-            <tbody>
-              <tr><td><code>CHILD</code></td><td>Died before becoming eight years old, baptism not required.</td></tr>
-              <tr><td><code>COMPLETED</code></td><td>Completed but the date is not known.</td></tr>
-              <tr><td><code>EXCLUDED</code></td><td>Patron excluded this ordinance from being cleared in this submission.</td></tr>
-              <tr><td><code>PRE-1970</code></td><td>Ordinance is likely completed, another ordinance for this person was converted from temple records of work completed before 1970, therefore this ordinance is assumed to be complete until all records are converted.</td></tr>
-              <tr><td><code>STILLBORN</code></td><td>Stillborn, baptism not required.</td></tr>
-              <tr><td><code>SUBMITTED</code></td><td>Ordinance was previously submitted.</td></tr>
-              <tr><td><code>UNCLEARED</code></td><td>Data for clearing ordinance request was insufficient.</td></tr>
-            </tbody>
-          </table>
-<div class="references">
-<p>See: &lt;&lt;<a href="#lds-individual-ordinance-subr">LDS<wbr>_INDIVIDUAL<wbr>_ORDINANCE</a>&gt;&gt;.<a href="#tag-def-conl">CONL</a>.<a href="#tag-def-stat">STAT</a></p>
-</div>
-        </dd>
-
-        <dt id="prim-lds-child-sealing-date-status">LDS_CHILD_SEALING_DATE_STATUS <span class="size">{Size=5:10}</span></dt>
-        <dd>
-          <p>A code indicating the status of an LDS child sealing date where the choices are:</p>
-
-          <table class="value-choices">
-            <thead>
-              <tr><th>Choice</th><th>Description</th></tr>
-            </thead>
-            <tbody>
-              <tr><td><code>BIC</code></td><td>Born in the covenant receiving blessing of child to parent sealing.</td></tr>
-              <tr><td><code>COMPLETED</code></td><td>Completed but the date is not known.</td></tr>
-              <tr><td><code>DNS</code></td><td>This ordinance is not authorized.</td></tr>
-              <tr><td><code>EXCLUDED</code></td><td>Patron excluded this ordinance from being cleared in this submission.</td></tr>
-              <tr><td><code>PRE-1970</code></td><td>See PRE-1970 under <a href="#prim-lds-baptism-date-status">LDS_BAPTISM_DATE_STATUS</a>.</td></tr>
-              <tr><td><code>STILLBORN</code></td><td>Stillborn, not required.</td></tr>
-              <tr><td><code>SUBMITTED</code></td><td>Ordinance was previously submitted.</td></tr>
-              <tr><td><code>UNCLEARED</code></td><td>Data for clearing ordinance request was insufficient.</td></tr>
-            </tbody>
-          </table>
-<div class="references">
-<p>See: &lt;&lt;<a href="#lds-individual-ordinance-subr">LDS<wbr>_INDIVIDUAL<wbr>_ORDINANCE</a>&gt;&gt;.<a href="#tag-def-slgc">SLGC</a>.<a href="#tag-def-stat">STAT</a></p>
-</div>
-        </dd>
-
-        <dt id="prim-lds-endowment-date-status">LDS_ENDOWMENT_DATE_STATUS <span class="size">{Size=5:10}</span></dt>
-        <dd>
-          <p>A code indicating the status of an LDS endowment ordinance where the choices are:</p>
-
-          <table class="value-choices">
-            <thead>
-              <tr><th>Choice</th><th>Description</th></tr>
-            </thead>
-            <tbody>
-              <tr><td><code>CHILD</code></td><td>Died before eight years old.</td></tr>
-              <tr><td><code>COMPLETED</code></td><td>Completed but the date is not known.</td></tr>
-              <tr><td><code>EXCLUDED</code></td><td>Patron excluded this ordinance from being cleared in this submission.</td></tr>
-              <tr><td><code>INFANT</code></td><td>Died before less than one year old, baptism or endowment not required.</td></tr>
-              <tr><td><code>PRE-1970</code></td><td>See PRE-1970 under <a href="#prim-lds-baptism-date-status">LDS_BAPTISM_DATE_STATUS</a>.</td></tr>
-              <tr><td><code>STILLBORN</code></td><td>Stillborn, ordinance not required.</td></tr>
-              <tr><td><code>SUBMITTED</code></td><td>Ordinance was previously submitted.</td></tr>
-              <tr><td><code>UNCLEARED</code></td><td>Data for clearing ordinance request was insufficient.</td></tr>
-            </tbody>
-          </table>
-<div class="references">
-<p>See: &lt;&lt;<a href="#lds-individual-ordinance-subr">LDS<wbr>_INDIVIDUAL<wbr>_ORDINANCE</a>&gt;&gt;.<a href="#tag-def-endl">ENDL</a>.<a href="#tag-def-stat">STAT</a></p>
-</div>
-        </dd>
-
-        <dt id="prim-lds-spouse-sealing-date-status">LDS_SPOUSE_SEALING_DATE_STATUS <span class="size">{Size=3:10}</span></dt>
-        <dd>
-          <p>A code indicating the status of an LDS spouse sealing date where the choices are:</p>
-
-          <table class="value-choices">
-            <thead>
-              <tr><th>Choice</th><th>Description</th></tr>
-            </thead>
-            <tbody>
-              <tr><td><code>CANCELED</code></td><td>Canceled and considered invalid.</td></tr>
-              <tr><td><code>COMPLETED</code></td><td>Completed but the date is not known.</td></tr>
-              <tr><td><code>DNS</code></td><td>This ordinance is not authorized.</td></tr>
-              <tr><td><code>DNS/CAN</code></td><td>This ordinance is not authorized, previous sealing cancelled.</td></tr>
-              <tr><td><code>EXCLUDED</code></td><td>Patron excluded this ordinance from being cleared in this submission.</td></tr>
-              <tr><td><code>PRE-1970</code></td><td>See PRE-1970 under <a href="#prim-lds-baptism-date-status">LDS_BAPTISM_DATE_STATUS</a>.</td></tr>
-              <tr><td><code>SUBMITTED</code></td><td>Ordinance was previously submitted.</td></tr>
-              <tr><td><code>UNCLEARED</code></td><td>Data for clearing ordinance request was insufficient.</td></tr>
-            </tbody>
-          </table>
-<div class="references">
-<p>See: &lt;&lt;<a href="#lds-spouse-sealing-subr">LDS<wbr>_SPOUSE<wbr>_SEALING</a>&gt;&gt;.<a href="#tag-def-slgs">SLGS</a>.<a href="#tag-def-stat">STAT</a></p>
-</div>
-        </dd>
-
         <dt id="prim-multimedia-file-reference">MULTIMEDIA_FILE_REFERENCE <span class="size">{Size=1:1024}</span></dt>
         <dd>
           <p>A MULTIMEDIA_FILE_REFERENCE is the complete path to a local or remote file that contains the multimedia object to be linked to the GEDCOM context.</p>
@@ -3317,13 +3064,6 @@ CHILD
 <p>See: <a href="#tag-def-head">HEAD</a>.<a href="#tag-def-sour">SOUR</a>.<a href="#tag-def-corp">CORP</a></p>
 </div>
         </dd>
-
-        <!-- TODO Removed with obsolete SUBN record
-      <dt id="prim-name-of-family-file">NAME_OF_FAMILY_FILE <span class="size">{Size=1:120}</span></dt>
-      <dd>
-        <p>Name under which family names for ordinances are stored in the temple's family file.</p>
-      </dd>
-      -->
 
         <dt id="prim-name-of-product">NAME_OF_PRODUCT <span class="size">{Size=1:90}</span></dt>
         <dd>
@@ -3592,18 +3332,6 @@ CHILD
 </div>
         </dd>
 
-        <!-- TODO Removed with obsolete SUBN record
-      <dt id="prim-ordinance-process-flag">ORDINANCE_PROCESS_FLAG <span class="size">{Size=2:3}</span></dt>
-      <dd>
-        <p>A keyword that indicates whether submission should be processed for clearing temple ordinances. The choices are:</p>
-
-        <ul>
-          <li><code>yes</code></li>
-          <li><code>no</code></li>
-        </ul>
-      </dd>
-      -->
-
         <dt id="prim-pedigree-linkage-type">PEDIGREE_LINKAGE_TYPE <span class="size">{Size=5:7}</span></dt>
         <dd>
           <p>A code used to indicate the child to family relationship for pedigree navigation purposes. The choices are:</p>
@@ -3704,22 +3432,6 @@ CHILD
 </div>
         </dd>
 
-        <dt id="prim-place-living-ordinance">PLACE_LIVING_ORDINANCE <span class="size">{Size=1:120}</span></dt>
-        <dd>
-          &lt;<a href="#prim-place-name">PLACE_NAME</a>&gt;
-
-          The locality of the place where a living LDS ordinance took place. Typically, a living LDS baptism place would be recorded in this field.
-<div class="references">
-<p>See:</p>
-<ul>
-<li>&lt;&lt;<a href="#lds-individual-ordinance-subr">LDS<wbr>_INDIVIDUAL<wbr>_ORDINANCE</a>&gt;&gt;.<a href="#tag-def-conl">CONL</a>.<a href="#tag-def-plac">PLAC</a></li>
-<li>&lt;&lt;<a href="#lds-individual-ordinance-subr">LDS<wbr>_INDIVIDUAL<wbr>_ORDINANCE</a>&gt;&gt;.<a href="#tag-def-endl">ENDL</a>.<a href="#tag-def-plac">PLAC</a></li>
-<li>&lt;&lt;<a href="#lds-individual-ordinance-subr">LDS<wbr>_INDIVIDUAL<wbr>_ORDINANCE</a>&gt;&gt;.<a href="#tag-def-slgc">SLGC</a>.<a href="#tag-def-plac">PLAC</a></li>
-<li>&lt;&lt;<a href="#lds-spouse-sealing-subr">LDS<wbr>_SPOUSE<wbr>_SEALING</a>&gt;&gt;.<a href="#tag-def-slgs">SLGS</a>.<a href="#tag-def-plac">PLAC</a></li>
-</ul>
-</div>
-        </dd>
-
         <dt id="prim-place-longitude">PLACE_LONGITUDE <span class="size">{Size=2:11}</span></dt>
         <dd>
           <p>PLACE_LONGITUDE is the value specifying the longitudinal coordinate of a place. The longitude coordinate is the direction east or west from the Prime Meridian in degrees and fraction of degrees.</p>
@@ -3794,14 +3506,6 @@ CHILD
 </div>
         </dd>
 
-        <dt id="prim-receiving-system-name">RECEIVING_SYSTEM_NAME <span class="size">{Size=1:20}</span></dt>
-        <dd>
-          <p>The name of the system expected to process the GEDCOM document.</p>
-<div class="references">
-<p>See: <a href="#tag-def-head">HEAD</a>.<a href="#tag-def-dest">DEST</a></p>
-</div>
-        </dd>
-
         <dt id="prim-record-identifier">RECORD_IDENTIFIER <span class="size">{Size=1:18}</span></dt>
         <dd>
           <p>An identification number assigned to each record within a specific database. The database to which the RECORD_IDENTIFIER pertains is indicated by the REGISTERED_RESOURCE_NUMBER which precedes the colon (:). If the RECORD_IDENTIFIER is not preceded by a colon, it is a reference to a record within the current GEDCOM document.</p>
@@ -3851,8 +3555,7 @@ CHILD
         <dt id="prim-restriction-notice">RESTRICTION_NOTICE <span class="size">{Size=6:7}</span></dt>
         <dd>
           <p>
-            The RESTRICTION_NOTICE is defined for Ancestral File usage. Ancestral File download GEDCOM files
-            may contain this data. The choices are:
+            The RESTRICTION_NOTICE indicates a restriction on the use of the data associated with the superior subrecord. The choices are:
           </p>
 
           <table class="value-choices">
@@ -3862,9 +3565,9 @@ CHILD
             <tbody>
               <tr><td><code>confidential</code></td><td>This data was marked as confidential by the user. In some systems data marked as confidential will be treated differently, for example, there might be an option that would stop confidential data from appearing on printed reports or would prevent that information from being exported.</td></tr>
 
-              <tr><td><code>locked</code></td><td>Some records in Ancestral File have been satisfactorily proven by evidence, but because of source conflicts or incorrect traditions, there are repeated attempts to change this record. By arrangement, the Ancestral File Custodian can lock a record so that it cannot be changed without an agreement from the person assigned as the steward of such a record. The assigned steward is either the submitter listed for the record or Family History Support when no submitter is listed.</td></tr>
+              <tr><td><code>locked</code></td><td>This data was marked as locked by the user. A lock indicates that the sending system is requesting that the data be treated as read-only.</td></tr>
 
-              <tr><td><code>privacy</code></td><td>Indicates that information concerning this record is not present due to rights of or an approved request for privacy. For example, data from requested downloads of the Ancestral File may have individuals marked with "privacy" if they are assumed living, that is they were born within the last 110 years and there isn't a death date. In certain cases family records may also be marked with the <a href="#tag-def-resn">RESN</a> tag of <code>privacy</code> if either individual acting in the role of HUSB or WIFE is assumed living.</td></tr>
+              <tr><td><code>privacy</code></td><td>Indicates that data has been marked private by the user and is not present.</td></tr>
             </tbody>
           </table>
 <div class="references">
@@ -4081,16 +3784,18 @@ CHILD
 </div>
         </dd>
 
-        <dt id="prim-temple-code">TEMPLE_CODE <span class="size">{Size=4:5}</span></dt>
+        <dt id="prim-system-id">SYSTEM_ID <span class="size">{Size=1:60}</span></dt>
         <dd>
-          <p>An abbreviation of the temple in which LDS temple ordinances were performed.</p>
+          <p>A name that identifies a sending (<a href="#tag-def-head">HEAD</a>.<a href="#tag-def-sour">SOUR</a>) or receiving (<a href="#tag-def-head">HEAD</a>.<a href="#tag-def-dest">DEST</a>) system.</p>
+          
+          <p>Names must be unique, but there is no central authority to manage SYSTEM_IDs, so it is up to system implementers to use values that avoid collisions.</p>
+
+          <p>Spaces ("<code> </code>", U+0020) within the name must be substituted with an underscore ("<code>_</code>", U+005F) to create a value with no spaces.</p>
 <div class="references">
 <p>See:</p>
 <ul>
-<li>&lt;&lt;<a href="#lds-individual-ordinance-subr">LDS<wbr>_INDIVIDUAL<wbr>_ORDINANCE</a>&gt;&gt;.<a href="#tag-def-conl">CONL</a>.<a href="#tag-def-temp">TEMP</a></li>
-<li>&lt;&lt;<a href="#lds-individual-ordinance-subr">LDS<wbr>_INDIVIDUAL<wbr>_ORDINANCE</a>&gt;&gt;.<a href="#tag-def-endl">ENDL</a>.<a href="#tag-def-temp">TEMP</a></li>
-<li>&lt;&lt;<a href="#lds-individual-ordinance-subr">LDS<wbr>_INDIVIDUAL<wbr>_ORDINANCE</a>&gt;&gt;.<a href="#tag-def-slgc">SLGC</a>.<a href="#tag-def-temp">TEMP</a></li>
-<li>&lt;&lt;<a href="#lds-spouse-sealing-subr">LDS<wbr>_SPOUSE<wbr>_SEALING</a>&gt;&gt;.<a href="#tag-def-slgs">SLGS</a>.<a href="#tag-def-temp">TEMP</a></li>
+<li><a href="#tag-def-head">HEAD</a>.<a href="#tag-def-dest">DEST</a></li>
+<li><a href="#tag-def-head">HEAD</a>.<a href="#tag-def-sour">SOUR</a></li>
 </ul>
 </div>
         </dd>
@@ -4416,22 +4121,6 @@ private static string GetPafChecksum(string uuid) {
           <p><code><abbr title="Interpreted">INT</abbr></code> &lt;<a href="#prim-dmy">DMY</a>&gt; &lt;<a href="#prim-date-phrase">DATE_PHRASE</a>&gt;</p>
 
           <p>ALl three primitive components are required.</p>
-        </dd>
-
-        <dt id="prim-date-lds-ord">DATE_LDS_ORD <span class="size">{Size=4:35}</span></dt>
-        <dd>
-          <p>&lt;<a href="#prim-date-value">DATE_VALUE</a>&gt;</p>
-
-          <p>LDS ordinance dates use only the Gregorian calendar and most often use the form of day, month, and year. Only in rare instances is there a partial date. The temple tag and code should always accompany temple ordinance dates. Sometimes the LDS_(ordinance)_DATE_STATUS is used to indicate that an ordinance date and temple code is not required, such as when BIC is used. (See LDS_(ordinance)_DATE_STATUS definitions.)</p>
-<div class="references">
-<p>See:</p>
-<ul>
-<li>&lt;&lt;<a href="#lds-individual-ordinance-subr">LDS<wbr>_INDIVIDUAL<wbr>_ORDINANCE</a>&gt;&gt;.<a href="#tag-def-conl">CONL</a>.<a href="#tag-def-date">DATE</a></li>
-<li>&lt;&lt;<a href="#lds-individual-ordinance-subr">LDS<wbr>_INDIVIDUAL<wbr>_ORDINANCE</a>&gt;&gt;.<a href="#tag-def-endl">ENDL</a>.<a href="#tag-def-date">DATE</a></li>
-<li>&lt;&lt;<a href="#lds-individual-ordinance-subr">LDS<wbr>_INDIVIDUAL<wbr>_ORDINANCE</a>&gt;&gt;.<a href="#tag-def-slgc">SLGC</a>.<a href="#tag-def-date">DATE</a></li>
-<li>&lt;&lt;<a href="#lds-spouse-sealing-subr">LDS<wbr>_SPOUSE<wbr>_SEALING</a>&gt;&gt;.<a href="#tag-def-slgs">SLGS</a>.<a href="#tag-def-date">DATE</a></li>
-</ul>
-</div>
         </dd>
 
         <dt id="prim-date-period">DATE_PERIOD <span class="size">{Size=7:35}</span></dt>
@@ -4926,9 +4615,7 @@ private static string GetPafChecksum(string uuid) {
         <dt id="tag-def-afn">AFN <span class="tag-full-name">Afn</span></dt>
         <dd>
           <p>A unique permanent record file number of an individual record stored in Ancestral File.</p>
-<div class="references">
-<p>See: <a href="#tag-def-indi">INDI</a>.AFN &lt;<a href="#prim-ancestral-file-number">ANCESTRAL<wbr>_FILE<wbr>_NUMBER</a>&gt;</p>
-</div>
+
         </dd>
 
         <dt id="tag-def-age">AGE <span class="tag-full-name">Age</span></dt>
@@ -5025,16 +4712,6 @@ private static string GetPafChecksum(string uuid) {
           <p>The name of the individual who created or compiled information.</p>
 <div class="references">
 <p>See: <a href="#tag-def-sour">SOUR</a>.AUTH &lt;<a href="#prim-source-originator">SOURCE<wbr>_ORIGINATOR</a>&gt;</p>
-</div>
-        </dd>
-
-        <dt id="tag-def-bapl">BAPL <span class="tag-full-name">Baptism (LSD)</span></dt>
-        <dd>
-          <p>The event of baptism performed at age eight or later by priesthood authority of the LDS Church.</p>
-
-          <p>See also <a href="#tag-def-bapm">BAPM</a> and <a href="#tag-def-chr">CHR</a>.</p>
-<div class="references">
-<p>See: &lt;&lt;<a href="#lds-individual-ordinance-subr">LDS<wbr>_INDIVIDUAL<wbr>_ORDINANCE</a>&gt;&gt;.BAPL <a href="#tag-def-"></a></p>
 </div>
         </dd>
 
@@ -5142,7 +4819,7 @@ private static string GetPafChecksum(string uuid) {
 
         <dt id="tag-def-chil">CHIL <span class="tag-full-name">Child</span></dt>
         <dd>
-          <p>The natural, adopted, or sealed (LDS) child of a father and a mother.</p>
+          <p>The natural or adopted child of a father and a mother.</p>
 <div class="references">
 <p>See: <a href="#tag-def-fam">FAM</a>.CHIL &lt;<a href="#prim-id-indi">ID<wbr>_INDI</a>&gt;</p>
 </div>
@@ -5184,14 +4861,6 @@ private static string GetPafChecksum(string uuid) {
           <p>The religious event of conferring the gift of the Holy Ghost and, among protestants, full church membership.</p>
 <div class="references">
 <p>See: &lt;&lt;<a href="#individual-event-structure-subr">INDIVIDUAL<wbr>_EVENT<wbr>_STRUCTURE</a>&gt;&gt;.CONF <a href="#tag-def-"></a></p>
-</div>
-        </dd>
-
-        <dt id="tag-def-conl">CONL <span class="tag-full-name">Confirmation (LDS)</span></dt>
-        <dd>
-          <p>The religious event by which a person receives membership in the LDS Church.</p>
-<div class="references">
-<p>See: &lt;&lt;<a href="#lds-individual-ordinance-subr">LDS<wbr>_INDIVIDUAL<wbr>_ORDINANCE</a>&gt;&gt;.CONL <a href="#tag-def-"></a></p>
 </div>
         </dd>
 
@@ -5264,14 +4933,6 @@ private static string GetPafChecksum(string uuid) {
 <li>&lt;&lt;<a href="#event-or-fact-detail-subr">EVENT<wbr>_OR<wbr>_FACT<wbr>_DETAIL</a>&gt;&gt;.DATE &lt;<a href="#prim-date-value">DATE<wbr>_VALUE</a>&gt;</li>
 <li><a href="#tag-def-head">HEAD</a>.DATE &lt;<a href="#prim-document-date">DOCUMENT<wbr>_DATE</a>&gt;</li>
 <li><a href="#tag-def-head">HEAD</a>.<a href="#tag-def-sour">SOUR</a>.<a href="#tag-def-data">DATA</a>.DATE &lt;<a href="#prim-publication-date">PUBLICATION<wbr>_DATE</a>&gt;</li>
-<li>&lt;&lt;<a href="#lds-individual-ordinance-subr">LDS<wbr>_INDIVIDUAL<wbr>_ORDINANCE</a>&gt;&gt;.<a href="#tag-def-conl">CONL</a>.DATE &lt;<a href="#prim-date-lds-ord">DATE<wbr>_LDS<wbr>_ORD</a>&gt;</li>
-<li>&lt;&lt;<a href="#lds-individual-ordinance-subr">LDS<wbr>_INDIVIDUAL<wbr>_ORDINANCE</a>&gt;&gt;.<a href="#tag-def-conl">CONL</a>.<a href="#tag-def-stat">STAT</a>.DATE &lt;<a href="#prim-change-date">CHANGE<wbr>_DATE</a>&gt;</li>
-<li>&lt;&lt;<a href="#lds-individual-ordinance-subr">LDS<wbr>_INDIVIDUAL<wbr>_ORDINANCE</a>&gt;&gt;.<a href="#tag-def-endl">ENDL</a>.DATE &lt;<a href="#prim-date-lds-ord">DATE<wbr>_LDS<wbr>_ORD</a>&gt;</li>
-<li>&lt;&lt;<a href="#lds-individual-ordinance-subr">LDS<wbr>_INDIVIDUAL<wbr>_ORDINANCE</a>&gt;&gt;.<a href="#tag-def-endl">ENDL</a>.<a href="#tag-def-stat">STAT</a>.DATE &lt;<a href="#prim-change-date">CHANGE<wbr>_DATE</a>&gt;</li>
-<li>&lt;&lt;<a href="#lds-individual-ordinance-subr">LDS<wbr>_INDIVIDUAL<wbr>_ORDINANCE</a>&gt;&gt;.<a href="#tag-def-slgc">SLGC</a>.DATE &lt;<a href="#prim-date-lds-ord">DATE<wbr>_LDS<wbr>_ORD</a>&gt;</li>
-<li>&lt;&lt;<a href="#lds-individual-ordinance-subr">LDS<wbr>_INDIVIDUAL<wbr>_ORDINANCE</a>&gt;&gt;.<a href="#tag-def-slgc">SLGC</a>.<a href="#tag-def-stat">STAT</a>.DATE &lt;<a href="#prim-change-date">CHANGE<wbr>_DATE</a>&gt;</li>
-<li>&lt;&lt;<a href="#lds-spouse-sealing-subr">LDS<wbr>_SPOUSE<wbr>_SEALING</a>&gt;&gt;.<a href="#tag-def-slgs">SLGS</a>.DATE &lt;<a href="#prim-date-lds-ord">DATE<wbr>_LDS<wbr>_ORD</a>&gt;</li>
-<li>&lt;&lt;<a href="#lds-spouse-sealing-subr">LDS<wbr>_SPOUSE<wbr>_SEALING</a>&gt;&gt;.<a href="#tag-def-slgs">SLGS</a>.<a href="#tag-def-stat">STAT</a>.DATE &lt;<a href="#prim-change-date">CHANGE<wbr>_DATE</a>&gt;</li>
 <li><a href="#tag-def-sour">SOUR</a>.<a href="#tag-def-data">DATA</a>.<a href="#tag-def-even">EVEN</a>.DATE &lt;<a href="#prim-date-period">DATE<wbr>_PERIOD</a>&gt;</li>
 <li>&lt;&lt;<a href="#source-citation-subr">SOURCE<wbr>_CITATION</a>&gt;&gt;.<a href="#tag-def-sour">SOUR</a>.<a href="#tag-def-data">DATA</a>.DATE &lt;<a href="#prim-entry-recording-date">ENTRY<wbr>_RECORDING<wbr>_DATE</a>&gt;</li>
 </ul>
@@ -5286,15 +4947,6 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <!-- TODO Removed with obsolete SUBN record
-      <dt id="tag-def-desc">DESC <span class="tag-full-name">Descendants</span></dt>
-      <dd>
-        <p>Indicates the number of generations of descendants in the document via its <a href="#prim-generations-of-descendants">GENERATIONS_OF_DESCENDANTS</a> value.</p>
-
-        <p>Used only in the context of the <a href="#tag-def-subn">SUBN</a> (submission) record.</p>
-      </dd>
-      -->
-
         <dt id="tag-def-desi">DESI <span class="tag-full-name">Descendant Interest</span></dt>
         <dd>
           <p>Indicates an interest in research to identify additional descendants of this individual. (See also <a href="#tag-def-anci">ANCI</a>)</p>
@@ -5305,13 +4957,12 @@ private static string GetPafChecksum(string uuid) {
 
         <dt id="tag-def-dest">DEST <span class="tag-full-name">Destination</span></dt>
         <dd>
-          <p>Identifies the system intended to receive the data via its <a href="#prim-receiving-system-name">RECEIVING_SYSTEM_NAME</a>.</p>
+          <p>Identifies the system intended to receive the data via a <a href="#prim-system-id">SYSTEM_ID</a>.</p>
 
           <p>For important information about using the DEST subrecord, see the <a href="#sour-and-dest">HEAD.SOUR and HEAD.DEST</a> section.</p>
 
-          <p class="pending-removal">Submissions to the Family History Department for Ancestral File submission or for clearing temple ordinances must use a HEAD.DEST subrecord with the <a href="#prim-receiving-system-name">RECEIVING_SYSTEM_NAME</a> set to <code>ANSTFILE</code> or <code>TempleReady,</code> respectively.</p>
 <div class="references">
-<p>See: <a href="#tag-def-head">HEAD</a>.DEST &lt;<a href="#prim-receiving-system-name">RECEIVING<wbr>_SYSTEM<wbr>_NAME</a>&gt;</p>
+<p>See: <a href="#tag-def-head">HEAD</a>.DEST &lt;<a href="#prim-system-id">SYSTEM<wbr>_ID</a>&gt;</p>
 </div>
         </dd>
 
@@ -5360,14 +5011,6 @@ private static string GetPafChecksum(string uuid) {
           <p>An event of leaving one's homeland with the intent of residing elsewhere.</p>
 <div class="references">
 <p>See: &lt;&lt;<a href="#individual-event-structure-subr">INDIVIDUAL<wbr>_EVENT<wbr>_STRUCTURE</a>&gt;&gt;.EMIG <a href="#tag-def-"></a></p>
-</div>
-        </dd>
-
-        <dt id="tag-def-endl">ENDL <span class="tag-full-name">Endowment (LDS)</span></dt>
-        <dd>
-          <p>A religious event where an endowment ordinance for an individual was performed by priesthood authority in an LDS temple.</p>
-<div class="references">
-<p>See: &lt;&lt;<a href="#lds-individual-ordinance-subr">LDS<wbr>_INDIVIDUAL<wbr>_ORDINANCE</a>&gt;&gt;.ENDL <a href="#tag-def-"></a></p>
 </div>
         </dd>
 
@@ -5437,17 +5080,9 @@ private static string GetPafChecksum(string uuid) {
 <li>&lt;&lt;<a href="#child-to-family-link-subr">CHILD<wbr>_TO<wbr>_FAMILY<wbr>_LINK</a>&gt;&gt;.FAMC &lt;<a href="#prim-id-fam">ID<wbr>_FAM</a>&gt;</li>
 <li>&lt;&lt;<a href="#individual-event-structure-subr">INDIVIDUAL<wbr>_EVENT<wbr>_STRUCTURE</a>&gt;&gt;.<a href="#tag-def-adop">ADOP</a>.FAMC &lt;<a href="#prim-id-fam">ID<wbr>_FAM</a>&gt;</li>
 <li>&lt;&lt;<a href="#individual-event-structure-subr">INDIVIDUAL<wbr>_EVENT<wbr>_STRUCTURE</a>&gt;&gt;.<a href="#tag-def-chr">CHR</a>.FAMC &lt;<a href="#prim-id-fam">ID<wbr>_FAM</a>&gt;</li>
-<li>&lt;&lt;<a href="#lds-individual-ordinance-subr">LDS<wbr>_INDIVIDUAL<wbr>_ORDINANCE</a>&gt;&gt;.<a href="#tag-def-slgc">SLGC</a>.FAMC &lt;<a href="#prim-id-fam">ID<wbr>_FAM</a>&gt;</li>
 </ul>
 </div>
         </dd>
-
-        <!-- TODO Removed with obsolete SUBN record
-      <dt id="tag-def-famf">FAMF <span class="tag-full-name">Family File</span></dt>
-      <dd>
-        <p>Pertaining to, or the name of, a family file. Names stored in a file that are assigned to a family for doing temple ordinance work.</p>
-      </dd>
-      -->
 
         <dt id="tag-def-fams">FAMS <span class="tag-full-name">Family Spouse</span></dt>
         <dd>
@@ -5879,10 +5514,6 @@ private static string GetPafChecksum(string uuid) {
 <p>See:</p>
 <ul>
 <li><a href="#tag-def-head">HEAD</a>.PLAC <a href="#tag-def-"></a></li>
-<li>&lt;&lt;<a href="#lds-individual-ordinance-subr">LDS<wbr>_INDIVIDUAL<wbr>_ORDINANCE</a>&gt;&gt;.<a href="#tag-def-conl">CONL</a>.PLAC &lt;<a href="#prim-place-living-ordinance">PLACE<wbr>_LIVING<wbr>_ORDINANCE</a>&gt;</li>
-<li>&lt;&lt;<a href="#lds-individual-ordinance-subr">LDS<wbr>_INDIVIDUAL<wbr>_ORDINANCE</a>&gt;&gt;.<a href="#tag-def-endl">ENDL</a>.PLAC &lt;<a href="#prim-place-living-ordinance">PLACE<wbr>_LIVING<wbr>_ORDINANCE</a>&gt;</li>
-<li>&lt;&lt;<a href="#lds-individual-ordinance-subr">LDS<wbr>_INDIVIDUAL<wbr>_ORDINANCE</a>&gt;&gt;.<a href="#tag-def-slgc">SLGC</a>.PLAC &lt;<a href="#prim-place-living-ordinance">PLACE<wbr>_LIVING<wbr>_ORDINANCE</a>&gt;</li>
-<li>&lt;&lt;<a href="#lds-spouse-sealing-subr">LDS<wbr>_SPOUSE<wbr>_SEALING</a>&gt;&gt;.<a href="#tag-def-slgs">SLGS</a>.PLAC &lt;<a href="#prim-place-living-ordinance">PLACE<wbr>_LIVING<wbr>_ORDINANCE</a>&gt;</li>
 <li>&lt;&lt;<a href="#place-structure-subr">PLACE<wbr>_STRUCTURE</a>&gt;&gt;.PLAC &lt;<a href="#prim-place-name">PLACE<wbr>_NAME</a>&gt;</li>
 <li><a href="#tag-def-sour">SOUR</a>.<a href="#tag-def-data">DATA</a>.<a href="#tag-def-even">EVEN</a>.PLAC &lt;<a href="#prim-source-jurisdiction-place">SOURCE<wbr>_JURISDICTION<wbr>_PLACE</a>&gt;</li>
 </ul>
@@ -6061,35 +5692,19 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-slgc">SLGC <span class="tag-full-name">Sealing Child</span></dt>
-        <dd>
-          <p>A religious event pertaining to the sealing of a child to his or her parents in an LDS temple ceremony.</p>
-<div class="references">
-<p>See: &lt;&lt;<a href="#lds-individual-ordinance-subr">LDS<wbr>_INDIVIDUAL<wbr>_ORDINANCE</a>&gt;&gt;.SLGC <a href="#tag-def-"></a></p>
-</div>
-        </dd>
-
-        <dt id="tag-def-slgs">SLGS <span class="tag-full-name">Sealing Spouse</span></dt>
-        <dd>
-          <p>A religious event pertaining to the sealing of a husband and wife in an LDS temple ceremony.</p>
-<div class="references">
-<p>See: &lt;&lt;<a href="#lds-spouse-sealing-subr">LDS<wbr>_SPOUSE<wbr>_SEALING</a>&gt;&gt;.SLGS <a href="#tag-def-"></a></p>
-</div>
-        </dd>
-
         <dt id="tag-def-sour">SOUR <span class="tag-full-name">Source</span></dt>
         <dd>
           <p>SOUR tags are used in several contexts:</p>
 
           <ul>
-            <li><a href="#tag-def-gedc">GEDC</a>.SOUR for the <a href="#prim-approved-system-id">APPROVED_SYSTEM_ID</a> and subrecords</li>
+            <li><a href="#tag-def-gedc">GEDC</a>.SOUR for the <a href="#prim-system-id">SYSTEM_ID</a> and subrecords</li>
             <li><a href="#sour-record">SOUR</a> (record) or <a href="#source-citation-subr">SOUR</a> (subrecord) to define the initial or original material from which information was obtained</li>
           </ul>
 <div class="references">
 <p>See:</p>
 <ul>
 <li><a href="#tag-def-"></a> &lt;&lt;<a href="#sour-record">SOUR<wbr>_RECORD</a>&gt;&gt;</li>
-<li><a href="#tag-def-head">HEAD</a>.SOUR &lt;<a href="#prim-approved-system-id">APPROVED<wbr>_SYSTEM<wbr>_ID</a>&gt;</li>
+<li><a href="#tag-def-head">HEAD</a>.SOUR &lt;<a href="#prim-system-id">SYSTEM<wbr>_ID</a>&gt;</li>
 <li>SOUR &lt;<a href="#prim-id-sour">ID<wbr>_SOUR</a>&gt;</li>
 <li>&lt;&lt;<a href="#source-citation-subr">SOURCE<wbr>_CITATION</a>&gt;&gt;.SOUR &lt;<a href="#prim-id-sour">ID<wbr>_SOUR</a>&gt;</li>
 <li>&lt;&lt;<a href="#source-citation-subr">SOURCE<wbr>_CITATION</a>&gt;&gt;.SOUR &lt;<a href="#prim-source-description">SOURCE<wbr>_DESCRIPTION</a>&gt;</li>
@@ -6125,14 +5740,7 @@ private static string GetPafChecksum(string uuid) {
         <dd>
           <p>An assessment of the state or condition of something.</p>
 <div class="references">
-<p>See:</p>
-<ul>
-<li>&lt;&lt;<a href="#child-to-family-link-subr">CHILD<wbr>_TO<wbr>_FAMILY<wbr>_LINK</a>&gt;&gt;.<a href="#tag-def-famc">FAMC</a>.STAT &lt;<a href="#prim-child-linkage-status">CHILD<wbr>_LINKAGE<wbr>_STATUS</a>&gt;</li>
-<li>&lt;&lt;<a href="#lds-individual-ordinance-subr">LDS<wbr>_INDIVIDUAL<wbr>_ORDINANCE</a>&gt;&gt;.<a href="#tag-def-conl">CONL</a>.STAT &lt;<a href="#prim-lds-baptism-date-status">LDS<wbr>_BAPTISM<wbr>_DATE<wbr>_STATUS</a>&gt;</li>
-<li>&lt;&lt;<a href="#lds-individual-ordinance-subr">LDS<wbr>_INDIVIDUAL<wbr>_ORDINANCE</a>&gt;&gt;.<a href="#tag-def-endl">ENDL</a>.STAT &lt;<a href="#prim-lds-endowment-date-status">LDS<wbr>_ENDOWMENT<wbr>_DATE<wbr>_STATUS</a>&gt;</li>
-<li>&lt;&lt;<a href="#lds-individual-ordinance-subr">LDS<wbr>_INDIVIDUAL<wbr>_ORDINANCE</a>&gt;&gt;.<a href="#tag-def-slgc">SLGC</a>.STAT &lt;<a href="#prim-lds-child-sealing-date-status">LDS<wbr>_CHILD<wbr>_SEALING<wbr>_DATE<wbr>_STATUS</a>&gt;</li>
-<li>&lt;&lt;<a href="#lds-spouse-sealing-subr">LDS<wbr>_SPOUSE<wbr>_SEALING</a>&gt;&gt;.<a href="#tag-def-slgs">SLGS</a>.STAT &lt;<a href="#prim-lds-spouse-sealing-date-status">LDS<wbr>_SPOUSE<wbr>_SEALING<wbr>_DATE<wbr>_STATUS</a>&gt;</li>
-</ul>
+<p>See: &lt;&lt;<a href="#child-to-family-link-subr">CHILD<wbr>_TO<wbr>_FAMILY<wbr>_LINK</a>&gt;&gt;.<a href="#tag-def-famc">FAMC</a>.STAT &lt;<a href="#prim-child-linkage-status">CHILD<wbr>_LINKAGE<wbr>_STATUS</a>&gt;</p>
 </div>
         </dd>
 
@@ -6163,20 +5771,6 @@ private static string GetPafChecksum(string uuid) {
           <p>A family name passed on or used by members of a family.</p>
 <div class="references">
 <p>See: &lt;&lt;<a href="#personal-name-pieces-subr">PERSONAL<wbr>_NAME<wbr>_PIECES</a>&gt;&gt;.SURN &lt;<a href="#prim-name-piece-surname">NAME<wbr>_PIECE<wbr>_SURNAME</a>&gt;</p>
-</div>
-        </dd>
-
-        <dt id="tag-def-temp">TEMP <span class="tag-full-name">Temple</span></dt>
-        <dd>
-          <p>The name or code that represents the name of an LDS Church Temple.</p>
-<div class="references">
-<p>See:</p>
-<ul>
-<li>&lt;&lt;<a href="#lds-individual-ordinance-subr">LDS<wbr>_INDIVIDUAL<wbr>_ORDINANCE</a>&gt;&gt;.<a href="#tag-def-conl">CONL</a>.TEMP &lt;<a href="#prim-temple-code">TEMPLE<wbr>_CODE</a>&gt;</li>
-<li>&lt;&lt;<a href="#lds-individual-ordinance-subr">LDS<wbr>_INDIVIDUAL<wbr>_ORDINANCE</a>&gt;&gt;.<a href="#tag-def-endl">ENDL</a>.TEMP &lt;<a href="#prim-temple-code">TEMPLE<wbr>_CODE</a>&gt;</li>
-<li>&lt;&lt;<a href="#lds-individual-ordinance-subr">LDS<wbr>_INDIVIDUAL<wbr>_ORDINANCE</a>&gt;&gt;.<a href="#tag-def-slgc">SLGC</a>.TEMP &lt;<a href="#prim-temple-code">TEMPLE<wbr>_CODE</a>&gt;</li>
-<li>&lt;&lt;<a href="#lds-spouse-sealing-subr">LDS<wbr>_SPOUSE<wbr>_SEALING</a>&gt;&gt;.<a href="#tag-def-slgs">SLGS</a>.TEMP &lt;<a href="#prim-temple-code">TEMPLE<wbr>_CODE</a>&gt;</li>
-</ul>
 </div>
         </dd>
 
@@ -6622,23 +6216,19 @@ private static string GetPafChecksum(string uuid) {
 <li><a href="#tag-def-adr1">ADR1</a></li>
 <li><a href="#tag-def-adr2">ADR2</a></li>
 <li><a href="#tag-def-adr3">ADR3</a></li>
-<li><a href="#tag-def-afn">AFN</a></li>
 <li><a href="#tag-def-age">AGE</a></li>
 <li><a href="#prim-age-at-event">AGE<wbr>_AT<wbr>_EVENT</a></li>
 <li><a href="#tag-def-agnc">AGNC</a></li>
 <li><a href="#tag-def-alia">ALIA</a></li>
-<li><a href="#prim-ancestral-file-number">ANCESTRAL<wbr>_FILE<wbr>_NUMBER</a></li>
 <li><a href="#tag-def-anci">ANCI</a></li>
 <li><a href="#character-encoding-change">ANSEL (encoding)</a></li>
 <li><a href="#tag-def-anul">ANUL</a></li>
-<li><a href="#prim-approved-system-id">APPROVED<wbr>_SYSTEM<wbr>_ID</a></li>
 <li><a href="#character-encoding-change">ASCII (encoding)</a></li>
 <li><a href="#tag-def-asso">ASSO</a></li>
 <li><a href="#association-structure-subr">ASSOCIATION<wbr>_STRUCTURE</a></li>
 <li><a href="#prim-attribute-descriptor">ATTRIBUTE<wbr>_DESCRIPTOR</a></li>
 <li><a href="#tag-def-auth">AUTH</a></li>
 <li><a href="#prim-automated-record-id">AUTOMATED<wbr>_RECORD<wbr>_ID</a></li>
-<li><a href="#tag-def-bapl">BAPL</a></li>
 <li><a href="#tag-def-bapm">BAPM</a></li>
 <li><a href="#tag-def-barm">BARM</a></li>
 <li><a href="#tag-def-basm">BASM</a></li>
@@ -6663,7 +6253,6 @@ private static string GetPafChecksum(string uuid) {
 <li><a href="#tag-def-chra">CHRA</a></li>
 <li><a href="#tag-def-city">CITY</a></li>
 <li><a href="#tag-def-conf">CONF</a></li>
-<li><a href="#tag-def-conl">CONL</a></li>
 <li><a href="#tag-def-cont">CONT</a></li>
 <li><a href="#contact-structure-subr">CONTACT<wbr>_STRUCTURE</a></li>
 <li><a href="#tag-def-copr">COPR</a></li>
@@ -6676,7 +6265,6 @@ private static string GetPafChecksum(string uuid) {
 <li><a href="#tag-def-ctry">CTRY</a></li>
 <li><a href="#tag-def-data">DATA</a></li>
 <li><a href="#tag-def-date">DATE</a></li>
-<li><a href="#prim-date-lds-ord">DATE<wbr>_LDS<wbr>_ORD</a></li>
 <li><a href="#prim-date-period">DATE<wbr>_PERIOD</a></li>
 <li><a href="#prim-date-value">DATE<wbr>_VALUE</a></li>
 <li><a href="#tag-def-deat">DEAT</a></li>
@@ -6690,7 +6278,6 @@ private static string GetPafChecksum(string uuid) {
 <li><a href="#tag-def-educ">EDUC</a></li>
 <li><a href="#tag-def-email">EMAIL</a></li>
 <li><a href="#tag-def-emig">EMIG</a></li>
-<li><a href="#tag-def-endl">ENDL</a></li>
 <li><a href="#tag-def-enga">ENGA</a></li>
 <li><a href="#prim-entry-recording-date">ENTRY<wbr>_RECORDING<wbr>_DATE</a></li>
 <li><a href="#tag-def-even">EVEN</a></li>
@@ -6735,12 +6322,6 @@ private static string GetPafChecksum(string uuid) {
 <li><a href="#prim-language-of-text">LANGUAGE<wbr>_OF<wbr>_TEXT</a></li>
 <li><a href="#prim-language-preference">LANGUAGE<wbr>_PREFERENCE</a></li>
 <li><a href="#tag-def-lati">LATI</a></li>
-<li><a href="#prim-lds-baptism-date-status">LDS<wbr>_BAPTISM<wbr>_DATE<wbr>_STATUS</a></li>
-<li><a href="#prim-lds-child-sealing-date-status">LDS<wbr>_CHILD<wbr>_SEALING<wbr>_DATE<wbr>_STATUS</a></li>
-<li><a href="#prim-lds-endowment-date-status">LDS<wbr>_ENDOWMENT<wbr>_DATE<wbr>_STATUS</a></li>
-<li><a href="#lds-individual-ordinance-subr">LDS<wbr>_INDIVIDUAL<wbr>_ORDINANCE</a></li>
-<li><a href="#prim-lds-spouse-sealing-date-status">LDS<wbr>_SPOUSE<wbr>_SEALING<wbr>_DATE<wbr>_STATUS</a></li>
-<li><a href="#lds-spouse-sealing-subr">LDS<wbr>_SPOUSE<wbr>_SEALING</a></li>
 <li><a href="#tag-def-long">LONG</a></li>
 <li><a href="#tag-def-map">MAP</a></li>
 <li><a href="#tag-def-marb">MARB</a></li>
@@ -6796,7 +6377,6 @@ private static string GetPafChecksum(string uuid) {
 <li><a href="#tag-def-plac">PLAC</a></li>
 <li><a href="#prim-place-hierarchy">PLACE<wbr>_HIERARCHY</a></li>
 <li><a href="#prim-place-latitude">PLACE<wbr>_LATITUDE</a></li>
-<li><a href="#prim-place-living-ordinance">PLACE<wbr>_LIVING<wbr>_ORDINANCE</a></li>
 <li><a href="#prim-place-longitude">PLACE<wbr>_LONGITUDE</a></li>
 <li><a href="#prim-place-name">PLACE<wbr>_NAME</a></li>
 <li><a href="#prim-place-phonetic-variation">PLACE<wbr>_PHONETIC<wbr>_VARIATION</a></li>
@@ -6808,7 +6388,6 @@ private static string GetPafChecksum(string uuid) {
 <li><a href="#tag-def-prop">PROP</a></li>
 <li><a href="#tag-def-publ">PUBL</a></li>
 <li><a href="#prim-publication-date">PUBLICATION<wbr>_DATE</a></li>
-<li><a href="#prim-receiving-system-name">RECEIVING<wbr>_SYSTEM<wbr>_NAME</a></li>
 <li><a href="#tag-def-refn">REFN</a></li>
 <li><a href="#tag-def-rela">RELA</a></li>
 <li><a href="#prim-relation-is-descriptor">RELATION<wbr>_IS<wbr>_DESCRIPTOR</a></li>
@@ -6829,8 +6408,6 @@ private static string GetPafChecksum(string uuid) {
 <li><a href="#prim-scholastic-achievement">SCHOLASTIC<wbr>_ACHIEVEMENT</a></li>
 <li><a href="#tag-def-sex">SEX</a></li>
 <li><a href="#prim-sex-value">SEX<wbr>_VALUE</a></li>
-<li><a href="#tag-def-slgc">SLGC</a></li>
-<li><a href="#tag-def-slgs">SLGS</a></li>
 <li><a href="#prim-social-security-number">SOCIAL<wbr>_SECURITY<wbr>_NUMBER</a></li>
 <li><a href="#tag-def-sour">SOUR</a></li>
 <li><a href="#prim-source-call-number">SOURCE<wbr>_CALL<wbr>_NUMBER</a></li>
@@ -6853,8 +6430,7 @@ private static string GetPafChecksum(string uuid) {
 <li><a href="#prim-submitter-registered-rfn">SUBMITTER<wbr>_REGISTERED<wbr>_RFN</a></li>
 <li><a href="#prim-submitter-text">SUBMITTER<wbr>_TEXT</a></li>
 <li><a href="#tag-def-surn">SURN</a></li>
-<li><a href="#tag-def-temp">TEMP</a></li>
-<li><a href="#prim-temple-code">TEMPLE<wbr>_CODE</a></li>
+<li><a href="#prim-system-id">SYSTEM<wbr>_ID</a></li>
 <li><a href="#tag-def-text">TEXT</a></li>
 <li><a href="#prim-text-from-source">TEXT<wbr>_FROM<wbr>_SOURCE</a></li>
 <li><a href="#tag-def-time">TIME</a></li>
