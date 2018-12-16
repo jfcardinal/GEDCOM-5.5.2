@@ -24,7 +24,7 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
     <div>
       <dl>
         <dt class="editor">Editor:</dt>
-        <dd class="editor p-author">John Cardinal (<span class="organization">Family History Hosting, LLC</span>)</dd>
+        <dd class="editor p-author">John Cardinal (<span class="organization"><a href="https://www.familyhistoryhosting.com">Family History Hosting, LLC</a></span>)</dd>
       </dl>
     </div>
 
@@ -59,12 +59,12 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
 <li class="toc-0"><a href="#section-subrecords">Subrecords</a></li>
 <li class="toc-0"><a href="#section-primitive-elements">Primitive Elements</a></li>
 <li class="toc-0"><a href="#section-primitive-elements-for-dates">Primitive Elements for Dates</a></li>
-<li class="toc-0"><a href="#section-standard-tags">Standard Tags</a></li>
+<li class="toc-0"><a href="#section-standard-tag-names">Standard Tag Names</a></li>
 <li class="toc-0"><a href="#section-example-gedcom-document">Example GEDCOM Document</a></li>
 <li class="toc-0"><a href="#section-customizations">Customizations</a></li>
 <li class="toc-1"><a href="#sour-and-dest">HEAD.SOUR and HEAD.DEST</a></li>
 <li class="toc-0"><a href="#section-common-gedcom-extensions">Common GEDCOM Extensions</a></li>
-<li class="toc-1"><a href="#custom-tags">Custom Tags</a></li>
+<li class="toc-1"><a href="#custom-tag-names">Custom Tag Names</a></li>
 <li class="toc-0"><a href="#section-keyword-index">Index</a></li>
 </ul>
     </section>
@@ -136,7 +136,7 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
 
       <p>Even though the specification document was labeled "DRAFT" and included an instruction that it "must not be used for programming of genealogical software while in draft", GEDCOM 5.5.1 was implemented in software programs shortly after its release. In the many years since the release of the GEDCOM 5.5.1 specification, most popular genealogy programs have implemented some or all of its features.</p>
 
-      <p>Due to the issues in the specification and other factors, many programs do not comply with the GEDCOM 5.5.1 specification. Some programs export GEDCOM 5.5.1 documents with minor or even major compliance issues. Others export GEDCOM 5.5 documents that include GEDCOM 5.5.1 tags or values. Non-compliance increases the difficulty of implementing software to read GEDCOM documents and introduces unnecessary challenges for users of genealogy software.</p>
+      <p>Due to the issues in the specification and other factors, many programs do not comply with the GEDCOM 5.5.1 specification. Some programs export GEDCOM 5.5.1 documents with minor or even major compliance issues. Others export GEDCOM 5.5 documents that include GEDCOM 5.5.1 subrecords or values. Non-compliance increases the difficulty of implementing software to read GEDCOM documents and introduces unnecessary challenges for users of genealogy software.</p>
 
       <p><strong>GEDCOM 5.5.2 corrects flaws and ambiguities in GEDCOM 5.5.1.</strong> Its goal is to reduce compliance barriers without introducing significant changes.</p>
 
@@ -199,11 +199,11 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
         </li>
 
         <li id="cont-and-conc-change">
-          <p><strong>CONT and CONC</strong> &ndash; In GEDCOM 5.5.1 and previous, the <a href="#tag-def-cont">CONT</a> and <a href="#tag-def-conc">CONC</a> tags are explicitly included in the definitions of selected records and structures. The explicit entries are misleading because other definitions indicate that CONT and CONC are valid as children of most records and subrecords.</p>
+          <p><strong>CONT and CONC</strong> &ndash; In GEDCOM 5.5.1 and previous, the <a href="#tag-def-cont">CONT</a> and <a href="#tag-def-conc">CONC</a> subrecords are explicitly included in the definitions of selected records and structures. The explicit entries are misleading because other definitions indicate that CONT and CONC are valid as children of most records and subrecords.</p>
 
           <p>In GEDCOM 5.5.2, CONT and CONC are not explicitly listed in the definition of any record or subrecord except for CONT under ADDR. With relatively few exceptions, CONT and CONC are allowed with any record or subrecord that has a <a href="#line-value-component">line_value</a>. The exceptions are described in the <a href="#continuations">Continuations</a> section.</p>
 
-          <p>In GEDCOM 5.5.1, the CONT and CONC tags were explicitly defined as valid as subrecords in these contexts:</p>
+          <p>In GEDCOM 5.5.1, the CONT and CONC subrecords were explicitly defined as valid as subrecords in these contexts:</p>
 
           <ul>
             <li>
@@ -395,7 +395,7 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
 
       <p>A subrecord may refer to a record using a <a href="#pointer-component">pointer</a> to the record's <a href="#id-component">ID</a>. The purpose or meaning of the relationship defined by the pointer depends on the tag name and the context.</p>
 
-      <p>Informally, records and subrecords are often identified using a <a href="#tag-component">tag_name</a>. For example, a <a href="#tag-def-name">NAME</a> subrecord is often called a "NAME tag".</p>
+      <p>Informally, records and subrecords are often identified using a <a href="#tag-component">tag_name</a>. For example, a <a href="#tag-def-date">DATE</a> subrecord is often called a "DATE tag".</p>
 
       <h4>Example</h4>
 
@@ -645,9 +645,9 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
 
           <p>The first character in the tag_name must be an uppercase alphabetic character or an underscore ("<code>_</code>", U+005F). The remaining characters must consist of characters described in the table below.</p>
 
-          <p>The first character in a Standard Tag must be an uppercase alphabetic character. Standard Tags are defined in the <a href="#section-standard-tags">Standard Tags</a> section.</p>
+          <p>The first character in a Standard Tag Name must be an uppercase alphabetic character. Standard Tag Names are defined in the <a href="#section-standard-tag-names">Standard Tag Names</a> section.</p>
 
-          <p>The first character in a <a href="#prim-custom-tag">Custom Tags</a> must be an underscore ("<code>_</code>", U+005F).</p>
+          <p>The first character in a <a href="#prim-custom-tag">Custom Tag Name</a> must be an underscore ("<code>_</code>", U+005F).</p>
 
           <p>The minimum length of a tag_name is three characters.</p>
 
@@ -714,10 +714,10 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
               <li>
                 <p>GEDCOM 5.5.1 tag_name size limits are ambiguous.</p>
 
-                <p>The GEDCOM 5.5.1 specification sets the maximum length of a tag_name to 31 characters, but further specifies that the first 15 characters must be unique. All Standard Tags are 3 to 5 characters, so only Custom Tags may fall in the range 6 to 31. However, the NEW_TAG definition on page 49 of the GEDCOM 5.5.1 specification set the size limits to 1:15.</p>
+                <p>The GEDCOM 5.5.1 specification sets the maximum length of a tag_name to 31 characters, but further specifies that the first 15 characters must be unique. All Standard Tag Names are 3 to 5 characters, so only Custom Tag Names may fall in the range 6 to 31. However, the NEW_TAG definition on page 49 of the GEDCOM 5.5.1 specification set the size limits to 1:15.</p>
 
                 <ul>
-                  <li>GEDCOM writers should use 3 to 15 character Custom Tags, including the leading underscore ("<code>_</code>", U+005F), inclusive.</li>
+                  <li>GEDCOM writers should use 3 to 15 character Custom Tag Names, including the leading underscore ("<code>_</code>", U+005F), inclusive.</li>
                 </ul>
               </li>
             </ul>
@@ -1051,7 +1051,7 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
         <li>Conflicting event dates and places should be represented by placing them in separate event subrecords with appropriate source citations.</li>
 
         <li>
-          <p>Some GEDCOM subrecords may be classified by a <a href="#tag-def-type">TYPE</a> subrecord. The value given by the <a href="#tag-def-type">TYPE</a> subrecord is not intended to inform a computer program how to process the data, unless there is a list of standardized or controlled <a href="#line-value-component">line_value</a> choices given by the definition of the <a href="#section-primitive-element">primitive element</a>. An uncontrolled <a href="#line-value-component">line_value</a> specifies a label for the enclosing subrecord. This gives the sending system flexibility in classifying value(s) withotu requiring subrecords with custom tag_names.</p>
+          <p>Some GEDCOM subrecords may be classified by a <a href="#tag-def-type">TYPE</a> subrecord. The value given by the <a href="#tag-def-type">TYPE</a> subrecord is not intended to inform a computer program how to process the data, unless there is a list of standardized or controlled <a href="#line-value-component">line_value</a> choices given by the definition of the <a href="#section-primitive-element">primitive element</a>. An uncontrolled <a href="#line-value-component">line_value</a> specifies a label for the enclosing subrecord. This gives the sending system flexibility in classifying value(s) without requiring subrecords with custom tag_names.</p>
           
           <p>For example:</p>
 
@@ -2557,7 +2557,7 @@ CHILD
 
         <dt id="prim-attribute-type">ATTRIBUTE_TYPE <span class="size">{Size=1:4}</span></dt>
         <dd>
-          <p>A code used to indicate the type of attribute. The definition is the same as the corresponding attribute tag_name defined in the Standard Tag Definitions section. The choices are:</p>
+          <p>A code used to indicate the type of attribute. The definition is the same as the corresponding attribute tag_name defined in the Standard Tag Name Definitions section. The choices are:</p>
 
           <ul class="option-list">
             <li><code>CAST</code></li>
@@ -2715,7 +2715,7 @@ CHILD
 
         <dt id="prim-custom-tag">CUSTOM_TAG <span class="size">{Size=1:15}</span></dt>
         <dd>
-          <p>A CUSTOM_TAG is a <a href="#tag-name-component">tag_name</a> that is <em>not</em> defined in the <a href="#section-standard-tags">Standard Tag Definitions</a> section of this document. GEDCOM writers should include CUSTOM_TAGs to include data that cannot be represented with standard subrecords and would be lost otherwise.</p>
+          <p>A CUSTOM_TAG is a <a href="#tag-name-component">tag_name</a> that is <em>not</em> defined in the <a href="#section-standard-tag-names">Standard Tag Name Definitions</a> section of this document. GEDCOM writers should include CUSTOM_TAGs to include data that cannot be represented with standard subrecords and would be lost otherwise.</p>
 
           <p>The CUSTOM_TAG value must begin with an underscore (<code>_</code>).</p>
 
@@ -2838,7 +2838,7 @@ CHILD
 
         <dt id="prim-event-type-family">EVENT_TYPE_FAMILY <span class="size">{Size=3:4}</span></dt>
         <dd>
-          <p>A code used to indicate a type of family event. The definition is the same as the corresponding event tag_name defined in the <a href="#section-standard-tags">Standard Tag Definitions</a> section. The choices are:</p>
+          <p>A code used to indicate a type of family event. The definition is the same as the corresponding event tag_name defined in the <a href="#section-standard-tag-names">Standard Tag Name Definitions</a> section. The choices are:</p>
 
           <ul class="columns columns-thin">
             <li><code>ANUL</code></li>
@@ -2857,7 +2857,7 @@ CHILD
 
         <dt id="prim-event-type-individual">EVENT_TYPE_INDIVIDUAL <span class="size">{Size=3:4}</span></dt>
         <dd>
-          <p>A code used to indicate a type of family event. The definition is the same as the corresponding event tag_name defined in the <a href="#section-standard-tags">Standard Tag Definitions</a> section. The choices are:</p>
+          <p>A code used to indicate a type of family event. The definition is the same as the corresponding event tag_name defined in the <a href="#section-standard-tag-names">Standard Tag Name Definitions</a> section. The choices are:</p>
 
           <ul class="columns columns-thin">
             <li><code>ADOP</code></li>
@@ -4857,21 +4857,21 @@ private static string GetPafChecksum(string uuid) {
       </dl>
     </section>
 
-    <section id="section-standard-tags">
-      <h2>Standard Tags</h2>
+    <section id="section-standard-tag-names">
+      <h2>Standard Tag Names</h2>
 
       <h3>Introduction</h3>
 
-      <p>The <a href="#tag-component">tags</a> listed below are used in a hierarchical structure to describe individuals in terms of their families, names, dates, places, events, roles, sources, and relationships. Control information and other kinds of data intended for computer processing is also included. Standard tags must be placed in the context(s) shown in the <a href="#section-subrecords">Subrecords section</a>.</p>
+      <p>The <a href="#tag-component">tag_names</a> listed below are used in a hierarchical structure to describe genealogy-related data.</p>
+
+      <p>The entries define the meaning of the Record or Subrecord that uses the given <a href="#tag-component">tag_name</a> and must be placed in the context(s) shown in the <a href="#section-subrecords">Subrecords section</a>. Some <a href="#tag-component">tag_names</a> are used in multiple contexts, so some entries include multiple definitions.</p>
+
+      <p>Many <a href="#tag-component">tag_names</a> are abbreviations. The definitions include the full name. The full names cannot be used in place of the official tag_names</p>
 
       <h3>Definitions</h3>
 
-      <p>This section provides Standard Tag definitions and shows their formal name. The formal names are not used in place of the tag. The meaning of the tag is determined by the context in which the tag is used.</p>
-
-      <p>The entries in this list define the meaning of the Record or Subrecord that uses the given tag.</p>
-
       <dl>
-        <dt id="tag-def-abbr">ABBR <span class="weight-normal">Abbreviation</span></dt>
+        <dt id="tag-def-abbr">ABBR <span class="tag-full-name">Abbreviation</span></dt>
         <dd>
           <p>A short name of a title, description, or name.</p>
 <div class="references">
@@ -4879,7 +4879,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-addr">ADDR <span class="weight-normal">Address</span></dt>
+        <dt id="tag-def-addr">ADDR <span class="tag-full-name">Address</span></dt>
         <dd>
           <p>The contemporary place, usually required for postal purposes, of an individual, a submitter of information, a repository, a business, a school, or a company.</p>
 <div class="references">
@@ -4887,7 +4887,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-adr1">ADR1 <span class="weight-normal">Address1</span></dt>
+        <dt id="tag-def-adr1">ADR1 <span class="tag-full-name">Address1</span></dt>
         <dd>
           <p>The first line of an address.</p>
 <div class="references">
@@ -4895,7 +4895,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-adr2">ADR2 <span class="weight-normal">Address2</span></dt>
+        <dt id="tag-def-adr2">ADR2 <span class="tag-full-name">Address2</span></dt>
         <dd>
           <p>The second line of an address.</p>
 <div class="references">
@@ -4903,7 +4903,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-adr3">ADR3 <span class="weight-normal">Address3</span></dt>
+        <dt id="tag-def-adr3">ADR3 <span class="tag-full-name">Address3</span></dt>
         <dd>
           <p>The third line of an address.</p>
 <div class="references">
@@ -4911,7 +4911,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-adop">ADOP <span class="weight-normal">Adoption</span></dt>
+        <dt id="tag-def-adop">ADOP <span class="tag-full-name">Adoption</span></dt>
         <dd>
           <p>Pertaining to creation of a legally approved child-parent relationship that does not exist biologically.</p>
 <div class="references">
@@ -4923,7 +4923,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-afn">AFN <span class="weight-normal">Afn</span></dt>
+        <dt id="tag-def-afn">AFN <span class="tag-full-name">Afn</span></dt>
         <dd>
           <p>A unique permanent record file number of an individual record stored in Ancestral File.</p>
 <div class="references">
@@ -4931,7 +4931,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-age">AGE <span class="weight-normal">Age</span></dt>
+        <dt id="tag-def-age">AGE <span class="tag-full-name">Age</span></dt>
         <dd>
           <p>The age of the individual at the time an event occurred, or the age listed in the document.</p>
 <div class="references">
@@ -4944,7 +4944,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-agnc">AGNC <span class="weight-normal">Agency</span></dt>
+        <dt id="tag-def-agnc">AGNC <span class="tag-full-name">Agency</span></dt>
         <dd>
           <p>The institution or individual having authority and/or responsibility to manage or govern.</p>
 <div class="references">
@@ -4956,7 +4956,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-alia">ALIA <span class="weight-normal">Alias</span></dt>
+        <dt id="tag-def-alia">ALIA <span class="tag-full-name">Alias</span></dt>
         <dd>
           <p>Links a different <a href="#tag-def-indi">INDI</a> record to the current INDI record. Indicates that the two records may refer to the same person.</p>
 
@@ -4988,7 +4988,7 @@ private static string GetPafChecksum(string uuid) {
         </dd>
 
         <!-- TODO Removed with obsolete SUBN record
-      <dt id="tag-def-ance">ANCE <span class="weight-normal">Ancestors</span></dt>
+      <dt id="tag-def-ance">ANCE <span class="tag-full-name">Ancestors</span></dt>
       <dd>
         <p>Indicates the number of generations of ancestors in the document via its <a href="#prim-generations-of-ancestors">GENERATIONS_OF_ANCESTORS</a> value.</p>
 
@@ -4996,7 +4996,7 @@ private static string GetPafChecksum(string uuid) {
       </dd>
       -->
 
-        <dt id="tag-def-anci">ANCI <span class="weight-normal">Ancestor Interest</span></dt>
+        <dt id="tag-def-anci">ANCI <span class="tag-full-name">Ancestor Interest</span></dt>
         <dd>
           <p>Indicates an interest in additional research for ancestors of this individual. (See also <a href="#tag-def-desi">DESI</a>)</p>
 <div class="references">
@@ -5004,7 +5004,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-anul">ANUL <span class="weight-normal">Annulment</span></dt>
+        <dt id="tag-def-anul">ANUL <span class="tag-full-name">Annulment</span></dt>
         <dd>
           <p>Declaring a marriage void from the beginning (never existed).</p>
 <div class="references">
@@ -5012,7 +5012,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-asso">ASSO <span class="weight-normal">Associates</span></dt>
+        <dt id="tag-def-asso">ASSO <span class="tag-full-name">Associates</span></dt>
         <dd>
           <p>Indicates an association between the current <a href="#indi-record">INDI</a> record and the INDI record with the given <a href="#prim-id-indi">ID:INDI</a>. See the <a href="#association-structure-subr">ASSOCIATION_STRUCTURE</a>.</p>
 <div class="references">
@@ -5020,7 +5020,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-auth">AUTH <span class="weight-normal">Author</span></dt>
+        <dt id="tag-def-auth">AUTH <span class="tag-full-name">Author</span></dt>
         <dd>
           <p>The name of the individual who created or compiled information.</p>
 <div class="references">
@@ -5028,7 +5028,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-bapl">BAPL <span class="weight-normal">Baptism (LSD)</span></dt>
+        <dt id="tag-def-bapl">BAPL <span class="tag-full-name">Baptism (LSD)</span></dt>
         <dd>
           <p>The event of baptism performed at age eight or later by priesthood authority of the LDS Church.</p>
 
@@ -5038,7 +5038,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-bapm">BAPM <span class="weight-normal">Baptism</span></dt>
+        <dt id="tag-def-bapm">BAPM <span class="tag-full-name">Baptism</span></dt>
         <dd>
           <p>The event of baptism.</p>
 
@@ -5048,7 +5048,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-barm">BARM <span class="weight-normal">Bar Mitzvah</span></dt>
+        <dt id="tag-def-barm">BARM <span class="tag-full-name">Bar Mitzvah</span></dt>
         <dd>
           <p>The ceremonial event held when a Jewish boy reaches age 13.</p>
 <div class="references">
@@ -5056,7 +5056,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-basm">BASM <span class="weight-normal">Bas Mitzvah</span></dt>
+        <dt id="tag-def-basm">BASM <span class="tag-full-name">Bas Mitzvah</span></dt>
         <dd>
           <p>The ceremonial event held when a Jewish girl reaches age 13, also known as "Bat Mitzvah."</p>
 <div class="references">
@@ -5064,7 +5064,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-birt">BIRT <span class="weight-normal">Birth</span></dt>
+        <dt id="tag-def-birt">BIRT <span class="tag-full-name">Birth</span></dt>
         <dd>
           <p>The event of entering into life.</p>
 <div class="references">
@@ -5072,7 +5072,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-bles">BLES <span class="weight-normal">Blessing</span></dt>
+        <dt id="tag-def-bles">BLES <span class="tag-full-name">Blessing</span></dt>
         <dd>
           <p>A religious event of bestowing divine care or intercession. Sometimes given in connection with a naming ceremony.</p>
 <div class="references">
@@ -5080,7 +5080,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-buri">BURI <span class="weight-normal">Burial</span></dt>
+        <dt id="tag-def-buri">BURI <span class="tag-full-name">Burial</span></dt>
         <dd>
           <p>The event of the proper disposing of the mortal remains of a deceased person.</p>
 <div class="references">
@@ -5088,7 +5088,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-caln">CALN <span class="weight-normal">Call Number</span></dt>
+        <dt id="tag-def-caln">CALN <span class="tag-full-name">Call Number</span></dt>
         <dd>
           <p>The number used by a repository to identify the specific items in its collections.</p>
 <div class="references">
@@ -5096,7 +5096,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-cast">CAST <span class="weight-normal">Caste</span></dt>
+        <dt id="tag-def-cast">CAST <span class="tag-full-name">Caste</span></dt>
         <dd>
           <p>The name of an individual's rank or status in society which is sometimes based on racial or religious differences, or differences in wealth, inherited rank, profession, occupation, etc.</p>
 <div class="references">
@@ -5104,7 +5104,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-caus">CAUS <span class="weight-normal">Cause</span></dt>
+        <dt id="tag-def-caus">CAUS <span class="tag-full-name">Cause</span></dt>
         <dd>
           <p>A description of the cause of the associated event or fact, such as the cause of death.</p>
 <div class="references">
@@ -5112,7 +5112,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-cens">CENS <span class="weight-normal">Census</span></dt>
+        <dt id="tag-def-cens">CENS <span class="tag-full-name">Census</span></dt>
         <dd>
           <p>The event of the periodic count of the population for a designated locality, such as a national or state Census.</p>
 <div class="references">
@@ -5124,7 +5124,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-chan">CHAN <span class="weight-normal">Change</span></dt>
+        <dt id="tag-def-chan">CHAN <span class="tag-full-name">Change</span></dt>
         <dd>
           <p>Indicates a change, correction, or modification. Typically includes a CHAN.<a href="#tag-def-date">DATE</a> to specify when the change was made.</p>
 <div class="references">
@@ -5132,7 +5132,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-char">CHAR <span class="weight-normal">Character Encoding</span></dt>
+        <dt id="tag-def-char">CHAR <span class="tag-full-name">Character Encoding</span></dt>
         <dd>
           <p>An indicator of the <a href="#prim-character-encoding">CHARACTER_ENCODING</a> used in the GEDCOM document.</p>
 <div class="references">
@@ -5140,7 +5140,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-chil">CHIL <span class="weight-normal">Child</span></dt>
+        <dt id="tag-def-chil">CHIL <span class="tag-full-name">Child</span></dt>
         <dd>
           <p>The natural, adopted, or sealed (LDS) child of a father and a mother.</p>
 <div class="references">
@@ -5148,7 +5148,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-chr">CHR <span class="weight-normal">Christening</span></dt>
+        <dt id="tag-def-chr">CHR <span class="tag-full-name">Christening</span></dt>
         <dd>
           <p>The religious event of baptizing and/or naming a child.</p>
 <div class="references">
@@ -5156,7 +5156,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-chra">CHRA <span class="weight-normal">Adult Christening</span></dt>
+        <dt id="tag-def-chra">CHRA <span class="tag-full-name">Adult Christening</span></dt>
         <dd>
           <p>The religious event of baptizing and/or naming an adult person.</p>
 <div class="references">
@@ -5164,7 +5164,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-city">CITY <span class="weight-normal">City</span></dt>
+        <dt id="tag-def-city">CITY <span class="tag-full-name">City</span></dt>
         <dd>
           <p>A lower level jurisdictional unit. Normally an incorporated municipal unit.</p>
 <div class="references">
@@ -5172,14 +5172,14 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-conc">CONC <span class="weight-normal">Concatenation</span></dt>
+        <dt id="tag-def-conc">CONC <span class="tag-full-name">Concatenation</span></dt>
         <dd>
           <p>The CONC subrecord adds additional text to the parent <a href="#line-value-component">line_value</a>.</p>
 
           <p>See the <a href="#continuations">Continuations</a> section for details.</p>
         </dd>
 
-        <dt id="tag-def-conf">CONF <span class="weight-normal">Confirmation</span></dt>
+        <dt id="tag-def-conf">CONF <span class="tag-full-name">Confirmation</span></dt>
         <dd>
           <p>The religious event of conferring the gift of the Holy Ghost and, among protestants, full church membership.</p>
 <div class="references">
@@ -5187,7 +5187,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-conl">CONL <span class="weight-normal">Confirmation (LDS)</span></dt>
+        <dt id="tag-def-conl">CONL <span class="tag-full-name">Confirmation (LDS)</span></dt>
         <dd>
           <p>The religious event by which a person receives membership in the LDS Church.</p>
 <div class="references">
@@ -5195,7 +5195,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-cont">CONT <span class="weight-normal">Continuation</span></dt>
+        <dt id="tag-def-cont">CONT <span class="tag-full-name">Continuation</span></dt>
         <dd>
           <p>The CONT subrecord adds additional text to the parent <a href="#line-value-component">line_value</a>.</p>
 
@@ -5205,7 +5205,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-copr">COPR <span class="weight-normal">Copyright</span></dt>
+        <dt id="tag-def-copr">COPR <span class="tag-full-name">Copyright</span></dt>
         <dd>
           <p>A statement that accompanies data to protect it from unlawful duplication and distribution.</p>
 <div class="references">
@@ -5217,7 +5217,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-corp">CORP <span class="weight-normal">Corporate</span></dt>
+        <dt id="tag-def-corp">CORP <span class="tag-full-name">Corporate</span></dt>
         <dd>
           <p>A name of an institution, agency, corporation, or company.</p>
 <div class="references">
@@ -5225,7 +5225,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-crem">CREM <span class="weight-normal">Cremation</span></dt>
+        <dt id="tag-def-crem">CREM <span class="tag-full-name">Cremation</span></dt>
         <dd>
           <p>Disposal of the remains of a person's body by fire.</p>
 <div class="references">
@@ -5233,7 +5233,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-ctry">CTRY <span class="weight-normal">Country</span></dt>
+        <dt id="tag-def-ctry">CTRY <span class="tag-full-name">Country</span></dt>
         <dd>
           <p>The name or code of the country.</p>
 <div class="references">
@@ -5241,7 +5241,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-data">DATA <span class="weight-normal">Data</span></dt>
+        <dt id="tag-def-data">DATA <span class="tag-full-name">Data</span></dt>
         <dd>
           <p>Pertaining to stored automated information.</p>
 <div class="references">
@@ -5254,7 +5254,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-date">DATE <span class="weight-normal">Date</span></dt>
+        <dt id="tag-def-date">DATE <span class="tag-full-name">Date</span></dt>
         <dd>
           <p>Used to indicate when an event occurred. See the <a href="#prim-dmy">DMY</a>.</p>
 <div class="references">
@@ -5278,7 +5278,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-deat">DEAT <span class="weight-normal">Death</span></dt>
+        <dt id="tag-def-deat">DEAT <span class="tag-full-name">Death</span></dt>
         <dd>
           <p>The event when mortal life terminates.</p>
 <div class="references">
@@ -5287,7 +5287,7 @@ private static string GetPafChecksum(string uuid) {
         </dd>
 
         <!-- TODO Removed with obsolete SUBN record
-      <dt id="tag-def-desc">DESC <span class="weight-normal">Descendants</span></dt>
+      <dt id="tag-def-desc">DESC <span class="tag-full-name">Descendants</span></dt>
       <dd>
         <p>Indicates the number of generations of descendants in the document via its <a href="#prim-generations-of-descendants">GENERATIONS_OF_DESCENDANTS</a> value.</p>
 
@@ -5295,7 +5295,7 @@ private static string GetPafChecksum(string uuid) {
       </dd>
       -->
 
-        <dt id="tag-def-desi">DESI <span class="weight-normal">Descendant Interest</span></dt>
+        <dt id="tag-def-desi">DESI <span class="tag-full-name">Descendant Interest</span></dt>
         <dd>
           <p>Indicates an interest in research to identify additional descendants of this individual. (See also <a href="#tag-def-anci">ANCI</a>)</p>
 <div class="references">
@@ -5303,7 +5303,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-dest">DEST <span class="weight-normal">Destination</span></dt>
+        <dt id="tag-def-dest">DEST <span class="tag-full-name">Destination</span></dt>
         <dd>
           <p>Identifies the system intended to receive the data via its <a href="#prim-receiving-system-name">RECEIVING_SYSTEM_NAME</a>.</p>
 
@@ -5315,7 +5315,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-div">DIV <span class="weight-normal">Divorce</span></dt>
+        <dt id="tag-def-div">DIV <span class="tag-full-name">Divorce</span></dt>
         <dd>
           <p>An event of dissolving a marriage through civil action.</p>
 <div class="references">
@@ -5323,7 +5323,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-divf">DIVF <span class="weight-normal">Divorce Filed</span></dt>
+        <dt id="tag-def-divf">DIVF <span class="tag-full-name">Divorce Filed</span></dt>
         <dd>
           <p>An event of filing for a divorce by a spouse.</p>
 <div class="references">
@@ -5331,7 +5331,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-dscr">DSCR <span class="weight-normal">Physical Description</span></dt>
+        <dt id="tag-def-dscr">DSCR <span class="tag-full-name">Physical Description</span></dt>
         <dd>
           <p>The physical characteristics of a person, place, or thing.</p>
 <div class="references">
@@ -5339,7 +5339,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-educ">EDUC <span class="weight-normal">Education</span></dt>
+        <dt id="tag-def-educ">EDUC <span class="tag-full-name">Education</span></dt>
         <dd>
           <p>Indicator of a level of education attained.</p>
 <div class="references">
@@ -5347,7 +5347,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-email">EMAIL <span class="weight-normal">Email</span></dt>
+        <dt id="tag-def-email">EMAIL <span class="tag-full-name">Email</span></dt>
         <dd>
           <p>An electronic mail address.</p>
 <div class="references">
@@ -5355,7 +5355,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-emig">EMIG <span class="weight-normal">Emigration</span></dt>
+        <dt id="tag-def-emig">EMIG <span class="tag-full-name">Emigration</span></dt>
         <dd>
           <p>An event of leaving one's homeland with the intent of residing elsewhere.</p>
 <div class="references">
@@ -5363,7 +5363,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-endl">ENDL <span class="weight-normal">Endowment (LDS)</span></dt>
+        <dt id="tag-def-endl">ENDL <span class="tag-full-name">Endowment (LDS)</span></dt>
         <dd>
           <p>A religious event where an endowment ordinance for an individual was performed by priesthood authority in an LDS temple.</p>
 <div class="references">
@@ -5371,7 +5371,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-enga">ENGA <span class="weight-normal">Engagement</span></dt>
+        <dt id="tag-def-enga">ENGA <span class="tag-full-name">Engagement</span></dt>
         <dd>
           <p>An event of recording or announcing an agreement between two people to become married.</p>
 <div class="references">
@@ -5379,7 +5379,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-even">EVEN <span class="weight-normal">Event</span></dt>
+        <dt id="tag-def-even">EVEN <span class="tag-full-name">Event</span></dt>
         <dd>
           <p>AN EVEN subrecord describes a noteworthy happening related to an individual, a group, or an organization. An EVEN subrecord must be qualified by a subordinate <a href="#tag-def-type">TYPE</a> subrecord to classify the event.</p>
 
@@ -5406,7 +5406,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-fact">FACT <span class="weight-normal">Fact</span></dt>
+        <dt id="tag-def-fact">FACT <span class="tag-full-name">Fact</span></dt>
         <dd>
           <p>A FACT subrecord describes a noteworthy attribute of an individual. A FACT subrecord must be qualified by a subordinate <a href="#tag-def-type">TYPE</a> subrecord to classify the fact.</p>
 
@@ -5416,7 +5416,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-fam">FAM <span class="weight-normal">Family</span></dt>
+        <dt id="tag-def-fam">FAM <span class="tag-full-name">Family</span></dt>
         <dd>
           <p>Identifies a legal, common law, or other customary relationship of man and woman and their children, if any, or a family created by virtue of the birth of a child to its biological father and mother.</p>
 <div class="references">
@@ -5428,7 +5428,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-famc">FAMC <span class="weight-normal">Family Child</span></dt>
+        <dt id="tag-def-famc">FAMC <span class="tag-full-name">Family Child</span></dt>
         <dd>
           <p>Identifies the family in which an individual appears as a child.</p>
 <div class="references">
@@ -5443,13 +5443,13 @@ private static string GetPafChecksum(string uuid) {
         </dd>
 
         <!-- TODO Removed with obsolete SUBN record
-      <dt id="tag-def-famf">FAMF <span class="weight-normal">Family File</span></dt>
+      <dt id="tag-def-famf">FAMF <span class="tag-full-name">Family File</span></dt>
       <dd>
         <p>Pertaining to, or the name of, a family file. Names stored in a file that are assigned to a family for doing temple ordinance work.</p>
       </dd>
       -->
 
-        <dt id="tag-def-fams">FAMS <span class="weight-normal">Family Spouse</span></dt>
+        <dt id="tag-def-fams">FAMS <span class="tag-full-name">Family Spouse</span></dt>
         <dd>
           <p>Identifies the family in which an individual appears as a spouse.</p>
 <div class="references">
@@ -5457,7 +5457,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-fax">FAX <span class="weight-normal">Facimilie</span></dt>
+        <dt id="tag-def-fax">FAX <span class="tag-full-name">Facimilie</span></dt>
         <dd>
           <p>Electronic facimilie transmission.</p>
 <div class="references">
@@ -5465,7 +5465,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-fcom">FCOM <span class="weight-normal">First Communion</span></dt>
+        <dt id="tag-def-fcom">FCOM <span class="tag-full-name">First Communion</span></dt>
         <dd>
           <p>A religious rite, the first act of sharing in the Lord's supper as part of church worship.</p>
 <div class="references">
@@ -5473,7 +5473,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-file">FILE <span class="weight-normal">File</span></dt>
+        <dt id="tag-def-file">FILE <span class="tag-full-name">File</span></dt>
         <dd>
           <p>An information storage place that is ordered and arranged for preservation and reference.</p>
 <div class="references">
@@ -5486,7 +5486,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-form">FORM <span class="weight-normal">Format</span></dt>
+        <dt id="tag-def-form">FORM <span class="tag-full-name">Format</span></dt>
         <dd>
           <p>An assigned name given to a consistent format in which information can be conveyed.</p>
 <div class="references">
@@ -5501,7 +5501,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-fone">FONE <span class="weight-normal">Phonetic</span></dt>
+        <dt id="tag-def-fone">FONE <span class="tag-full-name">Phonetic</span></dt>
         <dd>
           <p>A phonetic variation of a superior text string.</p>
 <div class="references">
@@ -5513,7 +5513,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-gedc">GEDC <span class="weight-normal">GEDCOM</span></dt>
+        <dt id="tag-def-gedc">GEDC <span class="tag-full-name">GEDCOM</span></dt>
         <dd>
           <p>Information about the use of GEDCOM in the document.</p>
 <div class="references">
@@ -5521,7 +5521,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-givn">GIVN <span class="weight-normal">Given Name</span></dt>
+        <dt id="tag-def-givn">GIVN <span class="tag-full-name">Given Name</span></dt>
         <dd>
           <p>A given or earned name used for official identification of a person.</p>
 <div class="references">
@@ -5529,7 +5529,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-grad">GRAD <span class="weight-normal">Graduation</span></dt>
+        <dt id="tag-def-grad">GRAD <span class="tag-full-name">Graduation</span></dt>
         <dd>
           <p>An event of awarding educational diplomas or degrees to individuals.</p>
 <div class="references">
@@ -5537,7 +5537,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-head">HEAD <span class="weight-normal">Header</span></dt>
+        <dt id="tag-def-head">HEAD <span class="tag-full-name">Header</span></dt>
         <dd>
           <p>Defines information pertaining to the entire GEDCOM document.</p>
 
@@ -5566,7 +5566,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-husb">HUSB <span class="weight-normal">Husband</span></dt>
+        <dt id="tag-def-husb">HUSB <span class="tag-full-name">Husband</span></dt>
         <dd>
           <p>An individual in the family role of a married man or father.</p>
 <div class="references">
@@ -5578,7 +5578,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-idno">IDNO <span class="weight-normal">Identification Number</span></dt>
+        <dt id="tag-def-idno">IDNO <span class="tag-full-name">Identification Number</span></dt>
         <dd>
           <p>A number assigned to identify a person within an external system.</p>
 <div class="references">
@@ -5586,7 +5586,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-immi">IMMI <span class="weight-normal">Immigration</span></dt>
+        <dt id="tag-def-immi">IMMI <span class="tag-full-name">Immigration</span></dt>
         <dd>
           <p>An event of entering into a new locality with the intent of residing there.</p>
 <div class="references">
@@ -5594,7 +5594,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-indi">INDI <span class="weight-normal">Individual</span></dt>
+        <dt id="tag-def-indi">INDI <span class="tag-full-name">Individual</span></dt>
         <dd>
           <p>A person.</p>
 <div class="references">
@@ -5606,7 +5606,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-lang">LANG <span class="weight-normal">Language</span></dt>
+        <dt id="tag-def-lang">LANG <span class="tag-full-name">Language</span></dt>
         <dd>
           <p>The name of the language used in a communication or transmission of information.</p>
 <div class="references">
@@ -5618,7 +5618,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-lati">LATI <span class="weight-normal">Latitude</span></dt>
+        <dt id="tag-def-lati">LATI <span class="tag-full-name">Latitude</span></dt>
         <dd>
           <p>A value indicating a coordinate position on a line, plane, or space.</p>
 <div class="references">
@@ -5626,7 +5626,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-long">LONG <span class="weight-normal">Longitude</span></dt>
+        <dt id="tag-def-long">LONG <span class="tag-full-name">Longitude</span></dt>
         <dd>
           <p>A value indicating a coordinate position on a line, plane, or space.</p>
 <div class="references">
@@ -5634,7 +5634,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-map">MAP <span class="weight-normal">Map</span></dt>
+        <dt id="tag-def-map">MAP <span class="tag-full-name">Map</span></dt>
         <dd>
           <p>The MAP subrecord defines a geographical location using latitude and longitude using the MAP.<a href="#tag-def-lati">LATI</a> and MAP.<a href="#tag-def-long">LONG</a> subrecords.</p>
 
@@ -5666,7 +5666,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-marb">MARB <span class="weight-normal">Marriage Bann</span></dt>
+        <dt id="tag-def-marb">MARB <span class="tag-full-name">Marriage Bann</span></dt>
         <dd>
           <p>An event of an official public notice given that two people intend to marry.</p>
 <div class="references">
@@ -5674,7 +5674,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-marc">MARC <span class="weight-normal">Marriage Contract</span></dt>
+        <dt id="tag-def-marc">MARC <span class="tag-full-name">Marriage Contract</span></dt>
         <dd>
           <p>An event of recording a formal agreement of marriage, including the prenuptial agreement in which marriage partners reach agreement about the property rights of one or both, securing property to their children.</p>
 <div class="references">
@@ -5682,7 +5682,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-marl">MARL <span class="weight-normal">Marriage License</span></dt>
+        <dt id="tag-def-marl">MARL <span class="tag-full-name">Marriage License</span></dt>
         <dd>
           <p>An event of obtaining a legal license to marry.</p>
 <div class="references">
@@ -5690,7 +5690,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-marr">MARR <span class="weight-normal">Marriage</span></dt>
+        <dt id="tag-def-marr">MARR <span class="tag-full-name">Marriage</span></dt>
         <dd>
           <p>A legal, common-law, or customary event of creating a family unit of a man and a woman as husband and wife.</p>
 <div class="references">
@@ -5698,7 +5698,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-mars">MARS <span class="weight-normal">Marriage Settlement</span></dt>
+        <dt id="tag-def-mars">MARS <span class="tag-full-name">Marriage Settlement</span></dt>
         <dd>
           <p>An event of creating an agreement between two people contemplating marriage, at which time they agree to release or modify property rights that would otherwise arise from the marriage.</p>
 <div class="references">
@@ -5706,7 +5706,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-medi">MEDI <span class="weight-normal">Media</span></dt>
+        <dt id="tag-def-medi">MEDI <span class="tag-full-name">Media</span></dt>
         <dd>
           <p>Identifies information about the media or having to do with the medium in which information is stored.</p>
 <div class="references">
@@ -5718,7 +5718,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-name">NAME <span class="weight-normal">Name</span></dt>
+        <dt id="tag-def-name">NAME <span class="tag-full-name">Name</span></dt>
         <dd>
           <p>The NAME subrecord defines a name. It is used in several contexts.</p>
 
@@ -5736,7 +5736,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-nati">NATI <span class="weight-normal">Nationality</span></dt>
+        <dt id="tag-def-nati">NATI <span class="tag-full-name">Nationality</span></dt>
         <dd>
           <p>The national heritage of an individual.</p>
 <div class="references">
@@ -5744,7 +5744,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-natu">NATU <span class="weight-normal">Naturalization</span></dt>
+        <dt id="tag-def-natu">NATU <span class="tag-full-name">Naturalization</span></dt>
         <dd>
           <p>The event of obtaining citizenship.</p>
 <div class="references">
@@ -5752,7 +5752,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-nchi">NCHI <span class="weight-normal">Number of Children</span></dt>
+        <dt id="tag-def-nchi">NCHI <span class="tag-full-name">Number of Children</span></dt>
         <dd>
           <p>The number of children that this person is known to be the parent of (all marriages) when subordinate to an individual, or that belong to this family when subordinate to a FAM_RECORD.</p>
 <div class="references">
@@ -5764,7 +5764,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-nick">NICK <span class="weight-normal">Nickname</span></dt>
+        <dt id="tag-def-nick">NICK <span class="tag-full-name">Nickname</span></dt>
         <dd>
           <p>A descriptive or familiar that is used instead of, or in addition to, one's proper name.</p>
 <div class="references">
@@ -5772,7 +5772,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-nmr">NMR <span class="weight-normal">Number of Marriages</span></dt>
+        <dt id="tag-def-nmr">NMR <span class="tag-full-name">Number of Marriages</span></dt>
         <dd>
           <p>The number of times this person has participated in a family as a spouse or parent.</p>
 <div class="references">
@@ -5780,7 +5780,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-note">NOTE <span class="weight-normal">Note</span></dt>
+        <dt id="tag-def-note">NOTE <span class="tag-full-name">Note</span></dt>
         <dd>
           <p>Additional information provided by the submitter for understanding the enclosing data.</p>
 <div class="references">
@@ -5795,7 +5795,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-npfx">NPFX <span class="weight-normal">Name Prefix</span></dt>
+        <dt id="tag-def-npfx">NPFX <span class="tag-full-name">Name Prefix</span></dt>
         <dd>
           <p>Text which appears on a name line before the given and surname parts of a name. i.e. (<b>Lt. Cmndr.</b>) Joseph /Allen/ jr. In this example Lt. Cmndr. is considered as the name prefix portion.</p>
 <div class="references">
@@ -5803,7 +5803,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-nsfx">NSFX <span class="weight-normal">Name Suffix</span></dt>
+        <dt id="tag-def-nsfx">NSFX <span class="tag-full-name">Name Suffix</span></dt>
         <dd>
           <p>Text which appears on a name line after or behind the given and surname parts of a name. i.e. Lt. Cmndr. Joseph /Allen/ (<b>jr.</b>) In this example jr. is considered as the name suffix portion.</p>
 <div class="references">
@@ -5811,7 +5811,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-obje">OBJE <span class="weight-normal">Object</span></dt>
+        <dt id="tag-def-obje">OBJE <span class="tag-full-name">Object</span></dt>
         <dd>
           <p>An OBJE subrecord describes an external object, usually a multimedia object such as a digital image, an audio recording, or another digital asset.</p>
 <div class="references">
@@ -5825,7 +5825,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-occu">OCCU <span class="weight-normal">Occupation</span></dt>
+        <dt id="tag-def-occu">OCCU <span class="tag-full-name">Occupation</span></dt>
         <dd>
           <p>The type of work or profession of an individual.</p>
 <div class="references">
@@ -5834,13 +5834,13 @@ private static string GetPafChecksum(string uuid) {
         </dd>
 
         <!-- TODO Removed with obsolete SUBN record
-      <dt id="tag-def-ordi">ORDI <span class="weight-normal">Ordinance</span></dt>
+      <dt id="tag-def-ordi">ORDI <span class="tag-full-name">Ordinance</span></dt>
       <dd>
         <p>Pertaining to a religious ordinance in general.</p>
       </dd>
       -->
 
-        <dt id="tag-def-ordn">ORDN <span class="weight-normal">Ordination</span></dt>
+        <dt id="tag-def-ordn">ORDN <span class="tag-full-name">Ordination</span></dt>
         <dd>
           <p>A religious event of receiving authority to act in religious matters.</p>
 <div class="references">
@@ -5848,7 +5848,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-page">PAGE <span class="weight-normal">Page</span></dt>
+        <dt id="tag-def-page">PAGE <span class="tag-full-name">Page</span></dt>
         <dd>
           <p>A number or description to identify where information can be found in a referenced work.</p>
 <div class="references">
@@ -5856,7 +5856,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-pedi">PEDI <span class="weight-normal">Pedigree</span></dt>
+        <dt id="tag-def-pedi">PEDI <span class="tag-full-name">Pedigree</span></dt>
         <dd>
           <p>Information pertaining to an individual to parent lineage chart.</p>
 <div class="references">
@@ -5864,7 +5864,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-phon">PHON <span class="weight-normal">Phone</span></dt>
+        <dt id="tag-def-phon">PHON <span class="tag-full-name">Phone</span></dt>
         <dd>
           <p>A unique number assigned to access a specific telephone.</p>
 <div class="references">
@@ -5872,7 +5872,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-plac">PLAC <span class="weight-normal">Place</span></dt>
+        <dt id="tag-def-plac">PLAC <span class="tag-full-name">Place</span></dt>
         <dd>
           <p>A jurisdictional name to identify the place or location of an event.</p>
 <div class="references">
@@ -5889,7 +5889,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-post">POST <span class="weight-normal">Postal Code</span></dt>
+        <dt id="tag-def-post">POST <span class="tag-full-name">Postal Code</span></dt>
         <dd>
           <p>A code assigned by a postal service to identify an area and used to facilitate mail handling.</p>
 <div class="references">
@@ -5897,7 +5897,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-prob">PROB <span class="weight-normal">Probate</span></dt>
+        <dt id="tag-def-prob">PROB <span class="tag-full-name">Probate</span></dt>
         <dd>
           <p>An event of judicial determination of the validity of a will. May indicate several related court activities over several dates.</p>
 <div class="references">
@@ -5905,7 +5905,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-prop">PROP <span class="weight-normal">Property</span></dt>
+        <dt id="tag-def-prop">PROP <span class="tag-full-name">Property</span></dt>
         <dd>
           <p>Pertaining to possessions such as real estate or other property of interest.</p>
 <div class="references">
@@ -5913,7 +5913,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-publ">PUBL <span class="weight-normal">Publication</span></dt>
+        <dt id="tag-def-publ">PUBL <span class="tag-full-name">Publication</span></dt>
         <dd>
           <p>Refers to when and/or where a work was published or created.</p>
 <div class="references">
@@ -5921,12 +5921,12 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-quay">QUAY <span class="weight-normal">Quality of Data</span></dt>
+        <dt id="tag-def-quay">QUAY <span class="tag-full-name">Quality of Data</span></dt>
         <dd>
           <p>An assessment of the certainty of the evidence to support the conclusion drawn from evidence.</p>
         </dd>
 
-        <dt id="tag-def-refn">REFN <span class="weight-normal">Reference Number</span></dt>
+        <dt id="tag-def-refn">REFN <span class="tag-full-name">Reference Number</span></dt>
         <dd>
           <p>A description or number used to identify an item for filing, storage, or other reference purposes.</p>
 <div class="references">
@@ -5942,7 +5942,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-rela">RELA <span class="weight-normal">Relationship</span></dt>
+        <dt id="tag-def-rela">RELA <span class="tag-full-name">Relationship</span></dt>
         <dd>
           <p>A relationship value between the indicated contexts.</p>
 <div class="references">
@@ -5950,7 +5950,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-reli">RELI <span class="weight-normal">Religion</span></dt>
+        <dt id="tag-def-reli">RELI <span class="tag-full-name">Religion</span></dt>
         <dd>
           <p>A religious denomination to which a person is affiliated or for which a record applies.</p>
 <div class="references">
@@ -5962,7 +5962,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-repo">REPO <span class="weight-normal">Repository</span></dt>
+        <dt id="tag-def-repo">REPO <span class="tag-full-name">Repository</span></dt>
         <dd>
           <p>An institution or person that has the specified item as part of their collection(s).</p>
 <div class="references">
@@ -5975,7 +5975,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-resi">RESI <span class="weight-normal">Residence</span></dt>
+        <dt id="tag-def-resi">RESI <span class="tag-full-name">Residence</span></dt>
         <dd>
           <p>An address or place of residence that a family or individual resided.</p>
 <div class="references">
@@ -5987,7 +5987,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-resn">RESN <span class="weight-normal">Restriction</span></dt>
+        <dt id="tag-def-resn">RESN <span class="tag-full-name">Restriction</span></dt>
         <dd>
           <p>A processing indicator signifying access to information has been denied or otherwise restricted.</p>
 <div class="references">
@@ -6000,7 +6000,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-reti">RETI <span class="weight-normal">Retirement</span></dt>
+        <dt id="tag-def-reti">RETI <span class="tag-full-name">Retirement</span></dt>
         <dd>
           <p>An event of exiting an occupational relationship with an employer after a qualifying time period.</p>
 <div class="references">
@@ -6008,7 +6008,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-rfn">RFN <span class="weight-normal">Record File Number</span></dt>
+        <dt id="tag-def-rfn">RFN <span class="tag-full-name">Record File Number</span></dt>
         <dd>
           <p>A permanent number assigned to a record that uniquely identifies it within a known file.</p>
 <div class="references">
@@ -6016,7 +6016,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-rin">RIN <span class="weight-normal">Record ID Number</span></dt>
+        <dt id="tag-def-rin">RIN <span class="tag-full-name">Record ID Number</span></dt>
         <dd>
           <p>A number assigned to a record by an originating automated system that can be used by a receiving system to report results pertaining to that record.</p>
 <div class="references">
@@ -6033,7 +6033,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-role">ROLE <span class="weight-normal">Role</span></dt>
+        <dt id="tag-def-role">ROLE <span class="tag-full-name">Role</span></dt>
         <dd>
           <p>A name given to a role played by an individual in connection with an event.</p>
 <div class="references">
@@ -6041,7 +6041,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-romn">ROMN <span class="weight-normal">Romanized</span></dt>
+        <dt id="tag-def-romn">ROMN <span class="tag-full-name">Romanized</span></dt>
         <dd>
           <p>A romanized variation of a superior text string.</p>
 <div class="references">
@@ -6053,7 +6053,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-sex">SEX <span class="weight-normal">Sex</span></dt>
+        <dt id="tag-def-sex">SEX <span class="tag-full-name">Sex</span></dt>
         <dd>
           <p>Indicates the gender of an individual. See <a href="#prim-sex-value">SEX_VALUE</a>.</p>
 <div class="references">
@@ -6061,7 +6061,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-slgc">SLGC <span class="weight-normal">Sealing Child</span></dt>
+        <dt id="tag-def-slgc">SLGC <span class="tag-full-name">Sealing Child</span></dt>
         <dd>
           <p>A religious event pertaining to the sealing of a child to his or her parents in an LDS temple ceremony.</p>
 <div class="references">
@@ -6069,7 +6069,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-slgs">SLGS <span class="weight-normal">Sealing Spouse</span></dt>
+        <dt id="tag-def-slgs">SLGS <span class="tag-full-name">Sealing Spouse</span></dt>
         <dd>
           <p>A religious event pertaining to the sealing of a husband and wife in an LDS temple ceremony.</p>
 <div class="references">
@@ -6077,7 +6077,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-sour">SOUR <span class="weight-normal">Source</span></dt>
+        <dt id="tag-def-sour">SOUR <span class="tag-full-name">Source</span></dt>
         <dd>
           <p>SOUR tags are used in several contexts:</p>
 
@@ -6097,7 +6097,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-spfx">SPFX <span class="weight-normal">Surname Prefix</span></dt>
+        <dt id="tag-def-spfx">SPFX <span class="tag-full-name">Surname Prefix</span></dt>
         <dd>
           <p>A name piece used as a non-indexing pre-part of a surname.</p>
 <div class="references">
@@ -6105,7 +6105,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-ssn">SSN <span class="weight-normal">Social Security Number</span></dt>
+        <dt id="tag-def-ssn">SSN <span class="tag-full-name">Social Security Number</span></dt>
         <dd>
           <p>A number assigned by the United States Social Security Administration. Used for tax identification purposes.</p>
 <div class="references">
@@ -6113,7 +6113,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-stae">STAE <span class="weight-normal">State</span></dt>
+        <dt id="tag-def-stae">STAE <span class="tag-full-name">State</span></dt>
         <dd>
           <p>A geographical division of a larger jurisdictional area, such as a State within the United States of America.</p>
 <div class="references">
@@ -6121,7 +6121,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-stat">STAT <span class="weight-normal">Status</span></dt>
+        <dt id="tag-def-stat">STAT <span class="tag-full-name">Status</span></dt>
         <dd>
           <p>An assessment of the state or condition of something.</p>
 <div class="references">
@@ -6136,7 +6136,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-subm">SUBM <span class="weight-normal">Submitter</span></dt>
+        <dt id="tag-def-subm">SUBM <span class="tag-full-name">Submitter</span></dt>
         <dd>
           <p>An individual or organization who contributes genealogical data to a file or transfers it to someone else.</p>
 <div class="references">
@@ -6152,13 +6152,13 @@ private static string GetPafChecksum(string uuid) {
         </dd>
 
         <!-- TODO Removed with obsolete SUBN record
-      <dt id="tag-def-subn">SUBN <span class="weight-normal">Submission</span></dt>
+      <dt id="tag-def-subn">SUBN <span class="tag-full-name">Submission</span></dt>
       <dd>
         <p>Pertains to a collection of data issued for processing.</p>
       </dd>
       -->
 
-        <dt id="tag-def-surn">SURN <span class="weight-normal">Surname</span></dt>
+        <dt id="tag-def-surn">SURN <span class="tag-full-name">Surname</span></dt>
         <dd>
           <p>A family name passed on or used by members of a family.</p>
 <div class="references">
@@ -6166,7 +6166,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-temp">TEMP <span class="weight-normal">Temple</span></dt>
+        <dt id="tag-def-temp">TEMP <span class="tag-full-name">Temple</span></dt>
         <dd>
           <p>The name or code that represents the name of an LDS Church Temple.</p>
 <div class="references">
@@ -6180,7 +6180,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-text">TEXT <span class="weight-normal">Text</span></dt>
+        <dt id="tag-def-text">TEXT <span class="tag-full-name">Text</span></dt>
         <dd>
           <p>The exact wording found in an original source document.</p>
 <div class="references">
@@ -6193,7 +6193,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-time">TIME <span class="weight-normal">Time</span></dt>
+        <dt id="tag-def-time">TIME <span class="tag-full-name">Time</span></dt>
         <dd>
           <p>A time value in a 24-hour clock format, including hours, minutes, and optional seconds, separated by a colon (:). Fractions of seconds are shown in decimal notation.</p>
 <div class="references">
@@ -6205,7 +6205,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-titl">TITL <span class="weight-normal">Title</span></dt>
+        <dt id="tag-def-titl">TITL <span class="tag-full-name">Title</span></dt>
         <dd>
           <p>A description of a specific writing or other work, such as the title of a book when used in a source context, or a formal designation used by an individual in connection with positions of royalty or other social status, such as Grand Duke.</p>
 <div class="references">
@@ -6219,7 +6219,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-trlr">TRLR <span class="weight-normal"><a href="#trlr-record">TRAILER</a></span></dt>
+        <dt id="tag-def-trlr">TRLR <span class="tag-full-name"><a href="#trlr-record">TRAILER</a></span></dt>
         <dd>
           <p>At level 0, specifies the end of a GEDCOM document.</p>
 <div class="references">
@@ -6227,7 +6227,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-type">TYPE <span class="weight-normal">Type</span></dt>
+        <dt id="tag-def-type">TYPE <span class="tag-full-name">Type</span></dt>
         <dd>
           <p>A further qualification to the meaning of the associated superior tag. The value does not have any computer processing reliability. It is more in the form of a short one or two word note that should be displayed any time the associated data is displayed.</p>
 
@@ -6259,7 +6259,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-vers">VERS <span class="weight-normal">Version</span></dt>
+        <dt id="tag-def-vers">VERS <span class="tag-full-name">Version</span></dt>
         <dd>
           <p>Indicates a version number.</p>
 <div class="references">
@@ -6271,7 +6271,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-wife">WIFE <span class="weight-normal">Wife</span></dt>
+        <dt id="tag-def-wife">WIFE <span class="tag-full-name">Wife</span></dt>
         <dd>
           <p>An individual in the role as a mother and/or married woman.</p>
 <div class="references">
@@ -6283,7 +6283,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-will">WILL <span class="weight-normal">Will</span></dt>
+        <dt id="tag-def-will">WILL <span class="tag-full-name">Will</span></dt>
         <dd>
           <p>A legal document treated as an event, by which a person disposes of his or her estate, to take effect after death. The event date is the date the will was signed while the person was alive.</p>
 
@@ -6293,7 +6293,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def-www">WWW <span class="weight-normal">Web</span></dt>
+        <dt id="tag-def-www">WWW <span class="tag-full-name">Web</span></dt>
         <dd>
           <p>World Wide Web home page.</p>
 <div class="references">
@@ -6429,13 +6429,13 @@ private static string GetPafChecksum(string uuid) {
         <h4 id="sour-and-dest-best-practice">Best Practice Recommendations</h4>
         <ul>
           <li>
-            <p>GEDCOM customizations, such as specific <a href="#prim-custom-tag">Custom Tags</a>, are not defined in the GEDCOM specification.</p>
+            <p>GEDCOM customizations, such as specific <a href="#prim-custom-tag">Custom Tag Names</a>, are not defined in the GEDCOM specification.</p>
             <ul>
               <li>
                 <p>GEDCOM readers should ignore the HEAD.DEST value.</p>
               </li>
               <li>
-                <p>If a GEDCOM reader attempts to understand the meaning of <a href="#prim-custom-tag">Custom Tags</a> or other customized values in the current GEDCOM document, the GEDCOM reader should assume the context of the customizations is established by the HEAD.SOUR and HEAD.SOUR.VERS subrecords.</p>
+                <p>If a GEDCOM reader attempts to understand the meaning of <a href="#prim-custom-tag">Custom Tag Names</a> or other customized values in the current GEDCOM document, the GEDCOM reader should assume the context of the customizations is established by the HEAD.SOUR and HEAD.SOUR.VERS subrecords.</p>
               </li>
 
               <li>
@@ -6463,10 +6463,10 @@ private static string GetPafChecksum(string uuid) {
 
       <p>This section provides information on common, non-standard extensions to GEDCOM with a focus on constructs that are used by more than one popular genealogy software system.</p>
 
-      <h3 id="custom-tags">Custom Tags</h3>
+      <h3 id="custom-tag-names">Custom Tag Names</h3>
 
       <dl>
-        <dt id="tag-def--shar">_SHAR <span class="weight-normal">Co-Participant ID</span></dt>
+        <dt id="tag-def--shar">_SHAR <span class="tag-full-name">Co-Participant ID</span></dt>
         <dd>
           <p>_SHAR is used to add an individual to an event.</p>
 
@@ -6483,7 +6483,7 @@ private static string GetPafChecksum(string uuid) {
             <li>Changes to a single event apply to all the participants.</li>
           </ul>
 
-          <p>_SHAR is often accompanied by an additional <a href="#tag-def--role">_ROLE</a> custom tag to designate the role of the co-participant. For some roles, the meaning of the event applies to the co-participant. For other roles, the meaning of the event does not apply to the co-participant; the meaning is supplied by the role name only.</p>
+          <p>_SHAR is often accompanied by an additional <a href="#tag-def--role">_ROLE</a> subrecord to designate the role of the co-participant. For some roles, the meaning of the event applies to the co-participant. For other roles, the meaning of the event does not apply to the co-participant; the meaning is supplied by the role name only.</p>
 
           <p>So, for example, a co-participant with the role "Principal" might be used to add a co-purchaser to an event that describes a land purchase by several individuals. The meaning of the event&mdash;purchased real estate&mdash;is applied to the person underwhich the event appears and also to the co-participant.</p>
 
@@ -6515,7 +6515,7 @@ private static string GetPafChecksum(string uuid) {
           </ul>
         </dd>
 
-        <dt id="tag-def--role">_ROLE <span class="weight-normal">Co-Participant Role</span></dt>
+        <dt id="tag-def--role">_ROLE <span class="tag-full-name">Co-Participant Role</span></dt>
         <dd>
           <p>_ROLE is used to specify the role played by an individual in connection with an event.</p>
 
@@ -6523,7 +6523,7 @@ private static string GetPafChecksum(string uuid) {
             <tr><td class="code level-0">n _ROLE &lt;<a href="#prim-text">TEXT</a>&gt; </td><td class="size">0:1</td></tr>
           </table>
 
-          <p>_ROLE is used under the context of a <a href="#tag-def--shar">_SHAR</a> custom tag or equivalent. See the _SHAR description for further details.</p>
+          <p>_ROLE is used under the context of a <a href="#tag-def--shar">_SHAR</a> subrecord or equivalent. See the _SHAR description for further details.</p>
 
           <p>_ROLE is supported on input and/or output by:</p>
           <ul>
@@ -6538,7 +6538,7 @@ private static string GetPafChecksum(string uuid) {
           <p>As shown above, multiple applications use "ROLE" rather than "_ROLE".</p>
         </dd>
 
-        <dt id="tag-def--prim">_PRIM <span class="weight-normal">Primary or Preferred</span></dt>
+        <dt id="tag-def--prim">_PRIM <span class="tag-full-name">Primary or Preferred</span></dt>
         <!-- REFERENCE P Y_OR_N _PRIM -->
         <!-- REFERENCE T _PRIM Y_OR_N -->
         <dd>
@@ -6571,7 +6571,7 @@ private static string GetPafChecksum(string uuid) {
 </div>
         </dd>
 
-        <dt id="tag-def--uid">_UID <span class="weight-normal">UUID</span></dt>
+        <dt id="tag-def--uid">_UID <span class="tag-full-name">UUID</span></dt>
         <!-- REFERENCE P UUID _UID -->
         <!-- REFERENCE T _UID UUID -->
         <dd>

@@ -403,6 +403,14 @@ dt .size, dt .same-as {
   margin: 0;
 }
 
+.tag-full-name {
+  font-weight: normal;
+}
+
+dt .tag-full-name {
+  display: block;
+}
+
 .toc_container {
   display: table;
   margin: 2em 0;
@@ -428,14 +436,6 @@ dt .size, dt .same-as {
 
 .toc-2 {
   margin-left: 4em;
-}
-
-.weight-normal {
-  font-weight: normal;
-}
-
-dt .weight-normal {
-  display: block;
 }
 
 .where {
