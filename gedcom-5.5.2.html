@@ -2487,7 +2487,9 @@ CHILD
             <li><code>TITL</code></li>
             <li><code>FACT</code></li>
           </ul>
-
+<div class="references">
+<p>See: &lt;<a href="#prim-event-attribute-type">EVENT<wbr>_ATTRIBUTE<wbr>_TYPE</a>&gt;</p>
+</div>
         </dd>
 
         <dt id="prim-automated-record-id">AUTOMATED_RECORD_ID <span class="size">{Size=1:12}</span></dt>
@@ -2698,6 +2700,9 @@ CHILD
           </ul>
 
           <p>EVENT_ATTRIBUTE_TYPE may be set to a single value from one of the three sets listed above.</p>
+<div class="references">
+<p>See: &lt;<a href="#prim-events-recorded">EVENTS<wbr>_RECORDED</a>&gt;</p>
+</div>
         </dd>
 
         <dt id="prim-event-descriptor">EVENT_DESCRIPTOR <span class="size">{Size=1:90}</span></dt>
@@ -2745,7 +2750,11 @@ CHILD
           <p>Other examples are "stillborn" as a qualifier to <a href="#tag-def-birt">BIRT</a> or "Tribal Custom" as a qualifier to <a href="#tag-def-marr">MARR</a>.</p>
           
 <div class="references">
-<p>See: &lt;&lt;<a href="#event-or-fact-detail-subr">EVENT<wbr>_OR<wbr>_FACT<wbr>_DETAIL</a>&gt;&gt;.<a href="#tag-def-type-event-or-fact">TYPE</a></p>
+<p>See:</p>
+<ul>
+<li>&lt;&lt;<a href="#event-or-fact-detail-subr">EVENT<wbr>_OR<wbr>_FACT<wbr>_DETAIL</a>&gt;&gt;.<a href="#tag-def-type-event-or-fact">TYPE</a></li>
+<li>&lt;&lt;<a href="#individual-attribute-structure-subr">INDIVIDUAL<wbr>_ATTRIBUTE<wbr>_STRUCTURE</a>&gt;&gt;</li>
+</ul>
 </div>
         </dd>
 
@@ -2777,6 +2786,9 @@ CHILD
             <li><code>MARS</code></li>
             <li><code>EVEN</code></li>
           </ul>
+<div class="references">
+<p>See: &lt;<a href="#prim-event-attribute-type">EVENT<wbr>_ATTRIBUTE<wbr>_TYPE</a>&gt;</p>
+</div>
         </dd>
 
         <dt id="prim-event-type-individual">EVENT_TYPE_INDIVIDUAL <span class="size">{Size=3:4}</span></dt>
@@ -2808,6 +2820,9 @@ CHILD
             <li><code>WILL</code></li>
             <li><code>EVEN</code></li>
           </ul>
+<div class="references">
+<p>See: &lt;<a href="#prim-event-attribute-type">EVENT<wbr>_ATTRIBUTE<wbr>_TYPE</a>&gt;</p>
+</div>
         </dd>
 
         <dt id="prim-events-recorded">EVENTS_RECORDED <span class="size">{Size=1:90}</span></dt>
@@ -2893,6 +2908,7 @@ CHILD
 <div class="references">
 <p>See:</p>
 <ul>
+<li>&lt;&lt;<a href="#association-structure-subr">ASSOCIATION<wbr>_STRUCTURE</a>&gt;&gt;</li>
 <li>&lt;&lt;<a href="#association-structure-subr">ASSOCIATION<wbr>_STRUCTURE</a>&gt;&gt;.<a href="#tag-def-asso">ASSO</a></li>
 <li><a href="#tag-def-fam">FAM</a>.<a href="#tag-def-chil">CHIL</a></li>
 <li><a href="#tag-def-fam">FAM</a>.<a href="#tag-def-husb">HUSB</a></li>
@@ -3199,7 +3215,12 @@ CHILD
           <p>The PERSONAL_NAME_PIECES structure defines subrecords you may use to define a name via component parts. Even when specifying name pieces, the NAME_PERSONAL <a href="#line-value-component">line_value</a> must be included.</p>
           
 <div class="references">
-<p>See: &lt;&lt;<a href="#personal-name-structure-subr">PERSONAL<wbr>_NAME<wbr>_STRUCTURE</a>&gt;&gt;.<a href="#tag-def-name">NAME</a></p>
+<p>See:</p>
+<ul>
+<li>&lt;<a href="#prim-name-phonetic-variation">NAME<wbr>_PHONETIC<wbr>_VARIATION</a>&gt;</li>
+<li>&lt;<a href="#prim-name-romanized-variation">NAME<wbr>_ROMANIZED<wbr>_VARIATION</a>&gt;</li>
+<li>&lt;&lt;<a href="#personal-name-structure-subr">PERSONAL<wbr>_NAME<wbr>_STRUCTURE</a>&gt;&gt;.<a href="#tag-def-name">NAME</a></li>
+</ul>
 </div>
         </dd>
 
@@ -3343,6 +3364,9 @@ CHILD
         <dt id="prim-name-text">NAME_TEXT <span class="size">{Size=1:120}</span></dt>
         <dd>
           &lt;<a href="#prim-text">TEXT</a>&gt; excluding slashes ("<code>/</code>", U+002F).
+<div class="references">
+<p>See: &lt;<a href="#prim-name-personal">NAME<wbr>_PERSONAL</a>&gt;</p>
+</div>
         </dd>
 
         <dt id="prim-name-type">NAME_TYPE <span class="size">{Size=5:30}</span></dt>
@@ -3364,7 +3388,11 @@ CHILD
           </table>
           
 <div class="references">
-<p>See: &lt;&lt;<a href="#personal-name-structure-subr">PERSONAL<wbr>_NAME<wbr>_STRUCTURE</a>&gt;&gt;.<a href="#tag-def-name">NAME</a>.<a href="#tag-def-type-name">TYPE</a></p>
+<p>See:</p>
+<ul>
+<li>&lt;&lt;<a href="#personal-name-structure-subr">PERSONAL<wbr>_NAME<wbr>_STRUCTURE</a>&gt;&gt;</li>
+<li>&lt;&lt;<a href="#personal-name-structure-subr">PERSONAL<wbr>_NAME<wbr>_STRUCTURE</a>&gt;&gt;.<a href="#tag-def-name">NAME</a>.<a href="#tag-def-type-name">TYPE</a></li>
+</ul>
 </div>
         </dd>
 
@@ -3478,6 +3506,7 @@ CHILD
 <p>See:</p>
 <ul>
 <li>&lt;&lt;<a href="#personal-name-structure-subr">PERSONAL<wbr>_NAME<wbr>_STRUCTURE</a>&gt;&gt;.<a href="#tag-def-name">NAME</a>.<a href="#tag-def-fone">FONE</a>.<a href="#tag-def-type-transform">TYPE</a></li>
+<li>&lt;<a href="#prim-place-phonetic-variation">PLACE<wbr>_PHONETIC<wbr>_VARIATION</a>&gt;</li>
 <li>&lt;&lt;<a href="#place-structure-subr">PLACE<wbr>_STRUCTURE</a>&gt;&gt;.<a href="#tag-def-plac">PLAC</a>.<a href="#tag-def-fone">FONE</a>.<a href="#tag-def-type-transform">TYPE</a></li>
 </ul>
 </div>
@@ -3507,6 +3536,7 @@ CHILD
 <p>See:</p>
 <ul>
 <li><a href="#tag-def-head">HEAD</a>.<a href="#tag-def-plac">PLAC</a>.<a href="#tag-def-form">FORM</a></li>
+<li>&lt;<a href="#prim-place-name">PLACE<wbr>_NAME</a>&gt;</li>
 <li>&lt;&lt;<a href="#place-structure-subr">PLACE<wbr>_STRUCTURE</a>&gt;&gt;.<a href="#tag-def-plac">PLAC</a>.<a href="#tag-def-form">FORM</a></li>
 </ul>
 </div>
@@ -3566,7 +3596,14 @@ CHILD
           </ul>
           
 <div class="references">
-<p>See: &lt;&lt;<a href="#place-structure-subr">PLACE<wbr>_STRUCTURE</a>&gt;&gt;.<a href="#tag-def-plac">PLAC</a></p>
+<p>See:</p>
+<ul>
+<li>&lt;<a href="#prim-place-name">PLACE<wbr>_NAME</a>&gt;</li>
+<li>&lt;<a href="#prim-place-phonetic-variation">PLACE<wbr>_PHONETIC<wbr>_VARIATION</a>&gt;</li>
+<li>&lt;<a href="#prim-place-romanized-variation">PLACE<wbr>_ROMANIZED<wbr>_VARIATION</a>&gt;</li>
+<li>&lt;&lt;<a href="#place-structure-subr">PLACE<wbr>_STRUCTURE</a>&gt;&gt;.<a href="#tag-def-plac">PLAC</a></li>
+<li>&lt;<a href="#prim-source-jurisdiction-place">SOURCE<wbr>_JURISDICTION<wbr>_PLACE</a>&gt;</li>
+</ul>
 </div>
         </dd>
 
@@ -3591,6 +3628,9 @@ CHILD
         <dt id="prim-place-text">PLACE_TEXT <span class="size">{Size=1:120}</span></dt>
         <dd>
           &lt;<a href="#prim-text">TEXT</a>&gt; excluding the comma(s).
+<div class="references">
+<p>See: &lt;<a href="#prim-place-name">PLACE<wbr>_NAME</a>&gt;</p>
+</div>
         </dd>
 
         <dt id="prim-possessions">POSSESSIONS <span class="size">{Size=1:248}</span></dt>
@@ -3630,7 +3670,11 @@ CHILD
 </pre>
           
 <div class="references">
-<p>See: &lt;&lt;<a href="#association-structure-subr">ASSOCIATION<wbr>_STRUCTURE</a>&gt;&gt;.<a href="#tag-def-asso">ASSO</a>.<a href="#tag-def-rela">RELA</a></p>
+<p>See:</p>
+<ul>
+<li>&lt;&lt;<a href="#association-structure-subr">ASSOCIATION<wbr>_STRUCTURE</a>&gt;&gt;</li>
+<li>&lt;&lt;<a href="#association-structure-subr">ASSOCIATION<wbr>_STRUCTURE</a>&gt;&gt;.<a href="#tag-def-asso">ASSO</a>.<a href="#tag-def-rela">RELA</a></li>
+</ul>
 </div>
         </dd>
 
@@ -3692,6 +3736,9 @@ CHILD
         <dt id="prim-role-descriptor">ROLE_DESCRIPTOR <span class="size">{Size=1:25}</span></dt>
         <dd>
           <p>A word or phrase that identifies a person's role in an event being described. This should be the same word or phrase, and in the same language, that the recorder used to define the role in the actual record.</p>
+<div class="references">
+<p>See: &lt;<a href="#prim-role-in-event">ROLE<wbr>_IN<wbr>_EVENT</a>&gt;</p>
+</div>
         </dd>
 
         <dt id="prim-role-in-event">ROLE_IN_EVENT <span class="size">{Size=1:15}</span></dt>
@@ -3729,7 +3776,9 @@ CHILD
 <div class="references">
 <p>See:</p>
 <ul>
+<li>&lt;<a href="#prim-name-romanized-variation">NAME<wbr>_ROMANIZED<wbr>_VARIATION</a>&gt;</li>
 <li>&lt;&lt;<a href="#personal-name-structure-subr">PERSONAL<wbr>_NAME<wbr>_STRUCTURE</a>&gt;&gt;.<a href="#tag-def-name">NAME</a>.<a href="#tag-def-romn">ROMN</a>.<a href="#tag-def-type-transform">TYPE</a></li>
+<li>&lt;<a href="#prim-place-romanized-variation">PLACE<wbr>_ROMANIZED<wbr>_VARIATION</a>&gt;</li>
 <li>&lt;&lt;<a href="#place-structure-subr">PLACE<wbr>_STRUCTURE</a>&gt;&gt;.<a href="#tag-def-plac">PLAC</a>.<a href="#tag-def-romn">ROMN</a>.<a href="#tag-def-type-transform">TYPE</a></li>
 </ul>
 </div>
@@ -3929,6 +3978,13 @@ CHILD
         <dt id="prim-text">TEXT <span class="size">{Size=1:248}</span></dt>
         <dd>
           <p>A string composed of any valid character from the Unicode character set but subject to the syntax rules for the <a href="#line-value-component">line_value</a> component.</p>
+<div class="references">
+<p>See:</p>
+<ul>
+<li>&lt;<a href="#prim-name-text">NAME<wbr>_TEXT</a>&gt;</li>
+<li>&lt;<a href="#prim-place-text">PLACE<wbr>_TEXT</a>&gt;</li>
+</ul>
+</div>
         </dd>
 
         <dt id="prim-text-from-source">TEXT_FROM_SOURCE <span class="same-as">Same as <a href="#prim-text">TEXT</a></span></dt>
@@ -3981,6 +4037,7 @@ CHILD
 <li><a href="#tag-def-obje">OBJE</a>.<a href="#tag-def-refn">REFN</a></li>
 <li><a href="#tag-def-repo">REPO</a>.<a href="#tag-def-refn">REFN</a></li>
 <li><a href="#tag-def-sour">SOUR</a>.<a href="#tag-def-refn">REFN</a></li>
+<li>&lt;<a href="#prim-user-reference-type">USER<wbr>_REFERENCE<wbr>_TYPE</a>&gt;</li>
 </ul>
 </div>
         </dd>
@@ -4221,7 +4278,11 @@ public string GetPafChecksum(string uuid) {
           </ul>
           
 <div class="references">
-<p>See: &lt;&lt;<a href="#event-or-fact-detail-subr">EVENT<wbr>_OR<wbr>_FACT<wbr>_DETAIL</a>&gt;&gt;.<a href="#tag-def-date">DATE</a></p>
+<p>See:</p>
+<ul>
+<li>&lt;<a href="#prim-date-phrase">DATE<wbr>_PHRASE</a>&gt;</li>
+<li>&lt;&lt;<a href="#event-or-fact-detail-subr">EVENT<wbr>_OR<wbr>_FACT<wbr>_DETAIL</a>&gt;&gt;.<a href="#tag-def-date">DATE</a></li>
+</ul>
 </div>
         </dd>
 
@@ -4245,6 +4306,13 @@ public string GetPafChecksum(string uuid) {
 
             <li><code><abbr title="Estimated">EST</abbr></code> before a &lt;<a href="#prim-dmy">DMY</a>&gt; indicates the date was estimated based on an algorithm using some other event date.</li>
           </ul>
+<div class="references">
+<p>See:</p>
+<ul>
+<li>&lt;<a href="#prim-date-phrase">DATE<wbr>_PHRASE</a>&gt;</li>
+<li>&lt;<a href="#prim-date-value">DATE<wbr>_VALUE</a>&gt;</li>
+</ul>
+</div>
         </dd>
 
         <dt id="prim-date-interpreted">DATE_INTERPRETED <span class="size">{Size=11:35}</span></dt>
@@ -4256,6 +4324,13 @@ public string GetPafChecksum(string uuid) {
           <p><code><abbr title="Interpreted">INT</abbr></code> &lt;<a href="#prim-dmy">DMY</a>&gt; &lt;<a href="#prim-date-phrase">DATE_PHRASE</a>&gt;</p>
 
           <p>All three primitive components are required.</p>
+<div class="references">
+<p>See:</p>
+<ul>
+<li>&lt;<a href="#prim-date-phrase">DATE<wbr>_PHRASE</a>&gt;</li>
+<li>&lt;<a href="#prim-date-value">DATE<wbr>_VALUE</a>&gt;</li>
+</ul>
+</div>
         </dd>
 
         <dt id="prim-date-period">DATE_PERIOD <span class="size">{Size=7:35}</span></dt>
@@ -4299,7 +4374,12 @@ public string GetPafChecksum(string uuid) {
           </table>
           
 <div class="references">
-<p>See: <a href="#tag-def-sour">SOUR</a>.<a href="#tag-def-data">DATA</a>.<a href="#tag-def-even-types">EVEN</a>.<a href="#tag-def-date">DATE</a></p>
+<p>See:</p>
+<ul>
+<li>&lt;<a href="#prim-date-range">DATE<wbr>_RANGE</a>&gt;</li>
+<li>&lt;<a href="#prim-date-value">DATE<wbr>_VALUE</a>&gt;</li>
+<li><a href="#tag-def-sour">SOUR</a>.<a href="#tag-def-data">DATA</a>.<a href="#tag-def-even-types">EVEN</a>.<a href="#tag-def-date">DATE</a></li>
+</ul>
 </div>
         </dd>
 
@@ -4314,6 +4394,13 @@ public string GetPafChecksum(string uuid) {
           <p>When the DATE_PHRASE is used with the <code>INT</code> keyword of the &lt;<a href="#prim-date-interpreted">DATE_INTERPRETED</a>&gt; primitive, the DATE_PHRASE length limit is reduced by the length of the other characters in the &lt;<a href="#prim-date-value">DATE_VALUE</a>&gt; For example, the "phrase" portion of <code>INT 22 FEB 1731 (phrase)</code> is limited to 17 characters because the other components require 18 characters.</p>
 
           <p>An acceptable alternative to using a DATE_PHRASE is to use a &lt;<a href="#prim-date-approximated">DATE_APPROXIMATED</a>&gt; keyword with an appropriate day, month, and year, and then include the date phrase value as a NOTE value subordinate to the DATE subrecord.</p>
+<div class="references">
+<p>See:</p>
+<ul>
+<li>&lt;<a href="#prim-date-interpreted">DATE<wbr>_INTERPRETED</a>&gt;</li>
+<li>&lt;<a href="#prim-date-value">DATE<wbr>_VALUE</a>&gt;</li>
+</ul>
+</div>
         </dd>
 
         <dt id="prim-date-range">DATE_RANGE <span class="size">{Size=8:35}</span></dt>
@@ -4364,6 +4451,13 @@ public string GetPafChecksum(string uuid) {
               <tr><td><code>JAN 1920</code></td><td><code>BET 1 JAN 1920 AND 31 JAN 1920</code></td></tr>
             </tbody>
           </table>
+<div class="references">
+<p>See:</p>
+<ul>
+<li>&lt;<a href="#prim-date-period">DATE<wbr>_PERIOD</a>&gt;</li>
+<li>&lt;<a href="#prim-date-value">DATE<wbr>_VALUE</a>&gt;</li>
+</ul>
+</div>
         </dd>
 
         <dt id="prim-dmy">DMY <span class="size">{Size=1:35}</span></dt>
@@ -4408,7 +4502,16 @@ public string GetPafChecksum(string uuid) {
               </p>
             </li>
           </ul>
-
+<div class="references">
+<p>See:</p>
+<ul>
+<li>&lt;<a href="#prim-date-approximated">DATE<wbr>_APPROXIMATED</a>&gt;</li>
+<li>&lt;<a href="#prim-date-interpreted">DATE<wbr>_INTERPRETED</a>&gt;</li>
+<li>&lt;<a href="#prim-date-period">DATE<wbr>_PERIOD</a>&gt;</li>
+<li>&lt;<a href="#prim-date-range">DATE<wbr>_RANGE</a>&gt;</li>
+<li>&lt;<a href="#prim-date-value">DATE<wbr>_VALUE</a>&gt;</li>
+</ul>
+</div>
         </dd>
 
         <dt id="prim-dmy-bc">DMY_BC <span class="size">{Size=4:4}</span></dt>
@@ -4446,7 +4549,15 @@ public string GetPafChecksum(string uuid) {
               </li>
             </ul>
           </div>
-
+<div class="references">
+<p>See:</p>
+<ul>
+<li>&lt;<a href="#prim-dmy-french">DMY<wbr>_FRENCH</a>&gt;</li>
+<li>&lt;<a href="#prim-dmy-gregorian">DMY<wbr>_GREGORIAN</a>&gt;</li>
+<li>&lt;<a href="#prim-dmy-hebrew">DMY<wbr>_HEBREW</a>&gt;</li>
+<li>&lt;<a href="#prim-dmy-julian">DMY<wbr>_JULIAN</a>&gt;</li>
+</ul>
+</div>
         </dd>
 
         <dt id="prim-dmy-calendar">DMY_CALENDAR <span class="size">{Size=4:35}</span></dt>
@@ -4459,6 +4570,13 @@ public string GetPafChecksum(string uuid) {
             <li>&lt;<a href="#prim-dmy-hebrew">DMY_HEBREW</a>&gt;</li>
             <li>&lt;<a href="#prim-dmy-french">DMY_FRENCH</a>&gt;</li>
           </ul>
+<div class="references">
+<p>See:</p>
+<ul>
+<li>&lt;<a href="#prim-date-value">DATE<wbr>_VALUE</a>&gt;</li>
+<li>&lt;<a href="#prim-dmy-calendar-escape">DMY<wbr>_CALENDAR<wbr>_ESCAPE</a>&gt;</li>
+</ul>
+</div>
         </dd>
 
         <dt id="prim-dmy-calendar-escape">DMY_CALENDAR_ESCAPE <span class="size">{Size=4:15}</span></dt>
@@ -4480,7 +4598,13 @@ public string GetPafChecksum(string uuid) {
                 -->
             </tbody>
           </table>
-
+<div class="references">
+<p>See:</p>
+<ul>
+<li>&lt;<a href="#prim-date-value">DATE<wbr>_VALUE</a>&gt;</li>
+<li>&lt;<a href="#prim-dmy">DMY</a>&gt;</li>
+</ul>
+</div>
         </dd>
 
         <dt id="prim-dmy-day">DMY_DAY <span class="size">{Size=1:2}</span></dt>
@@ -4488,6 +4612,17 @@ public string GetPafChecksum(string uuid) {
           <p>dd</p>
 
           <p>Day of the month, where dd is one or two digits whose value is within the valid range of the days for the associated calendar month.</p>
+<div class="references">
+<p>See:</p>
+<ul>
+<li>&lt;<a href="#prim-date-value">DATE<wbr>_VALUE</a>&gt;</li>
+<li>&lt;<a href="#prim-dmy-exact">DMY<wbr>_EXACT</a>&gt;</li>
+<li>&lt;<a href="#prim-dmy-french">DMY<wbr>_FRENCH</a>&gt;</li>
+<li>&lt;<a href="#prim-dmy-gregorian">DMY<wbr>_GREGORIAN</a>&gt;</li>
+<li>&lt;<a href="#prim-dmy-hebrew">DMY<wbr>_HEBREW</a>&gt;</li>
+<li>&lt;<a href="#prim-dmy-julian">DMY<wbr>_JULIAN</a>&gt;</li>
+</ul>
+</div>
         </dd>
 
         <dt id="prim-dmy-exact">DMY_EXACT <span class="size">{Size=10:11}</span></dt>
@@ -4503,10 +4638,18 @@ public string GetPafChecksum(string uuid) {
             <li>&lt;<a href="#prim-dmy-year">DMY_YEAR</a>&gt;&lt;<a href="#prim-dmy-bc">DMY_BC</a>&gt;</li>
             <li>&lt;<a href="#prim-dmy-year">DMY_YEAR</a>&gt;</li>
             <li>&lt;<a href="#prim-dmy-month-french">DMY_MONTH_FRENCH</a>&gt; &lt;<a href="#prim-dmy-year">DMY_YEAR</a>&gt; </li>
-            <li><br>&lt;<a href="#prim-dmy-day">DMY_DAY</a>&gt; &lt;<a href="#prim-dmy-month-french">DMY_MONTH_FRENCH</a>&gt; &lt;<a href="#prim-dmy-year">DMY_YEAR</a>&gt; </li>
+            <li>&lt;<a href="#prim-dmy-day">DMY_DAY</a>&gt; &lt;<a href="#prim-dmy-month-french">DMY_MONTH_FRENCH</a>&gt; &lt;<a href="#prim-dmy-year">DMY_YEAR</a>&gt; </li>
           </ul>
 
           <p>See &lt;<a href="#prim-dmy-month-french">DMY_MONTH_FRENCH</a>&gt;</p>
+<div class="references">
+<p>See:</p>
+<ul>
+<li>&lt;<a href="#prim-dmy">DMY</a>&gt;</li>
+<li>&lt;<a href="#prim-dmy-calendar">DMY<wbr>_CALENDAR</a>&gt;</li>
+<li>&lt;<a href="#prim-dmy-calendar-escape">DMY<wbr>_CALENDAR<wbr>_ESCAPE</a>&gt;</li>
+</ul>
+</div>
         </dd>
 
         <dt id="prim-dmy-gregorian">DMY_GREGORIAN <span class="size">{Size=4:35}</span></dt>
@@ -4519,6 +4662,15 @@ public string GetPafChecksum(string uuid) {
             <li>&lt;<a href="#prim-dmy-month">DMY_MONTH</a>&gt; &lt;<a href="#prim-year-gregorian">DMY_YEAR_GREGORIAN</a>&gt;</li>
             <li>&lt;<a href="#prim-dmy-day">DMY_DAY</a>&gt; &lt;<a href="#prim-dmy-month">DMY_MONTH</a>&gt; &lt;<a href="#prim-year-gregorian">DMY_YEAR_GREGORIAN</a>&gt;</li>
           </ul>
+<div class="references">
+<p>See:</p>
+<ul>
+<li>&lt;<a href="#prim-date-value">DATE<wbr>_VALUE</a>&gt;</li>
+<li>&lt;<a href="#prim-dmy">DMY</a>&gt;</li>
+<li>&lt;<a href="#prim-dmy-calendar">DMY<wbr>_CALENDAR</a>&gt;</li>
+<li>&lt;<a href="#prim-dmy-calendar-escape">DMY<wbr>_CALENDAR<wbr>_ESCAPE</a>&gt;</li>
+</ul>
+</div>
         </dd>
 
         <dt id="prim-dmy-hebrew">DMY_HEBREW <span class="size">{Size=4:35}</span></dt>
@@ -4531,6 +4683,14 @@ public string GetPafChecksum(string uuid) {
             <li>&lt;<a href="#prim-dmy-month-hebrew">DMY_MONTH_HEBREW</a>&gt; &lt;<a href="#prim-dmy-year">DMY_YEAR</a>&gt;</li>
             <li>&lt;<a href="#prim-dmy-day">DMY_DAY</a>&gt; &lt;<a href="#prim-dmy-month-hebrew">DMY_MONTH_HEBREW</a>&gt; &lt;<a href="#prim-dmy-year">DMY_YEAR</a>&gt;</li>
           </ul>
+<div class="references">
+<p>See:</p>
+<ul>
+<li>&lt;<a href="#prim-dmy">DMY</a>&gt;</li>
+<li>&lt;<a href="#prim-dmy-calendar">DMY<wbr>_CALENDAR</a>&gt;</li>
+<li>&lt;<a href="#prim-dmy-calendar-escape">DMY<wbr>_CALENDAR<wbr>_ESCAPE</a>&gt;</li>
+</ul>
+</div>
         </dd>
 
         <dt id="prim-dmy-julian">DMY_JULIAN <span class="size">{Size=4:35}</span></dt>
@@ -4543,6 +4703,15 @@ public string GetPafChecksum(string uuid) {
             <li>&lt;<a href="#prim-dmy-month">DMY_MONTH</a>&gt; &lt;<a href="#prim-dmy-year">DMY_YEAR</a>&gt;</li>
             <li>&lt;<a href="#prim-dmy-day">DMY_DAY</a>&gt; &lt;<a href="#prim-dmy-month">DMY_MONTH</a>&gt; &lt;<a href="#prim-dmy-year">DMY_YEAR</a>&gt;</li>
           </ul>
+<div class="references">
+<p>See:</p>
+<ul>
+<li>&lt;<a href="#prim-date-value">DATE<wbr>_VALUE</a>&gt;</li>
+<li>&lt;<a href="#prim-dmy">DMY</a>&gt;</li>
+<li>&lt;<a href="#prim-dmy-calendar">DMY<wbr>_CALENDAR</a>&gt;</li>
+<li>&lt;<a href="#prim-dmy-calendar-escape">DMY<wbr>_CALENDAR<wbr>_ESCAPE</a>&gt;</li>
+</ul>
+</div>
         </dd>
 
         <dt id="prim-dmy-month">DMY_MONTH <span class="size">{Size=3}</span></dt>
@@ -4582,6 +4751,15 @@ public string GetPafChecksum(string uuid) {
               </li>
             </ul>
           </div>
+<div class="references">
+<p>See:</p>
+<ul>
+<li>&lt;<a href="#prim-date-value">DATE<wbr>_VALUE</a>&gt;</li>
+<li>&lt;<a href="#prim-dmy-exact">DMY<wbr>_EXACT</a>&gt;</li>
+<li>&lt;<a href="#prim-dmy-gregorian">DMY<wbr>_GREGORIAN</a>&gt;</li>
+<li>&lt;<a href="#prim-dmy-julian">DMY<wbr>_JULIAN</a>&gt;</li>
+</ul>
+</div>
         </dd>
 
         <dt id="prim-dmy-month-french">DMY_MONTH_FRENCH <span class="size">{Size=4}</span></dt>
@@ -4622,6 +4800,9 @@ public string GetPafChecksum(string uuid) {
               </li>
             </ul>
           </div>
+<div class="references">
+<p>See: &lt;<a href="#prim-dmy-french">DMY<wbr>_FRENCH</a>&gt;</p>
+</div>
         </dd>
 
         <dt id="prim-dmy-month-hebrew">DMY_MONTH_HEBREW <span class="size">{Size=3}</span></dt>
@@ -4662,11 +4843,23 @@ public string GetPafChecksum(string uuid) {
               </li>
             </ul>
           </div>
+<div class="references">
+<p>See: &lt;<a href="#prim-dmy-hebrew">DMY<wbr>_HEBREW</a>&gt;</p>
+</div>
         </dd>
 
         <dt id="prim-dmy-year">DMY_YEAR <span class="size">{Size=3:4}</span></dt>
         <dd>
           <p>A numeric representation of the calendar year in which an event occurred.</p>
+<div class="references">
+<p>See:</p>
+<ul>
+<li>&lt;<a href="#prim-date-value">DATE<wbr>_VALUE</a>&gt;</li>
+<li>&lt;<a href="#prim-dmy-french">DMY<wbr>_FRENCH</a>&gt;</li>
+<li>&lt;<a href="#prim-dmy-hebrew">DMY<wbr>_HEBREW</a>&gt;</li>
+<li>&lt;<a href="#prim-dmy-julian">DMY<wbr>_JULIAN</a>&gt;</li>
+</ul>
+</div>
         </dd>
 
         <dt id="prim-year-gregorian">DMY_YEAR_GREGORIAN <span class="size">{Size=3:7}</span></dt>
@@ -4678,6 +4871,13 @@ public string GetPafChecksum(string uuid) {
           <p>The three-digit minimum length may have been specified to differentiate day numbers from year numbers. To support one and two digit years, add leading zeroes. For one-digit years, add two leading zeroes so the length of the year number is three digits. For two-digit years, add one leading zero so the length of the year number is three digits.</p>
 
           <p>The year number may be followed by a slash ("<code>/</code>", U+002F) and an alternate-year number with one or two digits. This is used for the possible date alternatives for <span class="nowrap">pre-1752</span> dates brought about by a changing the beginning of the year from MAR to JAN in the English calendar change of 1752, for example, <code class="nowrap">11 FEB 1731/2</code>.</p>
+<div class="references">
+<p>See:</p>
+<ul>
+<li>&lt;<a href="#prim-dmy-exact">DMY<wbr>_EXACT</a>&gt;</li>
+<li>&lt;<a href="#prim-dmy-gregorian">DMY<wbr>_GREGORIAN</a>&gt;</li>
+</ul>
+</div>
         </dd>
       </dl>
     </section>
@@ -6510,6 +6710,7 @@ public string GetPafChecksum(string uuid) {
 <li><a href="#tag-def-asso">ASSO</a></li>
 <li><a href="#association-structure-subr">ASSOCIATION<wbr>_STRUCTURE</a></li>
 <li><a href="#prim-attribute-descriptor">ATTRIBUTE<wbr>_DESCRIPTOR</a></li>
+<li><a href="#prim-attribute-type">ATTRIBUTE<wbr>_TYPE</a></li>
 <li><a href="#tag-def-auth">AUTH</a></li>
 <li><a href="#prim-automated-record-id">AUTOMATED<wbr>_RECORD<wbr>_ID</a></li>
 <li><a href="#tag-def-bapm">BAPM</a></li>
@@ -6548,7 +6749,11 @@ public string GetPafChecksum(string uuid) {
 <li><a href="#tag-def-ctry">CTRY</a></li>
 <li><a href="#tag-def-data">DATA</a></li>
 <li><a href="#tag-def-date">DATE</a></li>
+<li><a href="#prim-date-approximated">DATE<wbr>_APPROXIMATED</a></li>
+<li><a href="#prim-date-interpreted">DATE<wbr>_INTERPRETED</a></li>
 <li><a href="#prim-date-period">DATE<wbr>_PERIOD</a></li>
+<li><a href="#prim-date-phrase">DATE<wbr>_PHRASE</a></li>
+<li><a href="#prim-date-range">DATE<wbr>_RANGE</a></li>
 <li><a href="#prim-date-value">DATE<wbr>_VALUE</a></li>
 <li><a href="#tag-def-deat">DEAT</a></li>
 <li><a href="#prim-descriptive-title">DESCRIPTIVE<wbr>_TITLE</a></li>
@@ -6556,6 +6761,19 @@ public string GetPafChecksum(string uuid) {
 <li><a href="#tag-def-dest">DEST</a></li>
 <li><a href="#tag-def-div">DIV</a></li>
 <li><a href="#tag-def-divf">DIVF</a></li>
+<li><a href="#prim-dmy">DMY</a></li>
+<li><a href="#prim-dmy-bc">DMY<wbr>_BC</a></li>
+<li><a href="#prim-dmy-calendar">DMY<wbr>_CALENDAR</a></li>
+<li><a href="#prim-dmy-calendar-escape">DMY<wbr>_CALENDAR<wbr>_ESCAPE</a></li>
+<li><a href="#prim-dmy-day">DMY<wbr>_DAY</a></li>
+<li><a href="#prim-dmy-french">DMY<wbr>_FRENCH</a></li>
+<li><a href="#prim-dmy-gregorian">DMY<wbr>_GREGORIAN</a></li>
+<li><a href="#prim-dmy-hebrew">DMY<wbr>_HEBREW</a></li>
+<li><a href="#prim-dmy-julian">DMY<wbr>_JULIAN</a></li>
+<li><a href="#prim-dmy-month">DMY<wbr>_MONTH</a></li>
+<li><a href="#prim-dmy-month-french">DMY<wbr>_MONTH<wbr>_FRENCH</a></li>
+<li><a href="#prim-dmy-month-hebrew">DMY<wbr>_MONTH<wbr>_HEBREW</a></li>
+<li><a href="#prim-dmy-year">DMY<wbr>_YEAR</a></li>
 <li><a href="#prim-document-date">DOCUMENT<wbr>_DATE</a></li>
 <li><a href="#tag-def-dscr">DSCR</a></li>
 <li><a href="#tag-def-educ">EDUC</a></li>
@@ -6565,10 +6783,13 @@ public string GetPafChecksum(string uuid) {
 <li><a href="#prim-entry-recording-date">ENTRY<wbr>_RECORDING<wbr>_DATE</a></li>
 <li><a href="#tag-def-even-generic">EVEN (GENERIC)</a></li>
 <li><a href="#tag-def-even-types">EVEN (TYPES)</a></li>
+<li><a href="#prim-event-attribute-type">EVENT<wbr>_ATTRIBUTE<wbr>_TYPE</a></li>
 <li><a href="#prim-event-descriptor">EVENT<wbr>_DESCRIPTOR</a></li>
 <li><a href="#prim-event-or-fact-classification">EVENT<wbr>_OR<wbr>_FACT<wbr>_CLASSIFICATION</a></li>
 <li><a href="#event-or-fact-detail-subr">EVENT<wbr>_OR<wbr>_FACT<wbr>_DETAIL</a></li>
 <li><a href="#prim-event-type-cited-from">EVENT<wbr>_TYPE<wbr>_CITED<wbr>_FROM</a></li>
+<li><a href="#prim-event-type-family">EVENT<wbr>_TYPE<wbr>_FAMILY</a></li>
+<li><a href="#prim-event-type-individual">EVENT<wbr>_TYPE<wbr>_INDIVIDUAL</a></li>
 <li><a href="#prim-events-recorded">EVENTS<wbr>_RECORDED</a></li>
 <li><a href="#tag-def-fact">FACT</a></li>
 <li><a href="#tag-def-fam">FAM</a></li>
@@ -6631,6 +6852,7 @@ public string GetPafChecksum(string uuid) {
 <li><a href="#prim-name-piece-surname">NAME<wbr>_PIECE<wbr>_SURNAME</a></li>
 <li><a href="#prim-name-piece-surname-prefix">NAME<wbr>_PIECE<wbr>_SURNAME<wbr>_PREFIX</a></li>
 <li><a href="#prim-name-romanized-variation">NAME<wbr>_ROMANIZED<wbr>_VARIATION</a></li>
+<li><a href="#prim-name-text">NAME<wbr>_TEXT</a></li>
 <li><a href="#prim-name-type">NAME<wbr>_TYPE</a></li>
 <li><a href="#tag-def-nati">NATI</a></li>
 <li><a href="#prim-national-id-number">NATIONAL<wbr>_ID<wbr>_NUMBER</a></li>
@@ -6666,6 +6888,7 @@ public string GetPafChecksum(string uuid) {
 <li><a href="#prim-place-phonetic-variation">PLACE<wbr>_PHONETIC<wbr>_VARIATION</a></li>
 <li><a href="#prim-place-romanized-variation">PLACE<wbr>_ROMANIZED<wbr>_VARIATION</a></li>
 <li><a href="#place-structure-subr">PLACE<wbr>_STRUCTURE</a></li>
+<li><a href="#prim-place-text">PLACE<wbr>_TEXT</a></li>
 <li><a href="#prim-possessions">POSSESSIONS</a></li>
 <li><a href="#tag-def-post">POST</a></li>
 <li><a href="#tag-def-prob">PROB</a></li>
@@ -6686,6 +6909,7 @@ public string GetPafChecksum(string uuid) {
 <li><a href="#tag-def-rfn">RFN</a></li>
 <li><a href="#tag-def-rin">RIN</a></li>
 <li><a href="#tag-def-role">ROLE</a></li>
+<li><a href="#prim-role-descriptor">ROLE<wbr>_DESCRIPTOR</a></li>
 <li><a href="#prim-role-in-event">ROLE<wbr>_IN<wbr>_EVENT</a></li>
 <li><a href="#prim-romanized-type">ROMANIZED<wbr>_TYPE</a></li>
 <li><a href="#tag-def-romn">ROMN</a></li>
@@ -6716,6 +6940,7 @@ public string GetPafChecksum(string uuid) {
 <li><a href="#tag-def-surn">SURN</a></li>
 <li><a href="#prim-system-id">SYSTEM<wbr>_ID</a></li>
 <li><a href="#tag-def-text">TEXT</a></li>
+<li><a href="#prim-text">TEXT</a></li>
 <li><a href="#prim-text-from-source">TEXT<wbr>_FROM<wbr>_SOURCE</a></li>
 <li><a href="#tag-def-time">TIME</a></li>
 <li><a href="#prim-time-value">TIME<wbr>_VALUE</a></li>
@@ -6736,6 +6961,7 @@ public string GetPafChecksum(string uuid) {
 <li><a href="#tag-def-will">WILL</a></li>
 <li><a href="#tag-def-www">WWW</a></li>
 <li><a href="#prim-y-or-n">Y<wbr>_OR<wbr>_N</a></li>
+<li><a href="#prim-year-gregorian">YEAR<wbr>_GREGORIAN</a></li>
 </ul>
     </section>
     <div class="fixed-menu">
