@@ -13,6 +13,12 @@ pre a, pre a:link, pre a:visited, pre a:hover, pre a:active {
   color: unset;
 }
 
+a[href*="//"]::after,
+a.external::after {
+  content: url(http://upload.wikimedia.org/wikipedia/commons/6/64/Icon_External_Link.png);
+  margin: 0 0 0 5px;
+}
+
 article {
   border-style: solid;
   border-width: 1px;
@@ -58,6 +64,10 @@ dt {
   font-weight: 600;
   letter-spacing: 0.1em;
   margin-top: 3em;
+}
+
+dl.simple-list dt {
+  margin-top: 1em;
 }
 
 h1 {
