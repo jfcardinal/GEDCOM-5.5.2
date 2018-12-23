@@ -333,6 +333,14 @@ ul li {
   margin: -36px 0 0; /* negative fixed header height */
 }
 
+tr:target::before {
+  /* Adjust target to avoid being under fixed-menu */
+  content: "";
+  display: none;
+}
+
+
+
 .keyword-index {
   font-size: 90%;
   list-style-type: none;
