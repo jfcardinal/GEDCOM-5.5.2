@@ -74,8 +74,56 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
       <h2>Subrecords with Custom Tag Names</h2>
 
       <dl>
+
+        <dt id="tag-def--prim">_PRIM <span class="tag-full-name">Primary or Preferred</span></dt>
+        <dd>
+          <p>_PRIM is used to indicate that its parent record is the primary or preferred instance.</p>
+
+          <table class="record-structure">
+            <tr><td class="code level-0">n _PRIM &lt;<a href="#prim-y-or-n">Y_OR_N</a>&gt; </td><td class="size">0:1</td></tr>
+          </table>
+
+          <p>For example, to indicate that an <a class="external" href="gedcom-5.5.2.html#tag-def-indi">INDI</a>.<a class="external" href="gedcom-5.5.2.html#tag-def-obje">OBJE</a> subrecord should be treated as the preferred multimedia item:</p>
+
+<pre>
+0 @I1@ INDI
+1 OBJE
+2 FILE c:\picture.jpg
+3 FORM jpg
+2 _PRIM Y
+</pre>
+
+          <p>_PRIM is supported on input and/or output by:</p>
+          <ul>
+            <li>Legacy Family Tree</li>
+            <li>RootsMagic</li>
+            <li>rootstrust</li>
+          </ul>
+
+          <p>As shown in the example, a common use of _PRIM is to indicate a preferred multimedia record, but there are other uses.</p>
+          
+        </dd>
+
+        <dt id="tag-def--uid">_UID <span class="tag-full-name">UUID</span></dt>
+        <dd>
+          <p>_UID is used to specify a Universally Unique Identifier (UUID) in string format.</p>
+
+          <table class="record-structure">
+            <tr><td class="code level-0">n _UID &lt;<a href="#prim-uuid">UUID</a>&gt; </td><td class="size">0:1</td></tr>
+          </table>
+
+          <p>For example, to indicate that an <a class="external" href="gedcom-5.5.2.html#tag-def-indi">INDI</a> has been assigned a UUID:</p>
+
+<pre>
+0 @I1@ INDI
+1 _UID f81d4fae-7dec-11d0-a765-00a0c91e6bf6
+</pre>
+
+          <p>While _UID is written by a long list of genealogy applications, formats are inconsistent. See the &lt;<a href="#prim-uuid">UUID</a>&gt; Primitive Element for details.</p>
+
+        </dd>
+
         <dt id="tag-def--sdate">_SDATE <span class="tag-full-name">Sort Date</span></dt>
-        <!-- REFERENCE I _SDATE _SDATE tag-def--sdate -->
         <dd>
           <p>_SDATE specifies a sort date for an event. It uses the same value format as a <a class="external" href="gedcom-5.5.2.html#tag-def-date">DATE</a> subrecord.</p>
           
@@ -113,7 +161,6 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
         </dd>
 
         <dt id="tag-def--shar">_SHAR <span class="tag-full-name">Co-Participant ID</span></dt>
-        <!-- REFERENCE I _SHAR _SHAR tag-def--shar -->
         <dd>
           <p>_SHAR is used to add an individual to an event.</p>
 
@@ -163,8 +210,6 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
         </dd>
 
         <dt id="tag-def--role">_ROLE <span class="tag-full-name">Co-Participant Role</span></dt>
-        <!-- REFERENCE I _ROLE _ROLE tag-def--role -->
-        <!-- REFERENCE I ROLE ROLE tag-def--role -->
         <dd>
           <p>_ROLE is used to specify the role played by an individual in connection with an event.</p>
 
@@ -185,59 +230,6 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
           </ul>
 
           <p>As shown above, multiple applications use "ROLE" rather than "_ROLE".</p>
-        </dd>
-
-        <dt id="tag-def--prim">_PRIM <span class="tag-full-name">Primary or Preferred</span></dt>
-        <!-- REFERENCE P Y_OR_N _PRIM -->
-        <!-- REFERENCE T _PRIM Y_OR_N -->
-        <dd>
-          <p>_PRIM is used to indicate that its parent record is the primary or preferred instance.</p>
-
-          <table class="record-structure">
-            <tr><td class="code level-0">n _PRIM &lt;<a href="#prim-y-or-n">Y_OR_N</a>&gt; </td><td class="size">0:1</td></tr>
-          </table>
-
-          <p>For example, to indicate that an <a class="external" href="gedcom-5.5.2.html#tag-def-indi">INDI</a>.<a class="external" href="gedcom-5.5.2.html#tag-def-obje">OBJE</a> subrecord should be treated as the preferred multimedia item:</p>
-
-<pre>
-0 @I1@ INDI
-1 OBJE
-2 FILE c:\picture.jpg
-3 FORM jpg
-2 _PRIM Y
-</pre>
-
-          <p>_PRIM is supported on input and/or output by:</p>
-          <ul>
-            <li>Legacy Family Tree</li>
-            <li>RootsMagic</li>
-            <li>rootstrust</li>
-          </ul>
-
-          <p>As shown in the example, a common use of _PRIM is to indicate a preferred multimedia record, but there are other uses.</p>
-          
-
-        </dd>
-
-        <dt id="tag-def--uid">_UID <span class="tag-full-name">UUID</span></dt>
-        <!-- REFERENCE P UUID _UID -->
-        <!-- REFERENCE T _UID UUID -->
-        <dd>
-          <p>_UID is used to specify a Universally Unique Identifier (UUID) in string format.</p>
-
-          <table class="record-structure">
-            <tr><td class="code level-0">n _UID &lt;<a href="#prim-uuid">UUID</a>&gt; </td><td class="size">0:1</td></tr>
-          </table>
-
-          <p>For example, to indicate that an <a class="external" href="gedcom-5.5.2.html#tag-def-indi">INDI</a> has been assigned a UUID:</p>
-
-<pre>
-0 @I1@ INDI
-1 _UID f81d4fae-7dec-11d0-a765-00a0c91e6bf6
-</pre>
-
-          <p>While _UID is written by a long list of genealogy applications, formats are inconsistent. See the &lt;<a href="#prim-uuid">UUID</a>&gt; Primitive Element for details.</p>
-
         </dd>
       </dl>
 
@@ -314,7 +306,9 @@ public string GetPafChecksum(string uuid) {
 
           <p>The meaning of the value is determined by the context.</p>
           
-
+<div class="references">
+<p>See: <a href="#tag-def--prim"><wbr>_PRIM</a></p>
+</div>
         </dd>
       </dl>
     </section>

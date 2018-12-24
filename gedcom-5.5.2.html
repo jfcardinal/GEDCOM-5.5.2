@@ -637,11 +637,13 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
         <dd>
           <h4>Definition</h4>
 
-          <p>A tag_name has roughly the same purpose as a field name in a database. The tag_name indicates the meaning of the <a href="#gedcom-line-syntax">gedcom_line</a> within the context of the enclosing subrecords, and contributes to the meaning of the enclosed subordinate gedcom_lines. The presence of a tag_name together with a value represents an assertion made by the author or editor of the content.</p>
-
-          <p>A tag_name without a <a href="#line-value-component">line_value</a> does not represent an assertion. If a Record or Subrecord is absent, no assertion is made. Asserting that an event did <em>not</em> occur must be expressed using a subrecord that is defined for that purpose, or using a general-purpose subrecord, such as a <a href="#tag-def-note">NOTE</a>.</p>
+          <p>A tag_name indicates the meaning of the <a href="#gedcom-line-syntax">gedcom_line</a> within the context of the enclosing subrecords, and contributes to the meaning of the enclosed subordinate gedcom_lines. The presence of a tag_name together with a value represents an assertion made by the author or editor of the content. A tag_name has roughly the same purpose as a field name in a database.</p>
 
           <p>Valid combinations of specific tag_names, <a href="#line-value-component">line_values</a>, <a href="#id-component">IDs</a>, and <a href="#pointer-component">pointers</a> are constrained by definitions provided in the <a href="#section-record-and-subrecord-grammar">Record and Subrecord Grammar</a> section and subsections.</p>
+
+          <p>A subrecord with a tag_name but without a <a href="#line-value-component">line_value</a> does not represent an assertion. A subrecord with no line_value must have subordinate records to represent an assertion.</p>
+          
+          <p>If a Record or Subrecord is absent, no assertion is made. Asserting that an event did <em>not</em> occur must be expressed using a subrecord that is defined for that purpose, or using a general-purpose subrecord, such as a <a href="#tag-def-note">NOTE</a>.</p>
 
           <h4>Syntax</h4>
 
@@ -2544,7 +2546,9 @@ CHILD
             <tr><td><code>2</code></td><td>Secondary evidence, data officially recorded sometime after event</td></tr>
             <tr><td><code>3</code></td><td>Direct and primary evidence used, or by dominance of the evidence</td></tr>
           </table>
-
+<div class="references">
+<p>See: &lt;&lt;<a href="#source-citation-subr">SOURCE<wbr>_CITATION</a>&gt;&gt;</p>
+</div>
         </dd>
 
         <dt id="prim-change-date">CHANGE_DATE <span class="same-as">Same as <a href="#prim-dmy-exact">DMY_EXACT</a></span></dt>
@@ -3597,7 +3601,7 @@ CHILD
 
           <p>For example: 168 degrees, 9 minutes, and 3.4 seconds east would be formatted as <code>E168.150944</code>. Minutes and seconds are converted by dividing the minutes value by 60 and the seconds value by 3600 and adding the results together. This sum becomes the fractional part of the degree's value.</p>
 
-          <p>The shortest possible value is two characters: "<code>E0</code>" or "<code>W0</code>". The longest possible value is eleven characters: one character for direction (N, S), two digits before the decimal point, the decimal point, and six digits after the decimal point. For example, "E179.123456".</p>
+          <p>The shortest possible value is two characters: "<code>E0</code>" or "<code>W0</code>". The longest possible value is eleven characters: one character for direction (E, W), two digits before the decimal point, the decimal point, and six digits after the decimal point. For example, "E179.123456".</p>
 
           <p>See the <a href="#tag-def-map">MAP</a> subrecord for other map-related details.</p>
           
