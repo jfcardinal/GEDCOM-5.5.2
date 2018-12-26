@@ -285,7 +285,7 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
         <li id="location-coordinate-change">
           <p><strong>MAP.LATI</strong> and <strong>MAP.LONG</strong> &ndash; The <a href="#tag-def-lati">LATI</a> and <a href="#tag-def-long">LONG</a> value length in GEDCOM 5.5.1 is restricted to the range of 5 to 8 characters. That does not allow sufficient precision to match coordinates available in <abbr title="Global Positioning System">GPS</abbr> devices, and several programs exceed the limit. The example on page 51 of the GEDCOM 5.5.1 specification in the PLACE_LATITUDE entry that includes the "{Size=5:8}" range definition also exceeds the limit: "<code>N18.150944</code>" is ten characters.</p>
 
-          <p>The PLACE_LATITUDE size in GEDCOM 5.5.2 is "{Size=2:10}". The PLACE_LONGITUDE size in GEDCOM 5.5.2 is "{Size=2:11}". See the <a href="#prim-place-latitude">PLACE_LATITUDE</a> and <a href="#prim-place-longitude">PLACE_LONGITUDE</a> definitions for the details.</p>
+          <p>The PLACE_LATITUDE size in GEDCOM 5.5.2 is "{Size=2:10}". The PLACE_LONGITUDE size in GEDCOM 5.5.2 is "{Size=2:11}". See the &lt;<a href="#prim-place-latitude">PLACE_LATITUDE</a>&gt; and &lt;<a href="#prim-place-longitude">PLACE_LONGITUDE</a>&gt; definitions for the details.</p>
         </li>
 
         <li id="multimedia-file-reference-change">
@@ -301,7 +301,7 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
         </li>
 
         <li id="surname-prefix-change">
-          <p><strong>NAME_PIECE_SURNAME_PREFIX</strong> &ndash; The <a href="#prim-name-piece-surname-prefix">NAME_PIECE_SURNAME_PREFIX</a> definition in GEDCOM 5.5.1 includes an instruction to insert a comma between "articles" in a surname prefix, and provides an example of changing the surname prefix in "<code>de la Cruz</code>" to "<code>de, la</code>".</p>
+          <p><strong>NAME_PIECE_SURNAME_PREFIX</strong> &ndash; The &lt;<a href="#prim-name-piece-surname-prefix">NAME_PIECE_SURNAME_PREFIX</a>&gt; definition in GEDCOM 5.5.1 includes an instruction to insert a comma between "articles" in a surname prefix, and provides an example of changing the surname prefix in "<code>de la Cruz</code>" to "<code>de, la</code>".</p>
 
           <p>Changing name data is ill-advised and no known genealogy applications comply with the GEDCOM 5.5.1 instruction.</p>
 
@@ -309,7 +309,7 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
         </li>
 
         <li id="system-id-change">
-          <p><strong>APPROVED_SYSTEM_ID</strong> and <strong>RECEIVING_SYSTEM_NAME</strong> &ndash; APPROVED_SYSTEM_ID and RECEIVING_SYSTEM_NAME in GEDCOM 5.5.1 were two Primitive Elements used to identify external systems. Those elements have been merged as <a href="#prim-system-id">SYSTEM_ID</a> in GEDCOM 5.5.2, and its length has been expanded.</p>
+          <p><strong>APPROVED_SYSTEM_ID</strong> and <strong>RECEIVING_SYSTEM_NAME</strong> &ndash; APPROVED_SYSTEM_ID and RECEIVING_SYSTEM_NAME in GEDCOM 5.5.1 were two Primitive Elements used to identify external systems. Those elements have been merged as &lt;<a href="#prim-system-id">SYSTEM_ID</a>&gt; in GEDCOM 5.5.2, and its length has been expanded.</p>
         </li>
 
         <li id="subn-change">
@@ -653,7 +653,7 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
 
           <p>The first character in a Standard Tag Name must be an uppercase alphabetic character. Standard Tag Names are defined in the <a href="#section-standard-tag-names">Standard Tag Names</a> section.</p>
 
-          <p>The first character in a <a href="#prim-custom-tag">Custom Tag Name</a> must be an underscore ("<code>_</code>", U+005F).</p>
+          <p>The first character in a &lt;<a href="#prim-custom-tag">Custom Tag Name</a>&gt; must be an underscore ("<code>_</code>", U+005F).</p>
 
           <p>The minimum length of a tag_name is three characters.</p>
 
@@ -788,7 +788,7 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
         <dd>
           <h4>Definition</h4>
 
-          <p>The escape_sequence is a character sequence used to indicate special processing. The only escape_sequences in GEDCOM 5.5.2 are used to indicate a <a href="#prim-dmy-calendar-escape">calendar</a> in a <a href="#tag-def-date">DATE</a> value.</p>
+          <p>The escape_sequence is a character sequence used to indicate special processing. The only escape_sequences in GEDCOM 5.5.2 are used to indicate a &lt;<a href="#prim-dmy-calendar-escape">calendar</a>&gt; in a <a href="#tag-def-date">DATE</a> value.</p>
 
           <h4>Syntax</h4>
 
@@ -1399,7 +1399,7 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
 
           <p>The REPO_RECORD structure describes the place where an item of source material is stored.</p>
 
-          <p>The repository name and addresses are stored in the <a href="#address-structure-subr">ADDRESS_STRUCTURE</a>.</p>
+          <p>The repository name and addresses are stored in the &lt;&lt;<a href="#address-structure-subr">ADDRESS_STRUCTURE</a>&gt;&gt;.</p>
 
           <p>The REPO_RECORD structure is used for formal and informal repositories. Public libraries and civil archives are examples of formal archives. A personal collection is an examnple of an informal repository.</p>
 
@@ -1502,15 +1502,15 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
           <p>The ADDRESS_STRUCTURE describes the elements of a mailing address.</p>
 
           <table class="record-structure">
-            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-addr">ADDR</a></span> &lt;<a href="#prim-address-line">ADDRESS_LINE</a>&gt; </td><td class="size">1:1</td></tr>
+            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-def-addr">ADDR</a></span> &lt;<a href="#prim-address-value">ADDRESS_VALUE</a>&gt; </td><td class="size">1:1</td></tr>
 
-            <tr><td class="code level-1">+1 <span class="required"><a href="#tag-def-cont">CONT</a></span> &lt;<a href="#prim-address-line">ADDRESS_LINE</a>&gt; </td><td class="size">1:3</td></tr>
+            <tr><td class="code level-1">+1 <span class="required"><a href="#tag-def-cont">CONT</a></span> &lt;<a href="#prim-address-value">ADDRESS_VALUE</a>&gt; </td><td class="size">1:3</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-adr1">ADR1</a> &lt;<a href="#prim-address-line1">ADDRESS_LINE1</a>&gt; </td><td class="size">0:1</td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-adr1">ADR1</a> &lt;<a href="#prim-address-line">ADDRESS_LINE</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-adr2">ADR2</a> &lt;<a href="#prim-address-line2">ADDRESS_LINE2</a>&gt; </td><td class="size">0:1</td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-adr2">ADR2</a> &lt;<a href="#prim-address-line">ADDRESS_LINE</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-def-adr3">ADR3</a> &lt;<a href="#prim-address-line3">ADDRESS_LINE3</a>&gt; </td><td class="size">0:1</td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-def-adr3">ADR3</a> &lt;<a href="#prim-address-line">ADDRESS_LINE</a>&gt; </td><td class="size">0:1</td></tr>
 
             <tr><td class="code level-1">+1 <a href="#tag-def-city">CITY</a> &lt;<a href="#prim-address-city">ADDRESS_CITY</a>&gt; </td><td class="size">0:1</td></tr>
 
@@ -2312,41 +2312,17 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
 
         <dt id="prim-address-line">ADDRESS_LINE <span class="size">{Size=1:60}</span></dt>
         <dd>
-          <p>Typically used to define a mailing address of an individual when used subordinate to a <a href="#tag-def-resi">RESI</a> (resident) subrecord. When it is used subordinate to an event subrecord it is the address of the place where the event took place. The address lines usually contain the addressee's name and other street and city information so that it forms an address that meets mailing requirements.</p>
+          <p>ADDRESS_LINE represents one line of an address used for indexing.</p>
+
+          <p>The ADDRESS_LINE value is used to specify the initial components of an address, such as the addressee or street address, with up to three values as specified via the <a href="#tag-def-adr1">ADR1</a>, <a href="#tag-def-adr2">ADR2</a>, and <a href="#tag-def-adr3">ADR3</a> subrecords.</p>
           
 <div class="references">
 <p>See:</p>
 <ul>
-<li>&lt;&lt;<a href="#address-structure-subr">ADDRESS<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-def-addr">ADDR</a></li>
-<li>&lt;&lt;<a href="#address-structure-subr">ADDRESS<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-def-addr">ADDR</a><wbr>.<a href="#tag-def-cont">CONT</a></li>
+<li>&lt;&lt;<a href="#address-structure-subr">ADDRESS<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-def-addr">ADDR</a><wbr>.<a href="#tag-def-adr1">ADR1</a></li>
+<li>&lt;&lt;<a href="#address-structure-subr">ADDRESS<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-def-addr">ADDR</a><wbr>.<a href="#tag-def-adr2">ADR2</a></li>
+<li>&lt;&lt;<a href="#address-structure-subr">ADDRESS<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-def-addr">ADDR</a><wbr>.<a href="#tag-def-adr3">ADR3</a></li>
 </ul>
-</div>
-        </dd>
-
-        <dt id="prim-address-line1">ADDRESS_LINE1 <span class="size">{Size=1:60}</span></dt>
-        <dd>
-          <p>The first line of the address used for indexing. This is the value of the <a href="#tag-def-addr">ADDR</a> subrecord in the &lt;&lt;<a href="#address-structure-subr">ADDRESS_STRUCTURE</a>&gt;&gt;.</p>
-          
-<div class="references">
-<p>See: &lt;&lt;<a href="#address-structure-subr">ADDRESS<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-def-addr">ADDR</a><wbr>.<a href="#tag-def-adr1">ADR1</a></p>
-</div>
-        </dd>
-
-        <dt id="prim-address-line2">ADDRESS_LINE2 <span class="size">{Size=1:60}</span></dt>
-        <dd>
-          <p>The second line of the address used for indexing. This is the value of the first CONT subrecord subordinate to the <a href="#tag-def-addr">ADDR</a> subrecord in the <a href="#address-structure-subr">ADDRESS_STRUCTURE</a>.</p>
-          
-<div class="references">
-<p>See: &lt;&lt;<a href="#address-structure-subr">ADDRESS<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-def-addr">ADDR</a><wbr>.<a href="#tag-def-adr2">ADR2</a></p>
-</div>
-        </dd>
-
-        <dt id="prim-address-line3">ADDRESS_LINE3 <span class="size">{Size=1:60}</span></dt>
-        <dd>
-          <p>The third line of the address used for indexing. This is the value of the second CONT line subordinate to the <a href="#tag-def-addr">ADDR</a> subrecord in the <a href="#address-structure-subr">ADDRESS_STRUCTURE</a>.</p>
-          
-<div class="references">
-<p>See: &lt;&lt;<a href="#address-structure-subr">ADDRESS<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-def-addr">ADDR</a><wbr>.<a href="#tag-def-adr3">ADR3</a></p>
 </div>
         </dd>
 
@@ -2365,6 +2341,22 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
           
 <div class="references">
 <p>See: &lt;&lt;<a href="#address-structure-subr">ADDRESS<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-def-addr">ADDR</a><wbr>.<a href="#tag-def-stae">STAE</a></p>
+</div>
+        </dd>
+
+        <dt id="prim-address-value">ADDRESS_VALUE <span class="size">{Size=1:240}</span></dt>
+        <dd>
+          <p>ADDRESS_VALUE defines a mailing address of an individual when used subordinate to a <a href="#tag-def-resi">RESI</a> (resident) subrecord. When it is used subordinate to an event subrecord it is the address of the place where the event took place. The ADDRESS_VALUE usually contains the addressee's name and other street and city information so that it forms an address that meets mailing requirements.</p>
+
+          <p>The ADDRESS_VALUE should be specified using one or more <a href="#tag-def-cont">CONT</a> subrecords so there will be multiple lines in the resulting value.</p>
+          
+<div class="references">
+<p>See:</p>
+<ul>
+<li><a href="#tag-def-addr">ADDR</a></li>
+<li>&lt;&lt;<a href="#address-structure-subr">ADDRESS<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-def-addr">ADDR</a></li>
+<li>&lt;&lt;<a href="#address-structure-subr">ADDRESS<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-def-addr">ADDR</a><wbr>.<a href="#tag-def-cont">CONT</a></li>
+</ul>
 </div>
         </dd>
 
@@ -3896,10 +3888,14 @@ CHILD
 
         <dt id="prim-source-filed-by-entry">SOURCE_FILED_BY_ENTRY <span class="size">{Size= 1:60}</span></dt>
         <dd>
-          <p>This entry is to provide a short title used for sorting, filing, and retrieving source records.</p>
+          <p>SOURCE_FILED_BY_ENTRY is a short title used for sorting, filing, and retrieving source records.</p>
           
 <div class="references">
-<p>See: &lt;&lt;<a href="#sour-record">SOUR<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-def-sour">SOUR</a><wbr>.<a href="#tag-def-abbr">ABBR</a></p>
+<p>See:</p>
+<ul>
+<li><a href="#tag-def-abbr">ABBR</a></li>
+<li>&lt;&lt;<a href="#sour-record">SOUR<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-def-sour">SOUR</a><wbr>.<a href="#tag-def-abbr">ABBR</a></li>
+</ul>
 </div>
         </dd>
 
@@ -4083,7 +4079,7 @@ CHILD
 
         <dt id="prim-user-reference-type">USER_REFERENCE_TYPE <span class="size">{Size=1:40}</span></dt>
         <dd>
-          <p>A user-defined definition of the <a href="#prim-user-reference-number">USER_REFERENCE_NUMBER</a>.</p>
+          <p>A user-defined label or definition of the &lt;<a href="#prim-user-reference-number">USER_REFERENCE_NUMBER</a>&gt;.</p>
           
 <div class="references">
 <p>See:</p>
@@ -4134,14 +4130,14 @@ CHILD
 
       <p>The elements in this section define the syntax for date text. See the <a href="#section-primitive-elements">Primitive Elements</a> section for definitions of other primitive elements and for a description of the conventions used to define the entries.</p>
 
-      <p>The elements are in alphabetical sequence except for <a href="#prim-date-value">DATE_VALUE</a> which is first because it is the top-level element describing date text.</p>
+      <p>The elements are in alphabetical sequence except for &lt;<a href="#prim-date-value">DATE_VALUE</a>&gt; which is first because it is the top-level element describing date text.</p>
 
       <p>Element names with the prefix "DMY_" define elements related to the <b>d</b>ay, <b>m</b>onth, and <b>y</b>ear components of a date. All other element names have the prefix "DATE_".</p>
 
       <dl>
         <dt id="prim-date-value">DATE_VALUE <span class="size">{Size=1:35}</span></dt>
         <dd>
-          <p>A DATE_VALUE is a date or partial date in text format. The text may include optional keywords. The day, month, and year may be expressed using one of several <a href="#prim-dmy-calendar">DMY_CALENDAR</a>s.</p>
+          <p>A DATE_VALUE is a date or partial date in text format. The text may include optional keywords. The day, month, and year may be expressed using one of several &lt;<a href="#prim-dmy-calendar">DMY_CALENDARs</a>&gt;.</p>
 
           <p>Through its subordinate primitives, a DATE_VALUE may express exact dates, partial dates, approximate dates, calculated dates, date ranges, date periods, estimated dates, and interpreted dates.</p>
 
@@ -4205,27 +4201,27 @@ CHILD
 
               <tr>
                 <td><code class="nowrap">@#DGREGORIAN@ 22 FEB 1732</code></td>
-                <td>Calendar: <a href="#prim-dmy-gregorian">DMY_GREGORIAN</a><br>Day: 22<br>Month: February<br>Year: 1732</td>
+                <td>Calendar: &lt;<a href="#prim-dmy-gregorian">DMY_GREGORIAN</a>&gt;<br>Day: 22<br>Month: February<br>Year: 1732</td>
               </tr>
 
               <tr>
                 <td><code class="nowrap">@#DJULIAN@ 11 FEB 1731</code></td>
-                <td>Calendar: <a href="#prim-dmy-julian">DMY_JULIAN</a><br>Day: 11<br>Month: February<br>Year: 1731</td>
+                <td>Calendar: &lt;<a href="#prim-dmy-julian">DMY_JULIAN</a>&gt;<br>Day: 11<br>Month: February<br>Year: 1731</td>
               </tr>
 
               <tr>
                 <td><code>BEF 2018</code></td>
-                <td>Modifier: <a href="#prim-date-range">BEF</a> (before)<br>Year: 2018</td>
+                <td>Modifier: &lt;<a href="#prim-date-range">BEF</a>&gt; (before)<br>Year: 2018</td>
               </tr>
 
               <tr>
                 <td><code>AFT NOV 2018</code></td>
-                <td>Modifier: <a href="#prim-date-range">AFT</a> (after)<br>Month: November<br>Year: 2018</td>
+                <td>Modifier: &lt;<a href="#prim-date-range">AFT</a>&gt; (after)<br>Month: November<br>Year: 2018</td>
               </tr>
 
               <tr>
                 <td><code>BET 1927 AND 1928</code></td>
-                <td>Modifier: <a href="#prim-date-range">BET/AND</a> (between)<br>Year 1: 1927<br>Year 2: 1928</td>
+                <td>Modifier: &lt;<a href="#prim-date-range">BET/AND</a>&gt; (between)<br>Year 1: 1927<br>Year 2: 1928</td>
               </tr>
 
             </tbody>
@@ -4304,7 +4300,7 @@ CHILD
         <dd>
           <p>A DATE_PERIOD asserts that a condition, state, or attribute existed during the given period and is intended for use with the INDIVIDUAL_ATTRIBUTE_STRUCTURE.</p>
 
-          <p>In contrast, a <a href="#prim-date-range">DATE_RANGE</a> asserts that an <em>event</em> happened on a single date somewhere in a given range.</p>
+          <p>In contrast, a &lt;<a href="#prim-date-range">DATE_RANGE</a>&gt; asserts that an <em>event</em> happened on a single date somewhere in a given range.</p>
 
           <p>The DATE_PERIOD is specified in in one of the following formats:</p>
 
@@ -4317,8 +4313,8 @@ CHILD
           <p class="where">where</p>
 
           <ul>
-            <li><code>FROM</code> before a <a href="#prim-dmy">DMY</a>&gt; indicates the beginning date, inclusive.</li>
-            <li><code>TO</code> before a <a href="#prim-dmy">DMY</a>&gt; indicates the ending date, inclusive.</li>
+            <li><code>FROM</code> before a &lt;<a href="#prim-dmy">DMY</a>&gt; indicates the beginning date, inclusive.</li>
+            <li><code>TO</code> before a &lt;<a href="#prim-dmy">DMY</a>&gt; indicates the ending date, inclusive.</li>
           </ul>
 
           <p>Examples:</p>
@@ -4374,7 +4370,7 @@ CHILD
         <dd>
           <p>A DATE_RANGE asserts that an event happened on a single date somewhere in the given range.</p>
 
-          <p>In contrast, a <a href="#prim-date-period">DATE_PERIOD</a> asserts that a condition, state, or attribute existed during a given period.</p>
+          <p>In contrast, a &lt;<a href="#prim-date-period">DATE_PERIOD</a>&gt; asserts that a condition, state, or attribute existed during a given period.</p>
 
           <p>The DATE_PERIOD is specified in one of the following formats:</p>
 
@@ -4868,7 +4864,7 @@ CHILD
       <dl>
         <dt id="tag-def-abbr">ABBR <span class="tag-full-name">Abbreviation</span></dt>
         <dd>
-          <p>A short name of a title, description, or name.</p>
+          <p>ABBR is a subrecord that specifies an abbreviated name or title of a source via its &lt;<a href="#prim-source-filed-by-entry">SOURCE_FILED_BY_ENTRY</a>&gt; value.</p>
           
 <div class="references">
 <p>See: &lt;&lt;<a href="#sour-record">SOUR<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-def-sour">SOUR</a><wbr>.ABBR &lt;<a href="#prim-source-filed-by-entry">SOURCE<wbr>_FILED<wbr>_BY<wbr>_ENTRY</a>&gt;</p>
@@ -4877,37 +4873,39 @@ CHILD
 
         <dt id="tag-def-addr">ADDR <span class="tag-full-name">Address</span></dt>
         <dd>
-          <p>The contemporary place, usually required for postal purposes, of an individual, a submitter of information, a repository, a business, a school, or a company.</p>
+          <p>The ADDR subrecord specifies a contemporary place as required for postal purposes via its &lt;<a href="#prim-address-value">ADDRESS_VALUE</a>&gt; value.</p>
+
+          <p>The ADDR subrecord's &lt;<a href="#prim-address-value">ADDRESS_VALUE</a>&gt; line_value should be specified using one or more <a href="#tag-def-cont">CONT</a> subrecords so there will be multiple lines in the resulting value.</p>
           
 <div class="references">
-<p>See: &lt;&lt;<a href="#address-structure-subr">ADDRESS<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.ADDR &lt;<a href="#prim-address-line">ADDRESS<wbr>_LINE</a>&gt;</p>
+<p>See: &lt;&lt;<a href="#address-structure-subr">ADDRESS<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.ADDR &lt;<a href="#prim-address-value">ADDRESS<wbr>_VALUE</a>&gt;</p>
 </div>
         </dd>
 
         <dt id="tag-def-adr1">ADR1 <span class="tag-full-name">Address1</span></dt>
         <dd>
-          <p>The first line of an address.</p>
+          <p>The ADR1 subrecord specifies the first line of an address via its &lt;<a href="#prim-address-line">ADDRESS_LINE</a>&gt; line_value.</p>
           
 <div class="references">
-<p>See: &lt;&lt;<a href="#address-structure-subr">ADDRESS<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-def-addr">ADDR</a><wbr>.ADR1 &lt;<a href="#prim-address-line1">ADDRESS<wbr>_LINE1</a>&gt;</p>
+<p>See: &lt;&lt;<a href="#address-structure-subr">ADDRESS<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-def-addr">ADDR</a><wbr>.ADR1 &lt;<a href="#prim-address-line">ADDRESS<wbr>_LINE</a>&gt;</p>
 </div>
         </dd>
 
         <dt id="tag-def-adr2">ADR2 <span class="tag-full-name">Address2</span></dt>
         <dd>
-          <p>The second line of an address.</p>
+          <p>The ADR2 subrecord specifies the second line of an address via its &lt;<a href="#prim-address-line">ADDRESS_LINE</a>&gt; line_value.</p>
           
 <div class="references">
-<p>See: &lt;&lt;<a href="#address-structure-subr">ADDRESS<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-def-addr">ADDR</a><wbr>.ADR2 &lt;<a href="#prim-address-line2">ADDRESS<wbr>_LINE2</a>&gt;</p>
+<p>See: &lt;&lt;<a href="#address-structure-subr">ADDRESS<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-def-addr">ADDR</a><wbr>.ADR2 &lt;<a href="#prim-address-line">ADDRESS<wbr>_LINE</a>&gt;</p>
 </div>
         </dd>
 
         <dt id="tag-def-adr3">ADR3 <span class="tag-full-name">Address3</span></dt>
         <dd>
-          <p>The third line of an address.</p>
+          <p>The ADR3 subrecord specifies the third line of an address via its &lt;<a href="#prim-address-line">ADDRESS_LINE</a>&gt; line_value.</p>
           
 <div class="references">
-<p>See: &lt;&lt;<a href="#address-structure-subr">ADDRESS<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-def-addr">ADDR</a><wbr>.ADR3 &lt;<a href="#prim-address-line3">ADDRESS<wbr>_LINE3</a>&gt;</p>
+<p>See: &lt;&lt;<a href="#address-structure-subr">ADDRESS<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-def-addr">ADDR</a><wbr>.ADR3 &lt;<a href="#prim-address-line">ADDRESS<wbr>_LINE</a>&gt;</p>
 </div>
         </dd>
 
@@ -5009,7 +5007,7 @@ CHILD
 
         <dt id="tag-def-asso">ASSO <span class="tag-full-name">Associates</span></dt>
         <dd>
-          <p>Indicates an association between the current <a href="#indi-record">INDI</a> record and the INDI record with the given <a href="#prim-id-indi">ID:INDI</a>. See the <a href="#association-structure-subr">ASSOCIATION_STRUCTURE</a>.</p>
+          <p>Indicates an association between the current <a href="#indi-record">INDI</a> record and the INDI record with the given @<a href="#prim-id-indi">ID:INDI</a>@. See the &lt;&lt;<a href="#association-structure-subr">ASSOCIATION_STRUCTURE</a>&gt;&gt;.</p>
           
 <div class="references">
 <p>See: &lt;&lt;<a href="#association-structure-subr">ASSOCIATION<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.ASSO &lt;<a href="#prim-id-indi">ID:INDI</a>&gt;</p>
@@ -5132,7 +5130,7 @@ CHILD
 
         <dt id="tag-def-char">CHAR <span class="tag-full-name">Character Encoding</span></dt>
         <dd>
-          <p>An indicator of the <a href="#prim-character-encoding">CHARACTER_ENCODING</a> used in the GEDCOM document.</p>
+          <p>The CHAR subrecord specifies the &lt;<a href="#prim-character-encoding">CHARACTER_ENCODING</a>&gt; used in the GEDCOM document.</p>
           
 <div class="references">
 <p>See: &lt;&lt;<a href="#head-record">HEAD<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-def-head">HEAD</a><wbr>.CHAR &lt;<a href="#prim-character-encoding">CHARACTER<wbr>_ENCODING</a>&gt;</p>
@@ -5198,7 +5196,7 @@ CHILD
           <p>See the <a href="#continuations">Continuations</a> section for details.</p>
           
 <div class="references">
-<p>See: &lt;&lt;<a href="#address-structure-subr">ADDRESS<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-def-addr">ADDR</a><wbr>.CONT &lt;<a href="#prim-address-line">ADDRESS<wbr>_LINE</a>&gt;</p>
+<p>See: &lt;&lt;<a href="#address-structure-subr">ADDRESS<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-def-addr">ADDR</a><wbr>.CONT &lt;<a href="#prim-address-value">ADDRESS<wbr>_VALUE</a>&gt;</p>
 </div>
         </dd>
 
@@ -5258,7 +5256,7 @@ CHILD
 
         <dt id="tag-def-date">DATE <span class="tag-full-name">Date</span></dt>
         <dd>
-          <p>Used to indicate when an event occurred. See <a href="#prim-dmy">DMY</a>.</p>
+          <p>Used to indicate when an event occurred. See &lt;<a href="#prim-dmy">DMY</a>&gt;.</p>
           
 <div class="references">
 <p>See:</p>
@@ -5293,7 +5291,7 @@ CHILD
 
         <dt id="tag-def-dest">DEST <span class="tag-full-name">Destination</span></dt>
         <dd>
-          <p>Identifies the system intended to receive the data via a <a href="#prim-system-id">SYSTEM_ID</a>.</p>
+          <p>Identifies the system intended to receive the data via a &lt;<a href="#prim-system-id">SYSTEM_ID</a>&gt;.</p>
 
           <p>For important information about using the DEST subrecord, see the <a href="#sour-and-dest">HEAD.SOUR and HEAD.DEST</a> section.</p>
 
@@ -5396,9 +5394,9 @@ CHILD
 
         <dt id="tag-def-even-types">EVEN (Event Types)</dt>
         <dd>
-          <p>An EVEN subrecord in the context of a <a href="#tag-def-sour">SOUR</a>.<a href="#tag-def-data">DATA</a> subrecord indicates the event types that were recorded in a particular source via its <a href="#prim-events-recorded">EVENTS_RECORDED</a> value.</p>
+          <p>An EVEN subrecord in the context of a <a href="#tag-def-sour">SOUR</a>.<a href="#tag-def-data">DATA</a> subrecord indicates the event types that were recorded in a particular source via its &lt;<a href="#prim-events-recorded">EVENTS_RECORDED</a>&gt; value.</p>
 
-          <p>An EVEN subrecord in the context of a &lt;&lt;<a href="#source-citation-subr">SOURCE_CITATION</a>&gt;&gt; indicates the event type which was responsible for the source entry being recorded via its <a href="#prim-event-type-cited-from">EVENT_TYPE_CITED_FROM</a> value.</p>
+          <p>An EVEN subrecord in the context of a &lt;&lt;<a href="#source-citation-subr">SOURCE_CITATION</a>&gt;&gt; indicates the event type which was responsible for the source entry being recorded via its &lt;<a href="#prim-event-type-cited-from">EVENT_TYPE_CITED_FROM</a>&gt; value.</p>
           
 <div class="references">
 <p>See:</p>
@@ -5625,7 +5623,7 @@ CHILD
 
         <dt id="tag-def-lati">LATI <span class="tag-full-name">Latitude</span></dt>
         <dd>
-          <p>The LATI subrecord specifies a latitude via its <a href="#prim-place-latitude">PLACE_LATITUDE</a> line_value. Latitude is a geographic coordinate that specifies the north–south position of a point on the Earth's surface.</p>
+          <p>The LATI subrecord specifies a latitude via its &lt;<a href="#prim-place-latitude">PLACE_LATITUDE</a>&gt; line_value. Latitude is a geographic coordinate that specifies the north–south position of a point on the Earth's surface.</p>
           
 <div class="references">
 <p>See: &lt;&lt;<a href="#place-structure-subr">PLACE<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-def-plac">PLAC</a><wbr>.<a href="#tag-def-map">MAP</a><wbr>.LATI &lt;<a href="#prim-place-latitude">PLACE<wbr>_LATITUDE</a>&gt;</p>
@@ -5634,7 +5632,7 @@ CHILD
 
         <dt id="tag-def-long">LONG <span class="tag-full-name">Longitude</span></dt>
         <dd>
-          <p>The LONG subrecord specifies a longitude via its <a href="#prim-place-longitude">PLACE_LONGITUDE</a> line_value. Longitude is a geographic coordinate that specifies the east-west position of a point on the Earth's surface.</p>
+          <p>The LONG subrecord specifies a longitude via its &lt;<a href="#prim-place-longitude">PLACE_LONGITUDE</a>&gt; line_value. Longitude is a geographic coordinate that specifies the east-west position of a point on the Earth's surface.</p>
           
 <div class="references">
 <p>See: &lt;&lt;<a href="#place-structure-subr">PLACE<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-def-plac">PLAC</a><wbr>.<a href="#tag-def-map">MAP</a><wbr>.LONG &lt;<a href="#prim-place-longitude">PLACE<wbr>_LONGITUDE</a>&gt;</p>
@@ -5736,7 +5734,7 @@ CHILD
         <dd>
           <p>The NAME subrecord defines a name. It is used in several contexts.</p>
 
-          <p>When used in the <a href="#personal-name-structure-subr">PERSONAL_NAME_STRUCTURE</a>, i.e., <a href="#tag-def-indi">INDI</a>.NAME, the NAME subrecord defines an individual's name. If the individual has more than one name, the first NAME subrecord defines the primary/preferred name. Subsequent NAME subrecords define alternate names.</p>
+          <p>When used in the &lt;&lt;<a href="#personal-name-structure-subr">PERSONAL_NAME_STRUCTURE</a>&gt;&gt;, i.e., <a href="#tag-def-indi">INDI</a>.NAME, the NAME subrecord defines an individual's name. If the individual has more than one name, the first NAME subrecord defines the primary/preferred name. Subsequent NAME subrecords define alternate names.</p>
 
           <p>In other contexts, the NAME subrecord may define a title, institution name, etc.</p>
           
@@ -6086,7 +6084,7 @@ CHILD
 
         <dt id="tag-def-sex">SEX <span class="tag-full-name">Sex</span></dt>
         <dd>
-          <p>Indicates the gender of an individual. See <a href="#prim-sex-value">SEX_VALUE</a>.</p>
+          <p>The SEX subrecord indicates the gender of an individual via its <a href="#prim-sex-value">SEX_VALUE</a> line_value.</p>
           
 <div class="references">
 <p>See: &lt;&lt;<a href="#indi-record">INDI<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-def-indi">INDI</a><wbr>.SEX &lt;<a href="#prim-sex-value">SEX<wbr>_VALUE</a>&gt;</p>
@@ -6098,7 +6096,7 @@ CHILD
           <p>SOUR tags are used in several contexts:</p>
 
           <ul>
-            <li><a href="#tag-def-gedc">GEDC</a>.SOUR for the <a href="#prim-system-id">SYSTEM_ID</a> and subrecords</li>
+            <li><a href="#tag-def-gedc">GEDC</a>.SOUR for the &lt;<a href="#prim-system-id">SYSTEM_ID</a>&gt; and subrecords</li>
             <li><a href="#sour-record">SOUR</a> (record) or <a href="#source-citation-subr">SOUR</a> (subrecord) to define the initial or original material from which information was obtained</li>
           </ul>
           
@@ -6254,7 +6252,7 @@ CHILD
 
         <dt id="tag-def-type-name">TYPE (Name)</dt>
         <dd>
-          <p>The TYPE subrecord in the context of a <a href="#tag-def-name">NAME</a> subrecord provides a label to qualify the name type via the <a href="#prim-name-type">NAME-TYPE</a> line_value.</p>
+          <p>The TYPE subrecord in the context of a <a href="#tag-def-name">NAME</a> subrecord provides a label to qualify the name type via its &lt;<a href="#prim-name-type">NAME-TYPE</a>&gt; line_value.</p>
 <div class="references">
 <p>See: &lt;&lt;<a href="#personal-name-structure-subr">PERSONAL<wbr>_NAME<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-def-name">NAME</a><wbr>.TYPE (Name) &lt;<a href="#prim-name-type">NAME<wbr>_TYPE</a>&gt;</p>
 </div>
@@ -6262,7 +6260,7 @@ CHILD
 
         <dt id="tag-def-type-refn">TYPE (REFN)</dt>
         <dd>
-          <p>The TYPE subrecord in the context of a <a href="#tag-def-refn">REFN</a> subrecord describes or classifies a <a href="#prim-user-reference-number">USER_REFERENCE_NUMBER</a>.</p>
+          <p>The TYPE subrecord in the context of a <a href="#tag-def-refn">REFN</a> subrecord describes or classifies a &lt;<a href="#prim-user-reference-number">USER_REFERENCE_NUMBER</a>&gt;.</p>
 <div class="references">
 <p>See:</p>
 <ul>
@@ -6459,13 +6457,13 @@ CHILD
         <h4 id="sour-and-dest-best-practice">Best Practice Recommendations</h4>
         <ul>
           <li>
-            <p>GEDCOM customizations, such as specific <a href="#prim-custom-tag">Custom Tag Names</a>, are not defined in the GEDCOM specification.</p>
+            <p>GEDCOM customizations, such as specific <a href="#prim-custom-tag">custom subrecord names</a>, are not defined in the GEDCOM specification.</p>
             <ul>
               <li>
                 <p>GEDCOM readers should ignore the HEAD.DEST value.</p>
               </li>
               <li>
-                <p>If a GEDCOM reader attempts to understand the meaning of <a href="#prim-custom-tag">Custom Tag Names</a> or other customized values in the current GEDCOM document, the GEDCOM reader should assume the context of the customizations is established by the HEAD.SOUR and HEAD.SOUR.VERS subrecords.</p>
+                <p>If a GEDCOM reader attempts to understand the meaning of <a href="#prim-custom-tag">custom subrecords</a> or other customized values in the current GEDCOM document, the GEDCOM reader should assume the context of the customizations is established by the HEAD.SOUR and HEAD.SOUR.VERS subrecords.</p>
               </li>
 
               <li>
@@ -6500,12 +6498,10 @@ CHILD
 <li><a href="#prim-address-email">ADDRESS_EMAIL</a></li>
 <li><a href="#prim-address-fax">ADDRESS_FAX</a></li>
 <li><a href="#prim-address-line">ADDRESS_LINE</a></li>
-<li><a href="#prim-address-line1">ADDRESS_LINE1</a></li>
-<li><a href="#prim-address-line2">ADDRESS_LINE2</a></li>
-<li><a href="#prim-address-line3">ADDRESS_LINE3</a></li>
 <li><a href="#prim-address-postal-code">ADDRESS_POSTAL_CODE</a></li>
 <li><a href="#prim-address-state">ADDRESS_STATE</a></li>
 <li><a href="#address-structure-subr">ADDRESS_STRUCTURE</a></li>
+<li><a href="#prim-address-value">ADDRESS_VALUE</a></li>
 <li><a href="#prim-address-web-page">ADDRESS_WEB_PAGE</a></li>
 <li><a href="#tag-def-adop">ADOP</a></li>
 <li><a href="#prim-adopted-by-which-parent">ADOPTED_BY_WHICH_PARENT</a></li>
@@ -6541,8 +6537,8 @@ CHILD
 <li><a href="#tag-def-cens">CENS</a></li>
 <li><a href="#prim-certainty-assessment">CERTAINTY_ASSESSMENT</a></li>
 <li><a href="#tag-def-chan">CHAN</a></li>
-<li><a href="#prim-change-date">CHANGE_DATE</a></li>
 <li><a href="#change-date-subr">CHANGE_DATE</a></li>
+<li><a href="#prim-change-date">CHANGE_DATE</a></li>
 <li><a href="#tag-def-char">CHAR</a></li>
 <li><a href="#prim-character-encoding">CHARACTER_ENCODING</a></li>
 <li><a href="#tag-def-chil">CHIL</a></li>
