@@ -75,15 +75,15 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
 
       <dl>
 
-        <dt id="tag-def--prim">_PRIM <span class="tag-full-name">Primary or Preferred</span></dt>
+        <dt id="tag--prim">_PRIM <span class="tag-full-name">Primary or Preferred</span></dt>
         <dd>
           <p>_PRIM is used to indicate that its parent record is the primary or preferred instance.</p>
 
           <table class="record-structure">
-            <tr><td class="code level-0">n _PRIM &lt;<a href="#prim-y-or-n">Y_OR_N</a>&gt; </td><td class="size">0:1</td></tr>
+            <tr><td class="code level-0">n _PRIM &lt;<a href="#y-or-n-pe">Y_OR_N</a>&gt; </td><td class="size">0:1</td></tr>
           </table>
 
-          <p>For example, to indicate that an <a class="external" href="gedcom-5.5.2.html#tag-def-indi">INDI</a>.<a class="external" href="gedcom-5.5.2.html#tag-def-obje">OBJE</a> subrecord should be treated as the preferred multimedia item:</p>
+          <p>For example, to indicate that an <a class="external" href="gedcom-5.5.2.html#tag-indi">INDI</a>.<a class="external" href="gedcom-5.5.2.html#tag-obje">OBJE</a> subrecord should be treated as the preferred multimedia item:</p>
 
 <pre>
 0 @I1@ INDI
@@ -104,28 +104,28 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
           
         </dd>
 
-        <dt id="tag-def--uid">_UID <span class="tag-full-name">UUID</span></dt>
+        <dt id="tag--uid">_UID <span class="tag-full-name">UUID</span></dt>
         <dd>
           <p>_UID is used to specify a Universally Unique Identifier (UUID) in string format.</p>
 
           <table class="record-structure">
-            <tr><td class="code level-0">n _UID &lt;<a href="#prim-uuid">UUID</a>&gt; </td><td class="size">0:1</td></tr>
+            <tr><td class="code level-0">n _UID &lt;<a href="#uuid-pe">UUID</a>&gt; </td><td class="size">0:1</td></tr>
           </table>
 
-          <p>For example, to indicate that an <a class="external" href="gedcom-5.5.2.html#tag-def-indi">INDI</a> has been assigned a UUID:</p>
+          <p>For example, to indicate that an <a class="external" href="gedcom-5.5.2.html#tag-indi">INDI</a> has been assigned a UUID:</p>
 
 <pre>
 0 @I1@ INDI
 1 _UID f81d4fae-7dec-11d0-a765-00a0c91e6bf6
 </pre>
 
-          <p>While _UID is written by a long list of genealogy applications, formats are inconsistent. See the &lt;<a href="#prim-uuid">UUID</a>&gt; Primitive Element for details.</p>
+          <p>While _UID is written by a long list of genealogy applications, formats are inconsistent. See the &lt;<a href="#uuid-pe">UUID</a>&gt; Primitive Element for details.</p>
 
         </dd>
 
-        <dt id="tag-def--sdate">_SDATE <span class="tag-full-name">Sort Date</span></dt>
+        <dt id="tag--sdate">_SDATE <span class="tag-full-name">Sort Date</span></dt>
         <dd>
-          <p>_SDATE specifies a sort date for an event. It uses the same value format as a <a class="external" href="gedcom-5.5.2.html#tag-def-date">DATE</a> subrecord.</p>
+          <p>_SDATE specifies a sort date for an event. It uses the same value format as a <a class="external" href="gedcom-5.5.2.html#tag-date">DATE</a> subrecord.</p>
           
           <p>The value format Primitive Element is <a class="external" href="gedcom-5.5.2.html#prim-dmy">DMY</a>.</p>
 
@@ -137,16 +137,16 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
 
           <p>Example</p>
 <pre>
-0 @I1@ <a class="external" href="gedcom-5.5.2.html#tag-def-indi">INDI</a>
-1 <a class="external" href="gedcom-5.5.2.html#tag-def-name">NAME</a> John /Doe/
-1 <a class="external" href="gedcom-5.5.2.html#tag-def-birt">BIRT</a>
-2 <a class="external" href="gedcom-5.5.2.html#tag-def-date">DATE</a> 1 JAN 1900
-1 <a class="external" href="gedcom-5.5.2.html#tag-def-deat">DEAT</a>
-2 <a class="external" href="gedcom-5.5.2.html#tag-def-date">DATE</a> 1 JAN 1990
-1 <a class="external" href="gedcom-5.5.2.html#tag-def-buri">BURI</a>
-2 <a class="external" href="gedcom-5.5.2.html#tag-def-date">DATE</a> 5 JAN 1990
-1 <a class="external" href="gedcom-5.5.2.html#tag-def-obit">OBIT</a>
-2 <a class="external" href="gedcom-5.5.2.html#tag-def-date">DATE</a> 3 JAN 1990
+0 @I1@ <a class="external" href="gedcom-5.5.2.html#tag-indi">INDI</a>
+1 <a class="external" href="gedcom-5.5.2.html#tag-name">NAME</a> John /Doe/
+1 <a class="external" href="gedcom-5.5.2.html#tag-birt">BIRT</a>
+2 <a class="external" href="gedcom-5.5.2.html#tag-date">DATE</a> 1 JAN 1900
+1 <a class="external" href="gedcom-5.5.2.html#tag-deat">DEAT</a>
+2 <a class="external" href="gedcom-5.5.2.html#tag-date">DATE</a> 1 JAN 1990
+1 <a class="external" href="gedcom-5.5.2.html#tag-buri">BURI</a>
+2 <a class="external" href="gedcom-5.5.2.html#tag-date">DATE</a> 5 JAN 1990
+1 <a class="external" href="gedcom-5.5.2.html#tag-obit">OBIT</a>
+2 <a class="external" href="gedcom-5.5.2.html#tag-date">DATE</a> 3 JAN 1990
 2 _SDATE 6 JAN 1990
 </pre>
 
@@ -160,7 +160,7 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
           </ul>
         </dd>
 
-        <dt id="tag-def--shar">_SHAR <span class="tag-full-name">Co-Participant ID</span></dt>
+        <dt id="tag--shar">_SHAR <span class="tag-full-name">Co-Participant ID</span></dt>
         <dd>
           <p>_SHAR is used to add an individual to an event.</p>
 
@@ -177,7 +177,7 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
             <li>Changes to a single event apply to all the participants.</li>
           </ul>
 
-          <p>_SHAR is often accompanied by an additional <a href="#tag-def--role">_ROLE</a> subrecord to designate the role of the co-participant. For some roles, the meaning of the event applies to the co-participant. For other roles, the meaning of the event does not apply to the co-participant; the meaning is supplied by the role name only.</p>
+          <p>_SHAR is often accompanied by an additional <a href="#tag--role">_ROLE</a> subrecord to designate the role of the co-participant. For some roles, the meaning of the event applies to the co-participant. For other roles, the meaning of the event does not apply to the co-participant; the meaning is supplied by the role name only.</p>
 
           <p>So, for example, a co-participant with the role "Principal" might be used to add a co-purchaser to an event that describes a land purchase by several individuals. The meaning of the event&mdash;purchased real estate&mdash;is applied to the person underwhich the event appears and also to the co-participant.</p>
 
@@ -209,7 +209,7 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
           </ul>
         </dd>
 
-        <dt id="tag-def--role">_ROLE <span class="tag-full-name">Co-Participant Role</span></dt>
+        <dt id="tag--role">_ROLE <span class="tag-full-name">Co-Participant Role</span></dt>
         <dd>
           <p>_ROLE is used to specify the role played by an individual in connection with an event.</p>
 
@@ -217,7 +217,7 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
             <tr><td class="code level-0">n _ROLE &lt;<a class="external" href="gedcom-5.5.2.html#prim-text">TEXT</a>&gt; </td><td class="size">0:1</td></tr>
           </table>
 
-          <p>_ROLE is used under the context of a <a href="#tag-def--shar">_SHAR</a> subrecord or equivalent. See the _SHAR description for further details.</p>
+          <p>_ROLE is used under the context of a <a href="#tag--shar">_SHAR</a> subrecord or equivalent. See the _SHAR description for further details.</p>
 
           <p>_ROLE is supported on input and/or output by:</p>
           <ul>
@@ -238,8 +238,8 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
     <section id="section-primitive-elements">
       <h2>Primitive Elements</h2>
 
-      <dl class="prim-elements">
-        <dt id="prim-uuid">UUID <span class="size">{Size=36:38}</span></dt>
+      <dl class="primitive-elements">
+        <dt id="uuid-pe">UUID <span class="size">{Size=36:38}</span></dt>
         <dd>
           <p>A UUID is a Universally Unique Identifier in string format. A UUID is also known as a Globally Unique Identifier (GUID). A UUID is defined by  <a class="external" href="https://tools.ietf.org/html/rfc4122">RFC4122</a>.</p>
 
@@ -294,20 +294,20 @@ public string GetPafChecksum(string uuid) {
     return sumA.ToString("X2") + sumB.ToString("X2");
 }
 </pre>
-          
+
 <div class="references">
-<p>See: <a href="#tag-def--uid"><wbr>_UID</a></p>
+<p>See: <a href="#tag--uid"><wbr>_UID</a></p>
 </div>
         </dd>
 
-        <dt id="prim-y-or-n">Y_OR_N <span class="size">{Size=1:1}</span></dt>
+        <dt id="y-or-n-pe">Y_OR_N <span class="size">{Size=1:1}</span></dt>
         <dd>
           <p>A one-character keyword that indicates yes or no via the abbreviations "<code>Y</code>" (U+0059) or "<code>N</code>" (U+004E), respectively.</p>
 
           <p>The meaning of the value is determined by the context.</p>
-          
+
 <div class="references">
-<p>See: <a href="#tag-def--prim"><wbr>_PRIM</a></p>
+<p>See: <a href="#tag--prim"><wbr>_PRIM</a></p>
 </div>
         </dd>
       </dl>
@@ -317,13 +317,13 @@ public string GetPafChecksum(string uuid) {
       <h2>Index</h2>
       <ul class="keyword-index columns-wide">
         <!-- keyword index entries -->
-<li><a href="#tag-def--prim">_PRIM</a></li>
-<li><a href="#tag-def--role">_ROLE</a></li>
-<li><a href="#tag-def--sdate">_SDATE</a></li>
-<li><a href="#tag-def--shar">_SHAR</a></li>
-<li><a href="#tag-def--uid">_UID</a></li>
-<li><a href="#prim-uuid">UUID</a></li>
-<li><a href="#prim-y-or-n">Y_OR_N</a></li>
+<li><a href="#tag--prim">_PRIM</a></li>
+<li><a href="#tag--role">_ROLE</a></li>
+<li><a href="#tag--sdate">_SDATE</a></li>
+<li><a href="#tag--shar">_SHAR</a></li>
+<li><a href="#tag--uid">_UID</a></li>
+<li><a href="#uuid-pe">UUID</a></li>
+<li><a href="#y-or-n-pe">Y_OR_N</a></li>
 </ul>
     </section>
 

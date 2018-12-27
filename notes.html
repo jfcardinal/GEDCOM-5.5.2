@@ -58,41 +58,14 @@
     <section id="automated-references">
       <h2>Automated References</h2>
 
-      <p>The <b>"See:"</b> reference lists are created automatically by a program that reviews the document for certain kinds of links and then updates the lists. The program also supports "manual" entries as described below.</p>
+      <p>The <b>"See:"</b> reference lists are created automatically by a program that reviews the document for certain kinds of links and then updates the lists.</p>
 
-      <p>For the automated entries:</p>
+      <p>For automated entries:</p>
       <ul>
         <li>Do not change class names for the tables used to describe record and subrecord structures.</li>
         <li>Do not edit the <code>&lt;div class="references"&gt;</code> elements or their child elements.</li>
         <li>Do not assign the <code>references</code> class to any manually-edited HTML.</li>
       </ul>
-
-      <p>For the manual entries:</p>
-      <ul>
-        <li>
-          <p><code>&lt;-- REFERENCE I <var>sort-key</var> <var>text</var> <var>id</var> --&gt;</code></p>
-
-          <p><var>sort-key</var> determines the position of the index entry in the index. The <var>sort-key</var> value must not contain any spaces.</p>
-
-          <p><var>text</var> determines the text shown in the index.</p>
-
-          <p><var>id</var> specifies the id attribute of the link destination in the document. The <var>id</var> value must not contain any spaces.</p>
-        </li>
-
-        <li>
-          <p><code>&lt;-- REFERENCE P <var>primitive</var> <var>tag</var> --&gt;</code></p>
-
-          <p>The <var>primitive</var> definition will include a reference to the given <var>tag</var>.</p>
-        </li>
-
-        <li>
-          <p><code>&lt;-- REFERENCE T <var>tag</var> <var>primitive</var> --&gt;</code></p>
-
-          <p>The <var>tag</var> definition will include a reference to the given <var>primitive</var>.</p>
-        </li>
-      </ul>
-
-      <p>The generator is not robust; make sure the manual entries have the exact spacing shown above, for example.</p>
     </section>
 
     <section id="document-conventions">
