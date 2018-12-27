@@ -261,7 +261,7 @@ ul li {
   margin: 0.5em 0 1em 0;
 }
 
-.best-practice, .provisional, .pending-removal {
+.best-practice, .obsolete, .provisional, .pending-removal {
   border-left: 0.5em solid #52E052;
   padding-left: 0.5em;
 }
@@ -335,11 +335,10 @@ ul li {
 
 tr:target::before {
   /* Adjust target to avoid being under fixed-menu */
+  /* Don't add block when target is in table */
   content: "";
   display: none;
 }
-
-
 
 .keyword-index {
   font-size: 90%;

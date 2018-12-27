@@ -1,0 +1,585 @@
+﻿<!DOCTYPE html>
+<!--
+  
+Copyright (C) 2019 by John Cardinal.
+
+Everyone is permitted to copy and distribute verbatim copies of this document, but changing it is not allowed.
+
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Obsolete LDS Definitions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="alternate stylesheet" href="light.css" title="Light" />
+  <link rel="stylesheet" href="dark.css" title="Dark" />
+</head>
+<body id="top">
+  <article>
+    <header>
+      <h1>Obsolete LDS Definitions</h1>
+    </header>
+
+    <div>
+      <dl>
+        <dt class="editor">Editor:</dt>
+        <dd class="editor p-author">John Cardinal (<span class="organization"><a class="external" href="https://www.familyhistoryhosting.com">Family History Hosting, LLC</a></span>)</dd>
+      </dl>
+    </div>
+
+    <div id="copyright-notice">
+      <p>Copyright &copy; 2019 by John Cardinal</p>
+      <p>Everyone is permitted to copy and distribute verbatim copies of this document, but changing it is not allowed.</p>
+    </div>
+
+    <section class="toc_container">
+      <h2 class="toc_title">Contents</h2>
+      <ul class="toc_list">
+        <!-- Table of Contents entries -->
+<li class="toc-0"><a href="#section-document-information">Document Information</a></li>
+<li class="toc-1"><a href="#abstract">Abstract</a></li>
+<li class="toc-1"><a href="#document-status">Document Status</a></li>
+<li class="toc-0"><a href="#section-records">Records</a></li>
+<li class="toc-1"><a href="#records-changed">Records Changed</a></li>
+<li class="toc-1"><a href="#records-removed">Records Removed</a></li>
+<li class="toc-0"><a href="#section-structures">Structures</a></li>
+<li class="toc-0"><a href="#section-primitive-elements">Primitive Elements</a></li>
+<li class="toc-0"><a href="#section-subrecords">Subrecords</a></li>
+<li class="toc-0"><a href="#section-keyword-index">Index</a></li>
+</ul>
+    </section>
+
+    <section id="section-document-information">
+      <h2>Document Information</h2>
+
+      <p>This is an <em>incomplete</em> version of this document. Please refrain from commenting for the time being.</p>
+
+      <h3 id="abstract">Abstract</h3>
+
+      <p>This document describes definitions in the GEDCOM 5.5.1 specification that were specific to The Church of Jesus Christ of Latter-day Saints. They have been removed from the GEDCOM 5.5.2 specification.</p>
+
+      <h3 id="document-status">Document Status</h3>
+
+      <p>This document is a <em>Draft</em>. Feedback and comments are welcome. You may create a pull-request to propose and collaborate on changes to the document. A future version of this document will remove its <em>Draft</em> status.</p>
+
+      <dl class="simple-list">
+        <dt>GitHub Project</dt>
+        <dd><a href="https://github.com/jfcardinal/GEDCOM-5.5.2">GEDCOM-5.5.2</a></dd>
+
+        <dt>Public URL of Document</dt>
+        <dd><a href="https://jfcardinal.github.io/GEDCOM-5.5.2/lds.html">https://jfcardinal.github.io/GEDCOM-5.5.2/lds.html</a></dd>
+
+        <dt>Associated documents</dt>
+        <dd><a href="https://jfcardinal.github.io/GEDCOM-5.5.2/index.html">https://jfcardinal.github.io/GEDCOM-5.5.2</a></dd>
+      </dl>
+
+    </section>
+
+    <section id="section-records">
+      <h2>Records</h2>
+
+      <h3 id="records-changed">Records Changed</h3>
+
+      <ul>
+        <li>&lt;&lt;<a href="#lds-individual-ordinance-subr">LDS_INDIVIDUAL_ORDINANCE</a>&gt;&gt; was removed from the <a class="external" href="gedcom-5.5.2.html#indi-record">INDI_RECORD</a>.</li>
+        <li>&lt;&lt;<a href="#lds-spouse-sealing-subr">LDS_SPOUSE_SEALING</a>&gt;&gt; was removed from the <a class="external" href="gedcom-5.5.2.html#fam-record">FAM_RECORD</a>.</li>
+      </ul>
+
+      <h3 id="records-removed">Records Removed</h3>
+      <dl>
+        <dt id="subn-record">SUBN_RECORD</dt>
+        <dd>
+          <p>The sending system uses a SUBN_RECORD record to send instructions and information to the receiving system. </p>
+
+          <table class="record-structure">
+            <tr><td class="code level-0"><i>n</i> @&lt;<a href="#id-subn-pe">ID:SUBN</a>&gt;@ <span class="required"><a href="#tag-subn">SUBN</a></span> </td><td class="size">1:1</td></tr>
+
+            <tr><td class="code level-1">+1 <a href="#tag-famf">FAMF</a> &lt;<a href="#name-of-family-file-pe">NAME_OF_FAMILY_FILE</a>&gt; </td><td class="size">0:1</td></tr>
+
+            <tr><td class="code level-1">+1 <a href="#tag-temp">TEMP</a> &lt;<a href="#temple-code-pe">TEMPLE_CODE</a>&gt; </td><td class="size">0:1</td></tr>
+
+            <tr><td class="code level-1">+1 <a href="#tag-ance">ANCE</a> &lt;<a href="#generations-of-ancestors-pe">GENERATIONS_OF_ANCESTORS</a>&gt; </td><td class="size">0:1</td></tr>
+
+            <tr><td class="code level-1">+1 <a href="#tag-desc">DESC</a> &lt;<a href="#generations-of-descendants-pe">GENERATIONS_OF_DESCENDANTS</a>&gt; </td><td class="size">0:1</td></tr>
+
+            <tr><td class="code level-1">+1 <a href="#tag-ordi">ORDI</a> &lt;<a href="#ordinance-process-flag-pe">ORDINANCE_PROCESS_FLAG</a>&gt; </td><td class="size">0:1</td></tr>
+
+            <tr><td class="code level-1">+1 <a class="external" href="gedcom-5.5.2.html#tag-rin">RIN</a> &lt;<a class="external" href="gedcom-5.5.2.html#automated-record-id-pe">AUTOMATED_RECORD_ID</a>&gt; </td><td class="size">0:1</td></tr>
+
+            <tr><td class="code level-1">+1 &lt;&lt;<a class="external" href="gedcom-5.5.2.html#note-structure-subr">NOTE_STRUCTURE</a>&gt;&gt; </td><td class="size">0:M</td></tr>
+
+            <tr><td class="code level-1">+1 &lt;&lt;<a class="external" href="gedcom-5.5.2.html#change-date-subr">CHANGE_DATE</a>&gt;&gt; </td><td class="size">0:1</td></tr>
+          </table>
+
+          <p>TempleReady processes SUBN_RECORDS to determine which temple the cleared records should be directed to. The submission record is also used for communication between Ancestral File download requests and TempleReady. <strong>Each GEDCOM document should have only one submission record.</strong> Multiple submissions are handled by creating separate GEDCOM documents.</p>
+        </dd>
+      </dl>
+    </section>
+
+    <section id="section-structures">
+      <h2>Structures</h2>
+
+      <dl>
+        <dt id="lds-individual-ordinance-subr">LDS_INDIVIDUAL_ORDINANCE</dt>
+        <dd>
+
+          <table class="record-structure">
+            <tr><td class="syntax-character" colspan="2">[</td></tr>
+
+            <tr><td class="code level-0"><i>n</i> [ <span class="required"><a href="#tag-bapl">BAPL</a></span> | <span class="required"><a href="#tag-conl">CONL</a></span> ] </td><td class="size">1:1</td></tr>
+
+            <tr><td class="code level-1">+1 <a class="external" href="gedcom-5.5.2.html#tag-date">DATE</a> &lt;<a href="#date-lds-ord-pe">DATE_LDS_ORD</a>&gt; </td><td class="size">0:1</td></tr>
+
+            <tr><td class="code level-1">+1 <a href="#tag-temp">TEMP</a> &lt;<a href="#temple-code-pe">TEMPLE_CODE</a>&gt; </td><td class="size">0:1</td></tr>
+
+            <tr><td class="code level-1">+1 <a class="external" href="gedcom-5.5.2.html#tag-plac">PLAC</a> &lt;<a href="#place-living-ordinance-pe">PLACE_LIVING_ORDINANCE</a>&gt; </td><td class="size">0:1</td></tr>
+
+            <tr><td class="code level-1">+1 <a class="external" href="gedcom-5.5.2.html#tag-stat">STAT</a> &lt;<a href="#lds-baptism-date-status-pe">LDS_BAPTISM_DATE_STATUS</a>&gt; </td><td class="size">0:1</td></tr>
+
+            <tr><td class="code level-2">+2 <a class="external" href="gedcom-5.5.2.html#tag-date">DATE</a> &lt;<a class="external" href="gedcom-5.5.2.html#change-date-pe">CHANGE_DATE</a>&gt; </td><td class="size">1:1</td></tr>
+
+            <tr><td class="code level-1">+1 &lt;&lt;<a class="external" href="gedcom-5.5.2.html#note-structure-subr">NOTE_STRUCTURE</a>&gt;&gt; </td><td class="size">0:M</td></tr>
+
+            <tr><td class="code level-1">+1 &lt;&lt;<a class="external" href="gedcom-5.5.2.html#source-citation-subr">SOURCE_CITATION</a>&gt;&gt; </td><td class="size">0:M</td></tr>
+
+            <tr><td class="syntax-character" colspan="2">|</td></tr>
+
+            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-endl">ENDL</a></span> </td><td class="size">1:1</td></tr>
+
+            <tr><td class="code level-1">+1 <a class="external" href="gedcom-5.5.2.html#tag-date">DATE</a> &lt;<a href="#date-lds-ord-pe">DATE_LDS_ORD</a>&gt; </td><td class="size">0:1</td></tr>
+
+            <tr><td class="code level-1">+1 <a href="#tag-temp">TEMP</a> &lt;<a href="#temple-code-pe">TEMPLE_CODE</a>&gt; </td><td class="size">0:1</td></tr>
+
+            <tr><td class="code level-1">+1 <a class="external" href="gedcom-5.5.2.html#tag-plac">PLAC</a> &lt;<a href="#place-living-ordinance-pe">PLACE_LIVING_ORDINANCE</a>&gt; </td><td class="size">0:1</td></tr>
+
+            <tr><td class="code level-1">+1 <a class="external" href="gedcom-5.5.2.html#tag-stat">STAT</a> &lt;<a href="#lds-endowment-date-status-pe">LDS_ENDOWMENT_DATE_STATUS</a>&gt; </td><td class="size">0:1</td></tr>
+
+            <tr><td class="code level-2">+2 <a class="external" href="gedcom-5.5.2.html#tag-date">DATE</a> &lt;<a class="external" href="gedcom-5.5.2.html#change-date-pe">CHANGE_DATE</a>&gt; </td><td class="size">1:1</td></tr>
+
+            <tr><td class="code level-1">+1 &lt;&lt;<a class="external" href="gedcom-5.5.2.html#note-structure-subr">NOTE_STRUCTURE</a>&gt;&gt; </td><td class="size">0:M</td></tr>
+
+            <tr><td class="code level-1">+1 &lt;&lt;<a class="external" href="gedcom-5.5.2.html#source-citation-subr">SOURCE_CITATION</a>&gt;&gt; </td><td class="size">0:M</td></tr>
+
+            <tr><td class="syntax-character" colspan="2">|</td></tr>
+
+            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-slgc">SLGC</a></span> </td><td class="size">1:1</td></tr>
+
+            <tr><td class="code level-1">+1 <a class="external" href="gedcom-5.5.2.html#tag-date">DATE</a> &lt;<a href="#date-lds-ord-pe">DATE_LDS_ORD</a>&gt; </td><td class="size">0:1</td></tr>
+
+            <tr><td class="code level-1">+1 <a href="#tag-temp">TEMP</a> &lt;<a href="#temple-code-pe">TEMPLE_CODE</a>&gt; </td><td class="size">0:1</td></tr>
+
+            <tr><td class="code level-1">+1 <a class="external" href="gedcom-5.5.2.html#tag-plac">PLAC</a> &lt;<a href="#place-living-ordinance-pe">PLACE_LIVING_ORDINANCE</a>&gt; </td><td class="size">0:1</td></tr>
+
+            <tr><td class="code level-1">+1 <a class="external" href="gedcom-5.5.2.html#tag-famc">FAMC</a> @&lt;<a class="external" href="gedcom-5.5.2.html#id-fam-pe">ID:FAM</a>&gt;@ </td><td class="size">1:1</td></tr>
+
+            <tr><td class="code level-1">+1 <a class="external" href="gedcom-5.5.2.html#tag-stat">STAT</a> &lt;<a href="#lds-child-sealing-date-status-pe">LDS_CHILD_SEALING_DATE_STATUS</a>&gt; </td><td class="size">0:1</td></tr>
+
+            <tr><td class="code level-2">+2 <a class="external" href="gedcom-5.5.2.html#tag-date">DATE</a> &lt;<a class="external" href="gedcom-5.5.2.html#change-date-pe">CHANGE_DATE</a>&gt; </td><td class="size">1:1</td></tr>
+
+            <tr><td class="code level-1">+1 &lt;&lt;<a class="external" href="gedcom-5.5.2.html#note-structure-subr">NOTE_STRUCTURE</a>&gt;&gt; </td><td class="size">0:M</td></tr>
+
+            <tr><td class="code level-1">+1 &lt;&lt;<a class="external" href="gedcom-5.5.2.html#source-citation-subr">SOURCE_CITATION</a>&gt;&gt; </td><td class="size">0:M</td></tr>
+
+            <tr><td class="syntax-character" colspan="2">]</td></tr>
+          </table>
+        </dd>
+
+        <dt id="lds-spouse-sealing-subr">LDS_SPOUSE_SEALING</dt>
+        <dd>
+
+          <table class="record-structure">
+            <tr><td class="code level-0"><i>n</i> <b><a href="#tag-slgs">SLGS</a></b> </td><td class="size">1:1</td></tr>
+
+            <tr><td class="code level-1">+1 <a class="external" href="gedcom-5.5.2.html#tag-date">DATE</a> &lt;<a href="#date-lds-ord-pe">DATE_LDS_ORD</a>&gt; </td><td class="size">0:1</td></tr>
+
+            <tr><td class="code level-1">+1 <a href="#tag-temp">TEMP</a> &lt;<a href="#temple-code-pe">TEMPLE_CODE</a>&gt; </td><td class="size">0:1</td></tr>
+
+            <tr><td class="code level-1">+1 <a class="external" href="gedcom-5.5.2.html#tag-plac">PLAC</a> &lt;<a href="#place-living-ordinance-pe">PLACE_LIVING_ORDINANCE</a>&gt; </td><td class="size">0:1</td></tr>
+
+            <tr><td class="code level-1">+1 <a class="external" href="gedcom-5.5.2.html#tag-stat">STAT</a> &lt;<a href="#lds-spouse-sealing-date-status-pe">LDS_SPOUSE_SEALING_DATE_STATUS</a>&gt; </td><td class="size">0:1</td></tr>
+
+            <tr><td class="code level-2">+2 <a class="external" href="gedcom-5.5.2.html#tag-date">DATE</a> &lt;<a class="external" href="gedcom-5.5.2.html#change-date-pe">CHANGE_DATE</a>&gt; </td><td class="size">1:1</td></tr>
+
+            <tr><td class="code level-1">+1 &lt;&lt;<a class="external" href="gedcom-5.5.2.html#note-structure-subr">NOTE_STRUCTURE</a>&gt;&gt; </td><td class="size">0:M</td></tr>
+
+            <tr><td class="code level-1">+1 &lt;&lt;<a class="external" href="gedcom-5.5.2.html#source-citation-subr">SOURCE_CITATION</a>&gt;&gt; </td><td class="size">0:M</td></tr>
+          </table>
+        </dd>
+
+
+      </dl>
+    </section>
+
+    <section id="section-primitive-elements">
+      <h2>Primitive Elements</h2>
+
+      <dl class="primitive-elements">
+
+        <dt id="date-lds-ord-pe">DATE_LDS_ORD <span class="size">{Size=4:35}</span></dt>
+        <dd>
+          <p>&lt;<a class="external" href="gedcom-5.5.2.html#date-value-pe">DATE_VALUE</a>&gt;</p>
+
+          <p>LDS ordinance dates use only the Gregorian calendar and most often use the form of day, month, and year. Only in rare instances is there a partial date. The temple tag and code should always accompany temple ordinance dates. Sometimes the LDS_(ordinance)_DATE_STATUS is used to indicate that an ordinance date and temple code is not required, such as when BIC is used. (See LDS_(ordinance)_DATE_STATUS definitions.)</p>
+
+<div class="references">
+<p>See:</p>
+<ul>
+<li>&lt;&lt;<a href="#lds-individual-ordinance-subr">LDS<wbr>_INDIVIDUAL<wbr>_ORDINANCE</a>&gt;&gt;</li>
+<li>&lt;&lt;<a href="#lds-spouse-sealing-subr">LDS<wbr>_SPOUSE<wbr>_SEALING</a>&gt;&gt;</li>
+</ul>
+</div>
+        </dd>
+
+        <dt id="generations-of-ancestors-pe">GENERATIONS_OF_ANCESTORS <span class="size">{Size=1:4}</span></dt>
+        <dd>
+          <p>The number of generations of ancestors included in this document. This value is usually provided when FamilySearch programs build a GEDCOM file for a patron requesting a download of ancestors.</p>
+
+<div class="references">
+<p>See: &lt;&lt;<a href="#subn-record">SUBN<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-subn">SUBN</a><wbr>.<a href="#tag-ance">ANCE</a></p>
+</div>
+        </dd>
+
+        <dt id="generations-of-descendants-pe">GENERATIONS_OF_DESCENDANTS <span class="size">{Size=1:4}</span></dt>
+        <dd>
+          <p>The number of generations of descendants included in this document. This value is usually provided when FamilySearch programs build a GEDCOM file for a patron requesting a download of descendants.</p>
+
+<div class="references">
+<p>See: &lt;&lt;<a href="#subn-record">SUBN<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-subn">SUBN</a><wbr>.<a href="#tag-desc">DESC</a></p>
+</div>
+        </dd>
+
+        <dt id="lds-baptism-date-status-pe">LDS_BAPTISM_DATE_STATUS <span class="size">{Size=5:10}</span></dt>
+        <dd>
+          <p>A code indicating the status of an LDS baptism and confirmation date where the choices are:</p>
+
+          <table class="value-choices">
+            <thead>
+              <tr><th>Choice</th><th>Description</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>CHILD</code></td><td>Died before becoming eight years old, baptism not required.</td></tr>
+              <tr><td><code>COMPLETED</code></td><td>Completed but the date is not known.</td></tr>
+              <tr><td><code>EXCLUDED</code></td><td>Patron excluded this ordinance from being cleared in this submission.</td></tr>
+              <tr><td><code>PRE-1970</code></td><td>Ordinance is likely completed, another ordinance for this person was converted from temple records of work completed before 1970, therefore this ordinance is assumed to be complete until all records are converted.</td></tr>
+              <tr><td><code>STILLBORN</code></td><td>Stillborn, baptism not required.</td></tr>
+              <tr><td><code>SUBMITTED</code></td><td>Ordinance was previously submitted.</td></tr>
+              <tr><td><code>UNCLEARED</code></td><td>Data for clearing ordinance request was insufficient.</td></tr>
+            </tbody>
+          </table>
+
+<div class="references">
+<p>See:</p>
+<ul>
+<li>&lt;<a href="#lds-child-sealing-date-status-pe">LDS<wbr>_CHILD<wbr>_SEALING<wbr>_DATE<wbr>_STATUS</a>&gt;</li>
+<li>&lt;<a href="#lds-endowment-date-status-pe">LDS<wbr>_ENDOWMENT<wbr>_DATE<wbr>_STATUS</a>&gt;</li>
+<li>&lt;&lt;<a href="#lds-individual-ordinance-subr">LDS<wbr>_INDIVIDUAL<wbr>_ORDINANCE</a>&gt;&gt;</li>
+<li>&lt;<a href="#lds-spouse-sealing-date-status-pe">LDS<wbr>_SPOUSE<wbr>_SEALING<wbr>_DATE<wbr>_STATUS</a>&gt;</li>
+</ul>
+</div>
+        </dd>
+
+        <dt id="lds-child-sealing-date-status-pe">LDS_CHILD_SEALING_DATE_STATUS <span class="size">{Size=5:10}</span></dt>
+        <dd>
+          <p>A code indicating the status of an LDS child sealing date where the choices are:</p>
+
+          <table class="value-choices">
+            <thead>
+              <tr><th>Choice</th><th>Description</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>BIC</code></td><td>Born in the covenant receiving blessing of child to parent sealing.</td></tr>
+              <tr><td><code>COMPLETED</code></td><td>Completed but the date is not known.</td></tr>
+              <tr><td><code>DNS</code></td><td>This ordinance is not authorized.</td></tr>
+              <tr><td><code>EXCLUDED</code></td><td>Patron excluded this ordinance from being cleared in this submission.</td></tr>
+              <tr><td><code>PRE-1970</code></td><td>See PRE-1970 under <a href="#lds-baptism-date-status-pe">LDS_BAPTISM_DATE_STATUS</a>.</td></tr>
+              <tr><td><code>STILLBORN</code></td><td>Stillborn, not required.</td></tr>
+              <tr><td><code>SUBMITTED</code></td><td>Ordinance was previously submitted.</td></tr>
+              <tr><td><code>UNCLEARED</code></td><td>Data for clearing ordinance request was insufficient.</td></tr>
+            </tbody>
+          </table>
+
+<div class="references">
+<p>See: &lt;&lt;<a href="#lds-individual-ordinance-subr">LDS<wbr>_INDIVIDUAL<wbr>_ORDINANCE</a>&gt;&gt;</p>
+</div>
+        </dd>
+
+        <dt id="lds-endowment-date-status-pe">LDS_ENDOWMENT_DATE_STATUS <span class="size">{Size=5:10}</span></dt>
+        <dd>
+          <p>A code indicating the status of an LDS endowment ordinance where the choices are:</p>
+
+          <table class="value-choices">
+            <thead>
+              <tr><th>Choice</th><th>Description</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>CHILD</code></td><td>Died before eight years old.</td></tr>
+              <tr><td><code>COMPLETED</code></td><td>Completed but the date is not known.</td></tr>
+              <tr><td><code>EXCLUDED</code></td><td>Patron excluded this ordinance from being cleared in this submission.</td></tr>
+              <tr><td><code>INFANT</code></td><td>Died before less than one year old, baptism or endowment not required.</td></tr>
+              <tr><td><code>PRE-1970</code></td><td>See PRE-1970 under <a href="#lds-baptism-date-status-pe">LDS_BAPTISM_DATE_STATUS</a>.</td></tr>
+              <tr><td><code>STILLBORN</code></td><td>Stillborn, ordinance not required.</td></tr>
+              <tr><td><code>SUBMITTED</code></td><td>Ordinance was previously submitted.</td></tr>
+              <tr><td><code>UNCLEARED</code></td><td>Data for clearing ordinance request was insufficient.</td></tr>
+            </tbody>
+          </table>
+
+<div class="references">
+<p>See: &lt;&lt;<a href="#lds-individual-ordinance-subr">LDS<wbr>_INDIVIDUAL<wbr>_ORDINANCE</a>&gt;&gt;</p>
+</div>
+        </dd>
+
+        <dt id="lds-spouse-sealing-date-status-pe">LDS_SPOUSE_SEALING_DATE_STATUS <span class="size">{Size=3:10}</span></dt>
+        <dd>
+          <p>A code indicating the status of an LDS spouse sealing date where the choices are:</p>
+
+          <table class="value-choices">
+            <thead>
+              <tr><th>Choice</th><th>Description</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>CANCELED</code></td><td>Canceled and considered invalid.</td></tr>
+              <tr><td><code>COMPLETED</code></td><td>Completed but the date is not known.</td></tr>
+              <tr><td><code>DNS</code></td><td>This ordinance is not authorized.</td></tr>
+              <tr><td><code>DNS/CAN</code></td><td>This ordinance is not authorized, previous sealing cancelled.</td></tr>
+              <tr><td><code>EXCLUDED</code></td><td>Patron excluded this ordinance from being cleared in this submission.</td></tr>
+              <tr><td><code>PRE-1970</code></td><td>See PRE-1970 under <a href="#lds-baptism-date-status-pe">LDS_BAPTISM_DATE_STATUS</a>.</td></tr>
+              <tr><td><code>SUBMITTED</code></td><td>Ordinance was previously submitted.</td></tr>
+              <tr><td><code>UNCLEARED</code></td><td>Data for clearing ordinance request was insufficient.</td></tr>
+            </tbody>
+          </table>
+
+<div class="references">
+<p>See: &lt;&lt;<a href="#lds-spouse-sealing-subr">LDS<wbr>_SPOUSE<wbr>_SEALING</a>&gt;&gt;</p>
+</div>
+        </dd>
+
+        <dt id="id-subn-pe">ID:SUBN <span class="same-as">Same as <a class="external" href="gedcom-5.5.2.html#id-component">ID</a></span></dt>
+        <dd>
+          <p>A <a class="external" href="gedcom-5.5.2.html#pointer-component">pointer</a> to a <a href="#subn-record">SUBN_RECORD</a> or an <a class="external" href="gedcom-5.5.2.html#id-component">ID</a> of a SUBN_RECORD.</p>
+
+<div class="references">
+<p>See: &lt;&lt;<a href="#subn-record">SUBN<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-subn">SUBN</a></p>
+</div>
+        </dd>
+
+        <dt id="name-of-family-file-pe">NAME_OF_FAMILY_FILE <span class="size">{Size=1:120}</span></dt>
+        <dd>
+          <p>Name under which family names for ordinances are stored in the temple's family file.</p>
+
+<div class="references">
+<p>See: &lt;&lt;<a href="#subn-record">SUBN<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-subn">SUBN</a><wbr>.<a href="#tag-famf">FAMF</a></p>
+</div>
+        </dd>
+
+        <dt id="ordinance-process-flag-pe">ORDINANCE_PROCESS_FLAG <span class="size">{Size=2:3}</span></dt>
+        <dd>
+          <p>A keyword that indicates whether submission should be processed for clearing temple ordinances. The choices are:</p>
+
+          <ul>
+            <li><code>yes</code></li>
+            <li><code>no</code></li>
+          </ul>
+
+<div class="references">
+<p>See: &lt;&lt;<a href="#subn-record">SUBN<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-subn">SUBN</a><wbr>.<a href="#tag-ordi">ORDI</a></p>
+</div>
+        </dd>
+
+        <dt id="place-living-ordinance-pe">PLACE_LIVING_ORDINANCE <span class="same-as">Same as <a class="external" href="gedcom-5.5.2.html#place-name-pe">PLACE_NAME</a></span></dt>
+        <dd>
+          <p>The locality of the place where a living LDS ordinance took place. Typically, a living LDS baptism place would be recorded in this field.</p>
+
+<div class="references">
+<p>See:</p>
+<ul>
+<li>&lt;&lt;<a href="#lds-individual-ordinance-subr">LDS<wbr>_INDIVIDUAL<wbr>_ORDINANCE</a>&gt;&gt;</li>
+<li>&lt;&lt;<a href="#lds-spouse-sealing-subr">LDS<wbr>_SPOUSE<wbr>_SEALING</a>&gt;&gt;</li>
+</ul>
+</div>
+        </dd>
+
+        <dt id="temple-code-pe">TEMPLE_CODE <span class="size">{Size=4:5}</span></dt>
+        <dd>
+          <p>An abbreviation of the temple in which LDS temple ordinances were performed.</p>
+
+<div class="references">
+<p>See:</p>
+<ul>
+<li>&lt;&lt;<a href="#lds-individual-ordinance-subr">LDS<wbr>_INDIVIDUAL<wbr>_ORDINANCE</a>&gt;&gt;<wbr>.<a href="#tag-conl">CONL</a><wbr>.<a href="#tag-temp">TEMP</a></li>
+<li>&lt;&lt;<a href="#lds-individual-ordinance-subr">LDS<wbr>_INDIVIDUAL<wbr>_ORDINANCE</a>&gt;&gt;<wbr>.<a href="#tag-endl">ENDL</a><wbr>.<a href="#tag-temp">TEMP</a></li>
+<li>&lt;&lt;<a href="#lds-individual-ordinance-subr">LDS<wbr>_INDIVIDUAL<wbr>_ORDINANCE</a>&gt;&gt;<wbr>.<a href="#tag-slgc">SLGC</a><wbr>.<a href="#tag-temp">TEMP</a></li>
+<li>&lt;&lt;<a href="#lds-spouse-sealing-subr">LDS<wbr>_SPOUSE<wbr>_SEALING</a>&gt;&gt;<wbr>.<a href="#tag-slgs">SLGS</a><wbr>.<a href="#tag-temp">TEMP</a></li>
+<li>&lt;&lt;<a href="#subn-record">SUBN<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-subn">SUBN</a><wbr>.<a href="#tag-temp">TEMP</a></li>
+</ul>
+</div>
+        </dd>
+      </dl>
+    </section>
+
+    <section id="section-subrecords">
+      <h2>Subrecords</h2>
+
+      <h3>Definitions</h3>
+
+      <dl>
+        <dt id="tag-afn">AFN <span class="tag-full-name">Ancestral File Number</span></dt>
+        <dd>
+          <p>The AFN subrecord specifies th unique permanent record file number of an individual record stored in Ancestral File.</p>
+
+        </dd>
+
+        <dt id="tag-ance">ANCE <span class="tag-full-name">Ancestors</span></dt>
+        <dd>
+          <p>Indicates the number of generations of ancestors in the document via its <a href="#generations-of-ancestors-pe">GENERATIONS_OF_ANCESTORS</a> value.</p>
+
+          <p>Used only in the context of the <a href="#tag-subn">SUBN</a> (submission) record.</p>
+
+<div class="references">
+<p>See: &lt;&lt;<a href="#subn-record">SUBN<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-subn">SUBN</a><wbr>.ANCE &lt;<a href="#generations-of-ancestors-pe">GENERATIONS<wbr>_OF<wbr>_ANCESTORS</a>&gt;</p>
+</div>
+        </dd>
+
+        <dt id="tag-bapl">BAPL <span class="tag-full-name">Baptism (LSD)</span></dt>
+        <dd>
+          <p>The event of baptism performed at age eight or later by priesthood authority of the LDS Church.</p>
+
+<div class="references">
+<p>See: &lt;&lt;<a href="#lds-individual-ordinance-subr">LDS<wbr>_INDIVIDUAL<wbr>_ORDINANCE</a>&gt;&gt;<wbr>.BAPL</p>
+</div>
+        </dd>
+
+        <dt id="tag-conl">CONL <span class="tag-full-name">Confirmation (LDS)</span></dt>
+        <dd>
+          <p>The religious event by which a person receives membership in the LDS Church.</p>
+
+<div class="references">
+<p>See: &lt;&lt;<a href="#lds-individual-ordinance-subr">LDS<wbr>_INDIVIDUAL<wbr>_ORDINANCE</a>&gt;&gt;<wbr>.CONL</p>
+</div>
+        </dd>
+
+        <dt id="tag-desc">DESC <span class="tag-full-name">Descendants</span></dt>
+        <dd>
+          <p>Indicates the number of generations of descendants in the document via its <a href="#generations-of-descendants-pe">GENERATIONS_OF_DESCENDANTS</a> value.</p>
+
+          <p>Used only in the context of the <a href="#tag-subn">SUBN</a> (submission) record.</p>
+
+<div class="references">
+<p>See: &lt;&lt;<a href="#subn-record">SUBN<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-subn">SUBN</a><wbr>.DESC &lt;<a href="#generations-of-descendants-pe">GENERATIONS<wbr>_OF<wbr>_DESCENDANTS</a>&gt;</p>
+</div>
+        </dd>
+
+        <dt id="tag-endl">ENDL <span class="tag-full-name">Endowment (LDS)</span></dt>
+        <dd>
+          <p>A religious event where an endowment ordinance for an individual was performed by priesthood authority in an LDS temple.</p>
+
+<div class="references">
+<p>See: &lt;&lt;<a href="#lds-individual-ordinance-subr">LDS<wbr>_INDIVIDUAL<wbr>_ORDINANCE</a>&gt;&gt;<wbr>.ENDL</p>
+</div>
+        </dd>
+
+        <dt id="tag-famf">FAMF <span class="tag-full-name">Family File</span></dt>
+        <dd>
+          <p>Pertaining to, or the name of, a family file. Names stored in a file that are assigned to a family for doing temple ordinance work.</p>
+
+<div class="references">
+<p>See: &lt;&lt;<a href="#subn-record">SUBN<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-subn">SUBN</a><wbr>.FAMF &lt;<a href="#name-of-family-file-pe">NAME<wbr>_OF<wbr>_FAMILY<wbr>_FILE</a>&gt;</p>
+</div>
+        </dd>
+
+        <dt id="tag-ordi">ORDI <span class="tag-full-name">Ordinance</span></dt>
+        <dd>
+          <p>Pertaining to a religious ordinance in general.</p>
+
+<div class="references">
+<p>See: &lt;&lt;<a href="#subn-record">SUBN<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-subn">SUBN</a><wbr>.ORDI &lt;<a href="#ordinance-process-flag-pe">ORDINANCE<wbr>_PROCESS<wbr>_FLAG</a>&gt;</p>
+</div>
+        </dd>
+
+        <dt id="tag-slgc">SLGC <span class="tag-full-name">Sealing Child</span></dt>
+        <dd>
+          <p>A religious event pertaining to the sealing of a child to his or her parents in an LDS temple ceremony.</p>
+
+<div class="references">
+<p>See: &lt;&lt;<a href="#lds-individual-ordinance-subr">LDS<wbr>_INDIVIDUAL<wbr>_ORDINANCE</a>&gt;&gt;<wbr>.SLGC</p>
+</div>
+        </dd>
+
+        <dt id="tag-slgs">SLGS <span class="tag-full-name">Sealing Spouse</span></dt>
+        <dd>
+          <p>A religious event pertaining to the sealing of a husband and wife in an LDS temple ceremony.</p>
+
+<div class="references">
+<p>See: &lt;&lt;<a href="#lds-spouse-sealing-subr">LDS<wbr>_SPOUSE<wbr>_SEALING</a>&gt;&gt;<wbr>.SLGS</p>
+</div>
+        </dd>
+
+        <dt id="tag-subn">SUBN <span class="tag-full-name">Submission</span></dt>
+        <dd>
+          <p>Pertains to a collection of data issued for processing.</p>
+
+<div class="references">
+<p>See: &lt;&lt;<a href="#subn-record">SUBN<wbr>_RECORD</a>&gt;&gt;<wbr>.SUBN &lt;<a href="#id-subn-pe">ID:SUBN</a>&gt;</p>
+</div>
+        </dd>
+
+        <dt id="tag-temp">TEMP <span class="tag-full-name">Temple</span></dt>
+        <dd>
+          <p>The name or code that represents the name of an LDS Church Temple.</p>
+
+<div class="references">
+<p>See:</p>
+<ul>
+<li>&lt;&lt;<a href="#lds-individual-ordinance-subr">LDS<wbr>_INDIVIDUAL<wbr>_ORDINANCE</a>&gt;&gt;<wbr>.<a href="#tag-conl">CONL</a><wbr>.TEMP &lt;<a href="#temple-code-pe">TEMPLE<wbr>_CODE</a>&gt;</li>
+<li>&lt;&lt;<a href="#lds-individual-ordinance-subr">LDS<wbr>_INDIVIDUAL<wbr>_ORDINANCE</a>&gt;&gt;<wbr>.<a href="#tag-endl">ENDL</a><wbr>.TEMP &lt;<a href="#temple-code-pe">TEMPLE<wbr>_CODE</a>&gt;</li>
+<li>&lt;&lt;<a href="#lds-individual-ordinance-subr">LDS<wbr>_INDIVIDUAL<wbr>_ORDINANCE</a>&gt;&gt;<wbr>.<a href="#tag-slgc">SLGC</a><wbr>.TEMP &lt;<a href="#temple-code-pe">TEMPLE<wbr>_CODE</a>&gt;</li>
+<li>&lt;&lt;<a href="#lds-spouse-sealing-subr">LDS<wbr>_SPOUSE<wbr>_SEALING</a>&gt;&gt;<wbr>.<a href="#tag-slgs">SLGS</a><wbr>.TEMP &lt;<a href="#temple-code-pe">TEMPLE<wbr>_CODE</a>&gt;</li>
+<li>&lt;&lt;<a href="#subn-record">SUBN<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-subn">SUBN</a><wbr>.TEMP &lt;<a href="#temple-code-pe">TEMPLE<wbr>_CODE</a>&gt;</li>
+</ul>
+</div>
+        </dd>
+
+      </dl>
+    </section>
+
+    <section id="section-keyword-index">
+      <h2>Index</h2>
+      <ul class="keyword-index columns-wide">
+        <!-- keyword index entries -->
+<li><a href="#tag-afn">AFN</a></li>
+<li><a href="#tag-ance">ANCE</a></li>
+<li><a href="#tag-bapl">BAPL</a></li>
+<li><a href="#tag-conl">CONL</a></li>
+<li><a href="#date-lds-ord-pe">DATE_LDS_ORD</a></li>
+<li><a href="#tag-desc">DESC</a></li>
+<li><a href="#tag-endl">ENDL</a></li>
+<li><a href="#tag-famf">FAMF</a></li>
+<li><a href="#generations-of-ancestors-pe">GENERATIONS_OF_ANCESTORS</a></li>
+<li><a href="#generations-of-descendants-pe">GENERATIONS_OF_DESCENDANTS</a></li>
+<li><a href="#id-subn-pe">ID:SUBN</a></li>
+<li><a href="#lds-baptism-date-status-pe">LDS_BAPTISM_DATE_STATUS</a></li>
+<li><a href="#lds-child-sealing-date-status-pe">LDS_CHILD_SEALING_DATE_STATUS</a></li>
+<li><a href="#lds-endowment-date-status-pe">LDS_ENDOWMENT_DATE_STATUS</a></li>
+<li><a href="#lds-individual-ordinance-subr">LDS_INDIVIDUAL_ORDINANCE</a></li>
+<li><a href="#lds-spouse-sealing-subr">LDS_SPOUSE_SEALING</a></li>
+<li><a href="#lds-spouse-sealing-date-status-pe">LDS_SPOUSE_SEALING_DATE_STATUS</a></li>
+<li><a href="#name-of-family-file-pe">NAME_OF_FAMILY_FILE</a></li>
+<li><a href="#tag-ordi">ORDI</a></li>
+<li><a href="#ordinance-process-flag-pe">ORDINANCE_PROCESS_FLAG</a></li>
+<li><a href="#place-living-ordinance-pe">PLACE_LIVING_ORDINANCE</a></li>
+<li><a href="#tag-slgc">SLGC</a></li>
+<li><a href="#tag-slgs">SLGS</a></li>
+<li><a href="#tag-subn">SUBN</a></li>
+<li><a href="#subn-record">SUBN_RECORD</a></li>
+<li><a href="#tag-temp">TEMP</a></li>
+<li><a href="#temple-code-pe">TEMPLE_CODE</a></li>
+</ul>
+    </section>
+
+    <div class="fixed-menu">
+      <a href="#top">Top</a> - <a href="#section-keyword-index">Index</a>
+    </div>
+  </article>
+
+</body>
+</html>

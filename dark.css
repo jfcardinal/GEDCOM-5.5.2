@@ -25,6 +25,10 @@ table, td, th {
   color: #fff;
 }
 
+.deprecated, provisional {
+  border-left-color: #ffff00;
+}
+
 .fixed-menu {
   background-color: #333;
 }
@@ -33,6 +37,6 @@ table, td, th {
   color: #ff0000;
 }
 
-.provisional {
-  border-left-color: yellow;
+.obsolete {
+  border-left-color: #ff0000;
 }

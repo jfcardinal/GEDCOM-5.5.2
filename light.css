@@ -29,6 +29,10 @@ table, td, th {
   color: #222;
 }
 
+.deprecated, .provisional {
+  border-left-color: #ebe702;
+}
+
 .fixed-menu {
   background-color: #f0f0f0;
 }
@@ -37,6 +41,6 @@ table, td, th {
   color: #ff0000;
 }
 
-.provisional {
-  border-left-color: #ebe702;
+.obsolete {
+  border-left-color: red;
 }
