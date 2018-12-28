@@ -127,10 +127,10 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
         <dd>
           <p>_SDATE specifies a sort date for an event. It uses the same value format as a <a class="external" href="gedcom-5.5.2.html#tag-date">DATE</a> subrecord.</p>
           
-          <p>The value format Primitive Element is <a class="external" href="gedcom-5.5.2.html#prim-dmy">DMY</a>.</p>
+          <p>The value format Primitive Element is <a class="external" href="gedcom-5.5.2.html#dmy-pe">DMY</a>.</p>
 
           <table class="record-structure">
-            <tr><td class="code level-1">n _SDATE @&lt;<a class="external" href="gedcom-5.5.2.html#prim-dmy">DMY</a>&gt;@ </td><td class="size">0:1</td></tr>
+            <tr><td class="code level-1">n _SDATE @&lt;<a class="external" href="gedcom-5.5.2.html#dmy-pe">DMY</a>&gt;@ </td><td class="size">0:1</td></tr>
           </table>
 
           <p>_SDATE is used under the context of an event such as FAM.MARR or INDI.BIRT, etc. It allows the user to sort an event by a date that is different from the actual date of the event.</p>
@@ -165,7 +165,7 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
           <p>_SHAR is used to add an individual to an event.</p>
 
           <table class="record-structure">
-            <tr><td class="code level-1">n _SHAR @&lt;<a class="external" href="gedcom-5.5.2.html#prim-id-indi">ID:INDI</a>&gt;@ </td><td class="size">0:M</td></tr>
+            <tr><td class="code level-1">n _SHAR @&lt;<a class="external" href="gedcom-5.5.2.html#id-indi-pe">ID:INDI</a>&gt;@ </td><td class="size">0:M</td></tr>
           </table>
 
           <p>_SHAR is used under the context of an event such as FAM.MARR or INDI.BIRT, etc.</p>
@@ -214,7 +214,7 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
           <p>_ROLE is used to specify the role played by an individual in connection with an event.</p>
 
           <table class="record-structure">
-            <tr><td class="code level-0">n _ROLE &lt;<a class="external" href="gedcom-5.5.2.html#prim-text">TEXT</a>&gt; </td><td class="size">0:1</td></tr>
+            <tr><td class="code level-0">n _ROLE &lt;<a class="external" href="gedcom-5.5.2.html#text-pe">TEXT</a>&gt; </td><td class="size">0:1</td></tr>
           </table>
 
           <p>_ROLE is used under the context of a <a href="#tag--shar">_SHAR</a> subrecord or equivalent. See the _SHAR description for further details.</p>
@@ -243,11 +243,9 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
         <dd>
           <p>A UUID is a Universally Unique Identifier in string format. A UUID is also known as a Globally Unique Identifier (GUID). A UUID is defined by  <a class="external" href="https://tools.ietf.org/html/rfc4122">RFC4122</a>.</p>
 
-          <p>The Internet Engineering Task Force defines the string format of the UUID as 32 hexadecimal digits separated by hyphens into 6 segments with lengths 8, 4, 4, 4, 12, respectively. GEDCOM 5.5.2 adopts that format as the preferred value.</p>
+          <p>The Internet Engineering Task Force defines the string format of the UUID as 32 hexadecimal digits separated by hyphens into 6 segments with lengths 8, 4, 4, 4, 12, respectively. That format is the preferred value.</p>
 
-          <p>UUIDs are only used in custom subrecords, and the format was not defined by a GEDCOM specification until <a href="gedcom-5.5.2.html">GEDCOM 5.5.2</a>. Early adopters did not use the RFC4122 format. The result is that many existing systems and documents will have non-compliant values.</p>
-
-          <p>To accommodate existing values, GEDCOM 5.5.2 allows these formats:</p>
+          <p>UUIDs are only used in custom subrecords, and the format was not defined by a GEDCOM specification. Early adopters did not use the RFC4122 format. THese are the common formats:</p>
 
           <ul>
             <li>RFC4122 format (preferred):<br><code>12345678-1234-1234-1234-123456789abc</code></li>
