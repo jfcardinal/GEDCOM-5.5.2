@@ -4,8 +4,11 @@ a, a:link, a:visited, a:hover, a:active {
 }
 
 article {
-  background-color: #f0f0f0;
   border-color: #ddd;
+}
+
+article, section {
+  background-color: #f0f0f0;
 }
 
 body {

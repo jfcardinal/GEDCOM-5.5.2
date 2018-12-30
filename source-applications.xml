@@ -1,0 +1,581 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<document>
+  <source id="ages">
+    <name>Ages!</name>
+    <description><p>Daub EVD-Beratung</p></description>
+  </source>
+  <source id="ahn">
+    <name>Ahnenblatt</name>
+    <description>
+      <p><a href="https://www.ahnenblatt.com/">http://www.ahnenforscher.ch</a> (Dirk Boettcher)</p>
+      <p>Swiss</p>
+    </description>
+  </source>
+  <source id="ahnenforscher">
+    <name>Ahnenforscher</name>
+    <description><p><a href="http://www.ahnenforscher.ch">http://www.ahnenforscher.ch</a> (Remo Schlauri)</p></description>
+  </source>
+  <source id="ahnengalerie">
+    <name>Ahnengalerie</name>
+    <description><p>MindScape</p></description>
+  </source>
+  <source id="albero-genealogico-gsp">
+    <name>Ancestry Member Trees (Italy)</name>
+    <description><p><a href="https://www.ancestry.it">Ancestry.it</a></p></description>
+  </source>
+  <source id="aldfaer">
+    <name>Aldfaer</name>
+    <description>
+      <p><a href="http://aldfaer.net">http://aldfaer.net</a> (Stichting Aldfaer)</p>
+      <p>Dutch</p>
+    </description>
+  </source>
+  <source id="altree">
+    <name>AgeLong Tree</name>
+    <description><p>Genery Software</p></description>
+  </source>
+  <source id="ancestquest">
+    <name>Ancestral Quest</name>
+    <description><p><a class="external" href="https://www.ancquest.com">Incline Software, LC</a></p></description>
+  </source>
+  <source id="ancestris">
+    <name>Ancestris</name>
+    <description><p>Ancestris Team</p></description>
+  </source>
+  <source id="ancestrologie">
+    <name>Ancestrologie</name>
+    <description><p>Ancestrologie.org</p></description>
+  </source>
+  <source id="ancestry">
+    <name>Ancestry Member Trees</name>
+    <description><p>Online Family Tree</p></description>
+  </source>
+  <source id="ancestry.com-family-trees">
+    <name>Ancestry.com Family Trees</name>
+    <description><p>Ancestry.com Family Trees are GEDCOM files downloaded from Ancestry.com user-maintained family trees.</p>
+    </description>
+  </source>
+  <source id="anstfile">
+    <name>Ancestral File</name>
+    <description><p>FamilySearch</p></description>
+  </source>
+  <source id="arbre-genealogique">
+    <name>Arbre généalogique</name>
+    <description><p>TLC-EDUSOFT</p></description>
+  </source>
+  <source id="behold">
+    <!-- No files found with the key above -->
+    <name>Behold</name>
+    <description><p><a class="external" href="http://www.beholdgenealogy.com">Behold Genealogy</a> (Louis Kessler)</p></description>
+  </source>
+  <source id="branches">
+    <name>Branches</name>
+    <description><p>Sherwood Electronics Laboratories</p></description>
+  </source>
+  <source id="broskeep">
+    <name>Brother's Keeper</name>
+    <description><p><a class="external" href="https://www.bkwin.org">John Steed</a></p></description>
+  </source>
+  <source id="cft">
+    <name>Mindscape Family Tree Creator</name>
+  </source>
+  <source id="cftree">
+    <name>Cumberland Family Tree</name>
+    <description><p><a class="external" href="http://www.cft-win.com">Cumberland Family Software</a></p></description>
+  </source>
+  <source id="crusader-kings">
+    <name>CK Family Tree Maker</name>
+    <description><p>Paradox Entertainment</p></description>
+  </source>
+  <source id="dc-thomson-family-history---find-my-past-us">
+    <name>findmypast</name>
+    <description><p>DC Thomson Family History</p></description>
+  </source>
+  <source id="disgen">
+    <name>DISGEN</name>
+    <description>
+      <p>Foreningen</p>
+      <p>Swedish</p>
+    </description>
+  </source>
+  <source id="dorotree">
+    <name>DoroTree for Windows</name>
+    <description><p>DoroTree Technologies Ltd.</p></description>
+  </source>
+  <source id="dynas-tree">
+    <name>DYNAS-TREE</name>
+    <description><p>Gerhard Bauch Software Entwicklung</p></description>
+  </source>
+  <source id="easy-family-tree">
+    <name>Easy Family Tree</name>
+    <description><p>Sierra Home</p></description>
+  </source>
+  <source id="easytree">
+    <name>EasyTree</name>
+    <description><p>Siera On-Line</p></description>
+  </source>
+  <source id="embla_familie_og_slekt">
+    <name>Embla Family Treasures</name>
+    <description><p>Embla Norsk Familiehistorie AS</p></description>
+  </source>
+  <source id="famgath">
+    <name>Family Gathering</name>
+    <description><p>Palladium Interactive, Inc.</p></description>
+  </source>
+  <source id="familienbande">
+    <name>Familienbande</name>
+    <description><p>Stefan Mettenbrink</p></description>
+  </source>
+  <source id="family_historian">
+    <name>Family Historian</name>
+    <description><p><a class="external" href="https://www.family-historian.co.uk">Calico Pie Limited</a></p></description>
+  </source>
+  <source id="family_tree_for_java">
+    <name>Family Tree for Java</name>
+  </source>
+  <source id="family-echo">
+    <name>Family Echo</name>
+    <description><p><a class="external" href="https://www.familyecho.com">Familiality Ltd.</a></p></description>
+  </source>
+  <source id="family-edge-plus">
+    <name>Family Edge Plus</name>
+    <description><p>Carl J. Cox</p></description>
+  </source>
+  <source id="family-for-windows">
+    <name>Family for Windows</name>
+  </source>
+  <source id="family-historian">
+    <name>Export Gedcom File</name>
+    <description><p>A plug-in for <a href="#family_historian">Family Historian</a> that exports GEDCOM files subject to a variety of options; see <a class="external" href="https://www.family-historian.co.uk/pluginstore/plugin-entry?id=522">https://www.family-historian.co.uk/pluginstore/plugin-entry?id=522</a></p></description>
+  </source>
+  <source id="familyorigins">
+    <name>Family Origins for Windows</name>
+    <description><p>FormalSoft</p></description>
+  </source>
+  <source id="famroots">
+    <name>Family Roots</name>
+    <description><p>Quinsept</p></description>
+  </source>
+  <source id="familyties">
+    <name>Family Ties</name>
+    <description><p>Individual Software (see <a href="#famtreehrtg">Family Tree Heritage</a>)</p></description>
+  </source>
+  <source id="famtiesdlx">
+    <name>Family Ties Deluxe</name>
+    <description><p>Individual Software</p></description>
+  </source>
+  <source id="famtreehrtg">
+    <name>Family Tree Heritage</name>
+    <description><p>Individual Softare</p></description>
+  </source>
+  <source id="famtreesqe">
+    <name>Family Trees Quick &amp; Easy</name>
+  </source>
+  <source id="fhsv2">
+    <name>Family History System</name>
+    <description><p>Phillip E. Brown</p></description>
+  </source>
+  <source id="fsb">
+    <name>Family Scrapbook</name>
+    <description><p>Visionary Endeavors</p></description>
+  </source>
+  <source id="ftl">
+    <name>Family Tree Legends</name>
+    <description><p>Pearl Street Software</p></description>
+  </source>
+  <source id="ftm">
+    <name>Family Tree Maker for Windows</name>
+    <description><p><a class="external" href="https://www.mackiev.com/">The Software MacKiev Company</a> with prior versions published other companies</p></description>
+    <alias id="ftw" />
+  </source>
+  <source id="ftmwe">
+    <name>Family Tree Maker World Express</name>
+    <description><p>A "lite" version of <a href="#ftm">Family Tree Maker</a></p></description>
+  </source>
+  <source id="foreldra">
+    <name>Foreldra</name>
+    <description><p>Espolin Parsing Utility (?)</p></description>
+  </source>
+  <source id="ftree">
+    <name>Ftree</name>
+    <description><p>Clive Stubbings</p></description>
+  </source>
+  <source id="fullerfamilyhistory">
+    <name>fullerfamilyhistory.org</name>
+    <description><p>Charles Fuller</p></description>
+  </source>
+  <source id="gd-win">
+    <name>GensData for Windows</name>
+    <description><p>Nederlandse Genealogische Vereniging</p></description>
+  </source>
+  <source id="gedbas">
+    <name>Die GEnealogische DatenBASis</name>
+    <description><p>CompGen - Verein für Computergenealogie</p></description>
+  </source>
+  <source id="gedcom-explorer">
+    <name>GedCom Explorer</name>
+    <description><p>GedComSolutions</p></description>
+  </source>
+  <source id="gedfamilies">
+    <name>GedFamilies</name>
+    <description><p>TelGen</p></description>
+  </source>
+  <source id="gedfan">
+    <name>The GEDCOM Fan Creator</name>
+    <description><p>Tamura Jones</p></description>
+  </source>
+  <source id="geditcom">
+    <name>GEDitCOM</name>
+    <description><p><a class="external" href="http://www.geditcom.com/">RSAC Software</a></p></description>
+  </source>
+  <source id="gedlink-editor">
+    <name>GedLink Editor</name>
+    <description><p>Infoduc</p></description>
+  </source>
+  <source id="genbox">
+    <name>Genbox Family History</name>
+    <description><p>Thoughtfull Creations</p></description>
+  </source>
+  <source id="gendesigner_2">
+    <name>GenDesigner</name>
+    <description><p>PolishExpress, Inc.</p></description>
+  </source>
+  <source id="gene">
+    <name>Gene</name>
+    <description><p>David &amp; Diana Epstein</p></description>
+  </source>
+  <source id="genealogia">
+    <name>Genealogia</name>
+    <description><p>Stefano Boscolo</p></description>
+  </source>
+  <source id="genealogic">
+    <name>Genealogic</name>
+    <description><p>Infoduc</p></description>
+  </source>
+  <source id="généalogie">
+    <name>Généalogie</name>
+    <description><p>DefCompany</p></description>
+  </source>
+  <source id="genealogie.com">
+    <name>genealogie.com</name>
+    <description><p>NotreFamilie</p></description>
+  </source>
+  <source id="genealogie-ab">
+    <name>Genealogie-AB</name>
+    <description><p>André Bouwmeester</p></description>
+  </source>
+  <source id="généalogos">
+    <name>Généalogos</name>
+    <description><p>Editions Profil</p></description>
+  </source>
+  <source id="genealogyj">
+    <name>GenealogyJ</name>
+    <description><p>Open source genealogy application; see <a class="external" href="https://sourceforge.net/projects/genj">https://sourceforge.net/projects/genj</a></p></description>
+  </source>
+  <source id="généamania">
+    <name>Généamania</name>
+    <description><p>Jean-Luc Servin</p></description>
+  </source>
+  <source id="geneatique">
+    <name>Généatique</name>
+    <description><p>Centre de Développement de l’Informatique Personnelle (CDIP)</p></description>
+  </source>
+  <source id="geneweb">
+    <name>GeneWeb</name>
+    <description><p>INRIA</p></description>
+  </source>
+  <source id="geni.com">
+    <name>Geni.com</name>
+    <description><p>Geni.com</p></description>
+  </source>
+  <source id="genius-for-windows">
+    <name>GENIUS for Windows</name>
+  </source>
+  <source id="genj">
+    <name>GenealogyJ</name>
+    <description><p>Nils Meier</p></description>
+  </source>
+  <source id="genopro">
+    <name>GenoPro</name>
+    <description><p>Family tree and genogram creation tool; see <a class="external" href="https://www.genopro.com">http://www.genopro.com</a></p>
+      <p>The native application creates invalid GEDCOM files that do not follow specifications for basic data, like marriages. A plug-in for its report writer creates more compliant GEDCOM documents.</p></description>
+  </source>
+  <source id="genprofi---stammbaun">
+    <name>GENprofi - Stammbaum</name>
+    <description><p>Carsten Leue</p></description>
+  </source>
+  <source id="gensdata">
+    <name>GensDataPro</name>
+    <description><p>Nederlandse Genealogische Vereniging</p></description>
+  </source>
+  <source id="gentree">
+    <name>GenTree</name>
+  </source>
+  <source id="gesw2004">
+    <name>GESW2004</name>
+  </source>
+  <source id="geves">
+    <name>Geves</name>
+    <description><p>Gevesoft Ltd.</p></description>
+  </source>
+  <source id="ghome">
+    <name>GHome</name>
+    <description><p><a href="http://www.suhrsoft.de/ghome.html">Michael Suhr</a></p></description>
+  </source>
+  <source id="gim">
+    <name>The Genealogical Information Manager</name>
+    <description><p>David Blaine Wasden and Brian C. Madsen</p></description>
+  </source>
+  <source id="gl_monitor">
+    <name>Genlias Monitor</name>
+    <description><p>Bob Coret</p></description>
+  </source>
+  <source id="gp_96_std">
+    <name>GenProfi (Classic)</name>
+    <description><p>Heiko Thimm</p></description>
+  </source>
+  <source id="gramps">
+    <name>Gramps</name>
+    <description><p>An open source genealogy application; see <a class="external" href="https://github.com/gramps-project/gramps">https://github.com/gramps-project/gramps</a></p></description>
+  </source>
+  <source id="greatfamily_1.1">
+    <name>GreatFamily</name>
+  </source>
+  <source id="griot">
+    <name>GRIOT Alternative</name>
+    <description><p>Elisabeth Sauquet and Yves de La Martiniere</p></description>
+  </source>
+  <source id="gruexport">
+    <name>Genes Reunited</name>
+    <description><p>Genes Reunited Ltd.</p></description>
+  </source>
+  <source id="gsp-family-tree">
+    <name>GSP Family Tree</name>
+    <description><p>Avanquest Software</p></description>
+  </source>
+  <source id="haza-data">
+    <name>Haza-Data</name>
+    <description><p>Telapas Software</p></description>
+  </source>
+  <source id="heredis">
+    <name>Heredis</name>
+    <description><p><a class="external" href="https://www.heredis.com">Heredis</a></p></description>
+  </source>
+  <source id="holger-6.0">
+    <name>Holger</name>
+    <description><p>Holger Data</p></description>
+  </source>
+  <source id="ifamily-for-leopard">
+    <name>iFamily for Leopard</name>
+    <description><p>Warwick Wilson</p></description>
+  </source>
+  <source id="igi">
+    <name>International Genealogical Index</name>
+    <description><p>The Church of Jesus Christ of Latter-Day Saints</p></description>
+  </source>
+  <source id="issue">
+    <name>Issue</name>
+    <description><p>Armidale Software</p></description>
+  </source>
+  <source id="kith_and_kin">
+    <name>Kith and Kin Pro</name>
+    <description><p>SpanSoft</p></description>
+  </source>
+  <source id="kkn">
+    <name>Kindred Konnections</name>
+    <description><p>Fficiency Software, Inc.</p></description>
+  </source>
+  <source id="legacy">
+    <name>Legacy</name>
+    <description><p><a class="external" href="https://legacyfamilytree.com">Millennia Corp.</a></p></description>
+  </source>
+  <source id="le-genealogiste">
+    <name>Le Généalogiste Deluxe</name>
+    <description>
+      <p>Micro Application</p>
+      <p>Rebranded version of <a href="#heredis">Heredis</a></p>
+    </description>
+  </source>
+  <source id="lifelines">
+    <name>Lifelines</name>
+    <description>
+      <p><a href="http://marcno.github.io/lifelines">LifeLines</a>, an open source project.</p>
+      <p>The original author was Tom Wetmore.</p>
+    </description>
+  </source>
+  <source id="magikey-family-tre">
+    <name>MagiKey Family Tre</name>
+    <description><p>Armidale Software</p></description>
+  </source>
+  <source id="memorixmaior">
+    <name>MemorixMaior</name>
+    <description><p>Picturae</p></description>
+  </source>
+  <source id="minsläkt">
+    <name>MinSläkt</name>
+    <description><p>Dannbergs Data</p></description>
+  </source>
+  <source id="my-family-heritage-v4.0">
+    <name>My Family Heritage</name>
+  </source>
+  <source id="myheritage">
+    <name>MyHeritage Family Tree Builder</name>
+    <description><p>See <a class="external" href="https://www.myheritage.com">https://www.myheritage.com</a></p></description>
+  </source>
+  <source id="ohmigene">
+    <name>ohmiGene</name>
+    <description><p>ohm inProduction</p></description>
+  </source>
+  <source id="openarch">
+    <name>Open Archieven</name>
+    <description><p>Bob Coret</p></description>
+  </source>
+  <source id="paf">
+    <name>Personal Ancestral File</name>
+    <description><p>See <a class="external" href="https://www.familysearch.org/paf">https://www.familysearch.org/paf</a></p></description>
+  </source>
+  <source id="pafwiz">
+    <name>PAFWiz</name>
+    <description><p>Incline Software</p></description>
+  </source>
+  <source id="parentele">
+    <name>Parentele</name>
+    <description><p>Mindscape France</p></description>
+  </source>
+  <source id="paw2">
+    <name>Personal Ancestry Writer II</name>
+    <description><p>See <a class="external" href="http://lanopalera.org/Genealogy/AboutPAWriter.html">http://lanopalera.org/Genealogy/AboutPAWriter.html</a></p></description>
+  </source>
+  <source id="pcahnen">
+    <name>PC-Ahnen</name>
+    <description><p>Günther Schwärzer</p></description>
+  </source>
+  <source id="pedigreepursuit">
+    <name>Pedigree Pursuit</name>
+  </source>
+  <source id="phpgedview">
+    <name>PhpGedView</name>
+  </source>
+  <source id="pro-gen">
+    <name>PRO-GEN</name>
+    <description><p>PRO-GEN Genealogie à la Carte</p></description>
+  </source>
+  <source id="rel2">
+    <name>Relativity II</name>
+    <description><p>Guardian Data Systems Inc.</p></description>
+  </source>
+  <source id="relatively_yours">
+    <name>Relatively Yours</name>
+    <description><p>Computability Pty., Ltd.</p></description>
+  </source>
+  <source id="reunion">
+    <name>Reunion for Mac</name>
+    <description><p><a class="external" href="https://www.leisterpro.com/">Leister Productions</a></p></description>
+  </source>
+  <source id="rootsiii">
+    <name>ROOTS III</name>
+    <description><p>CommSoft</p></description>
+  </source>
+  <source id="rootsiv">
+    <name>ROOTS IV</name>
+    <description><p>CommSoft</p></description>
+  </source>
+  <source id="rootsv">
+    <name>ROOTS V</name>
+    <description><p>CommSoft</p></description>
+  </source>
+  <source id="rootsmagic">
+    <name>RootsMagic</name>
+    <description><p><a class="external" href="https://www.rootsmagic.com">RootsMagic, Inc.</a></p></description>
+  </source>
+  <source id="rootsmaster2">
+    <name>RootsMaster</name>
+  </source>
+  <source id="rootstrust">
+    <name>rootstrust</name>
+    <description><p><a class="external" href="https://www.rootstrust.com">Atavus, Inc.</a></p></description>
+  </source>
+  <source id="scion_amiga">
+    <name>Scion Genealogist</name>
+    <description><p>Robbie J. Akins</p></description>
+  </source>
+  <source id="seegedcomx">
+    <name>SeeGEDCOMX</name>
+    <description><p>Keith McCulloch</p></description>
+  </source>
+  <source id="simple_family_tree">
+    <name>Simple Family Tree</name>
+  </source>
+  <source id="snl">
+    <name>StamboomNederland</name>
+    <description><p>Centraal Bureau voor Genealogie</p></description>
+  </source>
+  <source id="stam">
+    <name>STAM</name>
+    <description><p>Lucien Lefevere</p></description>
+  </source>
+  <source id="stamboom-2000">
+    <name>Stamboom 2000</name>
+    <description><p>Patrick Oude Scholten</p></description>
+  </source>
+  <source id="stamboom-de-luxe">
+    <name>Stamboom De Luxe</name>
+    <description><p>TLC-EDUSOFT</p></description>
+  </source>
+  <source id="suku">
+    <name>Sukuohjelmisto</name>
+    <description><p>Kaarle Kailan</p></description>
+  </source>
+  <source id="syniumfamilytree">
+    <name>MacFamilyTree</name>
+    <description><p>Synium Software GmbH</p></description>
+  </source>
+  <source id="templeready">
+    <name>TempleReady</name>
+    <description><p><a href="https://www.familysearch.org">FamilySearch</a></p></description>
+  </source>
+  <source id="the-next-generation-of-genealogy-sitebuilding">
+    <name>The Next Generation of Genealogy Sitebuilding</name>
+    <description><p>A web-based genealogy application by Next Generation Software, LLC; see <a class="external" href="https://www.tngsitebuilding.com">https://www.tngsitebuilding.com</a></p></description>
+  </source>
+  <source id="tmg">
+    <name>The Master Genealogist</name>
+    <description><p><a class="external" href="https://www.whollygenes.com">Wholly Genes, Inc.</a></p></description>
+  </source>
+  <source id="treeview">
+    <name>TreeView</name>
+    <description><p>British Data Archive</p></description>
+  </source>
+  <source id="tribalpages">
+    <name>TribalPages</name>
+    <description><p>TribalPages</p></description>
+  </source>
+  <source id="uftree">
+    <name>Ultimate Family Tree</name>
+    <description><p>Palladium Interactive</p></description>
+  </source>
+  <source id="verwandt">
+    <name>Verwandt</name>
+    <description><p>Verwandt</p></description>
+  </source>
+  <source id="visugene">
+    <name>Visual Genelaogie</name>
+    <description><p>Jerome Saynes</p></description>
+  </source>
+  <source id="webtrees">
+    <name>webtrees</name>
+    <description><p>An open source, web-based genealogy application; see <a class="external" href="https://www.webtrees.net/">https://www.webtrees.net/</a></p></description>
+  </source>
+  <source id="wikitree">
+    <name>WikiTree</name>
+    <description><p>Interesting.com, Inc.</p></description>
+  </source>
+  <source id="winfamily">
+    <name>WinFamily</name>
+    <description><p><a class="external" href="https://winfamily.com">WinFamily</a></p></description>
+  </source>
+  <source id="wingenea">
+    <name>WinGenea</name>
+    <description><p>CremSoft</p></description>
+  </source>
+</document>

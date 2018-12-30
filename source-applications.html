@@ -1,0 +1,813 @@
+﻿<!DOCTYPE html>
+<!--
+  
+Copyright (C) 2019 by John Cardinal.
+
+Everyone is permitted to copy and distribute verbatim copies of this document, but changing it is not allowed.
+
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Source Applications</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="alternate stylesheet" href="light.css" title="Light" />
+  <link rel="stylesheet" href="dark.css" title="Dark" />
+  <style>
+  .app {font-weight: bold; }
+  td.code { line-height: 1.2; padding-left: .5em; text-indent: 0; }
+  td p:first-child { margin-top: 0; }
+  </style>
+</head>
+<body id="top">
+  <article>
+    <header>
+      <h1>Source Applications</h1>
+    </header>
+
+    <div>
+      <dl>
+        <dt class="editor">Editor:</dt>
+        <dd class="editor p-author">John Cardinal (<span class="organization"><a class="external" href="https://www.familyhistoryhosting.com">Family History Hosting, LLC</a></span>)</dd>
+
+        <dt id="copyright-notice">Copyright:</dt>
+        <dd class="copyright">Copyright &copy; 2019 by John Cardinal<br /><br />Everyone is permitted to copy and distribute verbatim copies of this document, but changing it is not allowed.</dd>
+      </dl>
+    </div>
+
+    <section id="section-document-information">
+      <h2>Document Information</h2>
+
+      <h3 id="abstract">Abstract</h3>
+
+      <p>This document lists known <a class="external" href="gedcom-5.5.2.html#system-id-pe">SYSTEM_IDs</a> for GEDCOM files and, when possible, includes details about the application that uses the a given &lt;SYSTEM_ID&gt;.</p>
+
+      <h3 id="document-status">Document Status</h3>
+
+      <p>This document is updated as new &lt;SYSTEM_IDs&gt; are discovered. Feedback and comments are welcome. You may create a pull-request to propose and collaborate on changes to the document.</p>
+
+      <dl class="simple-list">
+        <dt>GitHub Project</dt>
+        <dd><a href="https://github.com/jfcardinal/GEDCOM-5.5.2">GEDCOM-5.5.2</a></dd>
+
+        <dt>Public URL of Document</dt>
+        <dd><a href="https://jfcardinal.github.io/GEDCOM-5.5.2/gedcom-sources.html">https://jfcardinal.github.io/GEDCOM-5.5.2/source-applications.html</a></dd>
+
+        <dt>Associated documents</dt>
+        <dd><a href="https://jfcardinal.github.io/GEDCOM-5.5.2/index.html">https://jfcardinal.github.io/GEDCOM-5.5.2</a></dd>
+      </dl>
+    </section>
+    
+    <section class="toc_container">
+      <h2 class="toc_title">Contents</h2>
+      <ul class="toc_list">
+        <!-- Table of Contents entries -->
+</ul>
+    </section>
+
+    <section id="section-gedcom-source-list">
+      <h2>Applications</h2>
+
+      <p>The programs and online services listed here have been gathered from several sources.</p>
+      
+      <p>For any program with an "Instances" link, we have reviewed one or more GEDCOM files from the application and summarized HEAD section metadata as seen in the <a href="#system-id-and-metadata">SYSTEM_ID and Metadata</a> section.</p>
+
+      <table>
+          <thead>
+            <tr>
+              <th>Application</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <!-- source application list -->
+<tbody>
+<tr id="altree"><td>AgeLong Tree</td><td><p>Genery Software</p></td></tr>
+<tr id="ages"><td>Ages!<br /><a href="#ages-instances">Instances</a></td><td><p>Daub EVD-Beratung</p></td></tr>
+<tr id="ahn"><td>Ahnenblatt<br /><a href="#ahn-instances">Instances</a></td><td><p><a href="https://www.ahnenblatt.com/">http://www.ahnenforscher.ch</a> (Dirk Boettcher)</p></td></tr>
+<tr id="ahnenforscher"><td>Ahnenforscher</td><td><p><a href="http://www.ahnenforscher.ch">http://www.ahnenforscher.ch</a> (Remo Schlauri)</p></td></tr>
+<tr id="ahnengalerie"><td>Ahnengalerie</td><td><p>MindScape</p></td></tr>
+<tr id="aldfaer"><td>Aldfaer<br /><a href="#aldfaer-instances">Instances</a></td><td><p>Stichting Aldfaer</p></td></tr>
+<tr id="anstfile"><td>Ancestral File<br /><a href="#anstfile-instances">Instances</a></td><td><p>FamilySearch</p></td></tr>
+<tr id="ancestquest"><td>Ancestral Quest<br /><a href="#ancestquest-instances">Instances</a></td><td><p><a class="external" href="https://www.ancquest.com">Incline Software, LC</a></p></td></tr>
+<tr id="ancestris"><td>Ancestris</td><td><p>Ancestris Team</p></td></tr>
+<tr id="ancestrologie"><td>Ancestrologie<br /><a href="#ancestrologie-instances">Instances</a></td><td><p>Ancestrologie.org</p></td></tr>
+<tr id="ancestry"><td>Ancestry Member Trees<br /><a href="#ancestry-instances">Instances</a></td><td><p>Online Family Tree</p></td></tr>
+<tr id="albero-genealogico-gsp"><td>Ancestry Member Trees (Italy)<br /><a href="#albero-genealogico-gsp-instances">Instances</a></td><td><p><a href="https://www.ancestry.it">Ancestry.it</a></p></td></tr>
+<tr id="ancestry.com-family-trees"><td>Ancestry.com Family Trees<br /><a href="#ancestry.com-family-trees-instances">Instances</a></td><td><p>Ancestry.com Family Trees are GEDCOM files downloaded from Ancestry.com user-maintained family trees.</p></td></tr>
+<tr id="arbre-genealogique"><td>Arbre généalogique<br /><a href="#arbre-genealogique-instances">Instances</a></td><td><p>TLC-EDUSOFT</p></td></tr>
+<tr id="behold"><td>Behold</td><td><p><a class="external" href="http://www.beholdgenealogy.com">Behold Genealogy</a> (Louis Kessler)</p></td></tr>
+<tr id="branches"><td>Branches</td><td><p>Sherwood Electronics Laboratories</p></td></tr>
+<tr id="broskeep"><td>Brother's Keeper<br /><a href="#broskeep-instances">Instances</a></td><td><p><a class="external" href="https://www.bkwin.org">John Steed</a></p></td></tr>
+<tr id="crusader-kings"><td>CK Family Tree Maker</td><td><p>Paradox Entertainment</p></td></tr>
+<tr id="cftree"><td>Cumberland Family Tree<br /><a href="#cftree-instances">Instances</a></td><td><p><a class="external" href="http://www.cft-win.com">Cumberland Family Software</a></p></td></tr>
+<tr id="gedbas"><td>Die GEnealogische DatenBASis</td><td><p>CompGen - Verein für Computergenealogie</p></td></tr>
+<tr id="disgen"><td>DISGEN<br /><a href="#disgen-instances">Instances</a></td><td><p>Foreningen</p><p>Swedish</p></td></tr>
+<tr id="dorotree"><td>DoroTree for Windows<br /><a href="#dorotree-instances">Instances</a></td><td><p>DoroTree Technologies Ltd.</p></td></tr>
+<tr id="dynas-tree"><td>DYNAS-TREE</td><td><p>Gerhard Bauch Software Entwicklung</p></td></tr>
+<tr id="easy-family-tree"><td>Easy Family Tree</td><td><p>Sierra Home</p></td></tr>
+<tr id="easytree"><td>EasyTree<br /><a href="#easytree-instances">Instances</a></td><td><p>Siera On-Line</p></td></tr>
+<tr id="embla_familie_og_slekt"><td>Embla Family Treasures</td><td><p>Embla Norsk Familiehistorie AS</p></td></tr>
+<tr id="family-historian"><td>Export Gedcom File</td><td><p>A plug-in for <a href="#family_historian">Family Historian</a> that exports GEDCOM files subject to a variety of options; see <a class="external" href="https://www.family-historian.co.uk/pluginstore/plugin-entry?id=522">https://www.family-historian.co.uk/pluginstore/plugin-entry?id=522</a></p></td></tr>
+<tr id="familienbande"><td>Familienbande</td><td><p>Stefan Mettenbrink</p></td></tr>
+<tr id="family-echo"><td>Family Echo<br /><a href="#family-echo-instances">Instances</a></td><td><p><a class="external" href="https://www.familyecho.com">Familiality Ltd.</a></p></td></tr>
+<tr id="family-edge-plus"><td>Family Edge Plus</td><td><p>Carl J. Cox</p></td></tr>
+<tr id="family-for-windows"><td>Family for Windows<br /><a href="#family-for-windows-instances">Instances</a></td><td></td></tr>
+<tr id="famgath"><td>Family Gathering<br /><a href="#famgath-instances">Instances</a></td><td><p>Palladium Interactive, Inc.</p></td></tr>
+<tr id="family_historian"><td>Family Historian<br /><a href="#family_historian-instances">Instances</a></td><td><p><a class="external" href="https://www.family-historian.co.uk">Calico Pie Limited</a></p></td></tr>
+<tr id="fhsv2"><td>Family History System</td><td><p>Phillip E. Brown</p></td></tr>
+<tr id="familyorigins"><td>Family Origins for Windows<br /><a href="#familyorigins-instances">Instances</a></td><td><p>FormalSoft</p></td></tr>
+<tr id="famroots"><td>Family Roots</td><td><p>Quinsept</p></td></tr>
+<tr id="fsb"><td>Family Scrapbook</td><td><p>Visionary Endeavors</p></td></tr>
+<tr id="familyties"><td>Family Ties<br /><a href="#familyties-instances">Instances</a></td><td><p>Individual Software (see <a href="#famtreehrtg">Family Tree Heritage</a>)</p></td></tr>
+<tr id="famtiesdlx"><td>Family Ties Deluxe</td><td><p>Individual Software</p></td></tr>
+<tr id="family_tree_for_java"><td>Family Tree for Java</td><td></td></tr>
+<tr id="famtreehrtg"><td>Family Tree Heritage<br /><a href="#famtreehrtg-instances">Instances</a></td><td><p>Individual Softare</p></td></tr>
+<tr id="ftl"><td>Family Tree Legends<br /><a href="#ftl-instances">Instances</a></td><td><p>Pearl Street Software</p></td></tr>
+<tr id="ftm"><td>Family Tree Maker for Windows<br /><a href="#ftm-instances">Instances</a></td><td><p><a class="external" href="https://www.mackiev.com/">The Software MacKiev Company</a> with prior versions published other companies</p></td></tr>
+<tr id="ftmwe"><td>Family Tree Maker World Express<br /><a href="#ftmwe-instances">Instances</a></td><td><p>A "lite" version of <a href="#ftm">Family Tree Maker</a></p></td></tr>
+<tr id="famtreesqe"><td>Family Trees Quick & Easy<br /><a href="#famtreesqe-instances">Instances</a></td><td></td></tr>
+<tr id="dc-thomson-family-history---find-my-past-us"><td>findmypast</td><td><p>DC Thomson Family History</p></td></tr>
+<tr id="foreldra"><td>Foreldra<br /><a href="#foreldra-instances">Instances</a></td><td><p>Espolin Parsing Utility (?)</p></td></tr>
+<tr id="ftree"><td>Ftree</td><td><p>Clive Stubbings</p></td></tr>
+<tr id="fullerfamilyhistory"><td>fullerfamilyhistory.org<br /><a href="#fullerfamilyhistory-instances">Instances</a></td><td><p>Charles Fuller</p></td></tr>
+<tr id="gedcom-explorer"><td>GedCom Explorer</td><td><p>GedComSolutions</p></td></tr>
+<tr id="gedfamilies"><td>GedFamilies</td><td><p>TelGen</p></td></tr>
+<tr id="geditcom"><td>GEDitCOM<br /><a href="#geditcom-instances">Instances</a></td><td><p><a class="external" href="http://www.geditcom.com/">RSAC Software</a></p></td></tr>
+<tr id="gedlink-editor"><td>GedLink Editor</td><td><p>Infoduc</p></td></tr>
+<tr id="genbox"><td>Genbox Family History<br /><a href="#genbox-instances">Instances</a></td><td><p>Thoughtfull Creations</p></td></tr>
+<tr id="gendesigner_2"><td>GenDesigner<br /><a href="#gendesigner_2-instances">Instances</a></td><td><p>PolishExpress, Inc.</p></td></tr>
+<tr id="gene"><td>Gene<br /><a href="#gene-instances">Instances</a></td><td><p>David &amp; Diana Epstein</p></td></tr>
+<tr id="genealogia"><td>Genealogia</td><td><p>Stefano Boscolo</p></td></tr>
+<tr id="genealogic"><td>Genealogic<br /><a href="#genealogic-instances">Instances</a></td><td><p>Infoduc</p></td></tr>
+<tr id="généalogie"><td>Généalogie</td><td><p>DefCompany</p></td></tr>
+<tr id="genealogie.com"><td>genealogie.com<br /><a href="#genealogie.com-instances">Instances</a></td><td><p>NotreFamilie</p></td></tr>
+<tr id="genealogie-ab"><td>Genealogie-AB</td><td><p>André Bouwmeester</p></td></tr>
+<tr id="généalogos"><td>Généalogos</td><td><p>Editions Profil</p></td></tr>
+<tr id="genj"><td>GenealogyJ<br /><a href="#genj-instances">Instances</a></td><td><p>Nils Meier</p></td></tr>
+<tr id="genealogyj"><td>GenealogyJ</td><td><p>Open source genealogy application; see <a class="external" href="https://sourceforge.net/projects/genj">https://sourceforge.net/projects/genj</a></p></td></tr>
+<tr id="généamania"><td>Généamania<br /><a href="#généamania-instances">Instances</a></td><td><p>Jean-Luc Servin</p></td></tr>
+<tr id="geneatique"><td>Généatique<br /><a href="#geneatique-instances">Instances</a></td><td><p>Centre de Développement de l’Informatique Personnelle (CDIP)</p></td></tr>
+<tr id="gruexport"><td>Genes Reunited<br /><a href="#gruexport-instances">Instances</a></td><td><p>Genes Reunited Ltd.</p></td></tr>
+<tr id="geneweb"><td>GeneWeb<br /><a href="#geneweb-instances">Instances</a></td><td><p>INRIA</p></td></tr>
+<tr id="geni.com"><td>Geni.com</td><td><p>Geni.com</p></td></tr>
+<tr id="genius-for-windows"><td>GENIUS for Windows</td><td></td></tr>
+<tr id="gl_monitor"><td>Genlias Monitor</td><td><p>Bob Coret</p></td></tr>
+<tr id="genopro"><td>GenoPro<br /><a href="#genopro-instances">Instances</a></td><td><p>Family tree and genogram creation tool; see <a class="external" href="https://www.genopro.com">http://www.genopro.com</a></p><p>The native application creates invalid GEDCOM files that do not follow specifications for basic data, like marriages. A plug-in for its report writer creates more compliant GEDCOM documents.</p></td></tr>
+<tr id="genprofi---stammbaun"><td>GENprofi - Stammbaum</td><td><p>Carsten Leue</p></td></tr>
+<tr id="gp_96_std"><td>GenProfi (Classic)</td><td><p>Heiko Thimm</p></td></tr>
+<tr id="gd-win"><td>GensData for Windows</td><td><p>Nederlandse Genealogische Vereniging</p></td></tr>
+<tr id="gensdata"><td>GensDataPro<br /><a href="#gensdata-instances">Instances</a></td><td><p>Nederlandse Genealogische Vereniging</p></td></tr>
+<tr id="gentree"><td>GenTree</td><td></td></tr>
+<tr id="gesw2004"><td>GESW2004</td><td></td></tr>
+<tr id="geves"><td>Geves</td><td><p>Gevesoft Ltd.</p></td></tr>
+<tr id="ghome"><td>GHome<br /><a href="#ghome-instances">Instances</a></td><td><p><a href="http://www.suhrsoft.de/ghome.html">Michael Suhr</a></p></td></tr>
+<tr id="gramps"><td>Gramps<br /><a href="#gramps-instances">Instances</a></td><td><p>An open source genealogy application; see <a class="external" href="https://github.com/gramps-project/gramps">https://github.com/gramps-project/gramps</a></p></td></tr>
+<tr id="greatfamily_1.1"><td>GreatFamily</td><td></td></tr>
+<tr id="griot"><td>GRIOT Alternative<br /><a href="#griot-instances">Instances</a></td><td><p>Elisabeth Sauquet and Yves de La Martiniere</p></td></tr>
+<tr id="gsp-family-tree"><td>GSP Family Tree<br /><a href="#gsp-family-tree-instances">Instances</a></td><td><p>Avanquest Software</p></td></tr>
+<tr id="haza-data"><td>Haza-Data</td><td><p>Telapas Software</p></td></tr>
+<tr id="heredis"><td>Heredis<br /><a href="#heredis-instances">Instances</a></td><td><p><a class="external" href="https://www.heredis.com">Heredis</a></p></td></tr>
+<tr id="holger-6.0"><td>Holger<br /><a href="#holger-6.0-instances">Instances</a></td><td><p>Holger Data</p></td></tr>
+<tr id="ifamily-for-leopard"><td>iFamily for Leopard</td><td><p>Warwick Wilson</p></td></tr>
+<tr id="igi"><td>International Genealogical Index<br /><a href="#igi-instances">Instances</a></td><td><p>The Church of Jesus Christ of Latter-Day Saints</p></td></tr>
+<tr id="issue"><td>Issue<br /><a href="#issue-instances">Instances</a></td><td><p>Armidale Software</p></td></tr>
+<tr id="kkn"><td>Kindred Konnections<br /><a href="#kkn-instances">Instances</a></td><td><p>Fficiency Software, Inc.</p></td></tr>
+<tr id="kith_and_kin"><td>Kith and Kin Pro<br /><a href="#kith_and_kin-instances">Instances</a></td><td><p>SpanSoft</p></td></tr>
+<tr id="le-genealogiste"><td>Le Généalogiste Deluxe<br /><a href="#le-genealogiste-instances">Instances</a></td><td><p>Micro Application</p><p>Rebranded version of <a href="#heredis">Heredis</a></p></td></tr>
+<tr id="legacy"><td>Legacy<br /><a href="#legacy-instances">Instances</a></td><td><p><a class="external" href="https://legacyfamilytree.com">Millennia Corp.</a></p></td></tr>
+<tr id="lifelines"><td>Lifelines<br /><a href="#lifelines-instances">Instances</a></td><td><p><a href="http://marcno.github.io/lifelines">LifeLines</a>, an open source project.</p><p>The original author was Tom Wetmore.</p></td></tr>
+<tr id="syniumfamilytree"><td>MacFamilyTree</td><td><p>Synium Software GmbH</p></td></tr>
+<tr id="magikey-family-tre"><td>MagiKey Family Tre</td><td><p>Armidale Software</p></td></tr>
+<tr id="memorixmaior"><td>MemorixMaior</td><td><p>Picturae</p></td></tr>
+<tr id="cft"><td>Mindscape Family Tree Creator<br /><a href="#cft-instances">Instances</a></td><td></td></tr>
+<tr id="minsläkt"><td>MinSläkt</td><td><p>Dannbergs Data</p></td></tr>
+<tr id="my-family-heritage-v4.0"><td>My Family Heritage</td><td></td></tr>
+<tr id="myheritage"><td>MyHeritage Family Tree Builder<br /><a href="#myheritage-instances">Instances</a></td><td><p>See <a class="external" href="https://www.myheritage.com">https://www.myheritage.com</a></p></td></tr>
+<tr id="ohmigene"><td>ohmiGene</td><td><p>ohm inProduction</p></td></tr>
+<tr id="openarch"><td>Open Archieven</td><td><p>Bob Coret</p></td></tr>
+<tr id="pafwiz"><td>PAFWiz</td><td><p>Incline Software</p></td></tr>
+<tr id="parentele"><td>Parentele<br /><a href="#parentele-instances">Instances</a></td><td><p>Mindscape France</p></td></tr>
+<tr id="pcahnen"><td>PC-Ahnen</td><td><p>Günther Schwärzer</p></td></tr>
+<tr id="pedigreepursuit"><td>Pedigree Pursuit</td><td></td></tr>
+<tr id="paf"><td>Personal Ancestral File<br /><a href="#paf-instances">Instances</a></td><td><p>See <a class="external" href="https://www.familysearch.org/paf">https://www.familysearch.org/paf</a></p></td></tr>
+<tr id="paw2"><td>Personal Ancestry Writer II<br /><a href="#paw2-instances">Instances</a></td><td><p>See <a class="external" href="http://lanopalera.org/Genealogy/AboutPAWriter.html">http://lanopalera.org/Genealogy/AboutPAWriter.html</a></p></td></tr>
+<tr id="phpgedview"><td>PhpGedView<br /><a href="#phpgedview-instances">Instances</a></td><td></td></tr>
+<tr id="pro-gen"><td>PRO-GEN<br /><a href="#pro-gen-instances">Instances</a></td><td><p>PRO-GEN Genealogie à la Carte</p></td></tr>
+<tr id="relatively_yours"><td>Relatively Yours<br /><a href="#relatively_yours-instances">Instances</a></td><td><p>Computability Pty., Ltd.</p></td></tr>
+<tr id="rel2"><td>Relativity II</td><td><p>Guardian Data Systems Inc.</p></td></tr>
+<tr id="reunion"><td>Reunion for Mac<br /><a href="#reunion-instances">Instances</a></td><td><p><a class="external" href="https://www.leisterpro.com/">Leister Productions</a></p></td></tr>
+<tr id="rootsiii"><td>ROOTS III<br /><a href="#rootsiii-instances">Instances</a></td><td><p>CommSoft</p></td></tr>
+<tr id="rootsiv"><td>ROOTS IV</td><td><p>CommSoft</p></td></tr>
+<tr id="rootsv"><td>ROOTS V<br /><a href="#rootsv-instances">Instances</a></td><td><p>CommSoft</p></td></tr>
+<tr id="rootsmagic"><td>RootsMagic<br /><a href="#rootsmagic-instances">Instances</a></td><td><p><a class="external" href="https://www.rootsmagic.com">RootsMagic, Inc.</a></p></td></tr>
+<tr id="rootsmaster2"><td>RootsMaster</td><td></td></tr>
+<tr id="rootstrust"><td>rootstrust</td><td><p><a class="external" href="https://www.rootstrust.com">Atavus, Inc.</a></p></td></tr>
+<tr id="scion_amiga"><td>Scion Genealogist<br /><a href="#scion_amiga-instances">Instances</a></td><td><p>Robbie J. Akins</p></td></tr>
+<tr id="seegedcomx"><td>SeeGEDCOMX<br /><a href="#seegedcomx-instances">Instances</a></td><td><p>Keith McCulloch</p></td></tr>
+<tr id="simple_family_tree"><td>Simple Family Tree<br /><a href="#simple_family_tree-instances">Instances</a></td><td></td></tr>
+<tr id="stam"><td>STAM</td><td><p>Lucien Lefevere</p></td></tr>
+<tr id="stamboom-2000"><td>Stamboom 2000</td><td><p>Patrick Oude Scholten</p></td></tr>
+<tr id="stamboom-de-luxe"><td>Stamboom De Luxe<br /><a href="#stamboom-de-luxe-instances">Instances</a></td><td><p>TLC-EDUSOFT</p></td></tr>
+<tr id="snl"><td>StamboomNederland</td><td><p>Centraal Bureau voor Genealogie</p></td></tr>
+<tr id="suku"><td>Sukuohjelmisto<br /><a href="#suku-instances">Instances</a></td><td><p>Kaarle Kailan</p></td></tr>
+<tr id="templeready"><td>TempleReady</td><td><p><a href="https://www.familysearch.org">FamilySearch</a></p></td></tr>
+<tr id="gedfan"><td>The GEDCOM Fan Creator</td><td><p>Tamura Jones</p></td></tr>
+<tr id="gim"><td>The Genealogical Information Manager<br /><a href="#gim-instances">Instances</a></td><td><p>David Blaine Wasden and Brian C. Madsen</p></td></tr>
+<tr id="tmg"><td>The Master Genealogist<br /><a href="#tmg-instances">Instances</a></td><td><p><a class="external" href="https://www.whollygenes.com">Wholly Genes, Inc.</a></p></td></tr>
+<tr id="the-next-generation-of-genealogy-sitebuilding"><td>The Next Generation of Genealogy Sitebuilding<br /><a href="#the-next-generation-of-genealogy-sitebuilding-instances">Instances</a></td><td><p>A web-based genealogy application by Next Generation Software, LLC; see <a class="external" href="https://www.tngsitebuilding.com">https://www.tngsitebuilding.com</a></p></td></tr>
+<tr id="treeview"><td>TreeView</td><td><p>British Data Archive</p></td></tr>
+<tr id="tribalpages"><td>TribalPages</td><td><p>TribalPages</p></td></tr>
+<tr id="uftree"><td>Ultimate Family Tree<br /><a href="#uftree-instances">Instances</a></td><td><p>Palladium Interactive</p></td></tr>
+<tr id="verwandt"><td>Verwandt</td><td><p>Verwandt</p></td></tr>
+<tr id="visugene"><td>Visual Genelaogie<br /><a href="#visugene-instances">Instances</a></td><td><p>Jerome Saynes</p></td></tr>
+<tr id="webtrees"><td>webtrees<br /><a href="#webtrees-instances">Instances</a></td><td><p>An open source, web-based genealogy application; see <a class="external" href="https://www.webtrees.net/">https://www.webtrees.net/</a></p></td></tr>
+<tr id="wikitree"><td>WikiTree</td><td><p>Interesting.com, Inc.</p></td></tr>
+<tr id="winfamily"><td>WinFamily<br /><a href="#winfamily-instances">Instances</a></td><td><p><a class="external" href="https://winfamily.com">WinFamily</a></p></td></tr>
+<tr id="wingenea"><td>WinGenea<br /><a href="#wingenea-instances">Instances</a></td><td><p>CremSoft</p></td></tr>
+</tbody>
+      </table>
+
+
+      <!--
+
+      <table>
+        <thead>
+          <tr>
+            <th>SOUR</th>
+            <th>Application</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr id="ancestry.com-family-trees">
+            <td class="nowrap invalid">Ancestry.com Family Trees</td>
+            <td><span class="app">Ancestry.com Family Trees</span><br/>Ancestry.com Family Trees are GEDCOM files downloaded from Ancestry.com user-maintained family trees.</td>
+          </tr>
+
+          <tr id="ancestquest">
+            <td>AncestQuest</td>
+            <td><span class="app">Ancestral Quest</span><br/>A genealogy application by Incline Software, LC; see <a class="external" href="https://www.ancquest.com">https://www.ancquest.com</a></td>
+          </tr>
+
+          <tr id="broskeep">
+            <td>BROSKEEP</td>
+            <td><span class="app">Brother's Keeper</span><br/>A genealogy application by John Steed; see <a class="external" href="https://www.bkwin.org">https://www.bkwin.org</a></td>
+          </tr>
+
+          <tr id="broskeep">
+            <td>Family Echo</td>
+            <td><span class="app">Family Echo</span><br/>An online applicaton by Familiality Ltd.; see <a class="external" href="https://www.familyecho.com">https://www.familyecho.com</a></td>
+          </tr>
+          <tr id="export-gedcom-file-plug-in">
+            <td class="nowrap invalid">FAMILY HISTORIAN</td>
+            <td><span class="app">Export Gedcom File</span> (plug-in for Family Historian)<br/>A plug-in for <a href="#family-historian">Family Historian</a> that exports GEDCOM files subject to a variety of options; see <a class="external" href="https://www.family-historian.co.uk/pluginstore/plugin-entry?id=522">https://www.family-historian.co.uk/pluginstore/plugin-entry?id=522</a></td>
+          </tr>
+
+          <tr id="family-historian">
+            <td>FAMILY_HISTORIAN</td>
+            <td><span class="app">Family Historian</span><br/>A genealogy application published by Calico Pie Limited; see <a class="external" href="https://www.family-historian.co.uk">https://www.family-historian.co.uk</a></td>
+          </tr>
+
+          <tr id="ftm">
+            <td>FTM</td>
+            <td><span class="app">Family Tree Maker for Windows</span><br/>A genealogy application published by The Software MacKiev Company; see <a class="external" href="https://www.mackiev.com/">https://www.mackiev.com/</a></td>
+          </tr>
+
+          <tr id="ftw">
+            <td>FTW</td>
+            <td><span class="app">Family Tree Maker for Windows</span><br/>A genealogy application published by multiple companies and superceded by the <a href="#ftm">Software MacKieve</a> version above</td>
+          </tr>
+
+          <tr id="geditcom">
+            <td>GEDitCOM</td>
+            <td><span class="app">GEDitCOM</span><br/>A genealogy application published by RSAC Software; see <a class="external" href="http://www.geditcom.com/">http://www.geditcom.com/</a></td>
+          </tr>
+
+          <tr id="genealogyj">
+            <td>GENJ</td>
+            <td><span class="app">GenealogyJ</span><br/>Open source genealogy application; see <a class="external" href="https://sourceforge.net/projects/genj">https://sourceforge.net/projects/genj</a></td>
+          </tr>
+
+          <tr id="gramps">
+            <td>Gramps</td>
+            <td><span class="app">Gramps</span><br/>Open source genealogy application; see <a class="external" href="https://github.com/gramps-project/gramps">https://github.com/gramps-project/gramps</a></td>
+          </tr>
+
+          <tr id="genopro">
+            <td>GenoPro</td>
+            <td><span class="app">GenoPro</span><br/>Family tree and genogram creation tool; see <a class="external" href="https://www.genopro.com">http://www.genopro.com</a><br />(Creates invalid GEDCOM files that do not follow specifications for basic data, like marriages.)</td>
+          </tr>
+
+          <tr id="heredis-pc2017">
+            <td class="invalid">HEREDIS PC2018<br />HEREDIS MAC2018</td>
+            <td><span class="app">Heredis</span><br/>A genealogy application; see <a class="external" href="https://www.heredis.com">http://www.heredis.com</a><br />Heredis includes a version indicator in the SOUR value, so there are multiple other variations of the SOUR value. GEDCOM files with the following variations have been found online: HEREDIS PC2017, HEREDIS 12 PC, HEREDIS 11 PC, HEREDIS 8 PC, HEREDIS 7 PC, HEREDIS 6.1 PC</td>
+          </tr>
+
+          <tr id="legacy">
+            <td>Legacy</td>
+            <td><span class="app">Legacy</span><br/>A genealogy application published by Millennia Corp.; see <a class="external" href="https://legacyfamilytree.com">https://legacyfamilytree.com</a></td>
+          </tr>
+
+          <tr id="myheritage">
+            <td>MYHERITAGE</td>
+            <td><span class="app">MyHeritage Family Tree Builder</span><br/>See <a class="external" href="https://www.myheritage.com">https://www.myheritage.com</a></td>
+          </tr>
+
+          <tr id="paf">
+            <td>PAF</td>
+            <td><span class="app">Personal Ancestral File</span><br/>See <a class="external" href="https://www.familysearch.org/paf">https://www.familysearch.org/paf</a></td>
+          </tr>
+
+          <tr id="paw2">
+            <td>PAW2</td>
+            <td><span class="app">Personal Ancestry Writer II</span><br/>See <a class="external" href="http://lanopalera.org/Genealogy/AboutPAWriter.html">http://lanopalera.org/Genealogy/AboutPAWriter.html</a></td>
+          </tr>
+
+          <tr id="reunion">
+            <td>Reunion</td>
+            <td><span class="app">Reunion for Mac</span><br/>A genealogy application by Leister Productions; see <a class="external" href="https://www.leisterpro.com/">https://www.leisterpro.com/</a></td>
+          </tr>
+
+          <tr id="rootsmagic">
+            <td>RootsMagic</td>
+            <td><span class="app">RootsMagic</span><br/>A genealogy application by RootsMagic, Inc.; see <a class="external" href="https://www.rootsmagic.com">https://www.rootsmagic.com</a></td>
+          </tr>
+
+          <tr id="rootstrust">
+            <td>rootstrust</td>
+            <td><span class="app">rootstrust</span><br/>A genealogy application by Atavus, Inc.; see <a class="external" href="https://www.rootstrust.com">https://www.rootstrust.com</a></td>
+          </tr>
+
+          <tr id="tng">
+            <td class="invalid">The Next Generation of Genealogy Sitebuilding</td>
+            <td><span class="app">The Next Generation of Genealogy Sitebuilding</span><br/>A web-based genealogy application by Next Generation Software, LLC; see <a class="external" href="https://www.tngsitebuilding.com">https://www.tngsitebuilding.com</a></td>
+          </tr>
+
+          <tr id="tmg">
+            <td>TMG</td>
+            <td><span class="app">The Master Genealogist</span><br/>A genealogy application by Wholly Genes, Inc.; see <a class="external" href="https://www.whollygenes.com">https://www.whollygenes.com</a></td>
+          </tr>
+
+          <tr id="webtrees">
+            <td>webtrees</td>
+            <td><span class="app">webtrees</span><br/>An open source, web-based genealogy application; see <a class="external" href="https://www.webtrees.net/">https://www.webtrees.net/</a></td>
+          </tr>
+        </tbody>
+      </table>
+        -->
+    </section>
+
+    <section id="section-system-id_and-metadata">
+      <h2>SYSTEM_ID and Metadata</h2>
+
+      <p>The following table was created from inspecting several thousand GEDCOM files found on the Internet. It shows instances of &lt;SYSTEM_IDs&gt; combined with other metadata from a document's HEAD subrecord.</p>
+
+      <ul>
+        <li>The <strong>SOUR</strong> column shows the value of the HEAD.SOUR subrecord. When there is more than one value, the other values were also found for the same application. Some applications include a program version number in the HEAD.SOUR subrecord rather than in the HEAD.SOUR.VERS subrecord and that leads to multiple entries in this table cell.</li>
+        <li>The <strong>SOUR.VERS</strong> column shows the value of the HEAD.SOUR.VERS subrecord. The variations (if any) are sorted by the value in this column from lowest-to-highest order when possible.</li>
+        <li>The <strong>GEDC.VERS</strong> column shows the value of the HEAD.GEDC.VERS subrecord.</li>
+        <li>The <strong>CHAR</strong> column shows the value of the HEAD.CHAR subrecord. Values that appear to be incorrect are shown like <span class="code incorrect">this</span>.</li>
+      </ul>
+
+      <p>The combinations shown in the table do not show all the possible variations for any given &lt;SYSTEM_ID&gt;.</p>
+
+    </section>
+  </article>
+
+  <section id="section-table">
+    <table>
+        <thead>
+          <tr>
+            <th>Application</th>
+            <th>SYSTEM_ID</th>
+            <th>SOUR.VERS</th>
+            <th>GEDC.VERS</th>
+            <th>CHAR</th>
+          </tr>
+        </thead>
+        <!-- source instance list -->
+<tbody>
+<tr id="ages-instances"><td rowspan="3"><a href="#ages">Ages!</a></td><td class="code" rowspan="3"><ul class="option-list"><li class="nowrap">AGES</li></ul></td><td class="code">1.00</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">1.31</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">1.50</td><td class="code">5.5.1</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr id="ahn-instances"><td rowspan="6"><a href="#ahn">Ahnenblatt</a></td><td class="code" rowspan="6"><ul class="option-list"><li class="nowrap">AHN</li></ul></td><td class="code">1.29a</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">2.01</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">2.60</td><td class="code">5.5.1</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">2.60</td><td class="code">5.5.1</td><td class="code">UTF-8</td></tr>
+<tr><td class="code">2.62</td><td class="code">5.5.1</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">2.85</td><td class="code">5.5.1</td><td class="code">UTF-8</td></tr>
+<tr id="albero-genealogico-gsp-instances"><td rowspan="1"><a href="#albero-genealogico-gsp">Ancestry Member Trees (Italy)</a></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">Albero genealogico GSP</li></ul></td><td class="code"></td><td class="code"></td><td class="code"><span class="incorrect nowrap"></span></td></tr>
+<tr id="aldfaer-instances"><td rowspan="7"><a href="#aldfaer">Aldfaer</a></td><td class="code" rowspan="7"><ul class="option-list"><li class="nowrap">ALDFAER</li></ul></td><td class="code">3.2</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">3.2.1</td><td class="code">5.5</td><td class="code">ASCII</td></tr>
+<tr><td class="code">3.3.2</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">3.4</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">3.4.1</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">3.5.3</td><td class="code">5.5</td><td class="code">ASCII</td></tr>
+<tr><td class="code">6.2</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr id="ancestquest-instances"><td rowspan="24"><a href="#ancestquest">Ancestral Quest</a></td><td class="code" rowspan="24"><ul class="option-list"><li class="nowrap">AncestQuest</li><li class="nowrap">EFT</li></ul></td><td class="code">AncestQuest V. 1.1</td><td class="code">4.0</td><td class="code"><span class="incorrect nowrap"></span></td></tr>
+<tr><td class="code">AncestQuest V. 2.0</td><td class="code">4.0</td><td class="code"><span class="incorrect nowrap"></span></td></tr>
+<tr><td class="code">2.1</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">2.1</td><td class="code">4.0</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">AncestQuest V. 2.1</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">3.0</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">3.0</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">3.0</td><td class="code">4.0</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">11</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">12.00.10</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr><td class="code">12.00.11</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr><td class="code">12.00.14</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr><td class="code">12.01.14</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr><td class="code">12.01.22</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr><td class="code">12.01.23</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr><td class="code">12.01.25</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr><td class="code">12.01.33</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr><td class="code">14.00.13</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr><td class="code">14.00.17</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr><td class="code">14.00.18</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr><td class="code">14.00.27</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr><td class="code">15.0.5</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr><td class="code">15.0.9</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr><td class="code">2002</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr id="ancestrologie-instances"><td rowspan="10"><a href="#ancestrologie">Ancestrologie</a></td><td class="code" rowspan="10"><ul class="option-list"><li class="nowrap">Ancestrologie</li></ul></td><td class="code">Version 2.1.5.5</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">Version 2004.10.11.188</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">Version 2004.10.14.192</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">Version 2004.11.18.223</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">Version 2007.0.0.763</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">Version 2008.0.0.781</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">Version 2009.0.0.1036</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">Version 2010.0.0.1228</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">Version 2011.0.0.1310</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">Version 2011.0.0.1339</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr id="ancestry-instances"><td rowspan="1"><a href="#ancestry">Ancestry Member Trees</a></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">ANCESTRY</li></ul></td><td class="code">1.0</td><td class="code">4.0</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr id="ancestry.com-family-trees-instances"><td rowspan="3"><a href="#ancestry.com-family-trees">Ancestry.com Family Trees</a></td><td class="code" rowspan="3"><ul class="option-list"><li class="nowrap">Ancestry.com Family Trees</li></ul></td><td class="code">Ancestry.com Family Trees (1)</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">(2009)</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">(2010.3)</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr id="anetavle-instances"><td rowspan="1"></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">Anetavle</li></ul></td><td class="code">version 2.6.2</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr id="anstfile-instances"><td rowspan="4"><a href="#anstfile">Ancestral File</a></td><td class="code" rowspan="4"><ul class="option-list"><li class="nowrap">ANSTFILE</li></ul></td><td class="code"></td><td class="code">1.0</td><td class="code"><span class="incorrect nowrap"></span></td></tr>
+<tr><td class="code">4.18</td><td class="code">GEDCOM 5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">4.19</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">4.19</td><td class="code">GEDCOM 5.5</td><td class="code">ANSEL</td></tr>
+<tr id="arbre-genealogique-instances"><td rowspan="1"><a href="#arbre-genealogique">Arbre généalogique</a></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">ARBRE GENEALOGIQUE</li></ul></td><td class="code">3.0</td><td class="code">5.5</td><td class="code">ASCII</td></tr>
+<tr id="arbre-généalogique-instances"><td rowspan="1"></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">AGF</li></ul></td><td class="code">2.00</td><td class="code">5.3</td><td class="code">ASCII</td></tr>
+<tr id="arbre-généalogique-gsp-instances"><td rowspan="1"></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">Arbre généalogique GSP</li></ul></td><td class="code"></td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr id="arbredit-instances"><td rowspan="1"></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">ArbrEdit</li></ul></td><td class="code">1.6b</td><td class="code">5.2</td><td class="code"><span class="incorrect nowrap">MS-DOS</span></td></tr>
+<tr id="broskeep-instances"><td rowspan="28"><a href="#broskeep">Brother's Keeper</a></td><td class="code" rowspan="28"><ul class="option-list"><li class="nowrap">BROSKEEP</li></ul></td><td class="code">5.2 WINDOWS</td><td class="code"></td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">5.2 WINDOWS</td><td class="code"></td><td class="code"><span class="incorrect nowrap">IBMPC</span></td></tr>
+<tr><td class="code">5.2 WINDOWS</td><td class="code"></td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr><td class="code">5.2</td><td class="code"></td><td class="code"><span class="incorrect nowrap">IBMPC</span></td></tr>
+<tr><td class="code">6.0 WINDOWS</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">6.0 WINDOWS</td><td class="code"></td><td class="code">ANSEL</td></tr>
+<tr><td class="code">6.1.8 WINDOWS</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">6.1.9 WINDOWS</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">6.1.10 WINDOWS</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">6.1.19 WINDOWS</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">6.1.29 WINDOWS</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">6.1.31 WINDOWS</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">6.1.37 WINDOWS</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">6.2.0 WINDOWS</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">6.2.2 WINDOWS</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">6.2.4 WINDOWS</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">6.2.4 WINDOWS</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">6.2.11 WINDOWS</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">6.2.12 WINDOWS</td><td class="code">5.5</td><td class="code">ASCII</td></tr>
+<tr><td class="code">6.2.18 WINDOWS</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">6.2.19 WINDOWS</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">6.2.20 WINDOWS</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">6.2.66 WINDOWS</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">6.2.80 WINDOWS</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">6.4.33 WINDOWS</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">6.5.0 WINDOWS</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">7.0.42 WINDOWS</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr><td class="code">7.2.1 WINDOWS</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr id="cft-instances"><td rowspan="1"><a href="#cft">Mindscape Family Tree Creator</a></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">CFT</li></ul></td><td class="code">2.0</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr id="cftree-instances"><td rowspan="2"><a href="#cftree">Cumberland Family Tree</a></td><td class="code" rowspan="2"><ul class="option-list"><li class="nowrap">CFTREE</li></ul></td><td class="code">CFTREE 1.0 Windows</td><td class="code">5.2</td><td class="code"><span class="incorrect nowrap">IBM-PC</span></td></tr>
+<tr><td class="code">CFTREE Windows Ver 2.50</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr id="cn-instances"><td rowspan="1"></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">CN</li></ul></td><td class="code">1.0</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr id="dannebrogsmand.pl-instances"><td rowspan="1"></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">dannebrogsmand.pl</li></ul></td><td class="code">1.0</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr id="disgen-instances"><td rowspan="4"><a href="#disgen">DISGEN</a></td><td class="code" rowspan="4"><ul class="option-list"><li class="nowrap">DISGEN 4.5</li><li class="nowrap">DISGEN 6.0-5-beta</li><li class="nowrap">DISGEN 6.0-6</li><li class="nowrap">MinSlèakt</li></ul></td><td class="code"></td><td class="code"></td><td class="code"><span class="incorrect nowrap">UNIX</span></td></tr>
+<tr><td class="code"></td><td class="code"></td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">V3.4</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">V3.7</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr id="dorotree-instances"><td rowspan="1"><a href="#dorotree">DoroTree for Windows</a></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">DOROTREE</li></ul></td><td class="code">2.00</td><td class="code"></td><td class="code"><span class="incorrect nowrap"></span></td></tr>
+<tr id="easytree-instances"><td rowspan="5"><a href="#easytree">EasyTree</a></td><td class="code" rowspan="5"><ul class="option-list"><li class="nowrap">EasyTree</li></ul></td><td class="code">V1.0</td><td class="code">5.01</td><td class="code"><span class="incorrect nowrap">IBM WINDOWS</span></td></tr>
+<tr><td class="code">V5.2</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">IBM WINDOWS</span></td></tr>
+<tr><td class="code">V5.2</td><td class="code">4.0</td><td class="code"><span class="incorrect nowrap">IBM WINDOWS</span></td></tr>
+<tr><td class="code">V6.0</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">IBM WINDOWS</span></td></tr>
+<tr><td class="code">V8.0</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">IBM WINDOWS</span></td></tr>
+<tr id="embla-family-treasures-instances"><td rowspan="1"></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">Embla Family Treasures</li></ul></td><td class="code">5  (5.0.67)</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr id="famgath-instances"><td rowspan="2"><a href="#famgath">Family Gathering</a></td><td class="code" rowspan="2"><ul class="option-list"><li class="nowrap">FAMGATH</li></ul></td><td class="code">1.0</td><td class="code">4+</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">1.1</td><td class="code">4+</td><td class="code">ANSEL</td></tr>
+<tr id="family-echo-instances"><td rowspan="1"><a href="#family-echo">Family Echo</a></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">Family Echo</li></ul></td><td class="code"></td><td class="code">5.5.1</td><td class="code">UTF-8</td></tr>
+<tr id="family-for-windows-instances"><td rowspan="1"><a href="#family-for-windows">Family for Windows</a></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">Family For Windows</li></ul></td><td class="code"></td><td class="code"></td><td class="code">ASCII</td></tr>
+<tr id="family-treasures-instances"><td rowspan="1"></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">Family Treasures</li></ul></td><td class="code">4  (0.8.154)</td><td class="code">5.5</td><td class="code">ASCII</td></tr>
+<tr id="family-tree-instances"><td rowspan="1"></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">FAMILY TREE</li></ul></td><td class="code"></td><td class="code"></td><td class="code">ANSEL</td></tr>
+<tr id="family_historian-instances"><td rowspan="2"><a href="#family_historian">Family Historian</a></td><td class="code" rowspan="2"><ul class="option-list"><li class="nowrap">FAMILY_HISTORIAN</li></ul></td><td class="code">3.0</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">3.1</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr id="familyorigins-instances"><td rowspan="10"><a href="#familyorigins">Family Origins for Windows</a></td><td class="code" rowspan="10"><ul class="option-list"><li class="nowrap">FamilyOrigins</li></ul></td><td class="code">3.0 for Windows</td><td class="code">5.3</td><td class="code"><span class="incorrect nowrap"></span></td></tr>
+<tr><td class="code">4.0</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap"></span></td></tr>
+<tr><td class="code">4.1a</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap"></span></td></tr>
+<tr><td class="code">5.0</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">6.0</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">6.0</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">7.0</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">8.0</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">9.0</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">10.0</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr id="familyties-instances"><td rowspan="3"><a href="#familyties">Family Ties</a></td><td class="code" rowspan="3"><ul class="option-list"><li class="nowrap">FamilyTies</li><li class="nowrap">FamTiesDlx</li></ul></td><td class="code">1.0</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">2.1</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">6.0</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr id="familytree-instances"><td rowspan="1"></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">FamilyTree</li></ul></td><td class="code">7.6</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr id="famtreehrtg-instances"><td rowspan="1"><a href="#famtreehrtg">Family Tree Heritage</a></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">FamTreeHrtg</li></ul></td><td class="code">7.0.00</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr id="famtreesqe-instances"><td rowspan="2"><a href="#famtreesqe">Family Trees Quick & Easy</a></td><td class="code" rowspan="2"><ul class="option-list"><li class="nowrap">FamTreesQE</li></ul></td><td class="code">4</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">5</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr id="foreldra-instances"><td rowspan="1"><a href="#foreldra">Foreldra</a></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">Foreldra</li></ul></td><td class="code">1.0</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr id="ftj-instances"><td rowspan="2"></td><td class="code" rowspan="2"><ul class="option-list"><li class="nowrap">FTJ</li></ul></td><td class="code">11.0</td><td class="code"></td><td class="code"><span class="incorrect nowrap"></span></td></tr>
+<tr><td class="code">12.0</td><td class="code"></td><td class="code"><span class="incorrect nowrap"></span></td></tr>
+<tr id="ftl-instances"><td rowspan="1"><a href="#ftl">Family Tree Legends</a></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">FTL</li></ul></td><td class="code">4.05</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr id="ftm-instances"><td rowspan="6"><a href="#ftm">Family Tree Maker for Windows</a></td><td class="code" rowspan="6"><ul class="option-list"><li class="nowrap">FTM</li></ul></td><td class="code">Family Tree Maker (17.0.0.757)</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">Family Tree Maker (20.0.0.368)</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">Family Tree Maker (20.0.0.376)</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">Family Tree Maker (21.0.0.723)</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">22.0.1.1510</td><td class="code">5.5.1</td><td class="code">UTF-8</td></tr>
+<tr><td class="code">23.1.0.1480</td><td class="code">5.5.1</td><td class="code">UTF-8</td></tr>
+<tr id="ftmwe-instances"><td rowspan="1"><a href="#ftmwe">Family Tree Maker World Express</a></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">FTMWE</li></ul></td><td class="code">1.00</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr id="ftsk-instances"><td rowspan="1"></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">FTSK</li></ul></td><td class="code"></td><td class="code"></td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr id="fttw-instances"><td rowspan="1"></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">FTTW</li></ul></td><td class="code"></td><td class="code"></td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr id="ftw-instances"><td rowspan="24"><a href="#ftm">Family Tree Maker for Windows</a></td><td class="code" rowspan="24"><ul class="option-list"><li class="nowrap">FTW</li></ul></td><td class="code"></td><td class="code"></td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code"></td><td class="code"></td><td class="code">ANSEL</td></tr>
+<tr><td class="code"></td><td class="code"></td><td class="code"><span class="incorrect nowrap">IBMPC</span></td></tr>
+<tr><td class="code">1.0</td><td class="code">5.3</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">3.00</td><td class="code">5.3</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">3.40</td><td class="code">5.3</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">3.40</td><td class="code">5.3</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">3.40</td><td class="code">5.3</td><td class="code"><span class="incorrect nowrap">IBMPC</span></td></tr>
+<tr><td class="code">4.00</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">4.00</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">IBMPC</span></td></tr>
+<tr><td class="code">5.00</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">5.00</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">IBMPC</span></td></tr>
+<tr><td class="code">6.00</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">7.00</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">7.5</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">8.0</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">9.0</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">10.0</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">11.0</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">Family Tree Maker (13.0.281)</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">Family Tree Maker (13.0.285)</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">Family Tree Maker (16.0.350)</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">Family Tree Maker 2005 (12.0.337) July 30, 2004</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">Family Tree Maker 2005 (12.0.345 SP1) August 20, 2004</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr id="fullerfamilyhistory-instances"><td rowspan="1"><a href="#fullerfamilyhistory">fullerfamilyhistory.org</a></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">FullerFamilyHistory</li></ul></td><td class="code">5.0</td><td class="code">5.5.1</td><td class="code">ANSEL</td></tr>
+<tr id="geditcom-instances"><td rowspan="2"><a href="#geditcom">GEDitCOM</a></td><td class="code" rowspan="2"><ul class="option-list"><li class="nowrap">GEDitCOM</li></ul></td><td class="code">2.0</td><td class="code">5.5</td><td class="code">ASCII</td></tr>
+<tr><td class="code">2.9.4</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr id="genbox-instances"><td rowspan="1"><a href="#genbox">Genbox Family History</a></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">GENBOX</li></ul></td><td class="code">3.1.12</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr id="gendesigner_2-instances"><td rowspan="1"><a href="#gendesigner_2">GenDesigner</a></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">GENDESIGNER_2</li></ul></td><td class="code"></td><td class="code"></td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr id="gene-instances"><td rowspan="1"><a href="#gene">Gene</a></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">Gene</li></ul></td><td class="code">4.3</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr id="genealogic-instances"><td rowspan="5"><a href="#genealogic">Genealogic</a></td><td class="code" rowspan="5"><ul class="option-list"><li class="nowrap">GENEALOGIC</li></ul></td><td class="code">98.2.0</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">98.2.0</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">2002.7.4</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">2003.1.27</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">2005.1.66</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr id="genealogie.com-instances"><td rowspan="1"><a href="#genealogie.com">genealogie.com</a></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">GENEALOGIE.COM</li></ul></td><td class="code">2004</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr id="généamania-instances"><td rowspan="2"><a href="#généamania">Généamania</a></td><td class="code" rowspan="2"><ul class="option-list"><li class="nowrap">Généamania</li></ul></td><td class="code">3.0.1</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">5.0.1</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr id="geneatique-instances"><td rowspan="11"><a href="#geneatique">Généatique</a></td><td class="code" rowspan="11"><ul class="option-list"><li class="nowrap">GENEATIQUE</li><li class="nowrap">GENEATIQUE_POUR_WINDOWS</li></ul></td><td class="code">97.2 32 bits</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">2000</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">2000 2.0</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">2000 2.0</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">2004</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">2006</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">2007</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">2009</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">2009</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">MX</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">MX</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr id="geneweb-instances"><td rowspan="8"><a href="#geneweb">GeneWeb</a></td><td class="code" rowspan="8"><ul class="option-list"><li class="nowrap">GeneWeb</li></ul></td><td class="code">3.03</td><td class="code">5.5</td><td class="code">ASCII</td></tr>
+<tr><td class="code">4.05</td><td class="code">5.5</td><td class="code">ASCII</td></tr>
+<tr><td class="code">4.09</td><td class="code">5.5</td><td class="code">ASCII</td></tr>
+<tr><td class="code">4.10-exp</td><td class="code">5.5</td><td class="code">ASCII</td></tr>
+<tr><td class="code">4.10</td><td class="code">5.5</td><td class="code">ASCII</td></tr>
+<tr><td class="code">5.00</td><td class="code">5.5</td><td class="code">ASCII</td></tr>
+<tr><td class="code">5.01-exp</td><td class="code">5.5</td><td class="code">ASCII</td></tr>
+<tr><td class="code">7.00 - exp</td><td class="code">5.5</td><td class="code">ASCII</td></tr>
+<tr id="genj-instances"><td rowspan="3"><a href="#genj">GenealogyJ</a></td><td class="code" rowspan="3"><ul class="option-list"><li class="nowrap">GENJ</li></ul></td><td class="code">2.4.x</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">2.4.2</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">version</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr id="genopro-instances"><td rowspan="30"><a href="#genopro">GenoPro</a></td><td class="code" rowspan="30"><ul class="option-list"><li class="nowrap">GenoPro</li><li class="nowrap">GenoProÂ®</li></ul></td><td class="code">1.53</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">1.71</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">1.91b</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">1.99c</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">2.00</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr><td class="code">2.0.0.2</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr><td class="code">2.0.0.3</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr><td class="code">2.0.0.7</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr><td class="code">2.0.0.9</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr><td class="code">2.0.1.1</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr><td class="code">2.0.1.3</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr><td class="code">2.0.1.4</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr><td class="code">2.0.1.5</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr><td class="code">2.0.1.6</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">windows-1250</span></td></tr>
+<tr><td class="code">2.0.1.6</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr><td class="code">2.0.1.3/2007.02.28</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr><td class="code">2.5.3.2</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr><td class="code">2.5.3.4</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr><td class="code">2.5.3.5</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr><td class="code">2.5.3.7</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr><td class="code">2.5.3.8</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr><td class="code">2.5.3.9</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr><td class="code">2.5.4.0</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr><td class="code">2.5.4.1</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr><td class="code">3.0.0.2</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr><td class="code">3.0.1.0</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr><td class="code">3.0.1.1</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr><td class="code">3.0.1.2</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr><td class="code">3.0.1.3</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr><td class="code">3.0.1.4</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr id="gensdata-instances"><td rowspan="1"><a href="#gensdata">GensDataPro</a></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">GensDataPro</li></ul></td><td class="code"></td><td class="code"></td><td class="code"><span class="incorrect nowrap">IBMPC</span></td></tr>
+<tr id="ghome-instances"><td rowspan="1"><a href="#ghome">GHome</a></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">GHome</li></ul></td><td class="code">1.0.0.0</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr id="gim-instances"><td rowspan="1"><a href="#gim">The Genealogical Information Manager</a></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">GIM</li></ul></td><td class="code">3.16</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">IBMPC</span></td></tr>
+<tr id="gnet-instances"><td rowspan="1"></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">GNET</li></ul></td><td class="code">1.0</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr id="gramps-instances"><td rowspan="10"><a href="#gramps">Gramps</a></td><td class="code" rowspan="10"><ul class="option-list"><li class="nowrap">GRAMPS</li></ul></td><td class="code">0.9.5-1</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">1.0.7-1</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr><td class="code">1.0.8-1</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">2.0.5-1</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">2.0.5-1</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr><td class="code">2.0.11-2</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">2.2.2-1</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr><td class="code">3.1.2-1</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr><td class="code">3.2.3-1</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr><td class="code">3.3.1-1</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr id="greatfamily_2.2-update-2-instances"><td rowspan="1"></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">GREATFAMILY_2.2 update 2</li></ul></td><td class="code"></td><td class="code"></td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr id="griot-instances"><td rowspan="1"><a href="#griot">GRIOT Alternative</a></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">GRIOT</li></ul></td><td class="code">V3.12</td><td class="code">5.0</td><td class="code"><span class="incorrect nowrap">IBMPC</span></td></tr>
+<tr id="gruexport-instances"><td rowspan="1"><a href="#gruexport">Genes Reunited</a></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">GRUExport</li></ul></td><td class="code">2.1.28</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr id="gsp-family-tree-instances"><td rowspan="1"><a href="#gsp-family-tree">GSP Family Tree</a></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">GSP Family Tree</li></ul></td><td class="code"></td><td class="code"></td><td class="code"><span class="incorrect nowrap"></span></td></tr>
+<tr id="gtedit-instances"><td rowspan="2"></td><td class="code" rowspan="2"><ul class="option-list"><li class="nowrap">GTEdit</li></ul></td><td class="code">0.1.0.0</td><td class="code"></td><td class="code"><span class="incorrect nowrap"></span></td></tr>
+<tr><td class="code">0.1.0.0</td><td class="code">5.5</td><td class="code">ASCII</td></tr>
+<tr id="heredis-instances"><td rowspan="22"><a href="#heredis">Heredis</a></td><td class="code" rowspan="22"><ul class="option-list"><li class="nowrap">HEREDIS 10 PC</li><li class="nowrap">HEREDIS 11 PC</li><li class="nowrap">Heredis PC2017</li><li class="nowrap">HEREDIS 12 PC</li><li class="nowrap">HEREDIS 5 PC</li><li class="nowrap">HEREDIS 6.1 PC</li><li class="nowrap">HEREDIS 7 PC</li><li class="nowrap">HEREDIS 8 PC</li><li class="nowrap">HEREDIS 9 PC</li><li class="nowrap">HEREDIS 98 PC</li></ul></td><td class="code">4.0</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr><td class="code">4.0</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">5.0</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">5.0</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">6.1</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">6.1</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">IBMPC</span></td></tr>
+<tr><td class="code">7</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">IBMPC</span></td></tr>
+<tr><td class="code">7</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">7</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">8</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">8</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">8</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">IBMPC</span></td></tr>
+<tr><td class="code">9</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">9</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">10</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">10</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">MAC X 10.0</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">MAC X 10.0</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">MACINTOSH</span></td></tr>
+<tr><td class="code">MAC X 10.0</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">IBMPC</span></td></tr>
+<tr><td class="code">11</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">12</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">2017</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr id="holger-6.0-instances"><td rowspan="1"><a href="#holger-6.0">Holger</a></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">HOLGER 6.0</li></ul></td><td class="code"></td><td class="code"></td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr id="ifw-instances"><td rowspan="1"></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">IFW</li></ul></td><td class="code">4.00</td><td class="code">5.3</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr id="igi-instances"><td rowspan="2"><a href="#igi">International Genealogical Index</a></td><td class="code" rowspan="2"><ul class="option-list"><li class="nowrap">IGI</li></ul></td><td class="code"></td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">4.0</td><td class="code">GEDCOM 5.5</td><td class="code">ANSEL</td></tr>
+<tr id="issue-instances"><td rowspan="1"><a href="#issue">Issue</a></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">Issue</li></ul></td><td class="code">1.0</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr id="kith_and_kin-instances"><td rowspan="4"><a href="#kith_and_kin">Kith and Kin Pro</a></td><td class="code" rowspan="4"><ul class="option-list"><li class="nowrap">Kith_and_Kin V3.0</li><li class="nowrap">Kith_and_Kin V3.12</li><li class="nowrap">KITHKIN_PRO</li></ul></td><td class="code"></td><td class="code"></td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">1.00999999046326</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">2.02</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">3.2.1</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr id="kkn-instances"><td rowspan="2"><a href="#kkn">Kindred Konnections</a></td><td class="code" rowspan="2"><ul class="option-list"><li class="nowrap">KKN</li></ul></td><td class="code">1.1</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">1.2</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr id="le-genealogiste-instances"><td rowspan="3"><a href="#le-genealogiste">Le Généalogiste Deluxe</a></td><td class="code" rowspan="3"><ul class="option-list"><li class="nowrap">LE GENEALOGISTE</li></ul></td><td class="code">1</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">1</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">1</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">IBMPC</span></td></tr>
+<tr id="legacy-instances"><td rowspan="16"><a href="#legacy">Legacy</a></td><td class="code" rowspan="16"><ul class="option-list"><li class="nowrap">Legacy</li></ul></td><td class="code">2.0</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">2.0.1</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">3.0</td><td class="code"></td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">4.0</td><td class="code"></td><td class="code">ANSEL</td></tr>
+<tr><td class="code">4.0</td><td class="code"></td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">5.0</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">5.0</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">6.0</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">6.0</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">6.0</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr><td class="code">7.0</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">7.4</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">7.5</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr><td class="code">7.5</td><td class="code">5.5.1</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">7.5</td><td class="code">5.5.1</td><td class="code">UTF-8</td></tr>
+<tr><td class="code">7.5</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr id="lifelines-instances"><td rowspan="1"><a href="#lifelines">Lifelines</a></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">LIFELINES 2.3.6</li></ul></td><td class="code"></td><td class="code"></td><td class="code"><span class="incorrect nowrap"></span></td></tr>
+<tr id="magikey-instances"><td rowspan="1"></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">MagiKey</li></ul></td><td class="code">5.1.0</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr id="manuelle-instances"><td rowspan="1"></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">manuelle</li></ul></td><td class="code">0.1</td><td class="code">5.5 - du 2 janvier 1996</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr id="media-applet-instances"><td rowspan="1"></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">Media Applet</li></ul></td><td class="code">1.0</td><td class="code"></td><td class="code"><span class="incorrect nowrap"></span></td></tr>
+<tr id="myheritage-instances"><td rowspan="5"><a href="#myheritage">MyHeritage Family Tree Builder</a></td><td class="code" rowspan="5"><ul class="option-list"><li class="nowrap">MYHERITAGE</li></ul></td><td class="code">2.0.0.676</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">3.0.0.802</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">4.0.0.897</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">5.0.0.1168</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">8.0.0.8319</td><td class="code">5.5.1</td><td class="code">UTF-8</td></tr>
+<tr id="paf-instances"><td rowspan="25"><a href="#paf">Personal Ancestral File</a></td><td class="code" rowspan="25"><ul class="option-list"><li class="nowrap">PAF</li><li class="nowrap">PAF 2.1</li><li class="nowrap">PAF 2.2</li><li class="nowrap">PAF 2.3</li><li class="nowrap">PAF 2.31</li><li class="nowrap">PAF 4.0</li><li class="nowrap">PAF 5.0</li></ul></td><td class="code"></td><td class="code"></td><td class="code">ANSEL</td></tr>
+<tr><td class="code"></td><td class="code"></td><td class="code"><span class="incorrect nowrap">MACINTOSH</span></td></tr>
+<tr><td class="code">3.0</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">4.0</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">4.0.3.23</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">4.0.4.16</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">4.0.4.18</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">4.0.4.18</td><td class="code">4.0</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">5.0.1.10</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">5.0.1.10</td><td class="code">4.0</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">5.0.1.10</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr><td class="code">5.1.3.0</td><td class="code">4.0</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">5.1.3.0</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr><td class="code">5.1.7.0</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">5.1.7.0</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr><td class="code">5.1.7.0</td><td class="code">4.0</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">5.1.12.0</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">5.1.12.0</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">5.1.12.0</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr><td class="code">5.1.12.0</td><td class="code">4.0</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">5.2.18.0</td><td class="code">4.0</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">5.2.18.0</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">5.2.18.0</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr><td class="code">5.2.18.0</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">5.2.18.0</td><td class="code">5.5</td><td class="code">UNICODE</td></tr>
+<tr id="parentele-instances"><td rowspan="1"><a href="#parentele">Parentele</a></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">PARENTELE</li></ul></td><td class="code">5.00.000</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">WINDOWS</span></td></tr>
+<tr id="parents3.0-instances"><td rowspan="1"></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">PARENTS3.0</li></ul></td><td class="code"></td><td class="code"></td><td class="code"><span class="incorrect nowrap"></span></td></tr>
+<tr id="paw2-instances"><td rowspan="2"><a href="#paw2">Personal Ancestry Writer II</a></td><td class="code" rowspan="2"><ul class="option-list"><li class="nowrap">PAW2</li></ul></td><td class="code"></td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr><td class="code"></td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr id="phpgedview-instances"><td rowspan="2"><a href="#phpgedview">PhpGedView</a></td><td class="code" rowspan="2"><ul class="option-list"><li class="nowrap">PhpGedView</li></ul></td><td class="code">1.1</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">4.2.4 stable</td><td class="code">5.5.1</td><td class="code">UTF-8</td></tr>
+<tr id="privat-instances"><td rowspan="1"></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">PRIVAT</li></ul></td><td class="code">2.00</td><td class="code"></td><td class="code"><span class="incorrect nowrap"></span></td></tr>
+<tr id="pro-gen-instances"><td rowspan="1"><a href="#pro-gen">PRO-GEN</a></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">PRO-GEN</li></ul></td><td class="code">3.0b-&#207;4 10-12-2001</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr id="relatively_yours-instances"><td rowspan="1"><a href="#relatively_yours">Relatively Yours</a></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">RELATIVELY_YOURS</li></ul></td><td class="code"></td><td class="code"></td><td class="code">ANSEL</td></tr>
+<tr id="reunion-instances"><td rowspan="12"><a href="#reunion">Reunion for Mac</a></td><td class="code" rowspan="12"><ul class="option-list"><li class="nowrap">REUNION</li></ul></td><td class="code">V4.0</td><td class="code">5.01</td><td class="code"><span class="incorrect nowrap">IBM DOS</span></td></tr>
+<tr><td class="code">V4.0</td><td class="code">5.01</td><td class="code"><span class="incorrect nowrap">IBM WINDOWS</span></td></tr>
+<tr><td class="code">V4.0</td><td class="code">5.01</td><td class="code"><span class="incorrect nowrap">MACINTOSH</span></td></tr>
+<tr><td class="code">V6.0</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">IBM WINDOWS</span></td></tr>
+<tr><td class="code">V7.0</td><td class="code">4.0</td><td class="code"><span class="incorrect nowrap">MACINTOSH</span></td></tr>
+<tr><td class="code">V7.0</td><td class="code">4.0</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">V7.0</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">MACINTOSH</span></td></tr>
+<tr><td class="code">V7.0</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">IBM WINDOWS</span></td></tr>
+<tr><td class="code">V8.0</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">IBM WINDOWS</span></td></tr>
+<tr><td class="code">V8.0</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">V9.0</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr><td class="code">V12.0</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr id="root-instances"><td rowspan="1"></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">ROOT</li></ul></td><td class="code">1.00</td><td class="code">5.5</td><td class="code">UNICODE</td></tr>
+<tr id="rootsiii-instances"><td rowspan="1"><a href="#rootsiii">ROOTS III</a></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">ROOTSIII</li></ul></td><td class="code"></td><td class="code"></td><td class="code"><span class="incorrect nowrap"></span></td></tr>
+<tr id="rootsmagic-instances"><td rowspan="21"><a href="#rootsmagic">RootsMagic</a></td><td class="code" rowspan="21"><ul class="option-list"><li class="nowrap">RootsMagic</li></ul></td><td class="code">1.0</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">1.02</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">1.04b</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">2.0</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">2.03</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">2.04</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">3.0.4</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">3.2</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">3.2.1</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">3.2.2</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">3.2.3</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">3.2.4</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">3.2.5</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">3.2.6</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">4.0</td><td class="code">5.5.1</td><td class="code">UTF-8</td></tr>
+<tr><td class="code">6.0</td><td class="code">5.5.1</td><td class="code">UTF-8</td></tr>
+<tr><td class="code">7.0.5.0</td><td class="code">5.5.1</td><td class="code">UTF-8</td></tr>
+<tr><td class="code">7.0.7.0</td><td class="code">5.5.1</td><td class="code">UTF-8</td></tr>
+<tr><td class="code">7.2.1.0</td><td class="code">5.5.1</td><td class="code">UTF-8</td></tr>
+<tr><td class="code">7.2.4.0</td><td class="code">5.5.1</td><td class="code">UTF-8</td></tr>
+<tr><td class="code">7.5.4.0</td><td class="code">5.5.1</td><td class="code">UTF-8</td></tr>
+<tr id="rootsv-instances"><td rowspan="1"><a href="#rootsv">ROOTS V</a></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">ROOTSV</li></ul></td><td class="code">5.01</td><td class="code">4+</td><td class="code">ANSEL</td></tr>
+<tr id="scion_amiga-instances"><td rowspan="1"><a href="#scion_amiga">Scion Genealogist</a></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">SCION_AMIGA</li></ul></td><td class="code">5.08</td><td class="code">5.3</td><td class="code"><span class="incorrect nowrap">ISO8859-1</span></td></tr>
+<tr id="seegedcomx-instances"><td rowspan="1"><a href="#seegedcomx">SeeGEDCOMX</a></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">SeeGEDCOMX</li></ul></td><td class="code">0.9b1</td><td class="code">5.5</td><td class="code">ASCII</td></tr>
+<tr id="simple_family_tree-instances"><td rowspan="2"><a href="#simple_family_tree">Simple Family Tree</a></td><td class="code" rowspan="2"><ul class="option-list"><li class="nowrap">SIMPLE_FAMILY_TREE</li></ul></td><td class="code">1.27</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">1.31</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr id="stamboom-de-luxe-instances"><td rowspan="1"><a href="#stamboom-de-luxe">Stamboom De Luxe</a></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">Stamboom De Luxe</li></ul></td><td class="code">3.0</td><td class="code">5.5</td><td class="code">ASCII</td></tr>
+<tr id="suku-instances"><td rowspan="1"><a href="#suku">Sukuohjelmisto</a></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">SUKU</li></ul></td><td class="code">8.0</td><td class="code">5.3</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr id="swift-family-ancestry-instances"><td rowspan="1"></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">SWIFT FAMILY ANCESTRY</li></ul></td><td class="code">1.0</td><td class="code"></td><td class="code"><span class="incorrect nowrap">IBMPC</span></td></tr>
+<tr id="the-next-generation-of-genealogy-sitebuilding-instances"><td rowspan="1"><a href="#the-next-generation-of-genealogy-sitebuilding">The Next Generation of Genealogy Sitebuilding</a></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">The Next Generation of Genealogy Sitebuilding</li></ul></td><td class="code">10.0.3</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr id="tmg-instances"><td rowspan="4"><a href="#tmg">The Master Genealogist</a></td><td class="code" rowspan="4"><ul class="option-list"><li class="nowrap">TMG</li></ul></td><td class="code">3.5</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">4.0d</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">v 6.04.000</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">v 6.12.000</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr id="transged-instances"><td rowspan="1"></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">TransGed</li></ul></td><td class="code">1.5.1</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr id="uftree-instances"><td rowspan="1"><a href="#uftree">Ultimate Family Tree</a></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">UFTREE</li></ul></td><td class="code">3.10 Patch</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr id="unregistered-instances"><td rowspan="2"></td><td class="code" rowspan="2"><ul class="option-list"><li class="nowrap">unregistered</li></ul></td><td class="code"></td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code"></td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
+<tr id="visugene-instances"><td rowspan="3"><a href="#visugene">Visual Genelaogie</a></td><td class="code" rowspan="3"><ul class="option-list"><li class="nowrap">VISUGENE</li></ul></td><td class="code">VISUGENE 2000.02.28</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">VISUGENE 2003.03.03</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">VISUGENE 2003.04.05</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr id="webtrees-instances"><td rowspan="1"><a href="#webtrees">webtrees</a></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">webtrees</li></ul></td><td class="code">1.7.2</td><td class="code">5.5.1</td><td class="code">UTF-8</td></tr>
+<tr id="winfamily-instances"><td rowspan="4"><a href="#winfamily">WinFamily</a></td><td class="code" rowspan="4"><ul class="option-list"><li class="nowrap">WINFAM</li></ul></td><td class="code">6.0</td><td class="code"></td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">6.01i</td><td class="code"></td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">6.02</td><td class="code"></td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">2009</td><td class="code"></td><td class="code">ANSEL</td></tr>
+<tr id="wingenea-instances"><td rowspan="1"><a href="#wingenea">WinGenea</a></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">WinGenea</li></ul></td><td class="code">2 CORP Cremsoft</td><td class="code"></td><td class="code"><span class="incorrect nowrap">IBMPC</span></td></tr>
+<tr id="xtex2ged.pl-instances"><td rowspan="1"></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">xtex2ged.pl</li></ul></td><td class="code">1.14</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr id="zorgus-instances"><td rowspan="1"></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">ZORGUS</li></ul></td><td class="code">1.1</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">WINDOWS</span></td></tr>
+</tbody>
+    </table>
+  </section>
+  <!--
+  <div class="fixed-menu">
+    <a href="#top">Top</a>
+  </div>
+    -->
+</body>
+</html>
