@@ -4973,7 +4973,7 @@ CHILD
 
         <dt id="tag-age">AGE <span class="tag-full-name">Age</span></dt>
         <dd>
-          <p>The age of the individual at the time an event occurred, or the age listed in the document.</p>
+          <p>The AGE subrecord specifies the age of the individual at the time an event occurred, or the age listed in the document, via its &lt;<a href="#age-at-event-pe">AGE<wbr>_AT<wbr>_EVENT</a>&gt; line_value.</p>
 
 <div class="references">
 <p>See:</p>
@@ -4987,7 +4987,7 @@ CHILD
 
         <dt id="tag-agnc">AGNC <span class="tag-full-name">Agency</span></dt>
         <dd>
-          <p>The institution or individual having authority and/or responsibility to manage or govern.</p>
+          <p>The AGNC subrecord specifies the name of an institution or individual having authority and/or responsibility to manage or govern via its &lt;<a href="#responsible-agency-pe">RESPONSIBLE<wbr>_AGENCY</a>&gt; line_value.</p>
 
 <div class="references">
 <p>See:</p>
@@ -5000,7 +5000,7 @@ CHILD
 
         <dt id="tag-alia">ALIA <span class="tag-full-name">Alias</span></dt>
         <dd>
-          <p>Links a different <a href="#tag-indi">INDI</a> record to the current INDI record. Indicates that the two records may refer to the same person.</p>
+          <p>THe ALIA subrecord links another <a href="#tag-indi">INDI</a> record to the current INDI record via its &lt;<a href="#id-indi-pe">ID:INDI</a>&gt; line_value and indicates that the two records may refer to the same person.</p>
 
           <p>An ALIA record must not be used to define an alternate name. To define alternate names, use <a href="#tag-name">NAME</a> subrecords.</p>
 
@@ -5031,7 +5031,9 @@ CHILD
 
         <dt id="tag-anci">ANCI <span class="tag-full-name">Ancestor Interest</span></dt>
         <dd>
-          <p>Indicates an interest in additional research for ancestors of this individual. (See also <a href="#tag-desi">DESI</a>)</p>
+          <p>The ANCI subrecord indicates an interest in additional research on ancestors of this individual.</p>
+          
+          <p>Interest in descendants is indicated via the <a href="#tag-desi">DESI</a> subrecord.</p>
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#indi-record">INDI<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-indi">INDI</a><wbr>.ANCI &lt;<a href="#id-subm-pe">ID:SUBM</a>&gt;</p>
@@ -5040,7 +5042,7 @@ CHILD
 
         <dt id="tag-anul">ANUL <span class="tag-full-name">Annulment</span></dt>
         <dd>
-          <p>Declaring a marriage void from the beginning (never existed).</p>
+          <p>The ANUL subrecord describes an annulment event, i.e., declaring a marriage void as if it never existed.</p>
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#family-event-structure-subr">FAMILY<wbr>_EVENT<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.ANUL</p>
@@ -5049,7 +5051,7 @@ CHILD
 
         <dt id="tag-asso">ASSO <span class="tag-full-name">Associates</span></dt>
         <dd>
-          <p>Indicates an association between the current <a href="#indi-record">INDI</a> record and the INDI record with the given @<a href="#id-indi-pe">ID:INDI</a>@. See the &lt;&lt;<a href="#association-structure-subr">ASSOCIATION_STRUCTURE</a>&gt;&gt;.</p>
+          <p>The ASSO subrecord indicates an association between the current <a href="#indi-record">INDI</a> record and the INDI record with the @<a href="#id-indi-pe">ID:INDI</a>@ given in the ASSO subrecord's line_value.</p>
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#association-structure-subr">ASSOCIATION<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.ASSO &lt;<a href="#id-indi-pe">ID:INDI</a>&gt;</p>
@@ -5058,7 +5060,7 @@ CHILD
 
         <dt id="tag-auth">AUTH <span class="tag-full-name">Author</span></dt>
         <dd>
-          <p>The name of the individual who created or compiled information.</p>
+          <p>The AUTH subrecord specifies the name of the individual who created or compiled information via its &lt;<a href="#source-originator-pe">SOURCE<wbr>_ORIGINATOR</a>&gt; line_value.</p>
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#sour-record">SOUR<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-sour">SOUR</a><wbr>.AUTH &lt;<a href="#source-originator-pe">SOURCE<wbr>_ORIGINATOR</a>&gt;</p>
@@ -5067,7 +5069,7 @@ CHILD
 
         <dt id="tag-bapm">BAPM <span class="tag-full-name">Baptism</span></dt>
         <dd>
-          <p>The event of baptism.</p>
+          <p>The BAPM subrecord describes the event of baptism.</p>
 
           <p>See also <a href="#tag-chr">CHR</a>.</p>
 
@@ -5078,7 +5080,7 @@ CHILD
 
         <dt id="tag-barm">BARM <span class="tag-full-name">Bar Mitzvah</span></dt>
         <dd>
-          <p>The ceremonial event held when a Jewish boy reaches age 13.</p>
+          <p>The BARM subrecord describes a Bar Mitzvah event.</p>
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#individual-event-structure-subr">INDIVIDUAL<wbr>_EVENT<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.BARM</p>
@@ -5087,7 +5089,7 @@ CHILD
 
         <dt id="tag-basm">BASM <span class="tag-full-name">Bas Mitzvah</span></dt>
         <dd>
-          <p>The ceremonial event held when a Jewish girl reaches age 13, also known as "Bat Mitzvah."</p>
+          <p>The BASM subrecord describes a Bat Mitzvah/Bat Mitzvah event.</p>
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#individual-event-structure-subr">INDIVIDUAL<wbr>_EVENT<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.BASM</p>
@@ -5096,7 +5098,7 @@ CHILD
 
         <dt id="tag-birt">BIRT <span class="tag-full-name">Birth</span></dt>
         <dd>
-          <p>The event of entering into life.</p>
+          <p>The BIRT subrecord describes a birth event.</p>
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#individual-event-structure-subr">INDIVIDUAL<wbr>_EVENT<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.BIRT &lt;<a href="#null-pe">NULL</a>&gt;</p>
@@ -5105,7 +5107,7 @@ CHILD
 
         <dt id="tag-bles">BLES <span class="tag-full-name">Blessing</span></dt>
         <dd>
-          <p>A religious event of bestowing divine care or intercession. Sometimes given in connection with a naming ceremony.</p>
+          <p>The BLES subrecord describes a religious event of bestowing divine care or intercession. Sometimes given in connection with a naming ceremony.</p>
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#individual-event-structure-subr">INDIVIDUAL<wbr>_EVENT<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.BLES</p>
@@ -5114,7 +5116,7 @@ CHILD
 
         <dt id="tag-buri">BURI <span class="tag-full-name">Burial</span></dt>
         <dd>
-          <p>The event of the proper disposing of the mortal remains of a deceased person.</p>
+          <p>The BURI subrecord describes a burial event.</p>
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#individual-event-structure-subr">INDIVIDUAL<wbr>_EVENT<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.BURI</p>
@@ -5123,7 +5125,7 @@ CHILD
 
         <dt id="tag-caln">CALN <span class="tag-full-name">Call Number</span></dt>
         <dd>
-          <p>The number used by a repository to identify the specific items in its collections.</p>
+          <p>The CALN subrecord indiocates the number used by a repository to identify the specific items in its collections via its &lt;<a href="#source-call-number-pe">SOURCE<wbr>_CALL<wbr>_NUMBER</a>&gt; line_value.</p>
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#source-repository-citation-subr">SOURCE<wbr>_REPOSITORY<wbr>_CITATION</a>&gt;&gt;<wbr>.<a href="#tag-repo">REPO</a><wbr>.CALN &lt;<a href="#source-call-number-pe">SOURCE<wbr>_CALL<wbr>_NUMBER</a>&gt;</p>
@@ -5141,7 +5143,7 @@ CHILD
 
         <dt id="tag-caus">CAUS <span class="tag-full-name">Cause</span></dt>
         <dd>
-          <p>A description of the cause of the associated event or fact, such as the cause of death.</p>
+          <p>The CAUS subrecord describes the cause of the associated event or fact, such as the cause of death, via its &lt;<a href="#cause-of-event-pe">CAUSE<wbr>_OF<wbr>_EVENT</a>&gt; line_value.</p>
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#event-or-fact-detail-subr">EVENT<wbr>_OR<wbr>_FACT<wbr>_DETAIL</a>&gt;&gt;<wbr>.CAUS &lt;<a href="#cause-of-event-pe">CAUSE<wbr>_OF<wbr>_EVENT</a>&gt;</p>
@@ -5324,7 +5326,9 @@ CHILD
 
         <dt id="tag-desi">DESI <span class="tag-full-name">Descendant Interest</span></dt>
         <dd>
-          <p>Indicates an interest in research to identify additional descendants of this individual. (See also <a href="#tag-anci">ANCI</a>)</p>
+          <p>The DESI subrecord indicates an interest in additional research on descendants of this individual.</p>
+          
+          <p>Interest in ancestors is indicated via the <a href="#tag-anci">ANCI</a> subrecord.</p>
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#indi-record">INDI<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-indi">INDI</a><wbr>.DESI &lt;<a href="#id-subm-pe">ID:SUBM</a>&gt;</p>
