@@ -32,7 +32,7 @@
   </source>
   <source id="altree">
     <name>AgeLong Tree</name>
-    <description><p>Genery Software</p></description>
+    <description><p><a href="https://genery.com">Genery Software</a></p></description>
   </source>
   <source id="ancestquest">
     <name>Ancestral Quest</name>
@@ -40,7 +40,7 @@
   </source>
   <source id="ancestris">
     <name>Ancestris</name>
-    <description><p>Ancestris Team</p></description>
+    <description><p><a href="https://www.ancestris.org">Ancestris</a></p></description>
   </source>
   <source id="ancestrologie">
     <name>Ancestrologie</name>
@@ -152,6 +152,10 @@
     <name>Family Origins for Windows</name>
     <description><p>FormalSoft</p></description>
   </source>
+  <source id="myheritage">
+    <name>Family Tree Builder</name>
+    <description><p><a class="external" href="https://www.myheritage.com">MyHeritage, Ltd.</a></p></description>
+  </source>
   <source id="famroots">
     <name>Family Roots</name>
     <description><p>Quinsept</p></description>
@@ -166,7 +170,7 @@
   </source>
   <source id="famtreehrtg">
     <name>Family Tree Heritage</name>
-    <description><p>Individual Softare</p></description>
+    <description><p>Individual Software</p></description>
   </source>
   <source id="famtreesqe">
     <name>Family Trees Quick &amp; Easy</name>
@@ -181,7 +185,9 @@
   </source>
   <source id="ftl">
     <name>Family Tree Legends</name>
-    <description><p>Pearl Street Software</p></description>
+    <description><p>Pearl Street Software</p>
+      <p>Pearl Street Software was purchased by MyHeritage, Ltd., in 2007.</p>
+    </description>
   </source>
   <source id="ftm">
     <name>Family Tree Maker for Windows</name>
@@ -218,15 +224,15 @@
   </source>
   <source id="gedfamilies">
     <name>GedFamilies</name>
-    <description><p>TelGen</p></description>
+    <description><p><a href="https://www.telgen.co.uk/gedfamilies/">TelGen</a></p></description>
   </source>
   <source id="gedfan">
-    <name>The GEDCOM Fan Creator</name>
-    <description><p>Tamura Jones</p></description>
+    <name>GEDCOM Fan Creator</name>
+    <description><p><a href="https://www.tamurajones.net/">Tamura Jones</a></p></description>
   </source>
   <source id="geditcom">
     <name>GEDitCOM</name>
-    <description><p><a class="external" href="http://www.geditcom.com/">RSAC Software</a></p></description>
+    <description><p><a class="external" href="http://www.geditcom.com">http://www.geditcom.com</a>, RSAC Software</p></description>
   </source>
   <source id="gedlink-editor">
     <name>GedLink Editor</name>
@@ -234,7 +240,7 @@
   </source>
   <source id="genbox">
     <name>Genbox Family History</name>
-    <description><p>Thoughtfull Creations</p></description>
+    <description><p><a href="https://www.genbox.com/">https://www.genbox.com/</a>, Thoughtful Creations</p></description>
   </source>
   <source id="gendesigner_2">
     <name>GenDesigner</name>
@@ -417,10 +423,6 @@
   </source>
   <source id="my-family-heritage-v4.0">
     <name>My Family Heritage</name>
-  </source>
-  <source id="myheritage">
-    <name>MyHeritage Family Tree Builder</name>
-    <description><p>See <a class="external" href="https://www.myheritage.com">https://www.myheritage.com</a></p></description>
   </source>
   <source id="ohmigene">
     <name>ohmiGene</name>
