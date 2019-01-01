@@ -16,9 +16,10 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
   <link rel="stylesheet" href="dark.css" title="Dark" />
   <style>
 body { padding-bottom: 100vh; }
-.app {font-weight: bold; }
-td.code { line-height: 1.2; padding-left: .5em; text-indent: 0; }
+table { width: auto; margin: 1em auto; }
+td.code { line-height: 1.2; padding-left: 1.5em; text-indent: -1em; }
 td p:first-child { margin-top: 0; }
+.app {font-weight: bold; }
   </style>
 </head>
 <body id="top">
@@ -39,12 +40,24 @@ td p:first-child { margin-top: 0; }
       <p>Everyone is permitted to copy and distribute verbatim copies of this document, but changing it is not allowed.</p>
     </div>
 
+    <section>
+      <h2>Contents</h2>
+      <ul class="toc-list">
+        <!-- Table of Contents entries -->
+<li class="toc-0"><a href="#section-document-information">Document Information</a></li>
+<li class="toc-1"><a href="#abstract">Abstract</a></li>
+<li class="toc-1"><a href="#document-status">Document Status</a></li>
+<li class="toc-0"><a href="#section-applications">Applications</a></li>
+<li class="toc-0"><a href="#section-system-id-and-metadata">SYSTEM_ID and Metadata</a></li>
+</ul>
+    </section>
+
     <section id="section-document-information">
       <h2>Document Information</h2>
 
       <h3 id="abstract">Abstract</h3>
 
-      <p>This document lists known <a class="external" href="gedcom-5.5.2.html#system-id-pe">SYSTEM_IDs</a> for GEDCOM files and, when possible, includes details about the application that uses the a given &lt;SYSTEM_ID&gt;.</p>
+      <p>This document lists known &lt;<a class="external" href="gedcom-5.5.2.html#system-id-pe">SYSTEM_IDs</a>&gt; for GEDCOM files and, when possible, includes details about the application that uses the a given &lt;SYSTEM_ID&gt;.</p>
 
       <h3 id="document-status">Document Status</h3>
 
@@ -62,24 +75,12 @@ td p:first-child { margin-top: 0; }
       </dl>
     </section>
     
-    <section>
-      <h2>Contents</h2>
-      <ul class="toc-list">
-        <!-- Table of Contents entries -->
-<li class="toc-0"><a href="#section-document-information">Document Information</a></li>
-<li class="toc-1"><a href="#abstract">Abstract</a></li>
-<li class="toc-1"><a href="#document-status">Document Status</a></li>
-<li class="toc-0"><a href="#section-applications">Applications</a></li>
-<li class="toc-0"><a href="#section-system-id-and-metadata">SYSTEM_ID and Metadata</a></li>
-</ul>
-    </section>
-
     <section id="section-applications">
       <h2>Applications</h2>
 
-      <p>The programs and online services listed here have been gathered from several sources, notably <a class="external" href="https://www.tamurajones.net/GEDCOMSystemIdentifiers.xhtml">GEDCOM System Identifiers</a> by Tamura Jones.</p>
+      <p>The programs and online services listed here have been gathered from several sources, including clues in the HEAD record metadata, such as URLs, and <a class="external" href="https://www.tamurajones.net/GEDCOMSystemIdentifiers.xhtml">GEDCOM System Identifiers</a> by Tamura Jones.</p>
       
-      <p>For any program with an "Instances" link, we have reviewed one or more GEDCOM files from the application and summarized HEAD section metadata as seen in the <a href="#section-system-id-and-metadata">SYSTEM_ID and Metadata</a> section.</p>
+      <p>The "Instances" link leads to a metadata summary in the <a href="#section-system-id-and-metadata">SYSTEM_ID and Metadata</a> section.</p>
 
       <table>
           <thead>
@@ -238,10 +239,10 @@ td p:first-child { margin-top: 0; }
     <section id="section-system-id-and-metadata">
       <h2>SYSTEM_ID and Metadata</h2>
 
-      <p>The following table was created from inspecting several thousand GEDCOM files found on the Internet. It shows instances of &lt;SYSTEM_IDs&gt; combined with other metadata from a document's HEAD subrecord.</p>
+      <p>The following table was created from inspecting several thousand GEDCOM files found on the Internet. It shows instances of &lt;SYSTEM_IDs&gt; combined with other metadata from a document's HEAD record.</p>
 
       <ul>
-        <li>The <strong>SOUR</strong> column shows the value of the HEAD.SOUR subrecord. When there is more than one value, the other values were also found for the same application. Some applications include a program version number in the HEAD.SOUR subrecord rather than in the HEAD.SOUR.VERS subrecord and that leads to multiple entries in this table cell.</li>
+        <li>The <strong>SYSTEM_ID</strong> column shows the value of the HEAD.SOUR subrecord. When there is more than one value, the other values were also found for the same application. Some applications include a program version number in the HEAD.SOUR subrecord rather than in the HEAD.SOUR.VERS subrecord and that leads to multiple entries in this table cell.</li>
         <li>The <strong>SOUR.VERS</strong> column shows the value of the HEAD.SOUR.VERS subrecord. The variations (if any) are sorted by the value in this column from lowest-to-highest order when possible.</li>
         <li>The <strong>GEDC.VERS</strong> column shows the value of the HEAD.GEDC.VERS subrecord.</li>
         <li>The <strong>CHAR</strong> column shows the value of the HEAD.CHAR subrecord. Values that appear to be incorrect are shown like <span class="code incorrect">this</span>.</li>
@@ -317,19 +318,19 @@ td p:first-child { margin-top: 0; }
 <tr><td class="code">15.0.9</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">UTF-8</span></td></tr>
 <tr><td class="code">2002</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
 <tr id="ancestris-instances" class="group-row"><td rowspan="1"><a href="#ancestris">Ancestris</a></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">ANCESTRIS</li></ul></td><td class="code">0.10.0.9617</td><td class="code">5.5.1</td><td class="code">UTF-8</td></tr>
-<tr id="ancestrologie-instances" class="group-row"><td rowspan="10"><a href="#ancestrologie">Ancestrologie</a></td><td class="code" rowspan="10"><ul class="option-list"><li class="nowrap">Ancestrologie</li></ul></td><td class="code">Version 2.1.5.5</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
-<tr><td class="code">Version 2004.10.11.188</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
-<tr><td class="code">Version 2004.10.14.192</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
-<tr><td class="code">Version 2004.11.18.223</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
-<tr><td class="code">Version 2007.0.0.763</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
-<tr><td class="code">Version 2008.0.0.781</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
-<tr><td class="code">Version 2009.0.0.1036</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr id="ancestrologie-instances" class="group-row"><td rowspan="10"><a href="#ancestrologie">Ancestrologie</a></td><td class="code" rowspan="10"><ul class="option-list"><li class="nowrap">Ancestrologie</li></ul></td><td class="code">Version 2009.0.0.1036</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
 <tr><td class="code">Version 2010.0.0.1228</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
 <tr><td class="code">Version 2011.0.0.1310</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
 <tr><td class="code">Version 2011.0.0.1339</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">Version 2007.0.0.763</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">Version 2008.0.0.781</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">Version 2.1.5.5</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">Version 2004.10.11.188</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">Version 2004.10.14.192</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">Version 2004.11.18.223</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
 <tr id="ancestry-instances" class="group-row"><td rowspan="1"><a href="#ancestry">Ancestry Member Trees</a></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">ANCESTRY</li></ul></td><td class="code">1.0</td><td class="code">4.0</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
-<tr id="ancestry.com-family-trees-instances" class="group-row"><td rowspan="3"><a href="#ancestry.com-family-trees">Ancestry.com Family Trees</a></td><td class="code" rowspan="3"><ul class="option-list"><li class="nowrap">Ancestry.com Family Trees</li></ul></td><td class="code">Ancestry.com Family Trees (1)</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
-<tr><td class="code">(2009)</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr id="ancestry.com-family-trees-instances" class="group-row"><td rowspan="3"><a href="#ancestry.com-family-trees">Ancestry.com Family Trees</a></td><td class="code" rowspan="3"><ul class="option-list"><li class="nowrap">Ancestry.com Family Trees</li></ul></td><td class="code">(2009)</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">Ancestry.com Family Trees <br/>(1)</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
 <tr><td class="code">(2010.3)</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
 <tr id="anetavle-instances" class="group-row"><td rowspan="1"></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">Anetavle</li></ul></td><td class="code">version 2.6.2</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
 <tr id="anstfile-instances" class="group-row"><td rowspan="4"><a href="#anstfile">Ancestral File</a></td><td class="code" rowspan="4"><ul class="option-list"><li class="nowrap">ANSTFILE</li></ul></td><td class="code"></td><td class="code">1.0</td><td class="code"><span class="incorrect nowrap"></span></td></tr>
@@ -458,11 +459,11 @@ td p:first-child { margin-top: 0; }
 <tr><td class="code">9.0</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
 <tr><td class="code">10.0</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
 <tr><td class="code">11.0</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">Family Tree Maker 2005 <br/>(12.0.337) July 30, 2004</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">Family Tree Maker 2005 <br/>(12.0.345 SP1) August 20, 2004</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
 <tr><td class="code">Family Tree Maker (13.0.281)</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
 <tr><td class="code">Family Tree Maker (13.0.285)</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
 <tr><td class="code">Family Tree Maker (16.0.350)</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
-<tr><td class="code">Family Tree Maker 2005 (12.0.337) July 30, 2004</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
-<tr><td class="code">Family Tree Maker 2005 (12.0.345 SP1) August 20, 2004</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
 <tr id="fullerfamilyhistory-instances" class="group-row"><td rowspan="1"></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">FullerFamilyHistory</li></ul></td><td class="code">5.0</td><td class="code">5.5.1</td><td class="code">ANSEL</td></tr>
 <tr id="gd-win-instances" class="group-row"><td rowspan="1"><a href="#gd-win">GensData for Windows</a></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">GD-Win</li></ul></td><td class="code"></td><td class="code"></td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
 <tr id="ged-instances" class="group-row"><td rowspan="1"></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">GED</li></ul></td><td class="code"></td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
@@ -477,11 +478,11 @@ td p:first-child { margin-top: 0; }
 <tr id="gendesigner_2-instances" class="group-row"><td rowspan="1"><a href="#gendesigner_2">GenDesigner</a></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">GENDESIGNER_2</li></ul></td><td class="code"></td><td class="code"></td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
 <tr id="gene-instances" class="group-row"><td rowspan="1"><a href="#gene">Gene</a></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">Gene</li></ul></td><td class="code">4.3</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
 <tr id="genealogia-instances" class="group-row"><td><a href="#genealogia">Genealogia</a></td><td class="code">GENEALOGIA</td><td colspan="3">No instance data</td></tr>
-<tr id="genealogic-instances" class="group-row"><td rowspan="5"><a href="#genealogic">Genealogic</a></td><td class="code" rowspan="5"><ul class="option-list"><li class="nowrap">GENEALOGIC</li></ul></td><td class="code">98.2.0</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
-<tr><td class="code">98.2.0</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
-<tr><td class="code">2002.7.4</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
-<tr><td class="code">2003.1.27</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr id="genealogic-instances" class="group-row"><td rowspan="5"><a href="#genealogic">Genealogic</a></td><td class="code" rowspan="5"><ul class="option-list"><li class="nowrap">GENEALOGIC</li></ul></td><td class="code">2003.1.27</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
 <tr><td class="code">2005.1.66</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">2002.7.4</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">98.2.0</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr><td class="code">98.2.0</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
 <tr id="généalogie-instances" class="group-row"><td rowspan="1"><a href="#généalogie">Généalogie</a></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">Généalogie</li></ul></td><td class="code">V1.0</td><td class="code">5.01</td><td class="code"><span class="incorrect nowrap">IBMPC</span></td></tr>
 <tr id="genealogie.com-instances" class="group-row"><td rowspan="1"><a href="#genealogie.com">genealogie.com</a></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">GENEALOGIE.COM</li></ul></td><td class="code">2004</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
 <tr id="genealogie-ab-instances" class="group-row"><td><a href="#genealogie-ab">Genealogie-AB</a></td><td class="code">GENEALOGIE-AB</td><td colspan="3">No instance data</td></tr>
@@ -489,10 +490,10 @@ td p:first-child { margin-top: 0; }
 <tr id="genealogyj-instances" class="group-row"><td><a href="#genealogyj">GenealogyJ</a></td><td class="code">GENEALOGYJ</td><td colspan="3">No instance data</td></tr>
 <tr id="généamania-instances" class="group-row"><td rowspan="2"><a href="#généamania">Généamania</a></td><td class="code" rowspan="2"><ul class="option-list"><li class="nowrap">Généamania</li></ul></td><td class="code">3.0.1</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
 <tr><td class="code">5.0.1</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
-<tr id="geneatique-instances" class="group-row"><td rowspan="11"><a href="#geneatique">Généatique</a></td><td class="code" rowspan="11"><ul class="option-list"><li class="nowrap">GENEATIQUE</li><li class="nowrap">GENEATIQUE_POUR_WINDOWS</li></ul></td><td class="code">97.2 32 bits</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
-<tr><td class="code">2000</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
-<tr><td class="code">2000 2.0</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr id="geneatique-instances" class="group-row"><td rowspan="11"><a href="#geneatique">Généatique</a></td><td class="code" rowspan="11"><ul class="option-list"><li class="nowrap">GENEATIQUE</li><li class="nowrap">GENEATIQUE_POUR_WINDOWS</li></ul></td><td class="code">2000 2.0</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
 <tr><td class="code">2000 2.0</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">97.2 32 bits</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
+<tr><td class="code">2000</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
 <tr><td class="code">2004</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
 <tr><td class="code">2006</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
 <tr><td class="code">2007</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
@@ -729,7 +730,7 @@ td p:first-child { margin-top: 0; }
 <tr id="suku-instances" class="group-row"><td rowspan="1"><a href="#suku">Sukuohjelmisto</a></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">SUKU</li></ul></td><td class="code">8.0</td><td class="code">5.3</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
 <tr id="swift-family-ancestry-instances" class="group-row"><td rowspan="1"></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">SWIFT FAMILY ANCESTRY</li></ul></td><td class="code">1.0</td><td class="code"></td><td class="code"><span class="incorrect nowrap">IBMPC</span></td></tr>
 <tr id="syniumfamilytree-instances" class="group-row"><td rowspan="1"><a href="#syniumfamilytree">MacFamilyTree</a></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">SyniumFamilyTree</li></ul></td><td class="code">8.3.6</td><td class="code">5.5.1</td><td class="code">UTF-8</td></tr>
-<tr id="the-next-generation-of-genealogy-sitebuilding-instances" class="group-row"><td rowspan="1"><a href="#the-next-generation-of-genealogy-sitebuilding">The Next Generation of Genealogy Sitebuilding</a></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">The Next Generation of Genealogy Sitebuilding</li></ul></td><td class="code">10.0.3</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
+<tr id="the-next-generation-of-genealogy-sitebuilding-instances" class="group-row"><td rowspan="1"><a href="#the-next-generation-of-genealogy-sitebuilding">The Next Generation of Genealogy Sitebuilding</a></td><td class="code" rowspan="1"><ul class="option-list"><li class="nowrap">The Next Generation of Genealogy <br/>Sitebuilding</li></ul></td><td class="code">10.0.3</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
 <tr id="tmg-instances" class="group-row"><td rowspan="4"><a href="#tmg">The Master Genealogist</a></td><td class="code" rowspan="4"><ul class="option-list"><li class="nowrap">TMG</li></ul></td><td class="code">3.5</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
 <tr><td class="code">4.0d</td><td class="code">5.5</td><td class="code">ANSEL</td></tr>
 <tr><td class="code">v 6.04.000</td><td class="code">5.5</td><td class="code"><span class="incorrect nowrap">ANSI</span></td></tr>
