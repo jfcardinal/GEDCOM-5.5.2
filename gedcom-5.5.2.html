@@ -181,10 +181,10 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
 
       <ul>
         <li id="character-encoding-change">
-          <!-- INDEX ANSEL (encoding), character-encoding-change -->
-          <!-- INDEX ASCII (encoding), character-encoding-change -->
-          <!-- INDEX UNICODE (encoding), character-encoding-change -->
-          <!-- INDEX UTF-8 (encoding), character-encoding-change -->
+          <!-- INDEX ANSEL (encoding) -->
+          <!-- INDEX ASCII (encoding) -->
+          <!-- INDEX UNICODE (encoding) -->
+          <!-- INDEX UTF-8 (encoding) -->
           <p><strong>Character Encoding</strong> &ndash; GEDCOM 5.5.1 specifies four valid character encodings using the keywords <code>ANSEL</code>, <code>UTF-8</code>, <code>UNICODE</code>, and <code>ASCII</code>. GEDCOM 5.5.2 specifies only a single valid character encoding: <code>UTF-8</code>.</p>
 
           <ul>
@@ -237,16 +237,19 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
         </li>
 
         <li id="head-char-vers-change">
+          <!-- INDEX CHAR (Change in 5.5.2) -->
           <p><strong>HEAD.CHAR.VERS</strong> &ndash; The <a href="#tag-head">HEAD</a>.<a href="#tag-char">CHAR</a>.VERS subrecord in GEDCOM 5.5.1 and previous has been removed in GEDCOM 5.5.2. GEDCOM 5.5.2 uses the <code>UTF-8</code> encoding exclusively and a useful version number does not apply to that encoding.</p>
 
           <p>Few, if any, GEDCOM writers wrote the HEAD.CHAR.VERS subrecord, and fewer still used it as intended.</p>
         </li>
 
         <li id="head-dest-not-mandatory-change">
+          <!-- INDEX DEST (Change in 5.5.2) -->
           <p><strong>HEAD.DEST</strong> &ndash; The <a href="#tag-head">HEAD</a>.<a href="#tag-dest">DEST</a> subrecord is mandatory in GEDCOM 5.5.1. HEAD.DEST is <em>not</em> mandatory in GEDCOM 5.5.2 and its use is <a href="#sour-and-dest">discouraged</a>.</p>
         </li>
 
         <li id="head-subm-not-mandatory-change" class="provisional">
+          <!-- INDEX SUBM (Change in 5.5.2) -->
           <p><strong>HEAD.SUBM</strong> &ndash; The <a href="#tag-head">HEAD</a>.<a href="#tag-subm">SUBM</a> subrecord is mandatory in GEDCOM 5.5.1. HEAD.SUBM is <em>not</em> mandatory in GEDCOM 5.5.2.</p>
         </li>
 
@@ -255,6 +258,7 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
         </li>
 
         <li id="indi-even-event-descriptor-change">
+          <!-- INDEX EVEN (Change in 5.5.2) -->
           <p><strong>INDI.EVEN</strong> &ndash; In the GEDCOM 5.5.1 specification, the definition of the <a href="#tag-indi">INDI</a>.<a href="#tag-even-generic">EVEN</a> subrecord is ambiguous.</p>
 
           <p>On page 35 of the GEDCOM 5.5.1 specification, the <a href="#tag-indi">INDI</a>.<a href="#tag-even-generic">EVEN</a> subrecord does <em>not</em> include an optional &lt;<a href="#event-descriptor-pe">EVENT_DESCRIPTOR</a>&gt; <a href="#line-value-component">line-value</a>.</p>
@@ -275,6 +279,7 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
         </li>
 
         <li id="indi-rfn-change">
+          <!-- INDEX RFN (Change in 5.5.2) -->
           <p><strong>INDI.RFN</strong> &ndash; The <a href="#tag-indi">INDI</a>.RFN subrecord in GEDCOM 5.5.1 and previous has been removed in GEDCOM 5.5.2. The INDI.RFN subrecord was intended to hold a PERMANENT_RECORD_FILE_NUMBER, a record number using a "registered network resource". The registration system was never implemented.</p>
         </li>
 
@@ -287,24 +292,32 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
         </li>
 
         <li id="location-coordinate-change">
+          <!-- INDEX LATI (Change in 5.5.2) -->
+          <!-- INDEX LONG (Change in 5.5.2) -->
           <p><strong>MAP.LATI</strong> and <strong>MAP.LONG</strong> &ndash; The <a href="#tag-lati">LATI</a> and <a href="#tag-long">LONG</a> value length in GEDCOM 5.5.1 is restricted to the range of 5 to 8 characters. That does not allow sufficient precision to match coordinates available in <abbr title="Global Positioning System">GPS</abbr> devices, and several programs exceed the limit. The example on page 51 of the GEDCOM 5.5.1 specification in the PLACE_LATITUDE entry that includes the "{Size=5:8}" range definition also exceeds the limit: "<code>N18.150944</code>" is ten characters.</p>
 
           <p>The PLACE_LATITUDE size in GEDCOM 5.5.2 is "{Size=2:10}". The PLACE_LONGITUDE size in GEDCOM 5.5.2 is "{Size=2:11}". See the &lt;<a href="#place-latitude-pe">PLACE_LATITUDE</a>&gt; and &lt;<a href="#place-longitude-pe">PLACE_LONGITUDE</a>&gt; definitions for the details.</p>
         </li>
 
         <li id="multimedia-file-reference-change">
+          <!-- INDEX MULTIMEDIA_FILE_REFERENCE (Change in 5.5.2) -->
           <p><strong>MULTIMEDIA_FILE_REFERENCE</strong> &ndash; The <a href="#tag-obje">OBJE</a>.<a href="#tag-file">FILE</a> &lt;<a href="#multimedia-file-reference-pe">MULTIMEDIA_FILE_REFERENCE</a>&gt; value length in GEDCOM 5.5.1 is restricted to the range of 1 to 30 characters. That is inadequate and the range has been ignored by many GEDCOM writers.</p>
 
           <p>The range in GEDCOM 5.5.2 has been increased.</p>
         </li>
 
         <li id="phon-email-fax-www-change">
+          <!-- INDEX PHON (Change in 5.5.2) -->
+          <!-- INDEX EMAIL (Change in 5.5.2) -->
+          <!-- INDEX FAX (Change in 5.5.2) -->
+          <!-- INDEX WWW (Change in 5.5.2) -->
           <p><strong>PHON, EMAIL, FAX, and WWW</strong> &ndash; The <a href="#tag-phon">PHON</a>, <a href="#tag-char">EMAIL</a>, <a href="#tag-fax">FAX</a>, and <a href="#tag-www">WWW</a> subrecords in GEDCOM 5.5.1 have been moved from the &lt;<a href="#address-structure-subr">ADDRESS_STRUCTURE</a>&gt; to the &lt;<a href="#contact-structure-subr">CONTACT_STRUCTURE</a>&gt; in GEDCOM 5.5.2.</p>
 
           <p>This allows those subrecords to be used independantly of the <a href="#tag-addr">ADDR</a> subrecord, a common capability, without invalidating the GEDCOM document.</p>
         </li>
 
         <li id="surname-prefix-change">
+          <!-- INDEX NAME_PIECE_SURNAME_PREFIX (Change in 5.5.2) -->
           <p><strong>NAME_PIECE_SURNAME_PREFIX</strong> &ndash; The &lt;<a href="#name-piece-surname-prefix-pe">NAME_PIECE_SURNAME_PREFIX</a>&gt; definition in GEDCOM 5.5.1 includes an instruction to insert a comma between "articles" in a surname prefix, and provides an example of changing the surname prefix in "<code>de la Cruz</code>" to "<code>de, la</code>".</p>
 
           <p>Changing name data is ill-advised and no known genealogy applications comply with the GEDCOM 5.5.1 instruction.</p>
@@ -313,10 +326,12 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
         </li>
 
         <li id="system-id-change">
+          <!-- INDEX SYSTEM_ID (Change in 5.5.2) -->
           <p><strong>APPROVED_SYSTEM_ID</strong> and <strong>RECEIVING_SYSTEM_NAME</strong> &ndash; APPROVED_SYSTEM_ID and RECEIVING_SYSTEM_NAME in GEDCOM 5.5.1 were two Primitive Elements used to identify external systems. Those elements have been merged as &lt;<a href="#system-id-pe">SYSTEM_ID</a>&gt; in GEDCOM 5.5.2, and its length has been expanded.</p>
         </li>
 
         <li id="subn-change">
+          <!-- INDEX SUBN (Change in 5.5.2) -->
           <p><strong>SUBN</strong> &ndash; The SUBN record in GEDCOM 5.5.1 is obsolete and has been removed from GEDCOM 5.5.2. Subrecords that were only used with SUBN have also been removed, including SUBN.FAMF, SUBN.ANCE, SUBN.DESC, and SUBN.ORDI.</p>
 
           <p>GEDCOM readers can ignore the SUBN record and its subrecords.</p>
