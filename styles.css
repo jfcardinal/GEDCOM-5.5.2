@@ -338,9 +338,9 @@ ul li {
   margin: -36px 0 0; /* negative fixed header height */
 }
 
-tr:target::before {
+tr:target::before, li:target::before {
   /* Adjust target to avoid being under fixed-menu */
-  /* Don't add block when target is in table */
+  /* Don't add block when target is in table or list */
   content: "";
   display: none;
 }
