@@ -325,6 +325,11 @@ ul li {
   width: 100%;
 }
 
+.group-row {
+  border-top-style: solid;
+  border-top-width: 2px;
+}
+
 :target::before {
   /* Adjust target to avoid being under fixed-menu */
   content: "";
@@ -428,17 +433,7 @@ dt .tag-full-name {
   display: block;
 }
 
-.toc_container {
-  display: table;
-  margin: 2em 0;
-  width: auto;
-}
-
-.toc_title {
-  margin-top: 0.5em;
-}
-
-.toc_container ul {
+.toc-list {
   list-style: outside none none;
   margin-left: 2em;
 }

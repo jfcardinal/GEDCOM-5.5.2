@@ -36,6 +36,10 @@ table, td, th {
   background-color: #333;
 }
 
+.group-row {
+  border-color: silver;
+}
+
 .incorrect {
   color: #ff0000;
 }
