@@ -28,7 +28,7 @@ table, td, th {
   color: #fff;
 }
 
-.deprecated, provisional {
+.deprecated, .provisional {
   border-left-color: #ffff00;
 }
 
