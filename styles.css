@@ -100,12 +100,24 @@ h5, h6 {
 }
 
 ol {
-  margin-left: 2.5em;
-  max-width: 37.5em;
+  list-style-type: none;
+  counter-reset: item;
 }
 
-ol li {
+ol > li {
+  counter-increment: item;
+  display: table;
   margin: 0.5em 2.5em 0.5em 0;
+}
+
+ol > li:before {
+  content: counters(item, ".") ". ";
+  display: table-cell;
+  padding-right: 0.6em;
+}
+
+li ol > li:before {
+  content: counters(item, ".") " ";
 }
 
 p {
@@ -378,7 +390,7 @@ tr:target::before, li:target::before {
 }
 
 .references p {
-  font-size: 80%;
+  font-size: 75%;
   margin: 0;
 }
 
