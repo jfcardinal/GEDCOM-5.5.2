@@ -248,6 +248,7 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
           <p><strong>HEAD.DEST</strong> &ndash; The <a href="#tag-head">HEAD</a>.<a href="#tag-dest">DEST</a> subrecord is mandatory in GEDCOM 5.5.1. HEAD.DEST is <em>not</em> mandatory in GEDCOM 5.5.2 and its use is <a href="#sour-and-dest">discouraged</a>.</p>
         </li>
 
+        <!-- TODO: Should SUBM remain required? -->
         <li id="head-subm-not-mandatory-change" class="provisional">
           <!-- INDEX SUBM (Change in 5.5.2) -->
           <p><strong>HEAD.SUBM</strong> &ndash; The <a href="#tag-head">HEAD</a>.<a href="#tag-subm">SUBM</a> subrecord is mandatory in GEDCOM 5.5.1. HEAD.SUBM is <em>not</em> mandatory in GEDCOM 5.5.2.</p>
@@ -410,7 +411,10 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
     <section id="section-gedcom-summary">
       <h2>GEDCOM Summary</h2>
 
-      <p>A GEDCOM 5.5.2 document is a structured text document that contains an ordered set of <a href="#gedcom-line-syntax">gedcom_lines</a>.</p>
+      <p>A GEDCOM 5.5.2 document is a structured <a href="#character-encoding-pe">UTF-8</a> text document that contains an ordered set of <a href="#gedcom-line-syntax">gedcom_lines</a>.</p>
+
+      <!-- TODO: Should this be here, or elsewhere? -->
+      <p class="provisional">The document must? must not? should? should not? begin with the UTF-8 Byte Order Mark (U+00EF, U+00BB, U+00BF).</p>
 
       <p>gedcom_lines include a level number. The level numbers define a hierarchy. gedcom_lines with level set to zero are <var>records</var> and gedcom_lines with level greater than zero are <var>subrecords</var>. A subrecord with level <var>N+1</var> is a child of, and subordinate to, a record or subrecord with level <var>N</var>.</p>
 
@@ -1545,6 +1549,7 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
 
           <p>The <a href="#tag-addr">ADDR</a> subrecord and at least one subordinate CONT subrecord are required.</p>
 
+          <!-- TODO: Retain backward-compatibility restriction? Change wording? -->
           <p class="provisional">The additional subordinate address subrecords such as <a href="#tag-stae">STAE</a> and <a href="#tag-ctry">CTRY</a> are intended to be used by systems that have structured their addresses for indexing and sorting. For backward compatibility these subrecords are not to be used in lieu of the required <a href="#tag-addr">ADDR</a> and <a href="#tag-cont">CONT</a> subrecords.</p>
 
           <p>Subrecords that were included in the ADDRESS_STRUCTURE in previous versions of the GEDCOM standard are now defined in the &lt;<a href="#contact-structure-subr">CONTACT_STRUCTURE</a>&gt;.</p>
@@ -2564,6 +2569,8 @@ CHILD
 
         <dt id="character-encoding-pe">CHARACTER_ENCODING <span class="size">{Size=5:5}</span></dt>
         <!-- INDEX UTF-8 (keyword) -->
+        <!-- INDEX Byte Order Mark -->
+        <!-- INDEX BOM -->
         <dd>
           <p>The CHARACTER_ENCODING is a keyword value that indicates the character encoding used to encode the current GEDCOM document.</p>
 
@@ -2576,6 +2583,9 @@ CHILD
 </pre>
 
           <p>UTF-8 is defined by the <i>Unicode&reg; Standard</i> which is maintained by the Unicode Technical Committee. As of January 1, 2019, the current version of the <i>Unicode&reg; Standard</i> is 11.0.0.</p>
+
+          <!-- TODO: Should this be here, or elsewhere? -->
+          <p class="provisional">The Byte Order Mark for UTF-8 (U+00EF, U+00BB, U+00BF) must? must not? should? should not? be the first content in GEDCOM documents.</p>
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#head-record">HEAD<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-head">HEAD</a><wbr>.<a href="#tag-char">CHAR</a></p>
@@ -6720,7 +6730,9 @@ CHILD
 <li><a href="#tag-basm">BASM</a></li>
 <li><a href="#tag-birt">BIRT</a></li>
 <li><a href="#tag-bles">BLES</a></li>
+<li><a href="#character-encoding-pe">BOM</a></li>
 <li><a href="#tag-buri">BURI</a></li>
+<li><a href="#character-encoding-pe">Byte Order Mark</a></li>
 <li><a href="#tag-caln">CALN</a></li>
 <li><a href="#tag-cast">CAST</a></li>
 <li><a href="#caste-name-pe">CASTE_NAME</a></li>
@@ -6794,9 +6806,9 @@ CHILD
 <li><a href="#tag-enga">ENGA</a></li>
 <li><a href="#entry-recording-date-pe">ENTRY_RECORDING_DATE</a></li>
 <li><a href="#escape-sequence">escape_sequence</a></li>
-<li><a href="#tag-even-generic">EVEN</a></li>
-<li><a href="#tag-even-types">EVEN</a></li>
 <li><a href="#indi-even-event-descriptor-change">EVEN (Change in 5.5.2)</a></li>
+<li><a href="#tag-even-types">EVEN (Event Types)</a></li>
+<li><a href="#tag-even-generic">EVEN (Generic Event)</a></li>
 <li><a href="#event-attribute-type-pe">EVENT_ATTRIBUTE_TYPE</a></li>
 <li><a href="#event-descriptor-pe">EVENT_DESCRIPTOR</a></li>
 <li><a href="#event-or-fact-classification-pe">EVENT_OR_FACT_CLASSIFICATION</a></li>
@@ -6979,19 +6991,19 @@ CHILD
 <li><a href="#system-id-pe">SYSTEM_ID</a></li>
 <li><a href="#system-id-change">SYSTEM_ID (Change in 5.5.2)</a></li>
 <li><a href="#tag-name-component">tag_name</a></li>
-<li><a href="#text-pe">TEXT</a></li>
 <li><a href="#tag-text">TEXT</a></li>
+<li><a href="#text-pe">TEXT</a></li>
 <li><a href="#text-from-source-pe">TEXT_FROM_SOURCE</a></li>
 <li><a href="#tag-time">TIME</a></li>
 <li><a href="#time-value-pe">TIME_VALUE</a></li>
 <li><a href="#tag-titl">TITL</a></li>
 <li><a href="#tag-trlr">TRLR</a></li>
 <li><a href="#trlr-record">TRLR_RECORD</a></li>
-<li><a href="#tag-type-event-or-fact">TYPE</a></li>
-<li><a href="#tag-type-name">TYPE</a></li>
-<li><a href="#tag-type-transform">TYPE</a></li>
-<li><a href="#tag-type-media">TYPE</a></li>
-<li><a href="#tag-type-refn">TYPE</a></li>
+<li><a href="#tag-type-event-or-fact">TYPE (Event or Fact)</a></li>
+<li><a href="#tag-type-media">TYPE (Media)</a></li>
+<li><a href="#tag-type-name">TYPE (Name)</a></li>
+<li><a href="#tag-type-refn">TYPE (REFN)</a></li>
+<li><a href="#tag-type-transform">TYPE (Transform)</a></li>
 <li><a href="#character-encoding-change">UNICODE (encoding)</a></li>
 <li><a href="#user-reference-number-pe">USER_REFERENCE_NUMBER</a></li>
 <li><a href="#user-reference-type-pe">USER_REFERENCE_TYPE</a></li>
