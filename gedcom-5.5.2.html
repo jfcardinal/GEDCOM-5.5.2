@@ -1191,19 +1191,19 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
 
             <tr><td class="code level-2">+2 <a href="#tag-time">TIME</a> &lt;<a href="#time-value-pe">TIME_VALUE</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-subm">SUBM</a> @&lt;<a href="#id-subm-pe">ID:SUBM</a>&gt;@ </td><td class="size">0:1</td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-subm">SUBM</a> @&lt;<a href="#id-subm-pe">ID_SUBM</a>&gt;@ </td><td class="size">0:1</td></tr>
 
             <tr><td class="code level-1">+1 <a href="#tag-file">FILE</a> &lt;<a href="#file-name-pe">FILE_NAME</a>&gt; </td><td class="size">0:1</td></tr>
 
             <tr><td class="code level-1">+1 <a href="#tag-copr">COPR</a> &lt;<a href="#copyright-gedcom-file-pe">COPYRIGHT_GEDCOM_FILE</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-lang">LANG</a> &lt;<a href="#language-of-text-pe">LANGUAGE_OF_TEXT</a>&gt; </td><td class="size">0:1</td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-lang">LANG</a> &lt;<a href="#language-id-pe">LANGUAGE_ID</a>&gt; </td><td class="size">0:1</td></tr>
 
             <tr><td class="code level-1">+1 <a href="#tag-plac">PLAC</a> </td><td class="size">0:1</td></tr>
 
             <tr><td class="code level-2">+2 <a href="#tag-form">FORM</a> &lt;<a href="#place-hierarchy-pe">PLACE_HIERARCHY</a>&gt; </td><td class="size">1:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-note">NOTE</a> &lt;<a href="#gedcom-content-description-pe">GEDCOM_CONTENT_DESCRIPTION</a>&gt; </td><td class="size">0:1</td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-note">NOTE</a> &lt;<a href="#content-description-pe">CONTENT_DESCRIPTION</a>&gt; </td><td class="size">0:1</td></tr>
           </table>
 
           <p>A program reading a GEDCOM document must read the <a href="#tag-gedc">GEDC</a>.<a href="#tag-vers">VERS</a> value to verify it is capable of reading the GEDCOM version written by the source program.</p>
@@ -1259,21 +1259,21 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
           <p>The FAM_RECORD is used to record marriages and family unions caused by two people becoming the parents of a child.</p>
 
           <table class="record-structure">
-            <tr><td class="code level-0"><i>n</i> @&lt;<a href="#id-fam-pe">ID:FAM</a>&gt;@ <span class="required"><a href="#tag-fam">FAM</a></span> </td><td class="size">1:1</td></tr>
+            <tr><td class="code level-0"><i>n</i> @&lt;<a href="#id-fam-pe">ID_FAM</a>&gt;@ <span class="required"><a href="#tag-fam">FAM</a></span> </td><td class="size">1:1</td></tr>
 
             <tr><td class="code level-1">+1 <a href="#tag-resn">RESN</a> &lt;<a href="#restriction-notice-pe">RESTRICTION_NOTICE</a>&gt; </td><td class="size">0:1</td></tr>
 
             <tr><td class="code level-1">+1 &lt;&lt;<a href="#family-event-structure-subr">FAMILY_EVENT_STRUCTURE</a>&gt;&gt; </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-husb">HUSB</a> @&lt;<a href="#id-indi-pe">ID:INDI</a>&gt;@ </td><td class="size">0:1</td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-husb">HUSB</a> @&lt;<a href="#id-indi-pe">ID_INDI</a>&gt;@ </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-wife">WIFE</a> @&lt;<a href="#id-indi-pe">ID:INDI</a>&gt;@ </td><td class="size">0:1</td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-wife">WIFE</a> @&lt;<a href="#id-indi-pe">ID_INDI</a>&gt;@ </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-chil">CHIL</a> @&lt;<a href="#id-indi-pe">ID:INDI</a>&gt;@ </td><td class="size">0:M</td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-chil">CHIL</a> @&lt;<a href="#id-indi-pe">ID_INDI</a>&gt;@ </td><td class="size">0:M</td></tr>
 
             <tr><td class="code level-1">+1 <a href="#tag-nchi">NCHI</a> &lt;<a href="#count-of-children-pe">COUNT_OF_CHILDREN</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-subm">SUBM</a> @&lt;<a href="#id-subm-pe">ID:SUBM</a>&gt;@ </td><td class="size">0:M</td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-subm">SUBM</a> @&lt;<a href="#id-subm-pe">ID_SUBM</a>&gt;@ </td><td class="size">0:M</td></tr>
 
             <tr><td class="code level-1">+1 <a href="#tag-refn">REFN</a> &lt;<a href="#user-reference-number-pe">USER_REFERENCE_NUMBER</a>&gt; </td><td class="size">0:M</td></tr>
 
@@ -1302,7 +1302,7 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
           <p>The INDI_RECORD is a set of assertions about an individual.</p>
 
           <table class="record-structure">
-            <tr><td class="code level-0"><i>n</i> @<a href="#id-indi-pe">ID:INDI</a>@ <span class="required"><a href="#tag-indi">INDI</a></span> </td><td class="size">1:1</td></tr>
+            <tr><td class="code level-0"><i>n</i> @<a href="#id-indi-pe">ID_INDI</a>@ <span class="required"><a href="#tag-indi">INDI</a></span> </td><td class="size">1:1</td></tr>
 
             <tr><td class="code level-1">+1 <a href="#tag-resn">RESN</a> &lt;<a href="#restriction-notice-pe">RESTRICTION_NOTICE</a>&gt; </td><td class="size">0:1</td></tr>
 
@@ -1318,15 +1318,15 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
 
             <tr><td class="code level-1">+1 &lt;&lt;<a href="#spouse-to-family-link-subr">SPOUSE_TO_FAMILY_LINK</a>&gt;&gt; </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-subm">SUBM</a> @&lt;<a href="#id-subm-pe">ID:SUBM</a>&gt;@ </td><td class="size">0:M</td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-subm">SUBM</a> @&lt;<a href="#id-subm-pe">ID_SUBM</a>&gt;@ </td><td class="size">0:M</td></tr>
 
             <tr><td class="code level-1">+1 &lt;&lt;<a href="#association-structure-subr">ASSOCIATION_STRUCTURE</a>&gt;&gt; </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-alia">ALIA</a> @&lt;<a href="#id-indi-pe">ID:INDI</a>&gt;@ </td><td class="size">0:M</td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-alia">ALIA</a> @&lt;<a href="#id-indi-pe">ID_INDI</a>&gt;@ </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-anci">ANCI</a> @&lt;<a href="#id-subm-pe">ID:SUBM</a>&gt;@ </td><td class="size">0:M</td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-anci">ANCI</a> @&lt;<a href="#id-subm-pe">ID_SUBM</a>&gt;@ </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-desi">DESI</a> @&lt;<a href="#id-subm-pe">ID:SUBM</a>&gt;@ </td><td class="size">0:M</td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-desi">DESI</a> @&lt;<a href="#id-subm-pe">ID_SUBM</a>&gt;@ </td><td class="size">0:M</td></tr>
 
             <tr><td class="code level-1">+1 <a href="#tag-refn">REFN</a> &lt;<a href="#user-reference-number-pe">USER_REFERENCE_NUMBER</a>&gt; </td><td class="size">0:M</td></tr>
 
@@ -1349,7 +1349,7 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
           <p>The OBJE_RECORD describes a multimedia file.</p>
 
           <table class="record-structure">
-            <tr><td class="code level-0"><i>n</i> @<a href="#id-obje-pe">ID:OBJE</a>@ <span class="required"><a href="#tag-obje">OBJE</a></span> </td><td class="size">1:1</td></tr>
+            <tr><td class="code level-0"><i>n</i> @<a href="#id-obje-pe">ID_OBJE</a>@ <span class="required"><a href="#tag-obje">OBJE</a></span> </td><td class="size">1:1</td></tr>
 
             <tr><td class="code level-1">+1 <span class="required"><a href="#tag-file">FILE</a></span> &lt;<a href="#multimedia-file-reference-pe">MULTIMEDIA_FILE_REFERENCE</a>&gt; </td><td class="size">1:M</td></tr>
 
@@ -1378,7 +1378,7 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
           <p>A NOTE_RECORD contains text that is referenced by one or more subrecords. The &lt;&lt;<a href="#note-structure-subr">NOTE_STRUCTURE</a>&gt;&gt; references the NOTE_RECORD.</p>
 
           <table class="record-structure">
-            <tr><td class="code level-0"><i>n</i> @&lt;<a href="#id-note-pe">ID:NOTE</a>&gt;@ <span class="required"><a href="#tag-note">NOTE</a></span> &lt;<a href="#submitter-text-pe">SUBMITTER_TEXT</a>&gt; </td><td class="size">1:1</td></tr>
+            <tr><td class="code level-0"><i>n</i> @&lt;<a href="#id-note-pe">ID_NOTE</a>&gt;@ <span class="required"><a href="#tag-note">NOTE</a></span> &lt;<a href="#note-text-pe">NOTE_TEXT</a>&gt; </td><td class="size">1:1</td></tr>
 
             <tr><td class="code level-1">+1 <a href="#tag-refn">REFN</a> &lt;<a href="#user-reference-number-pe">USER_REFERENCE_NUMBER</a>&gt; </td><td class="size">0:M</td></tr>
 
@@ -1397,7 +1397,7 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
           <p>A REPO_RECORD describes a repository. The &lt;&lt;<a href="#source-repository-citation-subr">SOURCE_REPOSITORY_CITATION</a>&gt;&gt; structure references the REPO_RECORD.</p>
 
           <table class="record-structure">
-            <tr><td class="code level-0"><i>n</i> @&lt;<a href="#id-repo-pe">ID:REPO</a>&gt;@ <span class="required"><a href="#tag-repo">REPO</a></span> </td><td class="size">1:1</td></tr>
+            <tr><td class="code level-0"><i>n</i> @&lt;<a href="#id-repo-pe">ID_REPO</a>&gt;@ <span class="required"><a href="#tag-repo">REPO</a></span> </td><td class="size">1:1</td></tr>
 
             <tr><td class="code level-1">+1 <span class="required"><a href="#tag-name">NAME</a></span> &lt;<a href="#name-of-repository-pe">NAME_OF_REPOSITORY</a>&gt; </td><td class="size">1:1</td></tr>
 
@@ -1430,7 +1430,7 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
           <p>The SOUR_RECORD provides a bibliographic description of a cited source. The &lt;&lt;<a href="#source-citation-subr">SOURCE_CITATION</a>&gt;&gt; structure references the SOUR_RECORD.</p>
 
           <table class="record-structure">
-            <tr><td class="code level-0"><i>n</i> @&lt;<a href="#id-sour-pe">ID:SOUR</a>&gt;@ <span class="required"><a href="#tag-sour">SOUR</a></span> </td><td class="size">1:1</td></tr>
+            <tr><td class="code level-0"><i>n</i> @&lt;<a href="#id-sour-pe">ID_SOUR</a>&gt;@ <span class="required"><a href="#tag-sour">SOUR</a></span> </td><td class="size">1:1</td></tr>
 
             <tr><td class="code level-1">+1 <a href="#tag-data">DATA</a> </td><td class="size">0:1</td></tr>
 
@@ -1475,9 +1475,9 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
           <p>The SUBM_RECORD specifies the individual or organization that contributed information contained in the GEDCOM document.</p>
 
           <table class="record-structure">
-            <tr><td class="code level-0"><i>n</i> @&lt;<a href="#id-subm-pe">ID:SUBM</a>&gt;@ <span class="required"><a href="#tag-subm">SUBM</a></span> </td><td class="size">1:1</td></tr>
+            <tr><td class="code level-0"><i>n</i> @&lt;<a href="#id-subm-pe">ID_SUBM</a>&gt;@ <span class="required"><a href="#tag-subm">SUBM</a></span> </td><td class="size">1:1</td></tr>
 
-            <tr><td class="code level-1">+1 <span class="required"><a href="#tag-name">NAME</a></span> &lt;<a href="#submitter-name-pe">SUBMITTER_NAME</a>&gt; </td><td class="size">1:1</td></tr>
+            <tr><td class="code level-1">+1 <span class="required"><a href="#tag-name">NAME</a></span> &lt;<a href="#name-of-submitter-pe">NAME_OF_SUBMITTER</a>&gt; </td><td class="size">1:1</td></tr>
 
             <tr><td class="code level-1">+1 &lt;&lt;<a href="#address-structure-subr">ADDRESS_STRUCTURE</a>&gt;&gt; </td><td class="size">0:1</td></tr>
 
@@ -1485,7 +1485,7 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
 
             <tr><td class="code level-1">+1 &lt;&lt;<a href="#multimedia-link-subr">MULTIMEDIA_LINK</a>&gt;&gt; </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-lang">LANG</a> &lt;<a href="#language-preference-pe">LANGUAGE_PREFERENCE</a>&gt; </td><td class="size">0:3</td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-lang">LANG</a> &lt;<a href="#language-id-pe">LANGUAGE_ID</a>&gt; </td><td class="size">0:3</td></tr>
 
             <tr><td class="code level-1">+1 <a href="#tag-rfn">RFN</a> &lt;<a href="#submitter-registered-rfn-pe">SUBMITTER_REGISTERED_RFN</a>&gt; </td><td class="size">0:1</td></tr>
 
@@ -1562,10 +1562,10 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
 
         <dt id="association-structure-subr">ASSOCIATION_STRUCTURE</dt>
         <dd>
-          <p>The ASSOCIATION_STRUCTURE associates the current <a href="#indi-record">INDI_RECORD</a> to the INDI_RECORD with the given <a href="#id-indi-pe">ID:INDI</a>.</p>
+          <p>The ASSOCIATION_STRUCTURE associates the current <a href="#indi-record">INDI_RECORD</a> to the INDI_RECORD with the given <a href="#id-indi-pe">ID_INDI</a>.</p>
 
           <table class="record-structure">
-            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-asso">ASSO</a></span> @&lt;<a href="#id-indi-pe">ID:INDI</a>&gt;@ </td><td class="size">1:1</td></tr>
+            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-asso">ASSO</a></span> @&lt;<a href="#id-indi-pe">ID_INDI</a>&gt;@ </td><td class="size">1:1</td></tr>
 
             <tr><td class="code level-1">+1 <span class="required"><a href="#tag-rela">RELA</a></span> &lt;<a href="#relation-is-descriptor-pe">RELATION_IS_DESCRIPTOR</a>&gt; </td><td class="size">1:1</td></tr>
 
@@ -1616,7 +1616,7 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
           <p>The CHILD_TO_FAMILY_LINK structure provides a pointer to a family where this person is a child.</p>
 
           <table class="record-structure">
-            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-famc">FAMC</a></span> @&lt;<a href="#id-fam-pe">ID:FAM</a>&gt;@ </td><td class="size">1:1</td></tr>
+            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-famc">FAMC</a></span> @&lt;<a href="#id-fam-pe">ID_FAM</a>&gt;@ </td><td class="size">1:1</td></tr>
 
             <tr><td class="code level-1">+1 <a href="#tag-pedi">PEDI</a> &lt;<a href="#pedigree-linkage-type-pe">PEDIGREE_LINKAGE_TYPE</a>&gt; </td><td class="size">0:1</td></tr>
 
@@ -1645,7 +1645,7 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
 
             <tr><td class="syntax-character" colspan="2">|</td></tr>
 
-            <tr><td class="code level-0"><i>n</i> <a href="#tag-fax">FAX</a> &lt;<a href="#address-fax-pe">ADDRESS_FAX</a>&gt; </td><td class="size">1:3</td></tr>
+            <tr><td class="code level-0"><i>n</i> <a href="#tag-fax">FAX</a> &lt;<a href="#phone-number-fax">PHONE_NUMBER_FAX</a>&gt; </td><td class="size">1:3</td></tr>
 
             <tr><td class="syntax-character" colspan="2">|</td></tr>
 
@@ -1865,9 +1865,9 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
 
           <h4>Notes</h4>
           <ol>
-            <li id="individual-attribute-structure-note-1">The <a href="#tag-type-event-or-fact">TYPE</a> subrecord may be used with this subrecord to provide an &lt;<a href="#event-or-fact-classification-pe">EVENT_OR_FACT_CLASSIFICATION</a>&gt;.</li>
+            <li id="individual-attribute-structure-note-1">The <a href="#tag-type-event-or-fact">TYPE</a> subrecord <em>may</em> be used with this subrecord to provide an &lt;<a href="#event-or-fact-classification-pe">EVENT_OR_FACT_CLASSIFICATION</a>&gt;.</li>
 
-            <li id="individual-attribute-structure-note-2">The <a href="#tag-type-event-or-fact">TYPE</a> subrecord must be used with this subrecord to provide an &lt;<a href="#event-or-fact-classification-pe">EVENT_OR_FACT_CLASSIFICATION</a>&gt;.</li>
+            <li id="individual-attribute-structure-note-2">The <a href="#tag-type-event-or-fact">TYPE</a> subrecord <em>must</em> be used with this subrecord to provide an &lt;<a href="#event-or-fact-classification-pe">EVENT_OR_FACT_CLASSIFICATION</a>&gt;.</li>
           </ol>
 
 <div class="references">
@@ -1899,7 +1899,7 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
 
             <tr><td class="code level-1">+1 &lt;&lt;<a href="#individual-event-detail-subr">INDIVIDUAL_EVENT_DETAIL</a>&gt;&gt; </td><td class="size">0:1*</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-famc">FAMC</a> @&lt;<a href="#id-fam-pe">ID:FAM</a>&gt;@ </td><td class="size">0:1</td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-famc">FAMC</a> @&lt;<a href="#id-fam-pe">ID_FAM</a>&gt;@ </td><td class="size">0:1</td></tr>
 
             <tr><td class="syntax-character" colspan="2">|</td></tr>
 
@@ -1919,7 +1919,7 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
 
             <tr><td class="code level-1">+1 &lt;&lt;<a href="#individual-event-detail-subr">INDIVIDUAL_EVENT_DETAIL</a>&gt;&gt; </td><td class="size">0:1*</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-famc">FAMC</a> @&lt;<a href="#id-fam-pe">ID:FAM</a>&gt;@ </td><td class="size">0:1</td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-famc">FAMC</a> @&lt;<a href="#id-fam-pe">ID_FAM</a>&gt;@ </td><td class="size">0:1</td></tr>
 
             <tr><td class="code level-2">+2 <a href="#tag-adop">ADOP</a> &lt;<a href="#adopted-by-which-parent-pe">ADOPTED_BY_WHICH_PARENT</a>&gt; </td><td class="size">0:1</td></tr>
 
@@ -1990,7 +1990,7 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
           <table class="record-structure">
             <tr><td class="syntax-character" colspan="2">[</td></tr>
 
-            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-obje">OBJE</a></span> @&lt;<a href="#id-obje-pe">ID:OBJE</a>&gt;@ </td><td class="size">1:1</td></tr>
+            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-obje">OBJE</a></span> @&lt;<a href="#id-obje-pe">ID_OBJE</a>&gt;@ </td><td class="size">1:1</td></tr>
 
             <tr><td class="syntax-character" colspan="2">|</td></tr>
 
@@ -2044,11 +2044,11 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
           <table class="record-structure">
             <tr><td class="syntax-character" colspan="2">[</td></tr>
 
-            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-note">NOTE</a></span> @&lt;<a href="#id-note-pe">ID:NOTE</a>&gt;@ </td><td class="size">1:1</td></tr>
+            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-note">NOTE</a></span> @&lt;<a href="#id-note-pe">ID_NOTE</a>&gt;@ </td><td class="size">1:1</td></tr>
 
             <tr><td class="syntax-character" colspan="2">|</td></tr>
 
-            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-note">NOTE</a></span> [&lt;<a href="#submitter-text-pe">SUBMITTER_TEXT</a>&gt; | &lt;<a href="#null-pe">NULL</a>&gt;] </td><td class="size">1:1</td></tr>
+            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-note">NOTE</a></span> [&lt;<a href="#note-text-pe">NOTE_TEXT</a>&gt; | &lt;<a href="#null-pe">NULL</a>&gt;] </td><td class="size">1:1</td></tr>
 
             <tr><td class="syntax-character" colspan="2">]</td></tr>
           </table>
@@ -2165,7 +2165,7 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
         <dd>
           <p>Structure when using a <a href="#pointer-component">pointer</a> to a <a href="#sour-record">SOUR_RECORD</a>:</p>
           <table class="record-structure">
-            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-sour">SOUR</a></span> @&lt;<a href="#id-sour-pe">ID:SOUR</a>&gt;@ </td><td class="size">1:1</td></tr>
+            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-sour">SOUR</a></span> @&lt;<a href="#id-sour-pe">ID_SOUR</a>&gt;@ </td><td class="size">1:1</td></tr>
 
             <tr><td class="code level-1">+1 <a href="#tag-page">PAGE</a> &lt;<a href="#where-within-source-pe">WHERE_WITHIN_SOURCE</a>&gt; </td><td class="size">0:1</td></tr>
 
@@ -2183,7 +2183,7 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
 
             <tr><td class="code level-1">+1 &lt;&lt;<a href="#note-structure-subr">NOTE_STRUCTURE</a>&gt;&gt; </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-1">+1 QUAY &lt;<a href="#certainty-assessment-pe">CERTAINTY_ASSESSMENT</a>&gt; </td><td class="size">0:1</td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-quay">QUAY</a> &lt;<a href="#certainty-assessment-pe">CERTAINTY_ASSESSMENT</a>&gt; </td><td class="size">0:1</td></tr>
           </table>
 
           <p>Structure when <em>not</em> using a <a href="#pointer-component">pointer</a> to a <a href="#sour-record">SOUR_RECORD</a>:</p>
@@ -2197,7 +2197,7 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
 
             <tr><td class="code level-1">+1 &lt;&lt;<a href="#note-structure-subr">NOTE_STRUCTURE</a>&gt;&gt; </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-1">+1 QUAY &lt;<a href="#certainty-assessment-pe">CERTAINTY_ASSESSMENT</a>&gt; </td><td class="size">0:1</td></tr>
+            <tr><td class="code level-1">+1 <a href="#tag-quay">QUAY</a> &lt;<a href="#certainty-assessment-pe">CERTAINTY_ASSESSMENT</a>&gt; </td><td class="size">0:1</td></tr>
           </table>
 
           <p>The data provided in the &lt;&lt;<a href="#source-citation-subr">SOURCE_CITATION</a>&gt;&gt; structure is source-related information specific to the data being cited. Systems that do not use a <a href="#sour-record">SOUR_RECORD</a> must use the non-preferred second SOURCE_CITATION structure option.</p>
@@ -2243,7 +2243,7 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
           <p>A SOURCE_REPOSITORY_CITATION links a <a href="#sour-record">SOUR_RECORD</a> to a <a href="#repo-record">REPO_RECORD</a>.</p>
 
           <table class="record-structure">
-            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-repo">REPO</a></span> [ @<a href="#id-repo-pe">ID:REPO</a>@ | &lt;<a href="#null-pe">NULL</a>&gt;] </td><td class="size">1:1</td></tr>
+            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-repo">REPO</a></span> [ @<a href="#id-repo-pe">ID_REPO</a>@ | &lt;<a href="#null-pe">NULL</a>&gt;] </td><td class="size">1:1</td></tr>
 
             <tr><td class="code level-1">+1 &lt;&lt;<a href="#note-structure-subr">NOTE_STRUCTURE</a>&gt;&gt; </td><td class="size">0:M</td></tr>
 
@@ -2264,7 +2264,7 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
           <p>The SPOUSE_TO_FAMILY_LINK subrecord provides a <a href="pointer-component">pointer</a> to a <a href="#fam-record">FAM_RECORD</a> where this person is a spouse and/or parent.</p>
 
           <table class="record-structure">
-            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-fams">FAMS</a></span> @&lt;<a href="#id-fam-pe">ID:FAM</a>&gt;@ </td><td class="size">1:1</td></tr>
+            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-fams">FAMS</a></span> @&lt;<a href="#id-fam-pe">ID_FAM</a>&gt;@ </td><td class="size">1:1</td></tr>
 
             <tr><td class="code level-1">+1 &lt;&lt;<a href="#note-structure-subr">NOTE_STRUCTURE</a>&gt;&gt; </td><td class="size">0:M</td></tr>
           </table>
@@ -2316,15 +2316,6 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#contact-structure-subr">CONTACT<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-email">EMAIL</a></p>
-</div>
-        </dd>
-
-        <dt id="address-fax-pe">ADDRESS_FAX <span class="size">{Size=5:60}</span></dt>
-        <dd>
-          <p>A FAX telephone number appropriate for sending data facsimiles.</p>
-
-<div class="references">
-<p>See: &lt;&lt;<a href="#contact-structure-subr">CONTACT<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-fax">FAX</a></p>
 </div>
         </dd>
 
@@ -2558,7 +2549,7 @@ CHILD
           </table>
 
 <div class="references">
-<p>See: &lt;&lt;<a href="#source-citation-subr">SOURCE<wbr>_CITATION</a>&gt;&gt;</p>
+<p>See: &lt;&lt;<a href="#source-citation-subr">SOURCE<wbr>_CITATION</a>&gt;&gt;<wbr>.<a href="#tag-sour">SOUR</a><wbr>.<a href="#tag-quay">QUAY</a></p>
 </div>
         </dd>
 
@@ -2580,8 +2571,8 @@ CHILD
 
           <p>Example:</p>
 <pre>
-0 HEAD
-1 CHAR UTF-8
+0  <a href="#tag-head">HEAD</a>
+1 <a href="#tag-char">CHAR</a> UTF-8
 </pre>
 
           <p>UTF-8 is defined by the <i>Unicode&reg; Standard</i> which is maintained by the Unicode Technical Committee. As of January 1, 2019, the current version of the <i>Unicode&reg; Standard</i> is 11.0.0.</p>
@@ -2604,6 +2595,15 @@ CHILD
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#child-to-family-link-subr">CHILD<wbr>_TO<wbr>_FAMILY<wbr>_LINK</a>&gt;&gt;<wbr>.<a href="#tag-famc">FAMC</a><wbr>.<a href="#tag-stat">STAT</a></p>
+</div>
+        </dd>
+
+        <dt id="content-description-pe">CONTENT_DESCRIPTION <span class="same-as">Same as <a href="#text-pe">TEXT</a></span></dt>
+        <dd>
+          <p>A &lt;<a href="#text-pe">TEXT</a>&gt; value that describes the contents of the GEDCOM document.</p>
+
+<div class="references">
+<p>See: &lt;&lt;<a href="#head-record">HEAD<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-head">HEAD</a><wbr>.<a href="#tag-note">NOTE</a></p>
 </div>
         </dd>
 
@@ -2671,9 +2671,9 @@ CHILD
 </div>
         </dd>
 
-        <dt id="descriptive-title-pe">DESCRIPTIVE_TITLE <span class="size">{Size=1:248}</span></dt>
+        <dt id="descriptive-title-pe">DESCRIPTIVE_TITLE <span class="same-as">Same as <a href="#text-pe">TEXT</a></span></dt>
         <dd>
-          <p>The title of a work, record, item, or object.</p>
+          <p>A &lt;<a href="#text-pe">TEXT</a>&gt; value that specifies the title of a work, record, item, or object.</p>
 
 <div class="references">
 <p>See:</p>
@@ -2762,8 +2762,8 @@ CHILD
 <div class="references">
 <p>See:</p>
 <ul>
-<li>&lt;&lt;<a href="#family-event-structure-subr">FAMILY<wbr>_EVENT<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-even-generic">EVEN (Generic Event)</a></li>
-<li>&lt;&lt;<a href="#individual-event-structure-subr">INDIVIDUAL<wbr>_EVENT<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-even-generic">EVEN (Generic Event)</a></li>
+<li>&lt;&lt;<a href="#family-event-structure-subr">FAMILY<wbr>_EVENT<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-even-generic">EVEN</a></li>
+<li>&lt;&lt;<a href="#individual-event-structure-subr">INDIVIDUAL<wbr>_EVENT<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-even-generic">EVEN</a></li>
 </ul>
 </div>
         </dd>
@@ -2792,7 +2792,7 @@ CHILD
 <div class="references">
 <p>See:</p>
 <ul>
-<li>&lt;&lt;<a href="#event-or-fact-detail-subr">EVENT<wbr>_OR<wbr>_FACT<wbr>_DETAIL</a>&gt;&gt;<wbr>.<a href="#tag-type-event-or-fact">TYPE (Event or Fact)</a></li>
+<li>&lt;&lt;<a href="#event-or-fact-detail-subr">EVENT<wbr>_OR<wbr>_FACT<wbr>_DETAIL</a>&gt;&gt;<wbr>.<a href="#tag-type-event-or-fact">TYPE</a></li>
 <li>&lt;&lt;<a href="#individual-attribute-structure-subr">INDIVIDUAL<wbr>_ATTRIBUTE<wbr>_STRUCTURE</a>&gt;&gt;</li>
 </ul>
 </div>
@@ -2805,7 +2805,7 @@ CHILD
           <p>For example, if the entry was created to record a birth of a child, then the type would be <a href="#tag-birt">BIRT</a> regardless of the assertions made from that record, such as the mother's name or mother's birth date. This will allow a prioritized best view choice and a determination of the certainty associated with the source used in asserting the cited fact.</p>
 
 <div class="references">
-<p>See: &lt;&lt;<a href="#source-citation-subr">SOURCE<wbr>_CITATION</a>&gt;&gt;<wbr>.<a href="#tag-sour">SOUR</a><wbr>.<a href="#tag-even-types">EVEN (Event Types)</a></p>
+<p>See: &lt;&lt;<a href="#source-citation-subr">SOURCE<wbr>_CITATION</a>&gt;&gt;<wbr>.<a href="#tag-sour">SOUR</a><wbr>.<a href="#tag-even-types">EVEN</a></p>
 </div>
         </dd>
 
@@ -2876,7 +2876,7 @@ CHILD
           <p>Each value is separated by a comma. A value for a parish register of births, deaths, and marriages would be <code>BIRT, DEAT, MARR</code>.</p>
 
 <div class="references">
-<p>See: &lt;&lt;<a href="#sour-record">SOUR<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-sour">SOUR</a><wbr>.<a href="#tag-data">DATA</a><wbr>.<a href="#tag-even-types">EVEN (Event Types)</a></p>
+<p>See: &lt;&lt;<a href="#sour-record">SOUR<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-sour">SOUR</a><wbr>.<a href="#tag-data">DATA</a><wbr>.<a href="#tag-even-types">EVEN</a></p>
 </div>
         </dd>
 
@@ -2886,15 +2886,6 @@ CHILD
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#head-record">HEAD<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-head">HEAD</a><wbr>.<a href="#tag-file">FILE</a></p>
-</div>
-        </dd>
-
-        <dt id="gedcom-content-description-pe">GEDCOM_CONTENT_DESCRIPTION <span class="size">{Size=1:248}</span></dt>
-        <dd>
-          <p>A note that a user enters to describe the contents of the document in terms of "ancestors or descendants of" so that the person receiving the data knows what genealogical information the document contains.</p>
-
-<div class="references">
-<p>See: &lt;&lt;<a href="#head-record">HEAD<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-head">HEAD</a><wbr>.<a href="#tag-note">NOTE</a></p>
 </div>
         </dd>
 
@@ -2927,7 +2918,7 @@ CHILD
 </div>
         </dd>
 
-        <dt id="id-fam-pe">ID:FAM <span class="same-as">Same as <a href="#id-component">ID</a></span></dt>
+        <dt id="id-fam-pe">ID_FAM <span class="same-as">Same as <a href="#id-component">ID</a></span></dt>
         <dd>
           <p>A <a href="#pointer-component">pointer</a> to a <a href="#fam-record">FAM_RECORD</a> or an <a href="#id-component">ID</a> of a FAM_RECORD.</p>
 
@@ -2943,7 +2934,7 @@ CHILD
 </div>
         </dd>
 
-        <dt id="id-indi-pe">ID:INDI <span class="same-as">Same as <a href="#id-component">ID</a></span></dt>
+        <dt id="id-indi-pe">ID_INDI <span class="same-as">Same as <a href="#id-component">ID</a></span></dt>
         <dd>
           <p>A <a href="#pointer-component">pointer</a> to a <a href="#indi-record">INDI_RECORD</a> or an <a href="#id-component">ID</a> of a INDI_RECORD.</p>
 
@@ -2960,7 +2951,7 @@ CHILD
 </div>
         </dd>
 
-        <dt id="id-note-pe">ID:NOTE <span class="same-as">Same as <a href="#id-component">ID</a></span></dt>
+        <dt id="id-note-pe">ID_NOTE <span class="same-as">Same as <a href="#id-component">ID</a></span></dt>
         <dd>
           <p>A <a href="#pointer-component">pointer</a> to a <a href="#repo-record">NOTE_RECORD</a> or an <a href="#id-component">ID</a> of a NOTE_RECORD.</p>
 
@@ -2973,7 +2964,7 @@ CHILD
 </div>
         </dd>
 
-        <dt id="id-obje-pe">ID:OBJE <span class="same-as">Same as <a href="#id-component">ID</a></span></dt>
+        <dt id="id-obje-pe">ID_OBJE <span class="same-as">Same as <a href="#id-component">ID</a></span></dt>
         <dd>
           <p>A <a href="#pointer-component">pointer</a> to a <a href="#repo-record">OBJE_RECORD</a> or an <a href="#id-component">ID</a> of a OBJE_RECORD.</p>
 
@@ -2986,7 +2977,7 @@ CHILD
 </div>
         </dd>
 
-        <dt id="id-repo-pe">ID:REPO <span class="same-as">Same as <a href="#id-component">ID</a></span></dt>
+        <dt id="id-repo-pe">ID_REPO <span class="same-as">Same as <a href="#id-component">ID</a></span></dt>
         <dd>
           <p>A <a href="#pointer-component">pointer</a> to a <a href="#repo-record">REPO_RECORD</a> or an <a href="#id-component">ID</a> of a REPO_RECORD.</p>
 
@@ -2999,7 +2990,7 @@ CHILD
 </div>
         </dd>
 
-        <dt id="id-sour-pe">ID:SOUR <span class="same-as">Same as <a href="#id-component">ID</a></span></dt>
+        <dt id="id-sour-pe">ID_SOUR <span class="same-as">Same as <a href="#id-component">ID</a></span></dt>
         <dd>
           <p>A <a href="#pointer-component">pointer</a> to a <a href="#sour-record">SOUR_RECORD</a> or an <a href="#id-component">ID</a> of a SOUR_RECORD.</p>
 
@@ -3012,7 +3003,7 @@ CHILD
 </div>
         </dd>
 
-        <dt id="id-subm-pe">ID:SUBM <span class="same-as">Same as <a href="#id-component">ID</a></span></dt>
+        <dt id="id-subm-pe">ID_SUBM <span class="same-as">Same as <a href="#id-component">ID</a></span></dt>
         <dd>
           <p>A <a href="#pointer-component">pointer</a> to a <a href="#subm-record">SUBM_RECORD</a> or an <a href="#id-component">ID</a> of a SUBM_RECORD.</p>
 
@@ -3136,27 +3127,9 @@ CHILD
 <div class="references">
 <p>See:</p>
 <ul>
-<li>&lt;<a href="#language-of-text-pe">LANGUAGE<wbr>_OF<wbr>_TEXT</a>&gt;</li>
-<li>&lt;<a href="#language-preference-pe">LANGUAGE<wbr>_PREFERENCE</a>&gt;</li>
+<li>&lt;&lt;<a href="#head-record">HEAD<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-head">HEAD</a><wbr>.<a href="#tag-lang">LANG</a></li>
+<li>&lt;&lt;<a href="#subm-record">SUBM<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-subm">SUBM</a><wbr>.<a href="#tag-lang">LANG</a></li>
 </ul>
-</div>
-        </dd>
-
-        <dt id="language-of-text-pe">LANGUAGE_OF_TEXT <span class="same-as">Same as &lt;<a href="#language-id-pe">LANGUAGE_ID</a>&gt;</span></dt>
-        <dd>
-          <p>The human language in which the data in the document is normally read or written. It is used primarily by programs to select language-specific sorting sequences and phonetic name matching algorithms.</p>
-
-<div class="references">
-<p>See: &lt;&lt;<a href="#head-record">HEAD<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-head">HEAD</a><wbr>.<a href="#tag-lang">LANG</a></p>
-</div>
-        </dd>
-
-        <dt id="language-preference-pe">LANGUAGE_PREFERENCE <span class="size"><span class="same-as">Same as &lt;<a href="#language-id-pe">LANGUAGE_ID</a>&gt;</span></span></dt>
-        <dd>
-          <p>The language in which a person prefers to communicate. Multiple language preference is shown by using multiple occurrences in order of priority.</p>
-
-<div class="references">
-<p>See: &lt;&lt;<a href="#subm-record">SUBM<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-subm">SUBM</a><wbr>.<a href="#tag-lang">LANG</a></p>
 </div>
         </dd>
 
@@ -3234,6 +3207,15 @@ CHILD
 </div>
         </dd>
 
+        <dt id="name-of-submitter-pe">NAME_OF_SUBMITTER <span class="size">{Size=1:60}</span></dt>
+        <dd>
+          <p>The name of the submitter formatted for display and address generation.</p>
+
+<div class="references">
+<p>See: &lt;&lt;<a href="#subm-record">SUBM<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-subm">SUBM</a><wbr>.<a href="#tag-name">NAME</a></p>
+</div>
+        </dd>
+
         <dt id="name-personal-pe">NAME_PERSONAL <span class="size">{Size=1:120}</span></dt>
         <dd>
 
@@ -3286,16 +3268,6 @@ CHILD
         <dd>
           <p>NAME_PIECE_GIVEN is the given name.</p>
 
-          <p>The <a href="#tag-givn">GIVN</a> subrecord shown below indicates that the NAME_PIECE_GIVEN for "Lt. Cmndr. Joseph Allen, Jr." is "Joseph":</p>
-
-<pre>
-1 NAME Lt. Cmndr. Joseph /Allen/ Jr.
-2 NPFX Lt. Cmdr.
-2 GIVN Joseph
-2 SURN Allen
-2 NSFX Jr.
-</pre>
-
 <div class="references">
 <p>See: &lt;&lt;<a href="#personal-name-pieces-subr">PERSONAL<wbr>_NAME<wbr>_PIECES</a>&gt;&gt;<wbr>.<a href="#tag-givn">GIVN</a></p>
 </div>
@@ -3305,15 +3277,6 @@ CHILD
         <dd>
           <p>NAME_PIECE_NICKNAME is a descriptive or familiar name used in connection with the proper name.</p>
 
-          <p>The <a href="#tag-nick">NICK</a> subrecord shown below indicates that the NAME_PIECE_NICKNAME for "John 'Jack' Smith" is "Jack":</p>
-
-<pre>
-1 NAME John "Jack" /Smith/
-2 GIVN John
-2 NICK Jack
-2 SURN Smith
-</pre>
-
 <div class="references">
 <p>See: &lt;&lt;<a href="#personal-name-pieces-subr">PERSONAL<wbr>_NAME<wbr>_PIECES</a>&gt;&gt;<wbr>.<a href="#tag-nick">NICK</a></p>
 </div>
@@ -3322,16 +3285,6 @@ CHILD
         <dt id="name-piece-prefix-pe">NAME_PIECE_PREFIX <span class="size">{Size=1:30}</span></dt>
         <dd>
           <p>NAME_PIECE_PREFIX is a non-indexing name piece that appears preceding the given name and surname parts.</p>
-
-          <p>The <a href="#tag-npfx">NPFX</a> subrecord shown below indicates that the NAME_PIECE_PREFIX for "Lt. Cmndr. Joseph Allen, Jr." is "Lt. Cmdr.":</p>
-
-<pre>
-1 NAME Lt. Cmndr. Joseph /Allen/ Jr.
-2 NPFX Lt. Cmdr.
-2 GIVN Joseph
-2 SURN Allen
-2 NSFX Jr.
-</pre>
 
           <p>Multiple prefixes are separated by a comma.</p>
 
@@ -3344,16 +3297,6 @@ CHILD
         <dd>
           <p>NAME_PIECE_SUFFIX is a non-indexing name piece that appears preceding the given name and surname parts.</p>
 
-          <p>The <a href="#tag-nsfx">NSFX</a> subrecord shown below indicates that the NAME_PIECE_SUFFIX for "Lt. Cmndr. Joseph Allen, Jr." is "Jr.":</p>
-
-<pre>
-1 NAME Lt. Cmndr. Joseph /Allen/ Jr.
-2 NPFX Lt. Cmdr.
-2 GIVN Joseph
-2 SURN Allen
-2 NSFX Jr.
-</pre>
-
           <p>Multiple suffixes are separated by a comma.</p>
 
 <div class="references">
@@ -3364,16 +3307,6 @@ CHILD
         <dt id="name-piece-surname-pe">NAME_PIECE_SURNAME <span class="size">{Size=1:120}</span></dt>
         <dd>
           <p>NAME_PIECE_SURNAME is the surname or family name.</p>
-
-          <p>The <a href="#tag-surn">SURN</a> subrecord shown below indicates that the NAME_PIECE_SURNAME for "Lt. Cmndr. Joseph Allen, Jr." is "Allen":</p>
-
-<pre>
-1 NAME Lt. Cmndr. Joseph /Allen/ Jr.
-2 NPFX Lt. Cmdr.
-2 GIVN Joseph
-2 SURN Allen
-2 NSFX Jr.
-</pre>
 
           <p>Multiple surnames are separated by a comma.</p>
 
@@ -3386,15 +3319,6 @@ CHILD
         <dd>
 
           <p>NAME_PIECE_SURNAME_PREFIX is a surname prefix or article used in a family name.</p>
-
-          <p>The <a href="#tag-spfx">SPFX</a> subrecord shown below indicates that the NAME_PIECE_SURNAME_PREFIX for "Paul van Heusen" is "van":</p>
-
-<pre>
-1 NAME Paul van Heusen
-2 GIVN Paul
-2 SPFX van
-2 SURN Heusen
-</pre>
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#personal-name-pieces-subr">PERSONAL<wbr>_NAME<wbr>_PIECES</a>&gt;&gt;<wbr>.<a href="#tag-spfx">SPFX</a></p>
@@ -3438,21 +3362,13 @@ CHILD
           </table>
 
 <div class="references">
-<p>See: &lt;&lt;<a href="#personal-name-structure-subr">PERSONAL<wbr>_NAME<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-name">NAME</a><wbr>.<a href="#tag-type-name">TYPE (Name)</a></p>
+<p>See: &lt;&lt;<a href="#personal-name-structure-subr">PERSONAL<wbr>_NAME<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-name">NAME</a><wbr>.<a href="#tag-type-name">TYPE</a></p>
 </div>
         </dd>
 
         <dt id="national-id-number-pe">NATIONAL_ID_NUMBER <span class="size">{Size=1:30}</span></dt>
         <dd>
-          <p>NATIONAL_ID_NUMBER is a nationally-controlled number assigned to an individual. The use of the <a href="#tag-idno">IDNO</a> tag requires a subordinate <a href="#tag-type-event-or-fact">TYPE</a> tag to identify what kind of number is being stored.</p>
-
-          <p>For example:</p>
-
-<pre>
-0 @I1@ <a href="#tag-indi">INDI</a>
-1 <a href="#tag-idno">IDNO</a> 43-456-1899
-2 <a href="#tag-type-event-or-fact">TYPE</a> Canadian Health Registration
-</pre>
+          <p>NATIONAL_ID_NUMBER is a nationally-controlled number assigned to an individual.</p>
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#individual-attribute-structure-subr">INDIVIDUAL<wbr>_ATTRIBUTE<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-idno">IDNO</a></p>
@@ -3474,6 +3390,15 @@ CHILD
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#individual-attribute-structure-subr">INDIVIDUAL<wbr>_ATTRIBUTE<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-titl">TITL</a></p>
+</div>
+        </dd>
+
+        <dt id="note-text-pe">NOTE_TEXT <span class="size">{Size=1:M}</span></dt>
+        <dd>
+          <p>Comments from the submitter composed of any valid character from the Unicode character set but subject to the syntax rules for the <a href="#line-value-component">line_value</a> component.</p>
+
+<div class="references">
+<p>See: &lt;&lt;<a href="#note-structure-subr">NOTE<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-note">NOTE</a></p>
 </div>
         </dd>
 
@@ -3531,6 +3456,14 @@ CHILD
 </div>
         </dd>
 
+        <!-- TODO Why use different sizes for PHONE_NUMBER and PHONE_NUMBER_FAX? -->
+        <dt id="phone-number-fax" class="provisional">PHONE_NUMBER_FAX <span class="size">{Size=5:60}</span></dt>
+        <dd>
+          <p>A FAX telephone number appropriate for sending data facsimiles.</p>
+
+
+        </dd>
+
         <dt id="phonetic-type-pe">PHONETIC_TYPE <span class="size">{Size=4:30}</span></dt>
         <dd>
           <p>A code or text value that indicates the method used in transforming text to a phonetic variation. The choices are:</p>
@@ -3551,23 +3484,16 @@ CHILD
 <div class="references">
 <p>See:</p>
 <ul>
-<li>&lt;&lt;<a href="#personal-name-structure-subr">PERSONAL<wbr>_NAME<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-name">NAME</a><wbr>.<a href="#tag-fone">FONE</a><wbr>.<a href="#tag-type-transform">TYPE (Transform)</a></li>
+<li>&lt;&lt;<a href="#personal-name-structure-subr">PERSONAL<wbr>_NAME<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-name">NAME</a><wbr>.<a href="#tag-fone">FONE</a><wbr>.<a href="#tag-type-transform">TYPE</a></li>
 <li>&lt;<a href="#place-phonetic-variation-pe">PLACE<wbr>_PHONETIC<wbr>_VARIATION</a>&gt;</li>
-<li>&lt;&lt;<a href="#place-structure-subr">PLACE<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-plac">PLAC</a><wbr>.<a href="#tag-fone">FONE</a><wbr>.<a href="#tag-type-transform">TYPE (Transform)</a></li>
+<li>&lt;&lt;<a href="#place-structure-subr">PLACE<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-plac">PLAC</a><wbr>.<a href="#tag-fone">FONE</a><wbr>.<a href="#tag-type-transform">TYPE</a></li>
 </ul>
 </div>
         </dd>
 
-        <dt id="physical-description-pe">PHYSICAL_DESCRIPTION <span class="size">{Size=1:248}</span></dt>
+        <dt id="physical-description-pe">PHYSICAL_DESCRIPTION <span class="same-as">Same as <a href="#text-pe">TEXT</a></span></dt>
         <dd>
-          <p>An unstructured list of the attributes that describe the physical characteristics of a person, place, or object. Commas separate each attribute.</p>
-
-          <p>Example:</p>
-
-<pre>
-1 <a href="#tag-dscr">DSCR</a> Hair Brown, Eyes Brown, Height 5 ft 8 in
-2 DATE 23 JUL 1935
-</pre>
+          <p>A &lt;<a href="#text-pe">TEXT</a>&gt; value specifying a comma-separated list of the attributes that describe the physical characteristics of an individual.</p>
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#individual-attribute-structure-subr">INDIVIDUAL<wbr>_ATTRIBUTE<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-dscr">DSCR</a></p>
@@ -3648,7 +3574,7 @@ CHILD
 
           <p>For example: 168 degrees, 9 minutes, and 3.4 seconds east would be formatted as <code>E168.150944</code>. Minutes and seconds are converted by dividing the minutes value by 60 and the seconds value by 3600 and adding the results together. This sum becomes the fractional part of the degree's value.</p>
 
-          <p>The shortest possible value is two characters: "<code>E0</code>" or "<code>W0</code>". The longest possible value is eleven characters: one character for direction (E, W), two <a href="#digit-pe">digits</a> before the decimal point, the decimal point, and six <a href="#digit-pe">digits</a> after the decimal point. For example, "E179.123456".</p>
+          <p>The shortest possible value is two characters: "<code>E0</code>" or "<code>W0</code>". The longest possible value is eleven characters: one character for direction (E, W), three <a href="#digit-pe">digits</a> before the decimal point, the decimal point, and six <a href="#digit-pe">digits</a> after the decimal point. For example, "E179.123456".</p>
 
           <p>See the <a href="#tag-map">MAP</a> subrecord for other map-related details.</p>
 
@@ -3708,9 +3634,9 @@ CHILD
 </div>
         </dd>
 
-        <dt id="possessions-pe">POSSESSIONS <span class="size">{Size=1:248}</span></dt>
+        <dt id="possessions-pe">POSSESSIONS <span class="same-as">Same as <a href="#text-pe">TEXT</a></span></dt>
         <dd>
-          <p>POSSESSIONS is a &lt;<a href="#text-pe">TEXT</a>&gt; list of possessions (real estate or other property) belonging to this individual.</p>
+          <p>POSSESSIONS is a &lt;<a href="#text-pe">TEXT</a>&gt; value containing a list of possessions (real estate or other property) belonging to this individual.</p>
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#individual-attribute-structure-subr">INDIVIDUAL<wbr>_ATTRIBUTE<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-prop">PROP</a></p>
@@ -3728,16 +3654,7 @@ CHILD
 
         <dt id="relation-is-descriptor-pe">RELATION_IS_DESCRIPTOR <span class="size">{Size=1:25}</span></dt>
         <dd>
-          <p>A word or phrase that describes the relationship or association between the enclosing <a href="#indi-record">INDI_RECORD</a> and the INDI_RECORD indicated by the <a href="#pointer-component">pointer</a> on the <a href="#tag-asso">ASSO</a> subrecord.</p>
-
-          <p>For example, you would read the following as "Fred Smith's godfather is the person described by the <a href="#indi-record">INDI_RECORD</a> with <a href="#id-component">ID</a> <code>@I2@</code>:</p>
-
-<pre>
-0 @I1@ <a href="#tag-indi">INDI</a>
-1 <a href="#tag-name">NAME</a> Fred /Smith/
-1 <a href="#tag-asso">ASSO</a> @I2@
-2 <a href="#tag-rela">RELA</a> godfather
-</pre>
+          <p>A word or phrase that describes the relationship or association between two individuals.</p>
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#association-structure-subr">ASSOCIATION<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-asso">ASSO</a><wbr>.<a href="#tag-rela">RELA</a></p>
@@ -3825,7 +3742,7 @@ CHILD
           <p>For example, if you cite a child's birth record as the source of the mother's name, the value for this field is "MOTH". If you describe the groom of a marriage, the role is "HUSB". If the role is something different than one of the six relationship role tags listed above then enclose the role name within matching parentheses.</p>
 
 <div class="references">
-<p>See: &lt;&lt;<a href="#source-citation-subr">SOURCE<wbr>_CITATION</a>&gt;&gt;<wbr>.<a href="#tag-sour">SOUR</a><wbr>.<a href="#tag-even-types">EVEN (Event Types)</a><wbr>.<a href="#tag-role">ROLE</a></p>
+<p>See: &lt;&lt;<a href="#source-citation-subr">SOURCE<wbr>_CITATION</a>&gt;&gt;<wbr>.<a href="#tag-sour">SOUR</a><wbr>.<a href="#tag-even-types">EVEN</a><wbr>.<a href="#tag-role">ROLE</a></p>
 </div>
         </dd>
 
@@ -3844,16 +3761,16 @@ CHILD
 <p>See:</p>
 <ul>
 <li>&lt;<a href="#name-romanized-variation-pe">NAME<wbr>_ROMANIZED<wbr>_VARIATION</a>&gt;</li>
-<li>&lt;&lt;<a href="#personal-name-structure-subr">PERSONAL<wbr>_NAME<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-name">NAME</a><wbr>.<a href="#tag-romn">ROMN</a><wbr>.<a href="#tag-type-transform">TYPE (Transform)</a></li>
+<li>&lt;&lt;<a href="#personal-name-structure-subr">PERSONAL<wbr>_NAME<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-name">NAME</a><wbr>.<a href="#tag-romn">ROMN</a><wbr>.<a href="#tag-type-transform">TYPE</a></li>
 <li>&lt;<a href="#place-romanized-variation-pe">PLACE<wbr>_ROMANIZED<wbr>_VARIATION</a>&gt;</li>
-<li>&lt;&lt;<a href="#place-structure-subr">PLACE<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-plac">PLAC</a><wbr>.<a href="#tag-romn">ROMN</a><wbr>.<a href="#tag-type-transform">TYPE (Transform)</a></li>
+<li>&lt;&lt;<a href="#place-structure-subr">PLACE<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-plac">PLAC</a><wbr>.<a href="#tag-romn">ROMN</a><wbr>.<a href="#tag-type-transform">TYPE</a></li>
 </ul>
 </div>
         </dd>
 
-        <dt id="scholastic-achievement-pe">SCHOLASTIC_ACHIEVEMENT <span class="size">{Size=1:248}</span></dt>
+        <dt id="scholastic-achievement-pe">SCHOLASTIC_ACHIEVEMENT <span class="same-as">Same as <a href="#text-pe">TEXT</a></span></dt>
         <dd>
-          <p>A description of a scholastic or educational achievement or pursuit.</p>
+          <p>A &lt;<a href="#text-pe">TEXT</a>&gt; value specifying a scholastic or educational achievement or pursuit.</p>
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#individual-attribute-structure-subr">INDIVIDUAL<wbr>_ATTRIBUTE<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-educ">EDUC</a></p>
@@ -3898,18 +3815,20 @@ CHILD
 </div>
         </dd>
 
-        <dt id="source-description-pe">SOURCE_DESCRIPTION <span class="size">{Size=1:248}</span></dt>
+        <dt id="source-description-pe">SOURCE_DESCRIPTION <span class="same-as">Same as <a href="#text-pe">TEXT</a></span></dt>
         <dd>
-          <p>A free form text block used to describe the source from which information was obtained. This text block is used by those systems which cannot use a pointer to a source record. It must contain a descriptive title, who created the work, where and when it was created, and where the source data stored. The developer should encourage users to use an appropriate style for forming this free form bibliographic reference. Developers are encouraged to support the SOUR_RECORD method of reporting bibliographic reference descriptions.</p>
+          <p>A &lt;<a href="#text-pe">TEXT</a>&gt; value used to describe the source from which information was obtained.</p>
+          
+          <p>This text is used by those systems which cannot use a pointer to a source record. It must contain a descriptive title, who created the work, where and when it was created, and where the source data stored. The developer should encourage users to use an appropriate style for forming this free form bibliographic reference. Developers are encouraged to support the ^lt;&lt;<a href="#sour-record">SOUR_RECORD</a>&gt;&gt; method of reporting bibliographic reference descriptions.</p>
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#source-citation-subr">SOURCE<wbr>_CITATION</a>&gt;&gt;<wbr>.<a href="#tag-sour">SOUR</a></p>
 </div>
         </dd>
 
-        <dt id="source-descriptive-title-pe">SOURCE_DESCRIPTIVE_TITLE <span class="size">{Size=1:248}</span></dt>
+        <dt id="source-descriptive-title-pe">SOURCE_DESCRIPTIVE_TITLE <span class="same-as">Same as <a href="#text-pe">TEXT</a></span></dt>
         <dd>
-          <p>The title of the work, record, or item and, when appropriate, the title of the larger work or series of which it is a part.</p>
+          <p>A &lt;<a href="#text-pe">TEXT</a>&gt; value specifying the title of the work, record, or item and, when appropriate, the title of the larger work or series of which it is a part.</p>
 
           <p>For a <i>published</i> work, a book for example, might have a title plus the title of the series of which the book is a part. A magazine article would have a title plus the title of the magazine that published the article.</p>
 
@@ -3943,7 +3862,7 @@ CHILD
           <p>The name of the lowest jurisdiction that encompasses all lower-level places named in this source. For example, "Oneida, Idaho" would be used as a source jurisdiction place for events occurring in the various towns within Oneida County. "Idaho" would be the source jurisdiction place if the events recorded took place in other counties as well as Oneida County.</p>
 
 <div class="references">
-<p>See: &lt;&lt;<a href="#sour-record">SOUR<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-sour">SOUR</a><wbr>.<a href="#tag-data">DATA</a><wbr>.<a href="#tag-even-types">EVEN (Event Types)</a><wbr>.<a href="#tag-plac">PLAC</a></p>
+<p>See: &lt;&lt;<a href="#sour-record">SOUR<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-sour">SOUR</a><wbr>.<a href="#tag-data">DATA</a><wbr>.<a href="#tag-even-types">EVEN</a><wbr>.<a href="#tag-plac">PLAC</a></p>
 </div>
         </dd>
 
@@ -3971,38 +3890,31 @@ CHILD
 <p>See:</p>
 <ul>
 <li>&lt;&lt;<a href="#multimedia-link-subr">MULTIMEDIA<wbr>_LINK</a>&gt;&gt;<wbr>.<a href="#tag-obje">OBJE</a><wbr>.<a href="#tag-file">FILE</a><wbr>.<a href="#tag-form">FORM</a><wbr>.<a href="#tag-medi">MEDI</a></li>
-<li>&lt;&lt;<a href="#obje-record">OBJE<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-obje">OBJE</a><wbr>.<a href="#tag-file">FILE</a><wbr>.<a href="#tag-form">FORM</a><wbr>.<a href="#tag-type-media">TYPE (Media)</a></li>
+<li>&lt;&lt;<a href="#obje-record">OBJE<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-obje">OBJE</a><wbr>.<a href="#tag-file">FILE</a><wbr>.<a href="#tag-form">FORM</a><wbr>.<a href="#tag-type-media">TYPE</a></li>
 <li>&lt;&lt;<a href="#source-repository-citation-subr">SOURCE<wbr>_REPOSITORY<wbr>_CITATION</a>&gt;&gt;<wbr>.<a href="#tag-repo">REPO</a><wbr>.<a href="#tag-caln">CALN</a><wbr>.<a href="#tag-medi">MEDI</a></li>
 </ul>
 </div>
         </dd>
 
-        <dt id="source-originator-pe">SOURCE_ORIGINATOR <span class="size">{Size=1:248}</span></dt>
+        <dt id="source-originator-pe">SOURCE_ORIGINATOR <span class="same-as">Same as <a href="#text-pe">TEXT</a></span></dt>
         <dd>
-          <p>The person, agency, or entity who created the record. For a published work, this could be the author, compiler, transcriber, abstractor, or editor. For an unpublished source, this may be an individual, a government agency, church organization, or private organization, etc.</p>
+          <p>A &lt;<a href="#text-pe">TEXT</a>&gt; value specifying the person, agency, or entity who created the record. For a published work, this could be the author, compiler, transcriber, abstractor, or editor. For an unpublished source, this may be an individual, a government agency, church organization, or private organization, etc.</p>
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#sour-record">SOUR<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-sour">SOUR</a><wbr>.<a href="#tag-auth">AUTH</a></p>
 </div>
         </dd>
 
-        <dt id="source-publication-facts-pe">SOURCE_PUBLICATION_FACTS <span class="size">{Size=1:248}</span></dt>
+        <dt id="source-publication-facts-pe">SOURCE_PUBLICATION_FACTS <span class="same-as">Same as <a href="#text-pe">TEXT</a></span></dt>
         <dd>
-          <p>When and where the record was created. For published works, this includes information such as the city of publication, name of the publisher, and year of publication.</p>
+          <p>A &lt;<a href="#text-pe">TEXT</a>&gt; value specifying when and where the record was created.</p>
+          
+          <p>For a published work, it includes information such as the city of publication, name of the publisher, and year of publication.</p>
 
           <p>For an unpublished work, it includes the date the record was created and the place where it was created. For example, the county and state of residence of a person making a declaration for a pension or the city and state of residence of the writer of a letter.</p>
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#sour-record">SOUR<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-sour">SOUR</a><wbr>.<a href="#tag-publ">PUBL</a></p>
-</div>
-        </dd>
-
-        <dt id="submitter-name-pe">SUBMITTER_NAME <span class="size">{Size=1:60}</span></dt>
-        <dd>
-          <p>The name of the submitter formatted for display and address generation.</p>
-
-<div class="references">
-<p>See: &lt;&lt;<a href="#subm-record">SUBM<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-subm">SUBM</a><wbr>.<a href="#tag-name">NAME</a></p>
 </div>
         </dd>
 
@@ -4012,15 +3924,6 @@ CHILD
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#subm-record">SUBM<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-subm">SUBM</a><wbr>.<a href="#tag-rfn">RFN</a></p>
-</div>
-        </dd>
-
-        <dt id="submitter-text-pe">SUBMITTER_TEXT <span class="size">{Size=1:248}</span></dt>
-        <dd>
-          <p>Comments or opinions from the submitter.</p>
-
-<div class="references">
-<p>See: &lt;&lt;<a href="#note-structure-subr">NOTE<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-note">NOTE</a></p>
 </div>
         </dd>
 
@@ -4043,15 +3946,24 @@ CHILD
 
         <dt id="text-pe">TEXT <span class="size">{Size=1:248}</span></dt>
         <dd>
-          <p>A string composed of any valid character from the Unicode character set but subject to the syntax rules for the <a href="#line-value-component">line_value</a> component.</p>
+          <p>A sequence of characters composed of any valid character from the Unicode character set but subject to the syntax rules for the <a href="#line-value-component">line_value</a> component.</p>
 
 <div class="references">
 <p>See:</p>
 <ul>
+<li>&lt;<a href="#content-description-pe">CONTENT<wbr>_DESCRIPTION</a>&gt;</li>
+<li>&lt;<a href="#descriptive-title-pe">DESCRIPTIVE<wbr>_TITLE</a>&gt;</li>
 <li>&lt;<a href="#name-text-pe">NAME<wbr>_TEXT</a>&gt;</li>
+<li>&lt;<a href="#physical-description-pe">PHYSICAL<wbr>_DESCRIPTION</a>&gt;</li>
 <li>&lt;<a href="#place-text-pe">PLACE<wbr>_TEXT</a>&gt;</li>
 <li>&lt;<a href="#possessions-pe">POSSESSIONS</a>&gt;</li>
+<li>&lt;<a href="#scholastic-achievement-pe">SCHOLASTIC<wbr>_ACHIEVEMENT</a>&gt;</li>
+<li>&lt;<a href="#source-description-pe">SOURCE<wbr>_DESCRIPTION</a>&gt;</li>
+<li>&lt;<a href="#source-descriptive-title-pe">SOURCE<wbr>_DESCRIPTIVE<wbr>_TITLE</a>&gt;</li>
+<li>&lt;<a href="#source-originator-pe">SOURCE<wbr>_ORIGINATOR</a>&gt;</li>
+<li>&lt;<a href="#source-publication-facts-pe">SOURCE<wbr>_PUBLICATION<wbr>_FACTS</a>&gt;</li>
 <li>&lt;<a href="#text-from-source-pe">TEXT<wbr>_FROM<wbr>_SOURCE</a>&gt;</li>
+<li>&lt;<a href="#where-within-source-pe">WHERE<wbr>_WITHIN<wbr>_SOURCE</a>&gt;</li>
 </ul>
 </div>
         </dd>
@@ -4097,7 +4009,9 @@ CHILD
 
         <dt id="user-reference-number-pe">USER_REFERENCE_NUMBER <span class="size">{Size=1:20}</span></dt>
         <dd>
-          <p>A user-defined identifier that the submitter uses to identify this record. For instance, it may be a record number within the submitter's automated or manual system, or it may be a page and position number on a pedigree chart.</p>
+          <p>A user-defined identifier that the submitter uses to identify a record.</p>
+          
+          <p>For example, it may be a record number within the submitter's automated or manual system, or it may be a page and position number on a pedigree chart.</p>
 
 <div class="references">
 <p>See:</p>
@@ -4108,7 +4022,7 @@ CHILD
 <li>&lt;&lt;<a href="#obje-record">OBJE<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-obje">OBJE</a><wbr>.<a href="#tag-refn">REFN</a></li>
 <li>&lt;&lt;<a href="#repo-record">REPO<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-repo">REPO</a><wbr>.<a href="#tag-refn">REFN</a></li>
 <li>&lt;&lt;<a href="#sour-record">SOUR<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-sour">SOUR</a><wbr>.<a href="#tag-refn">REFN</a></li>
-<li><a href="#tag-type-refn">TYPE (REFN)</a></li>
+<li><a href="#tag-type-refn">TYPE</a></li>
 <li>&lt;<a href="#user-reference-type-pe">USER<wbr>_REFERENCE<wbr>_TYPE</a>&gt;</li>
 </ul>
 </div>
@@ -4121,19 +4035,19 @@ CHILD
 <div class="references">
 <p>See:</p>
 <ul>
-<li>&lt;&lt;<a href="#fam-record">FAM<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-fam">FAM</a><wbr>.<a href="#tag-refn">REFN</a><wbr>.<a href="#tag-type-refn">TYPE (REFN)</a></li>
-<li>&lt;&lt;<a href="#indi-record">INDI<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-indi">INDI</a><wbr>.<a href="#tag-refn">REFN</a><wbr>.<a href="#tag-type-refn">TYPE (REFN)</a></li>
-<li>&lt;&lt;<a href="#note-record">NOTE<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-note">NOTE</a><wbr>.<a href="#tag-refn">REFN</a><wbr>.<a href="#tag-type-refn">TYPE (REFN)</a></li>
-<li>&lt;&lt;<a href="#obje-record">OBJE<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-obje">OBJE</a><wbr>.<a href="#tag-refn">REFN</a><wbr>.<a href="#tag-type-refn">TYPE (REFN)</a></li>
-<li>&lt;&lt;<a href="#repo-record">REPO<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-repo">REPO</a><wbr>.<a href="#tag-refn">REFN</a><wbr>.<a href="#tag-type-refn">TYPE (REFN)</a></li>
-<li>&lt;&lt;<a href="#sour-record">SOUR<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-sour">SOUR</a><wbr>.<a href="#tag-refn">REFN</a><wbr>.<a href="#tag-type-refn">TYPE (REFN)</a></li>
+<li>&lt;&lt;<a href="#fam-record">FAM<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-fam">FAM</a><wbr>.<a href="#tag-refn">REFN</a><wbr>.<a href="#tag-type-refn">TYPE</a></li>
+<li>&lt;&lt;<a href="#indi-record">INDI<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-indi">INDI</a><wbr>.<a href="#tag-refn">REFN</a><wbr>.<a href="#tag-type-refn">TYPE</a></li>
+<li>&lt;&lt;<a href="#note-record">NOTE<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-note">NOTE</a><wbr>.<a href="#tag-refn">REFN</a><wbr>.<a href="#tag-type-refn">TYPE</a></li>
+<li>&lt;&lt;<a href="#obje-record">OBJE<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-obje">OBJE</a><wbr>.<a href="#tag-refn">REFN</a><wbr>.<a href="#tag-type-refn">TYPE</a></li>
+<li>&lt;&lt;<a href="#repo-record">REPO<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-repo">REPO</a><wbr>.<a href="#tag-refn">REFN</a><wbr>.<a href="#tag-type-refn">TYPE</a></li>
+<li>&lt;&lt;<a href="#sour-record">SOUR<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-sour">SOUR</a><wbr>.<a href="#tag-refn">REFN</a><wbr>.<a href="#tag-type-refn">TYPE</a></li>
 </ul>
 </div>
         </dd>
 
         <dt id="version-number-pe">VERSION_NUMBER <span class="size">{Size=1:15}</span></dt>
         <dd>
-          An identifier that represents the version level assigned to the associated product. It is defined and changed by the creators of the product.
+          <p>An identifier that describes the version of a software system or specification.</p>
 
           <!-- TODO BEST PRACTICE -->
 
@@ -4146,9 +4060,9 @@ CHILD
 </div>
         </dd>
 
-        <dt id="where-within-source-pe">WHERE_WITHIN_SOURCE <span class="size">{Size=1:248}</span></dt>
+        <dt id="where-within-source-pe">WHERE_WITHIN_SOURCE <span class="same-as">Same as <a href="#text-pe">TEXT</a></span></dt>
         <dd>
-          <p>Specific location within the information referenced.</p>
+          <p>A &lt;<a href="#text-pe">TEXT</a>&gt; value that describes a specific location within the information referenced.</p>
 
           <p>For a published work, this could include the volume of a multi-volume work and the page number(s). For a periodical, it could include volume, issue, and page numbers. For a newspaper, it could include a column number and page number. For an unpublished source or microfilmed works, this could be a film or sheet number, page number, frame number, etc. A census record might have an enumerating district, page number, line number, dwelling number, and family number.</p>
 
@@ -4381,7 +4295,7 @@ CHILD
 <ul>
 <li>&lt;<a href="#date-range-pe">DATE<wbr>_RANGE</a>&gt;</li>
 <li>&lt;<a href="#date-value-pe">DATE<wbr>_VALUE</a>&gt;</li>
-<li>&lt;&lt;<a href="#sour-record">SOUR<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-sour">SOUR</a><wbr>.<a href="#tag-data">DATA</a><wbr>.<a href="#tag-even-types">EVEN (Event Types)</a><wbr>.<a href="#tag-date">DATE</a></li>
+<li>&lt;&lt;<a href="#sour-record">SOUR<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-sour">SOUR</a><wbr>.<a href="#tag-data">DATA</a><wbr>.<a href="#tag-even-types">EVEN</a><wbr>.<a href="#tag-date">DATE</a></li>
 </ul>
 </div>
         </dd>
@@ -5017,7 +4931,7 @@ CHILD
 
         <dt id="tag-alia">ALIA <span class="tag-full-name">Alias</span></dt>
         <dd>
-          <p>The ALIA subrecord links another <a href="#tag-indi">INDI</a> record to the current INDI record via its &lt;<a href="#id-indi-pe">ID:INDI</a>&gt; line_value and indicates that the two records may refer to the same person.</p>
+          <p>The ALIA subrecord links another <a href="#tag-indi">INDI</a> record to the current INDI record via its &lt;<a href="#id-indi-pe">ID_INDI</a>&gt; line_value and indicates that the two records may refer to the same person.</p>
 
           <p>An ALIA record must not be used to define an alternate name. To define alternate names, use <a href="#tag-name">NAME</a> subrecords.</p>
 
@@ -5042,7 +4956,7 @@ CHILD
           </div>
 
 <div class="references">
-<p>See: &lt;&lt;<a href="#indi-record">INDI<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-indi">INDI</a><wbr>.ALIA &lt;<a href="#id-indi-pe">ID:INDI</a>&gt;</p>
+<p>See: &lt;&lt;<a href="#indi-record">INDI<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-indi">INDI</a><wbr>.ALIA &lt;<a href="#id-indi-pe">ID<wbr>_INDI</a>&gt;</p>
 </div>
         </dd>
 
@@ -5053,7 +4967,7 @@ CHILD
           <p>Interest in descendants is indicated via the <a href="#tag-desi">DESI</a> subrecord.</p>
 
 <div class="references">
-<p>See: &lt;&lt;<a href="#indi-record">INDI<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-indi">INDI</a><wbr>.ANCI &lt;<a href="#id-subm-pe">ID:SUBM</a>&gt;</p>
+<p>See: &lt;&lt;<a href="#indi-record">INDI<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-indi">INDI</a><wbr>.ANCI &lt;<a href="#id-subm-pe">ID<wbr>_SUBM</a>&gt;</p>
 </div>
         </dd>
 
@@ -5066,12 +4980,23 @@ CHILD
 </div>
         </dd>
 
-        <dt id="tag-asso">ASSO <span class="tag-full-name">Associates</span></dt>
+        <dt id="tag-asso">ASSO <span class="tag-full-name">Association</span></dt>
         <dd>
-          <p>The ASSO subrecord indicates an association between the current <a href="#indi-record">INDI</a> record and the INDI record with the @<a href="#id-indi-pe">ID:INDI</a>@ given in the ASSO subrecord's line_value.</p>
+          <p>The ASSO subrecord describes an association between the current <a href="#indi-record">INDI_RECORD</a> and the INDI record with the <a href="#id-component">ID</a> given in the ASSO subrecord's &lt;<a href="#id-indi-pe">ID_INDI</a>&gt; line_value.</p>
+
+          <p>The ASSO.<a href="#tag-rela">RELA</a> subrecord classifies the relationship.</p>
+
+          <p>For example, you would read the following as "Fred Smith's godfather is the person described by the <a href="#indi-record">INDI_RECORD</a> with <a href="#id-component">ID</a> <code>@I2@</code>:</p>
+
+<pre>
+0 @I1@ <a href="#tag-indi">INDI</a>
+1 <a href="#tag-name">NAME</a> Fred /Smith/
+1 ASSO @I2@
+2 <a href="#tag-rela">RELA</a> godfather
+</pre>
 
 <div class="references">
-<p>See: &lt;&lt;<a href="#association-structure-subr">ASSOCIATION<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.ASSO &lt;<a href="#id-indi-pe">ID:INDI</a>&gt;</p>
+<p>See: &lt;&lt;<a href="#association-structure-subr">ASSOCIATION<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.ASSO &lt;<a href="#id-indi-pe">ID<wbr>_INDI</a>&gt;</p>
 </div>
         </dd>
 
@@ -5200,10 +5125,10 @@ CHILD
 
         <dt id="tag-chil">CHIL <span class="tag-full-name">Child</span></dt>
         <dd>
-          <p>The CHIL subrecord is used in the context of a &lt;&lt;<a href="#fam-record">FAM_RECORD</a>&gt;&gt; and specifies the <a href="#pointer-component">pointer</a> to an &lt;&lt;<a href="#indi-record">INDI_RECORD</a>&gt;&gt; for a person who is a child in the family.</p>
+          <p>The CHIL subrecord is used in the context of a &lt;&lt;<a href="#fam-record">FAM_RECORD</a>&gt;&gt; to specify a <a href="#pointer-component">pointer</a> to an &lt;&lt;<a href="#indi-record">INDI_RECORD</a>&gt;&gt; for a person who is a child in the family.</p>
 
 <div class="references">
-<p>See: &lt;&lt;<a href="#fam-record">FAM<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-fam">FAM</a><wbr>.CHIL &lt;<a href="#id-indi-pe">ID:INDI</a>&gt;</p>
+<p>See: &lt;&lt;<a href="#fam-record">FAM<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-fam">FAM</a><wbr>.CHIL &lt;<a href="#id-indi-pe">ID<wbr>_INDI</a>&gt;</p>
 </div>
         </dd>
 
@@ -5307,7 +5232,7 @@ CHILD
 
           <p>When used under a source record (&lt;&lt;<a href="#sour-record">SOUR_RECORD</a>&gt;&gt;.<a href="#tag-sour">SOUR</a>), a DATA subrecord describes metadata about a source.</p>
 
-          <p>When used under a source citation (&lt;&lt;<a href="#source-citation-subr">SOURCE<wbr>_CITATION</a>&gt;&gt;.<a href="#tag-sour">SOUR</a>), a DATA subrecord describes the text drawn from the source and/or its entry date via its <a href="#tag-text">TEXT</a> or <a href="#tag-date">DATE</a> subrecords.</p>
+          <p>When used under a source citation (&lt;&lt;<a href="#source-citation-subr">SOURCE>_CITATION</a>&gt;&gt;.<a href="#tag-sour">SOUR</a>), a DATA subrecord describes the text drawn from the source and/or its entry date via its <a href="#tag-text">TEXT</a> or <a href="#tag-date">DATE</a> subrecords.</p>
 
           <p>When used under the <a href="#tag-head">HEAD</a>.<a href="#tag-sour">SOUR</a> context, the DATA subrecord specifies the name of the GEDCOM document's electronic data source via its &lt;<a href="#name-of-source-data-pe">NAME_OF_SOURCE_DATA</a>&gt; line_value.</p>
 
@@ -5342,13 +5267,13 @@ CHILD
                 <td><a href="#tag-head">HEAD</a>.<a href="#tag-sour">SOUR</a>.<a href="#tag-data">DATA</a>.DATE &lt;<a href="#publication-date-pe">PUBLICATION_DATE</a>&gt;</td>
               </tr>
               <tr>
-                <td>&lt;&lt;<a href="#event-or-fact-detail-subr">EVENT<wbr>_OR<wbr>_FACT<wbr>_DETAIL</a>&gt;&gt;<wbr>.DATE &lt;<a href="#date-value-pe">DATE<wbr>_VALUE</a>&gt;</td>
+                <td>&lt;&lt;<a href="#event-or-fact-detail-subr">EVENT_OR_FACT_DETAIL</a>&gt;&gt;.DATE &lt;<a href="#date-value-pe">DATE_VALUE</a>&gt;</td>
               </tr>
               <tr>
-                <td>&lt;&lt;<a href="#source-citation-subr">SOURCE<wbr>_CITATION</a>&gt;&gt;<wbr>.<a href="#tag-sour">SOUR</a><wbr>.<a href="#tag-data">DATA</a><wbr>.DATE &lt;<a href="#entry-recording-date-pe">ENTRY<wbr>_RECORDING<wbr>_DATE</a>&gt;</td>
+                <td>&lt;&lt;<a href="#source-citation-subr">SOURCE_CITATION</a>&gt;&gt;.<a href="#tag-sour">SOUR</a>.<a href="#tag-data">DATA</a>.DATE &lt;<a href="#entry-recording-date-pe">ENTRY_RECORDING_DATE</a>&gt;</td>
               </tr>
               <tr>
-                <td>&lt;&lt;<a href="#sour-record">SOUR<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-sour">SOUR</a><wbr>.<a href="#tag-data">DATA</a><wbr>.<a href="#tag-even-types">EVEN</a><wbr>.DATE &lt;<a href="#date-period-pe">DATE<wbr>_PERIOD</a>&gt;</td>
+                <td>&lt;&lt;<a href="#sour-record">SOUR_RECORD</a>&gt;&gt;.<a href="#tag-sour">SOUR</a>.<a href="#tag-data">DATA</a>.<a href="#tag-even-types">EVEN</a>.DATE &lt;<a href="#date-period-pe">DATE_PERIOD</a>&gt;</td>
               </tr>
             </tbody>
           </table>
@@ -5364,7 +5289,7 @@ CHILD
 <li>&lt;&lt;<a href="#event-or-fact-detail-subr">EVENT<wbr>_OR<wbr>_FACT<wbr>_DETAIL</a>&gt;&gt;<wbr>.DATE &lt;<a href="#date-value-pe">DATE<wbr>_VALUE</a>&gt;</li>
 <li>&lt;&lt;<a href="#head-record">HEAD<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-head">HEAD</a><wbr>.DATE &lt;<a href="#document-date-pe">DOCUMENT<wbr>_DATE</a>&gt;</li>
 <li>&lt;&lt;<a href="#head-record">HEAD<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-head">HEAD</a><wbr>.<a href="#tag-sour">SOUR</a><wbr>.<a href="#tag-data">DATA</a><wbr>.DATE &lt;<a href="#publication-date-pe">PUBLICATION<wbr>_DATE</a>&gt;</li>
-<li>&lt;&lt;<a href="#sour-record">SOUR<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-sour">SOUR</a><wbr>.<a href="#tag-data">DATA</a><wbr>.<a href="#tag-even-types">EVEN (Event Types)</a><wbr>.DATE &lt;<a href="#date-period-pe">DATE<wbr>_PERIOD</a>&gt;</li>
+<li>&lt;&lt;<a href="#sour-record">SOUR<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-sour">SOUR</a><wbr>.<a href="#tag-data">DATA</a><wbr>.<a href="#tag-even-types">EVEN</a><wbr>.DATE &lt;<a href="#date-period-pe">DATE<wbr>_PERIOD</a>&gt;</li>
 <li>&lt;&lt;<a href="#source-citation-subr">SOURCE<wbr>_CITATION</a>&gt;&gt;<wbr>.<a href="#tag-sour">SOUR</a><wbr>.<a href="#tag-data">DATA</a><wbr>.DATE &lt;<a href="#entry-recording-date-pe">ENTRY<wbr>_RECORDING<wbr>_DATE</a>&gt;</li>
 </ul>
 </div>
@@ -5386,7 +5311,7 @@ CHILD
           <p>Interest in ancestors is indicated via the <a href="#tag-anci">ANCI</a> subrecord.</p>
 
 <div class="references">
-<p>See: &lt;&lt;<a href="#indi-record">INDI<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-indi">INDI</a><wbr>.DESI &lt;<a href="#id-subm-pe">ID:SUBM</a>&gt;</p>
+<p>See: &lt;&lt;<a href="#indi-record">INDI<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-indi">INDI</a><wbr>.DESI &lt;<a href="#id-subm-pe">ID<wbr>_SUBM</a>&gt;</p>
 </div>
         </dd>
 
@@ -5422,6 +5347,13 @@ CHILD
         <dt id="tag-dscr">DSCR <span class="tag-full-name">Physical Description</span></dt>
         <dd>
           <p>The DSCR subrecord describes the physical characteristics of a person via its &lt;<a href="#physical-description-pe">PHYSICAL_DESCRIPTION</a>&gt; line_value.</p>
+
+          <p>Example:</p>
+
+<pre>
+1 DSCR Hair Brown, Eyes Brown, Height 5 ft 8 in
+2 <a href="#tag-date">DATE</a> 23 JUL 1935
+</pre>
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#individual-attribute-structure-subr">INDIVIDUAL<wbr>_ATTRIBUTE<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.DSCR &lt;<a href="#physical-description-pe">PHYSICAL<wbr>_DESCRIPTION</a>&gt;</p>
@@ -5486,8 +5418,8 @@ CHILD
 <div class="references">
 <p>See:</p>
 <ul>
-<li>&lt;&lt;<a href="#family-event-structure-subr">FAMILY<wbr>_EVENT<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.EVEN (Generic Event) &lt;<a href="#event-descriptor-pe">EVENT<wbr>_DESCRIPTOR</a>&gt;</li>
-<li>&lt;&lt;<a href="#individual-event-structure-subr">INDIVIDUAL<wbr>_EVENT<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.EVEN (Generic Event) &lt;<a href="#event-descriptor-pe">EVENT<wbr>_DESCRIPTOR</a>&gt;</li>
+<li>&lt;&lt;<a href="#family-event-structure-subr">FAMILY<wbr>_EVENT<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.EVEN &lt;<a href="#event-descriptor-pe">EVENT<wbr>_DESCRIPTOR</a>&gt;</li>
+<li>&lt;&lt;<a href="#individual-event-structure-subr">INDIVIDUAL<wbr>_EVENT<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.EVEN &lt;<a href="#event-descriptor-pe">EVENT<wbr>_DESCRIPTOR</a>&gt;</li>
 </ul>
 </div>
         </dd>
@@ -5501,8 +5433,8 @@ CHILD
 <div class="references">
 <p>See:</p>
 <ul>
-<li>&lt;&lt;<a href="#sour-record">SOUR<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-sour">SOUR</a><wbr>.<a href="#tag-data">DATA</a><wbr>.EVEN (Event Types) &lt;<a href="#events-recorded-pe">EVENTS<wbr>_RECORDED</a>&gt;</li>
-<li>&lt;&lt;<a href="#source-citation-subr">SOURCE<wbr>_CITATION</a>&gt;&gt;<wbr>.<a href="#tag-sour">SOUR</a><wbr>.EVEN (Event Types) &lt;<a href="#event-type-cited-from-pe">EVENT<wbr>_TYPE<wbr>_CITED<wbr>_FROM</a>&gt;</li>
+<li>&lt;&lt;<a href="#sour-record">SOUR<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-sour">SOUR</a><wbr>.<a href="#tag-data">DATA</a><wbr>.EVEN &lt;<a href="#events-recorded-pe">EVENTS<wbr>_RECORDED</a>&gt;</li>
+<li>&lt;&lt;<a href="#source-citation-subr">SOURCE<wbr>_CITATION</a>&gt;&gt;<wbr>.<a href="#tag-sour">SOUR</a><wbr>.EVEN &lt;<a href="#event-type-cited-from-pe">EVENT<wbr>_TYPE<wbr>_CITED<wbr>_FROM</a>&gt;</li>
 </ul>
 </div>
         </dd>
@@ -5520,44 +5452,44 @@ CHILD
 
         <dt id="tag-fam">FAM <span class="tag-full-name">Family</span></dt>
         <dd>
-          <p>The FAM record describes a family via the subrecords defined for the &lt;&lt;<a href="#fam-record">FAM_RECORD</a>&gt;&gt;.</p>
+          <p>The FAM record describes a family via the subrecords defined for the &lt;&lt;<a href="#fam-record">FAM_RECORD</a>&gt;&gt;.  An &lt;<a href="#id-fam-pe">ID_FAM</a>&gt; <a href="#pointer-component">pointer</a> is required.</p>
           
           <p>The subrecords of the &lt;&lt;<a href="#fam-record">FAM_RECORD</a>&gt;&gt; identify the couple and their children (if any) and events shared by the couple.</p>
 
 <div class="references">
-<p>See: &lt;&lt;<a href="#fam-record">FAM<wbr>_RECORD</a>&gt;&gt;<wbr>.FAM &lt;<a href="#id-fam-pe">ID:FAM</a>&gt;</p>
+<p>See: &lt;&lt;<a href="#fam-record">FAM<wbr>_RECORD</a>&gt;&gt;<wbr>.FAM &lt;<a href="#id-fam-pe">ID<wbr>_FAM</a>&gt;</p>
 </div>
         </dd>
 
         <dt id="tag-famc">FAMC <span class="tag-full-name">Family Child</span></dt>
         <dd>
-          <p>The FAMC subrecord identifis a family in which an individual appears as a child via its &lt;<a href="#id-fam-pe">ID:FAM</a>&gt; line_value.</p>
+          <p>The FAMC subrecord identifis a family in which an individual appears as a child via its &lt;<a href="#id-fam-pe">ID_FAM</a>&gt; line_value.</p>
 
 <div class="references">
 <p>See:</p>
 <ul>
-<li>&lt;&lt;<a href="#child-to-family-link-subr">CHILD<wbr>_TO<wbr>_FAMILY<wbr>_LINK</a>&gt;&gt;<wbr>.FAMC &lt;<a href="#id-fam-pe">ID:FAM</a>&gt;</li>
-<li>&lt;&lt;<a href="#individual-event-structure-subr">INDIVIDUAL<wbr>_EVENT<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-adop">ADOP</a><wbr>.FAMC &lt;<a href="#id-fam-pe">ID:FAM</a>&gt;</li>
-<li>&lt;&lt;<a href="#individual-event-structure-subr">INDIVIDUAL<wbr>_EVENT<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-chr">CHR</a><wbr>.FAMC &lt;<a href="#id-fam-pe">ID:FAM</a>&gt;</li>
+<li>&lt;&lt;<a href="#child-to-family-link-subr">CHILD<wbr>_TO<wbr>_FAMILY<wbr>_LINK</a>&gt;&gt;<wbr>.FAMC &lt;<a href="#id-fam-pe">ID<wbr>_FAM</a>&gt;</li>
+<li>&lt;&lt;<a href="#individual-event-structure-subr">INDIVIDUAL<wbr>_EVENT<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-adop">ADOP</a><wbr>.FAMC &lt;<a href="#id-fam-pe">ID<wbr>_FAM</a>&gt;</li>
+<li>&lt;&lt;<a href="#individual-event-structure-subr">INDIVIDUAL<wbr>_EVENT<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-chr">CHR</a><wbr>.FAMC &lt;<a href="#id-fam-pe">ID<wbr>_FAM</a>&gt;</li>
 </ul>
 </div>
         </dd>
 
         <dt id="tag-fams">FAMS <span class="tag-full-name">Family Spouse</span></dt>
         <dd>
-          <p>The FAMS subrecord identifies the family in which an individual appears as a member of a couple via its &lt;<a href="#id-fam-pe">ID:FAM</a>&gt; line_value.</p>
+          <p>The FAMS subrecord identifies the family in which an individual appears as a member of a couple via its &lt;<a href="#id-fam-pe">ID_FAM</a>&gt; line_value.</p>
 
 <div class="references">
-<p>See: &lt;&lt;<a href="#spouse-to-family-link-subr">SPOUSE<wbr>_TO<wbr>_FAMILY<wbr>_LINK</a>&gt;&gt;<wbr>.FAMS &lt;<a href="#id-fam-pe">ID:FAM</a>&gt;</p>
+<p>See: &lt;&lt;<a href="#spouse-to-family-link-subr">SPOUSE<wbr>_TO<wbr>_FAMILY<wbr>_LINK</a>&gt;&gt;<wbr>.FAMS &lt;<a href="#id-fam-pe">ID<wbr>_FAM</a>&gt;</p>
 </div>
         </dd>
 
         <dt id="tag-fax">FAX <span class="tag-full-name">Facimilie</span></dt>
         <dd>
-          <p>The FAX subrecord specifices a telephone number used for facsimile transmission via its &lt;<a href="#address-fax-pe">ADDRESS_FAX</a>&gt; line_value.</p>
+          <p>The FAX subrecord specifices a telephone number used for facsimile transmission via its &lt;<a href="#phone-number-fax">PHONE_NUMBER_FAX</a>&gt; line_value.</p>
 
 <div class="references">
-<p>See: &lt;&lt;<a href="#contact-structure-subr">CONTACT<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.FAX &lt;<a href="#address-fax-pe">ADDRESS<wbr>_FAX</a>&gt;</p>
+<p>See: &lt;&lt;<a href="#contact-structure-subr">CONTACT<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.FAX</p>
 </div>
         </dd>
 
@@ -5575,9 +5507,9 @@ CHILD
           <p>The FILE subrecord is used in several contexts.</p>
 
           <ol>
-            <li><p>When used under the <a href="#tag-head">HEAD</a> record, the FILE subrecord specifies the name of the GEDCOM document via its &lt;<a href="#file-name-pe">FILE<wbr>_NAME</a>&gt; line_value.</p></li>
+            <li><p>When used under the <a href="#tag-head">HEAD</a> record, the FILE subrecord specifies the name of the GEDCOM document via its &lt;<a href="#file-name-pe">FILE_NAME</a>&gt; line_value.</p></li>
 
-            <li><p>When used under the <a href="#tag-obje">OBJE</a> subrecord, the FILE subrecord specifies the path to a multimedia file via its &lt;<a href="#multimedia-file-reference-pe">MULTIMEDIA<wbr>_FILE<wbr>_REFERENCE</a>&gt; line_value.</p></li>
+            <li><p>When used under the <a href="#tag-obje">OBJE</a> subrecord, the FILE subrecord specifies the path to a multimedia file via its &lt;<a href="#multimedia-file-reference-pe">MULTIMEDIA_FILE_REFERENCE</a>&gt; line_value.</p></li>
           </ol>
 
 <div class="references">
@@ -5599,7 +5531,7 @@ CHILD
 
             <li><p>When used under the >&lt;&lt;<a href="#head-record">HEAD_RECORD</a>&gt;&gt;.<a href="#tag-head">HEAD</a>.<a href="#tag-plac">PLAC</a> or &lt;&lt;<a href="#place-structure-subr">PLACE_STRUCTURE</a>&gt;&gt;.<a href="#tag-plac">PLAC</a> contexts, the FORM subrecord describes the geographic hierarchy of a place name via its &lt;<a href="#place-hierarchy-pe">PLACE_HIERARCHY</a>&gt; line_value.</p></li>
 
-            <li><p>When used under the <a href="#tag-obje">OBJE</a>.<a href="#tag-file">FILE</a> context, the FORM subrecord specifices the format of a multimedia file via its  &lt;<a href="#multimedia-format-pe">MULTIMEDIA<wbr>_FORMAT</a>&gt; line_value.</p></li>
+            <li><p>When used under the <a href="#tag-obje">OBJE</a>.<a href="#tag-file">FILE</a> context, the FORM subrecord specifices the format of a multimedia file via its  &lt;<a href="#multimedia-format-pe">MULTIMEDIA_FORMAT</a>&gt; line_value.</p></li>
           </ol>
 
 <div class="references">
@@ -5639,6 +5571,16 @@ CHILD
         <dt id="tag-givn">GIVN <span class="tag-full-name">Given Name</span></dt>
         <dd>
           <p>The GIVN subrecord specifies the given name of an individual.</p>
+
+          <p>The example below indicates that the given name for "<code>Lt. Cmndr. Joseph Allen, Jr.</code>" is "<code>Joseph</code>":</p>
+
+<pre>
+1 <a href="#tag-name">NAME</a> Lt. Cmndr. Joseph /Allen/ Jr.
+2 <a href="#tag-npfx">NPFX</a> Lt. Cmdr.
+2 GIVN Joseph
+2 <a href="#tag-surn">SURN</a> Allen
+2 <a href="#tag-surn">NSFX</a> Jr.
+</pre>
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#personal-name-pieces-subr">PERSONAL<wbr>_NAME<wbr>_PIECES</a>&gt;&gt;<wbr>.GIVN &lt;<a href="#name-piece-given-pe">NAME<wbr>_PIECE<wbr>_GIVEN</a>&gt;</p>
@@ -5686,12 +5628,12 @@ CHILD
 
         <dt id="tag-husb">HUSB <span class="tag-full-name">Husband</span></dt>
         <dd>
-          <p>An individual in the family role of a married man or father.</p>
+          <p>The HUSB subrecord is used in the context of a &lt;&lt;<a href="#fam-record">FAM_RECORD</a>&gt;&gt; to specify a <a href="#pointer-component">pointer</a> to an &lt;&lt;<a href="#indi-record">INDI_RECORD</a>&gt;&gt; for a person who is the husband and/or father in the family.</p>
 
 <div class="references">
 <p>See:</p>
 <ul>
-<li>&lt;&lt;<a href="#fam-record">FAM<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-fam">FAM</a><wbr>.HUSB &lt;<a href="#id-indi-pe">ID:INDI</a>&gt;</li>
+<li>&lt;&lt;<a href="#fam-record">FAM<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-fam">FAM</a><wbr>.HUSB &lt;<a href="#id-indi-pe">ID<wbr>_INDI</a>&gt;</li>
 <li>&lt;&lt;<a href="#family-event-detail-subr">FAMILY<wbr>_EVENT<wbr>_DETAIL</a>&gt;&gt;<wbr>.HUSB</li>
 </ul>
 </div>
@@ -5699,7 +5641,15 @@ CHILD
 
         <dt id="tag-idno">IDNO <span class="tag-full-name">Identification Number</span></dt>
         <dd>
-          <p>A number assigned to identify a person within an external system.</p>
+          <p>The IDNO subrecord specifies a nationally-controlled number assigned to an individual via its &lt;<a href="#national-id-number-pe">NATIONAL_ID_NUMBER</a>&gt; line_value.</p>
+
+          <p>The IDNO subrecord requires a subordinate <a href="#tag-type-event-or-fact">TYPE</a> tag to identify what kind of number is being stored. For example:</p>
+
+<pre>
+0 @I1@ <a href="#tag-indi">INDI</a>
+1 <a href="#tag-idno">IDNO</a> 43-456-1899
+2 <a href="#tag-type-event-or-fact">TYPE</a> Canadian Health Registration
+</pre>
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#individual-attribute-structure-subr">INDIVIDUAL<wbr>_ATTRIBUTE<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.IDNO &lt;<a href="#national-id-number-pe">NATIONAL<wbr>_ID<wbr>_NUMBER</a>&gt;</p>
@@ -5708,7 +5658,7 @@ CHILD
 
         <dt id="tag-immi">IMMI <span class="tag-full-name">Immigration</span></dt>
         <dd>
-          <p>An event of entering into a new locality with the intent of residing there.</p>
+          <p>The IMMI subrecord describes an immigratiion event.</p>
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#individual-event-structure-subr">INDIVIDUAL<wbr>_EVENT<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.IMMI</p>
@@ -5717,22 +5667,28 @@ CHILD
 
         <dt id="tag-indi">INDI <span class="tag-full-name">Individual</span></dt>
         <dd>
-          <p>A person.</p>
+          <p>The INDI record describes an individual via the subrecords defined for the &lt;&lt;<a href="#indi-record">INDI_RECORD</a>&gt;&gt;. An &lt;<a href="#id-indi-pe">ID_INDI</a>&gt; <a href="#pointer-component">pointer</a> is required.</p>
 
 <div class="references">
-<p>See: &lt;&lt;<a href="#indi-record">INDI<wbr>_RECORD</a>&gt;&gt;<wbr>.INDI &lt;<a href="#id-indi-pe">ID:INDI</a>&gt;</p>
+<p>See: &lt;&lt;<a href="#indi-record">INDI<wbr>_RECORD</a>&gt;&gt;<wbr>.INDI &lt;<a href="#id-indi-pe">ID<wbr>_INDI</a>&gt;</p>
 </div>
         </dd>
 
         <dt id="tag-lang">LANG <span class="tag-full-name">Language</span></dt>
         <dd>
-          <p>The name of the language used in a communication or transmission of information.</p>
+          <p>The LANG subrecord is used in several contexts to identify a human language via its &lt;<a href="#language-id-pe">LANGUAGE_ID</a>&gt; line_value.</p>
+
+          <ol>
+            <li>When used under the <a href="#tag-head">HEAD</a> record, the LANG subrecord specifies the language in which the data in the document is normally read or written.</li>
+
+            <li>When used under the <a href="#tag-subm">SUBM</a> record, the LANG subrecord specifies the language preference of the submitter: the language in which the submitter prefers to communicate. To indicate multiple language preferences, specify multiple LANG subrecords in order of priority/preference.</li>
+          </ol>
 
 <div class="references">
 <p>See:</p>
 <ul>
-<li>&lt;&lt;<a href="#head-record">HEAD<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-head">HEAD</a><wbr>.LANG &lt;<a href="#language-of-text-pe">LANGUAGE<wbr>_OF<wbr>_TEXT</a>&gt;</li>
-<li>&lt;&lt;<a href="#subm-record">SUBM<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-subm">SUBM</a><wbr>.LANG &lt;<a href="#language-preference-pe">LANGUAGE<wbr>_PREFERENCE</a>&gt;</li>
+<li>&lt;&lt;<a href="#head-record">HEAD<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-head">HEAD</a><wbr>.LANG &lt;<a href="#language-id-pe">LANGUAGE<wbr>_ID</a>&gt;</li>
+<li>&lt;&lt;<a href="#subm-record">SUBM<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-subm">SUBM</a><wbr>.LANG &lt;<a href="#language-id-pe">LANGUAGE<wbr>_ID</a>&gt;</li>
 </ul>
 </div>
         </dd>
@@ -5790,7 +5746,7 @@ CHILD
 
         <dt id="tag-marb">MARB <span class="tag-full-name">Marriage Bann</span></dt>
         <dd>
-          <p>An event of an official public notice given that two people intend to marry.</p>
+          <p>The MARB subrecord describes a marriage bann event where public notice is given that two people intend to marry.</p>
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#family-event-structure-subr">FAMILY<wbr>_EVENT<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.MARB</p>
@@ -5799,7 +5755,7 @@ CHILD
 
         <dt id="tag-marc">MARC <span class="tag-full-name">Marriage Contract</span></dt>
         <dd>
-          <p>An event of recording a formal agreement of marriage, including the prenuptial agreement in which marriage partners reach agreement about the property rights of one or both, securing property to their children.</p>
+          <p>The MARC subrecord describes a marriage contract event where a couple enters into a legal agreement of marriage, such as a prenuptial agreement.</p>
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#family-event-structure-subr">FAMILY<wbr>_EVENT<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.MARC</p>
@@ -5808,7 +5764,7 @@ CHILD
 
         <dt id="tag-marl">MARL <span class="tag-full-name">Marriage License</span></dt>
         <dd>
-          <p>An event of obtaining a legal license to marry.</p>
+          <p>The MARL subrecord describes a marriage license event where a couple obtains a legal license to marry.</p>
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#family-event-structure-subr">FAMILY<wbr>_EVENT<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.MARL</p>
@@ -5817,7 +5773,7 @@ CHILD
 
         <dt id="tag-marr">MARR <span class="tag-full-name">Marriage</span></dt>
         <dd>
-          <p>A legal, common-law, or customary event of creating a family unit of a man and a woman as husband and wife.</p>
+          <p>A MARR subrecord describes a marriage event.</p>
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#family-event-structure-subr">FAMILY<wbr>_EVENT<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.MARR &lt;<a href="#null-pe">NULL</a>&gt;</p>
@@ -5826,7 +5782,8 @@ CHILD
 
         <dt id="tag-mars">MARS <span class="tag-full-name">Marriage Settlement</span></dt>
         <dd>
-          <p>An event of creating an agreement between two people contemplating marriage, at which time they agree to release or modify property rights that would otherwise arise from the marriage.</p>
+          <!-- TODO: Adjust definition? The usual meaning of "marriage settlement" indicates an agreement when dissolving a marriage. -->
+          <p class="provisional">A MARS subrecord describes a marriage settlement event where a couple enters into a legal agreement of creating an agreement between two people contemplating marriage, at which time they agree to release or modify property rights that would otherwise arise from the marriage.</p>
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#family-event-structure-subr">FAMILY<wbr>_EVENT<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.MARS</p>
@@ -5835,7 +5792,7 @@ CHILD
 
         <dt id="tag-medi">MEDI <span class="tag-full-name">Media</span></dt>
         <dd>
-          <p>Identifies information about the media or having to do with the medium in which information is stored.</p>
+          <p>The MEDI subrecord identifies the type of media in which the referenced material is stored via its &lt;<a href="#source-media-type-pe">SOURCE_MEDIA_TYPE</a>&gt; line_value.</p>
 
 <div class="references">
 <p>See:</p>
@@ -5850,9 +5807,15 @@ CHILD
         <dd>
           <p>The NAME subrecord defines a name. It is used in several contexts.</p>
 
-          <p>When used in the &lt;&lt;<a href="#personal-name-structure-subr">PERSONAL_NAME_STRUCTURE</a>&gt;&gt;, i.e., <a href="#tag-indi">INDI</a>.NAME, the NAME subrecord defines an individual's name. If the individual has more than one name, the first NAME subrecord defines the primary/preferred name. Subsequent NAME subrecords define alternate names.</p>
+          <ol>
+            <li>When used under the &lt;&lt;<a href="#personal-name-structure-subr">PERSONAL_NAME_STRUCTURE</a>&gt;&gt;, i.e., <a href="#tag-indi">INDI</a>.NAME, the NAME subrecord defines an individual's name. If the individual has more than one name, the first NAME subrecord defines the primary/preferred name. Subsequent NAME subrecords define alternate names.</li>
 
-          <p>In other contexts, the NAME subrecord may define a title, institution name, etc.</p>
+            <li>When used under the <a href="#tag-head">HEAD</a>.<a href="#tag-sour">SOUR</a> context, the NAME subrecord identifies the name of the software system that wrote the GEDCOM document via its &lt;<a href="#name-of-product-pe">NAME_OF_PRODUCT</a>&gt; line_value.</li>
+
+            <li>When used under the <a href="#tag-repo">REPO</a> context, the NAME subrecord specifies the name of the repository via its &lt;<a href="#name-of-repository-pe">NAME_OF_REPOSITORY</a>&gt; line_value.</li>
+
+            <li>When used under the <a href="#tag-subm">SUBM</a> context, the NAME subrecord specifies the name of the submitter via its &lt;<a href="#name-of-submitter-pe">NAME_OF_SUBMITTER</a>&gt; line_value.</li>
+          </ol>
 
 <div class="references">
 <p>See:</p>
@@ -5860,14 +5823,14 @@ CHILD
 <li>&lt;&lt;<a href="#head-record">HEAD<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-head">HEAD</a><wbr>.<a href="#tag-sour">SOUR</a><wbr>.NAME &lt;<a href="#name-of-product-pe">NAME<wbr>_OF<wbr>_PRODUCT</a>&gt;</li>
 <li>&lt;&lt;<a href="#personal-name-structure-subr">PERSONAL<wbr>_NAME<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.NAME &lt;<a href="#name-personal-pe">NAME<wbr>_PERSONAL</a>&gt;</li>
 <li>&lt;&lt;<a href="#repo-record">REPO<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-repo">REPO</a><wbr>.NAME &lt;<a href="#name-of-repository-pe">NAME<wbr>_OF<wbr>_REPOSITORY</a>&gt;</li>
-<li>&lt;&lt;<a href="#subm-record">SUBM<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-subm">SUBM</a><wbr>.NAME &lt;<a href="#submitter-name-pe">SUBMITTER<wbr>_NAME</a>&gt;</li>
+<li>&lt;&lt;<a href="#subm-record">SUBM<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-subm">SUBM</a><wbr>.NAME &lt;<a href="#name-of-submitter-pe">NAME<wbr>_OF<wbr>_SUBMITTER</a>&gt;</li>
 </ul>
 </div>
         </dd>
 
         <dt id="tag-nati">NATI <span class="tag-full-name">Nationality</span></dt>
         <dd>
-          <p>The national heritage of an individual.</p>
+          <p>The NATI subrecord specifies the heritage of the individual via its &lt;<a href="#national-or-tribal-origin-pe">NATIONAL_OR_TRIBAL_ORIGIN</a>&gt; line_value.</p>
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#individual-attribute-structure-subr">INDIVIDUAL<wbr>_ATTRIBUTE<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.NATI &lt;<a href="#national-or-tribal-origin-pe">NATIONAL<wbr>_OR<wbr>_TRIBAL<wbr>_ORIGIN</a>&gt;</p>
@@ -5876,7 +5839,7 @@ CHILD
 
         <dt id="tag-natu">NATU <span class="tag-full-name">Naturalization</span></dt>
         <dd>
-          <p>The event of obtaining citizenship.</p>
+          <p>The NATU subrecord describes a naturalization event where an individual obtains legal citizenship.</p>
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#individual-event-structure-subr">INDIVIDUAL<wbr>_EVENT<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.NATU</p>
@@ -5885,7 +5848,13 @@ CHILD
 
         <dt id="tag-nchi">NCHI <span class="tag-full-name">Number of Children</span></dt>
         <dd>
-          <p>The number of children that this person is known to be the parent of (all marriages) when subordinate to an individual, or that belong to this family when subordinate to a FAM_RECORD.</p>
+          <p>The NCHI subrecord is used in several contexts.</p>
+
+          <ol>
+            <li>When used under the &lt;&lt;<a href="#individual-attribute-structure-subr">INDIVIDUAL_ATTRIBUTE_STRUCTURE</a>&gt;&gt;, the NCHI subrecord specifies the total number of known children of the current individual including all spouses or partners.</li>
+
+            <li>When used under the <a href="#tag-fam">FAM</a> record, the NCHI subrecord specifies the number of known children shared by the parents specified in the family.</li>
+          </ol>
 
 <div class="references">
 <p>See:</p>
@@ -5898,7 +5867,16 @@ CHILD
 
         <dt id="tag-nick">NICK <span class="tag-full-name">Nickname</span></dt>
         <dd>
-          <p>A descriptive or familiar that is used instead of, or in addition to, one's proper name.</p>
+          <p>The NICK subrecord specifies a nickname: a familiar name used instead of, or in addition to, the individual's proper name.</p>
+
+          <p>The example below indicates that the nickname for "John 'Jack' Smith" is "Jack":</p>
+
+<pre>
+1 <a href="#tag-name">NAME</a> John "Jack" /Smith/
+2 <a href="#tag-givn">GIVN</a> John
+2 NICK Jack
+2 <a href="#tag-surn">SURN</a> Smith
+</pre>
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#personal-name-pieces-subr">PERSONAL<wbr>_NAME<wbr>_PIECES</a>&gt;&gt;<wbr>.NICK &lt;<a href="#name-piece-nickname-pe">NAME<wbr>_PIECE<wbr>_NICKNAME</a>&gt;</p>
@@ -5907,7 +5885,7 @@ CHILD
 
         <dt id="tag-nmr">NMR <span class="tag-full-name">Number of Marriages</span></dt>
         <dd>
-          <p>The number of times this person has participated in a family as a spouse or parent.</p>
+          <p>The NMR subrecord specifies the number of times the individual has participated in a family as a spouse or parent via its &lt;<a href="#count-of-marriages-pe">COUNT_OF_MARRIAGES</a>&gt; line_value.</p>
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#individual-attribute-structure-subr">INDIVIDUAL<wbr>_ATTRIBUTE<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.NMR &lt;<a href="#count-of-marriages-pe">COUNT<wbr>_OF<wbr>_MARRIAGES</a>&gt;</p>
@@ -5916,22 +5894,46 @@ CHILD
 
         <dt id="tag-note">NOTE <span class="tag-full-name">Note</span></dt>
         <dd>
-          <p>Additional information provided by the submitter for understanding the enclosing data.</p>
+          <p>The NOTE record and subrecord are used in several contexts.</p>
+
+          <ol>
+            <li>
+              <p>When used under the &lt;&lt;<a href="#note-structure-subr">NOTE<wbr>_STRUCTURE</a>&gt;&gt;, the NOTE subrecord may use one of two forms:</p>
+              <ol>
+                <li>The NOTE subrecord may specify additional comments or details about the enclosing subrecord via a &lt;<a href="#note-text-pe">NOTE_TEXT</a>&gt; line_value.</li>
+                <li>The NOTE subrecord may refer to additional comments or details about the enclosing subrecord via a <a href="#pointer-component">pointer</a> to a NOTE record via a &lt;<a href="#id-note-pe">ID_NOTE</a>&gt; line_value.</li>
+              </ol>
+            </li>
+
+            <li>When used as a <a href="#level-component">level 0</a> record, the NOTE record specifies additional comments or details that are referenced via a <a href="#pointer-component">pointer</a> from one or more NOTE subrecords. (See 1.1 above.)</li>
+
+            <li>When used under the <a href="#tag-head">HEAD</a> record, the NOTE subrecord describes the content of the GEDCOM document via its &lt;<a href="#content-description-pe">CONTENT_DESCRIPTION</a>&gt; line_value.</li>
+          </ol>
 
 <div class="references">
 <p>See:</p>
 <ul>
-<li>&lt;&lt;<a href="#head-record">HEAD<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-head">HEAD</a><wbr>.NOTE &lt;<a href="#gedcom-content-description-pe">GEDCOM<wbr>_CONTENT<wbr>_DESCRIPTION</a>&gt;</li>
-<li>&lt;&lt;<a href="#note-record">NOTE<wbr>_RECORD</a>&gt;&gt;<wbr>.NOTE &lt;<a href="#id-note-pe">ID:NOTE</a>&gt;</li>
-<li>&lt;&lt;<a href="#note-structure-subr">NOTE<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.NOTE &lt;<a href="#id-note-pe">ID:NOTE</a>&gt;</li>
-<li>&lt;&lt;<a href="#note-structure-subr">NOTE<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.NOTE &lt;<a href="#submitter-text-pe">SUBMITTER<wbr>_TEXT</a>&gt;</li>
+<li>&lt;&lt;<a href="#head-record">HEAD<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-head">HEAD</a><wbr>.NOTE &lt;<a href="#content-description-pe">CONTENT<wbr>_DESCRIPTION</a>&gt;</li>
+<li>&lt;&lt;<a href="#note-record">NOTE<wbr>_RECORD</a>&gt;&gt;<wbr>.NOTE &lt;<a href="#id-note-pe">ID<wbr>_NOTE</a>&gt;</li>
+<li>&lt;&lt;<a href="#note-structure-subr">NOTE<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.NOTE &lt;<a href="#id-note-pe">ID<wbr>_NOTE</a>&gt;</li>
+<li>&lt;&lt;<a href="#note-structure-subr">NOTE<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.NOTE &lt;<a href="#note-text-pe">NOTE<wbr>_TEXT</a>&gt;</li>
 </ul>
 </div>
         </dd>
 
         <dt id="tag-npfx">NPFX <span class="tag-full-name">Name Prefix</span></dt>
         <dd>
-          <p>Text which appears on a name line before the given and surname parts of a name. i.e. (<b>Lt. Cmndr.</b>) Joseph /Allen/ jr. In this example Lt. Cmndr. is considered as the name prefix portion.</p>
+          <p>The NPFX subrecord specifies a prefix that appears before the given and surname parts of a name.</p>
+
+          <p>The example below indicates that the name prefix for "<code>Lt. Cmndr. Joseph Allen, Jr.</code>" is "<code>Lt. Cmdr.</code>":</p>
+
+<pre>
+1 <a href="#tag-name">NAME</a> Lt. Cmndr. Joseph /Allen/ Jr.
+2 NPFX Lt. Cmdr.
+2 <a href="#tag-givn">GIVN</a> Joseph
+2 <a href="#tag-surn">SURN</a> Allen
+2 <a href="#tag-nsfx">NSFX</a> Jr.
+</pre>
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#personal-name-pieces-subr">PERSONAL<wbr>_NAME<wbr>_PIECES</a>&gt;&gt;<wbr>.NPFX &lt;<a href="#name-piece-prefix-pe">NAME<wbr>_PIECE<wbr>_PREFIX</a>&gt;</p>
@@ -5940,7 +5942,17 @@ CHILD
 
         <dt id="tag-nsfx">NSFX <span class="tag-full-name">Name Suffix</span></dt>
         <dd>
-          <p>Text which appears on a name line after or behind the given and surname parts of a name. i.e. Lt. Cmndr. Joseph /Allen/ (<b>jr.</b>) In this example jr. is considered as the name suffix portion.</p>
+          <p>The NSFX subrecord specifies a suffix which appears after the given and surname parts of a name.</p>
+
+          <p>The example below indicates that the name suffix for "<code>Lt. Cmndr. Joseph Allen, Jr.</code>" is "<code>Jr.</code>":</p>
+
+<pre>
+1 <a href="#tag-name">NAME</a> Lt. Cmndr. Joseph /Allen/ Jr.
+2 <a href="#tag-npfx">NPFX</a> Lt. Cmdr.
+2 <a href="#tag-givn">GIVN</a> Joseph
+2 <a href="#tag-surn">SURN</a> Allen
+2 NSFX Jr.
+</pre>
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#personal-name-pieces-subr">PERSONAL<wbr>_NAME<wbr>_PIECES</a>&gt;&gt;<wbr>.NSFX &lt;<a href="#name-piece-suffix-pe">NAME<wbr>_PIECE<wbr>_SUFFIX</a>&gt;</p>
@@ -5949,21 +5961,21 @@ CHILD
 
         <dt id="tag-obje">OBJE <span class="tag-full-name">Object</span></dt>
         <dd>
-          <p>An OBJE subrecord describes an external object, usually a multimedia object such as a digital image, an audio recording, or another digital asset.</p>
+          <p>The OBJE subrecord describes an external object, usually a multimedia object such as a digital image, an audio recording, or another digital asset.</p>
 
 <div class="references">
 <p>See:</p>
 <ul>
 <li>&lt;&lt;<a href="#multimedia-link-subr">MULTIMEDIA<wbr>_LINK</a>&gt;&gt;<wbr>.OBJE</li>
-<li>&lt;&lt;<a href="#multimedia-link-subr">MULTIMEDIA<wbr>_LINK</a>&gt;&gt;<wbr>.OBJE &lt;<a href="#id-obje-pe">ID:OBJE</a>&gt;</li>
-<li>&lt;&lt;<a href="#obje-record">OBJE<wbr>_RECORD</a>&gt;&gt;<wbr>.OBJE &lt;<a href="#id-obje-pe">ID:OBJE</a>&gt;</li>
+<li>&lt;&lt;<a href="#multimedia-link-subr">MULTIMEDIA<wbr>_LINK</a>&gt;&gt;<wbr>.OBJE &lt;<a href="#id-obje-pe">ID<wbr>_OBJE</a>&gt;</li>
+<li>&lt;&lt;<a href="#obje-record">OBJE<wbr>_RECORD</a>&gt;&gt;<wbr>.OBJE &lt;<a href="#id-obje-pe">ID<wbr>_OBJE</a>&gt;</li>
 </ul>
 </div>
         </dd>
 
         <dt id="tag-occu">OCCU <span class="tag-full-name">Occupation</span></dt>
         <dd>
-          <p>The type of work or profession of an individual.</p>
+          <p>The OCCU subrecord specifies the type of work or profession of the individual via its &lt;<a href="#occupation-pe">OCCUPATION</a>&gt; line_value.</p>
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#individual-attribute-structure-subr">INDIVIDUAL<wbr>_ATTRIBUTE<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.OCCU &lt;<a href="#occupation-pe">OCCUPATION</a>&gt;</p>
@@ -5972,7 +5984,7 @@ CHILD
 
         <dt id="tag-ordn">ORDN <span class="tag-full-name">Ordination</span></dt>
         <dd>
-          <p>A religious event of receiving authority to act in religious matters.</p>
+          <p>The ORDN subrecord describes an ordination event.</p>
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#individual-event-structure-subr">INDIVIDUAL<wbr>_EVENT<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.ORDN</p>
@@ -5981,7 +5993,7 @@ CHILD
 
         <dt id="tag-page">PAGE <span class="tag-full-name">Page</span></dt>
         <dd>
-          <p>A number or description to identify where information can be found in a referenced work.</p>
+          <p>The PAGE subrecord specifies a number or description to identify where information can be found in a referenced work via its &lt;<a href="#where-within-source-pe">WHERE_WITHIN_SOURCE</a>&gt; line_value.</p>
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#source-citation-subr">SOURCE<wbr>_CITATION</a>&gt;&gt;<wbr>.<a href="#tag-sour">SOUR</a><wbr>.PAGE &lt;<a href="#where-within-source-pe">WHERE<wbr>_WITHIN<wbr>_SOURCE</a>&gt;</p>
@@ -5990,7 +6002,7 @@ CHILD
 
         <dt id="tag-pedi">PEDI <span class="tag-full-name">Pedigree</span></dt>
         <dd>
-          <p>Information pertaining to an individual to parent lineage chart.</p>
+          <p>The PEDI subrecord specifies a code to classify the child to family relationship via its &lt;<a href="#pedigree-linkage-type-pe">PEDIGREE_LINKAGE_TYPE</a>&gt; line_value.</p>
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#child-to-family-link-subr">CHILD<wbr>_TO<wbr>_FAMILY<wbr>_LINK</a>&gt;&gt;<wbr>.<a href="#tag-famc">FAMC</a><wbr>.PEDI &lt;<a href="#pedigree-linkage-type-pe">PEDIGREE<wbr>_LINKAGE<wbr>_TYPE</a>&gt;</p>
@@ -5999,7 +6011,7 @@ CHILD
 
         <dt id="tag-phon">PHON <span class="tag-full-name">Phone</span></dt>
         <dd>
-          <p>A unique number assigned to access a specific telephone.</p>
+          <p>The PHON subrecord specifices a telephone number via its &lt;<a href="#phone-number-pe">PHONE_NUMBER</a>&gt; line_value.</p>
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#contact-structure-subr">CONTACT<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.PHON &lt;<a href="#phone-number-pe">PHONE<wbr>_NUMBER</a>&gt;</p>
@@ -6008,21 +6020,29 @@ CHILD
 
         <dt id="tag-plac">PLAC <span class="tag-full-name">Place</span></dt>
         <dd>
-          <p>A jurisdictional name to identify the place or location of an event.</p>
+          <p>The PLAC subrecord is used in several contexts.</p>
+
+          <ol>
+            <li>When used under the &lt;&lt;<a href="#place-structure-subr">PLACE<wbr>_STRUCTURE</a>&gt;&gt;, the PLAC subrecord specifies the name of a place via its &lt;<a href="#place-name-pe">PLACE_NAME</a>&gt; line_value.</li>
+
+            <li>When used under the &lt;&lt;<a href="#head-record">HEAD_RECORD</a>&gt;&gt;, the PLAC subrecord is the parent record of the <a href="#tag-form">FORM</a> subrecord that specifies the default <a href="#place-hierarchy-pe">PLACE_HIERARCHY</a> for the GEDCOM document.</li>
+
+            <li>When used under the &lt;&lt;<a href="#sour-record">SOUR_RECORD</a>&gt;&gt;.<a href="#tag-sour">SOUR</a>.<a href="#tag-data">DATA</a>.<a href="#tag-even-types">EVEN</a> context, the PLAC subrecord specifies the name of the lowest jurisdiction that encompasses all lower-level places named in a source via its &lt;<a href="#source-jurisdiction-place-pe">SOURCE_JURISDICTION_PLACE</a>&gt; line_value.</li>
+          </ol>
 
 <div class="references">
 <p>See:</p>
 <ul>
 <li>&lt;&lt;<a href="#head-record">HEAD<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-head">HEAD</a><wbr>.PLAC</li>
 <li>&lt;&lt;<a href="#place-structure-subr">PLACE<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.PLAC &lt;<a href="#place-name-pe">PLACE<wbr>_NAME</a>&gt;</li>
-<li>&lt;&lt;<a href="#sour-record">SOUR<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-sour">SOUR</a><wbr>.<a href="#tag-data">DATA</a><wbr>.<a href="#tag-even-types">EVEN (Event Types)</a><wbr>.PLAC &lt;<a href="#source-jurisdiction-place-pe">SOURCE<wbr>_JURISDICTION<wbr>_PLACE</a>&gt;</li>
+<li>&lt;&lt;<a href="#sour-record">SOUR<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-sour">SOUR</a><wbr>.<a href="#tag-data">DATA</a><wbr>.<a href="#tag-even-types">EVEN</a><wbr>.PLAC &lt;<a href="#source-jurisdiction-place-pe">SOURCE<wbr>_JURISDICTION<wbr>_PLACE</a>&gt;</li>
 </ul>
 </div>
         </dd>
 
         <dt id="tag-post">POST <span class="tag-full-name">Postal Code</span></dt>
         <dd>
-          <p>A code assigned by a postal service to identify an area and used to facilitate mail handling.</p>
+          <p>The POST subrecord specifies the postal code for an address via its &lt;<a href="#address-postal-code-pe">ADDRESS_POSTAL_CODE</a>&gt; line_value.</p>
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#address-structure-subr">ADDRESS<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-addr">ADDR</a><wbr>.POST &lt;<a href="#address-postal-code-pe">ADDRESS<wbr>_POSTAL<wbr>_CODE</a>&gt;</p>
@@ -6031,7 +6051,7 @@ CHILD
 
         <dt id="tag-prob">PROB <span class="tag-full-name">Probate</span></dt>
         <dd>
-          <p>An event of judicial determination of the validity of a will. May indicate several related court activities over several dates.</p>
+          <p>The PROB subrecord describes a probate event where the estate of a deceased individual is legally settled.</p>
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#individual-event-structure-subr">INDIVIDUAL<wbr>_EVENT<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.PROB</p>
@@ -6040,7 +6060,7 @@ CHILD
 
         <dt id="tag-prop">PROP <span class="tag-full-name">Property</span></dt>
         <dd>
-          <p>Pertaining to possessions such as real estate or other property of interest.</p>
+          <p>The PROP subrecord specifies a list of an individual's possessions via its &lt;<a href="#possessions-pe">POSSESSIONS</a>&gt; line_value.</p>
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#individual-attribute-structure-subr">INDIVIDUAL<wbr>_ATTRIBUTE<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.PROP &lt;<a href="#possessions-pe">POSSESSIONS</a>&gt;</p>
@@ -6049,7 +6069,7 @@ CHILD
 
         <dt id="tag-publ">PUBL <span class="tag-full-name">Publication</span></dt>
         <dd>
-          <p>Refers to when and/or where a work was published or created.</p>
+          <p>The PUBL subrecord specifies when and where a source record was published or created via its &lt;<a href="#source-publication-facts-pe">SOURCE_PUBLICATION_FACTS</a>&gt; line_value.</p>
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#sour-record">SOUR<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-sour">SOUR</a><wbr>.PUBL &lt;<a href="#source-publication-facts-pe">SOURCE<wbr>_PUBLICATION<wbr>_FACTS</a>&gt;</p>
@@ -6058,12 +6078,18 @@ CHILD
 
         <dt id="tag-quay">QUAY <span class="tag-full-name">Quality of Data</span></dt>
         <dd>
-          <p>An assessment of the certainty of the evidence to support the conclusion drawn from evidence.</p>
+          <p>The QUAY subrecord indicates the submitter's quantitative evaluation of the credibility of the source data identified in the parent &lt;&lt;<a href="#source-citation-subr">SOURCE_CITATION</a>&gt;&gt; via its &lt;<a href="#certainty-assessment-pe">CERTAINTY_ASSESSMENT</a>&gt; line_value.</p>
+
+          <p>The credibility is relative to the data to which the source citation applies. So, for example, when citing a marriage record for the marriage date, the QUAY value would typically be higher than when citing the marriage record for the bride or groom's birth date estimated from an age value in the marriage record.</p>
+
+<div class="references">
+<p>See: &lt;&lt;<a href="#source-citation-subr">SOURCE<wbr>_CITATION</a>&gt;&gt;<wbr>.<a href="#tag-sour">SOUR</a><wbr>.QUAY &lt;<a href="#certainty-assessment-pe">CERTAINTY<wbr>_ASSESSMENT</a>&gt;</p>
+</div>
         </dd>
 
         <dt id="tag-refn">REFN <span class="tag-full-name">Reference Number</span></dt>
         <dd>
-          <p>A description or number used to identify an item for filing, storage, or other reference purposes.</p>
+          <p>The REFN subrecord specifies a number or description used to identify an item via its &lt;<a href="#user-reference-number-pe">USER_REFERENCE_NUMBER</a>&gt; line_value.</p>
 
 <div class="references">
 <p>See:</p>
@@ -6080,7 +6106,9 @@ CHILD
 
         <dt id="tag-rela">RELA <span class="tag-full-name">Relationship</span></dt>
         <dd>
-          <p>A relationship value between the indicated contexts.</p>
+          <p>The RELA subrecord specifies the relationship between two individuals via its &lt;<a href="#relation-is-descriptor-pe">RELATION_IS_DESCRIPTOR</a>&gt; line_value.</p>
+
+          <p>See the <a href="#tag-asso">ASSO</a> subrecord for more details.</p>
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#association-structure-subr">ASSOCIATION<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-asso">ASSO</a><wbr>.RELA &lt;<a href="#relation-is-descriptor-pe">RELATION<wbr>_IS<wbr>_DESCRIPTOR</a>&gt;</p>
@@ -6089,7 +6117,13 @@ CHILD
 
         <dt id="tag-reli">RELI <span class="tag-full-name">Religion</span></dt>
         <dd>
-          <p>A religious denomination to which a person is affiliated or for which a record applies.</p>
+          <p>The RELI subrecord is used in several contexts.</p>
+
+          <ol>
+            <li>When used under an <a href="#tag-indi">INDI</a> subrecord as part of an &lt;&lt;<a href="#individual-attribute-structure-subr">INDIVIDUAL_ATTRIBUTE_STRUCTURE</a>&gt;&gt;, the RELI subrecord describes a religious affiliation. The religous denomination is specified via its &lt;<a href="#religious-affiliation-pe">RELIGIOUS_AFFILIATION</a>&gt; line_value. Subrecords describe other aspects of the affiliation.</li>
+
+            <li>When used under the &lt;&lt;<a href="#event-or-fact-detail-subr">EVENT_OR_FACT_DETAIL</a>&gt;&gt; context, the RELI subrecord specifies a religious denomination associated with the parent record via its &lt;<a href="#religious-affiliation-pe">RELIGIOUS_AFFILIATION</a>&gt; line_value. No further subrecords are allowed in this context.</li>
+          </ol>
 
 <div class="references">
 <p>See:</p>
@@ -6102,20 +6136,26 @@ CHILD
 
         <dt id="tag-repo">REPO <span class="tag-full-name">Repository</span></dt>
         <dd>
-          <p>An institution or person that has the specified item as part of their collection(s).</p>
+          <p>The REPO subrecord is used in several contexts.</p>
+
+          <ol>
+            <li>When used as a <a href="#level-component">level 0</a> record, the &lt;&lt;<a href="#repo-record">REPO_RECORD</a>&gt;&gt; describes a repository. The &lt;&lt;REPO_RECORD&gt;&gt; is referenced by REPO subrecords with an &lt;<a href="#id-repo-pe">ID_REPO</a>&gt; <a href="#pointer-component">pointer</a> line_value.</li>
+
+            <li>When used in a &lt;&lt;<a href="#source-repository-citation-subr">SOURCE_REPOSITORY_CITATION</a>&gt;&gt; under a &lt;&lt;<a href="#sour-record">SOUR_RECORD</a>&gt;&gt;, the REPO subrecord describes a repository or links to a &lt;&lt;<a href="#repo-record">REPO_RECORD</a>&gt;&gt; that describes a repository.</li>
+          </ol>
 
 <div class="references">
 <p>See:</p>
 <ul>
-<li>&lt;&lt;<a href="#repo-record">REPO<wbr>_RECORD</a>&gt;&gt;<wbr>.REPO &lt;<a href="#id-repo-pe">ID:REPO</a>&gt;</li>
-<li>&lt;&lt;<a href="#source-repository-citation-subr">SOURCE<wbr>_REPOSITORY<wbr>_CITATION</a>&gt;&gt;<wbr>.REPO &lt;<a href="#id-repo-pe">ID:REPO</a>&gt;</li>
+<li>&lt;&lt;<a href="#repo-record">REPO<wbr>_RECORD</a>&gt;&gt;<wbr>.REPO &lt;<a href="#id-repo-pe">ID<wbr>_REPO</a>&gt;</li>
+<li>&lt;&lt;<a href="#source-repository-citation-subr">SOURCE<wbr>_REPOSITORY<wbr>_CITATION</a>&gt;&gt;<wbr>.REPO &lt;<a href="#id-repo-pe">ID<wbr>_REPO</a>&gt;</li>
 </ul>
 </div>
         </dd>
 
         <dt id="tag-resi">RESI <span class="tag-full-name">Residence</span></dt>
         <dd>
-          <p>An address or place of residence that a family or individual resided.</p>
+          <p>The RESI subrecord describes a residence as an attribute of an individual or family.</p>
 
 <div class="references">
 <p>See:</p>
@@ -6128,7 +6168,7 @@ CHILD
 
         <dt id="tag-resn">RESN <span class="tag-full-name">Restriction</span></dt>
         <dd>
-          <p>A processing indicator signifying access to information has been denied or otherwise restricted.</p>
+          <p>The RESN subrecord indicates a processing restriction for its parent record via its &lt;<a href="#restriction-notice-pe">RESTRICTION_NOTICE</a>&gt; line_value.</p>
 
 <div class="references">
 <p>See:</p>
@@ -6142,7 +6182,7 @@ CHILD
 
         <dt id="tag-reti">RETI <span class="tag-full-name">Retirement</span></dt>
         <dd>
-          <p>An event of exiting an occupational relationship with an employer after a qualifying time period.</p>
+          <p>The RETI subrecord describes a retirement event.</p>
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#individual-event-structure-subr">INDIVIDUAL<wbr>_EVENT<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.RETI</p>
@@ -6151,7 +6191,7 @@ CHILD
 
         <dt id="tag-rfn">RFN <span class="tag-full-name">Record File Number</span></dt>
         <dd>
-          <p>A permanent number assigned to a record that uniquely identifies it within a known file.</p>
+          <p>The RFN subrecord specifies a record file number that uniquely identifies a &lt;&lt;<a href="#subm-record">SUBM_RECORD</a>&gt;&gt; via its &lt;<a href="#submitter-registered-rfn-pe">SUBMITTER_REGISTERED_RFN</a>&gt;.</p>
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#subm-record">SUBM<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-subm">SUBM</a><wbr>.RFN &lt;<a href="#submitter-registered-rfn-pe">SUBMITTER<wbr>_REGISTERED<wbr>_RFN</a>&gt;</p>
@@ -6160,7 +6200,7 @@ CHILD
 
         <dt id="tag-rin">RIN <span class="tag-full-name">Record ID Number</span></dt>
         <dd>
-          <p>A number assigned to a record by an originating automated system that can be used by a receiving system to report results pertaining to that record.</p>
+          <p>The RIN subrecord specifies an identification number assigned to a record via its &lt;<a href="#automated-record-id-pe">AUTOMATED_RECORD_ID</a>&gt; line_value. The value is assigned by an originating system and can be used by a receiving system to report results pertaining to that record.</p>
 
 <div class="references">
 <p>See:</p>
@@ -6178,16 +6218,16 @@ CHILD
 
         <dt id="tag-role">ROLE <span class="tag-full-name">Role</span></dt>
         <dd>
-          <p>A name given to a role played by an individual in connection with an event.</p>
+          <p>The ROLE subrecord specifies a name given to a role played by an individual in connection with an event. The role is specified via the ROLE subrecord's &lt;<a href="#role-in-event-pe">ROLE_IN_EVENT</a>&gt; line_value.</p>
 
 <div class="references">
-<p>See: &lt;&lt;<a href="#source-citation-subr">SOURCE<wbr>_CITATION</a>&gt;&gt;<wbr>.<a href="#tag-sour">SOUR</a><wbr>.<a href="#tag-even-types">EVEN (Event Types)</a><wbr>.ROLE &lt;<a href="#role-in-event-pe">ROLE<wbr>_IN<wbr>_EVENT</a>&gt;</p>
+<p>See: &lt;&lt;<a href="#source-citation-subr">SOURCE<wbr>_CITATION</a>&gt;&gt;<wbr>.<a href="#tag-sour">SOUR</a><wbr>.<a href="#tag-even-types">EVEN</a><wbr>.ROLE &lt;<a href="#role-in-event-pe">ROLE<wbr>_IN<wbr>_EVENT</a>&gt;</p>
 </div>
         </dd>
 
         <dt id="tag-romn">ROMN <span class="tag-full-name">Romanized</span></dt>
         <dd>
-          <p>A romanized variation of a superior text string.</p>
+          <p>The ROMN subrecord specifies a romanized variation of a superior name or place.</p>
 
 <div class="references">
 <p>See:</p>
@@ -6221,8 +6261,8 @@ CHILD
 <p>See:</p>
 <ul>
 <li>&lt;&lt;<a href="#head-record">HEAD<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-head">HEAD</a><wbr>.SOUR &lt;<a href="#system-id-pe">SYSTEM<wbr>_ID</a>&gt;</li>
-<li>&lt;&lt;<a href="#sour-record">SOUR<wbr>_RECORD</a>&gt;&gt;<wbr>.SOUR &lt;<a href="#id-sour-pe">ID:SOUR</a>&gt;</li>
-<li>&lt;&lt;<a href="#source-citation-subr">SOURCE<wbr>_CITATION</a>&gt;&gt;<wbr>.SOUR &lt;<a href="#id-sour-pe">ID:SOUR</a>&gt;</li>
+<li>&lt;&lt;<a href="#sour-record">SOUR<wbr>_RECORD</a>&gt;&gt;<wbr>.SOUR &lt;<a href="#id-sour-pe">ID<wbr>_SOUR</a>&gt;</li>
+<li>&lt;&lt;<a href="#source-citation-subr">SOURCE<wbr>_CITATION</a>&gt;&gt;<wbr>.SOUR &lt;<a href="#id-sour-pe">ID<wbr>_SOUR</a>&gt;</li>
 <li>&lt;&lt;<a href="#source-citation-subr">SOURCE<wbr>_CITATION</a>&gt;&gt;<wbr>.SOUR &lt;<a href="#source-description-pe">SOURCE<wbr>_DESCRIPTION</a>&gt;</li>
 </ul>
 </div>
@@ -6232,6 +6272,15 @@ CHILD
         <dd>
           <p>The SPFX subrecord specifies a name piece used as a non-indexing prefix of a surname via its &lt;<a href="#name-piece-surname-prefix-pe">NAME_PIECE_SURNAME_PREFIX</a>&gt; line_value.</p>
 
+          <p>The example below indicates the surname prefix for "Paul van Heusen" is "van":</p>
+
+<pre>
+1 <a href="#tag-name">NAME</a> Paul van Heusen
+2 <a href="#tag-givn">GIVN</a> Paul
+2 SPFX van
+2 <a href="#tag-surn">SURN</a> Heusen
+</pre>
+
 <div class="references">
 <p>See: &lt;&lt;<a href="#personal-name-pieces-subr">PERSONAL<wbr>_NAME<wbr>_PIECES</a>&gt;&gt;<wbr>.SPFX &lt;<a href="#name-piece-surname-prefix-pe">NAME<wbr>_PIECE<wbr>_SURNAME<wbr>_PREFIX</a>&gt;</p>
 </div>
@@ -6239,7 +6288,7 @@ CHILD
 
         <dt id="tag-ssn">SSN <span class="tag-full-name">Social Security Number</span></dt>
         <dd>
-          <p>The SSN subrecord specifies a number assigned to the individual by the United States Social Security Administration.</p>
+          <p>The SSN subrecord specifies a number assigned to an individual by the United States Social Security Administration.</p>
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#individual-attribute-structure-subr">INDIVIDUAL<wbr>_ATTRIBUTE<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.SSN &lt;<a href="#social-security-number-pe">SOCIAL<wbr>_SECURITY<wbr>_NUMBER</a>&gt;</p>
@@ -6257,7 +6306,7 @@ CHILD
 
         <dt id="tag-stat">STAT <span class="tag-full-name">Status</span></dt>
         <dd>
-          <p>An assessment of the state or condition of something.</p>
+          <p>The STAT subrecord specifies an assessment of a &lt;&lt;<a href="#child-to-family-link-subr">CHILD_TO_FAMILY_LINK</a>&gt;&gt; via its &lt;<a href="#child-linkage-status-pe">CHILD_LINKAGE_STATUS</a>&gt; line_value.</p>
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#child-to-family-link-subr">CHILD<wbr>_TO<wbr>_FAMILY<wbr>_LINK</a>&gt;&gt;<wbr>.<a href="#tag-famc">FAMC</a><wbr>.STAT &lt;<a href="#child-linkage-status-pe">CHILD<wbr>_LINKAGE<wbr>_STATUS</a>&gt;</p>
@@ -6266,22 +6315,38 @@ CHILD
 
         <dt id="tag-subm">SUBM <span class="tag-full-name">Submitter</span></dt>
         <dd>
-          <p>An individual or organization who contributes genealogical data to a file or transfers it to someone else.</p>
+          <p>The SUBM record and subrecord are used in several contexts:</p>
+
+          <ol>
+            <li>When used as a <a href="#level-component">level 0</a> record, the &lt;&lt;<a href="#subm-record">SUBM_RECORD</a>&gt;&gt; describes the submitter, editor, or compiler of the GEDCOM document. The &lt;&lt;SUBM_RECORD&gt;&gt; is referenced by SUBM subrecords with an &lt;<a href="#id-subm-pe">ID_SUBM</a>&gt; <a href="#pointer-component">pointer</a> line_value.</li>
+
+            <li>When used as a subrecord, the SUBM subrecord links a &lt;&lt;<a href="#subm-record">SUBM_RECORD</a>&gt;&gt; to the parent record.</li>
+          </ol>
 
 <div class="references">
 <p>See:</p>
 <ul>
-<li>&lt;&lt;<a href="#fam-record">FAM<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-fam">FAM</a><wbr>.SUBM &lt;<a href="#id-subm-pe">ID:SUBM</a>&gt;</li>
-<li>&lt;&lt;<a href="#head-record">HEAD<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-head">HEAD</a><wbr>.SUBM &lt;<a href="#id-subm-pe">ID:SUBM</a>&gt;</li>
-<li>&lt;&lt;<a href="#indi-record">INDI<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-indi">INDI</a><wbr>.SUBM &lt;<a href="#id-subm-pe">ID:SUBM</a>&gt;</li>
-<li>&lt;&lt;<a href="#subm-record">SUBM<wbr>_RECORD</a>&gt;&gt;<wbr>.SUBM &lt;<a href="#id-subm-pe">ID:SUBM</a>&gt;</li>
+<li>&lt;&lt;<a href="#fam-record">FAM<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-fam">FAM</a><wbr>.SUBM &lt;<a href="#id-subm-pe">ID<wbr>_SUBM</a>&gt;</li>
+<li>&lt;&lt;<a href="#head-record">HEAD<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-head">HEAD</a><wbr>.SUBM &lt;<a href="#id-subm-pe">ID<wbr>_SUBM</a>&gt;</li>
+<li>&lt;&lt;<a href="#indi-record">INDI<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-indi">INDI</a><wbr>.SUBM &lt;<a href="#id-subm-pe">ID<wbr>_SUBM</a>&gt;</li>
+<li>&lt;&lt;<a href="#subm-record">SUBM<wbr>_RECORD</a>&gt;&gt;<wbr>.SUBM &lt;<a href="#id-subm-pe">ID<wbr>_SUBM</a>&gt;</li>
 </ul>
 </div>
         </dd>
 
         <dt id="tag-surn">SURN <span class="tag-full-name">Surname</span></dt>
         <dd>
-          <p>A family name passed on or used by members of a family.</p>
+          <p>The SURN subrecord specifies the family name used by members of a family.</p>
+
+          <p>The example below indicates that the surname for "<code>Lt. Cmndr. Joseph Allen, Jr.</code>" is "<code>Allen</code>":</p>
+
+<pre>
+1 <a href="#tag-name">NAME</a> Lt. Cmndr. Joseph /Allen/ Jr.
+2 <a href="#tag-npfx">NPFX</a> Lt. Cmdr.
+2 <a href="#tag-givn">GIVN</a> Joseph
+2 SURN Allen
+2 <a href="#tag-nsfx">NSFX</a> Jr.
+</pre>
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#personal-name-pieces-subr">PERSONAL<wbr>_NAME<wbr>_PIECES</a>&gt;&gt;<wbr>.SURN &lt;<a href="#name-piece-surname-pe">NAME<wbr>_PIECE<wbr>_SURNAME</a>&gt;</p>
@@ -6290,7 +6355,7 @@ CHILD
 
         <dt id="tag-text">TEXT <span class="tag-full-name">Text</span></dt>
         <dd>
-          <p>The exact wording found in an original source document.</p>
+          <p>The TEXT subrecord specifies the exact wording found in an original source document via its &lt;<a href="#text-from-source-pe">TEXT_FROM_SOURCE</a>&gt; line_value.</p>
 
 <div class="references">
 <p>See:</p>
@@ -6304,7 +6369,7 @@ CHILD
 
         <dt id="tag-time">TIME <span class="tag-full-name">Time</span></dt>
         <dd>
-          <p>A time value in a 24-hour clock format, including hours, minutes, and optional seconds, separated by a colon (:). Fractions of seconds are shown in decimal notation.</p>
+          <p>The TIME subrecord specifies a time via its &lt;<a href="#time-value-pe">TIME_VALUE</a>&gt; line_value.</p>
 
 <div class="references">
 <p>See:</p>
@@ -6317,7 +6382,15 @@ CHILD
 
         <dt id="tag-titl">TITL <span class="tag-full-name">Title</span></dt>
         <dd>
-          <p>A description of a specific writing or other work, such as the title of a book when used in a source context, or a formal designation used by an individual in connection with positions of royalty or other social status, such as Grand Duke.</p>
+          <p>The TITL subrecord is used in several contexts.</p>
+
+          <ol>
+            <li>When used under the &lt;&lt;<a href="#individual-attribute-structure-subr">INDIVIDUAL_ATTRIBUTE_STRUCTURE</a>&gt;&gt; context, the TITL subrecord specifies an individual's title via its &lt;<a href="#nobility-type-title-pe">NOBILITY_TYPE_TITLE</a>&gt; line_value.</li>
+
+            <li>When used under the <a href="#tag-obje">OBJE</a> record or subrecord, the TITL subrecord specifies the title of the media object via its &lt;<a href="#descriptive-title-pe">DESCRIPTIVE_TITLE</a>&gt; line_value.</li>
+
+            <li>When used under the &lt;&lt;<a href="#sour-record">SOUR_RECORD</a>&gt;&gt; context, the TITL subrecord specifies the title of a source via its &lt;<a href="#source-descriptive-title-pe">SOURCE_DESCRIPTIVE_TITLE</a>&gt; line_value.</li>
+          </ol>
 
 <div class="references">
 <p>See:</p>
@@ -6332,7 +6405,7 @@ CHILD
 
         <dt id="tag-trlr">TRLR <span class="tag-full-name"><a href="#trlr-record">TRAILER</a></span></dt>
         <dd>
-          <p>At level 0, specifies the end of a GEDCOM document.</p>
+          <p>The TRLR record indicates the end of a GEDCOM document.</p>
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#trlr-record">TRLR<wbr>_RECORD</a>&gt;&gt;<wbr>.TRLR</p>
@@ -6356,7 +6429,7 @@ CHILD
 </pre>
 
 <div class="references">
-<p>See: &lt;&lt;<a href="#event-or-fact-detail-subr">EVENT<wbr>_OR<wbr>_FACT<wbr>_DETAIL</a>&gt;&gt;<wbr>.TYPE (Event or Fact) &lt;<a href="#event-or-fact-classification-pe">EVENT<wbr>_OR<wbr>_FACT<wbr>_CLASSIFICATION</a>&gt;</p>
+<p>See: &lt;&lt;<a href="#event-or-fact-detail-subr">EVENT<wbr>_OR<wbr>_FACT<wbr>_DETAIL</a>&gt;&gt;<wbr>.TYPE &lt;<a href="#event-or-fact-classification-pe">EVENT<wbr>_OR<wbr>_FACT<wbr>_CLASSIFICATION</a>&gt;</p>
 </div>
         </dd>
 
@@ -6365,7 +6438,7 @@ CHILD
           <p>The TYPE subrecord in the context of a <a href="#tag-form">FORM</a> subrecord indicates the type of material in which the referenced source is stored via its <a href="#source-media-type-pe">SOURCE_MEDIA_TYPE</a> line_value.</p>
 
 <div class="references">
-<p>See: &lt;&lt;<a href="#obje-record">OBJE<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-obje">OBJE</a><wbr>.<a href="#tag-file">FILE</a><wbr>.<a href="#tag-form">FORM</a><wbr>.TYPE (Media) &lt;<a href="#source-media-type-pe">SOURCE<wbr>_MEDIA<wbr>_TYPE</a>&gt;</p>
+<p>See: &lt;&lt;<a href="#obje-record">OBJE<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-obje">OBJE</a><wbr>.<a href="#tag-file">FILE</a><wbr>.<a href="#tag-form">FORM</a><wbr>.TYPE &lt;<a href="#source-media-type-pe">SOURCE<wbr>_MEDIA<wbr>_TYPE</a>&gt;</p>
 </div>
         </dd>
 
@@ -6374,7 +6447,7 @@ CHILD
           <p>The TYPE subrecord in the context of a <a href="#tag-name">NAME</a> subrecord provides a label to qualify the name type via its &lt;<a href="#name-type-pe">NAME-TYPE</a>&gt; line_value.</p>
 
 <div class="references">
-<p>See: &lt;&lt;<a href="#personal-name-structure-subr">PERSONAL<wbr>_NAME<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-name">NAME</a><wbr>.TYPE (Name) &lt;<a href="#name-type-pe">NAME<wbr>_TYPE</a>&gt;</p>
+<p>See: &lt;&lt;<a href="#personal-name-structure-subr">PERSONAL<wbr>_NAME<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-name">NAME</a><wbr>.TYPE &lt;<a href="#name-type-pe">NAME<wbr>_TYPE</a>&gt;</p>
 </div>
         </dd>
 
@@ -6385,12 +6458,12 @@ CHILD
 <div class="references">
 <p>See:</p>
 <ul>
-<li>&lt;&lt;<a href="#fam-record">FAM<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-fam">FAM</a><wbr>.<a href="#tag-refn">REFN</a><wbr>.TYPE (REFN) &lt;<a href="#user-reference-type-pe">USER<wbr>_REFERENCE<wbr>_TYPE</a>&gt;</li>
-<li>&lt;&lt;<a href="#indi-record">INDI<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-indi">INDI</a><wbr>.<a href="#tag-refn">REFN</a><wbr>.TYPE (REFN) &lt;<a href="#user-reference-type-pe">USER<wbr>_REFERENCE<wbr>_TYPE</a>&gt;</li>
-<li>&lt;&lt;<a href="#note-record">NOTE<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-note">NOTE</a><wbr>.<a href="#tag-refn">REFN</a><wbr>.TYPE (REFN) &lt;<a href="#user-reference-type-pe">USER<wbr>_REFERENCE<wbr>_TYPE</a>&gt;</li>
-<li>&lt;&lt;<a href="#obje-record">OBJE<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-obje">OBJE</a><wbr>.<a href="#tag-refn">REFN</a><wbr>.TYPE (REFN) &lt;<a href="#user-reference-type-pe">USER<wbr>_REFERENCE<wbr>_TYPE</a>&gt;</li>
-<li>&lt;&lt;<a href="#repo-record">REPO<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-repo">REPO</a><wbr>.<a href="#tag-refn">REFN</a><wbr>.TYPE (REFN) &lt;<a href="#user-reference-type-pe">USER<wbr>_REFERENCE<wbr>_TYPE</a>&gt;</li>
-<li>&lt;&lt;<a href="#sour-record">SOUR<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-sour">SOUR</a><wbr>.<a href="#tag-refn">REFN</a><wbr>.TYPE (REFN) &lt;<a href="#user-reference-type-pe">USER<wbr>_REFERENCE<wbr>_TYPE</a>&gt;</li>
+<li>&lt;&lt;<a href="#fam-record">FAM<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-fam">FAM</a><wbr>.<a href="#tag-refn">REFN</a><wbr>.TYPE &lt;<a href="#user-reference-type-pe">USER<wbr>_REFERENCE<wbr>_TYPE</a>&gt;</li>
+<li>&lt;&lt;<a href="#indi-record">INDI<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-indi">INDI</a><wbr>.<a href="#tag-refn">REFN</a><wbr>.TYPE &lt;<a href="#user-reference-type-pe">USER<wbr>_REFERENCE<wbr>_TYPE</a>&gt;</li>
+<li>&lt;&lt;<a href="#note-record">NOTE<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-note">NOTE</a><wbr>.<a href="#tag-refn">REFN</a><wbr>.TYPE &lt;<a href="#user-reference-type-pe">USER<wbr>_REFERENCE<wbr>_TYPE</a>&gt;</li>
+<li>&lt;&lt;<a href="#obje-record">OBJE<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-obje">OBJE</a><wbr>.<a href="#tag-refn">REFN</a><wbr>.TYPE &lt;<a href="#user-reference-type-pe">USER<wbr>_REFERENCE<wbr>_TYPE</a>&gt;</li>
+<li>&lt;&lt;<a href="#repo-record">REPO<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-repo">REPO</a><wbr>.<a href="#tag-refn">REFN</a><wbr>.TYPE &lt;<a href="#user-reference-type-pe">USER<wbr>_REFERENCE<wbr>_TYPE</a>&gt;</li>
+<li>&lt;&lt;<a href="#sour-record">SOUR<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-sour">SOUR</a><wbr>.<a href="#tag-refn">REFN</a><wbr>.TYPE &lt;<a href="#user-reference-type-pe">USER<wbr>_REFERENCE<wbr>_TYPE</a>&gt;</li>
 </ul>
 </div>
         </dd>
@@ -6402,17 +6475,17 @@ CHILD
 <div class="references">
 <p>See:</p>
 <ul>
-<li>&lt;&lt;<a href="#personal-name-structure-subr">PERSONAL<wbr>_NAME<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-name">NAME</a><wbr>.<a href="#tag-fone">FONE</a><wbr>.TYPE (Transform) &lt;<a href="#phonetic-type-pe">PHONETIC<wbr>_TYPE</a>&gt;</li>
-<li>&lt;&lt;<a href="#personal-name-structure-subr">PERSONAL<wbr>_NAME<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-name">NAME</a><wbr>.<a href="#tag-romn">ROMN</a><wbr>.TYPE (Transform) &lt;<a href="#romanized-type-pe">ROMANIZED<wbr>_TYPE</a>&gt;</li>
-<li>&lt;&lt;<a href="#place-structure-subr">PLACE<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-plac">PLAC</a><wbr>.<a href="#tag-fone">FONE</a><wbr>.TYPE (Transform) &lt;<a href="#phonetic-type-pe">PHONETIC<wbr>_TYPE</a>&gt;</li>
-<li>&lt;&lt;<a href="#place-structure-subr">PLACE<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-plac">PLAC</a><wbr>.<a href="#tag-romn">ROMN</a><wbr>.TYPE (Transform) &lt;<a href="#romanized-type-pe">ROMANIZED<wbr>_TYPE</a>&gt;</li>
+<li>&lt;&lt;<a href="#personal-name-structure-subr">PERSONAL<wbr>_NAME<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-name">NAME</a><wbr>.<a href="#tag-fone">FONE</a><wbr>.TYPE &lt;<a href="#phonetic-type-pe">PHONETIC<wbr>_TYPE</a>&gt;</li>
+<li>&lt;&lt;<a href="#personal-name-structure-subr">PERSONAL<wbr>_NAME<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-name">NAME</a><wbr>.<a href="#tag-romn">ROMN</a><wbr>.TYPE &lt;<a href="#romanized-type-pe">ROMANIZED<wbr>_TYPE</a>&gt;</li>
+<li>&lt;&lt;<a href="#place-structure-subr">PLACE<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-plac">PLAC</a><wbr>.<a href="#tag-fone">FONE</a><wbr>.TYPE &lt;<a href="#phonetic-type-pe">PHONETIC<wbr>_TYPE</a>&gt;</li>
+<li>&lt;&lt;<a href="#place-structure-subr">PLACE<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-plac">PLAC</a><wbr>.<a href="#tag-romn">ROMN</a><wbr>.TYPE &lt;<a href="#romanized-type-pe">ROMANIZED<wbr>_TYPE</a>&gt;</li>
 </ul>
 </div>
         </dd>
 
         <dt id="tag-vers">VERS <span class="tag-full-name">Version</span></dt>
         <dd>
-          <p>Indicates a version number.</p>
+          <p>The VERS subrecord specifies a version number.</p>
 
 <div class="references">
 <p>See:</p>
@@ -6425,12 +6498,12 @@ CHILD
 
         <dt id="tag-wife">WIFE <span class="tag-full-name">Wife</span></dt>
         <dd>
-          <p>An individual in the role as a mother and/or married woman.</p>
+          <p>The WIFE subrecord is used in the context of a &lt;&lt;<a href="#fam-record">FAM_RECORD</a>&gt;&gt; to specify a <a href="#pointer-component">pointer</a> to an &lt;&lt;<a href="#indi-record">INDI_RECORD</a>&gt;&gt; for a person who is the wife and/or mother in the family.</p>
 
 <div class="references">
 <p>See:</p>
 <ul>
-<li>&lt;&lt;<a href="#fam-record">FAM<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-fam">FAM</a><wbr>.WIFE &lt;<a href="#id-indi-pe">ID:INDI</a>&gt;</li>
+<li>&lt;&lt;<a href="#fam-record">FAM<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-fam">FAM</a><wbr>.WIFE &lt;<a href="#id-indi-pe">ID<wbr>_INDI</a>&gt;</li>
 <li>&lt;&lt;<a href="#family-event-detail-subr">FAMILY<wbr>_EVENT<wbr>_DETAIL</a>&gt;&gt;<wbr>.WIFE</li>
 </ul>
 </div>
@@ -6438,7 +6511,7 @@ CHILD
 
         <dt id="tag-will">WILL <span class="tag-full-name">Will</span></dt>
         <dd>
-          <p>A legal document treated as an event, by which a person disposes of his or her estate, to take effect after death. The event date is the date the will was signed while the person was alive.</p>
+          <p>The WILL subrecord describes the event of creating or authorizing a will.</p>
 
           <p>See also <a href="#tag-prob">PROB</a> (probate).</p>
 
@@ -6449,7 +6522,7 @@ CHILD
 
         <dt id="tag-www">WWW <span class="tag-full-name">Web</span></dt>
         <dd>
-          <p>World Wide Web home page.</p>
+          <p>The WWW subrecord specifies the URI of a World Wide Web page.</p>
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#contact-structure-subr">CONTACT<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.WWW &lt;<a href="#address-web-page-pe">ADDRESS<wbr>_WEB<wbr>_PAGE</a>&gt;</p>
@@ -6492,7 +6565,7 @@ CHILD
 2 <a href="#tag-plac">PLAC</a> Spring Hill Cem., Stamford, CT
 1 <a href="#tag-resi">RESI</a>
 2 <a href="#tag-addr">ADDR</a> 73 North Ashley
-3 CONT Spencer, Utah UT84991
+3 <a href="#tag-cont">CONT</a> Spencer, Utah UT84991
 2 <a href="#tag-date">DATE</a> from 1900 to 1905
 1 <a href="#tag-fams">FAMS</a> @F1@
 1 <a href="#tag-fams">FAMS</a> @F2@
@@ -6539,10 +6612,9 @@ CHILD
 0 @R1@ <a href="#tag-repo">REPO</a>
 1 <a href="#tag-name">NAME</a> Family History Library
 1 <a href="#tag-addr">ADDR</a> 35 N West Temple Street
-2 CONT Salt Lake City, Utah
-2 CONT UT 84150
-0 TRLR
-</pre>
+2 <a href="#tag-cont">CONT</a> Salt Lake City, Utah
+2 <a href="#tag-cont">CONT</a> UT 84150
+0 <a href="#tag-trlr">TRLR</a></pre>
       <!-- TODO Remove example that shows discouraged practice (show CONC/CONT elsewhere?) -->
       <!--
                 <p>The following is an example of a SOURCE_CITATION subordinate to the birth event being cited that does not contain a pointer to a SOUR_RECORD. (This is not encouraged.)</p>
@@ -6618,7 +6690,6 @@ CHILD
 <li><a href="#address-city-pe">ADDRESS_CITY</a></li>
 <li><a href="#address-country-pe">ADDRESS_COUNTRY</a></li>
 <li><a href="#address-email-pe">ADDRESS_EMAIL</a></li>
-<li><a href="#address-fax-pe">ADDRESS_FAX</a></li>
 <li><a href="#address-line-pe">ADDRESS_LINE</a></li>
 <li><a href="#address-postal-code-pe">ADDRESS_POSTAL_CODE</a></li>
 <li><a href="#address-state-pe">ADDRESS_STATE</a></li>
@@ -6658,8 +6729,8 @@ CHILD
 <li><a href="#tag-cens">CENS</a></li>
 <li><a href="#certainty-assessment-pe">CERTAINTY_ASSESSMENT</a></li>
 <li><a href="#tag-chan">CHAN</a></li>
-<li><a href="#change-date-subr">CHANGE_DATE</a></li>
 <li><a href="#change-date-pe">CHANGE_DATE</a></li>
+<li><a href="#change-date-subr">CHANGE_DATE</a></li>
 <li><a href="#tag-char">CHAR</a></li>
 <li><a href="#head-char-vers-change">CHAR (Change in 5.5.2)</a></li>
 <li><a href="#character-encoding-pe">CHARACTER_ENCODING</a></li>
@@ -6673,6 +6744,7 @@ CHILD
 <li><a href="#tag-conf">CONF</a></li>
 <li><a href="#tag-cont">CONT</a></li>
 <li><a href="#contact-structure-subr">CONTACT_STRUCTURE</a></li>
+<li><a href="#content-description-pe">CONTENT_DESCRIPTION</a></li>
 <li><a href="#tag-copr">COPR</a></li>
 <li><a href="#copyright-gedcom-file-pe">COPYRIGHT_GEDCOM_FILE</a></li>
 <li><a href="#copyright-source-data-pe">COPYRIGHT_SOURCE_DATA</a></li>
@@ -6722,9 +6794,9 @@ CHILD
 <li><a href="#tag-enga">ENGA</a></li>
 <li><a href="#entry-recording-date-pe">ENTRY_RECORDING_DATE</a></li>
 <li><a href="#escape-sequence">escape_sequence</a></li>
+<li><a href="#tag-even-generic">EVEN</a></li>
+<li><a href="#tag-even-types">EVEN</a></li>
 <li><a href="#indi-even-event-descriptor-change">EVEN (Change in 5.5.2)</a></li>
-<li><a href="#tag-even-types">EVEN (Event Types)</a></li>
-<li><a href="#tag-even-generic">EVEN (Generic Event)</a></li>
 <li><a href="#event-attribute-type-pe">EVENT_ATTRIBUTE_TYPE</a></li>
 <li><a href="#event-descriptor-pe">EVENT_DESCRIPTOR</a></li>
 <li><a href="#event-or-fact-classification-pe">EVENT_OR_FACT_CLASSIFICATION</a></li>
@@ -6748,7 +6820,6 @@ CHILD
 <li><a href="#tag-fone">FONE</a></li>
 <li><a href="#tag-form">FORM</a></li>
 <li><a href="#tag-gedc">GEDC</a></li>
-<li><a href="#gedcom-content-description-pe">GEDCOM_CONTENT_DESCRIPTION</a></li>
 <li><a href="#gedcom-form-pe">GEDCOM_FORM</a></li>
 <li><a href="#tag-givn">GIVN</a></li>
 <li><a href="#tag-grad">GRAD</a></li>
@@ -6756,13 +6827,13 @@ CHILD
 <li><a href="#head-record">HEAD_RECORD</a></li>
 <li><a href="#tag-husb">HUSB</a></li>
 <li><a href="#id-component">ID</a></li>
-<li><a href="#id-fam-pe">ID:FAM</a></li>
-<li><a href="#id-indi-pe">ID:INDI</a></li>
-<li><a href="#id-note-pe">ID:NOTE</a></li>
-<li><a href="#id-obje-pe">ID:OBJE</a></li>
-<li><a href="#id-repo-pe">ID:REPO</a></li>
-<li><a href="#id-sour-pe">ID:SOUR</a></li>
-<li><a href="#id-subm-pe">ID:SUBM</a></li>
+<li><a href="#id-fam-pe">ID_FAM</a></li>
+<li><a href="#id-indi-pe">ID_INDI</a></li>
+<li><a href="#id-note-pe">ID_NOTE</a></li>
+<li><a href="#id-obje-pe">ID_OBJE</a></li>
+<li><a href="#id-repo-pe">ID_REPO</a></li>
+<li><a href="#id-sour-pe">ID_SOUR</a></li>
+<li><a href="#id-subm-pe">ID_SUBM</a></li>
 <li><a href="#tag-idno">IDNO</a></li>
 <li><a href="#tag-immi">IMMI</a></li>
 <li><a href="#tag-indi">INDI</a></li>
@@ -6772,8 +6843,6 @@ CHILD
 <li><a href="#individual-event-structure-subr">INDIVIDUAL_EVENT_STRUCTURE</a></li>
 <li><a href="#tag-lang">LANG</a></li>
 <li><a href="#language-id-pe">LANGUAGE_ID</a></li>
-<li><a href="#language-of-text-pe">LANGUAGE_OF_TEXT</a></li>
-<li><a href="#language-preference-pe">LANGUAGE_PREFERENCE</a></li>
 <li><a href="#tag-lati">LATI</a></li>
 <li><a href="#location-coordinate-change">LATI (Change in 5.5.2)</a></li>
 <li><a href="#level-component">level</a></li>
@@ -6797,6 +6866,7 @@ CHILD
 <li><a href="#name-of-product-pe">NAME_OF_PRODUCT</a></li>
 <li><a href="#name-of-repository-pe">NAME_OF_REPOSITORY</a></li>
 <li><a href="#name-of-source-data-pe">NAME_OF_SOURCE_DATA</a></li>
+<li><a href="#name-of-submitter-pe">NAME_OF_SUBMITTER</a></li>
 <li><a href="#name-personal-pe">NAME_PERSONAL</a></li>
 <li><a href="#name-phonetic-variation-pe">NAME_PHONETIC_VARIATION</a></li>
 <li><a href="#name-piece-given-pe">NAME_PIECE_GIVEN</a></li>
@@ -6820,6 +6890,7 @@ CHILD
 <li><a href="#tag-note">NOTE</a></li>
 <li><a href="#note-record">NOTE_RECORD</a></li>
 <li><a href="#note-structure-subr">NOTE_STRUCTURE</a></li>
+<li><a href="#note-text-pe">NOTE_TEXT</a></li>
 <li><a href="#tag-npfx">NPFX</a></li>
 <li><a href="#tag-nsfx">NSFX</a></li>
 <li><a href="#null-pe">NULL</a></li>
@@ -6836,6 +6907,7 @@ CHILD
 <li><a href="#tag-phon">PHON</a></li>
 <li><a href="#phon-email-fax-www-change">PHON (Change in 5.5.2)</a></li>
 <li><a href="#phone-number-pe">PHONE_NUMBER</a></li>
+<li><a href="#phone-number-fax">PHONE_NUMBER_FAX</a></li>
 <li><a href="#phonetic-type-pe">PHONETIC_TYPE</a></li>
 <li><a href="#physical-description-pe">PHYSICAL_DESCRIPTION</a></li>
 <li><a href="#tag-plac">PLAC</a></li>
@@ -6901,9 +6973,7 @@ CHILD
 <li><a href="#tag-subm">SUBM</a></li>
 <li><a href="#head-subm-not-mandatory-change">SUBM (Change in 5.5.2)</a></li>
 <li><a href="#subm-record">SUBM_RECORD</a></li>
-<li><a href="#submitter-name-pe">SUBMITTER_NAME</a></li>
 <li><a href="#submitter-registered-rfn-pe">SUBMITTER_REGISTERED_RFN</a></li>
-<li><a href="#submitter-text-pe">SUBMITTER_TEXT</a></li>
 <li><a href="#subn-change">SUBN (Change in 5.5.2)</a></li>
 <li><a href="#tag-surn">SURN</a></li>
 <li><a href="#system-id-pe">SYSTEM_ID</a></li>
@@ -6917,11 +6987,11 @@ CHILD
 <li><a href="#tag-titl">TITL</a></li>
 <li><a href="#tag-trlr">TRLR</a></li>
 <li><a href="#trlr-record">TRLR_RECORD</a></li>
-<li><a href="#tag-type-event-or-fact">TYPE (Event or Fact)</a></li>
-<li><a href="#tag-type-media">TYPE (Media)</a></li>
-<li><a href="#tag-type-name">TYPE (Name)</a></li>
-<li><a href="#tag-type-refn">TYPE (REFN)</a></li>
-<li><a href="#tag-type-transform">TYPE (Transform)</a></li>
+<li><a href="#tag-type-event-or-fact">TYPE</a></li>
+<li><a href="#tag-type-name">TYPE</a></li>
+<li><a href="#tag-type-transform">TYPE</a></li>
+<li><a href="#tag-type-media">TYPE</a></li>
+<li><a href="#tag-type-refn">TYPE</a></li>
 <li><a href="#character-encoding-change">UNICODE (encoding)</a></li>
 <li><a href="#user-reference-number-pe">USER_REFERENCE_NUMBER</a></li>
 <li><a href="#user-reference-type-pe">USER_REFERENCE_TYPE</a></li>
