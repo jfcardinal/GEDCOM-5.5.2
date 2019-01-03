@@ -1,0 +1,400 @@
+﻿<!DOCTYPE html>
+<!--
+  
+Copyright (C) 2019 by John Cardinal.
+
+Everyone is permitted to copy and distribute verbatim copies of this document, but changing it is not allowed.
+
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>GEDCOM 5.5.2 Implementation Notes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="alternate stylesheet" href="light.css" title="Light" />
+  <link rel="stylesheet" href="dark.css" title="Dark" />
+</head>
+<body id="top">
+  <article>
+    <header>
+      <h1>GEDCOM 5.5.2 Implementation Notes</h1>
+    </header>
+
+    <div>
+      <dl>
+        <dt class="editor">Editor:</dt>
+        <dd class="editor p-author">John Cardinal (<span class="organization"><a class="external" href="https://www.familyhistoryhosting.com">Family History Hosting, LLC</a></span>)</dd>
+      </dl>
+    </div>
+
+    <div id="copyright-notice">
+      <p>Copyright &copy; 2019 by John Cardinal</p>
+      <p>Everyone is permitted to copy and distribute verbatim copies of this document, but changing it is not allowed.</p>
+    </div>
+
+    <section>
+      <h2>Contents</h2>
+      <ul class="toc-list">
+        <!-- Table of Contents entries -->
+<li class="toc-0"><a href="#section-document-information">Document Information</a></li>
+<li class="toc-1"><a href="#abstract">Abstract</a></li>
+<li class="toc-1"><a href="#document-status">Document Status</a></li>
+<li class="toc-0"><a href="#section-introduction">Introduction</a></li>
+<li class="toc-0"><a href="#section-system-changes">System Changes</a></li>
+</ul>
+    </section>
+
+    <section id="section-document-information">
+      <h2>Document Information</h2>
+
+      <h3 id="abstract">Abstract</h3>
+
+      <p>This document provides GEDCOM 5.5.2 implementation advice intended for software authors.</p>
+
+      <h3 id="document-status">Document Status</h3>
+
+      <p>This document is a <em>Draft</em>. Feedback and comments are welcome. You may create a pull-request to propose and collaborate on changes to the document. A future version of this document will remove its <em>Draft</em> status.</p>
+
+      <dl class="simple-list">
+        <dt>GitHub Project</dt>
+        <dd><a href="https://github.com/jfcardinal/GEDCOM-5.5.2">GEDCOM-5.5.2</a></dd>
+
+        <dt>Public URL of Document</dt>
+        <dd><a href="https://jfcardinal.github.io/GEDCOM-5.5.2/implementation-notes.html">https://jfcardinal.github.io/GEDCOM-5.5.2/implementation-notes.html</a></dd>
+
+        <dt>Associated documents</dt>
+        <dd><a href="https://jfcardinal.github.io/GEDCOM-5.5.2/index.html">https://jfcardinal.github.io/GEDCOM-5.5.2</a></dd>
+      </dl>
+
+    </section>
+    
+    <section id="section-introduction">
+      <h2>Introduction</h2>
+
+      <p>The <a class="external" href="gedcom-5.5.2.html">GEDCOM 5.5.2 specification</a> is a minor revision to GEDCOM 5.5.1. For software authors, there are relatively few changes to implement, which was an explicit goal for GEDCOM 5.5.2.</p>
+
+      <p>GEDCOM <em>readers</em> that import GEDCOM 5.5.1 documents using UTF-8 encoding should require few changes. Most full-featured programs already handle common exceptions to GEDCOM 5.5 and GEDCOM 5.5.1, such as reasonable field values that exceed the GEDCOM length restriction but are valid in GEDCOM 5.5.2.</p>
+
+      <p>GEDCOM <em>writers</em> that export GEDCOM 5.5.1 documents using UTF-8 encoding should also require few changes to export GEDCOM 5.5.2 documents. However, it is vital that GEDCOM writers that export GEDCOM 5.5.2 documents follow the GEDCOM 5.5.2 specifications completely.</p>
+    </section>
+    
+    <section id="section-changes">
+      <h2>System Changes</h2>
+
+      <dl>
+        <dt id="character-encoding-change">UTF-8</dt>
+        <dd>
+          <p>GEDCOM 5.5.2 specifies only a single valid character encoding: <strong>UTF-8</strong>.</p>
+
+          <h4>Full Support</h4>
+
+          <p>Most modern GEDCOM-processing systems support UTF-8, and for those systems, supporting this requirement will be tactical:</p>
+
+          <ul>
+            <li>
+              <strong>GEDCOM Readers</strong>
+              <ul>
+                <li>Verify that GEDCOM 5.5.2 documents (A) are encoded with UTF-8 and (B) specify UTF-8 on the HEAD.CHAR subrecord. Reject documents that do not meet those two requirements.</li>
+              </ul>
+            </li>
+
+            <li>
+              <strong>GEDCOM Writers</strong>
+              <ul>
+                <li>Restrict output encoding to UTF-8 when writing GEDCOM 5.5.2 documents. Do not allow users to chose another output encoding when writing GEDCOM 5.5.2 documents.</li>
+              </ul>
+            </li>
+          </ul>
+
+          <h4>Limited Support</h4>
+
+          <p>Systems that can read documents encoded with UTF-8 but do not support Unicode internally should be capable of limited support for GEDCOM 5.5.2:</p>
+
+          <ul>
+            <li>
+              <strong>GEDCOM Readers</strong>
+              <ul>
+                <li>Decode the UTF-8 text to the encoding used internally in the program. If the input document contains characters that cannot be represented accurately in the encoding used internally:
+                <ol>
+                  <li>Write an error message for each affected subrecord so the end user is aware of each decoding failure.</li>
+                  <li>Convert the character(s) that cannot be decoded accurately to a character or character sequence that enables the end user to locate the incorrect text.</li>
+                </ol>
+              </ul>
+            </li>
+          </ul>
+
+          <p>Systems that can write documents encoded with UTF-8 but do not support Unicode internally should be capable of full support for GEDCOM 5.5.2:</p>
+
+          <ul>
+            <li>
+              <strong>GEDCOM Writers</strong>
+              <ul>
+                <li>The requirements are the same as for Full Support described above.</li>
+              </ul>
+            </li>
+          </ul>
+
+          <h4>No Support</h4>
+
+          <p>Systems that cannot read or write documents encoded with UTF-8 should not attempt to support GEDCOM 5.5.2.</p>
+
+        </dd>
+
+        <dt id="cont-and-conc-change">CONT and CONC</dt>
+        <dd>
+          <p>In GEDCOM 5.5.2, the CONT and CONC subrecords are allowed with almost all records or subrecords that have a <a href="gedcom-5.5.2.html#line-value-component">line_value</a>. The exceptions are the HEAD.CHAR or HEAD.GEDC.VERS subrecords: CONT and CONC are not valid with those subrecords.</p>
+
+          <h4>Full Support</h4>
+
+          <ul>
+            <li>
+              <strong>GEDCOM Readers</strong>
+              <ul>
+                <li>Implement CONT and CONC processing <em>prior</em> to evaluating the line_value in a gedcom_line so that CONT and CONC can be used with any subrecord.</li>
+                <li>Validate the line_value <em>after</em> processing CONT and CONC subrecords.</li>
+              </ul>
+            </li>
+
+            <li>
+              <strong>GEDCOM Writers</strong>
+              <ul>
+                <li>Do not use a CONC subrecord when the line_value will not overflow the maximum length of a gedcom_line.</li>
+                <li>Do not use a CONC subrecord with subrecords that have keyword line_values.</li>
+              </ul>
+            </li>
+          </ul>
+
+          <h4>Limited Support</h4>
+
+          <p>Systems that cannot support CONT and CONC with any subrecord will usually meet the requirements for limited support. This will be common for systems that support CONT and CONC in the typical contexts where they are used in GEDCOM 5.5 and 5.5.1, such as with the NOTE and ADDR subrecords.</p>
+
+          <ul>
+            <li>
+              <strong>GEDCOM Readers</strong>
+              <ul>
+                <li>When a CONT or CONC subrecord occurs in a context that is not supported, write an error message. This should be no different from the current behavior of systems that claim support for GEDCOM 5.5 or 5.5.1.</li>
+              </ul>
+            </li>
+
+            <li>
+              <strong>GEDCOM Writers</strong>
+              <ul>
+                <li>The requirements are the same as for Full Support described above.</li>
+              </ul>
+            </li>
+          </ul>
+        </dd>
+
+        <dt id="head-char-vers-change">HEAD.CHAR.VERS</dt>
+        <dd>
+          <p>HEAD.CHAR.VERS has been removed in GEDCOM 5.5.2. GEDCOM 5.5.2 uses the <strong>UTF-8</strong> character encoding exclusively and a useful version number does not apply to <strong>UTF-8</strong>.</p>
+
+          <ul>
+            <li>
+              <strong>GEDCOM Readers</strong>
+              <ul>
+                <li>If a HEAD.CHAR.VERS subrecord is present, ignore the subrecord and write an error message.</li>
+              </ul>
+            </li>
+
+            <li>
+              <strong>GEDCOM Writers</strong>
+              <ul>
+                <li>Do not write a HEAD.CHAR.VERS subrecord.</li>
+              </ul>
+            </li>
+          </ul>
+        </dd>
+
+        <dt id="head-dest-not-mandatory-change">HEAD.DEST</dt>
+        <dd>
+          <p>HEAD.DEST is <em>not</em> mandatory in GEDCOM 5.5.2 and its use is <a href="gedcom-5.5.2.html#sour-and-dest">discouraged</a>.</p>
+
+          <ul>
+            <li>
+              <strong>GEDCOM Readers</strong>
+              <ul>
+                <li>If a HEAD.DEST subrecord is present, ignore the subrecord.</li>
+              </ul>
+            </li>
+
+            <li>
+              <strong>GEDCOM Writers</strong>
+              <ul>
+                <li>Do not write a HEAD.DEST subrecord.</li>
+              </ul>
+            </li>
+          </ul>
+        </dd>
+
+        <dt id="fam-indi-subm-change">FAM.SUBM and INDI.SUBM</dt>
+        <dd>
+          <p>The FAM.SUBM and INDI.SUBM subrecords are not valid in GEDCOM 5.5.2.</p>
+
+          <ul>
+            <li>
+              <strong>GEDCOM Readers</strong>
+              <ul>
+                <li>If FAM.SUBM or INDI.SUBM subrecords are present, ignore the subrecords and write a single error message or an error message for each occurrence.</li>
+              </ul>
+            </li>
+
+            <li>
+              <strong>GEDCOM Writers</strong>
+              <ul>
+                <li>Do not write FAM.SUBM or INDI.SUBM subrecords.</li>
+              </ul>
+            </li>
+          </ul>
+        </dd>
+
+        <dt id="indi-even-event-descriptor-change">INDI.EVEN &lt;EVENT_DESCRIPTOR&gt;</dt>
+        <dd>
+          <p>The INDI.EVEN subrecord in GEDCOM 5.5.2 includes an &lt;<a href="gedcom-5.5.2.html#event-descriptor-pe">EVENT_DESCRIPTOR</a>&gt; line_value.</p>
+
+          <ul>
+            <li>
+              <strong>GEDCOM Readers</strong>
+              <ul>
+                <li>Process the INDI.EVEN line_value in the same or similar manner as the application currently processes FAM.EVEN line_value.</li>
+              </ul>
+            </li>
+
+            <li>
+              <strong>GEDCOM Writers</strong>
+              <ul>
+                <li>Allow end users to specify an INDI.EVEN line_value.</li>
+                <li>Write INDI.EVEN line_values when the end user has specified a value.</li>
+              </ul>
+            </li>
+          </ul>
+        </dd>
+
+        <dt id="indi-rfn-change">INDI.RFN</dt>
+        <dd>
+          <p><strong>INDI.RFN</strong> &ndash; The <a href="#tag-indi">INDI</a>.RFN subrecord in GEDCOM 5.5.1 and previous has been removed in GEDCOM 5.5.2. The INDI.RFN subrecord was intended to hold a PERMANENT_RECORD_FILE_NUMBER, a record number using a "registered network resource". The registration system was never implemented.</p>
+
+          <p>INDI.RFN has been removed in GEDCOM 5.5.2. The INDI.RFN subrecord in GEDCOM 5.5.1 and previous was intended to hold a PERMANENT_RECORD_FILE_NUMBER, a record number using a "registered network resource". The registration system was never implemented.</p>
+
+          <ul>
+            <li>
+              <strong>GEDCOM Readers</strong>
+              <ul>
+                <li>If an INDI.RFN subrecord is present, ignore the subrecord and write an error message.</li>
+              </ul>
+            </li>
+
+            <li>
+              <strong>GEDCOM Writers</strong>
+              <ul>
+                <li>Do not write an INDI.RFN subrecord.</li>
+              </ul>
+            </li>
+          </ul>
+        </dd>
+
+        <dt id="indi-lds-change">LDS Subrecords</dt>
+        <dd>
+          <p>Subrecords that were specific to The Church of Jesus Christ of Latter-day Saints have been removed from GEDCOM 5.5.2. This includes the following records and subrecords: AFN, ANCE, BAPL, CONL, DESC, ENDL, FAMF, ORDI, SLGC, SLGS, SUBN, TEMP.</p>
+
+          <p>For more information, see <a class="external" href="lds.html">Obsolete LDS Definitions</a>.</p>
+
+          <ul>
+            <li>
+              <strong>GEDCOM Readers</strong>
+              <ul>
+                <li>Ignore the subrecords listed above and issue error messages <em>or</em> convert the subrecords to the appropriate internal structures in the reading system.</li>
+              </ul>
+            </li>
+
+            <li>
+              <strong>GEDCOM Writers</strong>
+              <ul>
+                <li>Do not write the subrecords listed above.</li>
+              </ul>
+            </li>
+          </ul>
+        </dd>
+
+        <dt id="location-coordinate-change">MAP.LATI and MAP.LONG</dt>
+        <dd>
+          <p>The size of the MAP.LATI and MAP.LONG line_values have been changed in GEDCOM 5.5.2.  The PLACE_LATITUDE size in GEDCOM 5.5.2 is "{Size=2:10}". The PLACE_LONGITUDE size in GEDCOM 5.5.2 is "{Size=2:11}".</p>
+
+          <ul>
+            <li>
+              <strong>GEDCOM Readers</strong>
+              <ul>
+                <li>Validate MAP.LATI and MAP.LONG line_values using the GEDCOM 5.5.2 size restrictions.</li>
+              </ul>
+            </li>
+
+            <li>
+              <strong>GEDCOM Writers</strong>
+              <ul>
+                <li>Write MAP.LATI and MAP.LONG line_values that meet GEDCOM 5.5.2 size restrictions.</li>
+              </ul>
+            </li>
+          </ul>
+        </dd>
+
+        <dt id="multimedia-file-reference-change">OBJE.FILE</dt>
+        <dd>
+          <p>The OBJE.FILE subrecord's &lt;MULTIMEDIA_FILE_REFERENCE&gt; line_value has been expanded from 30 characters in GEDCOM 5.5.1 to 1048 characters in GEDCOM 5.5.2.</p>
+
+          <ul>
+            <li>
+              <strong>GEDCOM Readers</strong>
+              <ul>
+                <li>Validate OBJE.FILE line_values using the GEDCOM 5.5.2 size restrictions.</li>
+              </ul>
+            </li>
+
+            <li>
+              <strong>GEDCOM Writers</strong>
+              <ul>
+                <li>Write OBJE.FILE line_values that meet GEDCOM 5.5.2 size restrictions.</li>
+              </ul>
+            </li>
+          </ul>
+        </dd>
+
+        <!-- TODO Write this entry if change is retained -->
+        <!-- 
+          <dt id="phon-email-fax-www-change">PHON, EMAIL, FAX, and WWW</dt>
+          <dd>
+            <p>text</p>
+          </dd>
+        -->
+
+        <dt id="system-id-change">APPROVED_SYSTEM_ID and RECEIVING_SYSTEM_NAME</dt>
+        <dd>
+          <p>The &lt;APPROVED_SYSTEM_ID&gt; and &lt;RECEIVING_SYSTEM_NAME&gt; primitive values in GEDCOM 5.5.1 have been merged as &lt;<a href="gedcom-5.5.2.html#system-id-pe">SYSTEM_ID</a>&gt; in GEDCOM 5.5.2, and its length has been expanded from 20 characters to 60 characters.</p>
+
+          <ul>
+            <li>
+              <strong>GEDCOM Readers</strong>
+              <ul>
+                <li>Validate HEAD.SOUR and HEAD.DEST line_values using the GEDCOM 5.5.2 size restrictions.</li>
+              </ul>
+            </li>
+
+            <li>
+              <strong>GEDCOM Writers</strong>
+              <ul>
+                <li>Write HEAD.SOUR and HEAD.DEST line_values that meet GEDCOM 5.5.2 size restrictions.</li>
+              </ul>
+            </li>
+          </ul>
+        </dd>
+
+        <dt id="valid-pointer-characters-change">Pointer Characters</dt>
+        <dd>
+          <p><strong>Valid Pointer Characters</strong> &ndash; Prior versions of GEDCOM allowed a wide range of characters in <a href="#id-component">ID</a> values. GEDCOM 5.5.2 restricts valid ID characters to a <a href="#id-character-classes">smaller subset of characters</a>.</p>
+        </dd>
+      </dl>
+    </section>
+
+  </article>
+</body>
+</html>
