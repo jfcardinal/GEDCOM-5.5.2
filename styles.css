@@ -450,6 +450,11 @@ dt .tag-full-name {
   margin-left: 2em;
 }
 
+.toc-list li {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 .toc-0 {
   margin-left: 0;
 }
