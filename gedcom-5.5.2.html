@@ -155,7 +155,7 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
 
       <p><a href="#changes">Changes</a> includes the removal of obsolete features and minor changes to resolve errors and ambiguities. Because GEDCOM 5.5.1 features have been removed, a valid GEDCOM 5.5.1 document that uses those features is not a valid GEDCOM 5.5.2 document.</p>
 
-      <p>Because the changes are minor, GEDCOM readers can typically support GEDCOM 5.5.2 <em>without changing their software</em> except to allow <code>5.5.2</code> in the <a href="#tag-head">HEAD</a>.<a href="#tag-gedc">GEDC</a>.<a href="#tag-vers">VERS</a> subrecord.</p>
+      <p>Because the changes are minor, GEDCOM readers can typically support GEDCOM 5.5.2 <em>with relatively minor changes</em>. Software authors should review the <a href="https://jfcardinal.github.io/GEDCOM-5.5.2/implementation-notes.html">Implementation Notes</a> for details.</p>
 
       <p>GEDCOM writers must not specify <code>5.5.2</code> in the HEAD.GEDC.VERS subrecord unless they make the requisite changes to ensure they meet the specification.</p>
 
@@ -238,7 +238,7 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
 
         <li id="head-char-vers-change">
           <!-- INDEX CHAR (Change in 5.5.2) -->
-          <p><strong>HEAD.CHAR.VERS</strong> &ndash; The <a href="#tag-head">HEAD</a>.<a href="#tag-char">CHAR</a>.VERS subrecord in GEDCOM 5.5.1 and previous has been removed in GEDCOM 5.5.2. GEDCOM 5.5.2 uses the <code>UTF-8</code> encoding exclusively and a useful version number does not apply to that encoding.</p>
+          <p><strong>HEAD.CHAR.VERS</strong> &ndash; The <a href="#tag-head">HEAD</a>.<a href="#tag-char">CHAR</a>.VERS subrecord in GEDCOM 5.5.1 and previous has been removed in GEDCOM 5.5.2. GEDCOM 5.5.2 uses the <code>UTF-8</code> character encoding exclusively and a useful version number does not apply to that encoding.</p>
 
           <p>Few, if any, GEDCOM writers wrote the HEAD.CHAR.VERS subrecord, and fewer still used it as intended.</p>
         </li>
@@ -307,14 +307,14 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
           <p>The range in GEDCOM 5.5.2 has been increased.</p>
         </li>
 
-        <li id="phon-email-fax-www-change">
+        <li id="phon-email-fax-www-change" class="provisional">
           <!-- INDEX PHON (Change in 5.5.2) -->
           <!-- INDEX EMAIL (Change in 5.5.2) -->
           <!-- INDEX FAX (Change in 5.5.2) -->
           <!-- INDEX WWW (Change in 5.5.2) -->
           <p><strong>PHON, EMAIL, FAX, and WWW</strong> &ndash; The <a href="#tag-phon">PHON</a>, <a href="#tag-char">EMAIL</a>, <a href="#tag-fax">FAX</a>, and <a href="#tag-www">WWW</a> subrecords in GEDCOM 5.5.1 have been moved from the &lt;<a href="#address-structure-subr">ADDRESS_STRUCTURE</a>&gt; to the &lt;<a href="#contact-structure-subr">CONTACT_STRUCTURE</a>&gt; in GEDCOM 5.5.2.</p>
 
-          <p>This allows those subrecords to be used independantly of the <a href="#tag-addr">ADDR</a> subrecord, a common capability, without invalidating the GEDCOM document.</p>
+          <p>This allows those subrecords to be used independently of the <a href="#tag-addr">ADDR</a> subrecord, a common capability, without invalidating the GEDCOM document.</p>
         </li>
 
         <li id="surname-prefix-change">
@@ -329,6 +329,8 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
         <li id="system-id-change">
           <!-- INDEX SYSTEM_ID (Change in 5.5.2) -->
           <p><strong>APPROVED_SYSTEM_ID</strong> and <strong>RECEIVING_SYSTEM_NAME</strong> &ndash; APPROVED_SYSTEM_ID and RECEIVING_SYSTEM_NAME in GEDCOM 5.5.1 were two Primitive Elements used to identify external systems. Those elements have been merged as &lt;<a href="#system-id-pe">SYSTEM_ID</a>&gt; in GEDCOM 5.5.2, and its length has been expanded.</p>
+
+          <p>&lt;<a href="#system-id-pe">SYSTEM_ID</a>&gt; should be unique, but there is no central authority assigning these values in order to ensure uniqueness. Expanding the length of the value allows software authors to choose longer values and thus increase the likelyhood that a value will be unique.</p>
         </li>
 
         <li id="subn-change">
@@ -1352,6 +1354,7 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
         <dd>
           <p>The OBJE_RECORD describes a multimedia file.</p>
 
+          <!-- TODO Allow TITL at level "+1" to mimic OBJE link? -->
           <table class="record-structure">
             <tr><td class="code level-0"><i>n</i> @<a href="#id-obje-pe">ID_OBJE</a>@ <span class="required"><a href="#tag-obje">OBJE</a></span> </td><td class="size">1:1</td></tr>
 
@@ -1990,6 +1993,7 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
 </div>
         </dd>
 
+        <!-- TODO Allow more MULTIMEDIA_RECORD subrecords?  -->
         <dt id="multimedia-link-subr">MULTIMEDIA_LINK</dt>
         <dd>
           <table class="record-structure">
@@ -2575,17 +2579,6 @@ CHILD
           <p>The CHARACTER_ENCODING is a keyword value that indicates the character encoding used to encode the current GEDCOM document.</p>
 
           <p>The CHARACTER_ENCODING must be set to <code>UTF-8</code>.</p>
-
-          <p>Example:</p>
-<pre>
-0  <a href="#tag-head">HEAD</a>
-1 <a href="#tag-char">CHAR</a> UTF-8
-</pre>
-
-          <p>UTF-8 is defined by the <i>Unicode&reg; Standard</i> which is maintained by the Unicode Technical Committee. As of January 1, 2019, the current version of the <i>Unicode&reg; Standard</i> is 11.0.0.</p>
-
-          <!-- TODO: Should this be here, or elsewhere? -->
-          <p class="provisional">The Byte Order Mark for UTF-8 (U+00EF, U+00BB, U+00BF) must? must not? should? should not? be the first content in GEDCOM documents.</p>
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#head-record">HEAD<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-head">HEAD</a><wbr>.<a href="#tag-char">CHAR</a></p>
@@ -5126,7 +5119,28 @@ CHILD
 
         <dt id="tag-char">CHAR <span class="tag-full-name">Character Encoding</span></dt>
         <dd>
-          <p>The CHAR subrecord specifies the &lt;<a href="#character-encoding-pe">CHARACTER_ENCODING</a>&gt; used in the GEDCOM document.</p>
+          <p>The CHAR subrecord specifies the character encoding of the GEDCOM document via its &lt;<a href="#character-encoding-pe">CHARACTER_ENCODING</a>&gt; line_value.</p>
+
+          <p>The only valid character encoding is UTF-8. UTF-8 is defined by the <i>Unicode&reg; Standard</i> which is maintained by the Unicode Technical Committee. As of January 1, 2019, the current version of the <i>Unicode&reg; Standard</i> is 11.0.0.</p>
+
+          <p>GEDCOM readers must reject GEDCOM 5.5.2 documents that specify any value other than "UTF-8" in HEAD.CHAR.</p>
+          
+          <p>GEDCOM readers must reject GEDCOM 5.5.2 documents that use any character encoding other than UTF-8.</p>
+
+          <p>GEDCOM writers must use UTF-8 character encoding when writing a GEDCOM 5.5.2 document.</p>
+
+          <!-- TODO: Should this be here, or elsewhere? -->
+          <p class="provisional">The Byte Order Mark for UTF-8 (U+00EF, U+00BB, U+00BF) must? must not? should? should not? be the first content in GEDCOM documents.</p>
+
+          <p>The CHAR subrecord should be one of the first subrecords under the HEAD record.</p>
+
+          <p>The CHAR subrecord should appear before any text in the document that is outside the ASCII range (0x00 to 0x7F).</p>
+
+          <p>Example:</p>
+<pre>
+0 <a href="#tag-head">HEAD</a>
+1 CHAR UTF-8
+</pre>
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#head-record">HEAD<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-head">HEAD</a><wbr>.CHAR &lt;<a href="#character-encoding-pe">CHARACTER<wbr>_ENCODING</a>&gt;</p>
@@ -5572,6 +5586,19 @@ CHILD
         <dt id="tag-gedc">GEDC <span class="tag-full-name">GEDCOM</span></dt>
         <dd>
           <p>The GEDC subrecord describes the use of GEDCOM in the document via the <a href="#tag-form">FORM</a> and <a href="#tag-vers">VERS</a> subrecords.</p>
+
+          <p>The GEDC subrecord should be one of the first subrecords under the HEAD record.</p>
+
+          <p>The GEDC subrecord should appear before any text in the document that is outside the ASCII range (0x00 to 0x7F).</p>
+
+          <p>Example:</p>
+<pre>
+0 <a href="#tag-head">HEAD</a>
+1 <a href="#tag-char">CHAR</a> UTF-8
+1 GEDC
+2 <a href="#tag-vers">VERS</a> 5.5.2
+2 <a href="#tag-form">FORM</a> LINEAGE-LINKED
+</pre>
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#head-record">HEAD<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-head">HEAD</a><wbr>.GEDC</p>
@@ -6262,9 +6289,17 @@ CHILD
           <p>The SOUR record and subrecord are used in several contexts:</p>
 
           <ol>
-            <li>When used under the <a href="#tag-head">HEAD</a> record, the SOUR subrecord identifies the system that wrote the GEDCOM document via its &lt;<a href="#system-id-pe">SYSTEM_ID</a>&gt; line_value.</li>
+            <li>
+              <p>When used under the <a href="#tag-head">HEAD</a> record, the SOUR subrecord identifies the system that wrote the GEDCOM document via its &lt;<a href="#system-id-pe">SYSTEM_ID</a>&gt; line_value.</p>
 
-            <li>When used as a &lt;&lt;<a href="#sour-record">SOUR_RECORD</a>&gt;&gt; or &lt;&lt;<a href="#source-citation-subr">SOURCE_CITATION</a>&gt;&gt;, the SOUR record defines the initial or original material from which information was obtained.</li>
+              <p>The HEAD.SOUR line_value should not include the version number of the sending system. The version number of the sending system should be specified in the HEAD.SOUR.VERS line_value only.</p>
+
+              <p>The HEAD.SOUR line_value should be unique from any other product. There is no central authority for assigning &lt;<a href="#system-id-pe">SYSTEM_IDs</a>&gt;, so it is not possible to ensure uniqueness. Software authors should review the list of SYSTEM_IDs in the <a class="external" href="https://jfcardinal.github.io/GEDCOM-5.5.2/source-applications.html#section-system-id-and-metadata">Source Applications</a> document to avoid using a SYSTEM_ID that is already used by another system.</p>
+            </li>
+
+            <li>
+              <p>When used as a &lt;&lt;<a href="#sour-record">SOUR_RECORD</a>&gt;&gt; or &lt;&lt;<a href="#source-citation-subr">SOURCE_CITATION</a>&gt;&gt;, the SOUR record defines the initial or original material from which information was obtained.</p>
+            </li>
           </ol>
 
 <div class="references">
@@ -6495,7 +6530,32 @@ CHILD
 
         <dt id="tag-vers">VERS <span class="tag-full-name">Version</span></dt>
         <dd>
-          <p>The VERS subrecord specifies a version number.</p>
+          <p>The VERS subrecord specifies a version number. It is used in several contexts.</p>
+
+          <ol>
+            <li>
+              <p>When used under the <a href="#tag-head">HEAD</a>.<a href="#tag-gedc">GEDC</a> context, the VERS subrecord specifies the version of the GEDCOM specification that applies to the current document via its &lt;<a href="#version-number-pe">VERSION_NUMBER</a>&gt; line_value.</p>
+              
+              <p>For GEDCOM 5.5.2, the line_value must equal "<code>5.5.2</code>".</p>
+
+              <p>Example:</p>
+<pre>
+0 <a href="#tag-head">HEAD</a>
+1 <a href="#tag-char">CHAR</a> UTF-8
+1 GEDC
+2 <a href="#tag-vers">VERS</a> 5.5.2
+2 <a href="#tag-form">FORM</a> LINEAGE-LINKED
+</pre>
+            </li>
+
+            <li>
+              <p>When used under the <a href="#tag-head">HEAD</a>.<a href="#tag-sour">SOUR</a> context, the VERS subrecord specifies the version of the software system that wrote the GEDCOM document via its &lt;<a href="#version-number-pe">VERSION_NUMBER</a>&gt; line_value.</p>
+
+              <p>The content and meaning of the HEAD.SOUR.VERS line_value is defined by the authors of the sending system.</p>
+
+              <p>The HEAD.SOUR.VERS line_value should not include the name of the sending system. The name of the sending system should be in the HEAD.SOUR line_value only.</p>
+            </li>
+          </ol>
 
 <div class="references">
 <p>See:</p>
