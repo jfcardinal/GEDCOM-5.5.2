@@ -278,6 +278,14 @@ ul li {
   padding-left: 0.5em;
 }
 
+span.obsolete, span.provisional, span.pending-removal {
+  /*
+    hack to avoid wayward borders when
+    item with border is target
+  */
+  display: inline-block;
+}
+
 .columns {
   column-count: 1;
 }
@@ -324,6 +332,8 @@ ul li {
   font-weight: bold;
   margin: 0 0.2em;
   padding: 1px;
+  text-align: center;
+  width: 2em;
 }
 
 .fixed-menu {

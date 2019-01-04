@@ -49,6 +49,9 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
 <li class="toc-0"><a href="#section-gedcom-summary">GEDCOM Summary</a></li>
 <li class="toc-0"><a href="#section-gedcom-syntax">GEDCOM Syntax</a></li>
 <li class="toc-1"><a href="#gedcom-line-syntax">gedcom_line Syntax</a></li>
+<li class="toc-1"><a href="#space-handling">Space Handling</a></li>
+<li class="toc-1"><a href="#line-length">Line Length</a></li>
+<li class="toc-1"><a href="#empty-lines">Empty Lines</a></li>
 <li class="toc-1"><a href="#gedcom-line-components">gedcom_line Components</a></li>
 <li class="toc-1"><a href="#continuations">Continuations (CONT and CONC)</a></li>
 <li class="toc-0"><a href="#section-record-and-subrecord-grammar">Record and Subrecord Grammar</a></li>
@@ -113,8 +116,8 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
             </thead>
             <tbody>
               <tr><td><span class="control-char">CR</span></td><td>line feed, U+000A</td></tr>
-
               <tr><td><span class="control-char">LF</span></td><td>carriage return, U+000D</td></tr>
+              <tr><td><span class="control-char">SP</span></td><td>space, U+0020</td></tr>
             </tbody>
           </table>
 
@@ -236,6 +239,48 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
           </ul>
         </li>
 
+        <li id="white-space-handling-change">
+          <!-- INDEX Space Handling (Change in 5.5.2) -->
+          <p><strong>White Space Handling</strong> &ndash; There are ambiguous and contradictory statements in GEDCOM 5.5.1 with regard to white space characters (spaces, tabs, carriage return, linefeed).</p>
+
+          <ul>
+            <li>
+              <h4>White Space Preceding a GEDCOM Line</h4>
+              <ul>
+                <li>On page 11 of the GEDCOM 5.5.1 specification, reading systems are advised to ignore leading white space "preceding a GEDCOM line", but writing systems are advised not to add such white space. Both statements use the verb "should" and thus are not requirements.</li>
+
+                <li>The description of the gedcom_line syntax on pages 11 to 15 make no accommodation for white space preceding the gedcom_line.</li>
+              </ul>
+
+              <p>White space should be allowed or prohibited, and if allowed, the syntax specification should define the rules.</p>
+            </li>
+
+            <li>
+              <h4>Initial Spaces in a Line Value</h4>
+              <ul>
+                <li>In the "CONC {CONCATENATION}" definition on page 85 of the GEDCOM 5.5.1 specification, writing systems are required to split values for CONC subrecords at a non-space character because "many GEDCOM values are trimmed of trailing spaces and some systems look for the first non-space starting after the tag to determine the beginning of the value."</li>
+
+                <li>In the "CONT {CONTINUED}" definition on page 86 of the GEDCOM 5.5.1 specification, writing systems are advised to retain the leading space in a CONT line value, "Leading spaces could be important to the formatting of the resultant text. When importing values from CONT lines the reader should assume only one delimiter character following the CONT tag. Assume that the rest of the leading spaces are to be a part of the value.</li>
+              </ul>
+
+              <p>The delimiter between gedcom_line components should either be one space, or one-or-more spaces, but not both.</p>
+            </li>
+
+            <li>
+              <h4>CONC Space Handling</h4>
+              <ul>
+                <li>In the "CONC {CONCATENATION}" definition on page 85 of the GEDCOM 5.5.1 specification, writing systems are required to split values for CONC subrecords at a non-space character.</li>
+
+                <li>In the "NOTE_STRUCTURE" definition on page 37 of the GEDCOM 5.5.1 specification, breaking a line at a space is allowed: "The requirement for usage is to either break the text line in the middle of a word, or if at the end of a word, to add a space to the first of the next CONC line. Otherwise most operating systems will strip off the trailing space and the space is lost in the reconstitution of the note.</li>
+              </ul>
+
+              <p>The specification is inconsistent. The concern that "most operating systems will strip off the trailing space" is unfounded; operating systems do not arbitrarily change text file contents, and neither do text-handling runtime libraries.</p>
+            </li>
+          </ul>
+
+          <p>Those issues in the specification lead to implementation and compliance challenges. To avoid those issues, white space handling is simple and explicit in GEDCOM 5.5.2, and the rules do not vary by subrecord. See the <a href="#space-handling">Space Handling</a> section in the <a href="#gedcom-line-syntax">gedcom_line</a> description.</p>
+        </li>
+
         <li id="head-char-vers-change">
           <!-- INDEX CHAR (Change in 5.5.2) -->
           <p><strong>HEAD.CHAR.VERS</strong> &ndash; The <a href="#tag-head">HEAD</a>.<a href="#tag-char">CHAR</a>.VERS subrecord in GEDCOM 5.5.1 and previous has been removed in GEDCOM 5.5.2. GEDCOM 5.5.2 uses the <code>UTF-8</code> character encoding exclusively and a useful version number does not apply to that encoding.</p>
@@ -249,9 +294,9 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
         </li>
 
         <!-- TODO: Should SUBM remain required? -->
-        <li id="head-subm-not-mandatory-change" class="provisional">
+        <li id="head-subm-not-mandatory-change">
           <!-- INDEX SUBM (Change in 5.5.2) -->
-          <p><strong>HEAD.SUBM</strong> &ndash; The <a href="#tag-head">HEAD</a>.<a href="#tag-subm">SUBM</a> subrecord is mandatory in GEDCOM 5.5.1. HEAD.SUBM is <em>not</em> mandatory in GEDCOM 5.5.2.</p>
+          <p class="provisional"><strong>HEAD.SUBM</strong> &ndash; The <a href="#tag-head">HEAD</a>.<a href="#tag-subm">SUBM</a> subrecord is mandatory in GEDCOM 5.5.1. HEAD.SUBM is <em>not</em> mandatory in GEDCOM 5.5.2.</p>
         </li>
 
         <li id="fam-indi-subm-change">
@@ -307,14 +352,14 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
           <p>The range in GEDCOM 5.5.2 has been increased.</p>
         </li>
 
-        <li id="phon-email-fax-www-change" class="provisional">
+        <li id="phon-email-fax-www-change">
           <!-- INDEX PHON (Change in 5.5.2) -->
           <!-- INDEX EMAIL (Change in 5.5.2) -->
           <!-- INDEX FAX (Change in 5.5.2) -->
           <!-- INDEX WWW (Change in 5.5.2) -->
-          <p><strong>PHON, EMAIL, FAX, and WWW</strong> &ndash; The <a href="#tag-phon">PHON</a>, <a href="#tag-char">EMAIL</a>, <a href="#tag-fax">FAX</a>, and <a href="#tag-www">WWW</a> subrecords in GEDCOM 5.5.1 have been moved from the &lt;<a href="#address-structure-subr">ADDRESS_STRUCTURE</a>&gt; to the &lt;<a href="#contact-structure-subr">CONTACT_STRUCTURE</a>&gt; in GEDCOM 5.5.2.</p>
+          <p class="provisional"><strong>PHON, EMAIL, FAX, and WWW</strong> &ndash; The <a href="#tag-phon">PHON</a>, <a href="#tag-char">EMAIL</a>, <a href="#tag-fax">FAX</a>, and <a href="#tag-www">WWW</a> subrecords in GEDCOM 5.5.1 have been moved from the &lt;<a href="#address-structure-subr">ADDRESS_STRUCTURE</a>&gt; to the &lt;<a href="#contact-structure-subr">CONTACT_STRUCTURE</a>&gt; in GEDCOM 5.5.2.</p>
 
-          <p>This allows those subrecords to be used independently of the <a href="#tag-addr">ADDR</a> subrecord, a common capability, without invalidating the GEDCOM document.</p>
+          <p class="provisional">This allows those subrecords to be used independently of the <a href="#tag-addr">ADDR</a> subrecord, a common capability, without invalidating the GEDCOM document.</p>
         </li>
 
         <li id="surname-prefix-change">
@@ -415,8 +460,10 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
 
       <p>A GEDCOM 5.5.2 document is a structured <a href="#character-encoding-pe">UTF-8</a> text document that contains an ordered set of <a href="#gedcom-line-syntax">gedcom_lines</a>.</p>
 
-      <!-- TODO: Should this be here, or elsewhere? -->
-      <p class="provisional">The document must? must not? should? should not? begin with the UTF-8 Byte Order Mark (U+00EF, U+00BB, U+00BF).</p>
+      <!-- INDEX Byte Order Mark, bom -->
+      <!-- INDEX BOM, bom -->
+      <!-- TODO: Should a BOM be required? -->
+      <p id="bom"><span class="provisional">The document must begin with the UTF-8 Byte Order Mark prefix (U+00EF, U+00BB, U+00BF).</span></p>
 
       <p>gedcom_lines include a level number. The level numbers define a hierarchy. gedcom_lines with level set to zero are <var>records</var> and gedcom_lines with level greater than zero are <var>subrecords</var>. A subrecord with level <var>N+1</var> is a child of, and subordinate to, a record or subrecord with level <var>N</var>.</p>
 
@@ -485,19 +532,27 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
 
       <p>The <a href="#level-component">level</a>, <a href="#tag-name-component">tag_name</a>, and <a href="#line-terminator-component">line_terminator</a> components are required in all gedcom_lines. The <a href="#id-component">ID</a> and <a href="#line-value-component">line_value</a> components are required for some tags in some contexts.</p>
 
+      <h3 id="space-handling">Space Handling</h3>
+
       <p>A valid gedcom_line must not begin with any characters preceding the <a href="#level-component">level</a> component, white-space or otherwise.</p>
 
       <p>Components must be separated by a single space character ("<code> </code>", U+0020). Other space characters are <em>significant</em>: any space character that is not a delimiter between components is part of a component.</p>
 
-      <p>Multiple spaces must not appear <em>between</em> the <a href="#level-component">level</a>, <a href="#id-component">ID</a>, and <a href="#tag-name-component">tag_name</a> components. Those components must not begin or end with space characters.</p>
+      <p>Multiple spaces must not appear between the <a href="#level-component">level</a>, <a href="#id-component">ID</a>, and <a href="#tag-name-component">tag_name</a> components. Those components must not begin or end with space characters.</p>
+
+      <p>If the <a href="#id-component">ID</a> component is not present, there must be a single space between the <a href="#level-component">level</a> and <a href="#tag-name-component">tag_name</a> components.</p>
 
       <p>If there are two or more space characters after the <a href="#tag-name-component">tag_name</a> component, the second and subsequent space characters are the initial characters in the <a href="#line-value-component">line_value</a>: leading spaces in the line_value must not be trimmed.</p>
 
       <p>Trailing space characters prior to the <a href="#line-terminator-component">line_terminator</a> are part of the <a href="#line-value-component">line_value</a>: trailing spaces must not be trimmed.</p>
 
+      <h3 id="line-length">Line Length</h3>
+
       <p>The total length of a gedcom_line including all components, including the <a href="#line-terminator-component">line_terminator</a>, must not exceed 255 characters. See the <a href="#line-value-component">line_value</a> description for rules associated with long values and values that include line-ending characters that conflict with <a href="#line-terminator-component">line_terminator</a> characters.</p>
 
-      <p>GEDCOM documents must not include empty lines. All lines in the document must be valid gedcom_lines as described in this section.</p>
+      <h3 id="empty-lines">Empty Lines</h3>
+
+      <p>GEDCOM documents must not include empty lines. All lines in the document must be valid gedcom_lines according to the specifications in this document.</p>
 
       <div class="best-practice">
         <h4 id="gedcom_line-syntax-best-practice">Best Practice Recommendations</h4>
@@ -2573,8 +2628,6 @@ CHILD
 
         <dt id="character-encoding-pe">CHARACTER_ENCODING <span class="size">{Size=5:5}</span></dt>
         <!-- INDEX UTF-8 (keyword) -->
-        <!-- INDEX Byte Order Mark -->
-        <!-- INDEX BOM -->
         <dd>
           <p>The CHARACTER_ENCODING is a keyword value that indicates the character encoding used to encode the current GEDCOM document.</p>
 
@@ -3460,10 +3513,9 @@ CHILD
         </dd>
 
         <!-- TODO Why use different sizes for PHONE_NUMBER and PHONE_NUMBER_FAX? -->
-        <dt id="phone-number-fax" class="provisional">PHONE_NUMBER_FAX <span class="size">{Size=5:60}</span></dt>
+        <dt id="phone-number-fax">PHONE_NUMBER_FAX <span class="size">{Size=5:60}</span></dt>
         <dd>
-          <p>A FAX telephone number appropriate for sending data facsimiles.</p>
-
+          <p class="provisional">A FAX telephone number appropriate for sending data facsimiles.</p>
 
         </dd>
 
@@ -4840,14 +4892,14 @@ CHILD
 
       <p>The entries define the meaning of the Record or Subrecord that uses the given <a href="#tag-name-component">tag_name</a> and must be placed in the context(s) shown in the <a href="#section-subrecords">Subrecords section</a>. Some <a href="#tag-name-component">tag_names</a> are used in multiple contexts, so some entries include multiple definitions.</p>
 
-      <p>Many <a href="#tag-name-component">tag_names</a> are abbreviations. The definitions include the full name. The full names cannot be used in place of the official tag_names</p>
+      <p>Many <a href="#tag-name-component">tag_names</a> are abbreviations. The definitions include the full name. The full names cannot be used in place of the official tag_names.</p>
 
       <h3>Definitions</h3>
 
       <dl>
         <dt id="tag-abbr">ABBR <span class="tag-full-name">Abbreviation</span></dt>
         <dd>
-          <p>The ABBR subrecord specifies an abbreviated name or title of a source via its &lt;<a href="#source-filed-by-entry-pe">SOURCE_FILED_BY_ENTRY</a>&gt; value.</p>
+          <p>The ABBR subrecord specifies an abbreviated name or title of a source via its &lt;<a href="#source-filed-by-entry-pe">SOURCE_FILED_BY_ENTRY</a>&gt; line_value.</p>
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#sour-record">SOUR<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-sour">SOUR</a><wbr>.ABBR &lt;<a href="#source-filed-by-entry-pe">SOURCE<wbr>_FILED<wbr>_BY<wbr>_ENTRY</a>&gt;</p>
@@ -6790,9 +6842,9 @@ CHILD
 <li><a href="#tag-basm">BASM</a></li>
 <li><a href="#tag-birt">BIRT</a></li>
 <li><a href="#tag-bles">BLES</a></li>
-<li><a href="#character-encoding-pe">BOM</a></li>
+<li><a href="#bom">BOM</a></li>
 <li><a href="#tag-buri">BURI</a></li>
-<li><a href="#character-encoding-pe">Byte Order Mark</a></li>
+<li><a href="#bom">Byte Order Mark</a></li>
 <li><a href="#tag-caln">CALN</a></li>
 <li><a href="#tag-cast">CAST</a></li>
 <li><a href="#caste-name-pe">CASTE_NAME</a></li>
@@ -7036,6 +7088,7 @@ CHILD
 <li><a href="#source-originator-pe">SOURCE_ORIGINATOR</a></li>
 <li><a href="#source-publication-facts-pe">SOURCE_PUBLICATION_FACTS</a></li>
 <li><a href="#source-repository-citation-subr">SOURCE_REPOSITORY_CITATION</a></li>
+<li><a href="#white-space-handling-change">Space Handling (Change in 5.5.2)</a></li>
 <li><a href="#tag-spfx">SPFX</a></li>
 <li><a href="#spouse-to-family-link-subr">SPOUSE_TO_FAMILY_LINK</a></li>
 <li><a href="#tag-ssn">SSN</a></li>
