@@ -103,6 +103,8 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
               <strong>GEDCOM Writers</strong>
               <ul>
                 <li>Restrict output encoding to UTF-8 when writing GEDCOM 5.5.2 documents. Do not allow users to chose another output encoding when writing GEDCOM 5.5.2 documents.</li>
+
+                <li>Write the UTF-8 Byte Order Mark prefix (U+00EF, U+00BB, U+00BF) as the first bytes in the document.</li>
               </ul>
             </li>
           </ul>
@@ -143,7 +145,7 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
 
         <dt id="cont-and-conc-change">CONT and CONC</dt>
         <dd>
-          <p>In GEDCOM 5.5.2, the CONT and CONC subrecords are allowed with almost all records or subrecords that have a <a href="gedcom-5.5.2.html#line-value-component">line_value</a>. The exceptions are the HEAD.CHAR or HEAD.GEDC.VERS subrecords: CONT and CONC are not valid with those subrecords.</p>
+          <p>In GEDCOM 5.5.2, the CONT and CONC subrecords are allowed with almost all records or subrecords that have a <a class="external" href="gedcom-5.5.2.html#line-value-component">line_value</a>. The exceptions are the HEAD.CHAR or HEAD.GEDC.VERS subrecords: CONT and CONC are not valid with those subrecords.</p>
 
           <h4>Full Support</h4>
 
@@ -151,7 +153,7 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
             <li>
               <strong>GEDCOM Readers</strong>
               <ul>
-                <li>Implement CONT and CONC processing <em>prior</em> to evaluating the line_value in a gedcom_line so that CONT and CONC can be used with any subrecord.</li>
+                <li>Implement CONT and CONC processing <em>prior</em> to evaluating the line_value in a <a class="external" href="gedcom-5.5.2.html#gedcom-line-syntax">gedcom_line</a> so that CONT and CONC can be used with any subrecord.</li>
                 <li>Validate the line_value <em>after</em> processing CONT and CONC subrecords.</li>
               </ul>
             </li>
@@ -159,7 +161,7 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
             <li>
               <strong>GEDCOM Writers</strong>
               <ul>
-                <li>Do not use a CONC subrecord when the line_value will not overflow the maximum length of a gedcom_line.</li>
+                <li>Do not use a CONC subrecord when the line_value will not overflow the maximum length of a <a class="external" href="gedcom-5.5.2.html#gedcom-line-syntax">gedcom_line</a>.</li>
                 <li>Do not use a CONC subrecord with subrecords that have keyword line_values.</li>
               </ul>
             </li>
@@ -184,6 +186,11 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
               </ul>
             </li>
           </ul>
+        </dd>
+
+        <dt id="white-space-handling-change">White Space Handling</dt>
+        <dd>
+          <p>White space handling has been simplified and clarified in GEDCOM 5.5.2. Reading and writing systems must implement the rules described in the <a href="gedcom-5.5.2.htmk#space-handling">Space Handling</a> section of the specification.</p>
         </dd>
 
         <dt id="head-char-vers-change">HEAD.CHAR.VERS</dt>
@@ -257,7 +264,7 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
             <li>
               <strong>GEDCOM Readers</strong>
               <ul>
-                <li>Process the INDI.EVEN line_value in the same or similar manner as the application currently processes FAM.EVEN line_value.</li>
+                <li>Process the INDI.EVEN line_value in the same or similar manner as the application currently processes the FAM.EVEN line_value.</li>
               </ul>
             </li>
 
@@ -273,8 +280,6 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
 
         <dt id="indi-rfn-change">INDI.RFN</dt>
         <dd>
-          <p><strong>INDI.RFN</strong> &ndash; The <a href="#tag-indi">INDI</a>.RFN subrecord in GEDCOM 5.5.1 and previous has been removed in GEDCOM 5.5.2. The INDI.RFN subrecord was intended to hold a PERMANENT_RECORD_FILE_NUMBER, a record number using a "registered network resource". The registration system was never implemented.</p>
-
           <p>INDI.RFN has been removed in GEDCOM 5.5.2. The INDI.RFN subrecord in GEDCOM 5.5.1 and previous was intended to hold a PERMANENT_RECORD_FILE_NUMBER, a record number using a "registered network resource". The registration system was never implemented.</p>
 
           <ul>
