@@ -130,7 +130,9 @@
   </source>
   <source system-id="family_historian" active="y">
     <name>Family Historian</name>
-    <description><p><a href="https://www.family-historian.co.uk">Calico Pie Limited</a></p></description>
+    <description><p><a href="https://www.family-historian.co.uk">Calico Pie Limited</a></p>
+      <p>See <a href="#family-historian">Export Gedcom File</a> plug-in</p>
+    </description>
   </source>
   <source system-id="family_tree_for_java" active="y">
     <name>Family Tree for Java</name>
