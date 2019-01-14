@@ -81,7 +81,7 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
 
         <dt id="tag--plac">_PLAC <span class="tag-full-name">Place Record, Place Link</span></dt>
         <dd>
-          <p>Several programs implement custom place records to share place metadata with two or more PLAC subrecords. This effectively creates a "master place list" where common place metadata is specified only once. Place metadata typically includes latitude/longitude, multimedia references, and notes.</p>
+          <p>Several programs implement custom place records to share place metadata with two or more PLAC subrecords. This effectively creates a master list of places where common place metadata is specified only once. Place metadata typically includes latitude/longitude, multimedia references, and notes.</p>
 
           <p>Programs that support place records typically allow all the subrecords that are valid under a PLAC subrecord as child records of a _PLAC record.</p>
 
@@ -222,7 +222,7 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
           <p>The value format Primitive Element is <a class="external" href="gedcom-5.5.2.html#dmy-pe">DMY</a>.</p>
 
           <table class="record-structure">
-            <tr><td class="code level-1">n _SDATE @&lt;<a class="external" href="gedcom-5.5.2.html#dmy-pe">DMY</a>&gt;@ </td><td class="size">0:1</td></tr>
+            <tr><td class="code level-1">n _SDATE &lt;<a class="external" href="gedcom-5.5.2.html#dmy-pe">DMY</a>&gt; </td><td class="size">0:1</td></tr>
           </table>
 
           <p>_SDATE is used under the context of an event such as FAM.MARR or INDI.BIRT, etc. It allows the user to sort an event by a date that is different from the actual date of the event.</p>
@@ -407,6 +407,8 @@ public string GetPafChecksum(string uuid) {
       <h2>Index</h2>
       <ul class="keyword-index columns-wide">
         <!-- keyword index entries -->
+<li><a href="#tag--loc">_LOC</a></li>
+<li><a href="#tag--plac">_PLAC</a></li>
 <li><a href="#tag--prim">_PRIM</a></li>
 <li><a href="#tag--role">_ROLE</a></li>
 <li><a href="#tag--sdate">_SDATE</a></li>
