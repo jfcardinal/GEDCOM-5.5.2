@@ -260,7 +260,7 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
               <ul>
                 <li>In the "CONC {CONCATENATION}" definition on page 85 of the GEDCOM 5.5.1 specification, writing systems are required to split values for CONC subrecords at a non-space character because "many GEDCOM values are trimmed of trailing spaces and some systems look for the first non-space starting after the tag to determine the beginning of the value."</li>
 
-                <li>In the "CONT {CONTINUED}" definition on page 86 of the GEDCOM 5.5.1 specification, writing systems are advised to retain the leading space in a CONT line value, "Leading spaces could be important to the formatting of the resultant text. When importing values from CONT lines the reader should assume only one delimiter character following the CONT tag. Assume that the rest of the leading spaces are to be a part of the value.</li>
+                <li>In the "CONT {CONTINUED}" definition on page 86 of the GEDCOM 5.5.1 specification, writing systems are advised to retain the leading space in a CONT line value, "Leading spaces could be important to the formatting of the resultant text. When importing values from CONT lines the reader should assume only one delimiter character following the CONT tag. Assume that the rest of the leading spaces are to be a part of the value."</li>
               </ul>
 
               <p>The delimiter between gedcom_line components should either be one space, or one-or-more spaces, but not both.</p>
@@ -868,7 +868,7 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
         <dd>
           <h4>Definition</h4>
 
-          <p>The escape_sequence is a character sequence used to indicate special processing. The only escape_sequences in GEDCOM 5.5.2 are used to indicate a &lt;<a href="#dmy-calendar-escape-pe">calendar</a>&gt; in a <a href="#tag-date">DATE</a> value.</p>
+          <p>The escape_sequence is a character sequence used to indicate special processing. The only escape_sequences in GEDCOM 5.5.2 are used to indicate a <a href="#dmy-calendar-escape-pe">calendar</a> in a <a href="#tag-date">DATE</a> value.</p>
 
           <h4>Syntax</h4>
 
@@ -976,7 +976,9 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
 
       <p>When a value to be included in the <a href="#line-value-component">line_value</a> of a <a href="#gedcom-line-syntax">gedcom_line</a> includes one or more newline sequences, the newline sequences must be replaced by CONT subrecords that are logically inserted into the value in their place.</p>
 
-      <p>The CONT subrecord(s) must be assigned <a href="#level-component">level</a> <var>N+1</var>, i.e., they are assigned a level number one greater than the parent record.</p>
+      <p>The first CONT subrecord for the value must be assigned <a href="#level-component">level</a> <var>N+1</var>, i.e., it must be assigned a level number one greater than the parent record.</p>
+
+      <p>Any subsequent CONT subrecord(s) for the same value must be assigned the same <a href="#level-component">level</a> as the first CONT subrecord.</p>
 
       <p>For example, to write the following text in a NOTE subrecord:</p>
 
@@ -1187,7 +1189,7 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
             </tbody>
           </table>
 
-          <p>In Sequence A above, the preferred birth date is <code>17 FEB 1928</code>. In Sequence B above, the preferred birth date is <code>16 DEC 1972</code>.</p>
+          <p>In Sequence A above, the preferred birth date is <code>17 FEB 1928</code>. In Sequence B above, the preferred birth date is <code>16 DEC 1927</code>.</p>
         </li>
 
         <li>As shown in the "<a href="#conflicting-birth-dates-example">Conflicting Birth Dates</a>" example above, conflicting event dates and places should be represented by placing them in separate event subrecords.</li>
@@ -1322,8 +1324,6 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
           <table class="record-structure">
             <tr><td class="code level-0"><i>n</i> @&lt;<a href="#id-fam-pe">ID_FAM</a>&gt;@ <span class="required"><a href="#tag-fam">FAM</a></span> </td><td class="size">1:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-resn">RESN</a> &lt;<a href="#restriction-notice-pe">RESTRICTION_NOTICE</a>&gt; </td><td class="size">0:1</td></tr>
-
             <tr><td class="code level-1">+1 &lt;&lt;<a href="#family-event-structure-subr">FAMILY_EVENT_STRUCTURE</a>&gt;&gt; </td><td class="size">0:M</td></tr>
 
             <tr><td class="code level-1">+1 <a href="#tag-husb">HUSB</a> @&lt;<a href="#id-indi-pe">ID_INDI</a>&gt;@ </td><td class="size">0:1</td></tr>
@@ -1334,11 +1334,11 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
 
             <tr><td class="code level-1">+1 <a href="#tag-nchi">NCHI</a> &lt;<a href="#count-of-children-pe">COUNT_OF_CHILDREN</a>&gt; </td><td class="size">0:1</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-subm">SUBM</a> @&lt;<a href="#id-subm-pe">ID_SUBM</a>&gt;@ </td><td class="size">0:M</td></tr>
-
             <tr><td class="code level-1">+1 <a href="#tag-refn">REFN</a> &lt;<a href="#user-reference-number-pe">USER_REFERENCE_NUMBER</a>&gt; </td><td class="size">0:M</td></tr>
 
             <tr><td class="code level-2">+2 <a href="#tag-type-refn">TYPE</a> &lt;<a href="#user-reference-type-pe">USER_REFERENCE_TYPE</a>&gt; </td><td class="size">0:1</td></tr>
+
+            <tr><td class="code level-1">+1 <a href="#tag-resn">RESN</a> &lt;<a href="#restriction-notice-pe">RESTRICTION_NOTICE</a>&gt; </td><td class="size">0:1</td></tr>
 
             <tr><td class="code level-1">+1 <a href="#tag-rin">RIN</a> &lt;<a href="#automated-record-id-pe">AUTOMATED_RECORD_ID</a>&gt; </td><td class="size">0:1</td></tr>
 
@@ -1353,7 +1353,7 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
 
           <p>There can be no more than one <a href="#tag-husb">HUSB</a> and one <a href="#tag-wife">WIFE</a> listed in each FAM_RECORD. If, for example, a man participated in more than one family union, then he would appear in more than one FAM_RECORD.</p>
 
-          <p>The FAM_RECORD structure assumes, but does not require, that the <a href="#tag-husb">HUSB</a> is male and <a href="#tag-wife">WIFE</a> is female.</p>
+          <p>The FAM_RECORD structure assumes, but does not require, that the <a href="#tag-husb">HUSB</a> is male and the <a href="#tag-wife">WIFE</a> is female.</p>
 
           <p>The preferred order of the CHIL (child) subrecords within a FAM_RECORD is chronological by birth.</p>
         </dd>
@@ -1364,8 +1364,6 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
 
           <table class="record-structure">
             <tr><td class="code level-0"><i>n</i> @<a href="#id-indi-pe">ID_INDI</a>@ <span class="required"><a href="#tag-indi">INDI</a></span> </td><td class="size">1:1</td></tr>
-
-            <tr><td class="code level-1">+1 <a href="#tag-resn">RESN</a> &lt;<a href="#restriction-notice-pe">RESTRICTION_NOTICE</a>&gt; </td><td class="size">0:1</td></tr>
 
             <tr><td class="code level-1">+1 &lt;&lt;<a href="#personal-name-structure-subr">PERSONAL_NAME_STRUCTURE</a>&gt;&gt; </td><td class="size">0:M</td></tr>
 
@@ -1379,8 +1377,6 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
 
             <tr><td class="code level-1">+1 &lt;&lt;<a href="#spouse-to-family-link-subr">SPOUSE_TO_FAMILY_LINK</a>&gt;&gt; </td><td class="size">0:M</td></tr>
 
-            <tr><td class="code level-1">+1 <a href="#tag-subm">SUBM</a> @&lt;<a href="#id-subm-pe">ID_SUBM</a>&gt;@ </td><td class="size">0:M</td></tr>
-
             <tr><td class="code level-1">+1 &lt;&lt;<a href="#association-structure-subr">ASSOCIATION_STRUCTURE</a>&gt;&gt; </td><td class="size">0:M</td></tr>
 
             <tr><td class="code level-1">+1 <a href="#tag-alia">ALIA</a> @&lt;<a href="#id-indi-pe">ID_INDI</a>&gt;@ </td><td class="size">0:M</td></tr>
@@ -1392,6 +1388,8 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
             <tr><td class="code level-1">+1 <a href="#tag-refn">REFN</a> &lt;<a href="#user-reference-number-pe">USER_REFERENCE_NUMBER</a>&gt; </td><td class="size">0:M</td></tr>
 
             <tr><td class="code level-2">+2 <a href="#tag-type-refn">TYPE</a> &lt;<a href="#user-reference-type-pe">USER_REFERENCE_TYPE</a>&gt; </td><td class="size">0:1</td></tr>
+
+            <tr><td class="code level-1">+1 <a href="#tag-resn">RESN</a> &lt;<a href="#restriction-notice-pe">RESTRICTION_NOTICE</a>&gt; </td><td class="size">0:1</td></tr>
 
             <tr><td class="code level-1">+1 <a href="#tag-rin">RIN</a> &lt;<a href="#automated-record-id-pe">AUTOMATED_RECORD_ID</a>&gt; </td><td class="size">0:1</td></tr>
 
@@ -1480,9 +1478,9 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
 
           <p>The REPO_RECORD structure describes the place where an item of source material is stored.</p>
 
-          <p>The repository name and addresses are stored in the &lt;&lt;<a href="#address-structure-subr">ADDRESS_STRUCTURE</a>&gt;&gt;.</p>
+          <p>The repository addresses is stored in the &lt;&lt;<a href="#address-structure-subr">ADDRESS_STRUCTURE</a>&gt;&gt;.</p>
 
-          <p>The REPO_RECORD structure is used for formal and informal repositories. Public libraries and civil archives are examples of formal archives. A personal collection is an examnple of an informal repository.</p>
+          <p>The REPO_RECORD structure is used for formal and informal repositories. Public libraries and civil archives are examples of formal archives. A personal collection is an example of an informal repository.</p>
 
           <!-- TODO Describe usage of other subrecords -->
         </dd>
@@ -1625,7 +1623,7 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
 
         <dt id="association-structure-subr">ASSOCIATION_STRUCTURE</dt>
         <dd>
-          <p>The ASSOCIATION_STRUCTURE associates the current <a href="#indi-record">INDI_RECORD</a> to the INDI_RECORD with the given <a href="#id-indi-pe">ID_INDI</a>.</p>
+          <p>The ASSOCIATION_STRUCTURE associates the current <a href="#indi-record">INDI_RECORD</a> to the INDI_RECORD with the given &lt;<a href="#id-indi-pe">ID_INDI</a>&gt;.</p>
 
           <table class="record-structure">
             <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-asso">ASSO</a></span> @&lt;<a href="#id-indi-pe">ID_INDI</a>&gt;@ </td><td class="size">1:1</td></tr>
@@ -2283,7 +2281,7 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
 
                 <li>The type of event that initiated the recording is stored in the "<a href="#tag-sour">SOUR</a>.<a href="#tag-even-generic">EVEN</a>" subrecord. The value used is the event code taken from the table of choices shown in the EVENT_TYPE_CITED_FROM primitive.</li>
 
-                <li>The role of this person in the event is stored in the ".<a href="#tag-sour">SOUR</a>.<a href="#tag-even-generic">EVEN</a>.<a href="#tag-role">ROLE</a>" context.</li>
+                <li>The role of this person in the event is stored in the "<a href="#tag-sour">SOUR</a>.<a href="#tag-even-generic">EVEN</a>.<a href="#tag-role">ROLE</a>" context.</li>
               </ul>
             </li>
           </ul>
@@ -2307,7 +2305,7 @@ Line one<span class="control-char">LF</span>Line two<span class="control-char">C
           <p>A SOURCE_REPOSITORY_CITATION links a <a href="#sour-record">SOUR_RECORD</a> to a <a href="#repo-record">REPO_RECORD</a>.</p>
 
           <table class="record-structure">
-            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-repo">REPO</a></span> [ @<a href="#id-repo-pe">ID_REPO</a>@ | &lt;<a href="#null-pe">NULL</a>&gt;] </td><td class="size">1:1</td></tr>
+            <tr><td class="code level-0"><i>n</i> <span class="required"><a href="#tag-repo">REPO</a></span> [ @&lt;<a href="#id-repo-pe">ID_REPO</a>&gt;@ | &lt;<a href="#null-pe">NULL</a>&gt;] </td><td class="size">1:1</td></tr>
 
             <tr><td class="code level-1">+1 &lt;&lt;<a href="#note-structure-subr">NOTE_STRUCTURE</a>&gt;&gt; </td><td class="size">0:M</td></tr>
 
@@ -2683,7 +2681,7 @@ CHILD
 
         <dt id="count-of-children-pe">COUNT_OF_CHILDREN <span class="size">{Size=1:3}</span></dt>
         <dd>
-          <p>COUNT_OF_CHILDREN is the known number of children of this individual from all marriages or, if subordinate to a family record, the reported number of children known to belong to this family, regardless of whether the associated children are represented in the corresponding structure. This is not necessarily the count of children listed in a family structure.</p>
+          <p>The number of known children of an individual or a couple.</p>
 
           <p>The value must be one to three <a href="#digit-pe">digits</a>.</p>
 
@@ -3066,11 +3064,9 @@ CHILD
 <div class="references">
 <p>See:</p>
 <ul>
-<li>&lt;&lt;<a href="#fam-record">FAM<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-fam">FAM</a><wbr>.<a href="#tag-subm">SUBM</a></li>
 <li>&lt;&lt;<a href="#head-record">HEAD<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-head">HEAD</a><wbr>.<a href="#tag-subm">SUBM</a></li>
 <li>&lt;&lt;<a href="#indi-record">INDI<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-indi">INDI</a><wbr>.<a href="#tag-anci">ANCI</a></li>
 <li>&lt;&lt;<a href="#indi-record">INDI<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-indi">INDI</a><wbr>.<a href="#tag-desi">DESI</a></li>
-<li>&lt;&lt;<a href="#indi-record">INDI<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-indi">INDI</a><wbr>.<a href="#tag-subm">SUBM</a></li>
 <li>&lt;&lt;<a href="#subm-record">SUBM<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-subm">SUBM</a></li>
 </ul>
 </div>
@@ -3299,7 +3295,7 @@ CHILD
             <li>Given name, surname, and suffix:<br /><code>1 NAME William Lee /Parry/ Jr.</code></li>
           </ul>
 
-          <p>The PERSONAL_NAME_PIECES structure defines subrecords you may use to define a name via component parts. Even when specifying name pieces, the NAME_PERSONAL <a href="#line-value-component">line_value</a> must be included.</p>
+          <p>The &lt;&lt;<a href="#personal-name-pieces-subr">PERSONAL_NAME_PIECES</a>&gt;&gt; structure defines subrecords you may use to define a name via component parts. Even when specifying name pieces, the NAME_PERSONAL <a href="#line-value-component">line_value</a> must be included.</p>
 
 <div class="references">
 <p>See:</p>
@@ -3742,7 +3738,7 @@ CHILD
 </div>
         </dd>
 
-        <dt id="restriction-notice-pe">RESTRICTION_NOTICE <span class="size">{Size=6:7}</span></dt>
+        <dt id="restriction-notice-pe">RESTRICTION_NOTICE <span class="size">{Size=6:12}</span></dt>
         <dd>
           <p>
             The RESTRICTION_NOTICE indicates a restriction on the use of the data associated with the superior subrecord. The choices are:
@@ -3874,7 +3870,7 @@ CHILD
         <dd>
           <p>A &lt;<a href="#text-pe">TEXT</a>&gt; value used to describe the source from which information was obtained.</p>
           
-          <p>This text is used by those systems which cannot use a pointer to a source record. It must contain a descriptive title, who created the work, where and when it was created, and where the source data stored. The developer should encourage users to use an appropriate style for forming this free form bibliographic reference. Developers are encouraged to support the ^lt;&lt;<a href="#sour-record">SOUR_RECORD</a>&gt;&gt; method of reporting bibliographic reference descriptions.</p>
+          <p>This text is used by those systems which cannot use a pointer to a source record. It must contain a descriptive title, who created the work, where and when it was created, and where the source data stored. The developer should encourage users to use an appropriate style for forming this free form bibliographic reference. Developers are encouraged to support the &lt;&lt;<a href="#sour-record">SOUR_RECORD</a>&gt;&gt; method of reporting bibliographic reference descriptions.</p>
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#source-citation-subr">SOURCE<wbr>_CITATION</a>&gt;&gt;<wbr>.<a href="#tag-sour">SOUR</a></p>
@@ -4046,7 +4042,7 @@ CHILD
             <li><code>:</code> is a separator.</li>
             <li><var>mm</var> = is the minute, a two <a href="#digit-pe">digit</a> value from "00" to "59".</li>
             <li><code>:</code> is a separator; omit this separator if the "ss" component is not supplied.</li>
-            <li><var>ss</var> = is the second, an option two-<a href="#digit-pe">digit</a> value from "00" to "59".</li>
+            <li><var>ss</var> = is the second, an optional two-<a href="#digit-pe">digit</a> value from "00" to "59".</li>
             <li><code>.</code> is a separator; omit this separator if the "ff" component is not supplied.</li>
             <li><var>ff</var> = is the fractional second, an optional two-<a href="#digit-pe">digit</a> value from "00" to "99". "ff" must be omitted if "ss" is omitted.</li>
           </ul>
@@ -5942,7 +5938,7 @@ CHILD
           <ol>
             <li>When used under the &lt;&lt;<a href="#individual-attribute-structure-subr">INDIVIDUAL_ATTRIBUTE_STRUCTURE</a>&gt;&gt;, the NCHI subrecord specifies the total number of known children of the current individual including all spouses or partners.</li>
 
-            <li>When used under the <a href="#tag-fam">FAM</a> record, the NCHI subrecord specifies the number of known children shared by the parents specified in the family.</li>
+            <li>When used under the <a href="#tag-fam">FAM</a> record, the NCHI subrecord specifies the number of known children shared by the parents specified in the family. The number may or may not match the number of <a href="#tag-chil">CHIL</a> subrecords under the <a href="#tag-fam">FAM</a> record.</li>
           </ol>
 
 <div class="references">
@@ -6329,7 +6325,7 @@ CHILD
 
         <dt id="tag-sex">SEX <span class="tag-full-name">Sex</span></dt>
         <dd>
-          <p>The SEX subrecord indicates the gender of an individual via its <a href="#sex-value-pe">SEX_VALUE</a> line_value.</p>
+          <p>The SEX subrecord indicates the gender of an individual via its &lt;<a href="#sex-value-pe">SEX_VALUE</a>&gt; line_value.</p>
 
 <div class="references">
 <p>See: &lt;&lt;<a href="#indi-record">INDI<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-indi">INDI</a><wbr>.SEX &lt;<a href="#sex-value-pe">SEX<wbr>_VALUE</a>&gt;</p>
@@ -6423,9 +6419,7 @@ CHILD
 <div class="references">
 <p>See:</p>
 <ul>
-<li>&lt;&lt;<a href="#fam-record">FAM<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-fam">FAM</a><wbr>.SUBM &lt;<a href="#id-subm-pe">ID<wbr>_SUBM</a>&gt;</li>
 <li>&lt;&lt;<a href="#head-record">HEAD<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-head">HEAD</a><wbr>.SUBM &lt;<a href="#id-subm-pe">ID<wbr>_SUBM</a>&gt;</li>
-<li>&lt;&lt;<a href="#indi-record">INDI<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-indi">INDI</a><wbr>.SUBM &lt;<a href="#id-subm-pe">ID<wbr>_SUBM</a>&gt;</li>
 <li>&lt;&lt;<a href="#subm-record">SUBM<wbr>_RECORD</a>&gt;&gt;<wbr>.SUBM &lt;<a href="#id-subm-pe">ID<wbr>_SUBM</a>&gt;</li>
 </ul>
 </div>
