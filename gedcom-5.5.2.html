@@ -208,6 +208,8 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
 
           <p>In GEDCOM 5.5.2, CONT and CONC are not explicitly listed in the definition of any record or subrecord except for CONT under ADDR. With relatively few exceptions, CONT and CONC are allowed with any record or subrecord that has a <a href="#line-value-component">line_value</a>. The exceptions are described in the <a href="#continuations">Continuations</a> section.</p>
 
+          <p>While CONT and CONC are <em>syntactically</em> valid with most subrecords, they must not be used to create values that are <em>semantically</em> invalid. See the <a href="#continuations">Continuations</a> section for details.</p>
+
           <p>In GEDCOM 5.5.1, the CONT and CONC subrecords were explicitly defined as valid as subrecords in these contexts:</p>
 
           <ul>
@@ -968,7 +970,7 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
 
       <p>CONT and CONC may be used separately or together.</p>
 
-      <p>Syntactically, it is valid to use CONT and/or CONC as a subrecord of any parent subrecord that supports a line_value, subject to two exceptions noted below. Semantically, some line_values are not allowed to contain newline sequences, so using a CONT is not valid there.</p>
+      <p>Syntactically, it is valid to use CONT and/or CONC as a subrecord of any parent subrecord that supports a line_value, subject to two exceptions noted below. Semantically, some line_values are not allowed to contain newline sequences, so using a CONT is not valid there. Also, CONT and/or CONC must not be used to create values that are longer than allowed by the specification for the parent subrecord.</p>
 
       <p>CONT and CONC must not be used as subrecords of HEAD.CHAR or HEAD.GEDC.VERS. Those exceptions allow GEDCOM readers to preview those values with components that do not support continuation subrecords.</p>
 
