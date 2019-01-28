@@ -115,8 +115,8 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
               <tr><th>Symbol</th><th>Character</th></tr>
             </thead>
             <tbody>
-              <tr><td><span class="control-char">CR</span></td><td>line feed, U+000A</td></tr>
-              <tr><td><span class="control-char">LF</span></td><td>carriage return, U+000D</td></tr>
+              <tr><td><span class="control-char">LF</span></td><td>line feed, U+000A</td></tr>
+              <tr><td><span class="control-char">CR</span></td><td>carriage return, U+000D</td></tr>
               <tr><td><span class="control-char">SP</span></td><td>space, U+0020</td></tr>
             </tbody>
           </table>
@@ -184,6 +184,9 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
 
       <ul>
         <li id="character-encoding-change">
+          <!-- DEFINE Character Encoding Change -->
+          <!-- REFERENCE character-encoding-pe -->
+          <!-- REFERENCE tag-char -->
           <!-- INDEX ANSEL (encoding) -->
           <!-- INDEX ASCII (encoding) -->
           <!-- INDEX UNICODE (encoding) -->
@@ -204,6 +207,9 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
         </li>
 
         <li id="cont-and-conc-change">
+          <!-- DEFINE CONT and CONC Change -->
+          <!-- REFERENCE tag-conc -->
+          <!-- REFERENCE tag-cont -->
           <p><strong>CONT and CONC</strong> &ndash; In GEDCOM 5.5.1 and previous, the <a href="#tag-cont">CONT</a> and <a href="#tag-conc">CONC</a> subrecords are explicitly included in the definitions of selected records and structures. The explicit entries are misleading because other definitions indicate that CONT and CONC are valid as children of most records and subrecords.</p>
 
           <p>In GEDCOM 5.5.2, CONT and CONC are not explicitly listed in the definition of any record or subrecord except for CONT under ADDR. With relatively few exceptions, CONT and CONC are allowed with any record or subrecord that has a <a href="#line-value-component">line_value</a>. The exceptions are described in the <a href="#continuations">Continuations</a> section.</p>
@@ -284,7 +290,9 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
         </li>
 
         <li id="head-char-vers-change">
-          <!-- INDEX CHAR (Change in 5.5.2) -->
+          <!-- DEFINE HEAD.CHAR.VERS Change -->
+          <!-- REFERENCE tag-char -->
+          <!-- INDEX CHAR.VERS (Change in 5.5.2) -->
           <p><strong>HEAD.CHAR.VERS</strong> &ndash; The <a href="#tag-head">HEAD</a>.<a href="#tag-char">CHAR</a>.VERS subrecord in GEDCOM 5.5.1 and previous has been removed in GEDCOM 5.5.2. GEDCOM 5.5.2 uses the <code>UTF-8</code> character encoding exclusively and a useful version number does not apply to that encoding.</p>
 
           <p>Few, if any, GEDCOM writers wrote the HEAD.CHAR.VERS subrecord, and fewer still used it as intended.</p>
@@ -306,6 +314,8 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
         </li>
 
         <li id="indi-even-event-descriptor-change">
+          <!-- DEFINE INDI.EVEN Change -->
+          <!-- REFERENCE tag-even-generic -->
           <!-- INDEX EVEN (Change in 5.5.2) -->
           <p><strong>INDI.EVEN</strong> &ndash; In the GEDCOM 5.5.1 specification, the definition of the <a href="#tag-indi">INDI</a>.<a href="#tag-even-generic">EVEN</a> subrecord is ambiguous.</p>
 
@@ -332,7 +342,7 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
         </li>
 
         <li>
-          <p><strong>The Church of Jesus Christ of Latter-day Saints</strong> &ndash; GEDCOM 5.5.1 requirements that were specific to The Church of Jesus Christ of Latter-day Saints have been removed from GEDCOM 5.5.2. It is not appropriate for a genealody data transfer specification to include requirements that are specific to an organization.</p>
+          <p><strong>The Church of Jesus Christ of Latter-day Saints</strong> &ndash; GEDCOM 5.5.1 requirements that were specific to The Church of Jesus Christ of Latter-day Saints have been removed from GEDCOM 5.5.2. It is not appropriate for a genealogy data transfer specification to include requirements that are specific to an organization.</p>
 
           <p>The following records and subrecords were removed: AFN, ANCE, BAPL, CONL, DESC, ENDL, FAMF, ORDI, SLGC, SLGS, SUBN, TEMP.</p>
 
@@ -340,6 +350,9 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
         </li>
 
         <li id="location-coordinate-change">
+          <!-- DEFINE MAP.LATI and MAP.LONG Change -->
+          <!-- REFERENCE tag-lati -->
+          <!-- REFERENCE tag-long -->
           <!-- INDEX LATI (Change in 5.5.2) -->
           <!-- INDEX LONG (Change in 5.5.2) -->
           <p><strong>MAP.LATI</strong> and <strong>MAP.LONG</strong> &ndash; The <a href="#tag-lati">LATI</a> and <a href="#tag-long">LONG</a> value length in GEDCOM 5.5.1 is restricted to the range of 5 to 8 characters. That does not allow sufficient precision to match coordinates available in <abbr title="Global Positioning System">GPS</abbr> devices, and several programs exceed the limit. The example on page 51 of the GEDCOM 5.5.1 specification in the PLACE_LATITUDE entry that includes the "{Size=5:8}" range definition also exceeds the limit: "<code>N18.150944</code>" is ten characters.</p>
@@ -348,6 +361,9 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
         </li>
 
         <li id="multimedia-file-reference-change">
+          <!-- DEFINE MULTIMEDIA_FILE_REFERENCE Change -->
+          <!-- REFERENCE tag-obje -->
+          <!-- REFERENCE multimedia-file-reference-pe -->
           <!-- INDEX MULTIMEDIA_FILE_REFERENCE (Change in 5.5.2) -->
           <p><strong>MULTIMEDIA_FILE_REFERENCE</strong> &ndash; The <a href="#tag-obje">OBJE</a>.<a href="#tag-file">FILE</a> &lt;<a href="#multimedia-file-reference-pe">MULTIMEDIA_FILE_REFERENCE</a>&gt; value length in GEDCOM 5.5.1 is restricted to the range of 1 to 30 characters. That is inadequate and the range has been ignored by many GEDCOM writers.</p>
 
@@ -2634,7 +2650,11 @@ CHILD
           <p>The CHARACTER_ENCODING must be set to <code>UTF-8</code>.</p>
 
 <div class="references">
-<p>See: &lt;&lt;<a href="#head-record">HEAD<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-head">HEAD</a><wbr>.<a href="#tag-char">CHAR</a></p>
+<p>See:</p>
+<ul>
+<li><a href="#character-encoding-change">Character Encoding Change</a></li>
+<li>&lt;&lt;<a href="#head-record">HEAD<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-head">HEAD</a><wbr>.<a href="#tag-char">CHAR</a></li>
+</ul>
 </div>
         </dd>
 
@@ -3194,6 +3214,7 @@ CHILD
 <div class="references">
 <p>See:</p>
 <ul>
+<li><a href="#multimedia-file-reference-change">MULTIMEDIA<wbr>_FILE<wbr>_REFERENCE Change</a></li>
 <li>&lt;&lt;<a href="#multimedia-link-subr">MULTIMEDIA<wbr>_LINK</a>&gt;&gt;<wbr>.<a href="#tag-obje">OBJE</a><wbr>.<a href="#tag-file">FILE</a></li>
 <li>&lt;&lt;<a href="#obje-record">OBJE<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-obje">OBJE</a><wbr>.<a href="#tag-file">FILE</a></li>
 </ul>
@@ -5193,7 +5214,12 @@ CHILD
 </pre>
 
 <div class="references">
-<p>See: &lt;&lt;<a href="#head-record">HEAD<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-head">HEAD</a><wbr>.CHAR &lt;<a href="#character-encoding-pe">CHARACTER<wbr>_ENCODING</a>&gt;</p>
+<p>See:</p>
+<ul>
+<li><a href="#character-encoding-change">Character Encoding Change</a></li>
+<li><a href="#head-char-vers-change">HEAD<wbr>.CHAR<wbr>.VERS Change</a></li>
+<li>&lt;&lt;<a href="#head-record">HEAD<wbr>_RECORD</a>&gt;&gt;<wbr>.<a href="#tag-head">HEAD</a><wbr>.CHAR &lt;<a href="#character-encoding-pe">CHARACTER<wbr>_ENCODING</a>&gt;</li>
+</ul>
 </div>
         </dd>
 
@@ -5238,6 +5264,10 @@ CHILD
           <p>The CONC subrecord adds additional text to the parent <a href="#line-value-component">line_value</a>.</p>
 
           <p>See the <a href="#continuations">Continuations</a> section for details.</p>
+
+<div class="references">
+<p>See: <a href="#cont-and-conc-change">CONT and CONC Change</a></p>
+</div>
         </dd>
 
         <dt id="tag-conf">CONF <span class="tag-full-name">Confirmation</span></dt>
@@ -5256,7 +5286,11 @@ CHILD
           <p>See the <a href="#continuations">Continuations</a> section for details.</p>
 
 <div class="references">
-<p>See: &lt;&lt;<a href="#address-structure-subr">ADDRESS<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-addr">ADDR</a><wbr>.CONT &lt;<a href="#address-value-pe">ADDRESS<wbr>_VALUE</a>&gt;</p>
+<p>See:</p>
+<ul>
+<li>&lt;&lt;<a href="#address-structure-subr">ADDRESS<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-addr">ADDR</a><wbr>.CONT &lt;<a href="#address-value-pe">ADDRESS<wbr>_VALUE</a>&gt;</li>
+<li><a href="#cont-and-conc-change">CONT and CONC Change</a></li>
+</ul>
 </div>
         </dd>
 
@@ -5493,6 +5527,7 @@ CHILD
 <p>See:</p>
 <ul>
 <li>&lt;&lt;<a href="#family-event-structure-subr">FAMILY<wbr>_EVENT<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.EVEN &lt;<a href="#event-descriptor-pe">EVENT<wbr>_DESCRIPTOR</a>&gt;</li>
+<li><a href="#indi-even-event-descriptor-change">INDI<wbr>.EVEN Change</a></li>
 <li>&lt;&lt;<a href="#individual-event-structure-subr">INDIVIDUAL<wbr>_EVENT<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.EVEN &lt;<a href="#event-descriptor-pe">EVENT<wbr>_DESCRIPTOR</a>&gt;</li>
 </ul>
 </div>
@@ -5785,7 +5820,11 @@ CHILD
           <p>The LATI subrecord specifies a latitude via its &lt;<a href="#place-latitude-pe">PLACE_LATITUDE</a>&gt; line_value. Latitude is a geographic coordinate that specifies the north–south position of a point on the Earth's surface.</p>
 
 <div class="references">
-<p>See: &lt;&lt;<a href="#place-structure-subr">PLACE<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-plac">PLAC</a><wbr>.<a href="#tag-map">MAP</a><wbr>.LATI &lt;<a href="#place-latitude-pe">PLACE<wbr>_LATITUDE</a>&gt;</p>
+<p>See:</p>
+<ul>
+<li><a href="#location-coordinate-change">MAP<wbr>.LATI and MAP<wbr>.LONG Change</a></li>
+<li>&lt;&lt;<a href="#place-structure-subr">PLACE<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-plac">PLAC</a><wbr>.<a href="#tag-map">MAP</a><wbr>.LATI &lt;<a href="#place-latitude-pe">PLACE<wbr>_LATITUDE</a>&gt;</li>
+</ul>
 </div>
         </dd>
 
@@ -5794,7 +5833,11 @@ CHILD
           <p>The LONG subrecord specifies a longitude via its &lt;<a href="#place-longitude-pe">PLACE_LONGITUDE</a>&gt; line_value. Longitude is a geographic coordinate that specifies the east-west position of a point on the Earth's surface.</p>
 
 <div class="references">
-<p>See: &lt;&lt;<a href="#place-structure-subr">PLACE<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-plac">PLAC</a><wbr>.<a href="#tag-map">MAP</a><wbr>.LONG &lt;<a href="#place-longitude-pe">PLACE<wbr>_LONGITUDE</a>&gt;</p>
+<p>See:</p>
+<ul>
+<li><a href="#location-coordinate-change">MAP<wbr>.LATI and MAP<wbr>.LONG Change</a></li>
+<li>&lt;&lt;<a href="#place-structure-subr">PLACE<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-plac">PLAC</a><wbr>.<a href="#tag-map">MAP</a><wbr>.LONG &lt;<a href="#place-longitude-pe">PLACE<wbr>_LONGITUDE</a>&gt;</li>
+</ul>
 </div>
         </dd>
 
@@ -6053,6 +6096,7 @@ CHILD
 <div class="references">
 <p>See:</p>
 <ul>
+<li><a href="#multimedia-file-reference-change">MULTIMEDIA<wbr>_FILE<wbr>_REFERENCE Change</a></li>
 <li>&lt;&lt;<a href="#multimedia-link-subr">MULTIMEDIA<wbr>_LINK</a>&gt;&gt;<wbr>.OBJE</li>
 <li>&lt;&lt;<a href="#multimedia-link-subr">MULTIMEDIA<wbr>_LINK</a>&gt;&gt;<wbr>.OBJE &lt;<a href="#id-obje-pe">ID<wbr>_OBJE</a>&gt;</li>
 <li>&lt;&lt;<a href="#obje-record">OBJE<wbr>_RECORD</a>&gt;&gt;<wbr>.OBJE &lt;<a href="#id-obje-pe">ID<wbr>_OBJE</a>&gt;</li>
@@ -6852,7 +6896,7 @@ CHILD
 <li><a href="#change-date-pe">CHANGE_DATE</a></li>
 <li><a href="#change-date-subr">CHANGE_DATE</a></li>
 <li><a href="#tag-char">CHAR</a></li>
-<li><a href="#head-char-vers-change">CHAR (Change in 5.5.2)</a></li>
+<li><a href="#head-char-vers-change">CHAR.VERS (Change in 5.5.2)</a></li>
 <li><a href="#character-encoding-pe">CHARACTER_ENCODING</a></li>
 <li><a href="#tag-chil">CHIL</a></li>
 <li><a href="#child-linkage-status-pe">CHILD_LINKAGE_STATUS</a></li>
