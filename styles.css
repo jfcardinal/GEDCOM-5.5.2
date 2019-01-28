@@ -343,28 +343,13 @@ span.obsolete, span.provisional, span.pending-removal {
   padding-top: 4px;
   position: fixed;
   text-align: center;
-  top: 0;
+  bottom: 0;
   width: 100%;
 }
 
 .group-row {
   border-top-style: solid;
   border-top-width: 2px;
-}
-
-:target::before {
-  /* Adjust target to avoid being under fixed-menu */
-  content: "";
-  display: block;
-  height: 36px; /* fixed header height*/
-  margin: -36px 0 0; /* negative fixed header height */
-}
-
-tr:target::before, li:target::before {
-  /* Adjust target to avoid being under fixed-menu */
-  /* Don't add block when target is in table or list */
-  content: "";
-  display: none;
 }
 
 .keyword-index {

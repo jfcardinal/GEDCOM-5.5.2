@@ -115,8 +115,8 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
               <tr><th>Symbol</th><th>Character</th></tr>
             </thead>
             <tbody>
-              <tr><td><span class="control-char">LF</span></td><td>line feed, U+000A</td></tr>
               <tr><td><span class="control-char">CR</span></td><td>carriage return, U+000D</td></tr>
+              <tr><td><span class="control-char">LF</span></td><td>line feed, U+000A</td></tr>
               <tr><td><span class="control-char">SP</span></td><td>space, U+0020</td></tr>
             </tbody>
           </table>
@@ -915,9 +915,9 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
               <tr><th>Sequence</th><th>Symbol</th><th>Description</th></tr>
             </thead>
             <tbody>
-              <tr><td>U+000D</td><td><span class="control-char">LF</span></td><td>carriage return</td></tr>
+              <tr><td>U+000D</td><td><span class="control-char">CR</span></td><td>line feed</td></tr>
 
-              <tr><td>U+000A</td><td><span class="control-char">CR</span></td><td>line feed</td></tr>
+              <tr><td>U+000A</td><td><span class="control-char">LF</span></td><td>carriage return</td></tr>
 
               <tr><td>U+000D U+000A</td><td><span class="control-char">CR</span><span class="control-char">LF</span></td><td><span class="nowrap">carriage return</span> + <span class="nowrap">line feed</span></td></tr>
 
@@ -3513,7 +3513,6 @@ CHILD
               <tr><td><code>adopted</code></td><td>indicates adoptive parents.</td></tr>
               <tr><td><code>birth</code></td><td>indicates birth parents.</td></tr>
               <tr><td><code>foster</code></td><td>indicates child was included in a foster or guardian family.</td></tr>
-              <tr><td><code>sealing</code></td><td>indicates child was sealed to parents other than birth parents.</td></tr>
             </tbody>
           </table>
 
@@ -3599,7 +3598,7 @@ CHILD
           <p>For example, given the PLACE_HIERARCHY "Addressee,Detail,City,County,State,Country", a PLAC record with missing Addressee and Country elements would appear as follows:</p>
 
 <pre>
-2 <a href="#tag-plac">PLAC</a> , 1 Main Street, Ames, Story, Iowa, 
+2 <a href="#tag-plac">PLAC</a> ,1 Main Street,Ames,Story,Iowa, 
 </pre>
 
           <!--
@@ -6708,8 +6707,8 @@ CHILD
 1 <a href="#tag-gedc">GEDC</a>
 2 <a href="#tag-vers">VERS</a> 5.5.2
 2 <a href="#tag-form">FORM</a> Lineage-Linked
-1 <a href="#tag-sour">SOUR</a> PAF
-2 <a href="#tag-vers">VERS</a> 2.1
+1 <a href="#tag-sour">SOUR</a> EXAMPLE_SOURCE
+2 <a href="#tag-vers">VERS</a> 1.7
 0 @I1@ <a href="#tag-indi">INDI</a>
 1 <a href="#tag-name">NAME</a> Robert Eugene /Williams/
 1 <a href="#tag-sex">SEX</a> M
