@@ -111,7 +111,7 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
 
           <h3>GEDCOM 5.5EL</h3>
 
-          <p>The GEDCOM variant <i>GEDCOM 5.5EL</i> defines a _LOC record and subrecord. The records are linked using a GEDCOM ID and pointer. The _LOC record supports several subrecords, more than shown in the example below.</p>
+          <p>The GEDCOM variant <i>GEDCOM 5.5EL</i> defines a _LOC record and subrecord. The records are linked using a GEDCOM ID and pointer. The _LOC record supports several subrecords, more than shown in the example below. _LOC records are arranged in a hierarchy, with a _LOC record for each level.</p>
 
           <p>Example</p>
 <pre>
@@ -122,11 +122,19 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
 ...
 
 0 @L1@ _LOC
-1 NAME Ames, Iowa, United States
+1 NAME Ames
 1 MAP
 2 LATI N42.034722
 2 LONG W93.62
+1 _LOC @L2@
+0 @L2@ _LOC
+1 NAME Iowa
+1 _LOC @L3@
+0 @L3@ _LOC
+1 NAME United States
 </pre>
+
+          <p>For more details, see the <a href="http://wiki-en.genealogy.net/GEDCOM/_LOC-Tag">GenWiki entry</a>.</p>
 
           <h3>Legacy</h3>
 
