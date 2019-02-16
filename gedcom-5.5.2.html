@@ -915,9 +915,9 @@ Everyone is permitted to copy and distribute verbatim copies of this document, b
               <tr><th>Sequence</th><th>Symbol</th><th>Description</th></tr>
             </thead>
             <tbody>
-              <tr><td>U+000D</td><td><span class="control-char">CR</span></td><td>line feed</td></tr>
+              <tr><td>U+000D</td><td><span class="control-char">CR</span></td><td>carriage return</td></tr>
 
-              <tr><td>U+000A</td><td><span class="control-char">LF</span></td><td>carriage return</td></tr>
+              <tr><td>U+000A</td><td><span class="control-char">LF</span></td><td>line feed</td></tr>
 
               <tr><td>U+000D U+000A</td><td><span class="control-char">CR</span><span class="control-char">LF</span></td><td><span class="nowrap">carriage return</span> + <span class="nowrap">line feed</span></td></tr>
 
@@ -5570,8 +5570,9 @@ CHILD
         </dd>
 
         <dt id="tag-famc">FAMC <span class="tag-full-name">Family Child</span></dt>
+        <!-- REFERENCE tag-famc, tag-pedi -->
         <dd>
-          <p>The FAMC subrecord identifis a family in which an individual appears as a child via its &lt;<a href="#id-fam-pe">ID_FAM</a>&gt; line_value.</p>
+          <p>The FAMC subrecord identifies a family in which an individual appears as a child via its &lt;<a href="#id-fam-pe">ID_FAM</a>&gt; line_value.</p>
 
 <div class="references">
 <p>See:</p>
@@ -5579,6 +5580,7 @@ CHILD
 <li>&lt;&lt;<a href="#child-to-family-link-subr">CHILD<wbr>_TO<wbr>_FAMILY<wbr>_LINK</a>&gt;&gt;<wbr>.FAMC &lt;<a href="#id-fam-pe">ID<wbr>_FAM</a>&gt;</li>
 <li>&lt;&lt;<a href="#individual-event-structure-subr">INDIVIDUAL<wbr>_EVENT<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-adop">ADOP</a><wbr>.FAMC &lt;<a href="#id-fam-pe">ID<wbr>_FAM</a>&gt;</li>
 <li>&lt;&lt;<a href="#individual-event-structure-subr">INDIVIDUAL<wbr>_EVENT<wbr>_STRUCTURE</a>&gt;&gt;<wbr>.<a href="#tag-chr">CHR</a><wbr>.FAMC &lt;<a href="#id-fam-pe">ID<wbr>_FAM</a>&gt;</li>
+<li><a href="#tag-pedi">PEDI</a></li>
 </ul>
 </div>
         </dd>
