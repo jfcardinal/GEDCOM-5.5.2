@@ -356,6 +356,7 @@ span.obsolete, span.provisional, span.pending-removal {
   font-size: 90%;
   list-style-type: none;
   margin: 0.5em 0;
+  padding-bottom: 2em;
 }
 
 .keyword-index li {
